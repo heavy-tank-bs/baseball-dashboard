@@ -1,0 +1,72 @@
+{
+  "game_id": "2021038648",
+  "metadata": {
+    "date_jp": "2026年4月1日",
+    "matchup": "阪神タイガースvs横浜DeNAベイスターズ"
+  },
+  "statline": {
+    "player": "木下 里都",
+    "era": "0.00",
+    "innings": "0.1",
+    "pitches": "3",
+    "batters": "1",
+    "hits": "0",
+    "hr": "0",
+    "k": "0",
+    "bb": "0",
+    "hbp": "0",
+    "balk": "0",
+    "runs": "0",
+    "er": "0"
+  },
+  "pitches": [
+    {
+      "pa_index": "0510500",
+      "pitcher": "木下 里都",
+      "pitcher_id": "2112444",
+      "pitcher_hand": "右",
+      "batter": "佐野 恵太",
+      "batter_id": "1600089",
+      "batter_hand": "左",
+      "seq": "1",
+      "pitchNo": "1",
+      "pitchType": "ツーシーム",
+      "speed": "151km/h",
+      "result": "ボール",
+      "top": 47.16,
+      "left": 47.16
+    },
+    {
+      "pa_index": "0510500",
+      "pitcher": "木下 里都",
+      "pitcher_id": "2112444",
+      "pitcher_hand": "右",
+      "batter": "佐野 恵太",
+      "batter_id": "1600089",
+      "batter_hand": "左",
+      "seq": "2",
+      "pitchNo": "2",
+      "pitchType": "ストレート",
+      "speed": "155km/h",
+      "result": "空振り",
+      "top": 42.839999999999996,
+      "left": 21.24
+    },
+    {
+      "pa_index": "0510500",
+      "pitcher": "木下 里都",
+      "pitcher_id": "2112444",
+      "pitcher_hand": "右",
+      "batter": "佐野 恵太",
+      "batter_id": "1600089",
+      "batter_hand": "左",
+      "seq": "3",
+      "pitchNo": "3",
+      "pitchType": "ストレート",
+      "speed": "157km/h",
+      "result": "左飛",
+      "top": 33.839999999999996,
+      "left": 25.919999999999998
+    }
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "game_id": "2021038664",
+  "metadata": {
+    "date_jp": "2026年4月4日",
+    "matchup": "読売ジャイアンツvs横浜DeNAベイスターズ"
+  },
+  "statline": {
+    "player": "大勢",
+    "era": "0.00",
+    "innings": "0.1",
+    "pitches": "4",
+    "batters": "1",
+    "hits": "0",
+    "hr": "0",
+    "k": "0",
+    "bb": "0",
+    "hbp": "0",
+    "balk": "0",
+    "runs": "0",
+    "er": "0"
+  },
+  "pitches": [
+    {
+      "pa_index": "0810500",
+      "pitcher": "大勢",
+      "pitcher_id": "2103697",
+      "pitcher_hand": "右",
+      "batter": "牧 秀悟",
+      "batter_id": "2000035",
+      "batter_hand": "右",
+      "seq": "1",
+      "pitchNo": "1",
+      "pitchType": "ストレート",
+      "speed": "151km/h",
+      "result": "見逃し",
+      "top": 19.08,
+      "left": 38.879999999999995
+    },
+    {
+      "pa_index": "0810500",
+      "pitcher": "大勢",
+      "pitcher_id": "2103697",
+      "pitcher_hand": "右",
+      "batter": "牧 秀悟",
+      "batter_id": "2000035",
+      "batter_hand": "右",
+      "seq": "2",
+      "pitchNo": "2",
+      "pitchType": "ストレート",
+      "speed": "152km/h",
+      "result": "空振り",
+      "top": 38.519999999999996,
+      "left": 31.32
+    },
+    {
+      "pa_index": "0810500",
+      "pitcher": "大勢",
+      "pitcher_id": "2103697",
+      "pitcher_hand": "右",
+      "batter": "牧 秀悟",
+      "batter_id": "2000035",
+      "batter_hand": "右",
+      "seq": "3",
+      "pitchNo": "3",
+      "pitchType": "ストレート",
+      "speed": "154km/h",
+      "result": "ボール",
+      "top": 28.08,
+      "left": 6.12
+    },
+    {
+      "pa_index": "0810500",
+      "pitcher": "大勢",
+      "pitcher_id": "2103697",
+      "pitcher_hand": "右",
+      "batter": "牧 秀悟",
+      "batter_id": "2000035",
+      "batter_hand": "右",
+      "seq": "4",
+      "pitchNo": "4",
+      "pitchType": "ストレート",
+      "speed": "154km/h",
+      "result": "三ゴロ",
+      "top": 14.399999999999999,
+      "left": 17.64
+    }
+  ]
+}

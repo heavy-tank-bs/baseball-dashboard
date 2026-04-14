@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>成績ダッシュボード</title>
+  <link rel="stylesheet" href="./styles.css?v=20260413-25">
+</head>
+<body>
+  <div class="site-shell">
+    <header class="hero">
+      <div class="hero-bar">
+        <div class="hero-copy">
+          <h1>成績ダッシュボード</h1>
+        </div>
+        <nav class="hero-nav" aria-label="成績ページ切替">
+          <a class="hero-nav-link active" href="./index.html">試合別投手成績</a>
+          <a class="hero-nav-link" href="./batter.html">試合別打者成績</a>
+          <a class="hero-nav-link" href="./annual.html">年度別投手成績</a>
+          <a class="hero-nav-link" href="./annual-batter.html">年度別打者成績</a>
+        </nav>
+      </div>
+    </header>
+
+    <div class="layout">
+      <aside class="sidebar panel">
+        <section class="panel-block">
+          <h2>検索</h2>
+          <label class="search-box">
+            <span>球団 / 日付 / 選手名 / 対戦カード</span>
+            <input id="searchInput" type="search" placeholder="例: 宮城 / オリックス / 2026-03-27">
+          </label>
+        </section>
+
+        <section class="panel-block">
+          <div class="section-head">
+            <h2>球団</h2>
+            <button id="clearTeamButton" class="ghost-button" type="button">全表示</button>
+          </div>
+          <div id="teamFilters" class="chip-wrap"></div>
+        </section>
+
+        <section class="panel-block">
+          <h2>日付</h2>
+          <select id="dateSelect" class="field-select">
+            <option value="all">すべての日付</option>
+          </select>
+        </section>
+
+        <section class="panel-block">
+          <h2>選手名</h2>
+          <select id="playerSelect" class="field-select">
+            <option value="all">すべての選手</option>
+          </select>
+        </section>
+
+        <section class="panel-block results-block">
+          <div class="section-head">
+            <h2>一覧</h2>
+            <span id="resultCount" class="result-count">0件</span>
+          </div>
+          <div id="resultList" class="result-list"></div>
+        </section>
+      </aside>
+
+      <main class="viewer">
+        <section id="viewerPanel" class="dashboard-viewer panel empty">
+          <div class="empty-state">
+            <p class="empty-kicker">Select Dashboard</p>
+            <h2>左の一覧から投手を選択してください</h2>
+            <p>PNG を貼るのではなく、生成済み JSON の集計内容をそのままサイト上へ描画します。</p>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <script src="./manifest.js?v=20260413-25"></script>
+  <script src="./app.js?v=20260413-25"></script>
+</body>
+</html>

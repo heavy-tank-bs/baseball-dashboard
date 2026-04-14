@@ -1,0 +1,72 @@
+{
+  "game_id": "2021038640",
+  "metadata": {
+    "date_jp": "2026年3月31日",
+    "matchup": "東京ヤクルトスワローズvs広島東洋カープ"
+  },
+  "statline": {
+    "player": "清水 昇",
+    "era": "0.00",
+    "innings": "0.1",
+    "pitches": "3",
+    "batters": "2",
+    "hits": "1",
+    "hr": "0",
+    "k": "0",
+    "bb": "0",
+    "hbp": "0",
+    "balk": "0",
+    "runs": "0",
+    "er": "0"
+  },
+  "pitches": [
+    {
+      "pa_index": "0610700",
+      "pitcher": "清水 昇",
+      "pitcher_id": "1800033",
+      "pitcher_hand": "右",
+      "batter": "勝田 成",
+      "batter_id": "2110422",
+      "batter_hand": "左",
+      "seq": "1",
+      "pitchNo": "2",
+      "pitchType": "ツーシーム",
+      "speed": "136km/h",
+      "result": "ボール",
+      "top": 24.84,
+      "left": 44.64
+    },
+    {
+      "pa_index": "0610700",
+      "pitcher": "清水 昇",
+      "pitcher_id": "1800033",
+      "pitcher_hand": "右",
+      "batter": "勝田 成",
+      "batter_id": "2110422",
+      "batter_hand": "左",
+      "seq": "2",
+      "pitchNo": "3",
+      "pitchType": "フォーク",
+      "speed": "-",
+      "result": "二ゴロ",
+      "top": 33.839999999999996,
+      "left": 28.799999999999997
+    },
+    {
+      "pa_index": "0610600",
+      "pitcher": "清水 昇",
+      "pitcher_id": "1800033",
+      "pitcher_hand": "右",
+      "batter": "坂倉 将吾",
+      "batter_id": "1600124",
+      "batter_hand": "左",
+      "seq": "1",
+      "pitchNo": "1",
+      "pitchType": "ストレート",
+      "speed": "148km/h",
+      "result": "左２ [フェンス直撃]",
+      "top": 43.92,
+      "left": 25.919999999999998
+    }
+  ]
+}

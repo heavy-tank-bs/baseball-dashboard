@@ -1,0 +1,88 @@
+{
+  "game_id": "2021038697",
+  "metadata": {
+    "date_jp": "2026年4月10日",
+    "matchup": "埼玉西武ライオンズvs千葉ロッテマリーンズ"
+  },
+  "statline": {
+    "player": "浜屋 将太",
+    "era": "4.50",
+    "innings": "0.1",
+    "pitches": "4",
+    "batters": "1",
+    "hits": "0",
+    "hr": "0",
+    "k": "0",
+    "bb": "0",
+    "hbp": "0",
+    "balk": "0",
+    "runs": "0",
+    "er": "0"
+  },
+  "pitches": [
+    {
+      "pa_index": "0710400",
+      "pitcher": "浜屋 将太",
+      "pitcher_id": "1900062",
+      "pitcher_hand": "左",
+      "batter": "藤原 恭大",
+      "batter_id": "1800050",
+      "batter_hand": "左",
+      "seq": "1",
+      "pitchNo": "1",
+      "pitchType": "スライダー",
+      "speed": "119km/h",
+      "result": "見逃し",
+      "top": 27.36,
+      "left": 37.08
+    },
+    {
+      "pa_index": "0710400",
+      "pitcher": "浜屋 将太",
+      "pitcher_id": "1900062",
+      "pitcher_hand": "左",
+      "batter": "藤原 恭大",
+      "batter_id": "1800050",
+      "batter_hand": "左",
+      "seq": "2",
+      "pitchNo": "2",
+      "pitchType": "スライダー",
+      "speed": "118km/h",
+      "result": "ボール",
+      "top": 44.64,
+      "left": 44.64
+    },
+    {
+      "pa_index": "0710400",
+      "pitcher": "浜屋 将太",
+      "pitcher_id": "1900062",
+      "pitcher_hand": "左",
+      "batter": "藤原 恭大",
+      "batter_id": "1800050",
+      "batter_hand": "左",
+      "seq": "3",
+      "pitchNo": "3",
+      "pitchType": "ツーシーム",
+      "speed": "135km/h",
+      "result": "ボール",
+      "top": 46.08,
+      "left": 43.92
+    },
+    {
+      "pa_index": "0710400",
+      "pitcher": "浜屋 将太",
+      "pitcher_id": "1900062",
+      "pitcher_hand": "左",
+      "batter": "藤原 恭大",
+      "batter_id": "1800050",
+      "batter_hand": "左",
+      "seq": "4",
+      "pitchNo": "4",
+      "pitchType": "ツーシーム",
+      "speed": "135km/h",
+      "result": "三ゴロ",
+      "top": 38.519999999999996,
+      "left": 39.24
+    }
+  ]
+}

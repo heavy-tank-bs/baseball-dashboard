@@ -1,0 +1,72 @@
+{
+  "game_id": "2021038627",
+  "metadata": {
+    "date_jp": "2026年3月27日",
+    "matchup": "福岡ソフトバンクホークスvs北海道日本ハムファイターズ"
+  },
+  "statline": {
+    "player": "島本 浩也",
+    "era": "0.00",
+    "innings": "0.1",
+    "pitches": "3",
+    "batters": "1",
+    "hits": "0",
+    "hr": "0",
+    "k": "0",
+    "bb": "0",
+    "hbp": "0",
+    "balk": "0",
+    "runs": "0",
+    "er": "0"
+  },
+  "pitches": [
+    {
+      "pa_index": "0820700",
+      "pitcher": "島本 浩也",
+      "pitcher_id": "1000164",
+      "pitcher_hand": "左",
+      "batter": "柳町 達",
+      "batter_id": "1900104",
+      "batter_hand": "左",
+      "seq": "1",
+      "pitchNo": "1",
+      "pitchType": "スライダー",
+      "speed": "130km/h",
+      "result": "ボール",
+      "top": null,
+      "left": null
+    },
+    {
+      "pa_index": "0820700",
+      "pitcher": "島本 浩也",
+      "pitcher_id": "1000164",
+      "pitcher_hand": "左",
+      "batter": "柳町 達",
+      "batter_id": "1900104",
+      "batter_hand": "左",
+      "seq": "2",
+      "pitchNo": "2",
+      "pitchType": "スライダー",
+      "speed": "127km/h",
+      "result": "ファウル",
+      "top": null,
+      "left": null
+    },
+    {
+      "pa_index": "0820700",
+      "pitcher": "島本 浩也",
+      "pitcher_id": "1000164",
+      "pitcher_hand": "左",
+      "batter": "柳町 達",
+      "batter_id": "1900104",
+      "batter_hand": "左",
+      "seq": "3",
+      "pitchNo": "3",
+      "pitchType": "フォーク",
+      "speed": "136km/h",
+      "result": "投ゴロ",
+      "top": null,
+      "left": null
+    }
+  ]
+}
