@@ -1024,6 +1024,105 @@ function renderCountSection(dashboard) {
   `;
 }
 
+function renderVelocityChart(velocity = {}) {
+  const rows = velocity.rows || [];
+  if (!rows.length) {
+    return '<div class="section-empty">ストレートの球速推移データがありません。</div>';
+  }
+
+  const width = 920;
+  const height = 320;
+  const margin = { top: 24, right: 32, bottom: 42, left: 54 };
+  const speeds = rows.map((row) => row.speed);
+  const minSpeed = Math.min(...speeds);
+  const maxSpeed = Math.max(...speeds);
+  const range = Math.max(maxSpeed - minSpeed, 1);
+  const maxPitchNo = Math.max(...rows.map((row) => row.pitchNo), 1);
+  const baseColor = rows[0].color || "#0F2340";
+
+  const x = (pitchNo) => margin.left + ((pitchNo - 1) / Math.max(maxPitchNo - 1, 1)) * (width - margin.left - margin.right);
+  const y = (speed) => height - margin.bottom - ((speed - minSpeed) / range) * (height - margin.top - margin.bottom);
+
+  const points = rows.map((row) => `${x(row.pitchNo)},${y(row.speed)}`).join(" ");
+  const circles = rows
+    .map((row) => `<circle cx="${x(row.pitchNo)}" cy="${y(row.speed)}" r="4" fill="${baseColor}"></circle>`)
+    .join("");
+
+  const gridValues = Array.from({ length: 4 }, (_, idx) => minSpeed + (range * idx) / 3);
+  const gridLines = gridValues
+    .map((value) => {
+      const py = y(value);
+      return `
+        <line x1="${margin.left}" y1="${py}" x2="${width - margin.right}" y2="${py}" class="chart-grid"></line>
+        <text x="${margin.left - 10}" y="${py + 4}" class="chart-axis chart-axis-left">${value.toFixed(1)}</text>
+      `;
+    })
+    .join("");
+
+  const markers = (velocity.markers || [])
+    .filter((marker) => marker.pitchNo >= 1 && marker.pitchNo <= maxPitchNo)
+    .map(
+      (marker) => `
+        <line x1="${x(marker.pitchNo)}" y1="${margin.top}" x2="${x(marker.pitchNo)}" y2="${height - margin.bottom}" class="chart-marker"></line>
+        <text x="${x(marker.pitchNo) + 4}" y="${margin.top + 14}" class="chart-axis">${marker.inning}回</text>
+      `
+    )
+    .join("");
+
+  return `
+    <div class="velocity-chart-wrap">
+      <div class="velocity-chart-scroll">
+      <svg viewBox="0 0 ${width} ${height}" class="velocity-chart" role="img" aria-label="球速推移">
+        ${gridLines}
+        ${markers}
+        <polyline points="${points}" fill="none" stroke="${baseColor}" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></polyline>
+        ${circles}
+      </svg>
+      </div>
+    </div>
+  `;
+}
+
+function renderCountSection(dashboard) {
+  const rows = dashboard.countMix || [];
+  if (!rows.length) {
+    return '<div class="section-empty">カウント別球種割合データがありません。</div>';
+  }
+
+  const legend = dashboard.pitchMix || [];
+  const bars = rows
+    .map((row) => {
+      const segments = row.segments
+        .filter((segment) => segment.count > 0)
+        .map(
+          (segment) => `
+            <div class="count-segment" style="width:${segment.ratio}%;background:${segment.color}">
+              <span>${segment.ratio >= 14 ? `${segment.ratio.toFixed(0)}%` : ""}</span>
+            </div>
+          `
+        )
+        .join("");
+      return `
+        <div class="count-row">
+          <span class="count-label">${row.bucket}</span>
+          <div class="count-bar">${segments}</div>
+          <span class="count-total">${row.total}球</span>
+        </div>
+      `;
+    })
+    .join("");
+
+  return `
+    <section class="dashboard-card count-card">
+      <div class="card-head">
+        <h3>カウント別球種割合</h3>
+      </div>
+      <ul class="legend-list centered">${legendItems(legend)}</ul>
+      <div class="count-chart">${bars}</div>
+    </section>
+  `;
+}
+
 function renderMetaGrid(entry) {
   return `
     <div class="meta-grid">
