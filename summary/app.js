@@ -361,7 +361,7 @@ function renderPitchSummaryTable(rows) {
 
   return `
     <div class="table-scroll">
-      <table class="data-table wide-table">
+      <table class="data-table wide-table pitch-summary-table">
         <thead>
           <tr>
             <th>球種</th>
@@ -597,8 +597,8 @@ function renderOutcomeChart(outcomes = {}) {
             style="stroke-width:${strokeWidth}"
           ></circle>
           <g transform="rotate(-90 ${center} ${center})">${segments}</g>
-          <text x="${center}" y="${center - 12}" class="outcome-center-label">対象アウト</text>
-          <text x="${center}" y="${center + 22}" class="outcome-center-value">${total}</text>
+          <text x="${center}" y="${center - 18}" class="outcome-center-label">対象アウト</text>
+          <text x="${center}" y="${center + 26}" class="outcome-center-value">${total}</text>
         </svg>
       </div>
       <div class="outcome-grid">${cards}</div>
@@ -803,6 +803,7 @@ function renderVelocityChart(velocity = {}) {
 
   return `
     <div class="velocity-chart-wrap">
+      <div class="velocity-chart-scroll">
       <svg viewBox="0 0 ${width} ${height}" class="velocity-chart" role="img" aria-label="球速推移">
         ${gridLines}
         ${markers}
@@ -810,6 +811,7 @@ function renderVelocityChart(velocity = {}) {
         ${circles}
         <text x="${width / 2}" y="${height - 10}" class="chart-axis chart-axis-bottom">投球番号</text>
       </svg>
+      </div>
     </div>
   `;
 }
