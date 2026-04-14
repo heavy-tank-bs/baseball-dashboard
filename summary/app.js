@@ -337,9 +337,11 @@ function renderPitchSummaryTable(rows) {
     .map(
       (row) => `
         <tr>
-          <td class="pitch-name-cell">
-            <span class="legend-swatch" style="background:${row.color}"></span>
-            <span>${row.pitchType}</span>
+          <td>
+            <span class="pitch-name-cell">
+              <span class="legend-swatch" style="background:${row.color}"></span>
+              <span>${row.pitchType}</span>
+            </span>
           </td>
           <td>${formatSpeed(row.avgSpeed)}</td>
           <td>${row.count}</td>
@@ -727,9 +729,11 @@ function renderFinishTable(finish = {}) {
     .map(
       (row) => `
         <tr>
-          <td class="pitch-name-cell">
-            <span class="legend-swatch" style="background:${row.color}"></span>
-            <span>${row.pitchType}</span>
+          <td>
+            <span class="pitch-name-cell">
+              <span class="legend-swatch" style="background:${row.color}"></span>
+              <span>${row.pitchType}</span>
+            </span>
           </td>
           <td>${row.count}</td>
           <td>${formatPercent(row.ratio)}</td>

@@ -124,6 +124,12 @@ const SORT_COLUMNS = [
   { key: "pitches", label: "球数", type: "number", value: (row) => row.pitches },
 ];
 
+const playerColumnIndex = SORT_COLUMNS.findIndex((column) => column.key === "player");
+if (playerColumnIndex > 0) {
+  const [playerColumn] = SORT_COLUMNS.splice(playerColumnIndex, 1);
+  SORT_COLUMNS.unshift(playerColumn);
+}
+
 const SORT_COLUMN_MAP = Object.fromEntries(SORT_COLUMNS.map((column) => [column.key, column]));
 
 function playerValue(row) {
@@ -363,8 +369,8 @@ function renderTable() {
     .map(
       (row) => `
         <tr>
-          <td>${escapeHtml(row.team)}</td>
           <td>${escapeHtml(row.player)}</td>
+          <td>${escapeHtml(row.team)}</td>
           <td>${row.games}</td>
           <td>${row.wins ?? 0}</td>
           <td>${row.losses ?? 0}</td>
