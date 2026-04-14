@@ -100,6 +100,18 @@ function byTeam(name) {
   return summary || { name, count: 0, hasData: false };
 }
 
+function teamSortKey(team) {
+  const index = TEAM_META.findIndex((row) => row.name === team);
+  return [index === -1 ? TEAM_META.length : index, team];
+}
+
+function compareTeam(a, b) {
+  const [aIndex, aName] = teamSortKey(a);
+  const [bIndex, bName] = teamSortKey(b);
+  if (aIndex !== bIndex) return aIndex - bIndex;
+  return `${aName}`.localeCompare(`${bName}`, "ja");
+}
+
 function hasScopedSelection() {
   return state.team !== "all" && state.date !== "all";
 }
