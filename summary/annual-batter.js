@@ -19,6 +19,7 @@ const state = {
   league: "all",
   team: "all",
   player: "all",
+  plateAppearancesMin: 0,
   sortKey: "",
   sortDirection: "",
 };
@@ -28,6 +29,9 @@ const els = {
   leagueSelect: document.getElementById("leagueSelect"),
   teamSelect: document.getElementById("teamSelect"),
   playerSelect: document.getElementById("playerSelect"),
+  plateAppearancesRange: document.getElementById("plateAppearancesRange"),
+  plateAppearancesInput: document.getElementById("plateAppearancesInput"),
+  plateAppearancesMaxLabel: document.getElementById("plateAppearancesMaxLabel"),
   annualResultCount: document.getElementById("annualResultCount"),
   annualNote: document.getElementById("annualNote"),
   annualTableWrap: document.getElementById("annualTableWrap"),
@@ -83,8 +87,8 @@ const SORT_COLUMNS = [
   { key: "isoDiscipline", label: "IsoD", type: "number", value: (row) => row.isoDiscipline },
   { key: "sluggingPercentage", label: "長打率", type: "number", value: (row) => row.sluggingPercentage },
   { key: "isoPower", label: "IsoP", type: "number", value: (row) => row.isoPower },
-  { key: "babip", label: "BABIP", type: "number", value: (row) => row.babip },
   { key: "ops", label: "OPS", type: "number", value: (row) => row.ops },
+  { key: "babip", label: "BABIP", type: "number", value: (row) => row.babip },
 ];
 
 const playerColumnIndex = SORT_COLUMNS.findIndex((column) => column.key === "player");
@@ -208,15 +212,26 @@ function availablePlayers() {
   }));
 }
 
+function parsePlateAppearances(value) {
+  const normalized = `${value ?? ""}`.trim().normalize("NFKC");
+  if (!normalized) return 0;
+  const number = Number.parseInt(normalized, 10);
+  return Number.isFinite(number) ? Math.max(number, 0) : 0;
+}
+
+function filteredPlayersBase() {
+  return (state.data?.players || []).filter((row) => {
+    if (state.year && row.year !== state.year) return false;
+    if (state.league !== "all" && row.league !== state.league) return false;
+    if (state.team !== "all" && row.team !== state.team) return false;
+    if (state.player !== "all" && playerValue(row) !== state.player) return false;
+    return true;
+  });
+}
+
 function filteredPlayers() {
-  return (state.data?.players || [])
-    .filter((row) => {
-      if (state.year && row.year !== state.year) return false;
-      if (state.league !== "all" && row.league !== state.league) return false;
-      if (state.team !== "all" && row.team !== state.team) return false;
-      if (state.player !== "all" && playerValue(row) !== state.player) return false;
-      return true;
-    })
+  return filteredPlayersBase()
+    .filter((row) => (row.plateAppearances || 0) >= state.plateAppearancesMin)
     .sort(compareSorted);
 }
 
@@ -268,6 +283,30 @@ function renderPlayerOptions() {
 function renderNote() {
   const yearLabel = state.year ? `${state.year}年度` : "全年度";
   els.annualNote.textContent = `${yearLabel}の集計です。打率と長打率は Sports Navi の試合別打撃成績をもとに再計算しています。対象は generated 配下に対応試合があるゲームです。`;
+}
+
+function renderNote() {
+  els.annualNote.textContent = "";
+}
+
+function renderPlateAppearancesFilter() {
+  const maxPlateAppearances = filteredPlayersBase().reduce(
+    (max, row) => Math.max(max, row.plateAppearances || 0),
+    0
+  );
+  if (state.plateAppearancesMin > maxPlateAppearances) {
+    state.plateAppearancesMin = maxPlateAppearances;
+  }
+  els.plateAppearancesRange.max = `${maxPlateAppearances}`;
+  els.plateAppearancesRange.value = `${state.plateAppearancesMin}`;
+  els.plateAppearancesInput.value = `${state.plateAppearancesMin}`;
+  els.plateAppearancesMaxLabel.textContent = `${maxPlateAppearances}`;
+}
+
+function applyPlateAppearancesInput(rawValue) {
+  const maxPlateAppearances = Number(els.plateAppearancesRange.max) || 0;
+  state.plateAppearancesMin = Math.min(parsePlateAppearances(rawValue), maxPlateAppearances);
+  render();
 }
 
 function captureTableScroll() {
@@ -324,8 +363,8 @@ function renderTable() {
           <td>${formatAverage(row.isoDiscipline)}</td>
           <td>${formatAverage(row.sluggingPercentage)}</td>
           <td>${formatAverage(row.isoPower)}</td>
-          <td>${formatAverage(row.babip)}</td>
           <td>${formatAverage(row.ops)}</td>
+          <td>${formatAverage(row.babip)}</td>
         </tr>
       `
     )
@@ -349,6 +388,7 @@ function render() {
   renderLeagueOptions();
   renderTeamOptions();
   renderPlayerOptions();
+  renderPlateAppearancesFilter();
   renderNote();
   renderTable();
 }
@@ -379,6 +419,21 @@ function bindEvents() {
     render();
   });
 
+  els.plateAppearancesRange.addEventListener("input", (event) => {
+    state.plateAppearancesMin = Number(event.target.value) || 0;
+    render();
+  });
+
+  els.plateAppearancesInput.addEventListener("change", (event) => {
+    applyPlateAppearancesInput(event.target.value);
+  });
+
+  els.plateAppearancesInput.addEventListener("keydown", (event) => {
+    if (event.key !== "Enter") return;
+    event.preventDefault();
+    applyPlateAppearancesInput(event.target.value);
+  });
+
   els.annualTableWrap.addEventListener("click", (event) => {
     const button = event.target.closest(".sort-header");
     if (!button) return;
@@ -388,7 +443,7 @@ function bindEvents() {
 
 async function init() {
   try {
-    const response = await fetch("./batter_totals.json?v=20260413-30", { cache: "no-store" });
+    const response = await fetch("./batter_totals.json?v=20260414-31", { cache: "no-store" });
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     state.data = await response.json();
     bindEvents();

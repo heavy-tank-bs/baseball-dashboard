@@ -882,6 +882,11 @@ select {
   gap: 6px;
 }
 
+.plate-heat-card > .heatmap-sides {
+  margin-top: -2px;
+  margin-bottom: 2px;
+}
+
 .plate-heat-result,
 .plate-heat-summary {
   margin: 0;
@@ -1214,6 +1219,10 @@ select {
   line-height: 1.7;
 }
 
+.annual-note:empty {
+  display: none;
+}
+
 .annual-table {
   width: 1940px;
   min-width: 1940px;
@@ -1222,12 +1231,12 @@ select {
 
 .annual-table th:first-child,
 .annual-table td:first-child {
-  width: 140px;
+  width: 128px;
 }
 
 .annual-table th:nth-child(2),
 .annual-table td:nth-child(2) {
-  width: 120px;
+  width: 110px;
 }
 
 .annual-table th:first-child,
@@ -1320,12 +1329,12 @@ select {
 
 .annual-batter-table th:first-child,
 .annual-batter-table td:first-child {
-  width: 140px;
+  width: 128px;
 }
 
 .annual-batter-table th:nth-child(2),
 .annual-batter-table td:nth-child(2) {
-  width: 120px;
+  width: 110px;
 }
 
 .annual-batter-table th:first-child,

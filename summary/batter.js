@@ -82,35 +82,100 @@ function byTeam(name) {
   return summary || { name, count: 0, hasData: false };
 }
 
+function teamSortKey(team) {
+  const index = TEAM_META.findIndex((row) => row.name === team);
+  return [index === -1 ? TEAM_META.length : index, team];
+}
+
+function compareTeam(a, b) {
+  const [aIndex, aName] = teamSortKey(a);
+  const [bIndex, bName] = teamSortKey(b);
+  if (aIndex !== bIndex) return aIndex - bIndex;
+  return `${aName}`.localeCompare(`${bName}`, "ja");
+}
+
+function hasScopedSelection() {
+  return state.team !== "all" && state.date !== "all";
+}
+
+function entryOrder(entry) {
+  const order = Number(entry?.order);
+  return Number.isFinite(order) ? order : Number.MAX_SAFE_INTEGER;
+}
+
+function compareEntries(a, b) {
+  if (a.date !== b.date) return b.date.localeCompare(a.date, "ja");
+  const teamCompare = compareTeam(a.team, b.team);
+  if (teamCompare !== 0) return teamCompare;
+  const gameCompare = `${a.gameId || ""}`.localeCompare(`${b.gameId || ""}`, "ja");
+  if (gameCompare !== 0) return gameCompare;
+  const orderCompare = entryOrder(a) - entryOrder(b);
+  if (orderCompare !== 0) return orderCompare;
+  return a.player.localeCompare(b.player, "ja");
+}
+
+function availableDates() {
+  const enabledDates = new Set(
+    manifest.entries
+      .filter((entry) => state.team === "all" || entry.team === state.team)
+      .map((entry) => entry.date)
+  );
+  return manifest.dates.map(({ date }) => ({
+    date,
+    disabled: state.team !== "all" && !enabledDates.has(date),
+  }));
+}
+
 function filteredEntries() {
+  if (!hasScopedSelection()) return [];
   const query = state.query.trim().toLowerCase();
-  return manifest.entries.filter((entry) => {
-    if (state.team !== "all" && entry.team !== state.team) return false;
-    if (state.date !== "all" && entry.date !== state.date) return false;
-    if (state.player !== "all" && entry.player !== state.player) return false;
-    if (!query) return true;
-    const haystack = [entry.title, entry.player, entry.team, entry.matchup, entry.prefix, entry.date]
-      .filter(Boolean)
-      .join(" ")
-      .toLowerCase();
-    return haystack.includes(query);
-  });
+  return manifest.entries
+    .filter((entry) => {
+      if (state.team !== "all" && entry.team !== state.team) return false;
+      if (state.date !== "all" && entry.date !== state.date) return false;
+      if (state.player !== "all" && entry.player !== state.player) return false;
+      if (!query) return true;
+      const haystack = [entry.title, entry.player, entry.team, entry.matchup, entry.prefix, entry.date]
+        .filter(Boolean)
+        .join(" ")
+        .toLowerCase();
+      return haystack.includes(query);
+    })
+    .sort(compareEntries);
 }
 
 function entriesForPlayerOptions() {
-  return manifest.entries.filter((entry) => {
-    if (state.team !== "all" && entry.team !== state.team) return false;
-    if (state.date !== "all" && entry.date !== state.date) return false;
-    return true;
-  });
+  if (!hasScopedSelection()) return [];
+  return manifest.entries
+    .filter((entry) => {
+      if (state.team !== "all" && entry.team !== state.team) return false;
+      if (state.date !== "all" && entry.date !== state.date) return false;
+      return true;
+    })
+    .sort(compareEntries);
 }
 
 function selectedEntry(entries) {
-  if (!entries.length) return null;
-  const found = entries.find((entry) => entry.id === state.selectedId);
+  if (!entries.length) {
+    state.selectedId = null;
+    return null;
+  }
+  const found = state.selectedId ? entries.find((entry) => entry.id === state.selectedId) : null;
   if (found) return found;
-  state.selectedId = entries[0].id;
-  return entries[0];
+  if (state.player !== "all") {
+    const playerEntry = entries.find((entry) => entry.player === state.player);
+    if (playerEntry) {
+      state.selectedId = playerEntry.id;
+      return playerEntry;
+    }
+  }
+  return null;
+}
+
+function scrollToViewer() {
+  requestAnimationFrame(() => {
+    els.viewerPanel.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
 }
 
 function statCell(label, value) {
@@ -152,11 +217,12 @@ function renderTeamFilters() {
     button.className = "team-chip";
     if (!summary.hasData) button.classList.add("disabled");
     if (state.team === team.name) button.classList.add("active");
-    button.innerHTML = `<span>${team.name}</span><span class="count">${summary.count}</span>`;
+    button.innerHTML = `<span>${team.name}</span>`;
     button.disabled = !summary.hasData;
     button.addEventListener("click", () => {
       state.team = team.name;
       state.player = "all";
+      state.selectedId = null;
       rerender();
     });
     els.teamFilters.appendChild(button);
@@ -235,6 +301,108 @@ function renderResultList(entries) {
     button.addEventListener("click", () => {
       state.selectedId = entry.id;
       rerender();
+    });
+    els.resultList.appendChild(button);
+  });
+}
+
+function renderDateOptions() {
+  const dates = availableDates();
+  const enabledDates = new Set(dates.filter((row) => !row.disabled).map((row) => row.date));
+  if (state.date !== "all" && !enabledDates.has(state.date)) {
+    state.date = "all";
+    state.player = "all";
+    state.selectedId = null;
+  }
+
+  els.dateSelect.innerHTML = '<option value="all">日付を選択</option>';
+  dates.forEach(({ date, disabled }) => {
+    const option = document.createElement("option");
+    option.value = date;
+    option.textContent = date;
+    option.disabled = disabled;
+    if (date === state.date) option.selected = true;
+    els.dateSelect.appendChild(option);
+  });
+}
+
+function renderPlayerOptions() {
+  const names = [];
+  const seen = new Set();
+  entriesForPlayerOptions().forEach((entry) => {
+    if (seen.has(entry.player)) return;
+    seen.add(entry.player);
+    names.push(entry.player);
+  });
+
+  if (state.player !== "all" && !seen.has(state.player)) {
+    state.player = "all";
+    state.selectedId = null;
+  }
+
+  els.playerSelect.disabled = !hasScopedSelection() || !names.length;
+  els.playerSelect.innerHTML = '<option value="all">選手を選択</option>';
+  names.forEach((name) => {
+    const option = document.createElement("option");
+    option.value = name;
+    option.textContent = name;
+    if (name === state.player) option.selected = true;
+    els.playerSelect.appendChild(option);
+  });
+}
+
+function renderResultList(entries) {
+  if (!hasScopedSelection()) {
+    els.resultCount.textContent = "0件";
+    els.resultList.innerHTML = `
+      <div class="empty-state slim">
+        <p class="empty-kicker">Select Filters</p>
+        <h2>球団と日付を選択すると選手カードを表示します</h2>
+        <p>先に球団を選び、そのチームが試合をした日付を選択してください。</p>
+      </div>
+    `;
+    return;
+  }
+
+  els.resultCount.textContent = `${entries.length}件`;
+  els.resultList.innerHTML = "";
+
+  if (!entries.length) {
+    const empty = document.createElement("div");
+    empty.className = "empty-state slim";
+    empty.innerHTML = `
+      <p class="empty-kicker">No Results</p>
+      <h2>条件に合うダッシュボードがありません</h2>
+      <p>検索語かフィルタ条件を調整してください。</p>
+    `;
+    els.resultList.appendChild(empty);
+    return;
+  }
+
+  entries.forEach((entry) => {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "result-card";
+    if (entry.id === state.selectedId) button.classList.add("active");
+    button.innerHTML = `
+      <div class="result-meta">
+        <p class="team-date">${entry.team} / ${entry.date}</p>
+        <h3>${entry.player}</h3>
+        <p>${entry.matchup || "-"}</p>
+        <div class="result-stats">
+          ${statCell("打数", entry.statline.ab)}
+          ${statCell("安打", entry.statline.hits)}
+          ${statCell("本塁打", entry.statline.homeRuns)}
+          ${statCell("打点", entry.statline.rbi)}
+        </div>
+        ${pitchPreview(entry.dashboard?.pitchMix)}
+      </div>
+    `;
+    button.addEventListener("click", () => {
+      state.selectedId = entry.id;
+      state.player = entry.player;
+      rerender();
+      scrollToViewer();
     });
     els.resultList.appendChild(button);
   });
@@ -410,12 +578,12 @@ function renderPlateHeatCard(pa, bounds = {}) {
     <article class="heatmap-card plate-heat-card">
       <div class="heatmap-head plate-heat-head">
         <strong>${pa.label}</strong>
-        <div class="heatmap-sides">
-          <span>${leftLabel}</span>
-          <span>${rightLabel}</span>
-        </div>
         <p class="plate-heat-result">${pa.result || "-"}</p>
         <p class="plate-heat-summary">${pa.pitchType || "-"} / ${pa.speed || "-"} / ${pa.pitcher || "-"}</p>
+      </div>
+      <div class="heatmap-sides">
+        <span>${leftLabel}</span>
+        <span>${rightLabel}</span>
       </div>
       <div class="pitch-chart-wrap">
         <svg
@@ -530,19 +698,24 @@ function bindEvents() {
 
   els.clearTeamButton.addEventListener("click", () => {
     state.team = "all";
+    state.date = "all";
     state.player = "all";
+    state.selectedId = null;
     rerender();
   });
 
   els.dateSelect.addEventListener("change", (event) => {
     state.date = event.target.value;
     state.player = "all";
+    state.selectedId = null;
     rerender();
   });
 
   els.playerSelect.addEventListener("change", (event) => {
     state.player = event.target.value;
+    state.selectedId = null;
     rerender();
+    if (state.player !== "all") scrollToViewer();
   });
 }
 

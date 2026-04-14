@@ -31,7 +31,6 @@ const els = {
   playerSelect: document.getElementById("playerSelect"),
   inningsRange: document.getElementById("inningsRange"),
   inningsInput: document.getElementById("inningsInput"),
-  inningsValue: document.getElementById("inningsValue"),
   inningsMaxLabel: document.getElementById("inningsMaxLabel"),
   annualResultCount: document.getElementById("annualResultCount"),
   annualNote: document.getElementById("annualNote"),
@@ -314,8 +313,7 @@ function renderPlayerOptions() {
 }
 
 function renderNote() {
-  const yearLabel = state.year ? `${state.year}年度` : "全年度";
-  els.annualNote.textContent = `${yearLabel}の集計です。FIP は BB をそのまま使用し、ゴロアウト率・フライアウト率は全アウト系イベントに対する割合です。`;
+  els.annualNote.textContent = "";
 }
 
 function renderInningsFilter() {
@@ -326,7 +324,6 @@ function renderInningsFilter() {
   els.inningsRange.max = `${maxOuts}`;
   els.inningsRange.value = `${state.inningsMinOuts}`;
   els.inningsInput.value = formatInningsFromOuts(state.inningsMinOuts);
-  els.inningsValue.textContent = `${formatInningsFromOuts(state.inningsMinOuts)} 以上`;
   els.inningsMaxLabel.textContent = formatInningsFromOuts(maxOuts);
 }
 
@@ -470,7 +467,7 @@ function bindEvents() {
 
 async function init() {
   try {
-    const response = await fetch("./player_totals.json?v=20260413-25", { cache: "no-store" });
+    const response = await fetch("./player_totals.json?v=20260414-31", { cache: "no-store" });
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     state.data = await response.json();
     bindEvents();

@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>成績ダッシュボード | 年度別打者成績</title>
-  <link rel="stylesheet" href="./styles.css?v=20260413-30">
+  <link rel="stylesheet" href="./styles.css?v=20260414-31">
 </head>
 <body>
   <div class="site-shell">
@@ -45,6 +45,19 @@
             <span>選手</span>
             <select id="playerSelect" class="field-select"></select>
           </label>
+          <label class="filter-field innings-filter">
+            <div class="filter-inline">
+              <span>打席数下限</span>
+              <div class="innings-inline">
+                <input id="plateAppearancesInput" class="innings-input" type="number" inputmode="numeric" min="0" step="1" value="0" aria-label="打席数下限入力">
+              </div>
+            </div>
+            <input id="plateAppearancesRange" class="range-input" type="range" min="0" max="0" step="1" value="0">
+            <div class="range-scale">
+              <span>0</span>
+              <span id="plateAppearancesMaxLabel">0</span>
+            </div>
+          </label>
         </div>
       </section>
 
@@ -55,6 +68,6 @@
     </main>
   </div>
 
-  <script src="./annual-batter.js?v=20260413-30"></script>
+  <script src="./annual-batter.js?v=20260414-31"></script>
 </body>
 </html>
