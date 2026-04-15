@@ -430,7 +430,7 @@ select {
 
 .meta-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 12px;
   margin-top: 20px;
 }
@@ -453,6 +453,10 @@ select {
   margin-top: 6px;
   font-size: 22px;
   line-height: 1.25;
+}
+
+.meta-card--wide {
+  grid-column: span 2;
 }
 
 .stat-strip {

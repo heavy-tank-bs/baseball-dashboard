@@ -1265,6 +1265,141 @@ function renderViewer(entry) {
   });
 }
 
+function renderResultList(entries) {
+  if (!hasScopedSelection()) {
+    els.resultCount.textContent = "0件";
+    els.resultList.innerHTML = `
+      <div class="empty-state slim">
+        <p class="empty-kicker">Select Filters</p>
+        <h2>先に球団と日付を選択してください</h2>
+      </div>
+    `;
+    return;
+  }
+
+  els.resultCount.textContent = `${entries.length}件`;
+  els.resultList.innerHTML = "";
+
+  if (!entries.length) {
+    const empty = document.createElement("div");
+    empty.className = "empty-state slim";
+    empty.innerHTML = `
+      <p class="empty-kicker">No Results</p>
+      <h2>条件に合うダッシュボードがありません</h2>
+      <p>検索語かフィルタ条件を調整してください。</p>
+    `;
+    els.resultList.appendChild(empty);
+    return;
+  }
+
+  entries.forEach((entry) => {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "result-card";
+    if (entry.id === state.selectedId) button.classList.add("active");
+    button.innerHTML = `
+      <div class="result-meta">
+        <p class="team-date">${entry.team} / ${entry.date}</p>
+        <h3>${entry.player}</h3>
+        <p>${entry.matchup || ""}</p>
+      </div>
+      <div class="result-stats">
+        ${statCell("投球回", entry.statline?.innings)}
+        ${statCell("球数", entry.statline?.pitches)}
+        ${statCell("奪三振", entry.statline?.k)}
+        ${statCell("与四球", entry.statline?.bb)}
+      </div>
+      ${pitchPreview(entry.dashboard?.pitchMix)}
+    `;
+    button.addEventListener("click", () => {
+      state.selectedId = entry.id;
+      state.player = entry.player;
+      rerender();
+      scrollToViewer();
+    });
+    els.resultList.appendChild(button);
+  });
+}
+
+function renderMetaGrid(entry) {
+  return `
+    <div class="meta-grid">
+      <article class="meta-card">
+        <span>球団</span>
+        <strong>${entry.team}</strong>
+      </article>
+      <article class="meta-card">
+        <span>日付</span>
+        <strong>${entry.dateLabel || entry.date}</strong>
+      </article>
+      <article class="meta-card meta-card--wide">
+        <span>対戦カード</span>
+        <strong>${entry.matchup || "-"}</strong>
+      </article>
+    </div>
+  `;
+}
+
+function renderViewer(entry) {
+  if (!entry) {
+    els.viewerPanel.classList.add("empty");
+    els.viewerPanel.innerHTML = `
+      <div class="empty-state">
+        <p class="empty-kicker">Select Dashboard</p>
+        <h2>投手を選択してください</h2>
+      </div>
+    `;
+    return;
+  }
+
+  normalizePitchSelection(entry, "selectedInningPitch");
+  normalizePitchSelection(entry, "selectedHeatPitch");
+  els.viewerPanel.classList.remove("empty");
+  const tabs = SECTION_META.map(
+    (section) => `
+      <button type="button" class="page-tab ${section.id === state.section ? "active" : ""}" data-section="${section.id}">
+        ${section.label}
+      </button>
+    `
+  ).join("");
+
+  els.viewerPanel.innerHTML = `
+    <div class="viewer-head">
+      <div>
+        <p class="hero-kicker">${entry.team} / ${entry.date}</p>
+        <h2>${entry.player}</h2>
+      </div>
+    </div>
+    ${renderMetaGrid(entry)}
+    ${renderStatStrip(entry.statline)}
+    <div class="page-tabs">${tabs}</div>
+    <div class="native-stage">${renderSection(entry)}</div>
+  `;
+
+  els.viewerPanel.querySelectorAll("[data-section]").forEach((button) => {
+    button.addEventListener("click", () => {
+      state.section = button.dataset.section;
+      renderViewer(entry);
+    });
+  });
+
+  els.viewerPanel.querySelectorAll("[data-heat-pitch]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const pitchType = button.dataset.heatPitch || "all";
+      state.selectedHeatPitch = state.selectedHeatPitch === pitchType ? "all" : pitchType;
+      renderViewer(entry);
+    });
+  });
+
+  els.viewerPanel.querySelectorAll("[data-inning-pitch]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const pitchType = button.dataset.inningPitch || "all";
+      state.selectedInningPitch = state.selectedInningPitch === pitchType ? "all" : pitchType;
+      renderViewer(entry);
+    });
+  });
+}
+
 function rerender() {
   renderTeamFilters();
   renderDateOptions();

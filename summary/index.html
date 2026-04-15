@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>成績ダッシュボード</title>
-  <link rel="stylesheet" href="./styles.css?v=20260414-32">
+  <link rel="stylesheet" href="./styles.css?v=20260415-01">
 </head>
 <body>
   <div class="site-shell">
@@ -28,7 +28,7 @@
           <h2>検索</h2>
           <label class="search-box">
             <span>球団 / 日付 / 選手名 / 対戦カード</span>
-            <input id="searchInput" type="search" placeholder="例: 宮城 / オリックス / 2026-03-27">
+            <input id="searchInput" type="search" placeholder="宮城 / 曽谷 / オリックス / 2026-03-27">
           </label>
         </section>
 
@@ -43,14 +43,14 @@
         <section class="panel-block">
           <h2>日付</h2>
           <select id="dateSelect" class="field-select">
-            <option value="all">すべての日付</option>
+            <option value="all">日付を選択</option>
           </select>
         </section>
 
         <section class="panel-block">
           <h2>選手名</h2>
           <select id="playerSelect" class="field-select">
-            <option value="all">すべての選手</option>
+            <option value="all">選手を選択</option>
           </select>
         </section>
 
@@ -67,15 +67,14 @@
         <section id="viewerPanel" class="dashboard-viewer panel empty">
           <div class="empty-state">
             <p class="empty-kicker">Select Dashboard</p>
-            <h2>左の一覧から投手を選択してください</h2>
-            <p>PNG を貼るのではなく、生成済み JSON の集計内容をそのままサイト上へ描画します。</p>
+            <h2>投手を選択してください</h2>
           </div>
         </section>
       </main>
     </div>
   </div>
 
-  <script src="./manifest.js?v=20260414-32"></script>
-  <script src="./app.js?v=20260414-32"></script>
+  <script src="./manifest.js?v=20260415-01"></script>
+  <script src="./app.js?v=20260415-01"></script>
 </body>
 </html>
