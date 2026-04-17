@@ -600,6 +600,8 @@ select {
   align-items: center;
   justify-content: center;
   min-width: 0;
+  padding-inline: 4px;
+  overflow: hidden;
   color: white;
   font-size: 17px;
   font-weight: 700;
@@ -699,8 +701,8 @@ select {
 }
 
 .pitch-summary-table {
-  width: 1110px;
-  min-width: 1110px;
+  width: 1190px;
+  min-width: 1190px;
 }
 
 .pitch-summary-table th:first-child,
@@ -723,8 +725,8 @@ select {
 }
 
 .inning-table {
-  width: 1120px;
-  min-width: 1120px;
+  width: 1200px;
+  min-width: 1200px;
 }
 
 .inning-table th:nth-child(2),
@@ -1504,10 +1506,17 @@ select {
   .hero-stats,
   .stat-strip,
   .result-stats,
-  .pitch-card-grid,
   .meta-grid,
   .outcome-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .pitch-card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stack-segment {
+    font-size: 15px;
   }
 
   .filters-grid {
@@ -1589,13 +1598,17 @@ select {
   }
 
   .pitch-summary-table {
-    width: 1030px;
-    min-width: 1030px;
+    width: 1130px;
+    min-width: 1130px;
   }
 
   .inning-table {
-    width: 1040px;
-    min-width: 1040px;
+    width: 1140px;
+    min-width: 1140px;
+  }
+
+  .stack-segment {
+    font-size: 14px;
   }
 
   .velocity-chart {
@@ -1633,13 +1646,17 @@ select {
   }
 
   .pitch-summary-table {
-    width: 980px;
-    min-width: 980px;
+    width: 1060px;
+    min-width: 1060px;
   }
 
   .inning-table {
-    width: 990px;
-    min-width: 990px;
+    width: 1070px;
+    min-width: 1070px;
+  }
+
+  .stack-segment {
+    font-size: 13px;
   }
 
   .velocity-chart {

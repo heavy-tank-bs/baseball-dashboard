@@ -447,17 +447,22 @@ function normalizePitchSelection(entry, key) {
   }
 }
 
+function isCompactViewport() {
+  return window.matchMedia("(max-width: 760px)").matches;
+}
+
 function renderPitchMixSection(dashboard) {
   const rows = dashboard.pitchMix || [];
   if (!rows.length) {
     return '<div class="section-empty">球種データがありません。</div>';
   }
 
+  const stackLabelThreshold = isCompactViewport() ? 20 : 12;
   const stacked = rows
     .map(
       (row) => `
         <div class="stack-segment" style="width:${row.ratio}%;background:${row.color}">
-          <span>${row.ratio >= 12 ? `${row.ratio.toFixed(1)}%` : ""}</span>
+          <span>${row.ratio >= stackLabelThreshold ? `${row.ratio.toFixed(1)}%` : ""}</span>
         </div>
       `
     )
@@ -512,6 +517,7 @@ function renderPitchSummaryTable(rows) {
             </span>
           </td>
           <td>${formatSpeed(row.avgSpeed)}</td>
+          <td>${formatSpeed(row.maxSpeed)}</td>
           <td>${row.count}</td>
           <td>${row.whiffCount ?? 0}</td>
           <td>${formatPercent(row.whiff)}</td>
@@ -1400,6 +1406,175 @@ function renderViewer(entry) {
   });
 }
 
+function renderPitchMixSection(dashboard) {
+  const rows = dashboard.pitchMix || [];
+  if (!rows.length) {
+    return '<div class="section-empty">球種データがありません。</div>';
+  }
+
+  const compactViewport = isCompactViewport();
+  const stackLabelThreshold = compactViewport ? 20 : 12;
+  const stacked = rows
+    .map((row) => {
+      const label = row.ratio >= stackLabelThreshold
+        ? `${row.ratio.toFixed(compactViewport ? 0 : 1)}%`
+        : "";
+      return `
+        <div class="stack-segment" style="width:${row.ratio}%;background:${row.color}">
+          <span>${label}</span>
+        </div>
+      `;
+    })
+    .join("");
+
+  const cards = rows
+    .map(
+      (row) => `
+        <article class="pitch-card">
+          <div class="pitch-card-head">
+            <span class="legend-swatch" style="background:${row.color}"></span>
+            <strong>${row.pitchType}</strong>
+          </div>
+          <div class="pitch-card-metrics">
+            <span>${row.count}球</span>
+            <span>${row.ratio.toFixed(1)}%</span>
+            <span>${formatSpeed(row.avgSpeed)}</span>
+          </div>
+        </article>
+      `
+    )
+    .join("");
+
+  return `
+    <div class="section-grid page-one" style="grid-template-columns:1fr">
+      <section class="dashboard-card">
+        <div class="card-head">
+          <h3>球種比率</h3>
+        </div>
+        <div class="stack-bar">${stacked}</div>
+        <div class="pitch-card-grid">${cards}</div>
+      </section>
+      <section class="dashboard-card">
+        <div class="card-head">
+          <h3>球種別サマリ</h3>
+        </div>
+        ${renderPitchSummaryTable(rows)}
+      </section>
+    </div>
+  `;
+}
+
+function renderPitchSummaryTable(rows) {
+  const body = rows
+    .map(
+      (row) => `
+        <tr>
+          <td>
+            <span class="pitch-name-cell">
+              <span class="legend-swatch" style="background:${row.color}"></span>
+              <span>${row.pitchType}</span>
+            </span>
+          </td>
+          <td>${formatSpeed(row.avgSpeed)}</td>
+          <td>${formatSpeed(row.maxSpeed)}</td>
+          <td>${row.count}</td>
+          <td>${row.whiffCount ?? 0}</td>
+          <td>${formatPercent(row.whiff)}</td>
+          <td>${row.atBats ?? 0}</td>
+          <td>${row.singles ?? 0}</td>
+          <td>${row.doubles ?? 0}</td>
+          <td>${row.triples ?? 0}</td>
+          <td>${row.homeRuns ?? 0}</td>
+          <td>${row.grounders ?? 0}</td>
+          <td>${row.flyBalls ?? 0}</td>
+          <td>${row.strikeouts ?? 0}</td>
+          <td>${formatAverage(row.hitRate)}</td>
+        </tr>
+      `
+    )
+    .join("");
+
+  return `
+    <div class="table-scroll">
+      <table class="data-table wide-table pitch-summary-table">
+        <thead>
+          <tr>
+            <th>球種</th>
+            <th>平均球速</th>
+            <th>最高球速</th>
+            <th>球数</th>
+            <th>空振数</th>
+            <th>空振率</th>
+            <th>被打数</th>
+            <th>単打</th>
+            <th>二塁打</th>
+            <th>三塁打</th>
+            <th>本塁打</th>
+            <th>ゴロ</th>
+            <th>フライ</th>
+            <th>三振</th>
+            <th>被打率</th>
+          </tr>
+        </thead>
+        <tbody>${body}</tbody>
+      </table>
+    </div>
+  `;
+}
+
+function renderInningTable(rows) {
+  const body = rows
+    .map(
+      (row) => `
+        <tr>
+          <td>${row.inning}回</td>
+          <td>${formatSpeed(row.avgSpeed)}</td>
+          <td>${formatSpeed(row.maxSpeed)}</td>
+          <td>${row.count}</td>
+          <td>${row.whiffCount ?? 0}</td>
+          <td>${formatPercent(row.whiff)}</td>
+          <td>${row.atBats ?? 0}</td>
+          <td>${row.singles ?? 0}</td>
+          <td>${row.doubles ?? 0}</td>
+          <td>${row.triples ?? 0}</td>
+          <td>${row.homeRuns ?? 0}</td>
+          <td>${row.grounders ?? 0}</td>
+          <td>${row.flyBalls ?? 0}</td>
+          <td>${row.strikeouts ?? 0}</td>
+          <td>${formatAverage(row.hitRate)}</td>
+        </tr>
+      `
+    )
+    .join("");
+
+  return `
+    <div class="table-scroll">
+      <table class="data-table wide-table inning-table">
+      <thead>
+        <tr>
+          <th>回</th>
+          <th>平均球速</th>
+          <th>最高球速</th>
+          <th>球数</th>
+          <th>空振数</th>
+          <th>空振率</th>
+          <th>被打数</th>
+          <th>単打</th>
+          <th>二塁打</th>
+          <th>三塁打</th>
+          <th>本塁打</th>
+          <th>ゴロ</th>
+          <th>フライ</th>
+          <th>三振</th>
+          <th>被打率</th>
+        </tr>
+      </thead>
+      <tbody>${body}</tbody>
+      </table>
+    </div>
+  `;
+}
+
 function rerender() {
   renderTeamFilters();
   renderDateOptions();
@@ -1437,6 +1612,13 @@ function bindEvents() {
     rerender();
     if (state.player !== "all") scrollToViewer();
   });
+
+  const compactViewport = window.matchMedia("(max-width: 760px)");
+  if (typeof compactViewport.addEventListener === "function") {
+    compactViewport.addEventListener("change", rerender);
+  } else if (typeof compactViewport.addListener === "function") {
+    compactViewport.addListener(rerender);
+  }
 }
 
 bindEvents();
