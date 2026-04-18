@@ -644,7 +644,6 @@ function renderViewer(entry) {
       <div class="empty-state">
         <p class="empty-kicker">Select Dashboard</p>
         <h2>左の一覧から打者を選択してください</h2>
-        <p>生成済み JSON をもとに試合別打者成績を表示します。</p>
       </div>
     `;
     return;

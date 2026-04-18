@@ -41,6 +41,7 @@ const state = {
   section: "mix",
   selectedInningPitch: "all",
   selectedHeatPitch: "all",
+  selectedVelocityPitch: "all",
 };
 
 const els = {
@@ -444,6 +445,38 @@ function normalizePitchSelection(entry, key) {
   if (state[key] === "all") return;
   if (!rows.some((row) => row.pitchType === state[key])) {
     state[key] = "all";
+  }
+}
+
+function velocityPitchRows(dashboard = {}) {
+  const velocityRows = dashboard.velocity?.rows || [];
+  if (!velocityRows.length) return [];
+
+  const available = new Set(velocityRows.map((row) => row.pitchType).filter(Boolean));
+  const pitchMixRows = dashboard.pitchMix || [];
+  const pitchMixSet = new Set();
+  const orderedRows = pitchMixRows
+    .filter((row) => {
+      if (!available.has(row.pitchType)) return false;
+      if (pitchMixSet.has(row.pitchType)) return false;
+      pitchMixSet.add(row.pitchType);
+      return true;
+    })
+    .map((row) => ({ pitchType: row.pitchType, color: row.color || "#0F2340" }));
+
+  const fallbackRows = velocityRows
+    .filter((row) => row.pitchType && !pitchMixSet.has(row.pitchType))
+    .filter((row, index, rows) => rows.findIndex((candidate) => candidate.pitchType === row.pitchType) === index)
+    .map((row) => ({ pitchType: row.pitchType, color: row.color || "#0F2340" }));
+
+  return [...orderedRows, ...fallbackRows];
+}
+
+function normalizeVelocitySelection(entry) {
+  const rows = velocityPitchRows(entry?.dashboard);
+  if (state.selectedVelocityPitch === "all") return;
+  if (!rows.some((row) => row.pitchType === state.selectedVelocityPitch)) {
+    state.selectedVelocityPitch = "all";
   }
 }
 
@@ -874,20 +907,21 @@ function renderPitchChartCard(title, points, hand, bounds = {}) {
 }
 
 function renderFinishSection(dashboard) {
+  const legendRows = velocityPitchRows(dashboard);
   return `
-    <div class="section-grid page-three">
+    <div class="section-grid page-one">
       <section class="dashboard-card">
         <div class="card-head">
           <h3>決め球サマリ</h3>
         </div>
         ${renderFinishTable(dashboard.finish)}
-      </section>
-      <section class="dashboard-card">
-        <div class="card-head inline">
-          <h3>球速推移</h3>
-          <span class="inline-label"><span class="legend-swatch navy"></span>ストレート</span>
+        <div class="dashboard-subsection">
+          <div class="card-head inline">
+            <h3>球速推移</h3>
+          </div>
+          ${legendRows.length > 1 ? renderPitchFilterLegend(legendRows, state.selectedVelocityPitch, "velocity") : ""}
+          ${renderVelocityChart(dashboard.velocity, state.selectedVelocityPitch)}
         </div>
-        ${renderVelocityChart(dashboard.velocity)}
       </section>
     </div>
   `;
@@ -925,7 +959,7 @@ function renderFinishTable(finish = {}) {
           <th>球種</th>
           <th>球数</th>
           <th>割合</th>
-          <th>見逃し</th>
+          <th>見逃</th>
           <th>空振</th>
         </tr>
       </thead>
@@ -934,28 +968,40 @@ function renderFinishTable(finish = {}) {
   `;
 }
 
-function renderVelocityChart(velocity = {}) {
-  const rows = velocity.rows || [];
+function renderVelocityChart(velocity = {}, selectedPitch = "all") {
+  const allRows = velocity.rows || [];
+  const rows =
+    selectedPitch === "all"
+      ? allRows
+      : allRows.filter((row) => row.pitchType === selectedPitch);
   if (!rows.length) {
-    return '<div class="section-empty">ストレートの球速データがありません。</div>';
+    return '<div class="section-empty">球速推移データがありません。</div>';
   }
 
   const width = 920;
   const height = 320;
   const margin = { top: 24, right: 32, bottom: 42, left: 54 };
-  const speeds = rows.map((row) => row.speed);
+  const speedDomain = allRows.length ? allRows : rows;
+  const speeds = speedDomain
+    .map((row) => Number(row.speed))
+    .filter((speed) => Number.isFinite(speed));
+  if (!speeds.length) {
+    return '<div class="section-empty">球速推移データがありません。</div>';
+  }
+
   const minSpeed = Math.min(...speeds);
   const maxSpeed = Math.max(...speeds);
   const range = Math.max(maxSpeed - minSpeed, 1);
-  const maxPitchNo = Math.max(...rows.map((row) => row.pitchNo), 1);
-  const baseColor = rows[0].color || "#0F2340";
+  const maxPitchNo = Math.max(...(allRows.length ? allRows : rows).map((row) => Number(row.pitchNo) || 0), 1);
+  const lineColor = selectedPitch === "all" ? "#0F2340" : rows[0].color || "#0F2340";
+  const chartLabel = selectedPitch === "all" ? "球速推移" : `${selectedPitch}の球速推移`;
 
-  const x = (pitchNo) => margin.left + ((pitchNo - 1) / Math.max(maxPitchNo - 1, 1)) * (width - margin.left - margin.right);
-  const y = (speed) => height - margin.bottom - ((speed - minSpeed) / range) * (height - margin.top - margin.bottom);
+  const x = (pitchNo) => margin.left + ((Number(pitchNo) - 1) / Math.max(maxPitchNo - 1, 1)) * (width - margin.left - margin.right);
+  const y = (speed) => height - margin.bottom - ((Number(speed) - minSpeed) / range) * (height - margin.top - margin.bottom);
 
   const points = rows.map((row) => `${x(row.pitchNo)},${y(row.speed)}`).join(" ");
   const circles = rows
-    .map((row) => `<circle cx="${x(row.pitchNo)}" cy="${y(row.speed)}" r="4" fill="${baseColor}"></circle>`)
+    .map((row) => `<circle cx="${x(row.pitchNo)}" cy="${y(row.speed)}" r="4" fill="${row.color || lineColor}"></circle>`)
     .join("");
 
   const gridValues = Array.from({ length: 4 }, (_, idx) => minSpeed + (range * idx) / 3);
@@ -982,12 +1028,12 @@ function renderVelocityChart(velocity = {}) {
   return `
     <div class="velocity-chart-wrap">
       <div class="velocity-chart-scroll">
-      <svg viewBox="0 0 ${width} ${height}" class="velocity-chart" role="img" aria-label="球速推移">
+      <svg viewBox="0 0 ${width} ${height}" class="velocity-chart" role="img" aria-label="${chartLabel}">
         ${gridLines}
         ${markers}
-        <polyline points="${points}" fill="none" stroke="${baseColor}" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></polyline>
+        ${points ? `<polyline points="${points}" fill="none" stroke="${lineColor}" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></polyline>` : ""}
         ${circles}
-        <text x="${width / 2}" y="${height - 10}" class="chart-axis chart-axis-bottom">投球番号</text>
+        <text x="${width / 2}" y="${height - 10}" class="chart-axis chart-axis-bottom">投球順</text>
       </svg>
       </div>
     </div>
@@ -1042,28 +1088,40 @@ function renderCountSection(dashboard) {
   `;
 }
 
-function renderVelocityChart(velocity = {}) {
-  const rows = velocity.rows || [];
+function renderVelocityChart(velocity = {}, selectedPitch = "all") {
+  const allRows = velocity.rows || [];
+  const rows =
+    selectedPitch === "all"
+      ? allRows
+      : allRows.filter((row) => row.pitchType === selectedPitch);
   if (!rows.length) {
-    return '<div class="section-empty">ストレートの球速推移データがありません。</div>';
+    return '<div class="section-empty">球速推移データがありません。</div>';
   }
 
   const width = 920;
   const height = 320;
   const margin = { top: 24, right: 32, bottom: 42, left: 54 };
-  const speeds = rows.map((row) => row.speed);
+  const speedDomain = allRows.length ? allRows : rows;
+  const speeds = speedDomain
+    .map((row) => Number(row.speed))
+    .filter((speed) => Number.isFinite(speed));
+  if (!speeds.length) {
+    return '<div class="section-empty">球速推移データがありません。</div>';
+  }
+
   const minSpeed = Math.min(...speeds);
   const maxSpeed = Math.max(...speeds);
   const range = Math.max(maxSpeed - minSpeed, 1);
-  const maxPitchNo = Math.max(...rows.map((row) => row.pitchNo), 1);
-  const baseColor = rows[0].color || "#0F2340";
+  const maxPitchNo = Math.max(...(allRows.length ? allRows : rows).map((row) => Number(row.pitchNo) || 0), 1);
+  const lineColor = selectedPitch === "all" ? "#0F2340" : rows[0].color || "#0F2340";
+  const chartLabel = selectedPitch === "all" ? "球速推移" : `${selectedPitch}の球速推移`;
 
-  const x = (pitchNo) => margin.left + ((pitchNo - 1) / Math.max(maxPitchNo - 1, 1)) * (width - margin.left - margin.right);
-  const y = (speed) => height - margin.bottom - ((speed - minSpeed) / range) * (height - margin.top - margin.bottom);
+  const x = (pitchNo) => margin.left + ((Number(pitchNo) - 1) / Math.max(maxPitchNo - 1, 1)) * (width - margin.left - margin.right);
+  const y = (speed) => height - margin.bottom - ((Number(speed) - minSpeed) / range) * (height - margin.top - margin.bottom);
 
   const points = rows.map((row) => `${x(row.pitchNo)},${y(row.speed)}`).join(" ");
   const circles = rows
-    .map((row) => `<circle cx="${x(row.pitchNo)}" cy="${y(row.speed)}" r="4" fill="${baseColor}"></circle>`)
+    .map((row) => `<circle cx="${x(row.pitchNo)}" cy="${y(row.speed)}" r="4" fill="${row.color || lineColor}"></circle>`)
     .join("");
 
   const gridValues = Array.from({ length: 4 }, (_, idx) => minSpeed + (range * idx) / 3);
@@ -1090,11 +1148,12 @@ function renderVelocityChart(velocity = {}) {
   return `
     <div class="velocity-chart-wrap">
       <div class="velocity-chart-scroll">
-      <svg viewBox="0 0 ${width} ${height}" class="velocity-chart" role="img" aria-label="球速推移">
+      <svg viewBox="0 0 ${width} ${height}" class="velocity-chart" role="img" aria-label="${chartLabel}">
         ${gridLines}
         ${markers}
-        <polyline points="${points}" fill="none" stroke="${baseColor}" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></polyline>
+        ${points ? `<polyline points="${points}" fill="none" stroke="${lineColor}" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></polyline>` : ""}
         ${circles}
+        <text x="${width / 2}" y="${height - 10}" class="chart-axis chart-axis-bottom">投球順</text>
       </svg>
       </div>
     </div>
@@ -1225,6 +1284,7 @@ function renderViewer(entry) {
 
   normalizePitchSelection(entry, "selectedInningPitch");
   normalizePitchSelection(entry, "selectedHeatPitch");
+  normalizeVelocitySelection(entry);
   els.viewerPanel.classList.remove("empty");
   const tabs = SECTION_META.map(
     (section) => `
@@ -1266,6 +1326,14 @@ function renderViewer(entry) {
     button.addEventListener("click", () => {
       const pitchType = button.dataset.inningPitch || "all";
       state.selectedInningPitch = state.selectedInningPitch === pitchType ? "all" : pitchType;
+      renderViewer(entry);
+    });
+  });
+
+  els.viewerPanel.querySelectorAll("[data-velocity-pitch]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const pitchType = button.dataset.velocityPitch || "all";
+      state.selectedVelocityPitch = state.selectedVelocityPitch === pitchType ? "all" : pitchType;
       renderViewer(entry);
     });
   });
@@ -1360,6 +1428,7 @@ function renderViewer(entry) {
 
   normalizePitchSelection(entry, "selectedInningPitch");
   normalizePitchSelection(entry, "selectedHeatPitch");
+  normalizeVelocitySelection(entry);
   els.viewerPanel.classList.remove("empty");
   const tabs = SECTION_META.map(
     (section) => `
@@ -1401,6 +1470,14 @@ function renderViewer(entry) {
     button.addEventListener("click", () => {
       const pitchType = button.dataset.inningPitch || "all";
       state.selectedInningPitch = state.selectedInningPitch === pitchType ? "all" : pitchType;
+      renderViewer(entry);
+    });
+  });
+
+  els.viewerPanel.querySelectorAll("[data-velocity-pitch]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const pitchType = button.dataset.velocityPitch || "all";
+      state.selectedVelocityPitch = state.selectedVelocityPitch === pitchType ? "all" : pitchType;
       renderViewer(entry);
     });
   });

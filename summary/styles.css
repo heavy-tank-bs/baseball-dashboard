@@ -566,6 +566,12 @@ select {
   line-height: 1.1;
 }
 
+.dashboard-subsection {
+  margin-top: 28px;
+  padding-top: 28px;
+  border-top: 1px solid rgba(15, 35, 64, 0.08);
+}
+
 .inline-label {
   display: inline-flex;
   align-items: center;
@@ -1264,6 +1270,17 @@ select {
   background: var(--card-strong);
 }
 
+.annual-table th {
+  position: sticky;
+  top: 0;
+  z-index: 3;
+  background: var(--card-strong);
+}
+
+.annual-table th:first-child {
+  z-index: 5;
+}
+
 .annual-table th:nth-child(3),
 .annual-table td:nth-child(3),
 .annual-table th:nth-child(4),
@@ -1360,6 +1377,17 @@ select {
 .annual-batter-table th:first-child {
   z-index: 4;
   background: var(--card-strong);
+}
+
+.annual-batter-table th {
+  position: sticky;
+  top: 0;
+  z-index: 3;
+  background: var(--card-strong);
+}
+
+.annual-batter-table th:first-child {
+  z-index: 5;
 }
 
 .annual-batter-table th:nth-child(3),
