@@ -395,7 +395,7 @@ function renderTable() {
     .join("");
 
   els.annualTableWrap.innerHTML = `
-    <div class="table-scroll">
+    <div class="table-scroll annual-table-scroll">
       <table class="data-table annual-table">
         <thead>
           <tr>${SORT_COLUMNS.map((column) => renderSortHeader(column)).join("")}</tr>
@@ -467,7 +467,7 @@ function bindEvents() {
 
 async function init() {
   try {
-    const response = await fetch("./player_totals.json?v=20260414-31", { cache: "no-store" });
+    const response = await fetch("./player_totals.json?v=20260420-01", { cache: "no-store" });
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     state.data = await response.json();
     bindEvents();

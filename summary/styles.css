@@ -655,6 +655,12 @@ select {
   padding-bottom: 4px;
 }
 
+.annual-table-scroll {
+  position: relative;
+  max-height: min(72vh, 960px);
+  overflow: auto;
+}
+
 .wide-table {
   width: 100%;
   min-width: 100%;
