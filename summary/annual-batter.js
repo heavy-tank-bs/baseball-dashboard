@@ -110,6 +110,19 @@ function playerValue(row) {
   return row.batterId || `${row.team}::${row.player}`;
 }
 
+function playerCompareHref(row) {
+  const params = new URLSearchParams({
+    type: "batter",
+    year: row.year || "",
+    player: row.player || "",
+    team: row.team || "",
+  });
+  if (row.batterId) {
+    params.set("playerId", row.batterId);
+  }
+  return `./compare.html?${params.toString()}`;
+}
+
 function compareDefault(a, b) {
   if ((b.atBats || 0) !== (a.atBats || 0)) return (b.atBats || 0) - (a.atBats || 0);
   if ((b.games || 0) !== (a.games || 0)) return (b.games || 0) - (a.games || 0);
@@ -344,7 +357,7 @@ function renderTable() {
     .map(
       (row) => `
         <tr>
-          <td>${escapeHtml(row.player)}</td>
+          <td><a class="annual-player-link" href="${playerCompareHref(row)}">${escapeHtml(row.player)}</a></td>
           <td>${escapeHtml(row.team)}</td>
           <td>${row.games}</td>
           <td>${formatAverage(row.battingAverage)}</td>
@@ -446,7 +459,7 @@ function bindEvents() {
 
 async function init() {
   try {
-    const response = await fetch("./batter_totals.json?v=20260421-02", { cache: "no-store" });
+    const response = await fetch("./batter_totals.json?v=20260421-04", { cache: "no-store" });
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     state.data = await response.json();
     bindEvents();

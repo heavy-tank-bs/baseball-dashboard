@@ -135,6 +135,19 @@ function playerValue(row) {
   return row.pitcherId || `${row.team}::${row.player}`;
 }
 
+function playerCompareHref(row) {
+  const params = new URLSearchParams({
+    type: "pitcher",
+    year: row.year || "",
+    player: row.player || "",
+    team: row.team || "",
+  });
+  if (row.pitcherId) {
+    params.set("playerId", row.pitcherId);
+  }
+  return `./compare.html?${params.toString()}`;
+}
+
 function compareDefault(a, b) {
   if (b.inningsOuts !== a.inningsOuts) return b.inningsOuts - a.inningsOuts;
   if ((b.games || 0) !== (a.games || 0)) return (b.games || 0) - (a.games || 0);
@@ -376,7 +389,7 @@ function renderTable() {
     .map(
       (row) => `
         <tr>
-          <td>${escapeHtml(row.player)}</td>
+          <td><a class="annual-player-link" href="${playerCompareHref(row)}">${escapeHtml(row.player)}</a></td>
           <td>${escapeHtml(row.team)}</td>
           <td>${row.games}</td>
           <td>${row.wins ?? 0}</td>
@@ -477,7 +490,7 @@ function bindEvents() {
 
 async function init() {
   try {
-    const response = await fetch("./player_totals.json?v=20260421-03", { cache: "no-store" });
+    const response = await fetch("./player_totals.json?v=20260421-04", { cache: "no-store" });
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     state.data = await response.json();
     bindEvents();

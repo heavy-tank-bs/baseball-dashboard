@@ -1231,6 +1231,152 @@ select {
   line-height: 1.5;
 }
 
+.annual-player-link {
+  color: var(--navy);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.annual-player-link:hover {
+  text-decoration: underline;
+}
+
+.compare-subtitle {
+  margin: 8px 0 0;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.compare-subtitle--muted {
+  margin-top: 6px;
+}
+
+.compare-head {
+  align-items: flex-start;
+}
+
+.compare-back-link {
+  flex: none;
+}
+
+.compare-toggle-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.compare-toggle {
+  padding: 10px 14px;
+  border: 1px solid rgba(15, 35, 64, 0.12);
+  border-radius: 999px;
+  background: #f7f3ea;
+  color: var(--text);
+  cursor: pointer;
+  transition: transform 120ms ease, border-color 120ms ease, background 120ms ease, color 120ms ease;
+}
+
+.compare-toggle:hover {
+  transform: translateY(-1px);
+  border-color: rgba(15, 35, 64, 0.28);
+}
+
+.compare-toggle.active {
+  background: var(--navy);
+  border-color: var(--navy);
+  color: white;
+}
+
+.comparison-card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.compare-card {
+  padding: 20px;
+  border: 1px solid rgba(17, 56, 49, 0.12);
+  border-radius: 24px;
+  box-shadow: 0 18px 40px rgba(14, 32, 30, 0.08);
+  background: rgba(255, 252, 246, 0.92);
+}
+
+.compare-card > span {
+  display: block;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.compare-values {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin: 16px 0 10px;
+}
+
+.compare-values strong {
+  font-size: 1.8rem;
+  color: var(--text);
+}
+
+.compare-arrow {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.compare-arrow--up,
+.compare-delta--up {
+  color: #19734a;
+}
+
+.compare-arrow--down,
+.compare-delta--down {
+  color: #c04436;
+}
+
+.compare-arrow--flat,
+.compare-delta--flat {
+  color: #93a09d;
+}
+
+.compare-delta {
+  margin: 0;
+  font-weight: 700;
+}
+
+.compare-season-card.empty {
+  opacity: 0.9;
+}
+
+.compare-season-list {
+  display: grid;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.compare-season-item {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.compare-season-item span {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.compare-season-item strong {
+  margin: 0;
+  font-size: 16px;
+  text-align: right;
+}
+
+.compare-empty {
+  min-height: 180px;
+}
+
 .annual-note {
   margin: 0 0 18px;
   color: var(--muted);
@@ -1517,7 +1663,8 @@ select {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
-  .meta-grid {
+  .meta-grid,
+  .comparison-card-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
@@ -1543,7 +1690,8 @@ select {
   .stat-strip,
   .result-stats,
   .meta-grid,
-  .outcome-grid {
+  .outcome-grid,
+  .comparison-card-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -1573,6 +1721,13 @@ select {
     grid-template-columns: 1fr;
   }
 
+  .compare-head,
+  .compare-values,
+  .compare-season-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
   .hero-nav {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     width: 100%;
@@ -1582,6 +1737,10 @@ select {
     min-height: 52px;
     padding: 10px 12px;
     font-size: 14px;
+  }
+
+  .comparison-card-grid {
+    grid-template-columns: 1fr;
   }
 
   .page-tabs {

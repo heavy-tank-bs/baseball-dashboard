@@ -95,7 +95,7 @@ function compareTeam(a, b) {
 }
 
 function hasScopedSelection() {
-  return state.team !== "all" && state.date !== "all";
+  return state.team !== "all";
 }
 
 function entryOrder(entry) {
@@ -340,7 +340,7 @@ function renderPlayerOptions() {
     state.selectedId = null;
   }
 
-  els.playerSelect.disabled = !hasScopedSelection() || !names.length;
+  els.playerSelect.disabled = state.team === "all" || !names.length;
   els.playerSelect.innerHTML = '<option value="all">選手を選択</option>';
   names.forEach((name) => {
     const option = document.createElement("option");
@@ -425,6 +425,25 @@ function renderMetaGrid(entry) {
       </article>
       <article class="meta-card">
         <span>対戦カード</span>
+        <strong>${entry.matchup || "-"}</strong>
+      </article>
+    </div>
+  `;
+}
+
+function renderMetaGrid(entry) {
+  return `
+    <div class="meta-grid">
+      <article class="meta-card">
+        <span>逅・屮</span>
+        <strong>${entry.team}</strong>
+      </article>
+      <article class="meta-card">
+        <span>譌･莉・/span>
+        <strong>${entry.dateLabel || entry.date}</strong>
+      </article>
+      <article class="meta-card meta-card--wide">
+        <span>蟇ｾ謌ｦ繧ｫ繝ｼ繝・/span>
         <strong>${entry.matchup || "-"}</strong>
       </article>
     </div>

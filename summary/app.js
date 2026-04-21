@@ -114,7 +114,7 @@ function compareTeam(a, b) {
 }
 
 function hasScopedSelection() {
-  return state.team !== "all" && state.date !== "all";
+  return state.team !== "all";
 }
 
 function entryOrder(entry) {
@@ -359,7 +359,7 @@ function renderPlayerOptions() {
     state.selectedId = null;
   }
 
-  els.playerSelect.disabled = !hasScopedSelection() || !names.length;
+  els.playerSelect.disabled = state.team === "all" || !names.length;
   els.playerSelect.innerHTML = '<option value="all">選手を選択</option>';
   names.forEach((name) => {
     const option = document.createElement("option");

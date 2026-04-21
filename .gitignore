@@ -12,11 +12,13 @@
 !/summary/batter.html
 !/summary/annual.html
 !/summary/annual-batter.html
+!/summary/compare.html
 !/summary/styles.css
 !/summary/app.js
 !/summary/batter.js
 !/summary/annual.js
 !/summary/annual-batter.js
+!/summary/compare.js
 !/summary/build_manifest.py
 !/summary/manifest.js
 !/summary/batter_manifest.js
