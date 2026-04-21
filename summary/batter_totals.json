@@ -1,6 +1,54 @@
 {
-  "updatedAt": "2026-04-20T00:09:33",
+  "updatedAt": "2026-04-21T10:21:38",
   "source": "Sports Navi game batting tables for games present under generated/*/*/*-dashboard.json",
+  "notes": {
+    "uBB": "Unintentional walks are derived from generated plate-appearance results when an intentional-walk label is present.",
+    "obp": "OBP remains the official BB-based formula rather than a uBB-based variant.",
+    "woba": "wOBA は 2026 年の暫定係数で算出しています。NPB 向けの年次係数が固まるまでは暫定値として扱ってください。",
+    "wrcPlus": "wRC+ は対象試合の league R/PA と team park factor の半分補正を使った暫定値です。"
+  },
+  "metricContexts": {
+    "wobaConstants": [
+      {
+        "year": "2026",
+        "constantsYear": "2026",
+        "source": "https://www.fangraphs.com/tools/guts",
+        "provisional": true,
+        "wOBA": 0.318,
+        "wOBAScale": 1.28,
+        "wBB": 0.711,
+        "wHBP": 0.743,
+        "w1B": 0.909,
+        "w2B": 1.293,
+        "w3B": 1.638,
+        "wHR": 2.11
+      }
+    ],
+    "leagues": [
+      {
+        "year": "2026",
+        "league": "セ",
+        "plateAppearances": 4074,
+        "runs": 382,
+        "runsPerPlateAppearance": 0.094,
+        "woba": 0.297,
+        "wobaScale": 1.28,
+        "constantsYear": "2026",
+        "provisional": true
+      },
+      {
+        "year": "2026",
+        "league": "パ",
+        "plateAppearances": 4559,
+        "runs": 471,
+        "runsPerPlateAppearance": 0.103,
+        "woba": 0.305,
+        "wobaScale": 1.28,
+        "constantsYear": "2026",
+        "provisional": true
+      }
+    ]
+  },
   "years": [
     "2026"
   ],
@@ -25,6 +73,8 @@
       "homeRuns": 0,
       "runsBattedIn": 1,
       "walks": 1,
+      "unintentionalWalks": 1,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -36,7 +86,12 @@
       "sluggingPercentage": 0.0,
       "isoPower": 0.0,
       "babip": 0.0,
-      "ops": 0.143
+      "ops": 0.143,
+      "woba": 0.102,
+      "wrc": -0.4,
+      "wrcPlus": -60.9,
+      "parkFactor": 96.0,
+      "effectiveParkFactor": 98.0
     },
     {
       "year": "2026",
@@ -58,6 +113,8 @@
       "homeRuns": 3,
       "runsBattedIn": 8,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 1,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -69,7 +126,12 @@
       "sluggingPercentage": 0.44,
       "isoPower": 0.173,
       "babip": 0.354,
-      "ops": 0.716
+      "ops": 0.716,
+      "woba": 0.317,
+      "wrc": 8.3,
+      "wrcPlus": 118.2,
+      "parkFactor": 96.0,
+      "effectiveParkFactor": 98.0
     },
     {
       "year": "2026",
@@ -91,6 +153,8 @@
       "homeRuns": 5,
       "runsBattedIn": 12,
       "walks": 8,
+      "unintentionalWalks": 8,
+      "intentionalWalks": 0,
       "hitByPitch": 1,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -102,7 +166,12 @@
       "sluggingPercentage": 0.547,
       "isoPower": 0.312,
       "babip": 0.303,
-      "ops": 0.876
+      "ops": 0.876,
+      "woba": 0.383,
+      "wrc": 11.8,
+      "wrcPlus": 173.9,
+      "parkFactor": 96.0,
+      "effectiveParkFactor": 98.0
     },
     {
       "year": "2026",
@@ -124,6 +193,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -135,7 +206,12 @@
       "sluggingPercentage": 0.0,
       "isoPower": 0.0,
       "babip": null,
-      "ops": 0.0
+      "ops": 0.0,
+      "woba": 0.0,
+      "wrc": -0.3,
+      "wrcPlus": -145.5,
+      "parkFactor": 96.0,
+      "effectiveParkFactor": 98.0
     },
     {
       "year": "2026",
@@ -157,6 +233,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -168,7 +246,12 @@
       "sluggingPercentage": 0.0,
       "isoPower": 0.0,
       "babip": 0.0,
-      "ops": 0.0
+      "ops": 0.0,
+      "woba": 0.0,
+      "wrc": -0.4,
+      "wrcPlus": -145.5,
+      "parkFactor": 96.0,
+      "effectiveParkFactor": 98.0
     },
     {
       "year": "2026",
@@ -190,6 +273,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -201,7 +286,12 @@
       "sluggingPercentage": null,
       "isoPower": null,
       "babip": null,
-      "ops": null
+      "ops": null,
+      "woba": null,
+      "wrc": null,
+      "wrcPlus": null,
+      "parkFactor": null,
+      "effectiveParkFactor": null
     },
     {
       "year": "2026",
@@ -223,6 +313,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -234,7 +326,12 @@
       "sluggingPercentage": null,
       "isoPower": null,
       "babip": null,
-      "ops": null
+      "ops": null,
+      "woba": null,
+      "wrc": null,
+      "wrcPlus": null,
+      "parkFactor": null,
+      "effectiveParkFactor": null
     },
     {
       "year": "2026",
@@ -256,6 +353,8 @@
       "homeRuns": 0,
       "runsBattedIn": 1,
       "walks": 3,
+      "unintentionalWalks": 3,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -267,7 +366,12 @@
       "sluggingPercentage": 0.176,
       "isoPower": 0.029,
       "babip": 0.179,
-      "ops": 0.393
+      "ops": 0.393,
+      "woba": 0.191,
+      "wrc": 0.4,
+      "wrcPlus": 13.5,
+      "parkFactor": 96.0,
+      "effectiveParkFactor": 98.0
     },
     {
       "year": "2026",
@@ -289,6 +393,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -300,7 +406,12 @@
       "sluggingPercentage": null,
       "isoPower": null,
       "babip": null,
-      "ops": null
+      "ops": null,
+      "woba": null,
+      "wrc": null,
+      "wrcPlus": null,
+      "parkFactor": null,
+      "effectiveParkFactor": null
     },
     {
       "year": "2026",
@@ -322,6 +433,8 @@
       "homeRuns": 0,
       "runsBattedIn": 4,
       "walks": 2,
+      "unintentionalWalks": 2,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -333,7 +446,12 @@
       "sluggingPercentage": 0.143,
       "isoPower": 0.071,
       "babip": 0.083,
-      "ops": 0.33
+      "ops": 0.33,
+      "woba": 0.17,
+      "wrc": -0.1,
+      "wrcPlus": -4.2,
+      "parkFactor": 96.0,
+      "effectiveParkFactor": 98.0
     },
     {
       "year": "2026",
@@ -355,6 +473,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -366,7 +486,12 @@
       "sluggingPercentage": 0.0,
       "isoPower": 0.0,
       "babip": 0.0,
-      "ops": 0.0
+      "ops": 0.0,
+      "woba": 0.0,
+      "wrc": -0.7,
+      "wrcPlus": -145.5,
+      "parkFactor": 96.0,
+      "effectiveParkFactor": 98.0
     },
     {
       "year": "2026",
@@ -388,6 +513,8 @@
       "homeRuns": 2,
       "runsBattedIn": 4,
       "walks": 2,
+      "unintentionalWalks": 2,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -399,7 +526,12 @@
       "sluggingPercentage": 0.512,
       "isoPower": 0.209,
       "babip": 0.407,
-      "ops": 0.845
+      "ops": 0.845,
+      "woba": 0.373,
+      "wrc": 6.9,
+      "wrcPlus": 165.4,
+      "parkFactor": 96.0,
+      "effectiveParkFactor": 98.0
     },
     {
       "year": "2026",
@@ -421,6 +553,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -432,7 +566,12 @@
       "sluggingPercentage": 0.0,
       "isoPower": 0.0,
       "babip": 0.0,
-      "ops": 0.0
+      "ops": 0.0,
+      "woba": 0.0,
+      "wrc": -0.6,
+      "wrcPlus": -145.5,
+      "parkFactor": 96.0,
+      "effectiveParkFactor": 98.0
     },
     {
       "year": "2026",
@@ -454,6 +593,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -465,7 +606,12 @@
       "sluggingPercentage": null,
       "isoPower": null,
       "babip": null,
-      "ops": null
+      "ops": null,
+      "woba": null,
+      "wrc": null,
+      "wrcPlus": null,
+      "parkFactor": null,
+      "effectiveParkFactor": null
     },
     {
       "year": "2026",
@@ -487,6 +633,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -498,7 +646,12 @@
       "sluggingPercentage": null,
       "isoPower": null,
       "babip": null,
-      "ops": null
+      "ops": null,
+      "woba": null,
+      "wrc": null,
+      "wrcPlus": null,
+      "parkFactor": null,
+      "effectiveParkFactor": null
     },
     {
       "year": "2026",
@@ -520,6 +673,8 @@
       "homeRuns": 1,
       "runsBattedIn": 1,
       "walks": 4,
+      "unintentionalWalks": 4,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -531,7 +686,12 @@
       "sluggingPercentage": 0.222,
       "isoPower": 0.111,
       "babip": 0.095,
-      "ops": 0.448
+      "ops": 0.448,
+      "woba": 0.218,
+      "wrc": 1.0,
+      "wrcPlus": 36.5,
+      "parkFactor": 96.0,
+      "effectiveParkFactor": 98.0
     },
     {
       "year": "2026",
@@ -553,6 +713,8 @@
       "homeRuns": 1,
       "runsBattedIn": 7,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -564,7 +726,12 @@
       "sluggingPercentage": 0.469,
       "isoPower": 0.163,
       "babip": 0.35,
-      "ops": 0.776
+      "ops": 0.776,
+      "woba": 0.342,
+      "wrc": 6.3,
+      "wrcPlus": 139.4,
+      "parkFactor": 96.0,
+      "effectiveParkFactor": 98.0
     },
     {
       "year": "2026",
@@ -586,6 +753,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -597,7 +766,12 @@
       "sluggingPercentage": null,
       "isoPower": null,
       "babip": null,
-      "ops": null
+      "ops": null,
+      "woba": null,
+      "wrc": null,
+      "wrcPlus": null,
+      "parkFactor": null,
+      "effectiveParkFactor": null
     },
     {
       "year": "2026",
@@ -619,6 +793,8 @@
       "homeRuns": 2,
       "runsBattedIn": 6,
       "walks": 2,
+      "unintentionalWalks": 2,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -630,7 +806,12 @@
       "sluggingPercentage": 0.933,
       "isoPower": 0.4,
       "babip": 0.667,
-      "ops": 1.522
+      "ops": 1.522,
+      "woba": 0.653,
+      "wrc": 6.3,
+      "wrcPlus": 398.3,
+      "parkFactor": 96.0,
+      "effectiveParkFactor": 98.0
     },
     {
       "year": "2026",
@@ -652,6 +833,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -663,7 +846,12 @@
       "sluggingPercentage": 0.5,
       "isoPower": 0.0,
       "babip": 0.5,
-      "ops": 1.0
+      "ops": 1.0,
+      "woba": 0.455,
+      "wrc": 0.4,
+      "wrcPlus": 233.1,
+      "parkFactor": 96.0,
+      "effectiveParkFactor": 98.0
     },
     {
       "year": "2026",
@@ -685,6 +873,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -696,7 +886,12 @@
       "sluggingPercentage": null,
       "isoPower": null,
       "babip": null,
-      "ops": null
+      "ops": null,
+      "woba": null,
+      "wrc": null,
+      "wrcPlus": null,
+      "parkFactor": null,
+      "effectiveParkFactor": null
     },
     {
       "year": "2026",
@@ -718,6 +913,8 @@
       "homeRuns": 1,
       "runsBattedIn": 2,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -729,7 +926,12 @@
       "sluggingPercentage": 0.538,
       "isoPower": 0.308,
       "babip": 0.333,
-      "ops": 0.769
+      "ops": 0.769,
+      "woba": 0.332,
+      "wrc": 1.6,
+      "wrcPlus": 130.8,
+      "parkFactor": 96.0,
+      "effectiveParkFactor": 98.0
     },
     {
       "year": "2026",
@@ -751,6 +953,8 @@
       "homeRuns": 0,
       "runsBattedIn": 4,
       "walks": 1,
+      "unintentionalWalks": 1,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 1,
       "sacFlies": 2,
@@ -762,7 +966,12 @@
       "sluggingPercentage": 0.171,
       "isoPower": 0.0,
       "babip": 0.2,
-      "ops": 0.353
+      "ops": 0.353,
+      "woba": 0.161,
+      "wrc": -0.6,
+      "wrcPlus": -11.6,
+      "parkFactor": 96.0,
+      "effectiveParkFactor": 98.0
     },
     {
       "year": "2026",
@@ -784,6 +993,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -795,7 +1006,12 @@
       "sluggingPercentage": 0.1,
       "isoPower": 0.0,
       "babip": 0.125,
-      "ops": 0.2
+      "ops": 0.2,
+      "woba": 0.091,
+      "wrc": -0.7,
+      "wrcPlus": -69.8,
+      "parkFactor": 96.0,
+      "effectiveParkFactor": 98.0
     },
     {
       "year": "2026",
@@ -817,6 +1033,8 @@
       "homeRuns": 0,
       "runsBattedIn": 2,
       "walks": 4,
+      "unintentionalWalks": 4,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 2,
       "sacFlies": 0,
@@ -828,7 +1046,12 @@
       "sluggingPercentage": 0.265,
       "isoPower": 0.02,
       "babip": 0.308,
-      "ops": 0.567
+      "ops": 0.567,
+      "woba": 0.267,
+      "wrc": 3.9,
+      "wrcPlus": 76.7,
+      "parkFactor": 96.0,
+      "effectiveParkFactor": 98.0
     },
     {
       "year": "2026",
@@ -850,6 +1073,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -861,7 +1086,12 @@
       "sluggingPercentage": null,
       "isoPower": null,
       "babip": null,
-      "ops": null
+      "ops": null,
+      "woba": null,
+      "wrc": null,
+      "wrcPlus": null,
+      "parkFactor": null,
+      "effectiveParkFactor": null
     },
     {
       "year": "2026",
@@ -883,6 +1113,8 @@
       "homeRuns": 3,
       "runsBattedIn": 8,
       "walks": 7,
+      "unintentionalWalks": 7,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 1,
@@ -894,7 +1126,12 @@
       "sluggingPercentage": 0.443,
       "isoPower": 0.171,
       "babip": 0.291,
-      "ops": 0.776
+      "ops": 0.776,
+      "woba": 0.346,
+      "wrc": 10.3,
+      "wrcPlus": 142.9,
+      "parkFactor": 96.0,
+      "effectiveParkFactor": 98.0
     },
     {
       "year": "2026",
@@ -916,6 +1153,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 3,
+      "unintentionalWalks": 3,
+      "intentionalWalks": 0,
       "hitByPitch": 1,
       "sacBunts": 2,
       "sacFlies": 0,
@@ -927,7 +1166,12 @@
       "sluggingPercentage": 0.25,
       "isoPower": 0.058,
       "babip": 0.227,
-      "ops": 0.5
+      "ops": 0.5,
+      "woba": 0.234,
+      "wrc": 2.6,
+      "wrcPlus": 49.6,
+      "parkFactor": 96.0,
+      "effectiveParkFactor": 98.0
     },
     {
       "year": "2026",
@@ -949,6 +1193,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 2,
       "sacFlies": 0,
@@ -960,7 +1206,12 @@
       "sluggingPercentage": 0.0,
       "isoPower": 0.0,
       "babip": 0.0,
-      "ops": 0.0
+      "ops": 0.0,
+      "woba": 0.0,
+      "wrc": -1.0,
+      "wrcPlus": -145.5,
+      "parkFactor": 96.0,
+      "effectiveParkFactor": 98.0
     },
     {
       "year": "2026",
@@ -982,6 +1233,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -993,7 +1246,12 @@
       "sluggingPercentage": null,
       "isoPower": null,
       "babip": null,
-      "ops": null
+      "ops": null,
+      "woba": null,
+      "wrc": null,
+      "wrcPlus": null,
+      "parkFactor": null,
+      "effectiveParkFactor": null
     },
     {
       "year": "2026",
@@ -1015,6 +1273,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -1026,7 +1286,12 @@
       "sluggingPercentage": null,
       "isoPower": null,
       "babip": null,
-      "ops": null
+      "ops": null,
+      "woba": null,
+      "wrc": null,
+      "wrcPlus": null,
+      "parkFactor": null,
+      "effectiveParkFactor": null
     },
     {
       "year": "2026",
@@ -1048,6 +1313,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -1059,7 +1326,12 @@
       "sluggingPercentage": 0.0,
       "isoPower": 0.0,
       "babip": null,
-      "ops": 0.0
+      "ops": 0.0,
+      "woba": 0.0,
+      "wrc": -0.3,
+      "wrcPlus": -145.5,
+      "parkFactor": 96.0,
+      "effectiveParkFactor": 98.0
     },
     {
       "year": "2026",
@@ -1081,6 +1353,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -1092,7 +1366,12 @@
       "sluggingPercentage": null,
       "isoPower": null,
       "babip": null,
-      "ops": null
+      "ops": null,
+      "woba": null,
+      "wrc": null,
+      "wrcPlus": null,
+      "parkFactor": null,
+      "effectiveParkFactor": null
     },
     {
       "year": "2026",
@@ -1114,6 +1393,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -1125,7 +1406,12 @@
       "sluggingPercentage": 0.0,
       "isoPower": 0.0,
       "babip": 0.0,
-      "ops": 0.0
+      "ops": 0.0,
+      "woba": 0.0,
+      "wrc": -0.7,
+      "wrcPlus": -145.5,
+      "parkFactor": 96.0,
+      "effectiveParkFactor": 98.0
     },
     {
       "year": "2026",
@@ -1147,6 +1433,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -1158,7 +1446,12 @@
       "sluggingPercentage": null,
       "isoPower": null,
       "babip": null,
-      "ops": null
+      "ops": null,
+      "woba": null,
+      "wrc": null,
+      "wrcPlus": null,
+      "parkFactor": null,
+      "effectiveParkFactor": null
     },
     {
       "year": "2026",
@@ -1180,6 +1473,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -1191,7 +1486,12 @@
       "sluggingPercentage": 0.222,
       "isoPower": 0.0,
       "babip": 0.333,
-      "ops": 0.444
+      "ops": 0.444,
+      "woba": 0.202,
+      "wrc": 0.2,
+      "wrcPlus": 22.8,
+      "parkFactor": 96.0,
+      "effectiveParkFactor": 98.0
     },
     {
       "year": "2026",
@@ -1213,6 +1513,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -1224,7 +1526,12 @@
       "sluggingPercentage": 0.0,
       "isoPower": 0.0,
       "babip": 0.0,
-      "ops": 0.0
+      "ops": 0.0,
+      "woba": 0.0,
+      "wrc": -0.1,
+      "wrcPlus": -145.5,
+      "parkFactor": 96.0,
+      "effectiveParkFactor": 98.0
     },
     {
       "year": "2026",
@@ -1246,6 +1553,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -1257,7 +1566,12 @@
       "sluggingPercentage": 0.154,
       "isoPower": 0.0,
       "babip": 0.154,
-      "ops": 0.308
+      "ops": 0.308,
+      "woba": 0.14,
+      "wrc": -0.4,
+      "wrcPlus": -29.0,
+      "parkFactor": 96.0,
+      "effectiveParkFactor": 98.0
     },
     {
       "year": "2026",
@@ -1279,6 +1593,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -1290,7 +1606,12 @@
       "sluggingPercentage": null,
       "isoPower": null,
       "babip": null,
-      "ops": null
+      "ops": null,
+      "woba": null,
+      "wrc": null,
+      "wrcPlus": null,
+      "parkFactor": null,
+      "effectiveParkFactor": null
     },
     {
       "year": "2026",
@@ -1312,6 +1633,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -1323,7 +1646,12 @@
       "sluggingPercentage": null,
       "isoPower": null,
       "babip": null,
-      "ops": null
+      "ops": null,
+      "woba": null,
+      "wrc": null,
+      "wrcPlus": null,
+      "parkFactor": null,
+      "effectiveParkFactor": null
     },
     {
       "year": "2026",
@@ -1345,6 +1673,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 1,
       "sacFlies": 0,
@@ -1356,7 +1686,12 @@
       "sluggingPercentage": 0.0,
       "isoPower": 0.0,
       "babip": 0.0,
-      "ops": 0.0
+      "ops": 0.0,
+      "woba": 0.0,
+      "wrc": -0.6,
+      "wrcPlus": -140.8,
+      "parkFactor": 86.6,
+      "effectiveParkFactor": 93.3
     },
     {
       "year": "2026",
@@ -1378,6 +1713,8 @@
       "homeRuns": 0,
       "runsBattedIn": 2,
       "walks": 5,
+      "unintentionalWalks": 5,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 1,
       "sacFlies": 0,
@@ -1389,7 +1726,12 @@
       "sluggingPercentage": 0.105,
       "isoPower": 0.053,
       "babip": 0.062,
-      "ops": 0.355
+      "ops": 0.355,
+      "woba": 0.202,
+      "wrc": 0.5,
+      "wrcPlus": 27.5,
+      "parkFactor": 86.6,
+      "effectiveParkFactor": 93.3
     },
     {
       "year": "2026",
@@ -1411,6 +1753,8 @@
       "homeRuns": 0,
       "runsBattedIn": 6,
       "walks": 3,
+      "unintentionalWalks": 3,
+      "intentionalWalks": 0,
       "hitByPitch": 1,
       "sacBunts": 3,
       "sacFlies": 2,
@@ -1422,7 +1766,12 @@
       "sluggingPercentage": 0.367,
       "isoPower": 0.076,
       "babip": 0.343,
-      "ops": 0.685
+      "ops": 0.685,
+      "woba": 0.307,
+      "wrc": 8.9,
+      "wrcPlus": 114.9,
+      "parkFactor": 86.6,
+      "effectiveParkFactor": 93.3
     },
     {
       "year": "2026",
@@ -1444,6 +1793,8 @@
       "homeRuns": 0,
       "runsBattedIn": 1,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 1,
       "sacFlies": 0,
@@ -1455,7 +1806,12 @@
       "sluggingPercentage": 0.25,
       "isoPower": 0.0,
       "babip": 0.333,
-      "ops": 0.5
+      "ops": 0.5,
+      "woba": 0.227,
+      "wrc": 0.2,
+      "wrcPlus": 48.5,
+      "parkFactor": 86.6,
+      "effectiveParkFactor": 93.3
     },
     {
       "year": "2026",
@@ -1477,6 +1833,8 @@
       "homeRuns": 0,
       "runsBattedIn": 2,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -1488,7 +1846,12 @@
       "sluggingPercentage": 2.0,
       "isoPower": 1.0,
       "babip": 1.0,
-      "ops": 3.0
+      "ops": 3.0,
+      "woba": 1.293,
+      "wrc": 0.9,
+      "wrcPlus": 936.5,
+      "parkFactor": 86.6,
+      "effectiveParkFactor": 93.3
     },
     {
       "year": "2026",
@@ -1510,6 +1873,8 @@
       "homeRuns": 0,
       "runsBattedIn": 3,
       "walks": 1,
+      "unintentionalWalks": 1,
+      "intentionalWalks": 0,
       "hitByPitch": 2,
       "sacBunts": 1,
       "sacFlies": 1,
@@ -1521,7 +1886,12 @@
       "sluggingPercentage": 0.048,
       "isoPower": 0.0,
       "babip": 0.062,
-      "ops": 0.208
+      "ops": 0.208,
+      "woba": 0.124,
+      "wrc": -1.1,
+      "wrcPlus": -37.3,
+      "parkFactor": 86.6,
+      "effectiveParkFactor": 93.3
     },
     {
       "year": "2026",
@@ -1543,6 +1913,8 @@
       "homeRuns": 5,
       "runsBattedIn": 19,
       "walks": 9,
+      "unintentionalWalks": 9,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 2,
@@ -1554,7 +1926,12 @@
       "sluggingPercentage": 0.767,
       "isoPower": 0.384,
       "babip": 0.46,
-      "ops": 1.208
+      "ops": 1.208,
+      "woba": 0.509,
+      "wrc": 21.8,
+      "wrcPlus": 283.4,
+      "parkFactor": 86.6,
+      "effectiveParkFactor": 93.3
     },
     {
       "year": "2026",
@@ -1576,6 +1953,8 @@
       "homeRuns": 0,
       "runsBattedIn": 2,
       "walks": 1,
+      "unintentionalWalks": 1,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -1587,7 +1966,12 @@
       "sluggingPercentage": 0.429,
       "isoPower": 0.095,
       "babip": 0.5,
-      "ops": 0.792
+      "ops": 0.792,
+      "woba": 0.356,
+      "wrc": 3.1,
+      "wrcPlus": 156.1,
+      "parkFactor": 86.6,
+      "effectiveParkFactor": 93.3
     },
     {
       "year": "2026",
@@ -1609,6 +1993,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -1620,7 +2006,12 @@
       "sluggingPercentage": null,
       "isoPower": null,
       "babip": null,
-      "ops": null
+      "ops": null,
+      "woba": null,
+      "wrc": null,
+      "wrcPlus": null,
+      "parkFactor": null,
+      "effectiveParkFactor": null
     },
     {
       "year": "2026",
@@ -1642,6 +2033,8 @@
       "homeRuns": 0,
       "runsBattedIn": 6,
       "walks": 4,
+      "unintentionalWalks": 4,
+      "intentionalWalks": 0,
       "hitByPitch": 1,
       "sacBunts": 1,
       "sacFlies": 2,
@@ -1653,7 +2046,12 @@
       "sluggingPercentage": 0.311,
       "isoPower": 0.089,
       "babip": 0.312,
-      "ops": 0.6
+      "ops": 0.6,
+      "woba": 0.273,
+      "wrc": 4.0,
+      "wrcPlus": 86.3,
+      "parkFactor": 86.6,
+      "effectiveParkFactor": 93.3
     },
     {
       "year": "2026",
@@ -1675,6 +2073,8 @@
       "homeRuns": 1,
       "runsBattedIn": 7,
       "walks": 12,
+      "unintentionalWalks": 12,
+      "intentionalWalks": 0,
       "hitByPitch": 1,
       "sacBunts": 0,
       "sacFlies": 1,
@@ -1686,7 +2086,12 @@
       "sluggingPercentage": 0.377,
       "isoPower": 0.087,
       "babip": 0.322,
-      "ops": 0.774
+      "ops": 0.774,
+      "woba": 0.359,
+      "wrc": 11.8,
+      "wrcPlus": 158.4,
+      "parkFactor": 86.6,
+      "effectiveParkFactor": 93.3
     },
     {
       "year": "2026",
@@ -1708,6 +2113,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 1,
       "sacFlies": 0,
@@ -1719,7 +2126,12 @@
       "sluggingPercentage": 0.0,
       "isoPower": 0.0,
       "babip": 0.0,
-      "ops": 0.0
+      "ops": 0.0,
+      "woba": 0.0,
+      "wrc": -0.6,
+      "wrcPlus": -140.8,
+      "parkFactor": 86.6,
+      "effectiveParkFactor": 93.3
     },
     {
       "year": "2026",
@@ -1741,6 +2153,8 @@
       "homeRuns": 0,
       "runsBattedIn": 1,
       "walks": 1,
+      "unintentionalWalks": 1,
+      "intentionalWalks": 0,
       "hitByPitch": 1,
       "sacBunts": 1,
       "sacFlies": 0,
@@ -1752,7 +2166,12 @@
       "sluggingPercentage": 0.263,
       "isoPower": 0.0,
       "babip": 0.333,
-      "ops": 0.596
+      "ops": 0.596,
+      "woba": 0.286,
+      "wrc": 1.9,
+      "wrcPlus": 97.2,
+      "parkFactor": 86.6,
+      "effectiveParkFactor": 93.3
     },
     {
       "year": "2026",
@@ -1774,6 +2193,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -1785,7 +2206,12 @@
       "sluggingPercentage": 0.0,
       "isoPower": 0.0,
       "babip": 0.0,
-      "ops": 0.0
+      "ops": 0.0,
+      "woba": 0.0,
+      "wrc": -0.3,
+      "wrcPlus": -140.8,
+      "parkFactor": 86.6,
+      "effectiveParkFactor": 93.3
     },
     {
       "year": "2026",
@@ -1807,6 +2233,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -1818,7 +2246,12 @@
       "sluggingPercentage": null,
       "isoPower": null,
       "babip": null,
-      "ops": null
+      "ops": null,
+      "woba": null,
+      "wrc": null,
+      "wrcPlus": null,
+      "parkFactor": null,
+      "effectiveParkFactor": null
     },
     {
       "year": "2026",
@@ -1840,6 +2273,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -1851,7 +2286,12 @@
       "sluggingPercentage": 0.0,
       "isoPower": 0.0,
       "babip": 0.0,
-      "ops": 0.0
+      "ops": 0.0,
+      "woba": 0.0,
+      "wrc": -0.1,
+      "wrcPlus": -140.8,
+      "parkFactor": 86.6,
+      "effectiveParkFactor": 93.3
     },
     {
       "year": "2026",
@@ -1873,6 +2313,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -1884,7 +2326,12 @@
       "sluggingPercentage": null,
       "isoPower": null,
       "babip": null,
-      "ops": null
+      "ops": null,
+      "woba": null,
+      "wrc": null,
+      "wrcPlus": null,
+      "parkFactor": null,
+      "effectiveParkFactor": null
     },
     {
       "year": "2026",
@@ -1906,6 +2353,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 1,
+      "unintentionalWalks": 1,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 2,
       "sacFlies": 0,
@@ -1917,7 +2366,12 @@
       "sluggingPercentage": 0.0,
       "isoPower": 0.0,
       "babip": null,
-      "ops": 0.2
+      "ops": 0.2,
+      "woba": 0.142,
+      "wrc": -0.2,
+      "wrcPlus": -22.4,
+      "parkFactor": 86.6,
+      "effectiveParkFactor": 93.3
     },
     {
       "year": "2026",
@@ -1939,6 +2393,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -1950,7 +2406,12 @@
       "sluggingPercentage": 0.0,
       "isoPower": 0.0,
       "babip": 0.0,
-      "ops": 0.0
+      "ops": 0.0,
+      "woba": 0.0,
+      "wrc": -0.1,
+      "wrcPlus": -140.8,
+      "parkFactor": 86.6,
+      "effectiveParkFactor": 93.3
     },
     {
       "year": "2026",
@@ -1972,6 +2433,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -1983,7 +2446,12 @@
       "sluggingPercentage": null,
       "isoPower": null,
       "babip": null,
-      "ops": null
+      "ops": null,
+      "woba": null,
+      "wrc": null,
+      "wrcPlus": null,
+      "parkFactor": null,
+      "effectiveParkFactor": null
     },
     {
       "year": "2026",
@@ -2005,6 +2473,8 @@
       "homeRuns": 1,
       "runsBattedIn": 9,
       "walks": 5,
+      "unintentionalWalks": 5,
+      "intentionalWalks": 0,
       "hitByPitch": 1,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -2016,7 +2486,12 @@
       "sluggingPercentage": 0.382,
       "isoPower": 0.073,
       "babip": 0.41,
-      "ops": 0.759
+      "ops": 0.759,
+      "woba": 0.35,
+      "wrc": 8.2,
+      "wrcPlus": 150.6,
+      "parkFactor": 86.6,
+      "effectiveParkFactor": 93.3
     },
     {
       "year": "2026",
@@ -2038,6 +2513,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 1,
       "sacFlies": 0,
@@ -2049,7 +2526,12 @@
       "sluggingPercentage": 0.125,
       "isoPower": 0.0,
       "babip": 0.333,
-      "ops": 0.25
+      "ops": 0.25,
+      "woba": 0.114,
+      "wrc": -0.4,
+      "wrcPlus": -46.2,
+      "parkFactor": 86.6,
+      "effectiveParkFactor": 93.3
     },
     {
       "year": "2026",
@@ -2071,6 +2553,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -2082,7 +2566,12 @@
       "sluggingPercentage": null,
       "isoPower": null,
       "babip": null,
-      "ops": null
+      "ops": null,
+      "woba": null,
+      "wrc": null,
+      "wrcPlus": null,
+      "parkFactor": null,
+      "effectiveParkFactor": null
     },
     {
       "year": "2026",
@@ -2104,6 +2593,8 @@
       "homeRuns": 7,
       "runsBattedIn": 17,
       "walks": 8,
+      "unintentionalWalks": 8,
+      "intentionalWalks": 0,
       "hitByPitch": 1,
       "sacBunts": 0,
       "sacFlies": 1,
@@ -2115,7 +2606,12 @@
       "sluggingPercentage": 0.662,
       "isoPower": 0.338,
       "babip": 0.31,
-      "ops": 1.053
+      "ops": 1.053,
+      "woba": 0.454,
+      "wrc": 18.8,
+      "wrcPlus": 237.3,
+      "parkFactor": 86.6,
+      "effectiveParkFactor": 93.3
     },
     {
       "year": "2026",
@@ -2137,6 +2633,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -2148,7 +2646,12 @@
       "sluggingPercentage": null,
       "isoPower": null,
       "babip": null,
-      "ops": null
+      "ops": null,
+      "woba": null,
+      "wrc": null,
+      "wrcPlus": null,
+      "parkFactor": null,
+      "effectiveParkFactor": null
     },
     {
       "year": "2026",
@@ -2170,6 +2673,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -2181,7 +2686,12 @@
       "sluggingPercentage": null,
       "isoPower": null,
       "babip": null,
-      "ops": null
+      "ops": null,
+      "woba": null,
+      "wrc": null,
+      "wrcPlus": null,
+      "parkFactor": null,
+      "effectiveParkFactor": null
     },
     {
       "year": "2026",
@@ -2203,6 +2713,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -2214,7 +2726,12 @@
       "sluggingPercentage": 0.0,
       "isoPower": 0.0,
       "babip": null,
-      "ops": 0.0
+      "ops": 0.0,
+      "woba": 0.0,
+      "wrc": -0.6,
+      "wrcPlus": -140.8,
+      "parkFactor": 86.6,
+      "effectiveParkFactor": 93.3
     },
     {
       "year": "2026",
@@ -2236,6 +2753,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -2247,7 +2766,12 @@
       "sluggingPercentage": 0.0,
       "isoPower": 0.0,
       "babip": 0.0,
-      "ops": 0.0
+      "ops": 0.0,
+      "woba": 0.0,
+      "wrc": -0.1,
+      "wrcPlus": -140.8,
+      "parkFactor": 86.6,
+      "effectiveParkFactor": 93.3
     },
     {
       "year": "2026",
@@ -2269,6 +2793,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -2280,7 +2806,12 @@
       "sluggingPercentage": 0.0,
       "isoPower": 0.0,
       "babip": 0.0,
-      "ops": 0.0
+      "ops": 0.0,
+      "woba": 0.0,
+      "wrc": -0.1,
+      "wrcPlus": -140.8,
+      "parkFactor": 86.6,
+      "effectiveParkFactor": 93.3
     },
     {
       "year": "2026",
@@ -2302,6 +2833,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 1,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -2313,7 +2846,12 @@
       "sluggingPercentage": 0.407,
       "isoPower": 0.074,
       "babip": 0.375,
-      "ops": 0.765
+      "ops": 0.765,
+      "woba": 0.346,
+      "wrc": 3.7,
+      "wrcPlus": 147.6,
+      "parkFactor": 86.6,
+      "effectiveParkFactor": 93.3
     },
     {
       "year": "2026",
@@ -2335,6 +2873,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -2346,7 +2886,12 @@
       "sluggingPercentage": 0.0,
       "isoPower": 0.0,
       "babip": 0.0,
-      "ops": 0.0
+      "ops": 0.0,
+      "woba": 0.0,
+      "wrc": -0.6,
+      "wrcPlus": -140.8,
+      "parkFactor": 86.6,
+      "effectiveParkFactor": 93.3
     },
     {
       "year": "2026",
@@ -2368,6 +2913,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -2379,7 +2926,12 @@
       "sluggingPercentage": 0.0,
       "isoPower": 0.0,
       "babip": null,
-      "ops": 0.0
+      "ops": 0.0,
+      "woba": 0.0,
+      "wrc": -0.3,
+      "wrcPlus": -140.8,
+      "parkFactor": 86.6,
+      "effectiveParkFactor": 93.3
     },
     {
       "year": "2026",
@@ -2401,6 +2953,8 @@
       "homeRuns": 0,
       "runsBattedIn": 4,
       "walks": 11,
+      "unintentionalWalks": 11,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 1,
@@ -2412,7 +2966,12 @@
       "sluggingPercentage": 0.269,
       "isoPower": 0.026,
       "babip": 0.311,
-      "ops": 0.603
+      "ops": 0.603,
+      "woba": 0.287,
+      "wrc": 7.8,
+      "wrcPlus": 98.6,
+      "parkFactor": 86.6,
+      "effectiveParkFactor": 93.3
     },
     {
       "year": "2026",
@@ -2434,6 +2993,8 @@
       "homeRuns": 0,
       "runsBattedIn": 3,
       "walks": 4,
+      "unintentionalWalks": 4,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 1,
@@ -2445,7 +3006,12 @@
       "sluggingPercentage": 0.133,
       "isoPower": 0.0,
       "babip": 0.154,
-      "ops": 0.433
+      "ops": 0.433,
+      "woba": 0.233,
+      "wrc": 0.9,
+      "wrcPlus": 53.4,
+      "parkFactor": 86.6,
+      "effectiveParkFactor": 93.3
     },
     {
       "year": "2026",
@@ -2467,6 +3033,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 4,
       "sacFlies": 0,
@@ -2478,7 +3046,12 @@
       "sluggingPercentage": 0.167,
       "isoPower": 0.0,
       "babip": 0.5,
-      "ops": 0.333
+      "ops": 0.333,
+      "woba": 0.151,
+      "wrc": -0.2,
+      "wrcPlus": -14.6,
+      "parkFactor": 86.6,
+      "effectiveParkFactor": 93.3
     },
     {
       "year": "2026",
@@ -2500,6 +3073,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -2511,7 +3086,12 @@
       "sluggingPercentage": 0.0,
       "isoPower": 0.0,
       "babip": 0.0,
-      "ops": 0.0
+      "ops": 0.0,
+      "woba": 0.0,
+      "wrc": -0.6,
+      "wrcPlus": -165.2,
+      "parkFactor": 135.4,
+      "effectiveParkFactor": 117.7
     },
     {
       "year": "2026",
@@ -2533,6 +3113,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -2544,7 +3126,12 @@
       "sluggingPercentage": 0.0,
       "isoPower": 0.0,
       "babip": 0.0,
-      "ops": 0.0
+      "ops": 0.0,
+      "woba": 0.0,
+      "wrc": -0.4,
+      "wrcPlus": -165.2,
+      "parkFactor": 135.4,
+      "effectiveParkFactor": 117.7
     },
     {
       "year": "2026",
@@ -2566,6 +3153,8 @@
       "homeRuns": 1,
       "runsBattedIn": 7,
       "walks": 9,
+      "unintentionalWalks": 9,
+      "intentionalWalks": 0,
       "hitByPitch": 1,
       "sacBunts": 0,
       "sacFlies": 1,
@@ -2577,7 +3166,12 @@
       "sluggingPercentage": 0.341,
       "isoPower": 0.091,
       "babip": 0.345,
-      "ops": 0.723
+      "ops": 0.723,
+      "woba": 0.34,
+      "wrc": 7.0,
+      "wrcPlus": 118.4,
+      "parkFactor": 135.4,
+      "effectiveParkFactor": 117.7
     },
     {
       "year": "2026",
@@ -2599,6 +3193,8 @@
       "homeRuns": 0,
       "runsBattedIn": 2,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 1,
@@ -2610,7 +3206,12 @@
       "sluggingPercentage": 0.333,
       "isoPower": 0.0,
       "babip": 0.357,
-      "ops": 0.646
+      "ops": 0.646,
+      "woba": 0.284,
+      "wrc": 1.3,
+      "wrcPlus": 71.4,
+      "parkFactor": 135.4,
+      "effectiveParkFactor": 117.7
     },
     {
       "year": "2026",
@@ -2632,6 +3233,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -2643,7 +3246,12 @@
       "sluggingPercentage": null,
       "isoPower": null,
       "babip": null,
-      "ops": null
+      "ops": null,
+      "woba": null,
+      "wrc": null,
+      "wrcPlus": null,
+      "parkFactor": null,
+      "effectiveParkFactor": null
     },
     {
       "year": "2026",
@@ -2665,6 +3273,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -2676,7 +3286,12 @@
       "sluggingPercentage": null,
       "isoPower": null,
       "babip": null,
-      "ops": null
+      "ops": null,
+      "woba": null,
+      "wrc": null,
+      "wrcPlus": null,
+      "parkFactor": null,
+      "effectiveParkFactor": null
     },
     {
       "year": "2026",
@@ -2698,6 +3313,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -2709,7 +3326,12 @@
       "sluggingPercentage": null,
       "isoPower": null,
       "babip": null,
-      "ops": null
+      "ops": null,
+      "woba": null,
+      "wrc": null,
+      "wrcPlus": null,
+      "parkFactor": null,
+      "effectiveParkFactor": null
     },
     {
       "year": "2026",
@@ -2731,6 +3353,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -2742,7 +3366,12 @@
       "sluggingPercentage": 0.6,
       "isoPower": 0.0,
       "babip": 0.75,
-      "ops": 1.2
+      "ops": 1.2,
+      "woba": 0.545,
+      "wrc": 2.9,
+      "wrcPlus": 289.2,
+      "parkFactor": 135.4,
+      "effectiveParkFactor": 117.7
     },
     {
       "year": "2026",
@@ -2764,6 +3393,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -2775,7 +3406,12 @@
       "sluggingPercentage": null,
       "isoPower": null,
       "babip": null,
-      "ops": null
+      "ops": null,
+      "woba": null,
+      "wrc": null,
+      "wrcPlus": null,
+      "parkFactor": null,
+      "effectiveParkFactor": null
     },
     {
       "year": "2026",
@@ -2797,6 +3433,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -2808,7 +3446,12 @@
       "sluggingPercentage": null,
       "isoPower": null,
       "babip": null,
-      "ops": null
+      "ops": null,
+      "woba": null,
+      "wrc": null,
+      "wrcPlus": null,
+      "parkFactor": null,
+      "effectiveParkFactor": null
     },
     {
       "year": "2026",
@@ -2830,6 +3473,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -2841,7 +3486,12 @@
       "sluggingPercentage": 0.0,
       "isoPower": 0.0,
       "babip": 0.0,
-      "ops": 0.0
+      "ops": 0.0,
+      "woba": 0.0,
+      "wrc": -0.3,
+      "wrcPlus": -165.2,
+      "parkFactor": 135.4,
+      "effectiveParkFactor": 117.7
     },
     {
       "year": "2026",
@@ -2863,6 +3513,8 @@
       "homeRuns": 0,
       "runsBattedIn": 3,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -2874,7 +3526,12 @@
       "sluggingPercentage": 0.167,
       "isoPower": 0.0,
       "babip": 0.2,
-      "ops": 0.333
+      "ops": 0.333,
+      "woba": 0.151,
+      "wrc": -0.2,
+      "wrcPlus": -39.0,
+      "parkFactor": 135.4,
+      "effectiveParkFactor": 117.7
     },
     {
       "year": "2026",
@@ -2896,6 +3553,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -2907,7 +3566,12 @@
       "sluggingPercentage": null,
       "isoPower": null,
       "babip": null,
-      "ops": null
+      "ops": null,
+      "woba": null,
+      "wrc": null,
+      "wrcPlus": null,
+      "parkFactor": null,
+      "effectiveParkFactor": null
     },
     {
       "year": "2026",
@@ -2929,6 +3593,8 @@
       "homeRuns": 1,
       "runsBattedIn": 8,
       "walks": 9,
+      "unintentionalWalks": 9,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -2940,7 +3606,12 @@
       "sluggingPercentage": 0.42,
       "isoPower": 0.116,
       "babip": 0.339,
-      "ops": 0.805
+      "ops": 0.805,
+      "woba": 0.367,
+      "wrc": 11.6,
+      "wrcPlus": 140.4,
+      "parkFactor": 135.4,
+      "effectiveParkFactor": 117.7
     },
     {
       "year": "2026",
@@ -2962,6 +3633,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 1,
       "sacFlies": 0,
@@ -2973,7 +3646,12 @@
       "sluggingPercentage": 0.0,
       "isoPower": 0.0,
       "babip": 0.0,
-      "ops": 0.0
+      "ops": 0.0,
+      "woba": 0.0,
+      "wrc": -0.4,
+      "wrcPlus": -165.2,
+      "parkFactor": 135.4,
+      "effectiveParkFactor": 117.7
     },
     {
       "year": "2026",
@@ -2995,6 +3673,8 @@
       "homeRuns": 0,
       "runsBattedIn": 1,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -3006,7 +3686,12 @@
       "sluggingPercentage": 0.562,
       "isoPower": 0.125,
       "babip": 0.583,
-      "ops": 1.0
+      "ops": 1.0,
+      "woba": 0.446,
+      "wrc": 3.4,
+      "wrcPlus": 206.1,
+      "parkFactor": 135.4,
+      "effectiveParkFactor": 117.7
     },
     {
       "year": "2026",
@@ -3028,6 +3713,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -3039,7 +3726,12 @@
       "sluggingPercentage": null,
       "isoPower": null,
       "babip": null,
-      "ops": null
+      "ops": null,
+      "woba": null,
+      "wrc": null,
+      "wrcPlus": null,
+      "parkFactor": null,
+      "effectiveParkFactor": null
     },
     {
       "year": "2026",
@@ -3061,6 +3753,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -3072,7 +3766,12 @@
       "sluggingPercentage": null,
       "isoPower": null,
       "babip": null,
-      "ops": null
+      "ops": null,
+      "woba": null,
+      "wrc": null,
+      "wrcPlus": null,
+      "parkFactor": null,
+      "effectiveParkFactor": null
     },
     {
       "year": "2026",
@@ -3094,6 +3793,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -3105,7 +3806,12 @@
       "sluggingPercentage": null,
       "isoPower": null,
       "babip": null,
-      "ops": null
+      "ops": null,
+      "woba": null,
+      "wrc": null,
+      "wrcPlus": null,
+      "parkFactor": null,
+      "effectiveParkFactor": null
     },
     {
       "year": "2026",
@@ -3127,6 +3833,8 @@
       "homeRuns": 1,
       "runsBattedIn": 2,
       "walks": 1,
+      "unintentionalWalks": 1,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -3138,7 +3846,12 @@
       "sluggingPercentage": 0.286,
       "isoPower": 0.143,
       "babip": 0.167,
-      "ops": 0.468
+      "ops": 0.468,
+      "woba": 0.211,
+      "wrc": 0.6,
+      "wrcPlus": 10.4,
+      "parkFactor": 135.4,
+      "effectiveParkFactor": 117.7
     },
     {
       "year": "2026",
@@ -3160,6 +3873,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -3171,7 +3886,12 @@
       "sluggingPercentage": null,
       "isoPower": null,
       "babip": null,
-      "ops": null
+      "ops": null,
+      "woba": null,
+      "wrc": null,
+      "wrcPlus": null,
+      "parkFactor": null,
+      "effectiveParkFactor": null
     },
     {
       "year": "2026",
@@ -3193,6 +3913,8 @@
       "homeRuns": 1,
       "runsBattedIn": 7,
       "walks": 3,
+      "unintentionalWalks": 3,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -3204,7 +3926,12 @@
       "sluggingPercentage": 0.385,
       "isoPower": 0.115,
       "babip": 0.283,
-      "ops": 0.694
+      "ops": 0.694,
+      "woba": 0.313,
+      "wrc": 5.8,
+      "wrcPlus": 95.5,
+      "parkFactor": 135.4,
+      "effectiveParkFactor": 117.7
     },
     {
       "year": "2026",
@@ -3226,6 +3953,8 @@
       "homeRuns": 0,
       "runsBattedIn": 4,
       "walks": 6,
+      "unintentionalWalks": 6,
+      "intentionalWalks": 0,
       "hitByPitch": 2,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -3237,7 +3966,12 @@
       "sluggingPercentage": 0.319,
       "isoPower": 0.064,
       "babip": 0.316,
-      "ops": 0.683
+      "ops": 0.683,
+      "woba": 0.324,
+      "wrc": 6.3,
+      "wrcPlus": 104.6,
+      "parkFactor": 135.4,
+      "effectiveParkFactor": 117.7
     },
     {
       "year": "2026",
@@ -3259,6 +3993,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -3270,7 +4006,12 @@
       "sluggingPercentage": null,
       "isoPower": null,
       "babip": null,
-      "ops": null
+      "ops": null,
+      "woba": null,
+      "wrc": null,
+      "wrcPlus": null,
+      "parkFactor": null,
+      "effectiveParkFactor": null
     },
     {
       "year": "2026",
@@ -3292,6 +4033,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 1,
+      "unintentionalWalks": 1,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 1,
       "sacFlies": 0,
@@ -3303,7 +4046,12 @@
       "sluggingPercentage": 0.0,
       "isoPower": 0.0,
       "babip": null,
-      "ops": 0.5
+      "ops": 0.5,
+      "woba": 0.355,
+      "wrc": 0.4,
+      "wrcPlus": 131.0,
+      "parkFactor": 135.4,
+      "effectiveParkFactor": 117.7
     },
     {
       "year": "2026",
@@ -3325,6 +4073,8 @@
       "homeRuns": 2,
       "runsBattedIn": 5,
       "walks": 1,
+      "unintentionalWalks": 1,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 1,
       "sacFlies": 0,
@@ -3336,7 +4086,12 @@
       "sluggingPercentage": 0.426,
       "isoPower": 0.148,
       "babip": 0.317,
-      "ops": 0.717
+      "ops": 0.717,
+      "woba": 0.318,
+      "wrc": 6.2,
+      "wrcPlus": 100.1,
+      "parkFactor": 135.4,
+      "effectiveParkFactor": 117.7
     },
     {
       "year": "2026",
@@ -3358,6 +4113,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -3369,7 +4126,12 @@
       "sluggingPercentage": 0.0,
       "isoPower": 0.0,
       "babip": 0.0,
-      "ops": 0.0
+      "ops": 0.0,
+      "woba": 0.0,
+      "wrc": -0.3,
+      "wrcPlus": -165.2,
+      "parkFactor": 135.4,
+      "effectiveParkFactor": 117.7
     },
     {
       "year": "2026",
@@ -3391,6 +4153,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 1,
       "sacFlies": 0,
@@ -3402,7 +4166,12 @@
       "sluggingPercentage": 0.0,
       "isoPower": 0.0,
       "babip": 0.0,
-      "ops": 0.0
+      "ops": 0.0,
+      "woba": 0.0,
+      "wrc": -1.5,
+      "wrcPlus": -165.2,
+      "parkFactor": 135.4,
+      "effectiveParkFactor": 117.7
     },
     {
       "year": "2026",
@@ -3424,6 +4193,8 @@
       "homeRuns": 0,
       "runsBattedIn": 1,
       "walks": 3,
+      "unintentionalWalks": 3,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -3435,7 +4206,12 @@
       "sluggingPercentage": 0.2,
       "isoPower": 0.05,
       "babip": 0.176,
-      "ops": 0.461
+      "ops": 0.461,
+      "woba": 0.228,
+      "wrc": 0.9,
+      "wrcPlus": 24.7,
+      "parkFactor": 135.4,
+      "effectiveParkFactor": 117.7
     },
     {
       "year": "2026",
@@ -3457,6 +4233,8 @@
       "homeRuns": 0,
       "runsBattedIn": 4,
       "walks": 3,
+      "unintentionalWalks": 3,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 1,
@@ -3468,7 +4246,12 @@
       "sluggingPercentage": 0.174,
       "isoPower": 0.0,
       "babip": 0.222,
-      "ops": 0.433
+      "ops": 0.433,
+      "woba": 0.214,
+      "wrc": 0.8,
+      "wrcPlus": 12.8,
+      "parkFactor": 135.4,
+      "effectiveParkFactor": 117.7
     },
     {
       "year": "2026",
@@ -3490,6 +4273,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -3501,7 +4286,12 @@
       "sluggingPercentage": null,
       "isoPower": null,
       "babip": null,
-      "ops": null
+      "ops": null,
+      "woba": null,
+      "wrc": null,
+      "wrcPlus": null,
+      "parkFactor": null,
+      "effectiveParkFactor": null
     },
     {
       "year": "2026",
@@ -3523,6 +4313,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 1,
+      "unintentionalWalks": 1,
+      "intentionalWalks": 0,
       "hitByPitch": 1,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -3534,7 +4326,12 @@
       "sluggingPercentage": 0.214,
       "isoPower": 0.071,
       "babip": 0.286,
-      "ops": 0.464
+      "ops": 0.464,
+      "woba": 0.228,
+      "wrc": 0.6,
+      "wrcPlus": 25.1,
+      "parkFactor": 135.4,
+      "effectiveParkFactor": 117.7
     },
     {
       "year": "2026",
@@ -3556,6 +4353,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -3567,7 +4366,12 @@
       "sluggingPercentage": null,
       "isoPower": null,
       "babip": null,
-      "ops": null
+      "ops": null,
+      "woba": null,
+      "wrc": null,
+      "wrcPlus": null,
+      "parkFactor": null,
+      "effectiveParkFactor": null
     },
     {
       "year": "2026",
@@ -3589,6 +4393,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -3600,7 +4406,12 @@
       "sluggingPercentage": 1.0,
       "isoPower": 0.0,
       "babip": 1.0,
-      "ops": 2.0
+      "ops": 2.0,
+      "woba": 0.909,
+      "wrc": 0.6,
+      "wrcPlus": 592.1,
+      "parkFactor": 135.4,
+      "effectiveParkFactor": 117.7
     },
     {
       "year": "2026",
@@ -3622,6 +4433,8 @@
       "homeRuns": 1,
       "runsBattedIn": 7,
       "walks": 11,
+      "unintentionalWalks": 11,
+      "intentionalWalks": 0,
       "hitByPitch": 2,
       "sacBunts": 0,
       "sacFlies": 1,
@@ -3633,7 +4446,12 @@
       "sluggingPercentage": 0.4,
       "isoPower": 0.092,
       "babip": 0.352,
-      "ops": 0.818
+      "ops": 0.818,
+      "woba": 0.378,
+      "wrc": 12.4,
+      "wrcPlus": 149.5,
+      "parkFactor": 135.4,
+      "effectiveParkFactor": 117.7
     },
     {
       "year": "2026",
@@ -3655,6 +4473,8 @@
       "homeRuns": 0,
       "runsBattedIn": 1,
       "walks": 2,
+      "unintentionalWalks": 2,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -3666,7 +4486,12 @@
       "sluggingPercentage": 0.133,
       "isoPower": 0.067,
       "babip": 0.1,
-      "ops": 0.31
+      "ops": 0.31,
+      "woba": 0.16,
+      "wrc": -0.2,
+      "wrcPlus": -32.2,
+      "parkFactor": 135.4,
+      "effectiveParkFactor": 117.7
     },
     {
       "year": "2026",
@@ -3688,6 +4513,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 2,
       "sacFlies": 0,
@@ -3699,7 +4526,12 @@
       "sluggingPercentage": 0.0,
       "isoPower": 0.0,
       "babip": 0.0,
-      "ops": 0.0
+      "ops": 0.0,
+      "woba": 0.0,
+      "wrc": -1.1,
+      "wrcPlus": -165.2,
+      "parkFactor": 135.4,
+      "effectiveParkFactor": 117.7
     },
     {
       "year": "2026",
@@ -3721,6 +4553,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 1,
+      "unintentionalWalks": 1,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -3732,7 +4566,12 @@
       "sluggingPercentage": 0.0,
       "isoPower": 0.0,
       "babip": null,
-      "ops": 0.5
+      "ops": 0.5,
+      "woba": 0.355,
+      "wrc": 0.3,
+      "wrcPlus": 131.0,
+      "parkFactor": 135.4,
+      "effectiveParkFactor": 117.7
     },
     {
       "year": "2026",
@@ -3754,6 +4593,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -3765,7 +4606,12 @@
       "sluggingPercentage": 0.0,
       "isoPower": 0.0,
       "babip": 0.0,
-      "ops": 0.0
+      "ops": 0.0,
+      "woba": 0.0,
+      "wrc": -0.6,
+      "wrcPlus": -165.2,
+      "parkFactor": 135.4,
+      "effectiveParkFactor": 117.7
     },
     {
       "year": "2026",
@@ -3787,6 +4633,8 @@
       "homeRuns": 2,
       "runsBattedIn": 5,
       "walks": 6,
+      "unintentionalWalks": 6,
+      "intentionalWalks": 0,
       "hitByPitch": 1,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -3798,7 +4646,12 @@
       "sluggingPercentage": 0.679,
       "isoPower": 0.286,
       "babip": 0.5,
-      "ops": 1.193
+      "ops": 1.193,
+      "woba": 0.519,
+      "wrc": 9.4,
+      "wrcPlus": 267.5,
+      "parkFactor": 135.4,
+      "effectiveParkFactor": 117.7
     },
     {
       "year": "2026",
@@ -3820,6 +4673,8 @@
       "homeRuns": 0,
       "runsBattedIn": 2,
       "walks": 3,
+      "unintentionalWalks": 3,
+      "intentionalWalks": 0,
       "hitByPitch": 1,
       "sacBunts": 1,
       "sacFlies": 0,
@@ -3831,7 +4686,12 @@
       "sluggingPercentage": 0.217,
       "isoPower": 0.043,
       "babip": 0.222,
-      "ops": 0.457
+      "ops": 0.457,
+      "woba": 0.218,
+      "wrc": 1.6,
+      "wrcPlus": 16.7,
+      "parkFactor": 135.4,
+      "effectiveParkFactor": 117.7
     },
     {
       "year": "2026",
@@ -3853,6 +4713,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 2,
       "sacFlies": 0,
@@ -3864,7 +4726,12 @@
       "sluggingPercentage": 0.75,
       "isoPower": 0.25,
       "babip": 1.0,
-      "ops": 1.25
+      "ops": 1.25,
+      "woba": 0.55,
+      "wrc": 1.8,
+      "wrcPlus": 324.6,
+      "parkFactor": 73.1,
+      "effectiveParkFactor": 86.5
     },
     {
       "year": "2026",
@@ -3886,6 +4753,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -3897,7 +4766,12 @@
       "sluggingPercentage": null,
       "isoPower": null,
       "babip": null,
-      "ops": null
+      "ops": null,
+      "woba": null,
+      "wrc": null,
+      "wrcPlus": null,
+      "parkFactor": null,
+      "effectiveParkFactor": null
     },
     {
       "year": "2026",
@@ -3919,6 +4793,8 @@
       "homeRuns": 2,
       "runsBattedIn": 4,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 1,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -3930,7 +4806,12 @@
       "sluggingPercentage": 0.29,
       "isoPower": 0.113,
       "babip": 0.191,
-      "ops": 0.481
+      "ops": 0.481,
+      "woba": 0.215,
+      "wrc": 1.9,
+      "wrcPlus": 44.8,
+      "parkFactor": 73.1,
+      "effectiveParkFactor": 86.5
     },
     {
       "year": "2026",
@@ -3952,6 +4833,8 @@
       "homeRuns": 3,
       "runsBattedIn": 9,
       "walks": 3,
+      "unintentionalWalks": 3,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 2,
@@ -3963,7 +4846,12 @@
       "sluggingPercentage": 0.5,
       "isoPower": 0.25,
       "babip": 0.235,
-      "ops": 0.786
+      "ops": 0.786,
+      "woba": 0.337,
+      "wrc": 6.1,
+      "wrcPlus": 146.5,
+      "parkFactor": 73.1,
+      "effectiveParkFactor": 86.5
     },
     {
       "year": "2026",
@@ -3985,6 +4873,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 3,
+      "unintentionalWalks": 3,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 6,
       "sacFlies": 0,
@@ -3996,7 +4886,12 @@
       "sluggingPercentage": 0.212,
       "isoPower": 0.019,
       "babip": 0.217,
-      "ops": 0.448
+      "ops": 0.448,
+      "woba": 0.211,
+      "wrc": 1.6,
+      "wrcPlus": 41.7,
+      "parkFactor": 73.1,
+      "effectiveParkFactor": 86.5
     },
     {
       "year": "2026",
@@ -4018,6 +4913,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -4029,7 +4926,12 @@
       "sluggingPercentage": null,
       "isoPower": null,
       "babip": null,
-      "ops": null
+      "ops": null,
+      "woba": null,
+      "wrc": null,
+      "wrcPlus": null,
+      "parkFactor": null,
+      "effectiveParkFactor": null
     },
     {
       "year": "2026",
@@ -4051,6 +4953,8 @@
       "homeRuns": 0,
       "runsBattedIn": 1,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -4062,7 +4966,12 @@
       "sluggingPercentage": 0.833,
       "isoPower": 0.333,
       "babip": 0.75,
-      "ops": 1.333
+      "ops": 1.333,
+      "woba": 0.576,
+      "wrc": 1.9,
+      "wrcPlus": 345.8,
+      "parkFactor": 73.1,
+      "effectiveParkFactor": 86.5
     },
     {
       "year": "2026",
@@ -4084,6 +4993,8 @@
       "homeRuns": 1,
       "runsBattedIn": 4,
       "walks": 3,
+      "unintentionalWalks": 3,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -4095,7 +5006,12 @@
       "sluggingPercentage": 0.262,
       "isoPower": 0.062,
       "babip": 0.231,
-      "ops": 0.497
+      "ops": 0.497,
+      "woba": 0.228,
+      "wrc": 2.7,
+      "wrcPlus": 56.2,
+      "parkFactor": 73.1,
+      "effectiveParkFactor": 86.5
     },
     {
       "year": "2026",
@@ -4117,6 +5033,8 @@
       "homeRuns": 0,
       "runsBattedIn": 1,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -4128,7 +5046,12 @@
       "sluggingPercentage": 0.0,
       "isoPower": 0.0,
       "babip": 0.0,
-      "ops": 0.0
+      "ops": 0.0,
+      "woba": 0.0,
+      "wrc": -0.8,
+      "wrcPlus": -134.1,
+      "parkFactor": 73.1,
+      "effectiveParkFactor": 86.5
     },
     {
       "year": "2026",
@@ -4150,6 +5073,8 @@
       "homeRuns": 0,
       "runsBattedIn": 1,
       "walks": 1,
+      "unintentionalWalks": 1,
+      "intentionalWalks": 0,
       "hitByPitch": 2,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -4161,7 +5086,12 @@
       "sluggingPercentage": 0.257,
       "isoPower": 0.029,
       "babip": 0.308,
-      "ops": 0.547
+      "ops": 0.547,
+      "woba": 0.259,
+      "wrc": 2.4,
+      "wrcPlus": 81.9,
+      "parkFactor": 73.1,
+      "effectiveParkFactor": 86.5
     },
     {
       "year": "2026",
@@ -4183,6 +5113,8 @@
       "homeRuns": 1,
       "runsBattedIn": 9,
       "walks": 11,
+      "unintentionalWalks": 11,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 1,
@@ -4194,7 +5126,12 @@
       "sluggingPercentage": 0.326,
       "isoPower": 0.13,
       "babip": 0.222,
-      "ops": 0.671
+      "ops": 0.671,
+      "woba": 0.316,
+      "wrc": 6.3,
+      "wrcPlus": 129.6,
+      "parkFactor": 73.1,
+      "effectiveParkFactor": 86.5
     },
     {
       "year": "2026",
@@ -4216,6 +5153,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -4227,7 +5166,12 @@
       "sluggingPercentage": null,
       "isoPower": null,
       "babip": null,
-      "ops": null
+      "ops": null,
+      "woba": null,
+      "wrc": null,
+      "wrcPlus": null,
+      "parkFactor": null,
+      "effectiveParkFactor": null
     },
     {
       "year": "2026",
@@ -4249,6 +5193,8 @@
       "homeRuns": 1,
       "runsBattedIn": 4,
       "walks": 1,
+      "unintentionalWalks": 1,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 1,
       "sacFlies": 0,
@@ -4260,7 +5206,12 @@
       "sluggingPercentage": 0.296,
       "isoPower": 0.056,
       "babip": 0.353,
-      "ops": 0.551
+      "ops": 0.551,
+      "woba": 0.25,
+      "wrc": 3.2,
+      "wrcPlus": 73.9,
+      "parkFactor": 73.1,
+      "effectiveParkFactor": 86.5
     },
     {
       "year": "2026",
@@ -4282,6 +5233,8 @@
       "homeRuns": 0,
       "runsBattedIn": 3,
       "walks": 5,
+      "unintentionalWalks": 5,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 1,
       "sacFlies": 1,
@@ -4293,7 +5246,12 @@
       "sluggingPercentage": 0.167,
       "isoPower": 0.033,
       "babip": 0.154,
-      "ops": 0.364
+      "ops": 0.364,
+      "woba": 0.176,
+      "wrc": -0.1,
+      "wrcPlus": 12.3,
+      "parkFactor": 73.1,
+      "effectiveParkFactor": 86.5
     },
     {
       "year": "2026",
@@ -4315,6 +5273,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -4326,7 +5286,12 @@
       "sluggingPercentage": 0.0,
       "isoPower": 0.0,
       "babip": 0.0,
-      "ops": 0.0
+      "ops": 0.0,
+      "woba": 0.0,
+      "wrc": -0.4,
+      "wrcPlus": -134.1,
+      "parkFactor": 73.1,
+      "effectiveParkFactor": 86.5
     },
     {
       "year": "2026",
@@ -4348,6 +5313,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -4359,7 +5326,12 @@
       "sluggingPercentage": null,
       "isoPower": null,
       "babip": null,
-      "ops": null
+      "ops": null,
+      "woba": null,
+      "wrc": null,
+      "wrcPlus": null,
+      "parkFactor": null,
+      "effectiveParkFactor": null
     },
     {
       "year": "2026",
@@ -4381,6 +5353,8 @@
       "homeRuns": 0,
       "runsBattedIn": 3,
       "walks": 1,
+      "unintentionalWalks": 1,
+      "intentionalWalks": 0,
       "hitByPitch": 1,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -4392,7 +5366,12 @@
       "sluggingPercentage": 0.294,
       "isoPower": 0.059,
       "babip": 0.308,
-      "ops": 0.61
+      "ops": 0.61,
+      "woba": 0.288,
+      "wrc": 1.6,
+      "wrcPlus": 105.9,
+      "parkFactor": 73.1,
+      "effectiveParkFactor": 86.5
     },
     {
       "year": "2026",
@@ -4414,6 +5393,8 @@
       "homeRuns": 0,
       "runsBattedIn": 1,
       "walks": 1,
+      "unintentionalWalks": 1,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 1,
       "sacFlies": 0,
@@ -4425,7 +5406,12 @@
       "sluggingPercentage": 0.333,
       "isoPower": 0.0,
       "babip": 0.5,
-      "ops": 0.762
+      "ops": 0.762,
+      "woba": 0.361,
+      "wrc": 1.2,
+      "wrcPlus": 166.9,
+      "parkFactor": 73.1,
+      "effectiveParkFactor": 86.5
     },
     {
       "year": "2026",
@@ -4447,6 +5433,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -4458,7 +5446,12 @@
       "sluggingPercentage": 0.2,
       "isoPower": 0.0,
       "babip": 0.333,
-      "ops": 0.4
+      "ops": 0.4,
+      "woba": 0.182,
+      "wrc": 0.0,
+      "wrcPlus": 17.4,
+      "parkFactor": 73.1,
+      "effectiveParkFactor": 86.5
     },
     {
       "year": "2026",
@@ -4480,6 +5473,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 3,
       "sacFlies": 0,
@@ -4491,7 +5486,12 @@
       "sluggingPercentage": 0.0,
       "isoPower": 0.0,
       "babip": 0.0,
-      "ops": 0.0
+      "ops": 0.0,
+      "woba": 0.0,
+      "wrc": -1.2,
+      "wrcPlus": -134.1,
+      "parkFactor": 73.1,
+      "effectiveParkFactor": 86.5
     },
     {
       "year": "2026",
@@ -4513,6 +5513,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -4524,7 +5526,12 @@
       "sluggingPercentage": 0.0,
       "isoPower": 0.0,
       "babip": 0.0,
-      "ops": 0.0
+      "ops": 0.0,
+      "woba": 0.0,
+      "wrc": -0.3,
+      "wrcPlus": -134.1,
+      "parkFactor": 73.1,
+      "effectiveParkFactor": 86.5
     },
     {
       "year": "2026",
@@ -4546,6 +5553,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 1,
+      "unintentionalWalks": 1,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 1,
       "sacFlies": 0,
@@ -4557,7 +5566,12 @@
       "sluggingPercentage": 0.0,
       "isoPower": 0.0,
       "babip": 0.0,
-      "ops": 0.333
+      "ops": 0.333,
+      "woba": 0.237,
+      "wrc": 0.2,
+      "wrcPlus": 63.4,
+      "parkFactor": 73.1,
+      "effectiveParkFactor": 86.5
     },
     {
       "year": "2026",
@@ -4579,6 +5593,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -4590,7 +5606,12 @@
       "sluggingPercentage": null,
       "isoPower": null,
       "babip": null,
-      "ops": null
+      "ops": null,
+      "woba": null,
+      "wrc": null,
+      "wrcPlus": null,
+      "parkFactor": null,
+      "effectiveParkFactor": null
     },
     {
       "year": "2026",
@@ -4612,6 +5633,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -4623,7 +5646,12 @@
       "sluggingPercentage": 0.0,
       "isoPower": 0.0,
       "babip": 0.0,
-      "ops": 0.0
+      "ops": 0.0,
+      "woba": 0.0,
+      "wrc": -0.6,
+      "wrcPlus": -134.1,
+      "parkFactor": 73.1,
+      "effectiveParkFactor": 86.5
     },
     {
       "year": "2026",
@@ -4645,6 +5673,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -4656,7 +5686,12 @@
       "sluggingPercentage": null,
       "isoPower": null,
       "babip": null,
-      "ops": null
+      "ops": null,
+      "woba": null,
+      "wrc": null,
+      "wrcPlus": null,
+      "parkFactor": null,
+      "effectiveParkFactor": null
     },
     {
       "year": "2026",
@@ -4678,6 +5713,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -4689,7 +5726,12 @@
       "sluggingPercentage": 0.0,
       "isoPower": 0.0,
       "babip": 0.0,
-      "ops": 0.0
+      "ops": 0.0,
+      "woba": 0.0,
+      "wrc": -0.1,
+      "wrcPlus": -134.1,
+      "parkFactor": 73.1,
+      "effectiveParkFactor": 86.5
     },
     {
       "year": "2026",
@@ -4711,6 +5753,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -4722,7 +5766,12 @@
       "sluggingPercentage": null,
       "isoPower": null,
       "babip": null,
-      "ops": null
+      "ops": null,
+      "woba": null,
+      "wrc": null,
+      "wrcPlus": null,
+      "parkFactor": null,
+      "effectiveParkFactor": null
     },
     {
       "year": "2026",
@@ -4744,6 +5793,8 @@
       "homeRuns": 1,
       "runsBattedIn": 1,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -4755,7 +5806,12 @@
       "sluggingPercentage": 0.562,
       "isoPower": 0.312,
       "babip": 0.3,
-      "ops": 0.812
+      "ops": 0.812,
+      "woba": 0.348,
+      "wrc": 2.1,
+      "wrcPlus": 155.7,
+      "parkFactor": 73.1,
+      "effectiveParkFactor": 86.5
     },
     {
       "year": "2026",
@@ -4777,6 +5833,8 @@
       "homeRuns": 0,
       "runsBattedIn": 2,
       "walks": 4,
+      "unintentionalWalks": 4,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 3,
       "sacFlies": 0,
@@ -4788,7 +5846,12 @@
       "sluggingPercentage": 0.325,
       "isoPower": 0.05,
       "babip": 0.367,
-      "ops": 0.666
+      "ops": 0.666,
+      "woba": 0.309,
+      "wrc": 4.9,
+      "wrcPlus": 123.6,
+      "parkFactor": 73.1,
+      "effectiveParkFactor": 86.5
     },
     {
       "year": "2026",
@@ -4810,6 +5873,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -4821,7 +5886,12 @@
       "sluggingPercentage": null,
       "isoPower": null,
       "babip": null,
-      "ops": null
+      "ops": null,
+      "woba": null,
+      "wrc": null,
+      "wrcPlus": null,
+      "parkFactor": null,
+      "effectiveParkFactor": null
     },
     {
       "year": "2026",
@@ -4843,6 +5913,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -4854,7 +5926,12 @@
       "sluggingPercentage": 0.0,
       "isoPower": 0.0,
       "babip": 0.0,
-      "ops": 0.0
+      "ops": 0.0,
+      "woba": 0.0,
+      "wrc": -0.1,
+      "wrcPlus": -134.1,
+      "parkFactor": 73.1,
+      "effectiveParkFactor": 86.5
     },
     {
       "year": "2026",
@@ -4876,6 +5953,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -4887,7 +5966,12 @@
       "sluggingPercentage": null,
       "isoPower": null,
       "babip": null,
-      "ops": null
+      "ops": null,
+      "woba": null,
+      "wrc": null,
+      "wrcPlus": null,
+      "parkFactor": null,
+      "effectiveParkFactor": null
     },
     {
       "year": "2026",
@@ -4909,6 +5993,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -4920,7 +6006,12 @@
       "sluggingPercentage": null,
       "isoPower": null,
       "babip": null,
-      "ops": null
+      "ops": null,
+      "woba": null,
+      "wrc": null,
+      "wrcPlus": null,
+      "parkFactor": null,
+      "effectiveParkFactor": null
     },
     {
       "year": "2026",
@@ -4942,6 +6033,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -4953,7 +6046,12 @@
       "sluggingPercentage": 0.333,
       "isoPower": 0.0,
       "babip": 0.5,
-      "ops": 0.667
+      "ops": 0.667,
+      "woba": 0.303,
+      "wrc": 0.3,
+      "wrcPlus": 118.4,
+      "parkFactor": 73.1,
+      "effectiveParkFactor": 86.5
     },
     {
       "year": "2026",
@@ -4975,6 +6073,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -4986,7 +6086,12 @@
       "sluggingPercentage": null,
       "isoPower": null,
       "babip": null,
-      "ops": null
+      "ops": null,
+      "woba": null,
+      "wrc": null,
+      "wrcPlus": null,
+      "parkFactor": null,
+      "effectiveParkFactor": null
     },
     {
       "year": "2026",
@@ -5008,6 +6113,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -5019,7 +6126,12 @@
       "sluggingPercentage": null,
       "isoPower": null,
       "babip": null,
-      "ops": null
+      "ops": null,
+      "woba": null,
+      "wrc": null,
+      "wrcPlus": null,
+      "parkFactor": null,
+      "effectiveParkFactor": null
     },
     {
       "year": "2026",
@@ -5041,6 +6153,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -5052,7 +6166,12 @@
       "sluggingPercentage": null,
       "isoPower": null,
       "babip": null,
-      "ops": null
+      "ops": null,
+      "woba": null,
+      "wrc": null,
+      "wrcPlus": null,
+      "parkFactor": null,
+      "effectiveParkFactor": null
     },
     {
       "year": "2026",
@@ -5074,6 +6193,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -5085,7 +6206,12 @@
       "sluggingPercentage": 0.0,
       "isoPower": 0.0,
       "babip": null,
-      "ops": 0.0
+      "ops": 0.0,
+      "woba": 0.0,
+      "wrc": -0.1,
+      "wrcPlus": -163.7,
+      "parkFactor": 132.4,
+      "effectiveParkFactor": 116.2
     },
     {
       "year": "2026",
@@ -5107,6 +6233,8 @@
       "homeRuns": 2,
       "runsBattedIn": 9,
       "walks": 8,
+      "unintentionalWalks": 8,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 1,
@@ -5118,7 +6246,12 @@
       "sluggingPercentage": 0.348,
       "isoPower": 0.101,
       "babip": 0.268,
-      "ops": 0.668
+      "ops": 0.668,
+      "woba": 0.307,
+      "wrc": 7.9,
+      "wrcPlus": 91.8,
+      "parkFactor": 132.4,
+      "effectiveParkFactor": 116.2
     },
     {
       "year": "2026",
@@ -5140,6 +6273,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -5151,7 +6286,12 @@
       "sluggingPercentage": null,
       "isoPower": null,
       "babip": null,
-      "ops": null
+      "ops": null,
+      "woba": null,
+      "wrc": null,
+      "wrcPlus": null,
+      "parkFactor": null,
+      "effectiveParkFactor": null
     },
     {
       "year": "2026",
@@ -5173,6 +6313,8 @@
       "homeRuns": 4,
       "runsBattedIn": 10,
       "walks": 14,
+      "unintentionalWalks": 14,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -5184,7 +6326,12 @@
       "sluggingPercentage": 0.508,
       "isoPower": 0.246,
       "babip": 0.316,
-      "ops": 0.908
+      "ops": 0.908,
+      "woba": 0.406,
+      "wrc": 13.4,
+      "wrcPlus": 174.6,
+      "parkFactor": 132.4,
+      "effectiveParkFactor": 116.2
     },
     {
       "year": "2026",
@@ -5206,6 +6353,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 1,
+      "unintentionalWalks": 1,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -5217,7 +6366,12 @@
       "sluggingPercentage": 0.0,
       "isoPower": 0.0,
       "babip": 0.0,
-      "ops": 0.5
+      "ops": 0.5,
+      "woba": 0.355,
+      "wrc": 0.3,
+      "wrcPlus": 132.5,
+      "parkFactor": 132.4,
+      "effectiveParkFactor": 116.2
     },
     {
       "year": "2026",
@@ -5239,6 +6393,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -5250,7 +6406,12 @@
       "sluggingPercentage": null,
       "isoPower": null,
       "babip": null,
-      "ops": null
+      "ops": null,
+      "woba": null,
+      "wrc": null,
+      "wrcPlus": null,
+      "parkFactor": null,
+      "effectiveParkFactor": null
     },
     {
       "year": "2026",
@@ -5272,6 +6433,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -5283,7 +6446,12 @@
       "sluggingPercentage": 0.333,
       "isoPower": 0.0,
       "babip": 0.333,
-      "ops": 0.667
+      "ops": 0.667,
+      "woba": 0.303,
+      "wrc": 0.3,
+      "wrcPlus": 88.7,
+      "parkFactor": 132.4,
+      "effectiveParkFactor": 116.2
     },
     {
       "year": "2026",
@@ -5305,6 +6473,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 2,
+      "unintentionalWalks": 2,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -5316,7 +6486,12 @@
       "sluggingPercentage": 0.143,
       "isoPower": 0.0,
       "babip": 0.167,
-      "ops": 0.476
+      "ops": 0.476,
+      "woba": 0.259,
+      "wrc": 0.6,
+      "wrcPlus": 52.0,
+      "parkFactor": 132.4,
+      "effectiveParkFactor": 116.2
     },
     {
       "year": "2026",
@@ -5338,6 +6513,8 @@
       "homeRuns": 1,
       "runsBattedIn": 7,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -5349,7 +6526,12 @@
       "sluggingPercentage": 0.579,
       "isoPower": 0.263,
       "babip": 0.357,
-      "ops": 0.895
+      "ops": 0.895,
+      "woba": 0.391,
+      "wrc": 3.2,
+      "wrcPlus": 161.8,
+      "parkFactor": 132.4,
+      "effectiveParkFactor": 116.2
     },
     {
       "year": "2026",
@@ -5371,6 +6553,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -5382,7 +6566,12 @@
       "sluggingPercentage": null,
       "isoPower": null,
       "babip": null,
-      "ops": null
+      "ops": null,
+      "woba": null,
+      "wrc": null,
+      "wrcPlus": null,
+      "parkFactor": null,
+      "effectiveParkFactor": null
     },
     {
       "year": "2026",
@@ -5404,6 +6593,8 @@
       "homeRuns": 2,
       "runsBattedIn": 6,
       "walks": 8,
+      "unintentionalWalks": 8,
+      "intentionalWalks": 0,
       "hitByPitch": 1,
       "sacBunts": 1,
       "sacFlies": 0,
@@ -5415,7 +6606,12 @@
       "sluggingPercentage": 0.319,
       "isoPower": 0.128,
       "babip": 0.269,
-      "ops": 0.641
+      "ops": 0.641,
+      "woba": 0.304,
+      "wrc": 5.6,
+      "wrcPlus": 89.4,
+      "parkFactor": 132.4,
+      "effectiveParkFactor": 116.2
     },
     {
       "year": "2026",
@@ -5437,6 +6633,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -5448,7 +6646,12 @@
       "sluggingPercentage": 0.0,
       "isoPower": 0.0,
       "babip": 0.0,
-      "ops": 0.0
+      "ops": 0.0,
+      "woba": 0.0,
+      "wrc": -0.4,
+      "wrcPlus": -163.7,
+      "parkFactor": 132.4,
+      "effectiveParkFactor": 116.2
     },
     {
       "year": "2026",
@@ -5470,6 +6673,8 @@
       "homeRuns": 0,
       "runsBattedIn": 5,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 1,
       "sacFlies": 1,
@@ -5481,7 +6686,12 @@
       "sluggingPercentage": 0.304,
       "isoPower": 0.022,
       "babip": 0.295,
-      "ops": 0.581
+      "ops": 0.581,
+      "woba": 0.26,
+      "wrc": 3.1,
+      "wrcPlus": 52.5,
+      "parkFactor": 132.4,
+      "effectiveParkFactor": 116.2
     },
     {
       "year": "2026",
@@ -5503,6 +6713,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -5514,7 +6726,12 @@
       "sluggingPercentage": 0.0,
       "isoPower": 0.0,
       "babip": 0.0,
-      "ops": 0.0
+      "ops": 0.0,
+      "woba": 0.0,
+      "wrc": -0.8,
+      "wrcPlus": -163.7,
+      "parkFactor": 132.4,
+      "effectiveParkFactor": 116.2
     },
     {
       "year": "2026",
@@ -5536,6 +6753,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -5547,7 +6766,12 @@
       "sluggingPercentage": 0.0,
       "isoPower": 0.0,
       "babip": null,
-      "ops": 0.0
+      "ops": 0.0,
+      "woba": 0.0,
+      "wrc": -0.1,
+      "wrcPlus": -163.7,
+      "parkFactor": 132.4,
+      "effectiveParkFactor": 116.2
     },
     {
       "year": "2026",
@@ -5569,6 +6793,8 @@
       "homeRuns": 2,
       "runsBattedIn": 7,
       "walks": 5,
+      "unintentionalWalks": 5,
+      "intentionalWalks": 0,
       "hitByPitch": 1,
       "sacBunts": 0,
       "sacFlies": 1,
@@ -5580,7 +6806,12 @@
       "sluggingPercentage": 0.429,
       "isoPower": 0.2,
       "babip": 0.222,
-      "ops": 0.762
+      "ops": 0.762,
+      "woba": 0.342,
+      "wrc": 5.4,
+      "wrcPlus": 121.0,
+      "parkFactor": 132.4,
+      "effectiveParkFactor": 116.2
     },
     {
       "year": "2026",
@@ -5602,6 +6833,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -5613,7 +6846,12 @@
       "sluggingPercentage": null,
       "isoPower": null,
       "babip": null,
-      "ops": null
+      "ops": null,
+      "woba": null,
+      "wrc": null,
+      "wrcPlus": null,
+      "parkFactor": null,
+      "effectiveParkFactor": null
     },
     {
       "year": "2026",
@@ -5635,6 +6873,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -5646,7 +6886,12 @@
       "sluggingPercentage": 0.0,
       "isoPower": 0.0,
       "babip": 0.0,
-      "ops": 0.0
+      "ops": 0.0,
+      "woba": 0.0,
+      "wrc": -0.8,
+      "wrcPlus": -163.7,
+      "parkFactor": 132.4,
+      "effectiveParkFactor": 116.2
     },
     {
       "year": "2026",
@@ -5668,6 +6913,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -5679,7 +6926,12 @@
       "sluggingPercentage": 0.375,
       "isoPower": 0.0,
       "babip": 0.6,
-      "ops": 0.75
+      "ops": 0.75,
+      "woba": 0.341,
+      "wrc": 1.0,
+      "wrcPlus": 120.3,
+      "parkFactor": 132.4,
+      "effectiveParkFactor": 116.2
     },
     {
       "year": "2026",
@@ -5701,6 +6953,8 @@
       "homeRuns": 0,
       "runsBattedIn": 1,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -5712,7 +6966,12 @@
       "sluggingPercentage": 0.167,
       "isoPower": 0.0,
       "babip": 0.333,
-      "ops": 0.333
+      "ops": 0.333,
+      "woba": 0.151,
+      "wrc": -0.1,
+      "wrcPlus": -37.5,
+      "parkFactor": 132.4,
+      "effectiveParkFactor": 116.2
     },
     {
       "year": "2026",
@@ -5734,6 +6993,8 @@
       "homeRuns": 0,
       "runsBattedIn": 2,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -5745,7 +7006,12 @@
       "sluggingPercentage": 0.333,
       "isoPower": 0.0,
       "babip": 0.6,
-      "ops": 0.667
+      "ops": 0.667,
+      "woba": 0.303,
+      "wrc": 0.9,
+      "wrcPlus": 88.7,
+      "parkFactor": 132.4,
+      "effectiveParkFactor": 116.2
     },
     {
       "year": "2026",
@@ -5767,6 +7033,8 @@
       "homeRuns": 0,
       "runsBattedIn": 3,
       "walks": 3,
+      "unintentionalWalks": 3,
+      "intentionalWalks": 0,
       "hitByPitch": 1,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -5778,7 +7046,12 @@
       "sluggingPercentage": 0.282,
       "isoPower": 0.028,
       "babip": 0.34,
-      "ops": 0.575
+      "ops": 0.575,
+      "woba": 0.267,
+      "wrc": 5.3,
+      "wrcPlus": 58.5,
+      "parkFactor": 132.4,
+      "effectiveParkFactor": 116.2
     },
     {
       "year": "2026",
@@ -5800,6 +7073,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -5811,7 +7086,12 @@
       "sluggingPercentage": null,
       "isoPower": null,
       "babip": null,
-      "ops": null
+      "ops": null,
+      "woba": null,
+      "wrc": null,
+      "wrcPlus": null,
+      "parkFactor": null,
+      "effectiveParkFactor": null
     },
     {
       "year": "2026",
@@ -5833,6 +7113,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -5844,7 +7126,12 @@
       "sluggingPercentage": null,
       "isoPower": null,
       "babip": null,
-      "ops": null
+      "ops": null,
+      "woba": null,
+      "wrc": null,
+      "wrcPlus": null,
+      "parkFactor": null,
+      "effectiveParkFactor": null
     },
     {
       "year": "2026",
@@ -5866,6 +7153,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -5877,7 +7166,12 @@
       "sluggingPercentage": null,
       "isoPower": null,
       "babip": null,
-      "ops": null
+      "ops": null,
+      "woba": null,
+      "wrc": null,
+      "wrcPlus": null,
+      "parkFactor": null,
+      "effectiveParkFactor": null
     },
     {
       "year": "2026",
@@ -5899,6 +7193,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -5910,7 +7206,12 @@
       "sluggingPercentage": 0.667,
       "isoPower": 0.0,
       "babip": 1.0,
-      "ops": 1.333
+      "ops": 1.333,
+      "woba": 0.606,
+      "wrc": 1.0,
+      "wrcPlus": 341.2,
+      "parkFactor": 132.4,
+      "effectiveParkFactor": 116.2
     },
     {
       "year": "2026",
@@ -5932,6 +7233,8 @@
       "homeRuns": 0,
       "runsBattedIn": 1,
       "walks": 1,
+      "unintentionalWalks": 1,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 1,
@@ -5943,7 +7246,12 @@
       "sluggingPercentage": 0.25,
       "isoPower": 0.083,
       "babip": 0.2,
-      "ops": 0.464
+      "ops": 0.464,
+      "woba": 0.208,
+      "wrc": 0.3,
+      "wrcPlus": 9.6,
+      "parkFactor": 132.4,
+      "effectiveParkFactor": 116.2
     },
     {
       "year": "2026",
@@ -5965,6 +7273,8 @@
       "homeRuns": 0,
       "runsBattedIn": 3,
       "walks": 5,
+      "unintentionalWalks": 5,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -5976,7 +7286,12 @@
       "sluggingPercentage": 0.271,
       "isoPower": 0.042,
       "babip": 0.324,
-      "ops": 0.573
+      "ops": 0.573,
+      "woba": 0.27,
+      "wrc": 3.9,
+      "wrcPlus": 61.4,
+      "parkFactor": 132.4,
+      "effectiveParkFactor": 116.2
     },
     {
       "year": "2026",
@@ -5998,6 +7313,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -6009,7 +7326,12 @@
       "sluggingPercentage": null,
       "isoPower": null,
       "babip": null,
-      "ops": null
+      "ops": null,
+      "woba": null,
+      "wrc": null,
+      "wrcPlus": null,
+      "parkFactor": null,
+      "effectiveParkFactor": null
     },
     {
       "year": "2026",
@@ -6031,6 +7353,8 @@
       "homeRuns": 0,
       "runsBattedIn": 3,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -6042,7 +7366,12 @@
       "sluggingPercentage": 0.438,
       "isoPower": 0.062,
       "babip": 0.545,
-      "ops": 0.812
+      "ops": 0.812,
+      "woba": 0.365,
+      "wrc": 2.3,
+      "wrcPlus": 140.3,
+      "parkFactor": 132.4,
+      "effectiveParkFactor": 116.2
     },
     {
       "year": "2026",
@@ -6064,6 +7393,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -6075,7 +7406,12 @@
       "sluggingPercentage": null,
       "isoPower": null,
       "babip": null,
-      "ops": null
+      "ops": null,
+      "woba": null,
+      "wrc": null,
+      "wrcPlus": null,
+      "parkFactor": null,
+      "effectiveParkFactor": null
     },
     {
       "year": "2026",
@@ -6097,6 +7433,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -6108,7 +7446,12 @@
       "sluggingPercentage": null,
       "isoPower": null,
       "babip": null,
-      "ops": null
+      "ops": null,
+      "woba": null,
+      "wrc": null,
+      "wrcPlus": null,
+      "parkFactor": null,
+      "effectiveParkFactor": null
     },
     {
       "year": "2026",
@@ -6130,6 +7473,8 @@
       "homeRuns": 0,
       "runsBattedIn": 1,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -6141,7 +7486,12 @@
       "sluggingPercentage": 0.387,
       "isoPower": 0.065,
       "babip": 0.5,
-      "ops": 0.71
+      "ops": 0.71,
+      "woba": 0.318,
+      "wrc": 3.4,
+      "wrcPlus": 101.2,
+      "parkFactor": 132.4,
+      "effectiveParkFactor": 116.2
     },
     {
       "year": "2026",
@@ -6163,6 +7513,8 @@
       "homeRuns": 0,
       "runsBattedIn": 3,
       "walks": 1,
+      "unintentionalWalks": 1,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -6174,7 +7526,12 @@
       "sluggingPercentage": 0.375,
       "isoPower": 0.125,
       "babip": 0.286,
-      "ops": 0.655
+      "ops": 0.655,
+      "woba": 0.291,
+      "wrc": 2.2,
+      "wrcPlus": 78.8,
+      "parkFactor": 132.4,
+      "effectiveParkFactor": 116.2
     },
     {
       "year": "2026",
@@ -6196,6 +7553,8 @@
       "homeRuns": 0,
       "runsBattedIn": 3,
       "walks": 5,
+      "unintentionalWalks": 5,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -6207,7 +7566,12 @@
       "sluggingPercentage": 0.397,
       "isoPower": 0.077,
       "babip": 0.373,
-      "ops": 0.759
+      "ops": 0.759,
+      "woba": 0.344,
+      "wrc": 10.8,
+      "wrcPlus": 122.8,
+      "parkFactor": 132.4,
+      "effectiveParkFactor": 116.2
     },
     {
       "year": "2026",
@@ -6229,6 +7593,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -6240,7 +7606,12 @@
       "sluggingPercentage": 0.0,
       "isoPower": 0.0,
       "babip": null,
-      "ops": 0.0
+      "ops": 0.0,
+      "woba": 0.0,
+      "wrc": -1.0,
+      "wrcPlus": -163.7,
+      "parkFactor": 132.4,
+      "effectiveParkFactor": 116.2
     },
     {
       "year": "2026",
@@ -6262,6 +7633,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -6273,7 +7646,12 @@
       "sluggingPercentage": null,
       "isoPower": null,
       "babip": null,
-      "ops": null
+      "ops": null,
+      "woba": null,
+      "wrc": null,
+      "wrcPlus": null,
+      "parkFactor": null,
+      "effectiveParkFactor": null
     },
     {
       "year": "2026",
@@ -6295,6 +7673,8 @@
       "homeRuns": 0,
       "runsBattedIn": 1,
       "walks": 3,
+      "unintentionalWalks": 3,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -6306,7 +7686,12 @@
       "sluggingPercentage": 0.13,
       "isoPower": 0.0,
       "babip": 0.167,
-      "ops": 0.361
+      "ops": 0.361,
+      "woba": 0.187,
+      "wrc": 0.2,
+      "wrcPlus": 10.5,
+      "parkFactor": 95.4,
+      "effectiveParkFactor": 97.7
     },
     {
       "year": "2026",
@@ -6328,6 +7713,8 @@
       "homeRuns": 3,
       "runsBattedIn": 8,
       "walks": 3,
+      "unintentionalWalks": 3,
+      "intentionalWalks": 0,
       "hitByPitch": 1,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -6339,7 +7726,12 @@
       "sluggingPercentage": 0.435,
       "isoPower": 0.217,
       "babip": 0.259,
-      "ops": 0.715
+      "ops": 0.715,
+      "woba": 0.319,
+      "wrc": 5.5,
+      "wrcPlus": 120.6,
+      "parkFactor": 95.4,
+      "effectiveParkFactor": 97.7
     },
     {
       "year": "2026",
@@ -6361,6 +7753,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 1,
+      "unintentionalWalks": 1,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -6372,7 +7766,12 @@
       "sluggingPercentage": 0.071,
       "isoPower": 0.0,
       "babip": 0.143,
-      "ops": 0.205
+      "ops": 0.205,
+      "woba": 0.108,
+      "wrc": -0.8,
+      "wrcPlus": -55.3,
+      "parkFactor": 95.4,
+      "effectiveParkFactor": 97.7
     },
     {
       "year": "2026",
@@ -6394,6 +7793,8 @@
       "homeRuns": 0,
       "runsBattedIn": 2,
       "walks": 3,
+      "unintentionalWalks": 3,
+      "intentionalWalks": 0,
       "hitByPitch": 1,
       "sacBunts": 0,
       "sacFlies": 1,
@@ -6405,7 +7806,12 @@
       "sluggingPercentage": 0.359,
       "isoPower": 0.103,
       "babip": 0.345,
-      "ops": 0.677
+      "ops": 0.677,
+      "woba": 0.307,
+      "wrc": 4.5,
+      "wrcPlus": 110.4,
+      "parkFactor": 95.4,
+      "effectiveParkFactor": 97.7
     },
     {
       "year": "2026",
@@ -6427,6 +7833,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -6438,7 +7846,12 @@
       "sluggingPercentage": 0.0,
       "isoPower": 0.0,
       "babip": 0.0,
-      "ops": 0.0
+      "ops": 0.0,
+      "woba": 0.0,
+      "wrc": -0.3,
+      "wrcPlus": -145.2,
+      "parkFactor": 95.4,
+      "effectiveParkFactor": 97.7
     },
     {
       "year": "2026",
@@ -6460,6 +7873,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -6471,7 +7886,12 @@
       "sluggingPercentage": null,
       "isoPower": null,
       "babip": null,
-      "ops": null
+      "ops": null,
+      "woba": null,
+      "wrc": null,
+      "wrcPlus": null,
+      "parkFactor": null,
+      "effectiveParkFactor": null
     },
     {
       "year": "2026",
@@ -6493,6 +7913,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 1,
       "sacFlies": 0,
@@ -6504,7 +7926,12 @@
       "sluggingPercentage": 0.667,
       "isoPower": 0.333,
       "babip": 0.5,
-      "ops": 1.0
+      "ops": 1.0,
+      "woba": 0.431,
+      "wrc": 0.8,
+      "wrcPlus": 213.9,
+      "parkFactor": 95.4,
+      "effectiveParkFactor": 97.7
     },
     {
       "year": "2026",
@@ -6526,6 +7953,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -6537,7 +7966,12 @@
       "sluggingPercentage": null,
       "isoPower": null,
       "babip": null,
-      "ops": null
+      "ops": null,
+      "woba": null,
+      "wrc": null,
+      "wrcPlus": null,
+      "parkFactor": null,
+      "effectiveParkFactor": null
     },
     {
       "year": "2026",
@@ -6559,6 +7993,8 @@
       "homeRuns": 0,
       "runsBattedIn": 1,
       "walks": 1,
+      "unintentionalWalks": 1,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -6570,7 +8006,12 @@
       "sluggingPercentage": 0.667,
       "isoPower": 0.167,
       "babip": 0.6,
-      "ops": 1.238
+      "ops": 1.238,
+      "woba": 0.546,
+      "wrc": 2.0,
+      "wrcPlus": 309.7,
+      "parkFactor": 95.4,
+      "effectiveParkFactor": 97.7
     },
     {
       "year": "2026",
@@ -6592,6 +8033,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -6603,7 +8046,12 @@
       "sluggingPercentage": null,
       "isoPower": null,
       "babip": null,
-      "ops": null
+      "ops": null,
+      "woba": null,
+      "wrc": null,
+      "wrcPlus": null,
+      "parkFactor": null,
+      "effectiveParkFactor": null
     },
     {
       "year": "2026",
@@ -6625,6 +8073,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -6636,7 +8086,12 @@
       "sluggingPercentage": null,
       "isoPower": null,
       "babip": null,
-      "ops": null
+      "ops": null,
+      "woba": null,
+      "wrc": null,
+      "wrcPlus": null,
+      "parkFactor": null,
+      "effectiveParkFactor": null
     },
     {
       "year": "2026",
@@ -6658,6 +8113,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -6669,7 +8126,12 @@
       "sluggingPercentage": 0.333,
       "isoPower": 0.0,
       "babip": 0.5,
-      "ops": 0.667
+      "ops": 0.667,
+      "woba": 0.303,
+      "wrc": 0.3,
+      "wrcPlus": 107.2,
+      "parkFactor": 95.4,
+      "effectiveParkFactor": 97.7
     },
     {
       "year": "2026",
@@ -6691,6 +8153,8 @@
       "homeRuns": 0,
       "runsBattedIn": 2,
       "walks": 2,
+      "unintentionalWalks": 2,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -6702,7 +8166,12 @@
       "sluggingPercentage": 0.5,
       "isoPower": 0.083,
       "babip": 0.5,
-      "ops": 1.0
+      "ops": 1.0,
+      "woba": 0.454,
+      "wrc": 3.0,
+      "wrcPlus": 232.7,
+      "parkFactor": 95.4,
+      "effectiveParkFactor": 97.7
     },
     {
       "year": "2026",
@@ -6724,6 +8193,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 1,
       "sacFlies": 0,
@@ -6735,7 +8206,12 @@
       "sluggingPercentage": 0.0,
       "isoPower": 0.0,
       "babip": 0.0,
-      "ops": 0.0
+      "ops": 0.0,
+      "woba": 0.0,
+      "wrc": -1.0,
+      "wrcPlus": -145.2,
+      "parkFactor": 95.4,
+      "effectiveParkFactor": 97.7
     },
     {
       "year": "2026",
@@ -6757,6 +8233,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 1,
       "sacFlies": 0,
@@ -6768,7 +8246,12 @@
       "sluggingPercentage": 0.0,
       "isoPower": 0.0,
       "babip": 0.0,
-      "ops": 0.0
+      "ops": 0.0,
+      "woba": 0.0,
+      "wrc": -0.7,
+      "wrcPlus": -145.2,
+      "parkFactor": 95.4,
+      "effectiveParkFactor": 97.7
     },
     {
       "year": "2026",
@@ -6790,6 +8273,8 @@
       "homeRuns": 0,
       "runsBattedIn": 1,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 1,
@@ -6801,7 +8286,12 @@
       "sluggingPercentage": 0.222,
       "isoPower": 0.0,
       "babip": 0.222,
-      "ops": 0.437
+      "ops": 0.437,
+      "woba": 0.195,
+      "wrc": 0.4,
+      "wrcPlus": 17.0,
+      "parkFactor": 95.4,
+      "effectiveParkFactor": 97.7
     },
     {
       "year": "2026",
@@ -6823,6 +8313,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -6834,7 +8326,12 @@
       "sluggingPercentage": 0.0,
       "isoPower": 0.0,
       "babip": null,
-      "ops": 0.0
+      "ops": 0.0,
+      "woba": 0.0,
+      "wrc": -0.1,
+      "wrcPlus": -145.2,
+      "parkFactor": 95.4,
+      "effectiveParkFactor": 97.7
     },
     {
       "year": "2026",
@@ -6856,6 +8353,8 @@
       "homeRuns": 0,
       "runsBattedIn": 1,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -6867,7 +8366,12 @@
       "sluggingPercentage": 0.361,
       "isoPower": 0.056,
       "babip": 0.379,
-      "ops": 0.667
+      "ops": 0.667,
+      "woba": 0.299,
+      "wrc": 3.4,
+      "wrcPlus": 103.9,
+      "parkFactor": 95.4,
+      "effectiveParkFactor": 97.7
     },
     {
       "year": "2026",
@@ -6889,6 +8393,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -6900,7 +8406,12 @@
       "sluggingPercentage": null,
       "isoPower": null,
       "babip": null,
-      "ops": null
+      "ops": null,
+      "woba": null,
+      "wrc": null,
+      "wrcPlus": null,
+      "parkFactor": null,
+      "effectiveParkFactor": null
     },
     {
       "year": "2026",
@@ -6922,6 +8433,8 @@
       "homeRuns": 0,
       "runsBattedIn": 6,
       "walks": 10,
+      "unintentionalWalks": 10,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 1,
       "sacFlies": 2,
@@ -6933,7 +8446,12 @@
       "sluggingPercentage": 0.426,
       "isoPower": 0.115,
       "babip": 0.358,
-      "ops": 0.823
+      "ops": 0.823,
+      "woba": 0.37,
+      "wrc": 11.1,
+      "wrcPlus": 162.8,
+      "parkFactor": 95.4,
+      "effectiveParkFactor": 97.7
     },
     {
       "year": "2026",
@@ -6955,6 +8473,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -6966,7 +8486,12 @@
       "sluggingPercentage": null,
       "isoPower": null,
       "babip": null,
-      "ops": null
+      "ops": null,
+      "woba": null,
+      "wrc": null,
+      "wrcPlus": null,
+      "parkFactor": null,
+      "effectiveParkFactor": null
     },
     {
       "year": "2026",
@@ -6988,6 +8513,8 @@
       "homeRuns": 1,
       "runsBattedIn": 3,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -6999,7 +8526,12 @@
       "sluggingPercentage": 0.5,
       "isoPower": 0.286,
       "babip": 0.222,
-      "ops": 0.714
+      "ops": 0.714,
+      "woba": 0.308,
+      "wrc": 1.4,
+      "wrcPlus": 111.4,
+      "parkFactor": 95.4,
+      "effectiveParkFactor": 97.7
     },
     {
       "year": "2026",
@@ -7021,6 +8553,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 2,
       "sacFlies": 0,
@@ -7032,7 +8566,12 @@
       "sluggingPercentage": 0.222,
       "isoPower": 0.0,
       "babip": 0.25,
-      "ops": 0.444
+      "ops": 0.444,
+      "woba": 0.202,
+      "wrc": 0.2,
+      "wrcPlus": 23.1,
+      "parkFactor": 95.4,
+      "effectiveParkFactor": 97.7
     },
     {
       "year": "2026",
@@ -7054,6 +8593,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -7065,7 +8606,12 @@
       "sluggingPercentage": null,
       "isoPower": null,
       "babip": null,
-      "ops": null
+      "ops": null,
+      "woba": null,
+      "wrc": null,
+      "wrcPlus": null,
+      "parkFactor": null,
+      "effectiveParkFactor": null
     },
     {
       "year": "2026",
@@ -7087,6 +8633,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -7098,7 +8646,12 @@
       "sluggingPercentage": null,
       "isoPower": null,
       "babip": null,
-      "ops": null
+      "ops": null,
+      "woba": null,
+      "wrc": null,
+      "wrcPlus": null,
+      "parkFactor": null,
+      "effectiveParkFactor": null
     },
     {
       "year": "2026",
@@ -7120,6 +8673,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -7131,7 +8686,12 @@
       "sluggingPercentage": 0.333,
       "isoPower": 0.0,
       "babip": 0.5,
-      "ops": 0.667
+      "ops": 0.667,
+      "woba": 0.303,
+      "wrc": 0.3,
+      "wrcPlus": 107.2,
+      "parkFactor": 95.4,
+      "effectiveParkFactor": 97.7
     },
     {
       "year": "2026",
@@ -7153,6 +8713,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -7164,7 +8726,12 @@
       "sluggingPercentage": null,
       "isoPower": null,
       "babip": null,
-      "ops": null
+      "ops": null,
+      "woba": null,
+      "wrc": null,
+      "wrcPlus": null,
+      "parkFactor": null,
+      "effectiveParkFactor": null
     },
     {
       "year": "2026",
@@ -7186,6 +8753,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -7197,7 +8766,12 @@
       "sluggingPercentage": 0.0,
       "isoPower": 0.0,
       "babip": null,
-      "ops": 0.0
+      "ops": 0.0,
+      "woba": 0.0,
+      "wrc": -0.4,
+      "wrcPlus": -145.2,
+      "parkFactor": 95.4,
+      "effectiveParkFactor": 97.7
     },
     {
       "year": "2026",
@@ -7219,6 +8793,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -7230,7 +8806,12 @@
       "sluggingPercentage": null,
       "isoPower": null,
       "babip": null,
-      "ops": null
+      "ops": null,
+      "woba": null,
+      "wrc": null,
+      "wrcPlus": null,
+      "parkFactor": null,
+      "effectiveParkFactor": null
     },
     {
       "year": "2026",
@@ -7252,6 +8833,8 @@
       "homeRuns": 0,
       "runsBattedIn": 3,
       "walks": 2,
+      "unintentionalWalks": 2,
+      "intentionalWalks": 0,
       "hitByPitch": 1,
       "sacBunts": 4,
       "sacFlies": 0,
@@ -7263,7 +8846,12 @@
       "sluggingPercentage": 0.194,
       "isoPower": 0.032,
       "babip": 0.179,
-      "ops": 0.394
+      "ops": 0.394,
+      "woba": 0.185,
+      "wrc": 0.4,
+      "wrcPlus": 8.9,
+      "parkFactor": 95.4,
+      "effectiveParkFactor": 97.7
     },
     {
       "year": "2026",
@@ -7285,6 +8873,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -7296,7 +8886,12 @@
       "sluggingPercentage": 0.0,
       "isoPower": 0.0,
       "babip": 0.0,
-      "ops": 0.0
+      "ops": 0.0,
+      "woba": 0.0,
+      "wrc": -0.1,
+      "wrcPlus": -145.2,
+      "parkFactor": 95.4,
+      "effectiveParkFactor": 97.7
     },
     {
       "year": "2026",
@@ -7318,6 +8913,8 @@
       "homeRuns": 1,
       "runsBattedIn": 4,
       "walks": 1,
+      "unintentionalWalks": 1,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -7329,7 +8926,12 @@
       "sluggingPercentage": 0.607,
       "isoPower": 0.25,
       "babip": 0.429,
-      "ops": 0.986
+      "ops": 0.986,
+      "woba": 0.431,
+      "wrc": 5.8,
+      "wrcPlus": 213.9,
+      "parkFactor": 95.4,
+      "effectiveParkFactor": 97.7
     },
     {
       "year": "2026",
@@ -7351,6 +8953,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 1,
+      "unintentionalWalks": 1,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -7362,7 +8966,12 @@
       "sluggingPercentage": 0.0,
       "isoPower": 0.0,
       "babip": 0.0,
-      "ops": 0.2
+      "ops": 0.2,
+      "woba": 0.142,
+      "wrc": -0.1,
+      "wrcPlus": -26.8,
+      "parkFactor": 95.4,
+      "effectiveParkFactor": 97.7
     },
     {
       "year": "2026",
@@ -7384,6 +8993,8 @@
       "homeRuns": 1,
       "runsBattedIn": 5,
       "walks": 6,
+      "unintentionalWalks": 6,
+      "intentionalWalks": 0,
       "hitByPitch": 1,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -7395,7 +9006,12 @@
       "sluggingPercentage": 0.368,
       "isoPower": 0.074,
       "babip": 0.328,
-      "ops": 0.728
+      "ops": 0.728,
+      "woba": 0.335,
+      "wrc": 9.3,
+      "wrcPlus": 134.2,
+      "parkFactor": 95.4,
+      "effectiveParkFactor": 97.7
     },
     {
       "year": "2026",
@@ -7417,6 +9033,8 @@
       "homeRuns": 2,
       "runsBattedIn": 8,
       "walks": 12,
+      "unintentionalWalks": 12,
+      "intentionalWalks": 0,
       "hitByPitch": 1,
       "sacBunts": 0,
       "sacFlies": 1,
@@ -7428,7 +9046,12 @@
       "sluggingPercentage": 0.448,
       "isoPower": 0.149,
       "babip": 0.419,
-      "ops": 0.855
+      "ops": 0.855,
+      "woba": 0.388,
+      "wrc": 13.3,
+      "wrcPlus": 177.7,
+      "parkFactor": 95.4,
+      "effectiveParkFactor": 97.7
     },
     {
       "year": "2026",
@@ -7450,6 +9073,8 @@
       "homeRuns": 1,
       "runsBattedIn": 5,
       "walks": 1,
+      "unintentionalWalks": 1,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 1,
@@ -7461,7 +9086,12 @@
       "sluggingPercentage": 0.395,
       "isoPower": 0.132,
       "babip": 0.346,
-      "ops": 0.67
+      "ops": 0.67,
+      "woba": 0.294,
+      "wrc": 3.7,
+      "wrcPlus": 99.9,
+      "parkFactor": 95.4,
+      "effectiveParkFactor": 97.7
     },
     {
       "year": "2026",
@@ -7483,6 +9113,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -7494,7 +9126,12 @@
       "sluggingPercentage": null,
       "isoPower": null,
       "babip": null,
-      "ops": null
+      "ops": null,
+      "woba": null,
+      "wrc": null,
+      "wrcPlus": null,
+      "parkFactor": null,
+      "effectiveParkFactor": null
     },
     {
       "year": "2026",
@@ -7516,6 +9153,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 1,
       "sacFlies": 0,
@@ -7527,7 +9166,12 @@
       "sluggingPercentage": 0.1,
       "isoPower": 0.0,
       "babip": 0.125,
-      "ops": 0.2
+      "ops": 0.2,
+      "woba": 0.091,
+      "wrc": -0.7,
+      "wrcPlus": -69.5,
+      "parkFactor": 95.4,
+      "effectiveParkFactor": 97.7
     },
     {
       "year": "2026",
@@ -7549,6 +9193,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -7560,7 +9206,12 @@
       "sluggingPercentage": null,
       "isoPower": null,
       "babip": null,
-      "ops": null
+      "ops": null,
+      "woba": null,
+      "wrc": null,
+      "wrcPlus": null,
+      "parkFactor": null,
+      "effectiveParkFactor": null
     },
     {
       "year": "2026",
@@ -7582,6 +9233,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -7593,7 +9246,12 @@
       "sluggingPercentage": 0.0,
       "isoPower": 0.0,
       "babip": 0.0,
-      "ops": 0.0
+      "ops": 0.0,
+      "woba": 0.0,
+      "wrc": -1.0,
+      "wrcPlus": -145.2,
+      "parkFactor": 95.4,
+      "effectiveParkFactor": 97.7
     },
     {
       "year": "2026",
@@ -7615,6 +9273,8 @@
       "homeRuns": 0,
       "runsBattedIn": 2,
       "walks": 1,
+      "unintentionalWalks": 1,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -7626,7 +9286,12 @@
       "sluggingPercentage": 0.333,
       "isoPower": 0.083,
       "babip": 0.429,
-      "ops": 0.641
+      "ops": 0.641,
+      "woba": 0.294,
+      "wrc": 1.2,
+      "wrcPlus": 99.7,
+      "parkFactor": 95.4,
+      "effectiveParkFactor": 97.7
     },
     {
       "year": "2026",
@@ -7648,6 +9313,8 @@
       "homeRuns": 0,
       "runsBattedIn": 2,
       "walks": 3,
+      "unintentionalWalks": 3,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -7659,7 +9326,12 @@
       "sluggingPercentage": 0.364,
       "isoPower": 0.0,
       "babip": 0.471,
-      "ops": 0.804
+      "ops": 0.804,
+      "woba": 0.376,
+      "wrc": 3.9,
+      "wrcPlus": 168.2,
+      "parkFactor": 95.4,
+      "effectiveParkFactor": 97.7
     },
     {
       "year": "2026",
@@ -7681,6 +9353,8 @@
       "homeRuns": 0,
       "runsBattedIn": 1,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 1,
       "sacFlies": 0,
@@ -7692,7 +9366,12 @@
       "sluggingPercentage": 0.125,
       "isoPower": 0.0,
       "babip": 0.167,
-      "ops": 0.25
+      "ops": 0.25,
+      "woba": 0.114,
+      "wrc": -0.4,
+      "wrcPlus": -50.6,
+      "parkFactor": 95.4,
+      "effectiveParkFactor": 97.7
     },
     {
       "year": "2026",
@@ -7714,6 +9393,8 @@
       "homeRuns": 1,
       "runsBattedIn": 2,
       "walks": 1,
+      "unintentionalWalks": 1,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -7725,7 +9406,12 @@
       "sluggingPercentage": 0.857,
       "isoPower": 0.429,
       "babip": 0.5,
-      "ops": 1.357
+      "ops": 1.357,
+      "woba": 0.58,
+      "wrc": 2.5,
+      "wrcPlus": 337.9,
+      "parkFactor": 95.4,
+      "effectiveParkFactor": 97.7
     },
     {
       "year": "2026",
@@ -7747,6 +9433,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -7758,7 +9446,12 @@
       "sluggingPercentage": null,
       "isoPower": null,
       "babip": null,
-      "ops": null
+      "ops": null,
+      "woba": null,
+      "wrc": null,
+      "wrcPlus": null,
+      "parkFactor": null,
+      "effectiveParkFactor": null
     },
     {
       "year": "2026",
@@ -7780,6 +9473,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -7791,7 +9486,12 @@
       "sluggingPercentage": 0.0,
       "isoPower": 0.0,
       "babip": 0.0,
-      "ops": 0.0
+      "ops": 0.0,
+      "woba": 0.0,
+      "wrc": -0.3,
+      "wrcPlus": -127.5,
+      "parkFactor": 93.1,
+      "effectiveParkFactor": 96.5
     },
     {
       "year": "2026",
@@ -7813,6 +9513,8 @@
       "homeRuns": 0,
       "runsBattedIn": 1,
       "walks": 1,
+      "unintentionalWalks": 1,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -7824,7 +9526,12 @@
       "sluggingPercentage": 0.083,
       "isoPower": 0.0,
       "babip": 0.1,
-      "ops": 0.237
+      "ops": 0.237,
+      "woba": 0.125,
+      "wrc": -0.5,
+      "wrcPlus": -33.3,
+      "parkFactor": 93.1,
+      "effectiveParkFactor": 96.5
     },
     {
       "year": "2026",
@@ -7846,6 +9553,8 @@
       "homeRuns": 0,
       "runsBattedIn": 6,
       "walks": 2,
+      "unintentionalWalks": 2,
+      "intentionalWalks": 0,
       "hitByPitch": 1,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -7857,7 +9566,12 @@
       "sluggingPercentage": 0.289,
       "isoPower": 0.026,
       "babip": 0.345,
-      "ops": 0.607
+      "ops": 0.607,
+      "woba": 0.284,
+      "wrc": 3.5,
+      "wrcPlus": 87.1,
+      "parkFactor": 93.1,
+      "effectiveParkFactor": 96.5
     },
     {
       "year": "2026",
@@ -7879,6 +9593,8 @@
       "homeRuns": 1,
       "runsBattedIn": 6,
       "walks": 7,
+      "unintentionalWalks": 7,
+      "intentionalWalks": 0,
       "hitByPitch": 1,
       "sacBunts": 2,
       "sacFlies": 2,
@@ -7890,7 +9606,12 @@
       "sluggingPercentage": 0.281,
       "isoPower": 0.047,
       "babip": 0.259,
-      "ops": 0.592
+      "ops": 0.592,
+      "woba": 0.278,
+      "wrc": 6.2,
+      "wrcPlus": 82.5,
+      "parkFactor": 93.1,
+      "effectiveParkFactor": 96.5
     },
     {
       "year": "2026",
@@ -7912,6 +9633,8 @@
       "homeRuns": 5,
       "runsBattedIn": 13,
       "walks": 14,
+      "unintentionalWalks": 14,
+      "intentionalWalks": 0,
       "hitByPitch": 3,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -7923,7 +9646,12 @@
       "sluggingPercentage": 0.523,
       "isoPower": 0.262,
       "babip": 0.273,
-      "ops": 0.938
+      "ops": 0.938,
+      "woba": 0.42,
+      "wrc": 15.8,
+      "wrcPlus": 189.8,
+      "parkFactor": 93.1,
+      "effectiveParkFactor": 96.5
     },
     {
       "year": "2026",
@@ -7945,6 +9673,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -7956,7 +9686,12 @@
       "sluggingPercentage": 0.0,
       "isoPower": 0.0,
       "babip": 0.0,
-      "ops": 0.0
+      "ops": 0.0,
+      "woba": 0.0,
+      "wrc": -0.3,
+      "wrcPlus": -127.5,
+      "parkFactor": 93.1,
+      "effectiveParkFactor": 96.5
     },
     {
       "year": "2026",
@@ -7978,6 +9713,8 @@
       "homeRuns": 0,
       "runsBattedIn": 4,
       "walks": 1,
+      "unintentionalWalks": 1,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 1,
@@ -7989,7 +9726,12 @@
       "sluggingPercentage": 0.261,
       "isoPower": 0.0,
       "babip": 0.316,
-      "ops": 0.541
+      "ops": 0.541,
+      "woba": 0.247,
+      "wrc": 1.4,
+      "wrcPlus": 58.9,
+      "parkFactor": 93.1,
+      "effectiveParkFactor": 96.5
     },
     {
       "year": "2026",
@@ -8011,6 +9753,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -8022,7 +9766,12 @@
       "sluggingPercentage": 0.0,
       "isoPower": 0.0,
       "babip": null,
-      "ops": 0.0
+      "ops": 0.0,
+      "woba": 0.0,
+      "wrc": -0.1,
+      "wrcPlus": -127.5,
+      "parkFactor": 93.1,
+      "effectiveParkFactor": 96.5
     },
     {
       "year": "2026",
@@ -8044,6 +9793,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -8055,7 +9806,12 @@
       "sluggingPercentage": null,
       "isoPower": null,
       "babip": null,
-      "ops": null
+      "ops": null,
+      "woba": null,
+      "wrc": null,
+      "wrcPlus": null,
+      "parkFactor": null,
+      "effectiveParkFactor": null
     },
     {
       "year": "2026",
@@ -8077,6 +9833,8 @@
       "homeRuns": 3,
       "runsBattedIn": 13,
       "walks": 1,
+      "unintentionalWalks": 1,
+      "intentionalWalks": 0,
       "hitByPitch": 1,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -8088,7 +9846,12 @@
       "sluggingPercentage": 0.427,
       "isoPower": 0.147,
       "babip": 0.333,
-      "ops": 0.725
+      "ops": 0.725,
+      "woba": 0.324,
+      "wrc": 9.0,
+      "wrcPlus": 117.1,
+      "parkFactor": 93.1,
+      "effectiveParkFactor": 96.5
     },
     {
       "year": "2026",
@@ -8110,6 +9873,8 @@
       "homeRuns": 0,
       "runsBattedIn": 11,
       "walks": 10,
+      "unintentionalWalks": 10,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 1,
       "sacFlies": 2,
@@ -8121,7 +9886,12 @@
       "sluggingPercentage": 0.299,
       "isoPower": 0.06,
       "babip": 0.291,
-      "ops": 0.628
+      "ops": 0.628,
+      "woba": 0.294,
+      "wrc": 7.5,
+      "wrcPlus": 94.4,
+      "parkFactor": 93.1,
+      "effectiveParkFactor": 96.5
     },
     {
       "year": "2026",
@@ -8143,6 +9913,8 @@
       "homeRuns": 3,
       "runsBattedIn": 8,
       "walks": 8,
+      "unintentionalWalks": 8,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 1,
@@ -8154,7 +9926,12 @@
       "sluggingPercentage": 0.468,
       "isoPower": 0.177,
       "babip": 0.323,
-      "ops": 0.821
+      "ops": 0.821,
+      "woba": 0.365,
+      "wrc": 13.2,
+      "wrcPlus": 148.5,
+      "parkFactor": 93.1,
+      "effectiveParkFactor": 96.5
     },
     {
       "year": "2026",
@@ -8176,6 +9953,8 @@
       "homeRuns": 1,
       "runsBattedIn": 4,
       "walks": 3,
+      "unintentionalWalks": 3,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 5,
       "sacFlies": 1,
@@ -8187,7 +9966,12 @@
       "sluggingPercentage": 0.298,
       "isoPower": 0.106,
       "babip": 0.286,
-      "ops": 0.533
+      "ops": 0.533,
+      "woba": 0.241,
+      "wrc": 3.0,
+      "wrcPlus": 54.6,
+      "parkFactor": 93.1,
+      "effectiveParkFactor": 96.5
     },
     {
       "year": "2026",
@@ -8209,6 +9993,8 @@
       "homeRuns": 0,
       "runsBattedIn": 4,
       "walks": 3,
+      "unintentionalWalks": 3,
+      "intentionalWalks": 0,
       "hitByPitch": 1,
       "sacBunts": 0,
       "sacFlies": 1,
@@ -8220,7 +10006,12 @@
       "sluggingPercentage": 0.384,
       "isoPower": 0.096,
       "babip": 0.339,
-      "ops": 0.704
+      "ops": 0.704,
+      "woba": 0.316,
+      "wrc": 8.7,
+      "wrcPlus": 111.5,
+      "parkFactor": 93.1,
+      "effectiveParkFactor": 96.5
     },
     {
       "year": "2026",
@@ -8242,6 +10033,8 @@
       "homeRuns": 0,
       "runsBattedIn": 1,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -8253,7 +10046,12 @@
       "sluggingPercentage": 0.214,
       "isoPower": 0.0,
       "babip": 0.3,
-      "ops": 0.429
+      "ops": 0.429,
+      "woba": 0.195,
+      "wrc": 0.2,
+      "wrcPlus": 19.8,
+      "parkFactor": 93.1,
+      "effectiveParkFactor": 96.5
     },
     {
       "year": "2026",
@@ -8275,6 +10073,8 @@
       "homeRuns": 6,
       "runsBattedIn": 16,
       "walks": 15,
+      "unintentionalWalks": 15,
+      "intentionalWalks": 0,
       "hitByPitch": 4,
       "sacBunts": 0,
       "sacFlies": 1,
@@ -8286,7 +10086,12 @@
       "sluggingPercentage": 0.657,
       "isoPower": 0.343,
       "babip": 0.3,
-      "ops": 1.116
+      "ops": 1.116,
+      "woba": 0.481,
+      "wrc": 20.9,
+      "wrcPlus": 236.2,
+      "parkFactor": 93.1,
+      "effectiveParkFactor": 96.5
     },
     {
       "year": "2026",
@@ -8308,6 +10113,8 @@
       "homeRuns": 0,
       "runsBattedIn": 1,
       "walks": 4,
+      "unintentionalWalks": 4,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -8319,7 +10126,12 @@
       "sluggingPercentage": 0.179,
       "isoPower": 0.026,
       "babip": 0.261,
-      "ops": 0.412
+      "ops": 0.412,
+      "woba": 0.202,
+      "wrc": 1.0,
+      "wrcPlus": 25.1,
+      "parkFactor": 93.1,
+      "effectiveParkFactor": 96.5
     },
     {
       "year": "2026",
@@ -8341,6 +10153,8 @@
       "homeRuns": 2,
       "runsBattedIn": 2,
       "walks": 4,
+      "unintentionalWalks": 4,
+      "intentionalWalks": 0,
       "hitByPitch": 2,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -8352,7 +10166,12 @@
       "sluggingPercentage": 0.5,
       "isoPower": 0.375,
       "babip": 0.0,
-      "ops": 0.864
+      "ops": 0.864,
+      "woba": 0.389,
+      "wrc": 3.7,
+      "wrcPlus": 146.7,
+      "parkFactor": 132.3,
+      "effectiveParkFactor": 116.2
     },
     {
       "year": "2026",
@@ -8374,6 +10193,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -8385,7 +10206,12 @@
       "sluggingPercentage": 0.0,
       "isoPower": 0.0,
       "babip": 0.0,
-      "ops": 0.0
+      "ops": 0.0,
+      "woba": 0.0,
+      "wrc": -0.3,
+      "wrcPlus": -147.1,
+      "parkFactor": 132.3,
+      "effectiveParkFactor": 116.2
     },
     {
       "year": "2026",
@@ -8407,6 +10233,8 @@
       "homeRuns": 3,
       "runsBattedIn": 7,
       "walks": 5,
+      "unintentionalWalks": 5,
+      "intentionalWalks": 0,
       "hitByPitch": 1,
       "sacBunts": 0,
       "sacFlies": 1,
@@ -8418,7 +10246,12 @@
       "sluggingPercentage": 0.469,
       "isoPower": 0.203,
       "babip": 0.286,
-      "ops": 0.793
+      "ops": 0.793,
+      "woba": 0.351,
+      "wrc": 9.8,
+      "wrcPlus": 118.0,
+      "parkFactor": 132.3,
+      "effectiveParkFactor": 116.2
     },
     {
       "year": "2026",
@@ -8440,6 +10273,8 @@
       "homeRuns": 8,
       "runsBattedIn": 15,
       "walks": 10,
+      "unintentionalWalks": 10,
+      "intentionalWalks": 0,
       "hitByPitch": 2,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -8451,7 +10286,12 @@
       "sluggingPercentage": 0.614,
       "isoPower": 0.357,
       "babip": 0.233,
-      "ops": 0.98
+      "ops": 0.98,
+      "woba": 0.426,
+      "wrc": 16.2,
+      "wrcPlus": 175.2,
+      "parkFactor": 132.3,
+      "effectiveParkFactor": 116.2
     },
     {
       "year": "2026",
@@ -8473,6 +10313,8 @@
       "homeRuns": 0,
       "runsBattedIn": 1,
       "walks": 1,
+      "unintentionalWalks": 1,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -8484,7 +10326,12 @@
       "sluggingPercentage": 0.188,
       "isoPower": 0.0,
       "babip": 0.273,
-      "ops": 0.423
+      "ops": 0.423,
+      "woba": 0.202,
+      "wrc": 0.4,
+      "wrcPlus": 5.8,
+      "parkFactor": 132.3,
+      "effectiveParkFactor": 116.2
     },
     {
       "year": "2026",
@@ -8506,6 +10353,8 @@
       "homeRuns": 0,
       "runsBattedIn": 1,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -8517,7 +10366,12 @@
       "sluggingPercentage": 0.214,
       "isoPower": 0.143,
       "babip": 0.1,
-      "ops": 0.286
+      "ops": 0.286,
+      "woba": 0.117,
+      "wrc": -0.6,
+      "wrcPlus": -58.7,
+      "parkFactor": 132.3,
+      "effectiveParkFactor": 116.2
     },
     {
       "year": "2026",
@@ -8539,6 +10393,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 2,
+      "unintentionalWalks": 2,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -8550,7 +10406,12 @@
       "sluggingPercentage": 0.667,
       "isoPower": 0.333,
       "babip": 0.5,
-      "ops": 1.267
+      "ops": 1.267,
+      "woba": 0.543,
+      "wrc": 1.4,
+      "wrcPlus": 263.5,
+      "parkFactor": 132.3,
+      "effectiveParkFactor": 116.2
     },
     {
       "year": "2026",
@@ -8572,6 +10433,8 @@
       "homeRuns": 2,
       "runsBattedIn": 9,
       "walks": 2,
+      "unintentionalWalks": 2,
+      "intentionalWalks": 0,
       "hitByPitch": 2,
       "sacBunts": 1,
       "sacFlies": 0,
@@ -8583,7 +10446,12 @@
       "sluggingPercentage": 0.585,
       "isoPower": 0.22,
       "babip": 0.52,
-      "ops": 1.008
+      "ops": 1.008,
+      "woba": 0.446,
+      "wrc": 9.8,
+      "wrcPlus": 189.9,
+      "parkFactor": 132.3,
+      "effectiveParkFactor": 116.2
     },
     {
       "year": "2026",
@@ -8605,6 +10473,8 @@
       "homeRuns": 0,
       "runsBattedIn": 1,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 2,
       "sacFlies": 0,
@@ -8616,7 +10486,12 @@
       "sluggingPercentage": 0.0,
       "isoPower": 0.0,
       "babip": 0.0,
-      "ops": 0.0
+      "ops": 0.0,
+      "woba": 0.0,
+      "wrc": -2.3,
+      "wrcPlus": -147.1,
+      "parkFactor": 132.3,
+      "effectiveParkFactor": 116.2
     },
     {
       "year": "2026",
@@ -8638,6 +10513,8 @@
       "homeRuns": 1,
       "runsBattedIn": 6,
       "walks": 1,
+      "unintentionalWalks": 1,
+      "intentionalWalks": 0,
       "hitByPitch": 1,
       "sacBunts": 0,
       "sacFlies": 2,
@@ -8649,7 +10526,12 @@
       "sluggingPercentage": 0.354,
       "isoPower": 0.125,
       "babip": 0.294,
-      "ops": 0.604
+      "ops": 0.604,
+      "woba": 0.265,
+      "wrc": 3.7,
+      "wrcPlus": 53.6,
+      "parkFactor": 132.3,
+      "effectiveParkFactor": 116.2
     },
     {
       "year": "2026",
@@ -8671,6 +10553,8 @@
       "homeRuns": 0,
       "runsBattedIn": 8,
       "walks": 3,
+      "unintentionalWalks": 3,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 2,
       "sacFlies": 2,
@@ -8682,7 +10566,12 @@
       "sluggingPercentage": 0.41,
       "isoPower": 0.115,
       "babip": 0.333,
-      "ops": 0.728
+      "ops": 0.728,
+      "woba": 0.32,
+      "wrc": 7.8,
+      "wrcPlus": 95.1,
+      "parkFactor": 132.3,
+      "effectiveParkFactor": 116.2
     },
     {
       "year": "2026",
@@ -8704,6 +10593,8 @@
       "homeRuns": 5,
       "runsBattedIn": 15,
       "walks": 8,
+      "unintentionalWalks": 8,
+      "intentionalWalks": 0,
       "hitByPitch": 3,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -8715,7 +10606,12 @@
       "sluggingPercentage": 0.514,
       "isoPower": 0.23,
       "babip": 0.327,
-      "ops": 0.89
+      "ops": 0.89,
+      "woba": 0.397,
+      "wrc": 14.9,
+      "wrcPlus": 153.0,
+      "parkFactor": 132.3,
+      "effectiveParkFactor": 116.2
     },
     {
       "year": "2026",
@@ -8737,6 +10633,8 @@
       "homeRuns": 1,
       "runsBattedIn": 4,
       "walks": 1,
+      "unintentionalWalks": 1,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -8748,7 +10646,12 @@
       "sluggingPercentage": 0.375,
       "isoPower": 0.25,
       "babip": 0.083,
-      "ops": 0.551
+      "ops": 0.551,
+      "woba": 0.242,
+      "wrc": 0.9,
+      "wrcPlus": 35.9,
+      "parkFactor": 132.3,
+      "effectiveParkFactor": 116.2
     },
     {
       "year": "2026",
@@ -8770,6 +10673,8 @@
       "homeRuns": 2,
       "runsBattedIn": 5,
       "walks": 3,
+      "unintentionalWalks": 3,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 1,
       "sacFlies": 0,
@@ -8781,7 +10686,12 @@
       "sluggingPercentage": 0.439,
       "isoPower": 0.175,
       "babip": 0.31,
-      "ops": 0.739
+      "ops": 0.739,
+      "woba": 0.328,
+      "wrc": 7.4,
+      "wrcPlus": 101.2,
+      "parkFactor": 132.3,
+      "effectiveParkFactor": 116.2
     },
     {
       "year": "2026",
@@ -8803,6 +10713,8 @@
       "homeRuns": 2,
       "runsBattedIn": 2,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -8814,7 +10726,12 @@
       "sluggingPercentage": 0.379,
       "isoPower": 0.241,
       "babip": 0.1,
-      "ops": 0.517
+      "ops": 0.517,
+      "woba": 0.221,
+      "wrc": 1.1,
+      "wrcPlus": 20.3,
+      "parkFactor": 132.3,
+      "effectiveParkFactor": 116.2
     },
     {
       "year": "2026",
@@ -8836,6 +10753,8 @@
       "homeRuns": 1,
       "runsBattedIn": 4,
       "walks": 8,
+      "unintentionalWalks": 8,
+      "intentionalWalks": 0,
       "hitByPitch": 2,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -8847,7 +10766,12 @@
       "sluggingPercentage": 0.276,
       "isoPower": 0.138,
       "babip": 0.158,
-      "ops": 0.635
+      "ops": 0.635,
+      "woba": 0.318,
+      "wrc": 4.4,
+      "wrcPlus": 93.2,
+      "parkFactor": 132.3,
+      "effectiveParkFactor": 116.2
     },
     {
       "year": "2026",
@@ -8869,6 +10793,8 @@
       "homeRuns": 2,
       "runsBattedIn": 4,
       "walks": 11,
+      "unintentionalWalks": 11,
+      "intentionalWalks": 0,
       "hitByPitch": 1,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -8880,7 +10806,12 @@
       "sluggingPercentage": 0.319,
       "isoPower": 0.087,
       "babip": 0.237,
-      "ops": 0.665
+      "ops": 0.665,
+      "woba": 0.315,
+      "wrc": 9.0,
+      "wrcPlus": 91.0,
+      "parkFactor": 132.3,
+      "effectiveParkFactor": 116.2
     },
     {
       "year": "2026",
@@ -8902,6 +10833,8 @@
       "homeRuns": 4,
       "runsBattedIn": 10,
       "walks": 2,
+      "unintentionalWalks": 2,
+      "intentionalWalks": 0,
       "hitByPitch": 1,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -8913,7 +10846,12 @@
       "sluggingPercentage": 0.614,
       "isoPower": 0.318,
       "babip": 0.31,
-      "ops": 0.954
+      "ops": 0.954,
+      "woba": 0.416,
+      "wrc": 8.9,
+      "wrcPlus": 167.5,
+      "parkFactor": 132.3,
+      "effectiveParkFactor": 116.2
     },
     {
       "year": "2026",
@@ -8935,6 +10873,8 @@
       "homeRuns": 2,
       "runsBattedIn": 6,
       "walks": 5,
+      "unintentionalWalks": 5,
+      "intentionalWalks": 0,
       "hitByPitch": 1,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -8946,7 +10886,12 @@
       "sluggingPercentage": 0.371,
       "isoPower": 0.129,
       "babip": 0.288,
-      "ops": 0.674
+      "ops": 0.674,
+      "woba": 0.307,
+      "wrc": 7.9,
+      "wrcPlus": 96.3,
+      "parkFactor": 109.2,
+      "effectiveParkFactor": 104.6
     },
     {
       "year": "2026",
@@ -8968,6 +10913,8 @@
       "homeRuns": 1,
       "runsBattedIn": 6,
       "walks": 4,
+      "unintentionalWalks": 4,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 1,
@@ -8979,7 +10926,12 @@
       "sluggingPercentage": 0.357,
       "isoPower": 0.125,
       "babip": 0.261,
-      "ops": 0.636
+      "ops": 0.636,
+      "woba": 0.285,
+      "wrc": 5.3,
+      "wrcPlus": 80.1,
+      "parkFactor": 109.2,
+      "effectiveParkFactor": 104.6
     },
     {
       "year": "2026",
@@ -9001,6 +10953,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 1,
+      "unintentionalWalks": 1,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -9012,7 +10966,12 @@
       "sluggingPercentage": 0.312,
       "isoPower": 0.125,
       "babip": 0.25,
-      "ops": 0.548
+      "ops": 0.548,
+      "woba": 0.247,
+      "wrc": 1.0,
+      "wrcPlus": 51.5,
+      "parkFactor": 109.2,
+      "effectiveParkFactor": 104.6
     },
     {
       "year": "2026",
@@ -9034,6 +10993,8 @@
       "homeRuns": 0,
       "runsBattedIn": 1,
       "walks": 10,
+      "unintentionalWalks": 10,
+      "intentionalWalks": 0,
       "hitByPitch": 1,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -9045,7 +11006,12 @@
       "sluggingPercentage": 0.138,
       "isoPower": 0.0,
       "babip": 0.2,
-      "ops": 0.513
+      "ops": 0.513,
+      "woba": 0.287,
+      "wrc": 3.6,
+      "wrcPlus": 81.6,
+      "parkFactor": 109.2,
+      "effectiveParkFactor": 104.6
     },
     {
       "year": "2026",
@@ -9067,6 +11033,8 @@
       "homeRuns": 0,
       "runsBattedIn": 2,
       "walks": 2,
+      "unintentionalWalks": 2,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 1,
       "sacFlies": 0,
@@ -9078,7 +11046,12 @@
       "sluggingPercentage": 0.344,
       "isoPower": 0.062,
       "babip": 0.375,
-      "ops": 0.667
+      "ops": 0.667,
+      "woba": 0.305,
+      "wrc": 3.6,
+      "wrcPlus": 95.1,
+      "parkFactor": 109.2,
+      "effectiveParkFactor": 104.6
     },
     {
       "year": "2026",
@@ -9100,6 +11073,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -9111,7 +11086,12 @@
       "sluggingPercentage": 0.0,
       "isoPower": 0.0,
       "babip": null,
-      "ops": 0.0
+      "ops": 0.0,
+      "woba": 0.0,
+      "wrc": -0.3,
+      "wrcPlus": -135.6,
+      "parkFactor": 109.2,
+      "effectiveParkFactor": 104.6
     },
     {
       "year": "2026",
@@ -9133,6 +11113,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -9144,7 +11126,12 @@
       "sluggingPercentage": 0.125,
       "isoPower": 0.0,
       "babip": 0.2,
-      "ops": 0.25
+      "ops": 0.25,
+      "woba": 0.114,
+      "wrc": -0.7,
+      "wrcPlus": -49.7,
+      "parkFactor": 109.2,
+      "effectiveParkFactor": 104.6
     },
     {
       "year": "2026",
@@ -9166,6 +11153,8 @@
       "homeRuns": 2,
       "runsBattedIn": 10,
       "walks": 7,
+      "unintentionalWalks": 7,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 2,
@@ -9177,7 +11166,12 @@
       "sluggingPercentage": 0.329,
       "isoPower": 0.089,
       "babip": 0.279,
-      "ops": 0.625
+      "ops": 0.625,
+      "woba": 0.284,
+      "wrc": 7.6,
+      "wrcPlus": 79.5,
+      "parkFactor": 109.2,
+      "effectiveParkFactor": 104.6
     },
     {
       "year": "2026",
@@ -9199,6 +11193,8 @@
       "homeRuns": 0,
       "runsBattedIn": 2,
       "walks": 3,
+      "unintentionalWalks": 3,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 2,
       "sacFlies": 0,
@@ -9210,7 +11206,12 @@
       "sluggingPercentage": 0.268,
       "isoPower": 0.0,
       "babip": 0.367,
-      "ops": 0.586
+      "ops": 0.586,
+      "woba": 0.276,
+      "wrc": 3.7,
+      "wrcPlus": 72.9,
+      "parkFactor": 109.2,
+      "effectiveParkFactor": 104.6
     },
     {
       "year": "2026",
@@ -9232,6 +11233,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -9243,7 +11246,12 @@
       "sluggingPercentage": 0.077,
       "isoPower": 0.0,
       "babip": 0.111,
-      "ops": 0.154
+      "ops": 0.154,
+      "woba": 0.07,
+      "wrc": -1.0,
+      "wrcPlus": -82.7,
+      "parkFactor": 109.2,
+      "effectiveParkFactor": 104.6
     },
     {
       "year": "2026",
@@ -9265,6 +11273,8 @@
       "homeRuns": 1,
       "runsBattedIn": 2,
       "walks": 6,
+      "unintentionalWalks": 6,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 1,
@@ -9276,7 +11286,12 @@
       "sluggingPercentage": 0.323,
       "isoPower": 0.129,
       "babip": 0.2,
-      "ops": 0.638
+      "ops": 0.638,
+      "woba": 0.297,
+      "wrc": 3.7,
+      "wrcPlus": 89.4,
+      "parkFactor": 109.2,
+      "effectiveParkFactor": 104.6
     },
     {
       "year": "2026",
@@ -9298,6 +11313,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 2,
+      "unintentionalWalks": 2,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 1,
       "sacFlies": 0,
@@ -9309,7 +11326,12 @@
       "sluggingPercentage": 0.139,
       "isoPower": 0.0,
       "babip": 0.185,
-      "ops": 0.323
+      "ops": 0.323,
+      "woba": 0.157,
+      "wrc": -0.5,
+      "wrcPlus": -16.9,
+      "parkFactor": 109.2,
+      "effectiveParkFactor": 104.6
     },
     {
       "year": "2026",
@@ -9331,6 +11353,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -9342,7 +11366,12 @@
       "sluggingPercentage": 0.0,
       "isoPower": 0.0,
       "babip": 0.0,
-      "ops": 0.0
+      "ops": 0.0,
+      "woba": 0.0,
+      "wrc": -0.4,
+      "wrcPlus": -135.6,
+      "parkFactor": 109.2,
+      "effectiveParkFactor": 104.6
     },
     {
       "year": "2026",
@@ -9364,6 +11393,8 @@
       "homeRuns": 0,
       "runsBattedIn": 3,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 3,
       "sacFlies": 0,
@@ -9375,7 +11406,12 @@
       "sluggingPercentage": 0.206,
       "isoPower": 0.029,
       "babip": 0.261,
-      "ops": 0.382
+      "ops": 0.382,
+      "woba": 0.172,
+      "wrc": -0.0,
+      "wrcPlus": -5.8,
+      "parkFactor": 109.2,
+      "effectiveParkFactor": 104.6
     },
     {
       "year": "2026",
@@ -9397,6 +11433,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -9408,7 +11446,12 @@
       "sluggingPercentage": 0.0,
       "isoPower": 0.0,
       "babip": 0.0,
-      "ops": 0.0
+      "ops": 0.0,
+      "woba": 0.0,
+      "wrc": -1.2,
+      "wrcPlus": -135.6,
+      "parkFactor": 109.2,
+      "effectiveParkFactor": 104.6
     },
     {
       "year": "2026",
@@ -9430,6 +11473,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -9441,7 +11486,12 @@
       "sluggingPercentage": 0.0,
       "isoPower": 0.0,
       "babip": 0.0,
-      "ops": 0.0
+      "ops": 0.0,
+      "woba": 0.0,
+      "wrc": -0.3,
+      "wrcPlus": -135.6,
+      "parkFactor": 109.2,
+      "effectiveParkFactor": 104.6
     },
     {
       "year": "2026",
@@ -9463,6 +11513,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -9474,7 +11526,12 @@
       "sluggingPercentage": 0.0,
       "isoPower": 0.0,
       "babip": 0.0,
-      "ops": 0.0
+      "ops": 0.0,
+      "woba": 0.0,
+      "wrc": -0.4,
+      "wrcPlus": -135.6,
+      "parkFactor": 109.2,
+      "effectiveParkFactor": 104.6
     },
     {
       "year": "2026",
@@ -9496,6 +11553,8 @@
       "homeRuns": 0,
       "runsBattedIn": 1,
       "walks": 2,
+      "unintentionalWalks": 2,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -9507,7 +11566,12 @@
       "sluggingPercentage": 0.25,
       "isoPower": 0.0,
       "babip": 0.667,
-      "ops": 0.65
+      "ops": 0.65,
+      "woba": 0.324,
+      "wrc": 1.2,
+      "wrcPlus": 109.4,
+      "parkFactor": 109.2,
+      "effectiveParkFactor": 104.6
     },
     {
       "year": "2026",
@@ -9529,6 +11593,8 @@
       "homeRuns": 1,
       "runsBattedIn": 11,
       "walks": 10,
+      "unintentionalWalks": 10,
+      "intentionalWalks": 0,
       "hitByPitch": 3,
       "sacBunts": 0,
       "sacFlies": 1,
@@ -9540,7 +11606,12 @@
       "sluggingPercentage": 0.392,
       "isoPower": 0.076,
       "babip": 0.381,
-      "ops": 0.801
+      "ops": 0.801,
+      "woba": 0.37,
+      "wrc": 14.3,
+      "wrcPlus": 144.3,
+      "parkFactor": 109.2,
+      "effectiveParkFactor": 104.6
     },
     {
       "year": "2026",
@@ -9562,6 +11633,8 @@
       "homeRuns": 0,
       "runsBattedIn": 1,
       "walks": 2,
+      "unintentionalWalks": 2,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 1,
       "sacFlies": 1,
@@ -9573,7 +11646,12 @@
       "sluggingPercentage": 0.143,
       "isoPower": 0.0,
       "babip": 0.188,
-      "ops": 0.351
+      "ops": 0.351,
+      "woba": 0.173,
+      "wrc": -0.0,
+      "wrcPlus": -4.9,
+      "parkFactor": 109.2,
+      "effectiveParkFactor": 104.6
     },
     {
       "year": "2026",
@@ -9595,6 +11673,8 @@
       "homeRuns": 1,
       "runsBattedIn": 10,
       "walks": 7,
+      "unintentionalWalks": 7,
+      "intentionalWalks": 0,
       "hitByPitch": 3,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -9606,7 +11686,12 @@
       "sluggingPercentage": 0.41,
       "isoPower": 0.084,
       "babip": 0.4,
-      "ops": 0.807
+      "ops": 0.807,
+      "woba": 0.371,
+      "wrc": 14.4,
+      "wrcPlus": 144.8,
+      "parkFactor": 109.2,
+      "effectiveParkFactor": 104.6
     },
     {
       "year": "2026",
@@ -9628,6 +11713,8 @@
       "homeRuns": 0,
       "runsBattedIn": 1,
       "walks": 4,
+      "unintentionalWalks": 4,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -9639,7 +11726,12 @@
       "sluggingPercentage": 0.231,
       "isoPower": 0.051,
       "babip": 0.259,
-      "ops": 0.487
+      "ops": 0.487,
+      "woba": 0.232,
+      "wrc": 2.0,
+      "wrcPlus": 39.8,
+      "parkFactor": 109.2,
+      "effectiveParkFactor": 104.6
     },
     {
       "year": "2026",
@@ -9661,6 +11753,8 @@
       "homeRuns": 0,
       "runsBattedIn": 4,
       "walks": 3,
+      "unintentionalWalks": 3,
+      "intentionalWalks": 0,
       "hitByPitch": 1,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -9672,7 +11766,12 @@
       "sluggingPercentage": 0.226,
       "isoPower": 0.019,
       "babip": 0.306,
-      "ops": 0.49
+      "ops": 0.49,
+      "woba": 0.233,
+      "wrc": 2.6,
+      "wrcPlus": 59.0,
+      "parkFactor": 71.9,
+      "effectiveParkFactor": 86.0
     },
     {
       "year": "2026",
@@ -9694,6 +11793,8 @@
       "homeRuns": 2,
       "runsBattedIn": 11,
       "walks": 7,
+      "unintentionalWalks": 7,
+      "intentionalWalks": 0,
       "hitByPitch": 1,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -9705,7 +11806,12 @@
       "sluggingPercentage": 0.464,
       "isoPower": 0.161,
       "babip": 0.3,
-      "ops": 0.855
+      "ops": 0.855,
+      "woba": 0.386,
+      "wrc": 10.7,
+      "wrcPlus": 175.2,
+      "parkFactor": 71.9,
+      "effectiveParkFactor": 86.0
     },
     {
       "year": "2026",
@@ -9727,6 +11833,8 @@
       "homeRuns": 0,
       "runsBattedIn": 3,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -9738,7 +11846,12 @@
       "sluggingPercentage": 0.267,
       "isoPower": 0.0,
       "babip": 0.364,
-      "ops": 0.533
+      "ops": 0.533,
+      "woba": 0.242,
+      "wrc": 0.8,
+      "wrcPlus": 66.4,
+      "parkFactor": 71.9,
+      "effectiveParkFactor": 86.0
     },
     {
       "year": "2026",
@@ -9760,6 +11873,8 @@
       "homeRuns": 2,
       "runsBattedIn": 12,
       "walks": 10,
+      "unintentionalWalks": 10,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -9771,7 +11886,12 @@
       "sluggingPercentage": 0.452,
       "isoPower": 0.164,
       "babip": 0.339,
-      "ops": 0.826
+      "ops": 0.826,
+      "woba": 0.372,
+      "wrc": 12.9,
+      "wrcPlus": 164.3,
+      "parkFactor": 71.9,
+      "effectiveParkFactor": 86.0
     },
     {
       "year": "2026",
@@ -9793,6 +11913,8 @@
       "homeRuns": 4,
       "runsBattedIn": 9,
       "walks": 13,
+      "unintentionalWalks": 13,
+      "intentionalWalks": 0,
       "hitByPitch": 2,
       "sacBunts": 1,
       "sacFlies": 0,
@@ -9804,7 +11926,12 @@
       "sluggingPercentage": 0.464,
       "isoPower": 0.203,
       "babip": 0.264,
-      "ops": 0.857
+      "ops": 0.857,
+      "woba": 0.389,
+      "wrc": 14.3,
+      "wrcPlus": 177.1,
+      "parkFactor": 71.9,
+      "effectiveParkFactor": 86.0
     },
     {
       "year": "2026",
@@ -9826,6 +11953,8 @@
       "homeRuns": 0,
       "runsBattedIn": 3,
       "walks": 3,
+      "unintentionalWalks": 3,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 1,
@@ -9837,7 +11966,12 @@
       "sluggingPercentage": 0.191,
       "isoPower": 0.0,
       "babip": 0.281,
-      "ops": 0.427
+      "ops": 0.427,
+      "woba": 0.202,
+      "wrc": 1.2,
+      "wrcPlus": 36.0,
+      "parkFactor": 71.9,
+      "effectiveParkFactor": 86.0
     },
     {
       "year": "2026",
@@ -9859,6 +11993,8 @@
       "homeRuns": 0,
       "runsBattedIn": 1,
       "walks": 3,
+      "unintentionalWalks": 3,
+      "intentionalWalks": 0,
       "hitByPitch": 1,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -9870,7 +12006,12 @@
       "sluggingPercentage": 0.615,
       "isoPower": 0.231,
       "babip": 0.417,
-      "ops": 1.145
+      "ops": 1.145,
+      "woba": 0.504,
+      "wrc": 4.4,
+      "wrcPlus": 264.4,
+      "parkFactor": 71.9,
+      "effectiveParkFactor": 86.0
     },
     {
       "year": "2026",
@@ -9892,6 +12033,8 @@
       "homeRuns": 0,
       "runsBattedIn": 2,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -9903,7 +12046,12 @@
       "sluggingPercentage": 0.364,
       "isoPower": 0.182,
       "babip": 0.222,
-      "ops": 0.545
+      "ops": 0.545,
+      "woba": 0.232,
+      "wrc": 0.5,
+      "wrcPlus": 58.1,
+      "parkFactor": 71.9,
+      "effectiveParkFactor": 86.0
     },
     {
       "year": "2026",
@@ -9925,6 +12073,8 @@
       "homeRuns": 1,
       "runsBattedIn": 2,
       "walks": 6,
+      "unintentionalWalks": 6,
+      "intentionalWalks": 0,
       "hitByPitch": 1,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -9936,7 +12086,12 @@
       "sluggingPercentage": 0.42,
       "isoPower": 0.16,
       "babip": 0.293,
-      "ops": 0.771
+      "ops": 0.771,
+      "woba": 0.35,
+      "wrc": 7.9,
+      "wrcPlus": 147.7,
+      "parkFactor": 71.9,
+      "effectiveParkFactor": 86.0
     },
     {
       "year": "2026",
@@ -9958,6 +12113,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -9969,7 +12126,12 @@
       "sluggingPercentage": 0.0,
       "isoPower": 0.0,
       "babip": 0.0,
-      "ops": 0.0
+      "ops": 0.0,
+      "woba": 0.0,
+      "wrc": -0.1,
+      "wrcPlus": -116.9,
+      "parkFactor": 71.9,
+      "effectiveParkFactor": 86.0
     },
     {
       "year": "2026",
@@ -9991,6 +12153,8 @@
       "homeRuns": 1,
       "runsBattedIn": 2,
       "walks": 2,
+      "unintentionalWalks": 2,
+      "intentionalWalks": 0,
       "hitByPitch": 1,
       "sacBunts": 2,
       "sacFlies": 0,
@@ -10002,7 +12166,12 @@
       "sluggingPercentage": 0.667,
       "isoPower": 0.208,
       "babip": 0.556,
-      "ops": 1.185
+      "ops": 1.185,
+      "woba": 0.523,
+      "wrc": 7.9,
+      "wrcPlus": 278.9,
+      "parkFactor": 71.9,
+      "effectiveParkFactor": 86.0
     },
     {
       "year": "2026",
@@ -10024,6 +12193,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -10035,7 +12206,12 @@
       "sluggingPercentage": 0.0,
       "isoPower": 0.0,
       "babip": 0.0,
-      "ops": 0.0
+      "ops": 0.0,
+      "woba": 0.0,
+      "wrc": -0.3,
+      "wrcPlus": -116.9,
+      "parkFactor": 71.9,
+      "effectiveParkFactor": 86.0
     },
     {
       "year": "2026",
@@ -10057,6 +12233,8 @@
       "homeRuns": 2,
       "runsBattedIn": 5,
       "walks": 3,
+      "unintentionalWalks": 3,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 1,
       "sacFlies": 0,
@@ -10068,7 +12246,12 @@
       "sluggingPercentage": 0.318,
       "isoPower": 0.121,
       "babip": 0.193,
-      "ops": 0.55
+      "ops": 0.55,
+      "woba": 0.248,
+      "wrc": 4.1,
+      "wrcPlus": 70.7,
+      "parkFactor": 71.9,
+      "effectiveParkFactor": 86.0
     },
     {
       "year": "2026",
@@ -10090,6 +12273,8 @@
       "homeRuns": 0,
       "runsBattedIn": 2,
       "walks": 1,
+      "unintentionalWalks": 1,
+      "intentionalWalks": 0,
       "hitByPitch": 1,
       "sacBunts": 2,
       "sacFlies": 0,
@@ -10101,7 +12286,12 @@
       "sluggingPercentage": 0.295,
       "isoPower": 0.068,
       "babip": 0.294,
-      "ops": 0.556
+      "ops": 0.556,
+      "woba": 0.254,
+      "wrc": 3.0,
+      "wrcPlus": 75.3,
+      "parkFactor": 71.9,
+      "effectiveParkFactor": 86.0
     },
     {
       "year": "2026",
@@ -10123,6 +12313,8 @@
       "homeRuns": 1,
       "runsBattedIn": 11,
       "walks": 4,
+      "unintentionalWalks": 4,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 1,
       "sacFlies": 0,
@@ -10134,7 +12326,12 @@
       "sluggingPercentage": 0.405,
       "isoPower": 0.089,
       "babip": 0.343,
-      "ops": 0.754
+      "ops": 0.754,
+      "woba": 0.341,
+      "wrc": 11.0,
+      "wrcPlus": 140.9,
+      "parkFactor": 71.9,
+      "effectiveParkFactor": 86.0
     },
     {
       "year": "2026",
@@ -10156,6 +12353,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 1,
+      "unintentionalWalks": 1,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -10167,7 +12366,12 @@
       "sluggingPercentage": 0.231,
       "isoPower": 0.038,
       "babip": 0.25,
-      "ops": 0.453
+      "ops": 0.453,
+      "woba": 0.209,
+      "wrc": 0.8,
+      "wrcPlus": 41.0,
+      "parkFactor": 71.9,
+      "effectiveParkFactor": 86.0
     },
     {
       "year": "2026",
@@ -10189,6 +12393,8 @@
       "homeRuns": 0,
       "runsBattedIn": 3,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 1,
       "sacBunts": 1,
       "sacFlies": 1,
@@ -10200,7 +12406,12 @@
       "sluggingPercentage": 0.294,
       "isoPower": 0.118,
       "babip": 0.25,
-      "ops": 0.505
+      "ops": 0.505,
+      "woba": 0.223,
+      "wrc": 0.8,
+      "wrcPlus": 51.7,
+      "parkFactor": 71.9,
+      "effectiveParkFactor": 86.0
     },
     {
       "year": "2026",
@@ -10222,6 +12433,8 @@
       "homeRuns": 1,
       "runsBattedIn": 2,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 1,
       "sacFlies": 0,
@@ -10233,7 +12446,12 @@
       "sluggingPercentage": 0.286,
       "isoPower": 0.214,
       "babip": 0.0,
-      "ops": 0.357
+      "ops": 0.357,
+      "woba": 0.151,
+      "wrc": -0.3,
+      "wrcPlus": -3.0,
+      "parkFactor": 71.9,
+      "effectiveParkFactor": 86.0
     },
     {
       "year": "2026",
@@ -10255,6 +12473,8 @@
       "homeRuns": 0,
       "runsBattedIn": 6,
       "walks": 6,
+      "unintentionalWalks": 6,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -10266,7 +12486,12 @@
       "sluggingPercentage": 0.291,
       "isoPower": 0.091,
       "babip": 0.297,
-      "ops": 0.57
+      "ops": 0.57,
+      "woba": 0.265,
+      "wrc": 4.4,
+      "wrcPlus": 78.9,
+      "parkFactor": 81.5,
+      "effectiveParkFactor": 90.8
     },
     {
       "year": "2026",
@@ -10288,6 +12513,8 @@
       "homeRuns": 1,
       "runsBattedIn": 2,
       "walks": 3,
+      "unintentionalWalks": 3,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -10299,7 +12526,12 @@
       "sluggingPercentage": 0.217,
       "isoPower": 0.13,
       "babip": 0.143,
-      "ops": 0.41
+      "ops": 0.41,
+      "woba": 0.198,
+      "wrc": 0.5,
+      "wrcPlus": 28.1,
+      "parkFactor": 81.5,
+      "effectiveParkFactor": 90.8
     },
     {
       "year": "2026",
@@ -10321,6 +12553,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -10332,7 +12566,12 @@
       "sluggingPercentage": 0.3,
       "isoPower": 0.2,
       "babip": 0.125,
-      "ops": 0.4
+      "ops": 0.4,
+      "woba": 0.164,
+      "wrc": -0.1,
+      "wrcPlus": 2.1,
+      "parkFactor": 81.5,
+      "effectiveParkFactor": 90.8
     },
     {
       "year": "2026",
@@ -10354,6 +12593,8 @@
       "homeRuns": 1,
       "runsBattedIn": 1,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -10365,7 +12606,12 @@
       "sluggingPercentage": 0.625,
       "isoPower": 0.375,
       "babip": 0.25,
-      "ops": 0.875
+      "ops": 0.875,
+      "woba": 0.377,
+      "wrc": 1.3,
+      "wrcPlus": 163.6,
+      "parkFactor": 81.5,
+      "effectiveParkFactor": 90.8
     },
     {
       "year": "2026",
@@ -10387,6 +12633,8 @@
       "homeRuns": 0,
       "runsBattedIn": 2,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 1,
       "sacFlies": 0,
@@ -10398,7 +12646,12 @@
       "sluggingPercentage": 0.346,
       "isoPower": 0.038,
       "babip": 0.421,
-      "ops": 0.654
+      "ops": 0.654,
+      "woba": 0.294,
+      "wrc": 2.6,
+      "wrcPlus": 100.9,
+      "parkFactor": 81.5,
+      "effectiveParkFactor": 90.8
     },
     {
       "year": "2026",
@@ -10420,6 +12673,8 @@
       "homeRuns": 1,
       "runsBattedIn": 5,
       "walks": 3,
+      "unintentionalWalks": 3,
+      "intentionalWalks": 0,
       "hitByPitch": 1,
       "sacBunts": 0,
       "sacFlies": 1,
@@ -10431,7 +12686,12 @@
       "sluggingPercentage": 0.333,
       "isoPower": 0.133,
       "babip": 0.2,
-      "ops": 0.619
+      "ops": 0.619,
+      "woba": 0.283,
+      "wrc": 3.0,
+      "wrcPlus": 92.5,
+      "parkFactor": 81.5,
+      "effectiveParkFactor": 90.8
     },
     {
       "year": "2026",
@@ -10453,6 +12713,8 @@
       "homeRuns": 2,
       "runsBattedIn": 4,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -10464,7 +12726,12 @@
       "sluggingPercentage": 0.397,
       "isoPower": 0.138,
       "babip": 0.277,
-      "ops": 0.655
+      "ops": 0.655,
+      "woba": 0.29,
+      "wrc": 5.3,
+      "wrcPlus": 97.4,
+      "parkFactor": 81.5,
+      "effectiveParkFactor": 90.8
     },
     {
       "year": "2026",
@@ -10486,6 +12753,8 @@
       "homeRuns": 1,
       "runsBattedIn": 3,
       "walks": 1,
+      "unintentionalWalks": 1,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -10497,7 +12766,12 @@
       "sluggingPercentage": 0.32,
       "isoPower": 0.12,
       "babip": 0.19,
-      "ops": 0.551
+      "ops": 0.551,
+      "woba": 0.248,
+      "wrc": 1.5,
+      "wrcPlus": 66.1,
+      "parkFactor": 81.5,
+      "effectiveParkFactor": 90.8
     },
     {
       "year": "2026",
@@ -10519,6 +12793,8 @@
       "homeRuns": 0,
       "runsBattedIn": 4,
       "walks": 2,
+      "unintentionalWalks": 2,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 2,
       "sacFlies": 1,
@@ -10530,7 +12806,12 @@
       "sluggingPercentage": 0.226,
       "isoPower": 0.065,
       "babip": 0.238,
-      "ops": 0.432
+      "ops": 0.432,
+      "woba": 0.198,
+      "wrc": 0.7,
+      "wrcPlus": 28.0,
+      "parkFactor": 81.5,
+      "effectiveParkFactor": 90.8
     },
     {
       "year": "2026",
@@ -10552,6 +12833,8 @@
       "homeRuns": 1,
       "runsBattedIn": 3,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -10563,7 +12846,12 @@
       "sluggingPercentage": 0.579,
       "isoPower": 0.211,
       "babip": 0.429,
-      "ops": 0.947
+      "ops": 0.947,
+      "woba": 0.418,
+      "wrc": 3.6,
+      "wrcPlus": 194.6,
+      "parkFactor": 81.5,
+      "effectiveParkFactor": 90.8
     },
     {
       "year": "2026",
@@ -10585,6 +12873,8 @@
       "homeRuns": 1,
       "runsBattedIn": 4,
       "walks": 4,
+      "unintentionalWalks": 4,
+      "intentionalWalks": 0,
       "hitByPitch": 2,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -10596,7 +12886,12 @@
       "sluggingPercentage": 0.353,
       "isoPower": 0.147,
       "babip": 0.25,
-      "ops": 0.623
+      "ops": 0.623,
+      "woba": 0.283,
+      "wrc": 6.3,
+      "wrcPlus": 92.3,
+      "parkFactor": 81.5,
+      "effectiveParkFactor": 90.8
     },
     {
       "year": "2026",
@@ -10618,6 +12913,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -10629,7 +12926,12 @@
       "sluggingPercentage": 1.0,
       "isoPower": 0.0,
       "babip": 1.0,
-      "ops": 2.0
+      "ops": 2.0,
+      "woba": 0.909,
+      "wrc": 0.6,
+      "wrcPlus": 565.6,
+      "parkFactor": 81.5,
+      "effectiveParkFactor": 90.8
     },
     {
       "year": "2026",
@@ -10651,6 +12953,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -10662,7 +12966,12 @@
       "sluggingPercentage": 1.0,
       "isoPower": 0.0,
       "babip": 1.0,
-      "ops": 2.0
+      "ops": 2.0,
+      "woba": 0.909,
+      "wrc": 0.6,
+      "wrcPlus": 565.6,
+      "parkFactor": 81.5,
+      "effectiveParkFactor": 90.8
     },
     {
       "year": "2026",
@@ -10684,6 +12993,8 @@
       "homeRuns": 2,
       "runsBattedIn": 8,
       "walks": 7,
+      "unintentionalWalks": 7,
+      "intentionalWalks": 0,
       "hitByPitch": 2,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -10695,7 +13006,12 @@
       "sluggingPercentage": 0.464,
       "isoPower": 0.155,
       "babip": 0.32,
-      "ops": 0.841
+      "ops": 0.841,
+      "woba": 0.378,
+      "wrc": 14.9,
+      "wrcPlus": 164.0,
+      "parkFactor": 81.5,
+      "effectiveParkFactor": 90.8
     },
     {
       "year": "2026",
@@ -10717,6 +13033,8 @@
       "homeRuns": 3,
       "runsBattedIn": 7,
       "walks": 6,
+      "unintentionalWalks": 6,
+      "intentionalWalks": 0,
       "hitByPitch": 1,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -10728,7 +13046,12 @@
       "sluggingPercentage": 0.382,
       "isoPower": 0.132,
       "babip": 0.267,
-      "ops": 0.695
+      "ops": 0.695,
+      "woba": 0.316,
+      "wrc": 9.3,
+      "wrcPlus": 117.6,
+      "parkFactor": 81.5,
+      "effectiveParkFactor": 90.8
     },
     {
       "year": "2026",
@@ -10750,6 +13073,8 @@
       "homeRuns": 1,
       "runsBattedIn": 9,
       "walks": 8,
+      "unintentionalWalks": 8,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 2,
       "sacFlies": 1,
@@ -10761,7 +13086,12 @@
       "sluggingPercentage": 0.302,
       "isoPower": 0.079,
       "babip": 0.241,
-      "ops": 0.607
+      "ops": 0.607,
+      "woba": 0.283,
+      "wrc": 6.4,
+      "wrcPlus": 92.3,
+      "parkFactor": 81.5,
+      "effectiveParkFactor": 90.8
     },
     {
       "year": "2026",
@@ -10783,6 +13113,8 @@
       "homeRuns": 0,
       "runsBattedIn": 2,
       "walks": 4,
+      "unintentionalWalks": 4,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 3,
       "sacFlies": 0,
@@ -10794,7 +13126,12 @@
       "sluggingPercentage": 0.148,
       "isoPower": 0.0,
       "babip": 0.174,
-      "ops": 0.406
+      "ops": 0.406,
+      "woba": 0.209,
+      "wrc": 1.0,
+      "wrcPlus": 36.3,
+      "parkFactor": 81.5,
+      "effectiveParkFactor": 90.8
     },
     {
       "year": "2026",
@@ -10816,6 +13153,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -10827,7 +13166,12 @@
       "sluggingPercentage": 0.091,
       "isoPower": 0.0,
       "babip": 0.143,
-      "ops": 0.182
+      "ops": 0.182,
+      "woba": 0.083,
+      "wrc": -0.8,
+      "wrcPlus": -59.3,
+      "parkFactor": 81.5,
+      "effectiveParkFactor": 90.8
     },
     {
       "year": "2026",
@@ -10849,6 +13193,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -10860,7 +13206,12 @@
       "sluggingPercentage": 0.143,
       "isoPower": 0.0,
       "babip": 0.167,
-      "ops": 0.286
+      "ops": 0.286,
+      "woba": 0.13,
+      "wrc": -0.5,
+      "wrcPlus": -23.5,
+      "parkFactor": 81.5,
+      "effectiveParkFactor": 90.8
     },
     {
       "year": "2026",
@@ -10882,6 +13233,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -10893,7 +13246,12 @@
       "sluggingPercentage": null,
       "isoPower": null,
       "babip": null,
-      "ops": null
+      "ops": null,
+      "woba": null,
+      "wrc": null,
+      "wrcPlus": null,
+      "parkFactor": null,
+      "effectiveParkFactor": null
     },
     {
       "year": "2026",
@@ -10915,6 +13273,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 1,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -10926,7 +13286,12 @@
       "sluggingPercentage": 0.16,
       "isoPower": 0.04,
       "babip": 0.167,
-      "ops": 0.314
+      "ops": 0.314,
+      "woba": 0.148,
+      "wrc": -0.5,
+      "wrcPlus": -9.7,
+      "parkFactor": 81.5,
+      "effectiveParkFactor": 90.8
     },
     {
       "year": "2026",
@@ -10948,6 +13313,8 @@
       "homeRuns": 0,
       "runsBattedIn": 2,
       "walks": 3,
+      "unintentionalWalks": 3,
+      "intentionalWalks": 0,
       "hitByPitch": 1,
       "sacBunts": 2,
       "sacFlies": 1,
@@ -10959,7 +13326,12 @@
       "sluggingPercentage": 0.298,
       "isoPower": 0.085,
       "babip": 0.27,
-      "ops": 0.567
+      "ops": 0.567,
+      "woba": 0.26,
+      "wrc": 3.6,
+      "wrcPlus": 74.6,
+      "parkFactor": 81.5,
+      "effectiveParkFactor": 90.8
     },
     {
       "year": "2026",
@@ -10981,6 +13353,8 @@
       "homeRuns": 1,
       "runsBattedIn": 4,
       "walks": 1,
+      "unintentionalWalks": 1,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -10992,7 +13366,12 @@
       "sluggingPercentage": 0.455,
       "isoPower": 0.273,
       "babip": 0.214,
-      "ops": 0.672
+      "ops": 0.672,
+      "woba": 0.29,
+      "wrc": 2.1,
+      "wrcPlus": 82.2,
+      "parkFactor": 111.6,
+      "effectiveParkFactor": 105.8
     },
     {
       "year": "2026",
@@ -11014,6 +13393,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -11025,7 +13406,12 @@
       "sluggingPercentage": 0.0,
       "isoPower": 0.0,
       "babip": null,
-      "ops": 0.0
+      "ops": 0.0,
+      "woba": 0.0,
+      "wrc": -0.1,
+      "wrcPlus": -136.8,
+      "parkFactor": 111.6,
+      "effectiveParkFactor": 105.8
     },
     {
       "year": "2026",
@@ -11047,6 +13433,8 @@
       "homeRuns": 0,
       "runsBattedIn": 3,
       "walks": 3,
+      "unintentionalWalks": 3,
+      "intentionalWalks": 0,
       "hitByPitch": 2,
       "sacBunts": 0,
       "sacFlies": 1,
@@ -11058,7 +13446,12 @@
       "sluggingPercentage": 0.209,
       "isoPower": 0.07,
       "babip": 0.176,
-      "ops": 0.434
+      "ops": 0.434,
+      "woba": 0.209,
+      "wrc": 1.4,
+      "wrcPlus": 21.0,
+      "parkFactor": 111.6,
+      "effectiveParkFactor": 105.8
     },
     {
       "year": "2026",
@@ -11080,6 +13473,8 @@
       "homeRuns": 0,
       "runsBattedIn": 5,
       "walks": 2,
+      "unintentionalWalks": 2,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 1,
@@ -11091,7 +13486,12 @@
       "sluggingPercentage": 0.222,
       "isoPower": 0.111,
       "babip": 0.25,
-      "ops": 0.413
+      "ops": 0.413,
+      "woba": 0.191,
+      "wrc": 0.3,
+      "wrcPlus": 7.5,
+      "parkFactor": 111.6,
+      "effectiveParkFactor": 105.8
     },
     {
       "year": "2026",
@@ -11113,6 +13513,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -11124,7 +13526,12 @@
       "sluggingPercentage": 0.0,
       "isoPower": 0.0,
       "babip": 0.0,
-      "ops": 0.0
+      "ops": 0.0,
+      "woba": 0.0,
+      "wrc": -0.1,
+      "wrcPlus": -136.8,
+      "parkFactor": 111.6,
+      "effectiveParkFactor": 105.8
     },
     {
       "year": "2026",
@@ -11146,6 +13553,8 @@
       "homeRuns": 1,
       "runsBattedIn": 6,
       "walks": 5,
+      "unintentionalWalks": 5,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 3,
       "sacFlies": 0,
@@ -11157,7 +13566,12 @@
       "sluggingPercentage": 0.381,
       "isoPower": 0.175,
       "babip": 0.231,
-      "ops": 0.646
+      "ops": 0.646,
+      "woba": 0.288,
+      "wrc": 6.4,
+      "wrcPlus": 81.2,
+      "parkFactor": 111.6,
+      "effectiveParkFactor": 105.8
     },
     {
       "year": "2026",
@@ -11179,6 +13593,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 1,
+      "unintentionalWalks": 1,
+      "intentionalWalks": 0,
       "hitByPitch": 1,
       "sacBunts": 1,
       "sacFlies": 0,
@@ -11190,7 +13606,12 @@
       "sluggingPercentage": 0.105,
       "isoPower": 0.0,
       "babip": 0.154,
-      "ops": 0.296
+      "ops": 0.296,
+      "woba": 0.156,
+      "wrc": -0.3,
+      "wrcPlus": -19.0,
+      "parkFactor": 111.6,
+      "effectiveParkFactor": 105.8
     },
     {
       "year": "2026",
@@ -11212,6 +13633,8 @@
       "homeRuns": 1,
       "runsBattedIn": 3,
       "walks": 3,
+      "unintentionalWalks": 3,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 1,
@@ -11223,7 +13646,12 @@
       "sluggingPercentage": 0.5,
       "isoPower": 0.278,
       "babip": 0.273,
-      "ops": 0.818
+      "ops": 0.818,
+      "woba": 0.352,
+      "wrc": 3.1,
+      "wrcPlus": 129.2,
+      "parkFactor": 111.6,
+      "effectiveParkFactor": 105.8
     },
     {
       "year": "2026",
@@ -11245,6 +13673,8 @@
       "homeRuns": 1,
       "runsBattedIn": 1,
       "walks": 1,
+      "unintentionalWalks": 1,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -11256,7 +13686,12 @@
       "sluggingPercentage": 0.65,
       "isoPower": 0.3,
       "babip": 0.545,
-      "ops": 1.031
+      "ops": 1.031,
+      "woba": 0.447,
+      "wrc": 4.5,
+      "wrcPlus": 201.3,
+      "parkFactor": 111.6,
+      "effectiveParkFactor": 105.8
     },
     {
       "year": "2026",
@@ -11278,6 +13713,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -11289,7 +13726,12 @@
       "sluggingPercentage": 0.0,
       "isoPower": 0.0,
       "babip": null,
-      "ops": 0.0
+      "ops": 0.0,
+      "woba": 0.0,
+      "wrc": -0.1,
+      "wrcPlus": -136.8,
+      "parkFactor": 111.6,
+      "effectiveParkFactor": 105.8
     },
     {
       "year": "2026",
@@ -11311,6 +13753,8 @@
       "homeRuns": 1,
       "runsBattedIn": 3,
       "walks": 5,
+      "unintentionalWalks": 5,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 1,
       "sacFlies": 0,
@@ -11322,7 +13766,12 @@
       "sluggingPercentage": 0.368,
       "isoPower": 0.105,
       "babip": 0.29,
-      "ops": 0.717
+      "ops": 0.717,
+      "woba": 0.331,
+      "wrc": 5.4,
+      "wrcPlus": 113.5,
+      "parkFactor": 111.6,
+      "effectiveParkFactor": 105.8
     },
     {
       "year": "2026",
@@ -11344,6 +13793,8 @@
       "homeRuns": 0,
       "runsBattedIn": 5,
       "walks": 7,
+      "unintentionalWalks": 7,
+      "intentionalWalks": 0,
       "hitByPitch": 1,
       "sacBunts": 4,
       "sacFlies": 0,
@@ -11355,7 +13806,12 @@
       "sluggingPercentage": 0.322,
       "isoPower": 0.068,
       "babip": 0.357,
-      "ops": 0.665
+      "ops": 0.665,
+      "woba": 0.311,
+      "wrc": 7.6,
+      "wrcPlus": 98.1,
+      "parkFactor": 111.6,
+      "effectiveParkFactor": 105.8
     },
     {
       "year": "2026",
@@ -11377,6 +13833,8 @@
       "homeRuns": 0,
       "runsBattedIn": 4,
       "walks": 2,
+      "unintentionalWalks": 2,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 1,
       "sacFlies": 0,
@@ -11388,7 +13846,12 @@
       "sluggingPercentage": 0.291,
       "isoPower": 0.018,
       "babip": 0.366,
-      "ops": 0.589
+      "ops": 0.589,
+      "woba": 0.271,
+      "wrc": 4.4,
+      "wrcPlus": 68.1,
+      "parkFactor": 111.6,
+      "effectiveParkFactor": 105.8
     },
     {
       "year": "2026",
@@ -11410,6 +13873,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -11421,7 +13886,12 @@
       "sluggingPercentage": 0.667,
       "isoPower": 0.0,
       "babip": 1.0,
-      "ops": 1.333
+      "ops": 1.333,
+      "woba": 0.606,
+      "wrc": 1.0,
+      "wrcPlus": 321.5,
+      "parkFactor": 111.6,
+      "effectiveParkFactor": 105.8
     },
     {
       "year": "2026",
@@ -11443,6 +13913,8 @@
       "homeRuns": 2,
       "runsBattedIn": 12,
       "walks": 2,
+      "unintentionalWalks": 2,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 2,
       "sacFlies": 0,
@@ -11454,7 +13926,12 @@
       "sluggingPercentage": 0.392,
       "isoPower": 0.122,
       "babip": 0.305,
-      "ops": 0.681
+      "ops": 0.681,
+      "woba": 0.305,
+      "wrc": 8.0,
+      "wrcPlus": 93.6,
+      "parkFactor": 111.6,
+      "effectiveParkFactor": 105.8
     },
     {
       "year": "2026",
@@ -11476,6 +13953,8 @@
       "homeRuns": 1,
       "runsBattedIn": 5,
       "walks": 3,
+      "unintentionalWalks": 3,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -11487,7 +13966,12 @@
       "sluggingPercentage": 0.386,
       "isoPower": 0.114,
       "babip": 0.344,
-      "ops": 0.706
+      "ops": 0.706,
+      "woba": 0.319,
+      "wrc": 5.4,
+      "wrcPlus": 104.7,
+      "parkFactor": 111.6,
+      "effectiveParkFactor": 105.8
     },
     {
       "year": "2026",
@@ -11509,6 +13993,8 @@
       "homeRuns": 0,
       "runsBattedIn": 1,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 1,
       "sacFlies": 0,
@@ -11520,7 +14006,12 @@
       "sluggingPercentage": 0.222,
       "isoPower": 0.0,
       "babip": 0.4,
-      "ops": 0.444
+      "ops": 0.444,
+      "woba": 0.202,
+      "wrc": 0.2,
+      "wrcPlus": 16.0,
+      "parkFactor": 111.6,
+      "effectiveParkFactor": 105.8
     },
     {
       "year": "2026",
@@ -11542,6 +14033,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -11553,7 +14046,12 @@
       "sluggingPercentage": null,
       "isoPower": null,
       "babip": null,
-      "ops": null
+      "ops": null,
+      "woba": null,
+      "wrc": null,
+      "wrcPlus": null,
+      "parkFactor": null,
+      "effectiveParkFactor": null
     },
     {
       "year": "2026",
@@ -11575,6 +14073,8 @@
       "homeRuns": 1,
       "runsBattedIn": 6,
       "walks": 12,
+      "unintentionalWalks": 12,
+      "intentionalWalks": 0,
       "hitByPitch": 1,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -11586,7 +14086,12 @@
       "sluggingPercentage": 0.439,
       "isoPower": 0.106,
       "babip": 0.382,
-      "ops": 0.882
+      "ops": 0.882,
+      "woba": 0.405,
+      "wrc": 14.3,
+      "wrcPlus": 169.2,
+      "parkFactor": 111.6,
+      "effectiveParkFactor": 105.8
     },
     {
       "year": "2026",
@@ -11608,6 +14113,8 @@
       "homeRuns": 0,
       "runsBattedIn": 1,
       "walks": 3,
+      "unintentionalWalks": 3,
+      "intentionalWalks": 0,
       "hitByPitch": 1,
       "sacBunts": 1,
       "sacFlies": 0,
@@ -11619,7 +14126,12 @@
       "sluggingPercentage": 0.174,
       "isoPower": 0.0,
       "babip": 0.222,
-      "ops": 0.47
+      "ops": 0.47,
+      "woba": 0.241,
+      "wrc": 1.5,
+      "wrcPlus": 45.6,
+      "parkFactor": 111.6,
+      "effectiveParkFactor": 105.8
     },
     {
       "year": "2026",
@@ -11641,6 +14153,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -11652,7 +14166,12 @@
       "sluggingPercentage": 0.0,
       "isoPower": 0.0,
       "babip": 0.0,
-      "ops": 0.0
+      "ops": 0.0,
+      "woba": 0.0,
+      "wrc": -0.9,
+      "wrcPlus": -136.8,
+      "parkFactor": 111.6,
+      "effectiveParkFactor": 105.8
     },
     {
       "year": "2026",
@@ -11674,6 +14193,8 @@
       "homeRuns": 0,
       "runsBattedIn": 0,
       "walks": 0,
+      "unintentionalWalks": 0,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 0,
       "sacFlies": 0,
@@ -11685,7 +14206,12 @@
       "sluggingPercentage": 0.0,
       "isoPower": 0.0,
       "babip": null,
-      "ops": 0.0
+      "ops": 0.0,
+      "woba": 0.0,
+      "wrc": -0.1,
+      "wrcPlus": -136.8,
+      "parkFactor": 111.6,
+      "effectiveParkFactor": 105.8
     },
     {
       "year": "2026",
@@ -11707,6 +14233,8 @@
       "homeRuns": 1,
       "runsBattedIn": 9,
       "walks": 12,
+      "unintentionalWalks": 12,
+      "intentionalWalks": 0,
       "hitByPitch": 0,
       "sacBunts": 1,
       "sacFlies": 0,
@@ -11718,7 +14246,12 @@
       "sluggingPercentage": 0.361,
       "isoPower": 0.111,
       "babip": 0.321,
-      "ops": 0.718
+      "ops": 0.718,
+      "woba": 0.333,
+      "wrc": 10.6,
+      "wrcPlus": 115.1,
+      "parkFactor": 111.6,
+      "effectiveParkFactor": 105.8
     }
   ]
 }

@@ -52,6 +52,12 @@ function formatAverage(value) {
   return Number.isFinite(number) ? number.toFixed(3) : `${value}`;
 }
 
+function formatDecimal(value, digits = 1) {
+  if (value === null || value === undefined || value === "") return "-";
+  const number = Number(value);
+  return Number.isFinite(number) ? number.toFixed(digits) : `${value}`;
+}
+
 function teamSortKey(team) {
   const primary = `${team || ""}`.split(" / ")[0];
   const index = TEAM_ORDER.indexOf(primary);
@@ -88,6 +94,8 @@ const SORT_COLUMNS = [
   { key: "sluggingPercentage", label: "長打率", type: "number", value: (row) => row.sluggingPercentage },
   { key: "isoPower", label: "IsoP", type: "number", value: (row) => row.isoPower },
   { key: "ops", label: "OPS", type: "number", value: (row) => row.ops },
+  { key: "woba", label: "wOBA", type: "number", value: (row) => row.woba },
+  { key: "wrcPlus", label: "wRC+", type: "number", value: (row) => row.wrcPlus },
   { key: "babip", label: "BABIP", type: "number", value: (row) => row.babip },
 ];
 
@@ -281,11 +289,6 @@ function renderPlayerOptions() {
 }
 
 function renderNote() {
-  const yearLabel = state.year ? `${state.year}年度` : "全年度";
-  els.annualNote.textContent = `${yearLabel}の集計です。打率と長打率は Sports Navi の試合別打撃成績をもとに再計算しています。対象は generated 配下に対応試合があるゲームです。`;
-}
-
-function renderNote() {
   els.annualNote.textContent = "";
 }
 
@@ -364,6 +367,8 @@ function renderTable() {
           <td>${formatAverage(row.sluggingPercentage)}</td>
           <td>${formatAverage(row.isoPower)}</td>
           <td>${formatAverage(row.ops)}</td>
+          <td>${formatAverage(row.woba)}</td>
+          <td>${formatDecimal(row.wrcPlus, 1)}</td>
           <td>${formatAverage(row.babip)}</td>
         </tr>
       `
@@ -443,7 +448,7 @@ function bindEvents() {
 
 async function init() {
   try {
-    const response = await fetch("./batter_totals.json?v=20260420-01", { cache: "no-store" });
+    const response = await fetch("./batter_totals.json?v=20260421-01", { cache: "no-store" });
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     state.data = await response.json();
     bindEvents();

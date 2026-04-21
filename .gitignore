@@ -5,6 +5,8 @@
 !/.github/workflows/deploy-pages.yml
 !/scripts/
 !/scripts/build_github_pages.py
+!/scripts/build_park_factors.py
+!/scripts/fetch_sportsnavi_game_context.py
 !/summary/
 !/summary/index.html
 !/summary/batter.html
@@ -15,10 +17,13 @@
 !/summary/batter.js
 !/summary/annual.js
 !/summary/annual-batter.js
+!/summary/build_manifest.py
 !/summary/manifest.js
 !/summary/batter_manifest.js
 !/summary/player_totals.json
 !/summary/batter_totals.json
+!/summary/park_factors.json
+!/summary/sportsnavi_game_context_*.json
 !/generated/
 !/generated/**/*.json
 !/generated/**/*.png
@@ -31,5 +36,4 @@ __pycache__/
 summary/__pycache__/
 summary/game_batting_cache.json
 summary/game_decisions_cache.json
-summary/build_manifest.py
 summary/generate_site_dashboards.py

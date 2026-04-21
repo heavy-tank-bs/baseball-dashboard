@@ -1351,8 +1351,8 @@ select {
 }
 
 .annual-batter-table {
-  width: 2030px;
-  min-width: 2030px;
+  width: 2210px;
+  min-width: 2210px;
   table-layout: fixed;
 }
 
@@ -1440,7 +1440,11 @@ select {
 .annual-batter-table th:nth-child(22),
 .annual-batter-table td:nth-child(22),
 .annual-batter-table th:nth-child(23),
-.annual-batter-table td:nth-child(23) {
+.annual-batter-table td:nth-child(23),
+.annual-batter-table th:nth-child(24),
+.annual-batter-table td:nth-child(24),
+.annual-batter-table th:nth-child(25),
+.annual-batter-table td:nth-child(25) {
   width: 100px;
 }
 

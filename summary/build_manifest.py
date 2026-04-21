@@ -1,0 +1,2051 @@
+from __future__ import annotations
+
+import importlib.util
+import json
+import re
+from collections import Counter, defaultdict
+from datetime import datetime
+from pathlib import Path
+
+import requests
+from bs4 import BeautifulSoup
+
+ROOT = Path(__file__).resolve().parent.parent
+SUMMARY_DIR = ROOT / "summary"
+GENERATED_DIR = ROOT / "generated"
+MANIFEST_PATH = SUMMARY_DIR / "manifest.js"
+BATTER_MANIFEST_PATH = SUMMARY_DIR / "batter_manifest.js"
+PLAYER_TOTALS_PATH = SUMMARY_DIR / "player_totals.json"
+BATTER_TOTALS_PATH = SUMMARY_DIR / "batter_totals.json"
+PARK_FACTORS_PATH = SUMMARY_DIR / "park_factors.json"
+GAME_DECISIONS_CACHE_PATH = SUMMARY_DIR / "game_decisions_cache.json"
+GAME_BATTING_CACHE_PATH = SUMMARY_DIR / "game_batting_cache.json"
+DASHBOARD_SCRIPT = (
+    Path.home()
+    / ".codex"
+    / "skills"
+    / "sportsnavi-pitch-dashboard"
+    / "scripts"
+    / "build_dashboard.py"
+)
+
+TEAM_ORDER = [
+    "巨人",
+    "阪神",
+    "DeNA",
+    "広島",
+    "ヤクルト",
+    "中日",
+    "ソフトバンク",
+    "日本ハム",
+    "ロッテ",
+    "オリックス",
+    "西武",
+    "東北楽天",
+]
+
+TEAM_ALIASES = {
+    "楽天": "東北楽天",
+}
+
+TEAM_MATCHUP_NAMES = {
+    "広島東洋カープ": "広島",
+    "阪神タイガース": "阪神",
+    "横浜DeNAベイスターズ": "DeNA",
+    "読売ジャイアンツ": "巨人",
+    "東京ヤクルトスワローズ": "ヤクルト",
+    "中日ドラゴンズ": "中日",
+    "福岡ソフトバンクホークス": "ソフトバンク",
+    "北海道日本ハムファイターズ": "日本ハム",
+    "千葉ロッテマリーンズ": "ロッテ",
+    "オリックス・バファローズ": "オリックス",
+    "埼玉西武ライオンズ": "西武",
+    "東北楽天ゴールデンイーグルス": "東北楽天",
+}
+
+TEAM_LEAGUES = {
+    "巨人": "セ",
+    "阪神": "セ",
+    "DeNA": "セ",
+    "広島": "セ",
+    "ヤクルト": "セ",
+    "中日": "セ",
+    "ソフトバンク": "パ",
+    "日本ハム": "パ",
+    "ロッテ": "パ",
+    "オリックス": "パ",
+    "西武": "パ",
+    "東北楽天": "パ",
+}
+
+SPORTSNAVI_GAME_STATS_URL = "https://baseball.yahoo.co.jp/npb/game/{game_id}/stats"
+SPORTSNAVI_JINA_GAME_STATS_URL = "https://r.jina.ai/http://baseball.yahoo.co.jp/npb/game/{game_id}/stats"
+REQUEST_HEADERS = {"User-Agent": "Mozilla/5.0"}
+DECISION_KEY_MAP = {"勝": "wins", "敗": "losses", "S": "saves", "H": "holds"}
+
+PAGE_PATTERN = re.compile(r"^(?P<prefix>.+)-dashboard-(?P<page>\d+)\.png$")
+JSON_PATTERN = re.compile(r"^(?P<prefix>.+)-dashboard\.json$")
+GAME_CONTEXT_PATTERN = re.compile(r"^sportsnavi_game_context_(?P<season>\d{4})\.json$")
+PITCH_COLOR_FALLBACK = ["#0F2340", "#355C8C", "#6A89B4", "#C8A55A", "#D6C192", "#9D8B75", "#7D97B5"]
+EMPTY_HEATMAP = [[0 for _ in range(5)] for _ in range(5)]
+INTENTIONAL_WALK_TERMS = ("\u7533\u544a\u656c\u9060", "\u656c\u9060", "\u6545\u610f\u56db\u7403")
+OUTCOME_META = [
+    ("grounders", "ゴロ", "#0F2340"),
+    ("flyballs", "フライ", "#355C8C"),
+    ("swingingStrikeouts", "空三振", "#6A89B4"),
+    ("lookingStrikeouts", "見三振", "#C8A55A"),
+    ("sacrificeBunts", "犠打", "#D6C192"),
+    ("interference", "守備妨害", "#9D8B75"),
+]
+WOBA_CONSTANTS_BY_YEAR = {
+    # FanGraphs 2026 Guts constants, used here provisionally until project-specific
+    # NPB linear weights are defined for each season.
+    "2026": {
+        "source": "https://www.fangraphs.com/tools/guts",
+        "provisional": True,
+        "wOBA": 0.318,
+        "wOBAScale": 1.280,
+        "wBB": 0.711,
+        "wHBP": 0.743,
+        "w1B": 0.909,
+        "w2B": 1.293,
+        "w3B": 1.638,
+        "wHR": 2.110,
+    }
+}
+
+
+def load_dashboard_module():
+    spec = importlib.util.spec_from_file_location("pitch_dashboard_build", DASHBOARD_SCRIPT)
+    module = importlib.util.module_from_spec(spec)
+    assert spec.loader is not None
+    spec.loader.exec_module(module)
+    return module
+
+
+DASHBOARD = load_dashboard_module()
+PITCH_COLORS = list(getattr(DASHBOARD, "PITCH_COLORS", PITCH_COLOR_FALLBACK))
+COUNT_BUCKETS = list(getattr(DASHBOARD, "COUNT_BUCKETS", []))
+HEATMAP_WIDTH = float(getattr(DASHBOARD, "HEATMAP_WIDTH", 54.0))
+HEATMAP_HEIGHT = float(getattr(DASHBOARD, "HEATMAP_HEIGHT", 63.0))
+INNING_SLOTS = list(range(1, int(getattr(DASHBOARD, "MAX_SCORE_INNINGS", 12)) + 1))
+
+
+def team_sort_key(team: str) -> tuple[int, str]:
+    team = TEAM_ALIASES.get(team, team)
+    try:
+        return TEAM_ORDER.index(team), team
+    except ValueError:
+        return len(TEAM_ORDER), team
+
+
+def normalize_team_name(team: str) -> str:
+    return TEAM_ALIASES.get(team, team)
+
+
+def normalize_matchup_team_name(team: str) -> str:
+    normalized = (team or "").strip()
+    if not normalized:
+        return ""
+    if normalized in TEAM_MATCHUP_NAMES:
+        return TEAM_MATCHUP_NAMES[normalized]
+    return normalize_team_name(normalized)
+
+
+def parse_matchup_teams(matchup: str) -> tuple[str, str]:
+    if "vs" not in (matchup or ""):
+        return "", ""
+    left, right = matchup.split("vs", 1)
+    return normalize_matchup_team_name(left), normalize_matchup_team_name(right)
+
+
+def site_path(path: Path) -> str:
+    return f"../{path.relative_to(ROOT).as_posix()}"
+
+
+def safe_load_json(path: Path) -> dict | None:
+    try:
+        return json.loads(path.read_text(encoding="utf-8"))
+    except Exception:
+        return None
+
+
+def team_league(team: str) -> str:
+    return TEAM_LEAGUES.get(normalize_team_name(team), "")
+
+
+def parse_int(value) -> int:
+    if value in (None, ""):
+        return 0
+    text = str(value).strip().replace(",", "")
+    if not text or text == "-":
+        return 0
+    try:
+        return int(float(text))
+    except Exception:
+        return 0
+
+
+def innings_to_outs(value) -> int:
+    if value in (None, ""):
+        return 0
+    text = str(value).strip()
+    if not text or text == "-":
+        return 0
+    sign = -1 if text.startswith("-") else 1
+    if sign < 0:
+        text = text[1:]
+    whole, dot, fraction = text.partition(".")
+    outs = parse_int(whole) * 3
+    if dot and fraction:
+        remainder = 0
+        for char in fraction:
+            if char.isdigit():
+                remainder = int(char)
+                break
+        outs += min(remainder, 2)
+    return outs * sign
+
+
+def outs_to_innings_notation(outs: int) -> str:
+    whole, remainder = divmod(max(int(outs), 0), 3)
+    return str(whole) if remainder == 0 else f"{whole}.{remainder}"
+
+
+def outs_to_ip(outs: int) -> float:
+    return max(int(outs), 0) / 3
+
+
+def round_or_none(value: float | None, digits: int) -> float | None:
+    if value is None:
+        return None
+    return round(value, digits)
+
+
+def get_woba_constants(year: str) -> dict | None:
+    if not WOBA_CONSTANTS_BY_YEAR:
+        return None
+    selected_year = year if year in WOBA_CONSTANTS_BY_YEAR else max(WOBA_CONSTANTS_BY_YEAR)
+    constants = dict(WOBA_CONSTANTS_BY_YEAR[selected_year])
+    constants["constantsYear"] = selected_year
+    return constants
+
+
+def calculate_woba(stats: dict, constants: dict | None) -> float | None:
+    if not constants:
+        return None
+    denominator = (
+        parse_int(stats.get("atBats"))
+        + parse_int(stats.get("unintentionalWalks"))
+        + parse_int(stats.get("hitByPitch"))
+        + parse_int(stats.get("sacFlies"))
+    )
+    if denominator <= 0:
+        return None
+    numerator = (
+        constants["wBB"] * parse_int(stats.get("unintentionalWalks"))
+        + constants["wHBP"] * parse_int(stats.get("hitByPitch"))
+        + constants["w1B"] * parse_int(stats.get("singles"))
+        + constants["w2B"] * parse_int(stats.get("doubles"))
+        + constants["w3B"] * parse_int(stats.get("triples"))
+        + constants["wHR"] * parse_int(stats.get("homeRuns"))
+    )
+    return numerator / denominator
+
+
+def build_park_factor_index(park_factors: dict) -> dict[str, dict[str, dict]]:
+    by_season = park_factors.get("bySeason") or {}
+    index: dict[str, dict[str, dict]] = {}
+    for season, payload in by_season.items():
+        team_rows = payload.get("teams") or []
+        season_index = {
+            normalize_team_name(row.get("team") or ""): row
+            for row in team_rows
+            if normalize_team_name(row.get("team") or "")
+        }
+        if season_index:
+            index[season] = season_index
+    return index
+
+
+def weighted_park_factor(
+    plate_appearances_by_team: dict[str, int],
+    park_factor_rows: dict[str, dict],
+) -> tuple[float | None, float | None]:
+    total_pa = 0
+    weighted_raw_factor = 0.0
+
+    for team, plate_appearances in plate_appearances_by_team.items():
+        pa = max(parse_int(plate_appearances), 0)
+        if pa <= 0:
+            continue
+        team_row = park_factor_rows.get(normalize_team_name(team)) or {}
+        raw_factor = team_row.get("homeParkFactor")
+        if raw_factor in (None, ""):
+            raw_factor = 100.0
+        weighted_raw_factor += float(raw_factor) * pa
+        total_pa += pa
+
+    if total_pa <= 0:
+        return None, None
+
+    raw_factor = weighted_raw_factor / total_pa
+    effective_factor = 100.0 + ((raw_factor - 100.0) / 2.0)
+    return raw_factor, effective_factor
+
+
+def is_intentional_walk_text(value: str | None) -> bool:
+    normalize_result = getattr(DASHBOARD, "normalize_result", lambda raw: (raw or "").split("[", 1)[0].strip())
+    normalized = normalize_result(value or "")
+    return any(term in normalized for term in INTENTIONAL_WALK_TERMS)
+
+
+def text(node) -> str:
+    if node is None:
+        return ""
+    return node.get_text(" ", strip=True).replace("\xa0", " ")
+
+
+def extract_game_id(prefix: str) -> str:
+    head = str(prefix or "").split("-", 1)[0]
+    return head if head.isdigit() else ""
+
+
+def pa_index_sort_key(value) -> tuple[int, str]:
+    text = str(value or "").strip()
+    if text.isdigit():
+        return int(text), text
+    return 10**9, text
+
+
+def pitcher_appearance_order(payload: dict | None) -> int:
+    pitches = (payload or {}).get("pitches") or []
+    order, _ = min((pa_index_sort_key(row.get("pa_index")) for row in pitches), default=(10**9, ""))
+    return order
+
+
+def load_game_decisions_cache() -> dict:
+    if not GAME_DECISIONS_CACHE_PATH.exists():
+        return {"games": {}}
+    try:
+        data = json.loads(GAME_DECISIONS_CACHE_PATH.read_text(encoding="utf-8"))
+    except Exception:
+        return {"games": {}}
+    if not isinstance(data, dict):
+        return {"games": {}}
+    games = data.get("games")
+    if not isinstance(games, dict):
+        return {"games": {}}
+    return data
+
+
+def load_game_batting_cache() -> dict:
+    if not GAME_BATTING_CACHE_PATH.exists():
+        return {"games": {}}
+    try:
+        data = json.loads(GAME_BATTING_CACHE_PATH.read_text(encoding="utf-8"))
+    except Exception:
+        return {"games": {}}
+    if not isinstance(data, dict):
+        return {"games": {}}
+    games = data.get("games")
+    if not isinstance(games, dict):
+        return {"games": {}}
+    return data
+
+
+def save_game_decisions_cache(cache: dict) -> None:
+    cache["updatedAt"] = datetime.now().isoformat(timespec="seconds")
+    GAME_DECISIONS_CACHE_PATH.write_text(json.dumps(cache, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+
+
+def save_game_batting_cache(cache: dict) -> None:
+    cache["updatedAt"] = datetime.now().isoformat(timespec="seconds")
+    GAME_BATTING_CACHE_PATH.write_text(json.dumps(cache, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+
+
+def build_empty_decision_bucket(player_id: str, player_name: str) -> dict:
+    return {
+        "pitcherId": player_id,
+        "player": player_name,
+        "wins": 0,
+        "losses": 0,
+        "saves": 0,
+        "holds": 0,
+    }
+
+
+def parse_game_decisions_from_html(html: str) -> dict[str, dict]:
+    soup = BeautifulSoup(html, "html.parser")
+    decisions: dict[str, dict] = {}
+    for row in soup.select("table.bb-scoreTable tr"):
+        cells = row.select("th,td")
+        if len(cells) < 2:
+            continue
+        marker = text(cells[0])
+        decision_key = DECISION_KEY_MAP.get(marker)
+        if not decision_key:
+            continue
+        player_link = cells[1].select_one("a[href*='/npb/player/']")
+        player_name = text(player_link) or text(cells[1])
+        href = player_link.get("href", "") if player_link else ""
+        match = re.search(r"/npb/player/(\d+)/top", href)
+        player_id = match.group(1) if match else ""
+        key = player_id or player_name
+        bucket = decisions.setdefault(key, build_empty_decision_bucket(player_id, player_name))
+        bucket[decision_key] += 1
+    return decisions
+
+
+def parse_game_decisions_from_jina(text_body: str) -> dict[str, dict]:
+    decisions: dict[str, dict] = {}
+    pattern = re.compile(r"^\|\s*(勝|敗|S|H)\s*\|\s*\[([^\]]+)\]\(https://baseball\.yahoo\.co\.jp/npb/player/(\d+)/top\)")
+    for line in text_body.splitlines():
+        match = pattern.search(line.strip())
+        if not match:
+            continue
+        marker, player_name, player_id = match.groups()
+        decision_key = DECISION_KEY_MAP.get(marker)
+        if not decision_key:
+            continue
+        key = player_id or player_name
+        bucket = decisions.setdefault(key, build_empty_decision_bucket(player_id, player_name))
+        bucket[decision_key] += 1
+    return decisions
+
+
+def fetch_game_decisions(session: requests.Session, game_id: str) -> dict[str, dict]:
+    url = SPORTSNAVI_GAME_STATS_URL.format(game_id=game_id)
+    resp = session.get(url, headers=REQUEST_HEADERS, timeout=30)
+    resp.raise_for_status()
+    decisions = parse_game_decisions_from_html(resp.text)
+    if decisions:
+        return decisions
+
+    jina_resp = session.get(SPORTSNAVI_JINA_GAME_STATS_URL.format(game_id=game_id), timeout=30)
+    jina_resp.raise_for_status()
+    return parse_game_decisions_from_jina(jina_resp.text)
+
+
+def load_or_update_game_decisions(entries: list[dict]) -> dict[str, dict]:
+    cache = load_game_decisions_cache()
+    games = cache.setdefault("games", {})
+    target_ids = sorted({entry.get("gameId") for entry in entries if entry.get("gameId")})
+    missing_ids = [game_id for game_id in target_ids if game_id not in games]
+    if missing_ids:
+        session = requests.Session()
+        for game_id in missing_ids:
+            try:
+                games[game_id] = fetch_game_decisions(session, game_id)
+            except Exception as exc:
+                print(f"warning: failed to fetch game decisions for {game_id}: {exc}")
+                games[game_id] = {}
+        save_game_decisions_cache(cache)
+    return games
+
+
+def load_or_update_game_batting_stats(entries: list[dict]) -> dict[str, dict[str, dict]]:
+    cache = load_game_batting_cache()
+    games = cache.setdefault("games", {})
+    target_ids = sorted({entry.get("gameId") for entry in entries if entry.get("gameId")})
+    missing_ids = []
+    for game_id in target_ids:
+        cached = games.get(game_id)
+        if not isinstance(cached, dict) or not cached:
+            missing_ids.append(game_id)
+            continue
+        sample_team = next(iter(cached.values()), None)
+        sample_row = next(iter(sample_team.values()), None) if isinstance(sample_team, dict) and sample_team else None
+        if not isinstance(sample_row, dict) or "plateAppearances" not in sample_row:
+            missing_ids.append(game_id)
+    if missing_ids:
+        session = requests.Session()
+        for game_id in missing_ids:
+            try:
+                games[game_id] = fetch_game_batting_stats(session, game_id)
+            except Exception as exc:
+                print(f"warning: failed to fetch batting stats for {game_id}: {exc}")
+                games[game_id] = {}
+        save_game_batting_cache(cache)
+    return games
+
+
+def parse_game_batting_stats_from_html(html: str) -> dict[str, dict[str, dict]]:
+    soup = BeautifulSoup(html, "html.parser")
+    batting_tables = soup.select("table.bb-statsTable")
+    score_tables = soup.select("table.bb-teamScoreTable")
+    team_names: list[str] = []
+    classify_hit_type = getattr(DASHBOARD, "classify_hit_type", lambda value: None)
+
+    for table in score_tables:
+        first_row = table.select_one("tr")
+        cells = first_row.select("th,td") if first_row else []
+        if cells:
+            team_names.append(normalize_matchup_team_name(text(cells[0])))
+
+    stats_by_team: dict[str, dict[str, dict]] = {}
+    for team_name, table in zip(team_names, batting_tables):
+        header_cells = table.select("tr")[0].select("th,td")
+        headers = [text(cell) for cell in header_cells]
+        header_map = {label: idx for idx, label in enumerate(headers)}
+        team_rows: dict[str, dict] = {}
+        for order, row in enumerate(table.select("tr")[1:], start=1):
+            cells = row.select("th,td")
+            if not cells:
+                continue
+            player_link = row.select_one("a[href*='/npb/player/']")
+            player_name = text(player_link) or (text(cells[header_map["選手名"]]) if "選手名" in header_map else "")
+            if not player_name:
+                continue
+            href = player_link.get("href", "") if player_link else ""
+            match = re.search(r"/npb/player/(\d+)/top", href)
+            player_id = match.group(1) if match else ""
+            detail_items: list[str] = []
+            for cell in cells[14:]:
+                details = [text(node) for node in cell.select(".bb-statsTable__dataDetail")]
+                if details:
+                    detail_items.extend([detail for detail in details if detail])
+                    continue
+                cell_text = text(cell)
+                if cell_text:
+                    detail_items.append(cell_text)
+            doubles = sum(1 for detail in detail_items if classify_hit_type(detail) == "doubles")
+            triples = sum(1 for detail in detail_items if classify_hit_type(detail) == "triples")
+            home_runs = parse_int(text(cells[header_map["本塁打"]])) if "本塁打" in header_map else 0
+            hits = parse_int(text(cells[header_map["安打"]])) if "安打" in header_map else 0
+            stats = {
+                "order": order,
+                "player": player_name,
+                "playerId": player_id,
+                "ab": parse_int(text(cells[header_map["打数"]])) if "打数" in header_map else 0,
+                "runs": parse_int(text(cells[header_map["得点"]])) if "得点" in header_map else 0,
+                "hits": hits,
+                "rbi": parse_int(text(cells[header_map["打点"]])) if "打点" in header_map else 0,
+                "walks": parse_int(text(cells[header_map["四球"]])) if "四球" in header_map else 0,
+                "hitByPitch": parse_int(text(cells[header_map["死球"]])) if "死球" in header_map else 0,
+                "sacBunts": parse_int(text(cells[header_map["犠打"]])) if "犠打" in header_map else 0,
+                "steals": parse_int(text(cells[header_map["盗塁"]])) if "盗塁" in header_map else 0,
+                "strikeouts": parse_int(text(cells[header_map["三振"]])) if "三振" in header_map else 0,
+                "homeRuns": home_runs,
+                "doubles": doubles,
+                "triples": triples,
+                "singles": max(hits - doubles - triples - home_runs, 0),
+                "plateAppearances": len(detail_items),
+            }
+            team_rows[player_id or player_name] = stats
+            if player_id:
+                team_rows[player_name] = stats
+        stats_by_team[team_name] = team_rows
+    return stats_by_team
+
+
+def fetch_game_batting_stats(session: requests.Session, game_id: str) -> dict[str, dict[str, dict]]:
+    response = session.get(SPORTSNAVI_GAME_STATS_URL.format(game_id=game_id), headers=REQUEST_HEADERS, timeout=30)
+    response.raise_for_status()
+    return parse_game_batting_stats_from_html(response.text)
+
+
+def infer_title(prefix: str, date: str, payload: dict | None) -> tuple[str, str]:
+    if payload:
+        pitcher = payload.get("statline", {}).get("player") or ""
+        matchup = payload.get("metadata", {}).get("matchup") or ""
+        if pitcher:
+            return pitcher, matchup
+
+    tail = prefix
+    if tail.startswith(f"{date}-"):
+        tail = tail[len(date) + 1 :]
+    return tail.replace("-", " "), ""
+
+
+def make_pitch_color_map(pitch_mix: list[dict]) -> dict[str, str]:
+    return {
+        row["pitchType"]: PITCH_COLORS[idx % len(PITCH_COLORS)]
+        for idx, row in enumerate(pitch_mix)
+    }
+
+
+def build_pitch_chart(rows: list[dict], pitch_color_map: dict[str, str]) -> dict[str, list[dict]]:
+    final_by_pa: dict[str, tuple[int, int]] = {}
+    chart = {"right": [], "left": []}
+
+    for row in rows:
+        pa_index = row.get("pa_index") or ""
+        try:
+            seq = int(row.get("seq") or 0)
+        except (TypeError, ValueError):
+            seq = 0
+        try:
+            pitch_no = int(row.get("pitchNo") or 0)
+        except (TypeError, ValueError):
+            pitch_no = 0
+        current = final_by_pa.get(pa_index)
+        if current is None or seq >= current[0]:
+            final_by_pa[pa_index] = (seq, pitch_no)
+
+    normalize_result = getattr(DASHBOARD, "normalize_result", lambda value: (value or "").split("[", 1)[0].strip())
+    parse_speed = getattr(DASHBOARD, "parse_speed", lambda value: value)
+
+    for row in sorted(rows, key=lambda item: int(item.get("pitchNo") or 0)):
+        hand = row.get("batter_hand")
+        if hand not in ("右", "左"):
+            continue
+        left = row.get("left")
+        top = row.get("top")
+        if left is None or top is None:
+            continue
+        pa_index = row.get("pa_index") or ""
+        try:
+            seq = int(row.get("seq") or 0)
+        except (TypeError, ValueError):
+            seq = 0
+        try:
+            pitch_no = int(row.get("pitchNo") or 0)
+        except (TypeError, ValueError):
+            pitch_no = 0
+        chart_key = "right" if hand == "右" else "left"
+        chart[chart_key].append(
+            {
+                "left": round(float(left), 2),
+                "top": round(float(top), 2),
+                "pitchType": row.get("pitchType") or "-",
+                "color": pitch_color_map.get(row.get("pitchType") or "", PITCH_COLORS[0]),
+                "speed": parse_speed(row.get("speed")),
+                "speedLabel": row.get("speed") or "",
+                "result": normalize_result(row.get("result") or ""),
+                "pitchNo": pitch_no,
+                "seq": seq,
+                "batter": row.get("batter") or "",
+                "isFinalPitch": final_by_pa.get(pa_index) == (seq, pitch_no),
+            }
+        )
+
+    return {
+        "right": chart["right"],
+        "left": chart["left"],
+        "bounds": {
+            "width": HEATMAP_WIDTH,
+            "height": HEATMAP_HEIGHT,
+        },
+    }
+
+
+def serialize_stat_summary(label: int, stats: dict) -> dict:
+    summary = DASHBOARD.summarize_stat_row(stats)
+    max_speed = f"{max(stats['speeds']):.1f}" if stats["speeds"] else "-"
+    return {
+        "inning": label,
+        "count": stats["count"],
+        "avgSpeed": summary["avg_speed"],
+        "maxSpeed": max_speed,
+        "whiffCount": summary["whiff_count"],
+        "whiff": round(summary["whiff"], 1) if summary["whiff"] is not None else None,
+        "atBats": summary["at_bats"],
+        "singles": summary["singles"],
+        "doubles": summary["doubles"],
+        "triples": summary["triples"],
+        "homeRuns": summary["home_runs"],
+        "grounders": summary["grounders"],
+        "flyBalls": summary["flyballs"],
+        "strikeouts": summary["strikeouts"],
+        "hitRate": round(summary["hit_rate"], 3) if summary["hit_rate"] is not None else None,
+    }
+
+
+def build_inning_summary(rows: list[dict], pitch_types: list[str]) -> dict:
+    parse_inning = getattr(DASHBOARD, "parse_inning")
+    parse_speed = getattr(DASHBOARD, "parse_speed")
+    is_swing_miss_result = getattr(DASHBOARD, "is_swing_miss_result")
+    record_ab_result = getattr(DASHBOARD, "record_ab_result")
+    build_plate_appearances = getattr(DASHBOARD, "build_plate_appearances")
+    build_stat_bucket = getattr(DASHBOARD, "build_stat_bucket")
+
+    all_buckets = defaultdict(build_stat_bucket)
+    pitch_buckets = {pitch_type: defaultdict(build_stat_bucket) for pitch_type in pitch_types}
+
+    for row in rows:
+        inning = parse_inning(row.get("pa_index"))
+        if inning not in INNING_SLOTS:
+            continue
+        pitch_type = row.get("pitchType")
+        speed = parse_speed(row.get("speed"))
+        targets = [all_buckets[inning]]
+        if pitch_type in pitch_buckets:
+            targets.append(pitch_buckets[pitch_type][inning])
+        for stats in targets:
+            stats["count"] += 1
+            if speed is not None:
+                stats["speeds"].append(speed)
+            if is_swing_miss_result(row.get("result")):
+                stats["swing_miss"] += 1
+
+    for pitches in build_plate_appearances(rows).values():
+        final = pitches[-1]
+        inning = parse_inning(final.get("pa_index"))
+        if inning not in INNING_SLOTS:
+            continue
+        record_ab_result(all_buckets[inning], final.get("result"))
+        pitch_type = final.get("pitchType")
+        if pitch_type in pitch_buckets:
+            record_ab_result(pitch_buckets[pitch_type][inning], final.get("result"))
+
+    return {
+        "all": [serialize_stat_summary(inning, all_buckets.get(inning, build_stat_bucket())) for inning in INNING_SLOTS],
+        "byPitchType": {
+            pitch_type: [serialize_stat_summary(inning, pitch_buckets[pitch_type].get(inning, build_stat_bucket())) for inning in INNING_SLOTS]
+            for pitch_type in pitch_types
+        },
+    }
+
+
+def build_velocity_summary(rows: list[dict], pitch_color_map: dict[str, str]) -> dict:
+    parse_inning = getattr(DASHBOARD, "parse_inning", lambda value: None)
+    parse_speed = getattr(DASHBOARD, "parse_speed", lambda value: None)
+    safe_int = getattr(DASHBOARD, "safe_int", lambda value, default=0: default)
+
+    ordered = sorted(rows, key=lambda row: safe_int(row.get("pitchNo"), 0))
+    inning_starts: dict[int, int] = {}
+    speed_rows = []
+
+    for row in ordered:
+        pitch_no = safe_int(row.get("pitchNo"), 0)
+        inning = parse_inning(row.get("pa_index"))
+        if inning is not None and inning not in inning_starts:
+            inning_starts[inning] = pitch_no
+
+        speed = parse_speed(row.get("speed"))
+        pitch_type = row.get("pitchType")
+        if speed is None or not pitch_type:
+            continue
+
+        speed_rows.append(
+            {
+                "pitchNo": pitch_no,
+                "speed": speed,
+                "inning": inning,
+                "pitchType": pitch_type,
+                "color": pitch_color_map.get(pitch_type, PITCH_COLORS[0]),
+            }
+        )
+
+    return {
+        "rows": speed_rows,
+        "markers": [
+            {"inning": inning, "pitchNo": pitch_no}
+            for inning, pitch_no in sorted(inning_starts.items())
+        ],
+    }
+
+
+def classify_outcome_result(result: str) -> str | None:
+    normalize_result = getattr(DASHBOARD, "normalize_result", lambda value: (value or "").split("[", 1)[0].strip())
+    grounder_words = tuple(getattr(DASHBOARD, "GROUNDER_WORDS", ("ゴロ", "併打")))
+    fly_words = tuple(getattr(DASHBOARD, "FLY_WORDS", ("飛", "直", "ライナー")))
+
+    primary = normalize_result(result)
+    if not primary:
+        return None
+    if "見三振" in primary:
+        return "lookingStrikeouts"
+    if "空三振" in primary or "バ三振" in primary:
+        return "swingingStrikeouts"
+    if primary.endswith("犠打"):
+        return "sacrificeBunts"
+    if "守備妨害" in primary:
+        return "interference"
+    if any(word in primary for word in grounder_words):
+        return "grounders"
+    if any(word in primary for word in fly_words):
+        return "flyballs"
+    return None
+
+
+def build_outcome_summary(rows: list[dict]) -> dict:
+    build_plate_appearances = getattr(DASHBOARD, "build_plate_appearances")
+
+    counts = Counter()
+    for pitches in build_plate_appearances(rows).values():
+        final = pitches[-1]
+        category = classify_outcome_result(final.get("result"))
+        if category:
+            counts[category] += 1
+
+    total = sum(counts.values())
+    summary_rows = [
+        {
+            "id": key,
+            "label": label,
+            "count": counts.get(key, 0),
+            "ratio": round(counts.get(key, 0) / total * 100, 1) if total else 0.0,
+            "color": color,
+        }
+        for key, label, color in OUTCOME_META
+    ]
+    return {
+        "total": total,
+        "rows": summary_rows,
+    }
+
+
+def count_intentional_walks(rows: list[dict]) -> int:
+    build_plate_appearances = getattr(DASHBOARD, "build_plate_appearances")
+    total = 0
+    for pitches in build_plate_appearances(rows).values():
+        final = pitches[-1]
+        if is_intentional_walk_text(final.get("result")):
+            total += 1
+    return total
+
+
+def serialize_dashboard(payload: dict) -> dict:
+    rows = payload.get("pitches") or []
+    if not rows:
+        return {}
+
+    (
+        total,
+        pitch_counts,
+        pitch_stats,
+        heat_by_hand,
+        inning_rows,
+        count_mix_summary,
+        finish_summary,
+        _velocity_trend,
+    ) = DASHBOARD.summarize(rows)
+
+    pitch_mix = []
+    for idx, (pitch_type, count) in enumerate(pitch_counts.most_common()):
+        stats = pitch_stats[pitch_type]
+        summary = DASHBOARD.summarize_stat_row(stats)
+        max_speed = f"{max(stats['speeds']):.1f}" if stats["speeds"] else "-"
+        pitch_mix.append(
+            {
+                "pitchType": pitch_type,
+                "count": count,
+                "ratio": round(count / total * 100, 1) if total else 0.0,
+                "avgSpeed": summary["avg_speed"],
+                "maxSpeed": max_speed,
+                "whiffCount": summary["whiff_count"],
+                "whiff": round(summary["whiff"], 1) if summary["whiff"] is not None else None,
+                "atBats": summary["at_bats"],
+                "singles": summary["singles"],
+                "doubles": summary["doubles"],
+                "triples": summary["triples"],
+                "homeRuns": summary["home_runs"],
+                "grounders": summary["grounders"],
+                "flyBalls": summary["flyballs"],
+                "strikeouts": summary["strikeouts"],
+                "hitRate": round(summary["hit_rate"], 3) if summary["hit_rate"] is not None else None,
+                "color": PITCH_COLORS[idx % len(PITCH_COLORS)],
+            }
+        )
+
+    pitch_color_map = make_pitch_color_map(pitch_mix)
+    bucket_counts, bucket_totals = count_mix_summary
+    count_mix = []
+    for bucket in COUNT_BUCKETS:
+        total_bucket = bucket_totals[bucket]
+        segments = []
+        for pitch in pitch_mix:
+            count = bucket_counts[bucket][pitch["pitchType"]]
+            ratio = round(count / total_bucket * 100, 1) if total_bucket else 0.0
+            segments.append(
+                {
+                    "pitchType": pitch["pitchType"],
+                    "count": count,
+                    "ratio": ratio,
+                    "color": pitch_color_map[pitch["pitchType"]],
+                }
+            )
+        count_mix.append({"bucket": bucket, "total": total_bucket, "segments": segments})
+
+    finish_total, finish_stats = finish_summary
+    finish_rows = []
+    for pitch_type, stats in sorted(finish_stats.items(), key=lambda item: item[1]["count"], reverse=True):
+        finish_rows.append(
+            {
+                "pitchType": pitch_type,
+                "count": stats["count"],
+                "ratio": round(stats["count"] / finish_total * 100, 1) if finish_total else 0.0,
+                "looking": stats["looking"],
+                "swinging": stats["swinging"],
+                "color": pitch_color_map.get(pitch_type, PITCH_COLORS[0]),
+            }
+        )
+
+    inning_summary = build_inning_summary(rows, [row["pitchType"] for row in pitch_mix])
+    outcome_summary = build_outcome_summary(rows)
+    velocity_summary = build_velocity_summary(rows, pitch_color_map)
+    intentional_walks = count_intentional_walks(rows)
+    return {
+        "totalPitches": total,
+        "pitchMix": pitch_mix,
+        "inningRows": inning_summary["all"],
+        "inningSummary": inning_summary,
+        "heatmaps": {
+            "right": heat_by_hand.get("右").tolist() if "右" in heat_by_hand else EMPTY_HEATMAP,
+            "left": heat_by_hand.get("左").tolist() if "左" in heat_by_hand else EMPTY_HEATMAP,
+        },
+        "pitchChart": build_pitch_chart(rows, pitch_color_map),
+        "finish": {
+            "total": finish_total,
+            "rows": finish_rows,
+        },
+        "outcomes": outcome_summary,
+        "intentionalWalks": intentional_walks,
+        "velocity": velocity_summary,
+        "countMix": count_mix,
+        "pitchColors": pitch_color_map,
+    }
+
+
+def build_batter_pitch_mix(rows: list[dict]) -> tuple[list[dict], dict[str, str]]:
+    pitch_counts = Counter(row.get("pitchType") or "-" for row in rows if row.get("pitchType"))
+    total = sum(pitch_counts.values())
+    pitch_mix = [
+        {
+            "pitchType": pitch_type,
+            "count": count,
+            "ratio": round(count / total * 100, 1) if total else 0.0,
+            "color": PITCH_COLORS[idx % len(PITCH_COLORS)],
+        }
+        for idx, (pitch_type, count) in enumerate(pitch_counts.most_common())
+    ]
+    return pitch_mix, make_pitch_color_map(pitch_mix)
+
+
+def build_batter_statline_from_pas(plate_appearances: list[list[dict]]) -> dict:
+    normalize_result = getattr(DASHBOARD, "normalize_result", lambda value: (value or "").split("[", 1)[0].strip())
+    is_ab_result = getattr(DASHBOARD, "is_ab_result", lambda value: False)
+    is_hit = getattr(DASHBOARD, "is_hit", lambda value: False)
+    classify_hit_type = getattr(DASHBOARD, "classify_hit_type", lambda value: None)
+
+    stats = {
+        "ab": 0,
+        "hits": 0,
+        "homeRuns": 0,
+        "rbi": 0,
+        "walks": 0,
+        "strikeouts": 0,
+    }
+
+    for pitches in plate_appearances:
+        if not pitches:
+            continue
+        final = pitches[-1]
+        result = final.get("result") or ""
+        primary = normalize_result(result)
+        if is_ab_result(result):
+            stats["ab"] += 1
+        if is_hit(result):
+            stats["hits"] += 1
+            if classify_hit_type(result) == "home_runs":
+                stats["homeRuns"] += 1
+        if "四球" in primary:
+            stats["walks"] += 1
+        if any(word in primary for word in ("空三振", "見三振", "バ三振", "振逃")):
+            stats["strikeouts"] += 1
+
+    return stats
+
+
+def serialize_batter_plate_points(pitches: list[dict], pitch_color_map: dict[str, str]) -> list[dict]:
+    normalize_result = getattr(DASHBOARD, "normalize_result", lambda value: (value or "").split("[", 1)[0].strip())
+    parse_speed = getattr(DASHBOARD, "parse_speed", lambda value: value)
+    points: list[dict] = []
+    final_pitch = pitches[-1] if pitches else None
+
+    for row in pitches:
+        left = row.get("left")
+        top = row.get("top")
+        if left is None or top is None:
+            continue
+        points.append(
+            {
+                "left": round(float(left), 2),
+                "top": round(float(top), 2),
+                "pitchType": row.get("pitchType") or "-",
+                "color": pitch_color_map.get(row.get("pitchType") or "", PITCH_COLORS[0]),
+                "speed": parse_speed(row.get("speed")),
+                "speedLabel": row.get("speed") or "-",
+                "result": normalize_result(row.get("result") or ""),
+                "pitchNo": parse_int(row.get("pitchNo")),
+                "seq": parse_int(row.get("seq")),
+                "pitcher": row.get("pitcher") or "",
+                "isFinalPitch": row is final_pitch,
+            }
+        )
+    return points
+
+
+def extract_pitcher_id(payload: dict) -> str:
+    for row in payload.get("pitches") or []:
+        pitcher_id = row.get("pitcher_id")
+        if pitcher_id:
+            return str(pitcher_id)
+    return ""
+
+
+def resolve_game_decision(entry: dict, game_decisions: dict[str, dict]) -> dict:
+    game_id = entry.get("gameId") or ""
+    if not game_id:
+        return {}
+    decisions = game_decisions.get(game_id) or {}
+    pitcher_id = entry.get("pitcherId") or ""
+    if pitcher_id and pitcher_id in decisions:
+        return decisions[pitcher_id]
+    player_name = entry.get("player") or ""
+    for bucket in decisions.values():
+        if bucket.get("player") == player_name:
+            return bucket
+    return {}
+
+
+def load_game_contexts() -> dict[str, dict]:
+    contexts: dict[str, dict] = {}
+    for path in sorted(SUMMARY_DIR.glob("sportsnavi_game_context_*.json")):
+        match = GAME_CONTEXT_PATTERN.match(path.name)
+        if not match:
+            continue
+        payload = safe_load_json(path)
+        if not payload:
+            continue
+        contexts[match.group("season")] = payload
+    return contexts
+
+
+def build_park_factors(game_contexts: dict[str, dict]) -> dict:
+    seasons = sorted(game_contexts)
+    by_season: dict[str, dict] = {}
+
+    for season in seasons:
+        payload = game_contexts[season]
+        games = payload.get("games") or []
+        flattened_games = []
+
+        for game in games:
+            home_team = normalize_matchup_team_name(game.get("homeTeam") or "")
+            away_team = normalize_matchup_team_name(game.get("awayTeam") or "")
+            league = team_league(home_team) or team_league(away_team)
+            stadium = game.get("stadium") or ""
+            home_score = parse_int(game.get("homeScore"))
+            away_score = parse_int(game.get("awayScore"))
+            if not home_team or not away_team or not league or not stadium:
+                continue
+            if home_score is None or away_score is None:
+                continue
+            flattened_games.append(
+                {
+                    "gameId": game.get("gameId") or "",
+                    "date": game.get("date") or "",
+                    "league": league,
+                    "stadium": stadium,
+                    "homeTeam": home_team,
+                    "awayTeam": away_team,
+                    "homeScore": home_score,
+                    "awayScore": away_score,
+                    "totalRuns": home_score + away_score,
+                }
+            )
+
+        league_buckets: dict[str, dict] = defaultdict(lambda: {"games": 0, "totalRuns": 0})
+        stadium_buckets: dict[tuple[str, str], dict] = defaultdict(
+            lambda: {
+                "games": 0,
+                "totalRuns": 0,
+                "homeRuns": 0,
+                "awayRuns": 0,
+                "homeTeams": Counter(),
+            }
+        )
+        team_buckets: dict[str, dict] = defaultdict(
+            lambda: {
+                "league": "",
+                "homeGames": 0,
+                "roadGames": 0,
+                "homeTotalRuns": 0,
+                "roadTotalRuns": 0,
+                "venues": defaultdict(lambda: {"games": 0, "totalRuns": 0}),
+            }
+        )
+
+        for game in flattened_games:
+            league_bucket = league_buckets[game["league"]]
+            league_bucket["games"] += 1
+            league_bucket["totalRuns"] += game["totalRuns"]
+
+            stadium_bucket = stadium_buckets[(game["league"], game["stadium"])]
+            stadium_bucket["games"] += 1
+            stadium_bucket["totalRuns"] += game["totalRuns"]
+            stadium_bucket["homeRuns"] += game["homeScore"]
+            stadium_bucket["awayRuns"] += game["awayScore"]
+            stadium_bucket["homeTeams"][game["homeTeam"]] += 1
+
+            home_bucket = team_buckets[game["homeTeam"]]
+            home_bucket["league"] = team_league(game["homeTeam"])
+            home_bucket["homeGames"] += 1
+            home_bucket["homeTotalRuns"] += game["totalRuns"]
+            home_bucket["venues"][game["stadium"]]["games"] += 1
+            home_bucket["venues"][game["stadium"]]["totalRuns"] += game["totalRuns"]
+
+            away_bucket = team_buckets[game["awayTeam"]]
+            away_bucket["league"] = team_league(game["awayTeam"])
+            away_bucket["roadGames"] += 1
+            away_bucket["roadTotalRuns"] += game["totalRuns"]
+
+        league_rows = []
+        for league, stats in sorted(league_buckets.items()):
+            runs_per_game = stats["totalRuns"] / stats["games"] if stats["games"] else None
+            league_rows.append(
+                {
+                    "league": league,
+                    "games": stats["games"],
+                    "totalRuns": stats["totalRuns"],
+                    "runsPerGame": round_or_none(runs_per_game, 3),
+                }
+            )
+
+        stadium_rows = []
+        for (league, stadium), stats in sorted(stadium_buckets.items()):
+            league_stats = league_buckets.get(league) or {}
+            stadium_rpg = stats["totalRuns"] / stats["games"] if stats["games"] else None
+            league_rpg = (
+                league_stats["totalRuns"] / league_stats["games"]
+                if league_stats.get("games")
+                else None
+            )
+            run_factor = ((stadium_rpg / league_rpg) * 100) if stadium_rpg and league_rpg else None
+            home_teams = [team for team, _count in stats["homeTeams"].most_common()]
+            stadium_rows.append(
+                {
+                    "league": league,
+                    "stadium": stadium,
+                    "games": stats["games"],
+                    "homeTeams": home_teams,
+                    "primaryHomeTeam": home_teams[0] if home_teams else "",
+                    "totalRuns": stats["totalRuns"],
+                    "runsPerGame": round_or_none(stadium_rpg, 3),
+                    "leagueRunsPerGame": round_or_none(league_rpg, 3),
+                    "runFactor": round_or_none(run_factor, 1),
+                    "homeRuns": stats["homeRuns"],
+                    "awayRuns": stats["awayRuns"],
+                }
+            )
+
+        team_rows = []
+        for team, stats in sorted(team_buckets.items(), key=lambda item: team_sort_key(item[0])):
+            home_rpg = stats["homeTotalRuns"] / stats["homeGames"] if stats["homeGames"] else None
+            road_rpg = stats["roadTotalRuns"] / stats["roadGames"] if stats["roadGames"] else None
+            team_factor = ((home_rpg / road_rpg) * 100) if home_rpg and road_rpg else None
+            venue_rows = [
+                {
+                    "stadium": stadium,
+                    "games": venue_stats["games"],
+                    "totalRuns": venue_stats["totalRuns"],
+                    "runsPerGame": round_or_none(venue_stats["totalRuns"] / venue_stats["games"], 3)
+                    if venue_stats["games"]
+                    else None,
+                }
+                for stadium, venue_stats in sorted(
+                    stats["venues"].items(),
+                    key=lambda item: (-item[1]["games"], item[0]),
+                )
+            ]
+            team_rows.append(
+                {
+                    "team": team,
+                    "league": stats["league"],
+                    "homeGames": stats["homeGames"],
+                    "roadGames": stats["roadGames"],
+                    "homeTotalRuns": stats["homeTotalRuns"],
+                    "roadTotalRuns": stats["roadTotalRuns"],
+                    "homeRunsPerGame": round_or_none(home_rpg, 3),
+                    "roadRunsPerGame": round_or_none(road_rpg, 3),
+                    "homeParkFactor": round_or_none(team_factor, 1),
+                    "primaryStadium": venue_rows[0]["stadium"] if venue_rows else "",
+                    "venueBreakdown": venue_rows,
+                }
+            )
+
+        by_season[season] = {
+            "games": len(flattened_games),
+            "leagueAverages": league_rows,
+            "stadiums": stadium_rows,
+            "teams": team_rows,
+        }
+
+    return {
+        "updatedAt": datetime.now().isoformat(timespec="seconds"),
+        "source": sorted(f"sportsnavi_game_context_{season}.json" for season in seasons),
+        "notes": {
+            "runFactor": "100 is league-average runs per game for the same season and league.",
+            "homeParkFactor": "100 compares a team's home-game run environment to that same team's road games.",
+            "coverage": "Only completed games with both score and stadium available in sportsnavi_game_context files are included.",
+        },
+        "seasons": seasons,
+        "bySeason": by_season,
+    }
+
+
+def build_player_totals(entries: list[dict], game_decisions: dict[str, dict]) -> dict:
+    league_totals: dict[tuple[str, str], dict] = defaultdict(
+        lambda: {
+            "games": 0,
+            "outs": 0,
+            "earnedRuns": 0,
+            "homeRuns": 0,
+            "walks": 0,
+            "unintentionalWalks": 0,
+            "intentionalWalks": 0,
+            "hitByPitch": 0,
+            "strikeouts": 0,
+        }
+    )
+    players: dict[tuple[str, str], dict] = {}
+    years = set()
+
+    for entry in entries:
+        statline = entry.get("statline") or {}
+        dashboard = entry.get("dashboard") or {}
+        year = str(entry.get("date", ""))[:4] or "unknown"
+        league = entry.get("league") or team_league(entry.get("team", ""))
+        pitcher_id = entry.get("pitcherId") or f"{entry.get('team', '')}::{entry.get('player', '')}"
+        outs = innings_to_outs(statline.get("innings"))
+        pitch_rows = dashboard.get("pitchMix") or []
+        outcome_rows = {row.get("id"): parse_int(row.get("count")) for row in (dashboard.get("outcomes", {}).get("rows") or [])}
+        intentional_walks = max(parse_int(dashboard.get("intentionalWalks")), 0)
+        unintentional_walks = max(parse_int(statline.get("bb")) - intentional_walks, 0)
+        years.add(year)
+
+        league_bucket = league_totals[(year, league)]
+        league_bucket["games"] += 1
+        league_bucket["outs"] += outs
+        league_bucket["earnedRuns"] += parse_int(statline.get("er"))
+        league_bucket["homeRuns"] += parse_int(statline.get("hr"))
+        league_bucket["walks"] += parse_int(statline.get("bb"))
+        league_bucket["unintentionalWalks"] += unintentional_walks
+        league_bucket["intentionalWalks"] += intentional_walks
+        league_bucket["hitByPitch"] += parse_int(statline.get("hbp"))
+        league_bucket["strikeouts"] += parse_int(statline.get("k"))
+
+        player_bucket = players.setdefault(
+            (year, pitcher_id),
+            {
+                "year": year,
+                "pitcherId": entry.get("pitcherId") or "",
+                "player": entry.get("player", ""),
+                "league": league,
+                "teams": [],
+                "games": 0,
+                "wins": 0,
+                "losses": 0,
+                "saves": 0,
+                "holds": 0,
+                "outs": 0,
+                "batters": 0,
+                "pitches": 0,
+                "hits": 0,
+                "homeRuns": 0,
+                "strikeouts": 0,
+                "walks": 0,
+                "unintentionalWalks": 0,
+                "intentionalWalks": 0,
+                "hitByPitch": 0,
+                "balks": 0,
+                "runs": 0,
+                "earnedRuns": 0,
+                "atBats": 0,
+                "singles": 0,
+                "doubles": 0,
+                "triples": 0,
+                "grounders": 0,
+                "flyBalls": 0,
+                "swingMisses": 0,
+                "lookingStrikeouts": 0,
+                "swingingStrikeouts": 0,
+                "sacrificeBunts": 0,
+                "interference": 0,
+            },
+        )
+
+        if entry.get("team") and entry["team"] not in player_bucket["teams"]:
+            player_bucket["teams"].append(entry["team"])
+
+        decision_row = resolve_game_decision(entry, game_decisions)
+        player_bucket["games"] += 1
+        player_bucket["wins"] += parse_int(decision_row.get("wins"))
+        player_bucket["losses"] += parse_int(decision_row.get("losses"))
+        player_bucket["saves"] += parse_int(decision_row.get("saves"))
+        player_bucket["holds"] += parse_int(decision_row.get("holds"))
+        player_bucket["outs"] += outs
+        player_bucket["batters"] += parse_int(statline.get("batters"))
+        player_bucket["pitches"] += parse_int(statline.get("pitches"))
+        player_bucket["hits"] += parse_int(statline.get("hits"))
+        player_bucket["homeRuns"] += parse_int(statline.get("hr"))
+        player_bucket["strikeouts"] += parse_int(statline.get("k"))
+        player_bucket["walks"] += parse_int(statline.get("bb"))
+        player_bucket["unintentionalWalks"] += unintentional_walks
+        player_bucket["intentionalWalks"] += intentional_walks
+        player_bucket["hitByPitch"] += parse_int(statline.get("hbp"))
+        player_bucket["balks"] += parse_int(statline.get("balk"))
+        player_bucket["runs"] += parse_int(statline.get("runs"))
+        player_bucket["earnedRuns"] += parse_int(statline.get("er"))
+        player_bucket["atBats"] += sum(parse_int(row.get("atBats")) for row in pitch_rows)
+        player_bucket["singles"] += sum(parse_int(row.get("singles")) for row in pitch_rows)
+        player_bucket["doubles"] += sum(parse_int(row.get("doubles")) for row in pitch_rows)
+        player_bucket["triples"] += sum(parse_int(row.get("triples")) for row in pitch_rows)
+        player_bucket["grounders"] += sum(parse_int(row.get("grounders")) for row in pitch_rows)
+        player_bucket["flyBalls"] += sum(parse_int(row.get("flyBalls")) for row in pitch_rows)
+        player_bucket["swingMisses"] += sum(parse_int(row.get("whiffCount")) for row in pitch_rows)
+        player_bucket["lookingStrikeouts"] += outcome_rows.get("lookingStrikeouts", 0)
+        player_bucket["swingingStrikeouts"] += outcome_rows.get("swingingStrikeouts", 0)
+        player_bucket["sacrificeBunts"] += outcome_rows.get("sacrificeBunts", 0)
+        player_bucket["interference"] += outcome_rows.get("interference", 0)
+
+    league_rows = []
+    league_constants: dict[tuple[str, str], float | None] = {}
+    for (year, league), stats in sorted(league_totals.items()):
+        ip = outs_to_ip(stats["outs"])
+        era = 9 * stats["earnedRuns"] / ip if ip else None
+        component = (
+            ((13 * stats["homeRuns"]) + (3 * (stats["unintentionalWalks"] + stats["hitByPitch"])) - (2 * stats["strikeouts"])) / ip
+            if ip
+            else None
+        )
+        constant = (era - component) if era is not None and component is not None else None
+        league_constants[(year, league)] = constant
+        league_rows.append(
+            {
+                "year": year,
+                "league": league,
+                "games": stats["games"],
+                "innings": outs_to_innings_notation(stats["outs"]),
+                "inningsOuts": stats["outs"],
+                "earnedRuns": stats["earnedRuns"],
+                "homeRuns": stats["homeRuns"],
+                "walks": stats["walks"],
+                "unintentionalWalks": stats["unintentionalWalks"],
+                "intentionalWalks": stats["intentionalWalks"],
+                "hitByPitch": stats["hitByPitch"],
+                "strikeouts": stats["strikeouts"],
+                "era": round_or_none(era, 2),
+                "fipConstant": round_or_none(constant, 4),
+            }
+        )
+
+    player_rows = []
+    for player in players.values():
+        outs = player["outs"]
+        ip = outs_to_ip(outs)
+        at_bats = player["atBats"]
+        batting_average = player["hits"] / at_bats if at_bats else None
+        era = 9 * player["earnedRuns"] / ip if ip else None
+        whip = (player["hits"] + player["walks"]) / ip if ip else None
+        k_per_9 = 27 * player["strikeouts"] / outs if outs else None
+        bb_per_9 = 27 * player["walks"] / outs if outs else None
+        h_per_9 = 27 * player["hits"] / outs if outs else None
+        hr_per_9 = 27 * player["homeRuns"] / outs if outs else None
+        k_bb = player["strikeouts"] / player["walks"] if player["walks"] else None
+        go_fo = player["grounders"] / player["flyBalls"] if player["flyBalls"] else None
+        out_event_total = (
+            player["grounders"]
+            + player["flyBalls"]
+            + player["lookingStrikeouts"]
+            + player["swingingStrikeouts"]
+            + player["sacrificeBunts"]
+            + player["interference"]
+        )
+        ground_out_rate = player["grounders"] / out_event_total * 100 if out_event_total else None
+        fly_out_rate = player["flyBalls"] / out_event_total * 100 if out_event_total else None
+        whiff_rate = player["swingMisses"] / player["pitches"] * 100 if player["pitches"] else None
+        fip_constant = league_constants.get((player["year"], player["league"]))
+        fip = (
+            (((13 * player["homeRuns"]) + (3 * (player["unintentionalWalks"] + player["hitByPitch"])) - (2 * player["strikeouts"])) / ip) + fip_constant
+            if ip and fip_constant is not None
+            else None
+        )
+
+        teams = sorted(player["teams"], key=team_sort_key)
+        player_rows.append(
+            {
+                "year": player["year"],
+                "pitcherId": player["pitcherId"],
+                "player": player["player"],
+                "team": teams[0] if len(teams) == 1 else " / ".join(teams),
+                "teams": teams,
+                "league": player["league"],
+                "games": player["games"],
+                "wins": player["wins"],
+                "losses": player["losses"],
+                "saves": player["saves"],
+                "holds": player["holds"],
+                "innings": outs_to_innings_notation(outs),
+                "inningsOuts": outs,
+                "batters": player["batters"],
+                "pitches": player["pitches"],
+                "hits": player["hits"],
+                "homeRuns": player["homeRuns"],
+                "strikeouts": player["strikeouts"],
+                "walks": player["walks"],
+                "unintentionalWalks": player["unintentionalWalks"],
+                "intentionalWalks": player["intentionalWalks"],
+                "hitByPitch": player["hitByPitch"],
+                "balks": player["balks"],
+                "runs": player["runs"],
+                "earnedRuns": player["earnedRuns"],
+                "atBats": player["atBats"],
+                "singles": player["singles"],
+                "doubles": player["doubles"],
+                "triples": player["triples"],
+                "grounders": player["grounders"],
+                "flyBalls": player["flyBalls"],
+                "swingMisses": player["swingMisses"],
+                "lookingStrikeouts": player["lookingStrikeouts"],
+                "swingingStrikeouts": player["swingingStrikeouts"],
+                "sacrificeBunts": player["sacrificeBunts"],
+                "interference": player["interference"],
+                "era": round_or_none(era, 2),
+                "whip": round_or_none(whip, 2),
+                "kPer9": round_or_none(k_per_9, 2),
+                "bbPer9": round_or_none(bb_per_9, 2),
+                "hPer9": round_or_none(h_per_9, 2),
+                "hrPer9": round_or_none(hr_per_9, 2),
+                "kBb": round_or_none(k_bb, 2),
+                "fip": round_or_none(fip, 2),
+                "fipConstant": round_or_none(fip_constant, 4),
+                "battingAverageAllowed": round_or_none(batting_average, 3),
+                "goFo": round_or_none(go_fo, 2),
+                "groundOutRate": round_or_none(ground_out_rate, 1),
+                "flyOutRate": round_or_none(fly_out_rate, 1),
+                "whiffRate": round_or_none(whiff_rate, 1),
+            }
+        )
+
+    player_rows.sort(key=lambda row: (row["year"], team_sort_key(row["team"].split(" / ")[0]), row["player"]))
+    return {
+        "updatedAt": datetime.now().isoformat(timespec="seconds"),
+        "source": "generated/*/*/*-dashboard.json",
+        "years": sorted(years),
+        "notes": {
+            "fip": "FIP uses uBB derived from intentional-walk detection in generated plate-appearance results when available.",
+        },
+        "leagueStats": league_rows,
+        "players": player_rows,
+    }
+
+
+def build_batter_totals(
+    entries: list[dict],
+    batting_stats_by_game: dict[str, dict[str, dict]],
+    batter_entries: list[dict],
+    park_factors: dict,
+) -> dict:
+    is_ab_result = getattr(DASHBOARD, "is_ab_result", lambda value: True)
+    classify_plate_appearance_result = getattr(DASHBOARD, "classify_plate_appearance_result", lambda value: None)
+    players: dict[tuple[str, str], dict] = {}
+    years: set[str] = set()
+    game_dates: dict[str, str] = {}
+    sacrifice_flies_by_player: dict[tuple[str, str], int] = defaultdict(int)
+    intentional_walks_by_player: dict[tuple[str, str], int] = defaultdict(int)
+
+    for entry in entries:
+        game_id = entry.get("gameId") or ""
+        date = entry.get("date") or ""
+        if game_id and date:
+            game_dates.setdefault(game_id, date)
+
+    for entry in batter_entries:
+        year = (entry.get("date") or "")[:4]
+        if not year:
+            continue
+        team = entry.get("team") or ""
+        batter_id = entry.get("batterId") or ""
+        player_name = entry.get("player") or ""
+        bucket_key = (year, batter_id or f"{team}::{player_name}")
+        plate_rows = ((entry.get("dashboard") or {}).get("plateAppearances") or [])
+        sacrifice_flies_by_player[bucket_key] += sum(
+            1
+            for plate in plate_rows
+            if (plate.get("result") or "")
+            and not is_ab_result(plate.get("result") or "")
+            and classify_plate_appearance_result(plate.get("result") or "") == "flyballs"
+        )
+        intentional_walks_by_player[bucket_key] += sum(
+            1 for plate in plate_rows if is_intentional_walk_text(plate.get("result"))
+        )
+
+    for game_id, teams in batting_stats_by_game.items():
+        date = game_dates.get(game_id, "")
+        year = date[:4]
+        if not year:
+            continue
+        years.add(year)
+        for team, rows in teams.items():
+            league = team_league(team)
+            for key, stats in rows.items():
+                if key != (stats.get("playerId") or stats.get("player")):
+                    continue
+                batter_id = stats.get("playerId") or ""
+                player_name = stats.get("player") or ""
+                bucket_key = (year, batter_id or f"{team}::{player_name}")
+                bucket = players.setdefault(
+                    bucket_key,
+                    {
+                        "year": year,
+                        "batterId": batter_id,
+                        "player": player_name,
+                        "_bucketKey": bucket_key,
+                        "teams": set(),
+                        "league": league,
+                        "games": 0,
+                        "plateAppearances": 0,
+                        "atBats": 0,
+                        "runs": 0,
+                        "hits": 0,
+                        "singles": 0,
+                        "doubles": 0,
+                        "triples": 0,
+                        "homeRuns": 0,
+                        "runsBattedIn": 0,
+                        "walks": 0,
+                        "unintentionalWalks": 0,
+                        "intentionalWalks": 0,
+                        "hitByPitch": 0,
+                        "sacBunts": 0,
+                        "sacFlies": 0,
+                        "steals": 0,
+                        "strikeouts": 0,
+                        "_plateAppearancesByTeam": {},
+                    },
+                )
+                bucket["teams"].add(team)
+                bucket["games"] += 1
+                bucket["plateAppearances"] += parse_int(stats.get("plateAppearances"))
+                bucket["atBats"] += parse_int(stats.get("ab"))
+                bucket["runs"] += parse_int(stats.get("runs"))
+                bucket["hits"] += parse_int(stats.get("hits"))
+                bucket["singles"] += parse_int(stats.get("singles"))
+                bucket["doubles"] += parse_int(stats.get("doubles"))
+                bucket["triples"] += parse_int(stats.get("triples"))
+                bucket["homeRuns"] += parse_int(stats.get("homeRuns"))
+                bucket["runsBattedIn"] += parse_int(stats.get("rbi"))
+                bucket["walks"] += parse_int(stats.get("walks"))
+                bucket["hitByPitch"] += parse_int(stats.get("hitByPitch"))
+                bucket["sacBunts"] += parse_int(stats.get("sacBunts"))
+                bucket["steals"] += parse_int(stats.get("steals"))
+                bucket["strikeouts"] += parse_int(stats.get("strikeouts"))
+                bucket["_plateAppearancesByTeam"][team] = (
+                    bucket["_plateAppearancesByTeam"].get(team, 0) + parse_int(stats.get("plateAppearances"))
+                )
+
+    park_factor_index = build_park_factor_index(park_factors)
+    finalized_players = []
+    for player in players.values():
+        teams = sorted(player["teams"], key=team_sort_key)
+        player["teams"] = teams
+        player["sacFlies"] = sacrifice_flies_by_player.get(player["_bucketKey"], 0)
+        player["intentionalWalks"] = intentional_walks_by_player.get(player["_bucketKey"], 0)
+        player["unintentionalWalks"] = max(player["walks"] - player["intentionalWalks"], 0)
+        finalized_players.append(player)
+
+    league_buckets: dict[tuple[str, str], dict] = defaultdict(
+        lambda: {
+            "plateAppearances": 0,
+            "runs": 0,
+            "atBats": 0,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "unintentionalWalks": 0,
+            "hitByPitch": 0,
+            "sacFlies": 0,
+        }
+    )
+    for player in finalized_players:
+        league_key = (player["year"], player["league"])
+        bucket = league_buckets[league_key]
+        bucket["plateAppearances"] += player["plateAppearances"]
+        bucket["runs"] += player["runs"]
+        bucket["atBats"] += player["atBats"]
+        bucket["singles"] += player["singles"]
+        bucket["doubles"] += player["doubles"]
+        bucket["triples"] += player["triples"]
+        bucket["homeRuns"] += player["homeRuns"]
+        bucket["unintentionalWalks"] += player["unintentionalWalks"]
+        bucket["hitByPitch"] += player["hitByPitch"]
+        bucket["sacFlies"] += player["sacFlies"]
+
+    league_contexts: dict[tuple[str, str], dict] = {}
+    league_context_rows = []
+    for (year, league), stats in sorted(league_buckets.items()):
+        constants = get_woba_constants(year)
+        league_woba = calculate_woba(stats, constants)
+        league_runs_per_pa = (stats["runs"] / stats["plateAppearances"]) if stats["plateAppearances"] else None
+        league_contexts[(year, league)] = {
+            "woba": league_woba,
+            "runsPerPlateAppearance": league_runs_per_pa,
+            "wobaScale": constants.get("wOBAScale") if constants else None,
+        }
+        league_context_rows.append(
+            {
+                "year": year,
+                "league": league,
+                "plateAppearances": stats["plateAppearances"],
+                "runs": stats["runs"],
+                "runsPerPlateAppearance": round_or_none(league_runs_per_pa, 3),
+                "woba": round_or_none(league_woba, 3),
+                "wobaScale": constants.get("wOBAScale") if constants else None,
+                "constantsYear": constants.get("constantsYear") if constants else None,
+                "provisional": bool(constants.get("provisional")) if constants else False,
+            }
+        )
+
+    rows = []
+    for player in finalized_players:
+        teams = player["teams"]
+        total_bases = player["singles"] + player["doubles"] * 2 + player["triples"] * 3 + player["homeRuns"] * 4
+        batting_average = player["hits"] / player["atBats"] if player["atBats"] else None
+        on_base_denominator = player["atBats"] + player["walks"] + player["hitByPitch"] + player["sacFlies"]
+        on_base_percentage = (
+            (player["hits"] + player["walks"] + player["hitByPitch"]) / on_base_denominator
+            if on_base_denominator > 0
+            else None
+        )
+        slugging = total_bases / player["atBats"] if player["atBats"] else None
+        iso_discipline = (on_base_percentage - batting_average) if on_base_percentage is not None and batting_average is not None else None
+        iso_power = (slugging - batting_average) if slugging is not None and batting_average is not None else None
+        ops = (on_base_percentage + slugging) if on_base_percentage is not None and slugging is not None else None
+        babip_denominator = player["atBats"] - player["strikeouts"] - player["homeRuns"] + player["sacFlies"]
+        babip = (
+            (player["hits"] - player["homeRuns"]) / babip_denominator
+            if babip_denominator > 0
+            else None
+        )
+        constants = get_woba_constants(player["year"])
+        league_context = league_contexts.get((player["year"], player["league"])) or {}
+        player_woba = calculate_woba(player, constants)
+        raw_park_factor, effective_park_factor = weighted_park_factor(
+            player["_plateAppearancesByTeam"],
+            park_factor_index.get(player["year"], {}),
+        )
+        league_woba = league_context.get("woba")
+        league_runs_per_pa = league_context.get("runsPerPlateAppearance")
+        woba_scale = league_context.get("wobaScale") or (constants.get("wOBAScale") if constants else None)
+        runs_above_average_per_pa = (
+            (player_woba - league_woba) / woba_scale
+            if player_woba is not None and league_woba is not None and woba_scale not in (None, 0)
+            else None
+        )
+        wrc = (
+            ((runs_above_average_per_pa + league_runs_per_pa) * player["plateAppearances"])
+            if runs_above_average_per_pa is not None and league_runs_per_pa is not None and player["plateAppearances"] > 0
+            else None
+        )
+        park_adjustment = (
+            league_runs_per_pa - ((effective_park_factor / 100.0) * league_runs_per_pa)
+            if league_runs_per_pa is not None and effective_park_factor is not None
+            else None
+        )
+        wrc_plus = (
+            ((((runs_above_average_per_pa + league_runs_per_pa) + park_adjustment) / league_runs_per_pa) * 100)
+            if runs_above_average_per_pa is not None
+            and league_runs_per_pa not in (None, 0)
+            and park_adjustment is not None
+            else None
+        )
+        rows.append(
+            {
+                "year": player["year"],
+                "batterId": player["batterId"],
+                "player": player["player"],
+                "team": teams[0] if len(teams) == 1 else " / ".join(teams),
+                "teams": teams,
+                "league": player["league"],
+                "games": player["games"],
+                "plateAppearances": player["plateAppearances"],
+                "atBats": player["atBats"],
+                "runs": player["runs"],
+                "hits": player["hits"],
+                "singles": player["singles"],
+                "doubles": player["doubles"],
+                "triples": player["triples"],
+                "homeRuns": player["homeRuns"],
+                "runsBattedIn": player["runsBattedIn"],
+                "walks": player["walks"],
+                "unintentionalWalks": player["unintentionalWalks"],
+                "intentionalWalks": player["intentionalWalks"],
+                "hitByPitch": player["hitByPitch"],
+                "sacBunts": player["sacBunts"],
+                "sacFlies": player["sacFlies"],
+                "steals": player["steals"],
+                "strikeouts": player["strikeouts"],
+                "battingAverage": round_or_none(batting_average, 3),
+                "onBasePercentage": round_or_none(on_base_percentage, 3),
+                "isoDiscipline": round_or_none(iso_discipline, 3),
+                "sluggingPercentage": round_or_none(slugging, 3),
+                "isoPower": round_or_none(iso_power, 3),
+                "babip": round_or_none(babip, 3),
+                "ops": round_or_none(ops, 3),
+                "woba": round_or_none(player_woba, 3),
+                "wrc": round_or_none(wrc, 1),
+                "wrcPlus": round_or_none(wrc_plus, 1),
+                "parkFactor": round_or_none(raw_park_factor, 1),
+                "effectiveParkFactor": round_or_none(effective_park_factor, 1),
+            }
+        )
+
+    rows.sort(key=lambda row: (row["year"], team_sort_key(row["team"].split(" / ")[0]), row["player"]))
+    return {
+        "updatedAt": datetime.now().isoformat(timespec="seconds"),
+        "source": "Sports Navi game batting tables for games present under generated/*/*/*-dashboard.json",
+        "notes": {
+            "uBB": "Unintentional walks are derived from generated plate-appearance results when an intentional-walk label is present.",
+            "obp": "OBP remains the official BB-based formula rather than a uBB-based variant.",
+            "woba": "wOBA は 2026 年の暫定係数で算出しています。NPB 向けの年次係数が固まるまでは暫定値として扱ってください。",
+            "wrcPlus": "wRC+ は対象試合の league R/PA と team park factor の半分補正を使った暫定値です。",
+        },
+        "metricContexts": {
+            "wobaConstants": [
+                {
+                    "year": year,
+                    "constantsYear": (constants or {}).get("constantsYear"),
+                    "source": (constants or {}).get("source"),
+                    "provisional": bool((constants or {}).get("provisional")),
+                    "wOBA": (constants or {}).get("wOBA"),
+                    "wOBAScale": (constants or {}).get("wOBAScale"),
+                    "wBB": (constants or {}).get("wBB"),
+                    "wHBP": (constants or {}).get("wHBP"),
+                    "w1B": (constants or {}).get("w1B"),
+                    "w2B": (constants or {}).get("w2B"),
+                    "w3B": (constants or {}).get("w3B"),
+                    "wHR": (constants or {}).get("wHR"),
+                }
+                for year in sorted(years)
+                for constants in [get_woba_constants(year)]
+            ],
+            "leagues": league_context_rows,
+        },
+        "years": sorted(years),
+        "players": rows,
+    }
+
+
+def collect_batter_entries(batting_stats_by_game: dict[str, dict[str, dict]]) -> list[dict]:
+    build_plate_appearances = getattr(DASHBOARD, "build_plate_appearances")
+    normalize_result = getattr(DASHBOARD, "normalize_result", lambda value: (value or "").split("[", 1)[0].strip())
+    parse_inning = getattr(DASHBOARD, "parse_inning", lambda value: None)
+    grouped_games: dict[tuple[str, str, str], dict] = {}
+    entries: list[dict] = []
+
+    if not GENERATED_DIR.exists():
+        return []
+
+    for team_dir in sorted(GENERATED_DIR.iterdir(), key=lambda path: team_sort_key(path.name)):
+        if not team_dir.is_dir():
+            continue
+        pitcher_team = normalize_team_name(team_dir.name)
+        for date_dir in sorted(team_dir.iterdir(), reverse=True):
+            if not date_dir.is_dir():
+                continue
+            for json_path in sorted(date_dir.glob("*-dashboard.json")):
+                payload = safe_load_json(json_path)
+                if not payload:
+                    continue
+                prefix = json_path.name.replace("-dashboard.json", "")
+                game_id = extract_game_id(prefix)
+                if not game_id:
+                    continue
+                metadata = payload.get("metadata", {})
+                matchup = metadata.get("matchup") or ""
+                home_team, away_team = parse_matchup_teams(matchup)
+                if pitcher_team == home_team:
+                    batting_team = away_team
+                elif pitcher_team == away_team:
+                    batting_team = home_team
+                else:
+                    continue
+                if not batting_team:
+                    continue
+                key = (batting_team, date_dir.name, game_id)
+                bucket = grouped_games.setdefault(
+                    key,
+                    {
+                        "team": batting_team,
+                        "date": date_dir.name,
+                        "gameId": game_id,
+                        "matchup": matchup,
+                        "dateLabel": metadata.get("date_jp") or date_dir.name,
+                        "payloads": [],
+                    },
+                )
+                bucket["payloads"].append(payload)
+
+    for (team, date, game_id), game in grouped_games.items():
+        official_stats = (batting_stats_by_game.get(game_id) or {}).get(team, {})
+        game_rows: list[dict] = []
+        for payload in game["payloads"]:
+            game_rows.extend(payload.get("pitches") or [])
+        game_rows.sort(key=lambda row: (pa_index_sort_key(row.get("pa_index")), parse_int(row.get("seq"))))
+
+        batter_rows: dict[str, list[dict]] = defaultdict(list)
+        for row in game_rows:
+            batter_key = str(row.get("batter_id") or "").strip() or (row.get("batter") or "").strip()
+            if batter_key:
+                batter_rows[batter_key].append(row)
+
+        for key, rows in batter_rows.items():
+            rows.sort(key=lambda row: (pa_index_sort_key(row.get("pa_index")), parse_int(row.get("seq"))))
+            first = rows[0]
+            batter_id = str(first.get("batter_id") or "").strip()
+            batter_name = (first.get("batter") or "").strip()
+            batter_hand = first.get("batter_hand") or ""
+            official = official_stats.get(batter_id) or official_stats.get(batter_name) or {}
+            pitch_mix, pitch_color_map = build_batter_pitch_mix(rows)
+            grouped_pas = build_plate_appearances(rows)
+            ordered_pas = sorted(
+                grouped_pas.values(),
+                key=lambda pitches: (pa_index_sort_key(pitches[0].get("pa_index")), parse_int(pitches[0].get("seq"))),
+            )
+            fallback_statline = build_batter_statline_from_pas(ordered_pas)
+            plate_rows = []
+
+            for index, pitches in enumerate(ordered_pas, start=1):
+                final = pitches[-1]
+                plate_rows.append(
+                    {
+                        "id": final.get("pa_index") or f"{batter_id or batter_name}-{index}",
+                        "label": f"{index}打席目",
+                        "inning": parse_inning(final.get("pa_index")),
+                        "result": normalize_result(final.get("result") or ""),
+                        "pitchType": final.get("pitchType") or "-",
+                        "speed": final.get("speed") or "-",
+                        "pitcher": final.get("pitcher") or "",
+                        "pitchNo": parse_int(final.get("pitchNo")),
+                        "batterHand": batter_hand,
+                        "points": serialize_batter_plate_points(pitches, pitch_color_map),
+                    }
+                )
+
+            statline = {
+                "ab": official.get("ab", fallback_statline["ab"]),
+                "hits": official.get("hits", fallback_statline["hits"]),
+                "homeRuns": official.get("homeRuns", fallback_statline["homeRuns"]),
+                "rbi": official.get("rbi", fallback_statline["rbi"]),
+                "walks": official.get("walks", fallback_statline["walks"]),
+                "strikeouts": official.get("strikeouts", fallback_statline["strikeouts"]),
+            }
+
+            entries.append(
+                {
+                    "id": f"{team}-{date}-{game_id}-{batter_id or key}",
+                    "team": team,
+                    "league": team_league(team),
+                    "date": date,
+                    "prefix": f"{game_id}-{batter_id or key}",
+                    "gameId": game_id,
+                    "title": official.get("player") or batter_name,
+                    "player": official.get("player") or batter_name,
+                    "batterId": batter_id,
+                    "batterHand": batter_hand,
+                    "matchup": game["matchup"],
+                    "dateLabel": game["dateLabel"],
+                    "order": official.get("order", 999),
+                    "statline": statline,
+                    "dashboard": {
+                        "pitchMix": pitch_mix,
+                        "pitchColors": pitch_color_map,
+                        "plateAppearances": plate_rows,
+                        "bounds": {
+                            "width": HEATMAP_WIDTH,
+                            "height": HEATMAP_HEIGHT,
+                        },
+                    },
+                }
+            )
+
+    entries.sort(key=lambda item: (team_sort_key(item["team"]), item.get("order", 999), item["player"]))
+    entries.sort(key=lambda item: item["date"], reverse=True)
+    return entries
+
+
+def collect_entries() -> list[dict]:
+    grouped: dict[tuple[str, str, str], dict] = {}
+
+    if not GENERATED_DIR.exists():
+        return []
+
+    for team_dir in sorted(GENERATED_DIR.iterdir(), key=lambda path: team_sort_key(path.name)):
+        if not team_dir.is_dir():
+            continue
+        for date_dir in sorted(team_dir.iterdir(), reverse=True):
+            if not date_dir.is_dir():
+                continue
+            for json_path in sorted(date_dir.glob("*-dashboard.json")):
+                match = JSON_PATTERN.match(json_path.name)
+                if not match:
+                    continue
+                prefix = match.group("prefix")
+                team_name = normalize_team_name(team_dir.name)
+                key = (team_name, date_dir.name, prefix)
+                grouped.setdefault(
+                    key,
+                    {
+                        "id": f"{team_name}-{date_dir.name}-{prefix}",
+                        "team": team_name,
+                        "date": date_dir.name,
+                        "prefix": prefix,
+                        "pages": {},
+                    },
+                )
+            for png_path in sorted(date_dir.glob("*-dashboard-*.png")):
+                match = PAGE_PATTERN.match(png_path.name)
+                if not match:
+                    continue
+                prefix = match.group("prefix")
+                page_no = int(match.group("page"))
+                team_name = normalize_team_name(team_dir.name)
+                key = (team_name, date_dir.name, prefix)
+                entry = grouped.setdefault(
+                    key,
+                    {
+                        "id": f"{team_name}-{date_dir.name}-{prefix}",
+                        "team": team_name,
+                        "date": date_dir.name,
+                        "prefix": prefix,
+                        "pages": {},
+                    },
+                )
+                entry["pages"][page_no] = site_path(png_path)
+
+    entries: list[dict] = []
+    for (team, date, prefix), entry in grouped.items():
+        json_path = GENERATED_DIR / team / date / f"{prefix}-dashboard.json"
+        if not json_path.exists():
+            continue
+        payload = safe_load_json(json_path)
+        if not payload:
+            continue
+
+        page_items = [{"page": page_no, "path": path} for page_no, path in sorted(entry["pages"].items())]
+        title, matchup = infer_title(prefix, date, payload)
+        statline = payload.get("statline", {})
+        metadata = payload.get("metadata", {})
+        dashboard = serialize_dashboard(payload)
+        pitcher_id = extract_pitcher_id(payload)
+        league = team_league(team)
+
+        entries.append(
+            {
+                "id": entry["id"],
+                "team": team,
+                "league": league,
+                "date": date,
+                "prefix": prefix,
+                "gameId": extract_game_id(prefix),
+                "order": pitcher_appearance_order(payload),
+                "title": title,
+                "player": statline.get("player", "") or title,
+                "pitcherId": pitcher_id,
+                "matchup": metadata.get("matchup") or matchup,
+                "dateLabel": metadata.get("date_jp") or date,
+                "pages": page_items,
+                "statline": {
+                    "era": statline.get("era", ""),
+                    "innings": statline.get("innings", ""),
+                    "pitches": statline.get("pitches", ""),
+                    "batters": statline.get("batters", ""),
+                    "hits": statline.get("hits", ""),
+                    "hr": statline.get("hr", ""),
+                    "k": statline.get("k", ""),
+                    "bb": statline.get("bb", ""),
+                    "hbp": statline.get("hbp", ""),
+                    "balk": statline.get("balk", ""),
+                    "er": statline.get("er", ""),
+                    "runs": statline.get("runs", ""),
+                },
+                "dashboard": dashboard,
+            }
+        )
+
+    entries.sort(key=lambda item: (team_sort_key(item["team"]), item.get("gameId") or "", item.get("order", 10**9), item["player"]))
+    entries.sort(key=lambda item: item["date"], reverse=True)
+    return entries
+
+
+def build_manifest(entries: list[dict]) -> dict:
+    team_counts = Counter(entry["team"] for entry in entries)
+    date_counts = Counter(entry["date"] for entry in entries)
+    player_counts = Counter(entry["player"] for entry in entries if entry.get("player"))
+
+    teams = [
+        {
+            "name": team,
+            "count": team_counts.get(team, 0),
+            "hasData": team_counts.get(team, 0) > 0,
+        }
+        for team in sorted(set(TEAM_ORDER) | set(team_counts), key=team_sort_key)
+    ]
+
+    dates = [{"date": date, "count": count} for date, count in sorted(date_counts.items(), reverse=True)]
+    players = [{"name": name, "count": count} for name, count in sorted(player_counts.items())]
+
+    return {
+        "updatedAt": datetime.now().isoformat(timespec="seconds"),
+        "generatedRoot": "../generated",
+        "entryCount": len(entries),
+        "teamCount": sum(1 for team in teams if team["hasData"]),
+        "dateCount": len(dates),
+        "teams": teams,
+        "dates": dates,
+        "players": players,
+        "entries": entries,
+    }
+
+
+def main() -> None:
+    entries = collect_entries()
+    manifest = build_manifest(entries)
+    game_decisions = load_or_update_game_decisions(entries)
+    batting_stats_by_game = load_or_update_game_batting_stats(entries)
+    game_contexts = load_game_contexts()
+    park_factors = build_park_factors(game_contexts)
+    batter_entries = collect_batter_entries(batting_stats_by_game)
+    batter_manifest = build_manifest(batter_entries)
+    player_totals = build_player_totals(entries, game_decisions)
+    batter_totals = build_batter_totals(entries, batting_stats_by_game, batter_entries, park_factors)
+    MANIFEST_PATH.write_text(
+        "window.PITCH_DASHBOARD_MANIFEST = "
+        + json.dumps(manifest, ensure_ascii=False, indent=2)
+        + ";\n",
+        encoding="utf-8",
+    )
+    BATTER_MANIFEST_PATH.write_text(
+        "window.BATTER_GAME_MANIFEST = "
+        + json.dumps(batter_manifest, ensure_ascii=False, indent=2)
+        + ";\n",
+        encoding="utf-8",
+    )
+    PLAYER_TOTALS_PATH.write_text(
+        json.dumps(player_totals, ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8",
+    )
+    BATTER_TOTALS_PATH.write_text(
+        json.dumps(batter_totals, ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8",
+    )
+    PARK_FACTORS_PATH.write_text(
+        json.dumps(park_factors, ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8",
+    )
+    print(f"manifest: {MANIFEST_PATH}")
+    print(f"batter manifest: {BATTER_MANIFEST_PATH}")
+    print(f"player totals: {PLAYER_TOTALS_PATH}")
+    print(f"batter totals: {BATTER_TOTALS_PATH}")
+    print(f"park factors: {PARK_FACTORS_PATH}")
+    print(f"entries: {manifest['entryCount']}")
+    print(f"batter entries: {batter_manifest['entryCount']}")
+
+
+if __name__ == "__main__":
+    main()
