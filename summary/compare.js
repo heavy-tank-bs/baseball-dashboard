@@ -161,6 +161,18 @@ function metricMap(config) {
   return Object.fromEntries(config.metrics.map((metric) => [metric.key, metric]));
 }
 
+function normalizePlayerName(value) {
+  return `${value ?? ""}`
+    .normalize("NFKC")
+    .replaceAll(/[\s\u3000]+/g, "");
+}
+
+function rowMatchesPlayerName(row, player) {
+  if (!player) return true;
+  const rowPlayer = row?.player ?? "";
+  return rowPlayer === player || normalizePlayerName(rowPlayer) === normalizePlayerName(player);
+}
+
 function findCurrentRow(rows, params, config) {
   const year = params.get("year") || "";
   const player = params.get("player") || "";
@@ -168,7 +180,7 @@ function findCurrentRow(rows, params, config) {
   const playerId = params.get("playerId") || "";
   const scopedRows = rows.filter((row) => {
     if (year && row.year !== year) return false;
-    if (player && row.player !== player) return false;
+    if (!rowMatchesPlayerName(row, player)) return false;
     return true;
   });
   if (playerId) {
@@ -187,7 +199,7 @@ function findPreviousRow(rows, currentRow, params, config) {
   const previousYear = `${Math.max(Number.parseInt(currentRow.year || "0", 10) - 1, 0)}`;
   if (!previousYear || previousYear === "0") return null;
   const playerId = currentRow[config.idKey] || params.get("playerId") || "";
-  const candidates = rows.filter((row) => row.year === previousYear && row.player === currentRow.player);
+  const candidates = rows.filter((row) => row.year === previousYear && rowMatchesPlayerName(row, currentRow.player));
   if (!candidates.length) return null;
   if (playerId) {
     const byId = candidates.find((row) => (row[config.idKey] || "") === playerId);
