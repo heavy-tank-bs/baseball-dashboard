@@ -260,6 +260,11 @@ function filteredPlayers() {
     .sort(compareSorted);
 }
 
+function activeColumns(rows) {
+  const hasPitchCount = rows.some((row) => row.hasPitchCount);
+  return SORT_COLUMNS.filter((column) => column.key !== "pitches" || hasPitchCount);
+}
+
 function renderYearOptions() {
   const years = [...(state.data?.years || [])].sort().reverse();
   if (!state.year && years.length) {
@@ -354,6 +359,11 @@ function restoreTableScroll(scrollState) {
 function renderTable() {
   const scrollState = captureTableScroll();
   const rows = filteredPlayers();
+  const columns = activeColumns(rows);
+  if (state.sortKey && !columns.some((column) => column.key === state.sortKey)) {
+    state.sortKey = "";
+    state.sortDirection = "";
+  }
   els.annualResultCount.textContent = `${rows.length}件`;
 
   if (!rows.length) {
@@ -388,7 +398,7 @@ function renderTable() {
           <td>${formatDecimal(row.hrPer9, 2)}</td>
           <td>${formatPercent(row.groundOutRate, 1)}</td>
           <td>${formatPercent(row.flyOutRate, 1)}</td>
-          <td>${row.pitches}</td>
+          ${row.hasPitchCount ? `<td>${row.pitches}</td>` : ""}
         </tr>
       `
     )
@@ -398,7 +408,7 @@ function renderTable() {
     <div class="table-scroll annual-table-scroll">
       <table class="data-table annual-table">
         <thead>
-          <tr>${SORT_COLUMNS.map((column) => renderSortHeader(column)).join("")}</tr>
+          <tr>${columns.map((column) => renderSortHeader(column)).join("")}</tr>
         </thead>
         <tbody>${body}</tbody>
       </table>
@@ -467,7 +477,7 @@ function bindEvents() {
 
 async function init() {
   try {
-    const response = await fetch("./player_totals.json?v=20260420-01", { cache: "no-store" });
+    const response = await fetch("./player_totals.json?v=20260421-03", { cache: "no-store" });
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     state.data = await response.json();
     bindEvents();

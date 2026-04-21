@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import csv
 import importlib.util
 import json
 import re
@@ -13,6 +14,7 @@ from bs4 import BeautifulSoup
 ROOT = Path(__file__).resolve().parent.parent
 SUMMARY_DIR = ROOT / "summary"
 GENERATED_DIR = ROOT / "generated"
+RAW_DATA_DIR = ROOT / "元データ"
 MANIFEST_PATH = SUMMARY_DIR / "manifest.js"
 BATTER_MANIFEST_PATH = SUMMARY_DIR / "batter_manifest.js"
 PLAYER_TOTALS_PATH = SUMMARY_DIR / "player_totals.json"
@@ -86,6 +88,9 @@ DECISION_KEY_MAP = {"勝": "wins", "敗": "losses", "S": "saves", "H": "holds"}
 PAGE_PATTERN = re.compile(r"^(?P<prefix>.+)-dashboard-(?P<page>\d+)\.png$")
 JSON_PATTERN = re.compile(r"^(?P<prefix>.+)-dashboard\.json$")
 GAME_CONTEXT_PATTERN = re.compile(r"^sportsnavi_game_context_(?P<season>\d{4})\.json$")
+RAW_PITCHER_STATS_PATTERN = re.compile(r"^(?P<season>\d{4})_投手成績\.csv$")
+RAW_BATTER_STATS_PATTERN = re.compile(r"^(?P<season>\d{4})_打撃成績\.csv$")
+RAW_OUT_RATE_PATTERN = re.compile(r"^アウト比率_(?P<season>\d{4})\.csv$")
 PITCH_COLOR_FALLBACK = ["#0F2340", "#355C8C", "#6A89B4", "#C8A55A", "#D6C192", "#9D8B75", "#7D97B5"]
 EMPTY_HEATMAP = [[0 for _ in range(5)] for _ in range(5)]
 INTENTIONAL_WALK_TERMS = ("\u7533\u544a\u656c\u9060", "\u656c\u9060", "\u6545\u610f\u56db\u7403")
@@ -112,6 +117,32 @@ WOBA_CONSTANTS_BY_YEAR = {
         "w3B": 1.638,
         "wHR": 2.110,
     }
+}
+SOURCE_TEAM_NAME_MAP = {
+    "giants": "巨人",
+    "tigers": "阪神",
+    "baystars": "DeNA",
+    "dragons": "中日",
+    "swallows": "ヤクルト",
+    "carp": "広島",
+    "hawks": "ソフトバンク",
+    "fighters": "日本ハム",
+    "marines": "ロッテ",
+    "lions": "西武",
+    "eagles": "東北楽天",
+    "orix": "オリックス",
+    "g": "巨人",
+    "t": "阪神",
+    "yb": "DeNA",
+    "d": "中日",
+    "s": "ヤクルト",
+    "c": "広島",
+    "h": "ソフトバンク",
+    "f": "日本ハム",
+    "m": "ロッテ",
+    "l": "西武",
+    "e": "東北楽天",
+    "bs": "オリックス",
 }
 
 
@@ -186,6 +217,29 @@ def parse_int(value) -> int:
         return 0
 
 
+def parse_float(value) -> float | None:
+    if value in (None, ""):
+        return None
+    text = str(value).strip().replace(",", "")
+    if not text or text == "-":
+        return None
+    try:
+        return float(text)
+    except Exception:
+        return None
+
+
+def parse_percent(value) -> float | None:
+    if value in (None, ""):
+        return None
+    text = str(value).strip()
+    if not text or text == "-":
+        return None
+    if text.endswith("%"):
+        text = text[:-1]
+    return parse_float(text)
+
+
 def innings_to_outs(value) -> int:
     if value in (None, ""):
         return 0
@@ -220,6 +274,118 @@ def round_or_none(value: float | None, digits: int) -> float | None:
     if value is None:
         return None
     return round(value, digits)
+
+
+def normalize_source_team_name(team: str) -> str:
+    normalized = str(team or "").strip()
+    if not normalized:
+        return ""
+    mapped = SOURCE_TEAM_NAME_MAP.get(normalized.lower(), normalized)
+    return normalize_team_name(mapped)
+
+
+def load_csv_rows(path: Path) -> list[dict[str, str]]:
+    for encoding in ("utf-8-sig", "utf-8"):
+        try:
+            with path.open("r", encoding=encoding, newline="") as handle:
+                return list(csv.DictReader(handle))
+        except UnicodeDecodeError:
+            continue
+    return []
+
+
+def season_from_filename(path: Path, pattern: re.Pattern[str]) -> str:
+    match = pattern.match(path.name)
+    return match.group("season") if match else ""
+
+
+def lookup_out_rate_override(
+    out_rate_index: dict[tuple[str, str, str], dict[str, float | None]],
+    player_name: str,
+    uniform_number: str,
+    team: str,
+) -> dict[str, float | None] | None:
+    name = str(player_name or "").strip()
+    number = str(uniform_number or "").strip()
+    normalized_team = normalize_source_team_name(team)
+    for key in (
+        (name, number, normalized_team),
+        (name, number, ""),
+        (name, "", normalized_team),
+        (name, "", ""),
+    ):
+        row = out_rate_index.get(key)
+        if row:
+            return row
+    return None
+
+
+def load_raw_pitcher_stat_rows(excluded_years: set[str]) -> list[tuple[str, dict[str, str]]]:
+    if not RAW_DATA_DIR.exists():
+        return []
+    rows: list[tuple[str, dict[str, str]]] = []
+    for path in sorted(RAW_DATA_DIR.iterdir()):
+        season = season_from_filename(path, RAW_PITCHER_STATS_PATTERN)
+        if not season or season in excluded_years:
+            continue
+        deduped: dict[tuple[str, str, str], dict[str, str]] = {}
+        for row in load_csv_rows(path):
+            key = (
+                str(row.get("選手名") or "").strip(),
+                str(row.get("背番号") or "").strip(),
+                str(row.get("チーム名") or row.get("チームコード") or "").strip().lower(),
+            )
+            previous = deduped.get(key)
+            if previous is None or parse_int(row.get("投球回_アウト数")) >= parse_int(previous.get("投球回_アウト数")):
+                deduped[key] = row
+        rows.extend((season, row) for row in deduped.values())
+    return rows
+
+
+def load_raw_batter_stat_rows(excluded_years: set[str]) -> list[tuple[str, dict[str, str]]]:
+    if not RAW_DATA_DIR.exists():
+        return []
+    rows: list[tuple[str, dict[str, str]]] = []
+    for path in sorted(RAW_DATA_DIR.iterdir()):
+        season = season_from_filename(path, RAW_BATTER_STATS_PATTERN)
+        if not season or season in excluded_years:
+            continue
+        deduped: dict[tuple[str, str, str], dict[str, str]] = {}
+        for row in load_csv_rows(path):
+            key = (
+                str(row.get("選手名") or "").strip(),
+                str(row.get("背番号") or "").strip(),
+                str(row.get("team") or "").strip().lower(),
+            )
+            previous = deduped.get(key)
+            if previous is None or parse_int(row.get("打席")) >= parse_int(previous.get("打席")):
+                deduped[key] = row
+        rows.extend((season, row) for row in deduped.values())
+    return rows
+
+
+def load_raw_out_rate_index(excluded_years: set[str]) -> dict[str, dict[tuple[str, str, str], dict[str, float | None]]]:
+    if not RAW_DATA_DIR.exists():
+        return {}
+    seasons: dict[str, dict[tuple[str, str, str], dict[str, float | None]]] = {}
+    for path in sorted(RAW_DATA_DIR.iterdir()):
+        season = season_from_filename(path, RAW_OUT_RATE_PATTERN)
+        if not season or season in excluded_years:
+            continue
+        season_rows: dict[tuple[str, str, str], dict[str, float | None]] = {}
+        for row in load_csv_rows(path):
+            player_name = str(row.get("選手名") or "").strip()
+            uniform_number = str(row.get("背番号") or "").strip()
+            team = normalize_source_team_name(row.get("チームコード") or "")
+            if not player_name:
+                continue
+            season_rows[(player_name, uniform_number, team)] = {
+                "groundOutRate": parse_percent(row.get(f"{season}ゴロアウト率")),
+                "flyOutRate": parse_percent(row.get(f"{season}フライアウト率")),
+            }
+        if season_rows:
+            seasons[season] = season_rows
+    return seasons
 
 
 def get_woba_constants(year: str) -> dict | None:
@@ -1265,6 +1431,10 @@ def build_player_totals(entries: list[dict], game_decisions: dict[str, dict]) ->
                 "swingingStrikeouts": 0,
                 "sacrificeBunts": 0,
                 "interference": 0,
+                "battingAverageAllowedOverride": None,
+                "groundOutRateOverride": None,
+                "flyOutRateOverride": None,
+                "hasPitchCount": False,
             },
         )
 
@@ -1279,7 +1449,9 @@ def build_player_totals(entries: list[dict], game_decisions: dict[str, dict]) ->
         player_bucket["holds"] += parse_int(decision_row.get("holds"))
         player_bucket["outs"] += outs
         player_bucket["batters"] += parse_int(statline.get("batters"))
-        player_bucket["pitches"] += parse_int(statline.get("pitches"))
+        pitch_count = parse_int(statline.get("pitches"))
+        player_bucket["pitches"] += pitch_count
+        player_bucket["hasPitchCount"] = player_bucket["hasPitchCount"] or pitch_count > 0
         player_bucket["hits"] += parse_int(statline.get("hits"))
         player_bucket["homeRuns"] += parse_int(statline.get("hr"))
         player_bucket["strikeouts"] += parse_int(statline.get("k"))
@@ -1301,6 +1473,109 @@ def build_player_totals(entries: list[dict], game_decisions: dict[str, dict]) ->
         player_bucket["swingingStrikeouts"] += outcome_rows.get("swingingStrikeouts", 0)
         player_bucket["sacrificeBunts"] += outcome_rows.get("sacrificeBunts", 0)
         player_bucket["interference"] += outcome_rows.get("interference", 0)
+
+    raw_out_rate_index = load_raw_out_rate_index(years)
+    for year, row in load_raw_pitcher_stat_rows(years):
+        player_name = str(row.get("選手名") or "").strip()
+        team = normalize_source_team_name(row.get("チーム名") or row.get("チームコード") or "")
+        if not player_name or not team:
+            continue
+        league = team_league(team)
+        outs = parse_int(row.get("投球回_アウト数")) or innings_to_outs(row.get("投球回"))
+        walks = parse_int(row.get("与四球"))
+        intentional_walks = parse_int(row.get("敬遠"))
+        unintentional_walks = max(walks - intentional_walks, 0)
+        years.add(year)
+
+        league_bucket = league_totals[(year, league)]
+        league_bucket["games"] += parse_int(row.get("試合"))
+        league_bucket["outs"] += outs
+        league_bucket["earnedRuns"] += parse_int(row.get("自責点"))
+        league_bucket["homeRuns"] += parse_int(row.get("被本塁打"))
+        league_bucket["walks"] += walks
+        league_bucket["unintentionalWalks"] += unintentional_walks
+        league_bucket["intentionalWalks"] += intentional_walks
+        league_bucket["hitByPitch"] += parse_int(row.get("与死球"))
+        league_bucket["strikeouts"] += parse_int(row.get("奪三振"))
+
+        bucket_key = (year, f"{team}::{player_name}")
+        player_bucket = players.setdefault(
+            bucket_key,
+            {
+                "year": year,
+                "pitcherId": "",
+                "player": player_name,
+                "league": league,
+                "teams": [],
+                "games": 0,
+                "wins": 0,
+                "losses": 0,
+                "saves": 0,
+                "holds": 0,
+                "outs": 0,
+                "batters": 0,
+                "pitches": 0,
+                "hits": 0,
+                "homeRuns": 0,
+                "strikeouts": 0,
+                "walks": 0,
+                "unintentionalWalks": 0,
+                "intentionalWalks": 0,
+                "hitByPitch": 0,
+                "balks": 0,
+                "runs": 0,
+                "earnedRuns": 0,
+                "atBats": 0,
+                "singles": 0,
+                "doubles": 0,
+                "triples": 0,
+                "grounders": 0,
+                "flyBalls": 0,
+                "swingMisses": 0,
+                "lookingStrikeouts": 0,
+                "swingingStrikeouts": 0,
+                "sacrificeBunts": 0,
+                "interference": 0,
+                "battingAverageAllowedOverride": None,
+                "groundOutRateOverride": None,
+                "flyOutRateOverride": None,
+                "hasPitchCount": False,
+            },
+        )
+        if team not in player_bucket["teams"]:
+            player_bucket["teams"].append(team)
+
+        player_bucket["games"] += parse_int(row.get("試合"))
+        player_bucket["wins"] += parse_int(row.get("勝利"))
+        player_bucket["losses"] += parse_int(row.get("敗北"))
+        player_bucket["saves"] += parse_int(row.get("セーブ"))
+        player_bucket["holds"] += parse_int(row.get("ホールド"))
+        player_bucket["outs"] += outs
+        player_bucket["batters"] += parse_int(row.get("打者"))
+        player_bucket["hits"] += parse_int(row.get("被安打"))
+        player_bucket["homeRuns"] += parse_int(row.get("被本塁打"))
+        player_bucket["strikeouts"] += parse_int(row.get("奪三振"))
+        player_bucket["walks"] += walks
+        player_bucket["unintentionalWalks"] += unintentional_walks
+        player_bucket["intentionalWalks"] += intentional_walks
+        player_bucket["hitByPitch"] += parse_int(row.get("与死球"))
+        player_bucket["balks"] += parse_int(row.get("ボーク"))
+        player_bucket["runs"] += parse_int(row.get("失点"))
+        player_bucket["earnedRuns"] += parse_int(row.get("自責点"))
+        batting_average_allowed = parse_float(row.get("被安打率"))
+        if batting_average_allowed is not None:
+            player_bucket["battingAverageAllowedOverride"] = batting_average_allowed
+        out_rate_override = lookup_out_rate_override(
+            raw_out_rate_index.get(year, {}),
+            player_name,
+            str(row.get("背番号") or ""),
+            row.get("チーム名") or row.get("チームコード") or "",
+        )
+        if out_rate_override:
+            if out_rate_override.get("groundOutRate") is not None:
+                player_bucket["groundOutRateOverride"] = out_rate_override["groundOutRate"]
+            if out_rate_override.get("flyOutRate") is not None:
+                player_bucket["flyOutRateOverride"] = out_rate_override["flyOutRate"]
 
     league_rows = []
     league_constants: dict[tuple[str, str], float | None] = {}
@@ -1339,6 +1614,11 @@ def build_player_totals(entries: list[dict], game_decisions: dict[str, dict]) ->
         ip = outs_to_ip(outs)
         at_bats = player["atBats"]
         batting_average = player["hits"] / at_bats if at_bats else None
+        batting_average = (
+            player["battingAverageAllowedOverride"]
+            if player.get("battingAverageAllowedOverride") is not None
+            else batting_average
+        )
         era = 9 * player["earnedRuns"] / ip if ip else None
         whip = (player["hits"] + player["walks"]) / ip if ip else None
         k_per_9 = 27 * player["strikeouts"] / outs if outs else None
@@ -1357,7 +1637,13 @@ def build_player_totals(entries: list[dict], game_decisions: dict[str, dict]) ->
         )
         ground_out_rate = player["grounders"] / out_event_total * 100 if out_event_total else None
         fly_out_rate = player["flyBalls"] / out_event_total * 100 if out_event_total else None
-        whiff_rate = player["swingMisses"] / player["pitches"] * 100 if player["pitches"] else None
+        if player.get("groundOutRateOverride") is not None:
+            ground_out_rate = player["groundOutRateOverride"]
+        if player.get("flyOutRateOverride") is not None:
+            fly_out_rate = player["flyOutRateOverride"]
+        if go_fo is None and ground_out_rate is not None and fly_out_rate not in (None, 0):
+            go_fo = ground_out_rate / fly_out_rate
+        whiff_rate = player["swingMisses"] / player["pitches"] * 100 if player.get("hasPitchCount") and player["pitches"] else None
         fip_constant = league_constants.get((player["year"], player["league"]))
         fip = (
             (((13 * player["homeRuns"]) + (3 * (player["unintentionalWalks"] + player["hitByPitch"])) - (2 * player["strikeouts"])) / ip) + fip_constant
@@ -1382,7 +1668,8 @@ def build_player_totals(entries: list[dict], game_decisions: dict[str, dict]) ->
                 "innings": outs_to_innings_notation(outs),
                 "inningsOuts": outs,
                 "batters": player["batters"],
-                "pitches": player["pitches"],
+                "pitches": player["pitches"] if player.get("hasPitchCount") else None,
+                "hasPitchCount": bool(player.get("hasPitchCount")),
                 "hits": player["hits"],
                 "homeRuns": player["homeRuns"],
                 "strikeouts": player["strikeouts"],
@@ -1424,7 +1711,7 @@ def build_player_totals(entries: list[dict], game_decisions: dict[str, dict]) ->
     player_rows.sort(key=lambda row: (row["year"], team_sort_key(row["team"].split(" / ")[0]), row["player"]))
     return {
         "updatedAt": datetime.now().isoformat(timespec="seconds"),
-        "source": "generated/*/*/*-dashboard.json",
+        "source": "generated/*/*/*-dashboard.json + 元データ/*_投手成績.csv",
         "years": sorted(years),
         "notes": {
             "fip": "FIP uses uBB derived from intentional-walk detection in generated plate-appearance results when available.",
@@ -1537,6 +1824,72 @@ def build_batter_totals(
                 bucket["_plateAppearancesByTeam"][team] = (
                     bucket["_plateAppearancesByTeam"].get(team, 0) + parse_int(stats.get("plateAppearances"))
                 )
+
+    for year, row in load_raw_batter_stat_rows(years):
+        player_name = str(row.get("選手名") or "").strip()
+        team = normalize_source_team_name(row.get("team") or "")
+        if not player_name or not team:
+            continue
+        league = team_league(team)
+        batter_id = ""
+        bucket_key = (year, batter_id or f"{team}::{player_name}")
+        hits = parse_int(row.get("安打"))
+        doubles = parse_int(row.get("二塁打"))
+        triples = parse_int(row.get("三塁打"))
+        home_runs = parse_int(row.get("本塁打"))
+        plate_appearances = parse_int(row.get("打席"))
+        years.add(year)
+        sacrifice_flies_by_player[bucket_key] += parse_int(row.get("犠飛"))
+        intentional_walks_by_player[bucket_key] += parse_int(row.get("故意四"))
+        bucket = players.setdefault(
+            bucket_key,
+            {
+                "year": year,
+                "batterId": batter_id,
+                "player": player_name,
+                "_bucketKey": bucket_key,
+                "teams": set(),
+                "league": league,
+                "games": 0,
+                "plateAppearances": 0,
+                "atBats": 0,
+                "runs": 0,
+                "hits": 0,
+                "singles": 0,
+                "doubles": 0,
+                "triples": 0,
+                "homeRuns": 0,
+                "runsBattedIn": 0,
+                "walks": 0,
+                "unintentionalWalks": 0,
+                "intentionalWalks": 0,
+                "hitByPitch": 0,
+                "sacBunts": 0,
+                "sacFlies": 0,
+                "steals": 0,
+                "strikeouts": 0,
+                "_plateAppearancesByTeam": {},
+            },
+        )
+        bucket["teams"].add(team)
+        bucket["games"] += parse_int(row.get("試合"))
+        bucket["plateAppearances"] += plate_appearances
+        bucket["atBats"] += parse_int(row.get("打数"))
+        bucket["runs"] += parse_int(row.get("得点"))
+        bucket["hits"] += hits
+        bucket["singles"] += max(hits - doubles - triples - home_runs, 0)
+        bucket["doubles"] += doubles
+        bucket["triples"] += triples
+        bucket["homeRuns"] += home_runs
+        bucket["runsBattedIn"] += parse_int(row.get("打点"))
+        bucket["walks"] += parse_int(row.get("四球"))
+        bucket["hitByPitch"] += parse_int(row.get("死球"))
+        bucket["sacBunts"] += parse_int(row.get("犠打"))
+        bucket["steals"] += parse_int(row.get("盗塁"))
+        bucket["strikeouts"] += parse_int(row.get("三振"))
+        bucket["_plateAppearancesByTeam"][team] = (
+            bucket["_plateAppearancesByTeam"].get(team, 0) + plate_appearances
+        )
 
     park_factor_index = build_park_factor_index(park_factors)
     finalized_players = []
@@ -1687,7 +2040,6 @@ def build_batter_totals(
                 "isoPower": round_or_none(iso_power, 3),
                 "babip": round_or_none(babip, 3),
                 "ops": round_or_none(ops, 3),
-                "woba": round_or_none(player_woba, 3),
                 "wrc": round_or_none(wrc, 1),
                 "wrcPlus": round_or_none(wrc_plus, 1),
                 "parkFactor": round_or_none(raw_park_factor, 1),
@@ -1698,11 +2050,10 @@ def build_batter_totals(
     rows.sort(key=lambda row: (row["year"], team_sort_key(row["team"].split(" / ")[0]), row["player"]))
     return {
         "updatedAt": datetime.now().isoformat(timespec="seconds"),
-        "source": "Sports Navi game batting tables for games present under generated/*/*/*-dashboard.json",
+        "source": "Sports Navi game batting tables for games present under generated/*/*/*-dashboard.json + 元データ/*_打撃成績.csv",
         "notes": {
             "uBB": "Unintentional walks are derived from generated plate-appearance results when an intentional-walk label is present.",
             "obp": "OBP remains the official BB-based formula rather than a uBB-based variant.",
-            "woba": "wOBA は 2026 年の暫定係数で算出しています。NPB 向けの年次係数が固まるまでは暫定値として扱ってください。",
             "wrcPlus": "wRC+ は対象試合の league R/PA と team park factor の半分補正を使った暫定値です。",
         },
         "metricContexts": {

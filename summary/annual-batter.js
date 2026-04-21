@@ -94,7 +94,6 @@ const SORT_COLUMNS = [
   { key: "sluggingPercentage", label: "長打率", type: "number", value: (row) => row.sluggingPercentage },
   { key: "isoPower", label: "IsoP", type: "number", value: (row) => row.isoPower },
   { key: "ops", label: "OPS", type: "number", value: (row) => row.ops },
-  { key: "woba", label: "wOBA", type: "number", value: (row) => row.woba },
   { key: "wrcPlus", label: "wRC+", type: "number", value: (row) => row.wrcPlus },
   { key: "babip", label: "BABIP", type: "number", value: (row) => row.babip },
 ];
@@ -367,7 +366,6 @@ function renderTable() {
           <td>${formatAverage(row.sluggingPercentage)}</td>
           <td>${formatAverage(row.isoPower)}</td>
           <td>${formatAverage(row.ops)}</td>
-          <td>${formatAverage(row.woba)}</td>
           <td>${formatDecimal(row.wrcPlus, 1)}</td>
           <td>${formatAverage(row.babip)}</td>
         </tr>
@@ -448,7 +446,7 @@ function bindEvents() {
 
 async function init() {
   try {
-    const response = await fetch("./batter_totals.json?v=20260421-01", { cache: "no-store" });
+    const response = await fetch("./batter_totals.json?v=20260421-02", { cache: "no-store" });
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     state.data = await response.json();
     bindEvents();
