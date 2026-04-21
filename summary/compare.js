@@ -6,7 +6,7 @@ const TYPE_CONFIG = {
     annualLabel: "年度別投手成績へ戻る",
     idKey: "pitcherId",
     metrics: [
-      { key: "games", label: "登板", kind: "number", digits: 0, default: true },
+      { key: "games", label: "試合", kind: "number", digits: 0, default: true },
       { key: "wins", label: "勝利", kind: "number", digits: 0 },
       { key: "losses", label: "敗戦", kind: "number", digits: 0, lowerIsBetter: true },
       { key: "saves", label: "セーブ", kind: "number", digits: 0 },
@@ -18,7 +18,7 @@ const TYPE_CONFIG = {
       { key: "battingAverageAllowed", label: "被打率", kind: "average", digits: 3, lowerIsBetter: true },
       { key: "strikeouts", label: "奪三振", kind: "number", digits: 0, default: true },
       { key: "kPer9", label: "K/9", kind: "decimal", digits: 2 },
-      { key: "walks", label: "与四球", kind: "number", digits: 0 },
+      { key: "walks", label: "四球", kind: "number", digits: 0 },
       { key: "bbPer9", label: "BB/9", kind: "decimal", digits: 2, lowerIsBetter: true },
       { key: "kBb", label: "K/BB", kind: "decimal", digits: 2 },
       { key: "homeRuns", label: "被本塁打", kind: "number", digits: 0 },
@@ -137,7 +137,7 @@ function formatMetricValue(metric, row) {
 }
 
 function formatMetricDelta(metric, delta) {
-  if (delta === null || delta === undefined) return "比較不可";
+  if (delta === null || delta === undefined) return "差分なし";
   if (metric.kind === "innings") return formatSignedInnings(delta);
   const sign = delta > 0 ? "+" : "";
   if (metric.kind === "number") return `${sign}${delta.toFixed(0)}`;
@@ -159,6 +159,11 @@ function currentParams() {
 
 function metricMap(config) {
   return Object.fromEntries(config.metrics.map((metric) => [metric.key, metric]));
+}
+
+function seasonLabel(row, fallback = "データなし") {
+  if (!row?.year) return fallback;
+  return `${row.year}年度`;
 }
 
 function normalizePlayerName(value) {
@@ -219,7 +224,7 @@ function summaryItems(config, row) {
     return [
       ["チーム", row.team],
       ["リーグ", row.league || "-"],
-      ["登板", `${row.games ?? "-"}試合`],
+      ["試合", `${row.games ?? "-"}試合`],
       ["投球回", row.innings || formatInningsFromOuts(row.inningsOuts)],
       ["防御率", formatMetricValue(metricMap(config).era, row)],
       ["WHIP", formatMetricValue(metricMap(config).whip, row)],
@@ -316,13 +321,21 @@ function renderComparisonCards() {
       const delta = leftValue === null || rightValue === null ? null : rightValue - leftValue;
       const direction = comparisonDirection(metric, delta);
       const deltaLabel = formatMetricDelta(metric, delta);
+      const leftLabel = seasonLabel(state.previousRow, "前年データなし");
+      const rightLabel = seasonLabel(state.currentRow);
       return `
         <article class="compare-card">
           <span>${escapeHtml(metric.label)}</span>
           <div class="compare-values">
-            <strong>${escapeHtml(formatMetricValue(metric, state.previousRow))}</strong>
-            <span class="compare-arrow compare-arrow--${direction}">${direction === "up" ? "↑" : direction === "down" ? "↓" : "→"}</span>
-            <strong>${escapeHtml(formatMetricValue(metric, state.currentRow))}</strong>
+            <div class="compare-value-block">
+              <small class="compare-year-label">${escapeHtml(leftLabel)}</small>
+              <strong>${escapeHtml(formatMetricValue(metric, state.previousRow))}</strong>
+            </div>
+            <span class="compare-arrow compare-arrow--${direction}">${direction === "up" ? "↗" : direction === "down" ? "↘" : "→"}</span>
+            <div class="compare-value-block">
+              <small class="compare-year-label">${escapeHtml(rightLabel)}</small>
+              <strong>${escapeHtml(formatMetricValue(metric, state.currentRow))}</strong>
+            </div>
           </div>
           <p class="compare-delta compare-delta--${direction}">${escapeHtml(deltaLabel)}</p>
         </article>
@@ -342,21 +355,22 @@ function renderSummary() {
     els.compareTitle.textContent = "前年比較ダッシュボード";
     els.compareSubtitle.textContent = "";
     els.comparePlayerName.textContent = "選手が見つかりません";
-    els.compareDescription.textContent = state.error || "リンク元の条件に合う成績がありません。";
+    els.compareDescription.textContent = state.error || "リンク条件に合う成績がありません。";
     els.compareSeasonGrid.innerHTML = "";
+    document.title = "前年比較ダッシュボード";
     return;
   }
-  const previousLabel = previousRow ? `${previousRow.year}年度` : "前年データなし";
+  const previousLabel = previousRow ? seasonLabel(previousRow) : "前年データなし";
   els.compareTitle.textContent = `${currentRow.player} 前年比較`;
   els.compareSubtitle.textContent = `${currentRow.year}年度 ${state.config.label}`;
   els.comparePlayerName.textContent = currentRow.player;
   els.compareDescription.textContent = previousRow
-    ? `${previousLabel} と ${currentRow.year}年度の成績差分`
-    : `${currentRow.year}年度の前年データはまだありません`;
+    ? `${previousLabel} と ${seasonLabel(currentRow)} の成績差分`
+    : `${seasonLabel(currentRow)} の前年データはまだありません`;
   document.title = `${currentRow.player} | 前年比較`;
   els.compareSeasonGrid.innerHTML = [
     renderSeasonCard(previousRow, state.config, previousLabel),
-    renderSeasonCard(currentRow, state.config, `${currentRow.year}年度`),
+    renderSeasonCard(currentRow, state.config, seasonLabel(currentRow)),
   ].join("");
 }
 
@@ -372,7 +386,7 @@ async function init() {
     state.currentRow = findCurrentRow(state.rows, params, state.config);
     state.previousRow = findPreviousRow(state.rows, state.currentRow, params, state.config);
     if (!state.currentRow) {
-      state.error = "リンク元の選手データが見つかりませんでした。";
+      state.error = "リンク先の選手データが見つかりませんでした。";
     }
   } catch (error) {
     state.error = error.message || "前年比較データの取得に失敗しました。";

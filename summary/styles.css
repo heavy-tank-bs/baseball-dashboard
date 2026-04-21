@@ -1315,6 +1315,25 @@ select {
   margin: 16px 0 10px;
 }
 
+.compare-value-block {
+  display: flex;
+  min-width: 0;
+  flex: 1 1 0;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.compare-value-block:last-child {
+  align-items: flex-end;
+  text-align: right;
+}
+
+.compare-year-label {
+  color: var(--muted);
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+}
+
 .compare-values strong {
   font-size: 1.8rem;
   color: var(--text);
@@ -1726,6 +1745,12 @@ select {
   .compare-season-item {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .compare-value-block,
+  .compare-value-block:last-child {
+    align-items: flex-start;
+    text-align: left;
   }
 
   .hero-nav {
