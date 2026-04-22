@@ -1,21 +1,21 @@
 {
-  "updatedAt": "2026-04-21T22:47:07+09:00",
+  "updatedAt": "2026-04-22T22:31:05+09:00",
   "season": 2026,
-  "throughDate": "2026-04-21",
+  "throughDate": "2026-04-22",
   "source": {
     "schedule": "https://baseball.yahoo.co.jp/npb/schedule/?date=YYYY-MM-DD",
     "stats": "https://baseball.yahoo.co.jp/npb/game/{gameId}/stats",
     "intentionalWalkDetection": "Counts batting detail cells containing one of: 申告敬遠, 敬遠, 故意四球."
   },
   "summary": {
-    "scheduledGames": 128,
-    "completedGames": 123,
+    "scheduledGames": 134,
+    "completedGames": 129,
     "canceledGames": 5,
     "otherStatusGames": 0,
     "gamesWithIntentionalWalks": 0,
     "intentionalWalkPlateAppearances": 0,
     "statusCounts": {
-      "試合終了": 123,
+      "試合終了": 129,
       "試合中止": 5
     },
     "fetchErrors": 0
@@ -3449,6 +3449,174 @@
       "totalRuns": 11,
       "scheduleUrl": "https://baseball.yahoo.co.jp/npb/schedule/?date=2026-04-21",
       "statsUrl": "https://baseball.yahoo.co.jp/npb/game/2021038749/stats",
+      "intentionalWalks": {
+        "total": 0,
+        "teams": {
+          "オリックス・バファローズ": {
+            "team": "オリックス・バファローズ",
+            "intentionalWalks": 0,
+            "players": []
+          },
+          "千葉ロッテマリーンズ": {
+            "team": "千葉ロッテマリーンズ",
+            "intentionalWalks": 0,
+            "players": []
+          }
+        }
+      }
+    },
+    {
+      "date": "2026-04-22",
+      "gameId": "2021038750",
+      "status": "試合終了",
+      "stadium": "前橋",
+      "homeTeam": "読売ジャイアンツ",
+      "awayTeam": "中日ドラゴンズ",
+      "homeScore": 5,
+      "awayScore": 1,
+      "totalRuns": 6,
+      "scheduleUrl": "https://baseball.yahoo.co.jp/npb/schedule/?date=2026-04-22",
+      "statsUrl": "https://baseball.yahoo.co.jp/npb/game/2021038750/stats",
+      "intentionalWalks": {
+        "total": 0,
+        "teams": {
+          "中日ドラゴンズ": {
+            "team": "中日ドラゴンズ",
+            "intentionalWalks": 0,
+            "players": []
+          },
+          "読売ジャイアンツ": {
+            "team": "読売ジャイアンツ",
+            "intentionalWalks": 0,
+            "players": []
+          }
+        }
+      }
+    },
+    {
+      "date": "2026-04-22",
+      "gameId": "2021038751",
+      "status": "試合終了",
+      "stadium": "横浜",
+      "homeTeam": "横浜DeNAベイスターズ",
+      "awayTeam": "阪神タイガース",
+      "homeScore": 7,
+      "awayScore": 6,
+      "totalRuns": 13,
+      "scheduleUrl": "https://baseball.yahoo.co.jp/npb/schedule/?date=2026-04-22",
+      "statsUrl": "https://baseball.yahoo.co.jp/npb/game/2021038751/stats",
+      "intentionalWalks": {
+        "total": 0,
+        "teams": {
+          "阪神タイガース": {
+            "team": "阪神タイガース",
+            "intentionalWalks": 0,
+            "players": []
+          },
+          "横浜DeNAベイスターズ": {
+            "team": "横浜DeNAベイスターズ",
+            "intentionalWalks": 0,
+            "players": []
+          }
+        }
+      }
+    },
+    {
+      "date": "2026-04-22",
+      "gameId": "2021038752",
+      "status": "試合終了",
+      "stadium": "マツダスタジアム",
+      "homeTeam": "広島東洋カープ",
+      "awayTeam": "東京ヤクルトスワローズ",
+      "homeScore": 0,
+      "awayScore": 2,
+      "totalRuns": 2,
+      "scheduleUrl": "https://baseball.yahoo.co.jp/npb/schedule/?date=2026-04-22",
+      "statsUrl": "https://baseball.yahoo.co.jp/npb/game/2021038752/stats",
+      "intentionalWalks": {
+        "total": 0,
+        "teams": {
+          "東京ヤクルトスワローズ": {
+            "team": "東京ヤクルトスワローズ",
+            "intentionalWalks": 0,
+            "players": []
+          },
+          "広島東洋カープ": {
+            "team": "広島東洋カープ",
+            "intentionalWalks": 0,
+            "players": []
+          }
+        }
+      }
+    },
+    {
+      "date": "2026-04-22",
+      "gameId": "2021038753",
+      "status": "試合終了",
+      "stadium": "エスコンF",
+      "homeTeam": "北海道日本ハムファイターズ",
+      "awayTeam": "東北楽天ゴールデンイーグルス",
+      "homeScore": 5,
+      "awayScore": 4,
+      "totalRuns": 9,
+      "scheduleUrl": "https://baseball.yahoo.co.jp/npb/schedule/?date=2026-04-22",
+      "statsUrl": "https://baseball.yahoo.co.jp/npb/game/2021038753/stats",
+      "intentionalWalks": {
+        "total": 0,
+        "teams": {
+          "東北楽天ゴールデンイーグルス": {
+            "team": "東北楽天ゴールデンイーグルス",
+            "intentionalWalks": 0,
+            "players": []
+          },
+          "北海道日本ハムファイターズ": {
+            "team": "北海道日本ハムファイターズ",
+            "intentionalWalks": 0,
+            "players": []
+          }
+        }
+      }
+    },
+    {
+      "date": "2026-04-22",
+      "gameId": "2021038754",
+      "status": "試合終了",
+      "stadium": "ベルーナドーム",
+      "homeTeam": "埼玉西武ライオンズ",
+      "awayTeam": "福岡ソフトバンクホークス",
+      "homeScore": 3,
+      "awayScore": 1,
+      "totalRuns": 4,
+      "scheduleUrl": "https://baseball.yahoo.co.jp/npb/schedule/?date=2026-04-22",
+      "statsUrl": "https://baseball.yahoo.co.jp/npb/game/2021038754/stats",
+      "intentionalWalks": {
+        "total": 0,
+        "teams": {
+          "福岡ソフトバンクホークス": {
+            "team": "福岡ソフトバンクホークス",
+            "intentionalWalks": 0,
+            "players": []
+          },
+          "埼玉西武ライオンズ": {
+            "team": "埼玉西武ライオンズ",
+            "intentionalWalks": 0,
+            "players": []
+          }
+        }
+      }
+    },
+    {
+      "date": "2026-04-22",
+      "gameId": "2021038755",
+      "status": "試合終了",
+      "stadium": "ZOZOマリン",
+      "homeTeam": "千葉ロッテマリーンズ",
+      "awayTeam": "オリックス・バファローズ",
+      "homeScore": 1,
+      "awayScore": 4,
+      "totalRuns": 5,
+      "scheduleUrl": "https://baseball.yahoo.co.jp/npb/schedule/?date=2026-04-22",
+      "statsUrl": "https://baseball.yahoo.co.jp/npb/game/2021038755/stats",
       "intentionalWalks": {
         "total": 0,
         "teams": {
