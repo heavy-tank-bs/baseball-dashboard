@@ -1,7 +1,7 @@
 const TYPE_CONFIG = {
   pitcher: {
     label: "投手",
-    datasetUrl: "./player_totals.json?v=20260421-04",
+    datasetUrl: "./player_totals.json?v=20260422-01",
     annualHref: "./annual.html",
     annualLabel: "年度別投手成績へ戻る",
     idKey: "pitcherId",
@@ -30,7 +30,7 @@ const TYPE_CONFIG = {
   },
   batter: {
     label: "打者",
-    datasetUrl: "./batter_totals.json?v=20260421-04",
+    datasetUrl: "./batter_totals.json?v=20260422-01",
     annualHref: "./annual-batter.html",
     annualLabel: "年度別打者成績へ戻る",
     idKey: "batterId",
@@ -58,12 +58,31 @@ const TYPE_CONFIG = {
   },
 };
 
+const MODE_CONFIG = {
+  compare: { label: "前年比較" },
+  monthly: { label: "月別成績" },
+};
+
+const MONTH_BUCKETS = [
+  { key: "03-04", label: "3・4月", months: ["03", "04"] },
+  { key: "05", label: "5月", months: ["05"] },
+  { key: "06", label: "6月", months: ["06"] },
+  { key: "07", label: "7月", months: ["07"] },
+  { key: "08", label: "8月", months: ["08"] },
+  { key: "09-10", label: "9・10月", months: ["09", "10"] },
+];
+
+const MONTH_BUCKET_INDEX = new Map(
+  MONTH_BUCKETS.flatMap((bucket) => bucket.months.map((month) => [month, bucket]))
+);
+
 const state = {
   config: null,
   rows: [],
   currentRow: null,
   previousRow: null,
   activeMetricKeys: [],
+  activeMode: "compare",
   error: "",
 };
 
@@ -74,10 +93,17 @@ const els = {
   comparePlayerName: document.getElementById("comparePlayerName"),
   compareDescription: document.getElementById("compareDescription"),
   compareBackLink: document.getElementById("compareBackLink"),
-  compareSeasonGrid: document.getElementById("compareSeasonGrid"),
-  compareMetricCount: document.getElementById("compareMetricCount"),
+  modeToggleGroup: document.getElementById("modeToggleGroup"),
   metricToggleGroup: document.getElementById("metricToggleGroup"),
+  comparePanel: document.getElementById("comparePanel"),
+  compareMetricCount: document.getElementById("compareMetricCount"),
+  compareSeasonGrid: document.getElementById("compareSeasonGrid"),
   compareCardGrid: document.getElementById("compareCardGrid"),
+  monthlyPanel: document.getElementById("monthlyPanel"),
+  monthlyMetricCount: document.getElementById("monthlyMetricCount"),
+  monthlySeasonGrid: document.getElementById("monthlySeasonGrid"),
+  monthlyTableWrap: document.getElementById("monthlyTableWrap"),
+  monthlyChartGrid: document.getElementById("monthlyChartGrid"),
 };
 
 function escapeHtml(value) {
@@ -101,6 +127,10 @@ function formatSignedInnings(outs) {
   if (!Number.isFinite(safeOuts)) return "-";
   const sign = safeOuts > 0 ? "+" : safeOuts < 0 ? "-" : "";
   return `${sign}${formatInningsFromOuts(Math.abs(safeOuts))}`;
+}
+
+function metricMap(config) {
+  return Object.fromEntries(config.metrics.map((metric) => [metric.key, metric]));
 }
 
 function metricValue(metric, row) {
@@ -155,10 +185,6 @@ function comparisonDirection(metric, delta) {
 
 function currentParams() {
   return new URLSearchParams(window.location.search);
-}
-
-function metricMap(config) {
-  return Object.fromEntries(config.metrics.map((metric) => [metric.key, metric]));
 }
 
 function seasonLabel(row, fallback = "データなし") {
@@ -240,13 +266,13 @@ function summaryItems(config, row) {
   ];
 }
 
-function renderSeasonCard(row, config, heading) {
+function renderSeasonCard(row, config, heading, emptyMessage = "データがありません。") {
   if (!row) {
     return `
       <article class="season-meta-card compare-season-card empty">
         <span>${escapeHtml(heading)}</span>
         <strong>データなし</strong>
-        <small>前年データがまだありません。</small>
+        <small>${escapeHtml(emptyMessage)}</small>
       </article>
     `;
   }
@@ -270,8 +296,255 @@ function renderSeasonCard(row, config, heading) {
   `;
 }
 
+function safeDivide(numerator, denominator, multiplier = 1) {
+  const safeNumerator = Number(numerator);
+  const safeDenominator = Number(denominator);
+  if (!Number.isFinite(safeNumerator) || !Number.isFinite(safeDenominator) || safeDenominator === 0) {
+    return null;
+  }
+  return (safeNumerator / safeDenominator) * multiplier;
+}
+
+function monthNumberFromSplit(split) {
+  const rawMonth = `${split?.month ?? ""}`;
+  const isoMatch = rawMonth.match(/-(\d{2})$/);
+  if (isoMatch) return isoMatch[1];
+  const labelMatch = `${split?.monthLabel ?? ""}`.match(/(\d{1,2})月/);
+  if (labelMatch) return labelMatch[1].padStart(2, "0");
+  return "";
+}
+
+function sumMetric(rows, key) {
+  return rows.reduce((total, row) => total + (Number(row?.[key]) || 0), 0);
+}
+
+function weightedAverage(rows, key, weightKey) {
+  const weighted = rows.reduce((total, row) => {
+    const value = Number(row?.[key]);
+    const weight = Number(row?.[weightKey]);
+    if (!Number.isFinite(value) || !Number.isFinite(weight) || weight <= 0) return total;
+    return total + (value * weight);
+  }, 0);
+  const totalWeight = rows.reduce((total, row) => {
+    const weight = Number(row?.[weightKey]);
+    return Number.isFinite(weight) && weight > 0 ? total + weight : total;
+  }, 0);
+  return totalWeight > 0 ? weighted / totalWeight : null;
+}
+
+function aggregatePitcherBucket(rows, bucket) {
+  const latestRow = rows[rows.length - 1] || rows[0] || null;
+  if (!latestRow) return null;
+  const inningsOuts = sumMetric(rows, "inningsOuts");
+  const outEventTotal = sumMetric(rows, "grounders") + sumMetric(rows, "flyBalls");
+  const fipConstant = rows.find((row) => Number.isFinite(Number(row?.fipConstant)))?.fipConstant ?? latestRow.fipConstant ?? null;
+  const atBats = sumMetric(rows, "atBats");
+  const hits = sumMetric(rows, "hits");
+  const walks = sumMetric(rows, "walks");
+  const unintentionalWalks = sumMetric(rows, "unintentionalWalks");
+  const strikeouts = sumMetric(rows, "strikeouts");
+  const homeRuns = sumMetric(rows, "homeRuns");
+  const hitByPitch = sumMetric(rows, "hitByPitch");
+  const pitches = sumMetric(rows, "pitches");
+  const hasPitchCount = rows.some((row) => Boolean(row?.hasPitchCount));
+  const flyBalls = sumMetric(rows, "flyBalls");
+  const grounders = sumMetric(rows, "grounders");
+  const teams = [...new Set(rows.flatMap((row) => (Array.isArray(row?.teams) ? row.teams : [row?.team]).filter(Boolean)))];
+  const era = safeDivide(sumMetric(rows, "earnedRuns"), inningsOuts, 27);
+  const whip = safeDivide(hits + walks, inningsOuts, 3);
+  const kPer9 = safeDivide(strikeouts, inningsOuts, 27);
+  const bbPer9 = safeDivide(walks, inningsOuts, 27);
+  const hPer9 = safeDivide(hits, inningsOuts, 27);
+  const hrPer9 = safeDivide(homeRuns, inningsOuts, 27);
+  const kBb = safeDivide(strikeouts, walks);
+  const battingAverageAllowed = safeDivide(hits, atBats);
+  const goFo = safeDivide(grounders, flyBalls);
+  const groundOutRate = safeDivide(grounders, outEventTotal, 100);
+  const flyOutRate = safeDivide(flyBalls, outEventTotal, 100);
+  const whiffRate = hasPitchCount ? safeDivide(sumMetric(rows, "swingMisses"), pitches, 100) : null;
+  const fip =
+    inningsOuts && Number.isFinite(Number(fipConstant))
+      ? (((13 * homeRuns) + (3 * (unintentionalWalks + hitByPitch)) - (2 * strikeouts)) / (inningsOuts / 3)) + Number(fipConstant)
+      : null;
+
+  return {
+    ...latestRow,
+    month: bucket.key,
+    monthLabel: bucket.label,
+    team: latestRow.team,
+    teams,
+    games: sumMetric(rows, "games"),
+    wins: sumMetric(rows, "wins"),
+    losses: sumMetric(rows, "losses"),
+    saves: sumMetric(rows, "saves"),
+    holds: sumMetric(rows, "holds"),
+    innings: formatInningsFromOuts(inningsOuts),
+    inningsOuts,
+    batters: sumMetric(rows, "batters"),
+    pitches,
+    hasPitchCount,
+    hits,
+    homeRuns,
+    strikeouts,
+    walks,
+    unintentionalWalks,
+    intentionalWalks: sumMetric(rows, "intentionalWalks"),
+    hitByPitch,
+    balks: sumMetric(rows, "balks"),
+    runs: sumMetric(rows, "runs"),
+    earnedRuns: sumMetric(rows, "earnedRuns"),
+    atBats,
+    singles: sumMetric(rows, "singles"),
+    doubles: sumMetric(rows, "doubles"),
+    triples: sumMetric(rows, "triples"),
+    grounders,
+    flyBalls,
+    swingMisses: sumMetric(rows, "swingMisses"),
+    lookingStrikeouts: sumMetric(rows, "lookingStrikeouts"),
+    swingingStrikeouts: sumMetric(rows, "swingingStrikeouts"),
+    sacrificeBunts: sumMetric(rows, "sacrificeBunts"),
+    interference: sumMetric(rows, "interference"),
+    era,
+    whip,
+    kPer9,
+    bbPer9,
+    hPer9,
+    hrPer9,
+    kBb,
+    fip,
+    fipConstant: Number.isFinite(Number(fipConstant)) ? Number(fipConstant) : null,
+    battingAverageAllowed,
+    goFo,
+    groundOutRate,
+    flyOutRate,
+    whiffRate,
+  };
+}
+
+function aggregateBatterBucket(rows, bucket) {
+  const latestRow = rows[rows.length - 1] || rows[0] || null;
+  if (!latestRow) return null;
+  const atBats = sumMetric(rows, "atBats");
+  const hits = sumMetric(rows, "hits");
+  const walks = sumMetric(rows, "walks");
+  const hitByPitch = sumMetric(rows, "hitByPitch");
+  const sacFlies = sumMetric(rows, "sacFlies");
+  const strikeouts = sumMetric(rows, "strikeouts");
+  const homeRuns = sumMetric(rows, "homeRuns");
+  const singles = sumMetric(rows, "singles");
+  const doubles = sumMetric(rows, "doubles");
+  const triples = sumMetric(rows, "triples");
+  const totalBases = singles + (2 * doubles) + (3 * triples) + (4 * homeRuns);
+  const battingAverage = safeDivide(hits, atBats);
+  const onBasePercentage = safeDivide(hits + walks + hitByPitch, atBats + walks + hitByPitch + sacFlies);
+  const sluggingPercentage = safeDivide(totalBases, atBats);
+  const isoDiscipline =
+    battingAverage !== null && onBasePercentage !== null ? onBasePercentage - battingAverage : null;
+  const isoPower =
+    battingAverage !== null && sluggingPercentage !== null ? sluggingPercentage - battingAverage : null;
+  const babip = safeDivide(hits - homeRuns, atBats - strikeouts - homeRuns + sacFlies);
+  const ops = onBasePercentage !== null && sluggingPercentage !== null ? onBasePercentage + sluggingPercentage : null;
+  const teams = [...new Set(rows.flatMap((row) => (Array.isArray(row?.teams) ? row.teams : [row?.team]).filter(Boolean)))];
+
+  return {
+    ...latestRow,
+    month: bucket.key,
+    monthLabel: bucket.label,
+    team: latestRow.team,
+    teams,
+    games: sumMetric(rows, "games"),
+    plateAppearances: sumMetric(rows, "plateAppearances"),
+    atBats,
+    runs: sumMetric(rows, "runs"),
+    hits,
+    singles,
+    doubles,
+    triples,
+    homeRuns,
+    runsBattedIn: sumMetric(rows, "runsBattedIn"),
+    walks,
+    unintentionalWalks: sumMetric(rows, "unintentionalWalks"),
+    intentionalWalks: sumMetric(rows, "intentionalWalks"),
+    hitByPitch,
+    sacBunts: sumMetric(rows, "sacBunts"),
+    sacFlies,
+    steals: sumMetric(rows, "steals"),
+    strikeouts,
+    battingAverage,
+    onBasePercentage,
+    isoDiscipline,
+    sluggingPercentage,
+    isoPower,
+    babip,
+    ops,
+    wrc: sumMetric(rows, "wrc"),
+    wrcPlus: weightedAverage(rows, "wrcPlus", "plateAppearances"),
+    parkFactor: weightedAverage(rows, "parkFactor", "plateAppearances"),
+    effectiveParkFactor: weightedAverage(rows, "effectiveParkFactor", "plateAppearances"),
+  };
+}
+
+function monthlySplits() {
+  const splits = Array.isArray(state.currentRow?.monthlySplits) ? state.currentRow.monthlySplits : [];
+  if (!splits.length) return [];
+  const bucketRows = new Map();
+  const fallbackRows = [];
+
+  for (const split of splits) {
+    const month = monthNumberFromSplit(split);
+    const bucket = MONTH_BUCKET_INDEX.get(month);
+    if (!bucket) {
+      fallbackRows.push({
+        key: split.month || month || `${fallbackRows.length}`,
+        label: split.monthLabel || `${Number.parseInt(month || "0", 10) || month}月`,
+        rows: [split],
+        order: MONTH_BUCKETS.length + fallbackRows.length,
+      });
+      continue;
+    }
+    const entry = bucketRows.get(bucket.key) || { ...bucket, rows: [], order: MONTH_BUCKETS.findIndex((item) => item.key === bucket.key) };
+    entry.rows.push(split);
+    bucketRows.set(bucket.key, entry);
+  }
+
+  const grouped = [...bucketRows.values(), ...fallbackRows]
+    .sort((a, b) => a.order - b.order)
+    .map((bucket) =>
+      state.config === TYPE_CONFIG.pitcher
+        ? aggregatePitcherBucket(bucket.rows, bucket)
+        : aggregateBatterBucket(bucket.rows, bucket)
+    )
+    .filter(Boolean);
+
+  return grouped;
+}
+
+function renderModeToggles() {
+  els.modeToggleGroup.innerHTML = Object.entries(MODE_CONFIG)
+    .map(
+      ([mode, config]) => `
+        <button
+          type="button"
+          class="compare-mode-button${state.activeMode === mode ? " active" : ""}"
+          data-mode="${mode}"
+        >
+          ${escapeHtml(config.label)}
+        </button>
+      `
+    )
+    .join("");
+  els.modeToggleGroup.querySelectorAll("[data-mode]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const mode = button.dataset.mode || "compare";
+      state.activeMode = mode;
+      renderModeToggles();
+      renderPanels();
+    });
+  });
+}
+
 function renderMetricToggles() {
-  const buttons = state.config.metrics
+  els.metricToggleGroup.innerHTML = state.config.metrics
     .map((metric) => {
       const active = state.activeMetricKeys.includes(metric.key);
       return `
@@ -285,7 +558,6 @@ function renderMetricToggles() {
       `;
     })
     .join("");
-  els.metricToggleGroup.innerHTML = buttons;
   els.metricToggleGroup.querySelectorAll("[data-metric-key]").forEach((button) => {
     button.addEventListener("click", () => {
       const key = button.dataset.metricKey || "";
@@ -295,24 +567,21 @@ function renderMetricToggles() {
       } else {
         state.activeMetricKeys = [...state.activeMetricKeys, key];
       }
-      renderComparisonCards();
       renderMetricToggles();
+      renderPanels();
     });
   });
 }
 
-function renderComparisonCards() {
-  els.compareMetricCount.textContent = `${state.activeMetricKeys.length}項目`;
+function compareCardsMarkup() {
   if (!state.currentRow) {
-    els.compareCardGrid.innerHTML = `<div class="section-empty compare-empty">${escapeHtml(state.error || "選手データを読み込めませんでした。")}</div>`;
-    return;
+    return `<div class="section-empty compare-empty">${escapeHtml(state.error || "選手データを読み込めませんでした。")}</div>`;
   }
   if (!state.activeMetricKeys.length) {
-    els.compareCardGrid.innerHTML = '<div class="section-empty compare-empty">比較したい指標を選択してください。</div>';
-    return;
+    return '<div class="section-empty compare-empty">比較したい指標を選択してください。</div>';
   }
   const metricsByKey = metricMap(state.config);
-  const cards = state.activeMetricKeys
+  return state.activeMetricKeys
     .map((key) => metricsByKey[key])
     .filter(Boolean)
     .map((metric) => {
@@ -342,42 +611,209 @@ function renderComparisonCards() {
       `;
     })
     .join("");
-  els.compareCardGrid.innerHTML = cards;
 }
 
-function renderSummary() {
+function chartSvg(metric, splits) {
+  const width = 360;
+  const height = 180;
+  const padding = { top: 18, right: 16, bottom: 34, left: 42 };
+  const plotWidth = width - padding.left - padding.right;
+  const plotHeight = height - padding.top - padding.bottom;
+  const points = splits
+    .map((row, index) => ({
+      index,
+      label: row.monthLabel || row.month || `${index + 1}`,
+      value: numericMetricValue(metric, row),
+    }))
+    .filter((point) => point.value !== null);
+
+  if (!points.length) {
+    return '<div class="section-empty compare-empty monthly-chart-empty">データなし</div>';
+  }
+
+  let min = Math.min(...points.map((point) => point.value));
+  let max = Math.max(...points.map((point) => point.value));
+  if (min === max) {
+    const margin = metric.kind === "number" ? 1 : 0.1;
+    min -= margin;
+    max += margin;
+  }
+
+  const xStep = points.length > 1 ? plotWidth / (points.length - 1) : 0;
+  const yScale = (value) => padding.top + ((max - value) / (max - min || 1)) * plotHeight;
+  const xScale = (index) => padding.left + (xStep * index);
+  const pathData = points
+    .map((point, index) => `${index === 0 ? "M" : "L"} ${xScale(index).toFixed(2)} ${yScale(point.value).toFixed(2)}`)
+    .join(" ");
+
+  const xLabels = points
+    .map(
+      (point, index) => `
+        <text x="${xScale(index).toFixed(2)}" y="${height - 10}" text-anchor="middle" class="monthly-chart-axis-label">
+          ${escapeHtml(point.label)}
+        </text>
+      `
+    )
+    .join("");
+  const circles = points
+    .map(
+      (point, index) => `
+        <g>
+          <circle cx="${xScale(index).toFixed(2)}" cy="${yScale(point.value).toFixed(2)}" r="4.5" class="monthly-chart-point" />
+          <text x="${xScale(index).toFixed(2)}" y="${(yScale(point.value) - 10).toFixed(2)}" text-anchor="middle" class="monthly-chart-point-label">
+            ${escapeHtml(formatMetricValue(metric, { [metric.key]: point.value, inningsOuts: point.value }))}
+          </text>
+        </g>
+      `
+    )
+    .join("");
+
+  return `
+    <svg class="monthly-chart" viewBox="0 0 ${width} ${height}" role="img" aria-label="${escapeHtml(metric.label)}の月別推移">
+      <line x1="${padding.left}" y1="${padding.top}" x2="${padding.left}" y2="${height - padding.bottom}" class="monthly-chart-axis" />
+      <line x1="${padding.left}" y1="${height - padding.bottom}" x2="${width - padding.right}" y2="${height - padding.bottom}" class="monthly-chart-axis" />
+      <text x="${padding.left - 8}" y="${padding.top + 4}" text-anchor="end" class="monthly-chart-range-label">${escapeHtml(formatMetricValue(metric, { [metric.key]: max, inningsOuts: max }))}</text>
+      <text x="${padding.left - 8}" y="${height - padding.bottom + 4}" text-anchor="end" class="monthly-chart-range-label">${escapeHtml(formatMetricValue(metric, { [metric.key]: min, inningsOuts: min }))}</text>
+      <path d="${pathData}" class="monthly-chart-line" />
+      ${circles}
+      ${xLabels}
+    </svg>
+  `;
+}
+
+function renderMonthlyTable(splits) {
+  if (!state.currentRow) {
+    els.monthlyTableWrap.innerHTML = `<div class="section-empty compare-empty">${escapeHtml(state.error || "選手データを読み込めませんでした。")}</div>`;
+    return;
+  }
+  if (!splits.length) {
+    els.monthlyTableWrap.innerHTML = '<div class="section-empty compare-empty">この年度の月別データはありません。</div>';
+    return;
+  }
+  const visibleMetrics = state.config.metrics.filter((metric) => {
+    if (state.config === TYPE_CONFIG.pitcher && metric.key === "pitches") {
+      return splits.some((split) => split.hasPitchCount);
+    }
+    return true;
+  });
+  const headers = visibleMetrics
+    .map((metric) => `<th>${escapeHtml(metric.label)}</th>`)
+    .join("");
+  const rows = splits
+    .map((split) => {
+      const values = visibleMetrics
+        .map((metric) => `<td>${escapeHtml(formatMetricValue(metric, split))}</td>`)
+        .join("");
+      return `<tr><th>${escapeHtml(split.monthLabel || split.month || "-")}</th>${values}</tr>`;
+    })
+    .join("");
+
+  els.monthlyTableWrap.innerHTML = `
+    <div class="table-scroll monthly-table-shell">
+      <table class="data-table monthly-table">
+        <thead>
+          <tr>
+            <th>月</th>
+            ${headers}
+          </tr>
+        </thead>
+        <tbody>${rows}</tbody>
+      </table>
+    </div>
+  `;
+}
+
+function renderMonthlyCharts(splits) {
+  if (!state.currentRow) {
+    els.monthlyChartGrid.innerHTML = `<div class="section-empty compare-empty">${escapeHtml(state.error || "選手データを読み込めませんでした。")}</div>`;
+    return;
+  }
+  if (!splits.length) {
+    els.monthlyChartGrid.innerHTML = '<div class="section-empty compare-empty">この年度の月別データはありません。</div>';
+    return;
+  }
+  if (!state.activeMetricKeys.length) {
+    els.monthlyChartGrid.innerHTML = '<div class="section-empty compare-empty">表示したい指標を選択してください。</div>';
+    return;
+  }
+
+  const metricsByKey = metricMap(state.config);
+  els.monthlyChartGrid.innerHTML = state.activeMetricKeys
+    .map((key) => metricsByKey[key])
+    .filter(Boolean)
+    .map((metric) => {
+      const latestRow = splits[splits.length - 1] || null;
+      return `
+        <article class="compare-card monthly-chart-card">
+          <div class="monthly-chart-head">
+            <span>${escapeHtml(metric.label)}</span>
+            <strong>${escapeHtml(formatMetricValue(metric, latestRow))}</strong>
+          </div>
+          ${chartSvg(metric, splits)}
+        </article>
+      `;
+    })
+    .join("");
+}
+
+function renderComparePanel() {
+  els.compareMetricCount.textContent = `${state.activeMetricKeys.length}項目`;
+  els.compareSeasonGrid.innerHTML = [
+    renderSeasonCard(state.previousRow, state.config, state.previousRow ? seasonLabel(state.previousRow) : "前年データなし", "前年データがありません。"),
+    renderSeasonCard(state.currentRow, state.config, seasonLabel(state.currentRow, "対象年度")),
+  ].join("");
+  els.compareCardGrid.innerHTML = compareCardsMarkup();
+}
+
+function renderMonthlyPanel() {
+  const splits = monthlySplits();
+  els.monthlyMetricCount.textContent = `表 ${state.config.metrics.length}項目 / グラフ ${state.activeMetricKeys.length}項目`;
+  els.monthlySeasonGrid.innerHTML = [
+    renderSeasonCard(state.currentRow, state.config, seasonLabel(state.currentRow, "対象年度"), "対象年度データがありません。"),
+  ].join("");
+  renderMonthlyTable(splits);
+  renderMonthlyCharts(splits);
+}
+
+function renderPanels() {
+  const showCompare = state.activeMode === "compare";
+  els.comparePanel.classList.toggle("is-hidden", !showCompare);
+  els.monthlyPanel.classList.toggle("is-hidden", showCompare);
+  renderComparePanel();
+  renderMonthlyPanel();
+}
+
+function renderHeader() {
   const currentRow = state.currentRow;
   const previousRow = state.previousRow;
   els.compareEyebrow.textContent = state.config.label;
   els.compareBackLink.href = state.config.annualHref;
   els.compareBackLink.textContent = state.config.annualLabel;
+
   if (!currentRow) {
-    els.compareTitle.textContent = "前年比較ダッシュボード";
+    els.compareTitle.textContent = "選手成績ビュー";
     els.compareSubtitle.textContent = "";
     els.comparePlayerName.textContent = "選手が見つかりません";
     els.compareDescription.textContent = state.error || "リンク条件に合う成績がありません。";
-    els.compareSeasonGrid.innerHTML = "";
-    document.title = "前年比較ダッシュボード";
+    document.title = "選手成績ビュー";
     return;
   }
-  const previousLabel = previousRow ? seasonLabel(previousRow) : "前年データなし";
-  els.compareTitle.textContent = `${currentRow.player} 前年比較`;
+
+  const monthlyAvailable = monthlySplits().length > 0;
+  els.compareTitle.textContent = `${currentRow.player} 成績ビュー`;
   els.compareSubtitle.textContent = `${currentRow.year}年度 ${state.config.label}`;
   els.comparePlayerName.textContent = currentRow.player;
   els.compareDescription.textContent = previousRow
-    ? `${previousLabel} と ${seasonLabel(currentRow)} の成績差分`
-    : `${seasonLabel(currentRow)} の前年データはまだありません`;
-  document.title = `${currentRow.player} | 前年比較`;
-  els.compareSeasonGrid.innerHTML = [
-    renderSeasonCard(previousRow, state.config, previousLabel),
-    renderSeasonCard(currentRow, state.config, seasonLabel(currentRow)),
-  ].join("");
+    ? `${seasonLabel(previousRow)}との比較と、${monthlyAvailable ? `${seasonLabel(currentRow)}の月別推移` : `${seasonLabel(currentRow)}の月別データなし`}を切り替えて表示できます。`
+    : `${seasonLabel(currentRow)}の成績を表示しています。${monthlyAvailable ? "月別推移も表示できます。" : "この年度の月別データはありません。"}`;
+  document.title = `${currentRow.player} | 成績ビュー`;
 }
 
 async function init() {
   const params = currentParams();
   state.config = TYPE_CONFIG[params.get("type")] || TYPE_CONFIG.pitcher;
   state.activeMetricKeys = state.config.metrics.filter((metric) => metric.default).map((metric) => metric.key);
+
   try {
     const response = await fetch(state.config.datasetUrl, { cache: "no-store" });
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
@@ -389,11 +825,13 @@ async function init() {
       state.error = "リンク先の選手データが見つかりませんでした。";
     }
   } catch (error) {
-    state.error = error.message || "前年比較データの取得に失敗しました。";
+    state.error = error.message || "成績データの取得に失敗しました。";
   }
-  renderSummary();
+
+  renderHeader();
+  renderModeToggles();
   renderMetricToggles();
-  renderComparisonCards();
+  renderPanels();
 }
 
 init();

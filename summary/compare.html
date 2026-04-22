@@ -3,16 +3,16 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>前年比較ダッシュボード</title>
-  <link rel="stylesheet" href="./styles.css?v=20260421-05">
+  <title>選手成績ビュー</title>
+  <link rel="stylesheet" href="./styles.css?v=20260422-04">
 </head>
 <body>
   <div class="site-shell">
     <header class="hero">
       <div class="hero-bar">
         <div class="hero-copy">
-          <p id="compareEyebrow" class="hero-kicker">Year Over Year</p>
-          <h1 id="compareTitle">前年比較ダッシュボード</h1>
+          <p id="compareEyebrow" class="hero-kicker">Player View</p>
+          <h1 id="compareTitle">選手成績ビュー</h1>
           <p id="compareSubtitle" class="compare-subtitle"></p>
         </div>
         <nav class="hero-nav" aria-label="ページ移動">
@@ -33,20 +33,31 @@
           </div>
           <a id="compareBackLink" class="action-link secondary compare-back-link" href="./annual.html">年度別成績へ戻る</a>
         </div>
-        <div id="compareSeasonGrid" class="season-meta-grid"></div>
+        <div id="modeToggleGroup" class="compare-mode-group"></div>
+        <div id="metricToggleGroup" class="compare-toggle-group"></div>
       </section>
 
-      <section class="panel-block">
+      <section id="comparePanel" class="panel-block">
         <div class="section-head compare-head">
-          <h2>比較指標</h2>
+          <h2>前年比較</h2>
           <span id="compareMetricCount" class="result-count">0項目</span>
         </div>
-        <div id="metricToggleGroup" class="compare-toggle-group"></div>
+        <div id="compareSeasonGrid" class="season-meta-grid"></div>
         <div id="compareCardGrid" class="comparison-card-grid"></div>
+      </section>
+
+      <section id="monthlyPanel" class="panel-block is-hidden">
+        <div class="section-head compare-head">
+          <h2>月別成績</h2>
+          <span id="monthlyMetricCount" class="result-count">0項目</span>
+        </div>
+        <div id="monthlySeasonGrid" class="season-meta-grid"></div>
+        <div id="monthlyTableWrap" class="monthly-table-wrap"></div>
+        <div id="monthlyChartGrid" class="monthly-chart-grid"></div>
       </section>
     </main>
   </div>
 
-  <script src="./compare.js?v=20260421-06"></script>
+  <script defer src="./compare.js?v=20260422-04"></script>
 </body>
 </html>

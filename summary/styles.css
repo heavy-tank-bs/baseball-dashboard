@@ -1241,6 +1241,39 @@ select {
   text-decoration: underline;
 }
 
+.summary-hero {
+  gap: 16px;
+  margin-bottom: 18px;
+  padding: 24px 28px;
+}
+
+.summary-hero .hero-bar {
+  align-items: center;
+}
+
+.summary-hero .hero-copy {
+  display: grid;
+  gap: 4px;
+}
+
+.summary-hero .hero-nav {
+  align-self: center;
+}
+
+.summary-hero .hero-kicker {
+  margin-bottom: 0;
+}
+
+.summary-hero h1 {
+  font-size: clamp(30px, 3.4vw, 46px);
+}
+
+.hero-subtitle {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.74);
+  line-height: 1.6;
+}
+
 .compare-subtitle {
   margin: 8px 0 0;
   color: var(--muted);
@@ -1257,6 +1290,38 @@ select {
 
 .compare-back-link {
   flex: none;
+}
+
+.is-hidden {
+  display: none !important;
+}
+
+.compare-mode-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 18px 0 14px;
+}
+
+.compare-mode-button {
+  padding: 11px 16px;
+  border: 1px solid rgba(15, 35, 64, 0.12);
+  border-radius: 999px;
+  background: white;
+  color: var(--text);
+  cursor: pointer;
+  transition: transform 120ms ease, border-color 120ms ease, background 120ms ease, color 120ms ease;
+}
+
+.compare-mode-button:hover {
+  transform: translateY(-1px);
+  border-color: rgba(15, 35, 64, 0.28);
+}
+
+.compare-mode-button.active {
+  background: var(--gold);
+  border-color: rgba(157, 103, 7, 0.22);
+  color: var(--text);
 }
 
 .compare-toggle-group {
@@ -1394,6 +1459,140 @@ select {
 
 .compare-empty {
   min-height: 180px;
+}
+
+.monthly-table-wrap {
+  margin-top: 8px;
+}
+
+.monthly-table-shell {
+  margin-bottom: 18px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  border: 1px solid rgba(15, 35, 64, 0.08);
+  border-radius: 20px;
+  background: white;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.65);
+}
+
+.monthly-table {
+  border-collapse: separate;
+  border-spacing: 0;
+  width: max-content;
+  min-width: 100%;
+  table-layout: fixed;
+}
+
+.monthly-table th,
+.monthly-table td {
+  min-width: 108px;
+  padding: 12px 10px;
+  border-bottom: 1px solid rgba(15, 35, 64, 0.08);
+  white-space: nowrap;
+  font-size: 13px;
+  text-align: center;
+  background: white;
+}
+
+.monthly-table th {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  color: var(--muted);
+  font-size: 12px;
+  background: var(--card-strong);
+}
+
+.monthly-table th:first-child,
+.monthly-table td:first-child {
+  position: sticky;
+  left: 0;
+  min-width: 88px;
+  box-shadow: inset -1px 0 0 rgba(15, 35, 64, 0.08);
+}
+
+.monthly-table th:first-child {
+  z-index: 4;
+  background: var(--card-strong);
+}
+
+.monthly-table td:first-child {
+  z-index: 1;
+  font-weight: 700;
+  background: #fbf8f1;
+}
+
+.monthly-table tbody tr:last-child td,
+.monthly-table tbody tr:last-child th {
+  border-bottom: 0;
+}
+
+.monthly-chart-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.monthly-chart-card {
+  overflow: hidden;
+}
+
+.monthly-chart-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.monthly-chart-head span {
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.monthly-chart-head strong {
+  font-size: 1.35rem;
+}
+
+.monthly-chart {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.monthly-chart-axis {
+  stroke: rgba(15, 35, 64, 0.14);
+  stroke-width: 1;
+}
+
+.monthly-chart-line {
+  fill: none;
+  stroke: var(--navy);
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.monthly-chart-point {
+  fill: var(--gold);
+  stroke: white;
+  stroke-width: 2;
+}
+
+.monthly-chart-axis-label,
+.monthly-chart-range-label,
+.monthly-chart-point-label {
+  fill: var(--muted);
+  font-size: 11px;
+}
+
+.monthly-chart-point-label {
+  fill: var(--text);
+  font-weight: 700;
+}
+
+.monthly-chart-empty {
+  min-height: 220px;
 }
 
 .annual-note {
@@ -1682,11 +1881,12 @@ select {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
-  .meta-grid,
-  .comparison-card-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    .meta-grid,
+  .comparison-card-grid,
+  .monthly-chart-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
   }
-}
 
 @media (max-width: 760px) {
   :root {
@@ -1710,7 +1910,8 @@ select {
   .result-stats,
   .meta-grid,
   .outcome-grid,
-  .comparison-card-grid {
+  .comparison-card-grid,
+  .monthly-chart-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -1736,6 +1937,7 @@ select {
   }
 
   .filters-grid,
+  .compare-mode-group,
   .season-meta-grid {
     grid-template-columns: 1fr;
   }
@@ -1764,8 +1966,25 @@ select {
     font-size: 14px;
   }
 
+  .summary-hero {
+    padding: 20px;
+  }
+
+  .summary-hero .hero-bar {
+    align-items: flex-start;
+  }
+
   .comparison-card-grid {
     grid-template-columns: 1fr;
+  }
+
+  .monthly-chart-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .monthly-chart-head {
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   .page-tabs {

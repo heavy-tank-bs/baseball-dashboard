@@ -460,6 +460,497 @@ def weighted_park_factor(
     return raw_factor, effective_factor
 
 
+def month_key_from_date(value: str | None) -> str:
+    text_value = str(value or "").strip()
+    if re.match(r"^\d{4}-\d{2}", text_value):
+        return text_value[:7]
+    return ""
+
+
+def month_label(month_key: str) -> str:
+    parts = str(month_key or "").split("-", 1)
+    month_number = parse_int(parts[1]) if len(parts) == 2 else 0
+    return f"{month_number}月" if month_number else str(month_key or "-")
+
+
+def build_pitcher_monthly_splits(entries: list[dict], game_decisions: dict[str, dict]) -> dict[tuple[str, str], list[dict]]:
+    league_totals: dict[tuple[str, str], dict] = defaultdict(
+        lambda: {
+            "outs": 0,
+            "earnedRuns": 0,
+            "homeRuns": 0,
+            "unintentionalWalks": 0,
+            "hitByPitch": 0,
+            "strikeouts": 0,
+        }
+    )
+    players: dict[tuple[str, str], dict[str, dict]] = defaultdict(dict)
+
+    def empty_bucket(entry: dict, year: str, month: str, pitcher_key: str, league: str) -> dict:
+        return {
+            "year": year,
+            "month": month,
+            "monthLabel": month_label(month),
+            "_bucketKey": pitcher_key,
+            "pitcherId": entry.get("pitcherId") or "",
+            "player": entry.get("player", ""),
+            "league": league,
+            "teams": set(),
+            "games": 0,
+            "wins": 0,
+            "losses": 0,
+            "saves": 0,
+            "holds": 0,
+            "outs": 0,
+            "batters": 0,
+            "pitches": 0,
+            "hits": 0,
+            "homeRuns": 0,
+            "strikeouts": 0,
+            "walks": 0,
+            "unintentionalWalks": 0,
+            "intentionalWalks": 0,
+            "hitByPitch": 0,
+            "balks": 0,
+            "runs": 0,
+            "earnedRuns": 0,
+            "atBats": 0,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "grounders": 0,
+            "flyBalls": 0,
+            "swingMisses": 0,
+            "lookingStrikeouts": 0,
+            "swingingStrikeouts": 0,
+            "sacrificeBunts": 0,
+            "interference": 0,
+            "hasPitchCount": False,
+        }
+
+    def finalize_bucket(bucket: dict, fip_constant: float | None) -> dict:
+        outs = bucket["outs"]
+        ip = outs_to_ip(outs)
+        teams = sorted(bucket["teams"], key=team_sort_key)
+        at_bats = bucket["atBats"]
+        batting_average = bucket["hits"] / at_bats if at_bats else None
+        era = 9 * bucket["earnedRuns"] / ip if ip else None
+        whip = (bucket["hits"] + bucket["walks"]) / ip if ip else None
+        k_per_9 = 27 * bucket["strikeouts"] / outs if outs else None
+        bb_per_9 = 27 * bucket["walks"] / outs if outs else None
+        h_per_9 = 27 * bucket["hits"] / outs if outs else None
+        hr_per_9 = 27 * bucket["homeRuns"] / outs if outs else None
+        k_bb = bucket["strikeouts"] / bucket["walks"] if bucket["walks"] else None
+        go_fo = bucket["grounders"] / bucket["flyBalls"] if bucket["flyBalls"] else None
+        out_event_total = (
+            bucket["grounders"]
+            + bucket["flyBalls"]
+            + bucket["lookingStrikeouts"]
+            + bucket["swingingStrikeouts"]
+            + bucket["sacrificeBunts"]
+            + bucket["interference"]
+        )
+        ground_out_rate = bucket["grounders"] / out_event_total * 100 if out_event_total else None
+        fly_out_rate = bucket["flyBalls"] / out_event_total * 100 if out_event_total else None
+        if go_fo is None and ground_out_rate is not None and fly_out_rate not in (None, 0):
+            go_fo = ground_out_rate / fly_out_rate
+        whiff_rate = bucket["swingMisses"] / bucket["pitches"] * 100 if bucket["hasPitchCount"] and bucket["pitches"] else None
+        fip = (
+            (((13 * bucket["homeRuns"]) + (3 * (bucket["unintentionalWalks"] + bucket["hitByPitch"])) - (2 * bucket["strikeouts"])) / ip) + fip_constant
+            if ip and fip_constant is not None
+            else None
+        )
+        return {
+            "year": bucket["year"],
+            "month": bucket["month"],
+            "monthLabel": bucket["monthLabel"],
+            "pitcherId": bucket["pitcherId"],
+            "player": bucket["player"],
+            "team": teams[0] if len(teams) == 1 else " / ".join(teams),
+            "teams": teams,
+            "league": bucket["league"],
+            "games": bucket["games"],
+            "wins": bucket["wins"],
+            "losses": bucket["losses"],
+            "saves": bucket["saves"],
+            "holds": bucket["holds"],
+            "innings": outs_to_innings_notation(outs),
+            "inningsOuts": outs,
+            "batters": bucket["batters"],
+            "pitches": bucket["pitches"] if bucket["hasPitchCount"] else None,
+            "hasPitchCount": bool(bucket["hasPitchCount"]),
+            "hits": bucket["hits"],
+            "homeRuns": bucket["homeRuns"],
+            "strikeouts": bucket["strikeouts"],
+            "walks": bucket["walks"],
+            "unintentionalWalks": bucket["unintentionalWalks"],
+            "intentionalWalks": bucket["intentionalWalks"],
+            "hitByPitch": bucket["hitByPitch"],
+            "balks": bucket["balks"],
+            "runs": bucket["runs"],
+            "earnedRuns": bucket["earnedRuns"],
+            "atBats": bucket["atBats"],
+            "singles": bucket["singles"],
+            "doubles": bucket["doubles"],
+            "triples": bucket["triples"],
+            "grounders": bucket["grounders"],
+            "flyBalls": bucket["flyBalls"],
+            "swingMisses": bucket["swingMisses"],
+            "lookingStrikeouts": bucket["lookingStrikeouts"],
+            "swingingStrikeouts": bucket["swingingStrikeouts"],
+            "sacrificeBunts": bucket["sacrificeBunts"],
+            "interference": bucket["interference"],
+            "era": round_or_none(era, 2),
+            "whip": round_or_none(whip, 2),
+            "kPer9": round_or_none(k_per_9, 2),
+            "bbPer9": round_or_none(bb_per_9, 2),
+            "hPer9": round_or_none(h_per_9, 2),
+            "hrPer9": round_or_none(hr_per_9, 2),
+            "kBb": round_or_none(k_bb, 2),
+            "fip": round_or_none(fip, 2),
+            "fipConstant": round_or_none(fip_constant, 4),
+            "battingAverageAllowed": round_or_none(batting_average, 3),
+            "goFo": round_or_none(go_fo, 2),
+            "groundOutRate": round_or_none(ground_out_rate, 1),
+            "flyOutRate": round_or_none(fly_out_rate, 1),
+            "whiffRate": round_or_none(whiff_rate, 1),
+        }
+
+    for entry in entries:
+        date = entry.get("date") or ""
+        year = str(date)[:4] or "unknown"
+        month = month_key_from_date(date)
+        if not month:
+            continue
+        statline = entry.get("statline") or {}
+        dashboard = entry.get("dashboard") or {}
+        league = entry.get("league") or team_league(entry.get("team", ""))
+        pitcher_key = entry.get("pitcherId") or f"{entry.get('team', '')}::{entry.get('player', '')}"
+        outs = innings_to_outs(statline.get("innings"))
+        pitch_rows = dashboard.get("pitchMix") or []
+        outcome_rows = {row.get("id"): parse_int(row.get("count")) for row in (dashboard.get("outcomes", {}).get("rows") or [])}
+        intentional_walks = max(parse_int(dashboard.get("intentionalWalks")), 0)
+        unintentional_walks = max(parse_int(statline.get("bb")) - intentional_walks, 0)
+
+        league_bucket = league_totals[(year, league)]
+        league_bucket["outs"] += outs
+        league_bucket["earnedRuns"] += parse_int(statline.get("er"))
+        league_bucket["homeRuns"] += parse_int(statline.get("hr"))
+        league_bucket["unintentionalWalks"] += unintentional_walks
+        league_bucket["hitByPitch"] += parse_int(statline.get("hbp"))
+        league_bucket["strikeouts"] += parse_int(statline.get("k"))
+
+        month_bucket = players[(year, pitcher_key)].setdefault(month, empty_bucket(entry, year, month, pitcher_key, league))
+        if entry.get("team"):
+            month_bucket["teams"].add(entry["team"])
+        decision_row = resolve_game_decision(entry, game_decisions)
+        month_bucket["games"] += 1
+        month_bucket["wins"] += parse_int(decision_row.get("wins"))
+        month_bucket["losses"] += parse_int(decision_row.get("losses"))
+        month_bucket["saves"] += parse_int(decision_row.get("saves"))
+        month_bucket["holds"] += parse_int(decision_row.get("holds"))
+        month_bucket["outs"] += outs
+        month_bucket["batters"] += parse_int(statline.get("batters"))
+        pitch_count = parse_int(statline.get("pitches"))
+        month_bucket["pitches"] += pitch_count
+        month_bucket["hasPitchCount"] = month_bucket["hasPitchCount"] or pitch_count > 0
+        month_bucket["hits"] += parse_int(statline.get("hits"))
+        month_bucket["homeRuns"] += parse_int(statline.get("hr"))
+        month_bucket["strikeouts"] += parse_int(statline.get("k"))
+        month_bucket["walks"] += parse_int(statline.get("bb"))
+        month_bucket["unintentionalWalks"] += unintentional_walks
+        month_bucket["intentionalWalks"] += intentional_walks
+        month_bucket["hitByPitch"] += parse_int(statline.get("hbp"))
+        month_bucket["balks"] += parse_int(statline.get("balk"))
+        month_bucket["runs"] += parse_int(statline.get("runs"))
+        month_bucket["earnedRuns"] += parse_int(statline.get("er"))
+        month_bucket["atBats"] += sum(parse_int(row.get("atBats")) for row in pitch_rows)
+        month_bucket["singles"] += sum(parse_int(row.get("singles")) for row in pitch_rows)
+        month_bucket["doubles"] += sum(parse_int(row.get("doubles")) for row in pitch_rows)
+        month_bucket["triples"] += sum(parse_int(row.get("triples")) for row in pitch_rows)
+        month_bucket["grounders"] += sum(parse_int(row.get("grounders")) for row in pitch_rows)
+        month_bucket["flyBalls"] += sum(parse_int(row.get("flyBalls")) for row in pitch_rows)
+        month_bucket["swingMisses"] += sum(parse_int(row.get("whiffCount")) for row in pitch_rows)
+        month_bucket["lookingStrikeouts"] += outcome_rows.get("lookingStrikeouts", 0)
+        month_bucket["swingingStrikeouts"] += outcome_rows.get("swingingStrikeouts", 0)
+        month_bucket["sacrificeBunts"] += outcome_rows.get("sacrificeBunts", 0)
+        month_bucket["interference"] += outcome_rows.get("interference", 0)
+
+    league_constants: dict[tuple[str, str], float | None] = {}
+    for (year, league), stats in league_totals.items():
+        ip = outs_to_ip(stats["outs"])
+        era = 9 * stats["earnedRuns"] / ip if ip else None
+        component = (
+            ((13 * stats["homeRuns"]) + (3 * (stats["unintentionalWalks"] + stats["hitByPitch"])) - (2 * stats["strikeouts"])) / ip
+            if ip
+            else None
+        )
+        league_constants[(year, league)] = (era - component) if era is not None and component is not None else None
+
+    monthly_rows: dict[tuple[str, str], list[dict]] = {}
+    for key, month_buckets in players.items():
+        rows = []
+        for month in sorted(month_buckets):
+            bucket = month_buckets[month]
+            rows.append(finalize_bucket(bucket, league_constants.get((bucket["year"], bucket["league"]))))
+        monthly_rows[key] = rows
+    return monthly_rows
+
+
+def build_batter_monthly_splits(
+    entries: list[dict],
+    batting_stats_by_game: dict[str, dict[str, dict]],
+    batter_entries: list[dict],
+    park_factors: dict,
+) -> dict[tuple[str, str], list[dict]]:
+    is_ab_result = getattr(DASHBOARD, "is_ab_result", lambda value: True)
+    classify_plate_appearance_result = getattr(DASHBOARD, "classify_plate_appearance_result", lambda value: None)
+    game_dates: dict[str, str] = {}
+    players: dict[tuple[str, str], dict[str, dict]] = defaultdict(dict)
+    sacrifice_flies_by_player: dict[tuple[str, str, str], int] = defaultdict(int)
+    intentional_walks_by_player: dict[tuple[str, str, str], int] = defaultdict(int)
+
+    def empty_bucket(year: str, month: str, team: str, league: str, batter_id: str, player_name: str, bucket_key: str) -> dict:
+        return {
+            "year": year,
+            "month": month,
+            "monthLabel": month_label(month),
+            "batterId": batter_id,
+            "player": player_name,
+            "_bucketKey": bucket_key,
+            "teams": set([team] if team else []),
+            "league": league,
+            "games": 0,
+            "plateAppearances": 0,
+            "atBats": 0,
+            "runs": 0,
+            "hits": 0,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "runsBattedIn": 0,
+            "walks": 0,
+            "unintentionalWalks": 0,
+            "intentionalWalks": 0,
+            "hitByPitch": 0,
+            "sacBunts": 0,
+            "sacFlies": 0,
+            "steals": 0,
+            "strikeouts": 0,
+            "_plateAppearancesByTeam": {},
+        }
+
+    def finalize_bucket(bucket: dict, park_factor_index: dict[str, dict], league_contexts: dict[tuple[str, str, str], dict]) -> dict:
+        teams = sorted(bucket["teams"], key=team_sort_key)
+        total_bases = bucket["singles"] + bucket["doubles"] * 2 + bucket["triples"] * 3 + bucket["homeRuns"] * 4
+        batting_average = bucket["hits"] / bucket["atBats"] if bucket["atBats"] else None
+        on_base_denominator = bucket["atBats"] + bucket["walks"] + bucket["hitByPitch"] + bucket["sacFlies"]
+        on_base_percentage = (
+            (bucket["hits"] + bucket["walks"] + bucket["hitByPitch"]) / on_base_denominator
+            if on_base_denominator > 0
+            else None
+        )
+        slugging = total_bases / bucket["atBats"] if bucket["atBats"] else None
+        iso_discipline = (on_base_percentage - batting_average) if on_base_percentage is not None and batting_average is not None else None
+        iso_power = (slugging - batting_average) if slugging is not None and batting_average is not None else None
+        ops = (on_base_percentage + slugging) if on_base_percentage is not None and slugging is not None else None
+        babip_denominator = bucket["atBats"] - bucket["strikeouts"] - bucket["homeRuns"] + bucket["sacFlies"]
+        babip = ((bucket["hits"] - bucket["homeRuns"]) / babip_denominator) if babip_denominator > 0 else None
+        constants = get_woba_constants(bucket["year"])
+        league_context = league_contexts.get((bucket["year"], bucket["league"], bucket["month"])) or {}
+        player_woba = calculate_woba(bucket, constants)
+        raw_park_factor, effective_park_factor = weighted_park_factor(
+            bucket["_plateAppearancesByTeam"],
+            park_factor_index.get(bucket["year"], {}),
+        )
+        league_woba = league_context.get("woba")
+        league_runs_per_pa = league_context.get("runsPerPlateAppearance")
+        woba_scale = league_context.get("wobaScale") or (constants.get("wOBAScale") if constants else None)
+        runs_above_average_per_pa = (
+            (player_woba - league_woba) / woba_scale
+            if player_woba is not None and league_woba is not None and woba_scale not in (None, 0)
+            else None
+        )
+        wrc = (
+            ((runs_above_average_per_pa + league_runs_per_pa) * bucket["plateAppearances"])
+            if runs_above_average_per_pa is not None and league_runs_per_pa is not None and bucket["plateAppearances"] > 0
+            else None
+        )
+        park_adjustment = (
+            league_runs_per_pa - ((effective_park_factor / 100.0) * league_runs_per_pa)
+            if league_runs_per_pa is not None and effective_park_factor is not None
+            else None
+        )
+        wrc_plus = (
+            ((((runs_above_average_per_pa + league_runs_per_pa) + park_adjustment) / league_runs_per_pa) * 100)
+            if runs_above_average_per_pa is not None
+            and league_runs_per_pa not in (None, 0)
+            and park_adjustment is not None
+            else None
+        )
+        return {
+            "year": bucket["year"],
+            "month": bucket["month"],
+            "monthLabel": bucket["monthLabel"],
+            "batterId": bucket["batterId"],
+            "player": bucket["player"],
+            "team": teams[0] if len(teams) == 1 else " / ".join(teams),
+            "teams": teams,
+            "league": bucket["league"],
+            "games": bucket["games"],
+            "plateAppearances": bucket["plateAppearances"],
+            "atBats": bucket["atBats"],
+            "runs": bucket["runs"],
+            "hits": bucket["hits"],
+            "singles": bucket["singles"],
+            "doubles": bucket["doubles"],
+            "triples": bucket["triples"],
+            "homeRuns": bucket["homeRuns"],
+            "runsBattedIn": bucket["runsBattedIn"],
+            "walks": bucket["walks"],
+            "unintentionalWalks": bucket["unintentionalWalks"],
+            "intentionalWalks": bucket["intentionalWalks"],
+            "hitByPitch": bucket["hitByPitch"],
+            "sacBunts": bucket["sacBunts"],
+            "sacFlies": bucket["sacFlies"],
+            "steals": bucket["steals"],
+            "strikeouts": bucket["strikeouts"],
+            "battingAverage": round_or_none(batting_average, 3),
+            "onBasePercentage": round_or_none(on_base_percentage, 3),
+            "isoDiscipline": round_or_none(iso_discipline, 3),
+            "sluggingPercentage": round_or_none(slugging, 3),
+            "isoPower": round_or_none(iso_power, 3),
+            "babip": round_or_none(babip, 3),
+            "ops": round_or_none(ops, 3),
+            "wrc": round_or_none(wrc, 1),
+            "wrcPlus": round_or_none(wrc_plus, 1),
+            "parkFactor": round_or_none(raw_park_factor, 1),
+            "effectiveParkFactor": round_or_none(effective_park_factor, 1),
+        }
+
+    for entry in entries:
+        game_id = entry.get("gameId") or ""
+        date = entry.get("date") or ""
+        if game_id and date:
+            game_dates.setdefault(game_id, date)
+
+    for entry in batter_entries:
+        date = entry.get("date") or ""
+        year = str(date)[:4]
+        month = month_key_from_date(date)
+        if not year or not month:
+            continue
+        team = entry.get("team") or ""
+        batter_id = entry.get("batterId") or ""
+        player_name = entry.get("player") or ""
+        bucket_key = batter_id or f"{team}::{player_name}"
+        plate_rows = ((entry.get("dashboard") or {}).get("plateAppearances") or [])
+        sacrifice_flies_by_player[(year, bucket_key, month)] += sum(
+            1
+            for plate in plate_rows
+            if (plate.get("result") or "")
+            and not is_ab_result(plate.get("result") or "")
+            and classify_plate_appearance_result(plate.get("result") or "") == "flyballs"
+        )
+        intentional_walks_by_player[(year, bucket_key, month)] += sum(
+            1 for plate in plate_rows if is_intentional_walk_text(plate.get("result"))
+        )
+
+    for game_id, teams in batting_stats_by_game.items():
+        date = game_dates.get(game_id, "")
+        year = date[:4]
+        month = month_key_from_date(date)
+        if not year or not month:
+            continue
+        for team, rows in teams.items():
+            league = team_league(team)
+            for key, stats in rows.items():
+                if key != (stats.get("playerId") or stats.get("player")):
+                    continue
+                batter_id = stats.get("playerId") or ""
+                player_name = stats.get("player") or ""
+                player_key = batter_id or f"{team}::{player_name}"
+                bucket = players[(year, player_key)].setdefault(
+                    month,
+                    empty_bucket(year, month, team, league, batter_id, player_name, player_key),
+                )
+                bucket["teams"].add(team)
+                bucket["games"] += 1
+                bucket["plateAppearances"] += parse_int(stats.get("plateAppearances"))
+                bucket["atBats"] += parse_int(stats.get("ab"))
+                bucket["runs"] += parse_int(stats.get("runs"))
+                bucket["hits"] += parse_int(stats.get("hits"))
+                bucket["singles"] += parse_int(stats.get("singles"))
+                bucket["doubles"] += parse_int(stats.get("doubles"))
+                bucket["triples"] += parse_int(stats.get("triples"))
+                bucket["homeRuns"] += parse_int(stats.get("homeRuns"))
+                bucket["runsBattedIn"] += parse_int(stats.get("rbi"))
+                bucket["walks"] += parse_int(stats.get("walks"))
+                bucket["hitByPitch"] += parse_int(stats.get("hitByPitch"))
+                bucket["sacBunts"] += parse_int(stats.get("sacBunts"))
+                bucket["steals"] += parse_int(stats.get("steals"))
+                bucket["strikeouts"] += parse_int(stats.get("strikeouts"))
+                bucket["_plateAppearancesByTeam"][team] = (
+                    bucket["_plateAppearancesByTeam"].get(team, 0) + parse_int(stats.get("plateAppearances"))
+                )
+
+    finalized_buckets: list[dict] = []
+    for year_and_key, month_buckets in players.items():
+        year, player_key = year_and_key
+        for month, bucket in month_buckets.items():
+            bucket["teams"] = sorted(bucket["teams"], key=team_sort_key)
+            bucket["sacFlies"] = sacrifice_flies_by_player.get((year, player_key, month), 0)
+            bucket["intentionalWalks"] = intentional_walks_by_player.get((year, player_key, month), 0)
+            bucket["unintentionalWalks"] = max(bucket["walks"] - bucket["intentionalWalks"], 0)
+            finalized_buckets.append(bucket)
+
+    league_buckets: dict[tuple[str, str, str], dict] = defaultdict(
+        lambda: {
+            "plateAppearances": 0,
+            "runs": 0,
+            "atBats": 0,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "unintentionalWalks": 0,
+            "hitByPitch": 0,
+            "sacFlies": 0,
+        }
+    )
+    for bucket in finalized_buckets:
+        league_key = (bucket["year"], bucket["league"], bucket["month"])
+        league_bucket = league_buckets[league_key]
+        league_bucket["plateAppearances"] += bucket["plateAppearances"]
+        league_bucket["runs"] += bucket["runs"]
+        league_bucket["atBats"] += bucket["atBats"]
+        league_bucket["singles"] += bucket["singles"]
+        league_bucket["doubles"] += bucket["doubles"]
+        league_bucket["triples"] += bucket["triples"]
+        league_bucket["homeRuns"] += bucket["homeRuns"]
+        league_bucket["unintentionalWalks"] += bucket["unintentionalWalks"]
+        league_bucket["hitByPitch"] += bucket["hitByPitch"]
+        league_bucket["sacFlies"] += bucket["sacFlies"]
+
+    league_contexts: dict[tuple[str, str, str], dict] = {}
+    for (year, league, month), stats in league_buckets.items():
+        constants = get_woba_constants(year)
+        league_contexts[(year, league, month)] = {
+            "woba": calculate_woba(stats, constants),
+            "runsPerPlateAppearance": (stats["runs"] / stats["plateAppearances"]) if stats["plateAppearances"] else None,
+            "wobaScale": constants.get("wOBAScale") if constants else None,
+        }
+
+    park_factor_index = build_park_factor_index(park_factors)
+    monthly_rows: dict[tuple[str, str], list[dict]] = defaultdict(list)
+    for bucket in sorted(finalized_buckets, key=lambda item: (item["year"], item["month"], team_sort_key(item["teams"][0] if item["teams"] else ""), item["player"])):
+        key = (bucket["year"], bucket["_bucketKey"])
+        monthly_rows[key].append(finalize_bucket(bucket, park_factor_index, league_contexts))
+
+    return dict(monthly_rows)
+
+
 def is_intentional_walk_text(value: str | None) -> bool:
     normalize_result = getattr(DASHBOARD, "normalize_result", lambda raw: (raw or "").split("[", 1)[0].strip())
     normalized = normalize_result(value or "")
@@ -1354,6 +1845,7 @@ def build_park_factors(game_contexts: dict[str, dict]) -> dict:
 
 
 def build_player_totals(entries: list[dict], game_decisions: dict[str, dict]) -> dict:
+    monthly_splits_by_player = build_pitcher_monthly_splits(entries, game_decisions)
     league_totals: dict[tuple[str, str], dict] = defaultdict(
         lambda: {
             "games": 0,
@@ -1398,6 +1890,7 @@ def build_player_totals(entries: list[dict], game_decisions: dict[str, dict]) ->
             (year, pitcher_id),
             {
                 "year": year,
+                "_bucketKey": pitcher_id,
                 "pitcherId": entry.get("pitcherId") or "",
                 "player": entry.get("player", ""),
                 "league": league,
@@ -1503,6 +1996,7 @@ def build_player_totals(entries: list[dict], game_decisions: dict[str, dict]) ->
             bucket_key,
             {
                 "year": year,
+                "_bucketKey": bucket_key[1],
                 "pitcherId": "",
                 "player": player_name,
                 "league": league,
@@ -1705,6 +2199,7 @@ def build_player_totals(entries: list[dict], game_decisions: dict[str, dict]) ->
                 "groundOutRate": round_or_none(ground_out_rate, 1),
                 "flyOutRate": round_or_none(fly_out_rate, 1),
                 "whiffRate": round_or_none(whiff_rate, 1),
+                "monthlySplits": monthly_splits_by_player.get((player["year"], player["_bucketKey"]), []),
             }
         )
 
@@ -1727,6 +2222,7 @@ def build_batter_totals(
     batter_entries: list[dict],
     park_factors: dict,
 ) -> dict:
+    monthly_splits_by_player = build_batter_monthly_splits(entries, batting_stats_by_game, batter_entries, park_factors)
     is_ab_result = getattr(DASHBOARD, "is_ab_result", lambda value: True)
     classify_plate_appearance_result = getattr(DASHBOARD, "classify_plate_appearance_result", lambda value: None)
     players: dict[tuple[str, str], dict] = {}
@@ -2044,6 +2540,7 @@ def build_batter_totals(
                 "wrcPlus": round_or_none(wrc_plus, 1),
                 "parkFactor": round_or_none(raw_park_factor, 1),
                 "effectiveParkFactor": round_or_none(effective_park_factor, 1),
+                "monthlySplits": monthly_splits_by_player.get(player["_bucketKey"], []),
             }
         )
 
