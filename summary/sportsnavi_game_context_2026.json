@@ -1,22 +1,22 @@
 {
-  "updatedAt": "2026-04-22T22:31:05+09:00",
+  "updatedAt": "2026-04-24T00:13:43+09:00",
   "season": 2026,
-  "throughDate": "2026-04-22",
+  "throughDate": "2026-04-23",
   "source": {
     "schedule": "https://baseball.yahoo.co.jp/npb/schedule/?date=YYYY-MM-DD",
     "stats": "https://baseball.yahoo.co.jp/npb/game/{gameId}/stats",
     "intentionalWalkDetection": "Counts batting detail cells containing one of: 申告敬遠, 敬遠, 故意四球."
   },
   "summary": {
-    "scheduledGames": 134,
-    "completedGames": 129,
-    "canceledGames": 5,
+    "scheduledGames": 139,
+    "completedGames": 132,
+    "canceledGames": 7,
     "otherStatusGames": 0,
     "gamesWithIntentionalWalks": 0,
     "intentionalWalkPlateAppearances": 0,
     "statusCounts": {
-      "試合終了": 129,
-      "試合中止": 5
+      "試合終了": 132,
+      "試合中止": 7
     },
     "fetchErrors": 0
   },
@@ -3632,6 +3632,90 @@
           }
         }
       }
+    },
+    {
+      "date": "2026-04-23",
+      "gameId": "2021038757",
+      "status": "試合終了",
+      "stadium": "マツダスタジアム",
+      "homeTeam": "広島東洋カープ",
+      "awayTeam": "東京ヤクルトスワローズ",
+      "homeScore": 0,
+      "awayScore": 2,
+      "totalRuns": 2,
+      "scheduleUrl": "https://baseball.yahoo.co.jp/npb/schedule/?date=2026-04-23",
+      "statsUrl": "https://baseball.yahoo.co.jp/npb/game/2021038757/stats",
+      "intentionalWalks": {
+        "total": 0,
+        "teams": {
+          "東京ヤクルトスワローズ": {
+            "team": "東京ヤクルトスワローズ",
+            "intentionalWalks": 0,
+            "players": []
+          },
+          "広島東洋カープ": {
+            "team": "広島東洋カープ",
+            "intentionalWalks": 0,
+            "players": []
+          }
+        }
+      }
+    },
+    {
+      "date": "2026-04-23",
+      "gameId": "2021038758",
+      "status": "試合終了",
+      "stadium": "エスコンF",
+      "homeTeam": "北海道日本ハムファイターズ",
+      "awayTeam": "東北楽天ゴールデンイーグルス",
+      "homeScore": 2,
+      "awayScore": 3,
+      "totalRuns": 5,
+      "scheduleUrl": "https://baseball.yahoo.co.jp/npb/schedule/?date=2026-04-23",
+      "statsUrl": "https://baseball.yahoo.co.jp/npb/game/2021038758/stats",
+      "intentionalWalks": {
+        "total": 0,
+        "teams": {
+          "東北楽天ゴールデンイーグルス": {
+            "team": "東北楽天ゴールデンイーグルス",
+            "intentionalWalks": 0,
+            "players": []
+          },
+          "北海道日本ハムファイターズ": {
+            "team": "北海道日本ハムファイターズ",
+            "intentionalWalks": 0,
+            "players": []
+          }
+        }
+      }
+    },
+    {
+      "date": "2026-04-23",
+      "gameId": "2021038759",
+      "status": "試合終了",
+      "stadium": "ベルーナドーム",
+      "homeTeam": "埼玉西武ライオンズ",
+      "awayTeam": "福岡ソフトバンクホークス",
+      "homeScore": 3,
+      "awayScore": 4,
+      "totalRuns": 7,
+      "scheduleUrl": "https://baseball.yahoo.co.jp/npb/schedule/?date=2026-04-23",
+      "statsUrl": "https://baseball.yahoo.co.jp/npb/game/2021038759/stats",
+      "intentionalWalks": {
+        "total": 0,
+        "teams": {
+          "福岡ソフトバンクホークス": {
+            "team": "福岡ソフトバンクホークス",
+            "intentionalWalks": 0,
+            "players": []
+          },
+          "埼玉西武ライオンズ": {
+            "team": "埼玉西武ライオンズ",
+            "intentionalWalks": 0,
+            "players": []
+          }
+        }
+      }
     }
   ],
   "canceledGames": [
@@ -3698,6 +3782,32 @@
       "awayScore": null,
       "scheduleUrl": "https://baseball.yahoo.co.jp/npb/schedule/?date=2026-04-15",
       "statsUrl": "https://baseball.yahoo.co.jp/npb/game/2021038717/stats",
+      "totalRuns": null
+    },
+    {
+      "date": "2026-04-23",
+      "gameId": "2021038756",
+      "status": "試合中止",
+      "stadium": "横浜",
+      "homeTeam": "横浜DeNAベイスターズ",
+      "awayTeam": "阪神タイガース",
+      "homeScore": null,
+      "awayScore": null,
+      "scheduleUrl": "https://baseball.yahoo.co.jp/npb/schedule/?date=2026-04-23",
+      "statsUrl": "https://baseball.yahoo.co.jp/npb/game/2021038756/stats",
+      "totalRuns": null
+    },
+    {
+      "date": "2026-04-23",
+      "gameId": "2021038760",
+      "status": "試合中止",
+      "stadium": "ZOZOマリン",
+      "homeTeam": "千葉ロッテマリーンズ",
+      "awayTeam": "オリックス・バファローズ",
+      "homeScore": null,
+      "awayScore": null,
+      "scheduleUrl": "https://baseball.yahoo.co.jp/npb/schedule/?date=2026-04-23",
+      "statsUrl": "https://baseball.yahoo.co.jp/npb/game/2021038760/stats",
       "totalRuns": null
     }
   ],
