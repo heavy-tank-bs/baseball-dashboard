@@ -1,0 +1,40 @@
+{
+  "game_id": "2021038761",
+  "metadata": {
+    "date_jp": "2026年4月24日",
+    "matchup": "横浜DeNAベイスターズvs読売ジャイアンツ"
+  },
+  "statline": {
+    "player": "坂本 裕哉",
+    "era": "3.00",
+    "innings": "0.1",
+    "pitches": "1",
+    "batters": "1",
+    "hits": "0",
+    "hr": "0",
+    "k": "0",
+    "bb": "0",
+    "hbp": "0",
+    "balk": "0",
+    "runs": "0",
+    "er": "0"
+  },
+  "pitches": [
+    {
+      "pa_index": "0710500",
+      "pitcher": "坂本 裕哉",
+      "pitcher_id": "1900031",
+      "pitcher_hand": "左",
+      "batter": "皆川 岳飛",
+      "batter_id": "2102672",
+      "batter_hand": "左",
+      "seq": "1",
+      "pitchNo": "1",
+      "pitchType": "カットボール",
+      "speed": "132km/h",
+      "result": "二ゴロ [好リリーフ]",
+      "top": 30.24,
+      "left": 31.32
+    }
+  ]
+}
