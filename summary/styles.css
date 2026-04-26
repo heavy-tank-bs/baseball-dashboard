@@ -1634,6 +1634,65 @@ select {
   min-height: 220px;
 }
 
+.season-detail-wrap {
+  margin-top: 18px;
+}
+
+.season-detail-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.season-card-wide {
+  grid-column: 1 / -1;
+}
+
+.season-stack-bar {
+  margin-bottom: 18px;
+}
+
+.season-pitch-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.season-table {
+  min-width: 100%;
+  width: max-content;
+}
+
+.season-table th,
+.season-table td {
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+.season-pitch-summary-table {
+  min-width: 1280px;
+}
+
+.season-inning-table {
+  min-width: 1120px;
+}
+
+.recent-game-table {
+  min-width: 1120px;
+}
+
+.season-matchup-cell {
+  max-width: 280px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: left !important;
+}
+
+.season-outcome-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 18px;
+}
+
 .annual-note {
   margin: 0 0 18px;
   color: var(--muted);
@@ -1895,7 +1954,8 @@ select {
   .page-heat,
   .page-three,
   .outcome-dashboard,
-  .heatmap-grid {
+  .heatmap-grid,
+  .season-detail-grid {
     grid-template-columns: 1fr;
   }
 
@@ -1920,12 +1980,13 @@ select {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
-    .meta-grid,
+  .meta-grid,
   .comparison-card-grid,
-  .monthly-chart-grid {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
+  .monthly-chart-grid,
+  .season-pitch-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+}
 
 @media (max-width: 760px) {
   :root {
@@ -1955,6 +2016,11 @@ select {
   }
 
   .pitch-card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .season-pitch-grid,
+  .season-outcome-grid {
     grid-template-columns: 1fr;
   }
 

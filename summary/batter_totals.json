@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-04-26T21:57:39",
+  "updatedAt": "2026-04-26T22:22:43",
   "source": "Sports Navi game batting tables for games present under generated/*/*/*-dashboard.json + 元データ/*_打撃成績.csv",
   "notes": {
     "uBB": "Unintentional walks are derived from generated plate-appearance results when an intentional-walk label is present.",

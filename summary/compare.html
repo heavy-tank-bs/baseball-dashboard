@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>選手成績ビュー</title>
-  <link rel="stylesheet" href="./styles.css?v=20260422-04">
+  <link rel="stylesheet" href="./styles.css?v=20260426-01">
 </head>
 <body>
   <div class="site-shell">
@@ -37,6 +37,14 @@
         <div id="metricToggleGroup" class="compare-toggle-group"></div>
       </section>
 
+      <section id="seasonPanel" class="panel-block is-hidden">
+        <div class="section-head compare-head">
+          <h2>年度成績</h2>
+          <span id="seasonMetricCount" class="result-count">0球</span>
+        </div>
+        <div id="seasonDetailWrap" class="season-detail-wrap"></div>
+      </section>
+
       <section id="comparePanel" class="panel-block">
         <div class="section-head compare-head">
           <h2>前年比較</h2>
@@ -58,6 +66,6 @@
     </main>
   </div>
 
-  <script defer src="./compare.js?v=20260422-04"></script>
+  <script defer src="./compare.js?v=20260426-01"></script>
 </body>
 </html>

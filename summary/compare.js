@@ -1,7 +1,7 @@
 const TYPE_CONFIG = {
   pitcher: {
     label: "投手",
-    datasetUrl: "./player_totals.json?v=20260422-01",
+    datasetUrl: "./player_totals.json?v=20260426-01",
     annualHref: "./annual.html",
     annualLabel: "年度別投手成績へ戻る",
     idKey: "pitcherId",
@@ -59,6 +59,7 @@ const TYPE_CONFIG = {
 };
 
 const MODE_CONFIG = {
+  season: { label: "年度成績", pitcherOnly: true },
   compare: { label: "前年比較" },
   monthly: { label: "月別成績" },
 };
@@ -95,6 +96,9 @@ const els = {
   compareBackLink: document.getElementById("compareBackLink"),
   modeToggleGroup: document.getElementById("modeToggleGroup"),
   metricToggleGroup: document.getElementById("metricToggleGroup"),
+  seasonPanel: document.getElementById("seasonPanel"),
+  seasonMetricCount: document.getElementById("seasonMetricCount"),
+  seasonDetailWrap: document.getElementById("seasonDetailWrap"),
   comparePanel: document.getElementById("comparePanel"),
   compareMetricCount: document.getElementById("compareMetricCount"),
   compareSeasonGrid: document.getElementById("compareSeasonGrid"),
@@ -164,6 +168,30 @@ function formatMetricValue(metric, row) {
     default:
       return Number.isFinite(number) ? number.toFixed(metric.digits ?? 0) : `${value}`;
   }
+}
+
+function formatNumber(value, digits = 0) {
+  if (value === null || value === undefined || value === "") return "-";
+  const number = Number(value);
+  return Number.isFinite(number) ? number.toFixed(digits) : `${value}`;
+}
+
+function formatPercentValue(value, digits = 1) {
+  if (value === null || value === undefined || value === "") return "-";
+  const number = Number(value);
+  return Number.isFinite(number) ? `${number.toFixed(digits)}%` : `${value}`;
+}
+
+function formatAverageValue(value) {
+  if (value === null || value === undefined || value === "") return "-";
+  const number = Number(value);
+  return Number.isFinite(number) ? number.toFixed(3) : `${value}`;
+}
+
+function formatSpeedValue(value) {
+  if (value === null || value === undefined || value === "" || value === "-") return "-";
+  const number = Number(value);
+  return Number.isFinite(number) ? `${number.toFixed(1)}km/h` : `${value}`;
 }
 
 function formatMetricDelta(metric, delta) {
@@ -519,8 +547,343 @@ function monthlySplits() {
   return grouped;
 }
 
+function seasonDashboard() {
+  return state.config === TYPE_CONFIG.pitcher ? state.currentRow?.seasonDashboard || null : null;
+}
+
+function rowHits(row) {
+  return (
+    (Number(row?.singles) || 0)
+    + (Number(row?.doubles) || 0)
+    + (Number(row?.triples) || 0)
+    + (Number(row?.homeRuns) || 0)
+  );
+}
+
+function seasonStackBar(rows, labelKey = "pitchType") {
+  const visibleRows = (rows || []).filter((row) => (Number(row?.count) || 0) > 0);
+  if (!visibleRows.length) return '<div class="section-empty compare-empty">データなし</div>';
+  return `
+    <div class="stack-bar season-stack-bar">
+      ${visibleRows
+        .map((row) => {
+          const ratio = Math.max(Number(row.ratio) || 0, 0);
+          const label = ratio >= 30 ? `${row[labelKey] || row.label || ""} ${ratio.toFixed(1)}%` : "";
+          return `
+            <span
+              class="stack-segment"
+              style="width:${ratio}%; background:${escapeHtml(row.color || "#0F2340")};"
+              title="${escapeHtml(row[labelKey] || row.label || "")} ${ratio.toFixed(1)}%"
+            >
+              ${escapeHtml(label)}
+            </span>
+          `;
+        })
+        .join("")}
+    </div>
+  `;
+}
+
+function seasonPitchCards(rows) {
+  const visibleRows = (rows || []).filter((row) => (Number(row?.count) || 0) > 0).slice(0, 8);
+  if (!visibleRows.length) return "";
+  return `
+    <div class="pitch-card-grid season-pitch-grid">
+      ${visibleRows
+        .map(
+          (row) => `
+            <article class="pitch-card">
+              <div class="pitch-card-head">
+                <span class="legend-swatch" style="background:${escapeHtml(row.color || "#0F2340")}"></span>
+                <strong>${escapeHtml(row.pitchType)}</strong>
+              </div>
+              <div class="pitch-card-metrics">
+                <span>${formatNumber(row.count)}球</span>
+                <span>${formatPercentValue(row.ratio)}</span>
+                <span>平均 ${formatSpeedValue(row.avgSpeed)}</span>
+                <span>空振率 ${formatPercentValue(row.whiff)}</span>
+              </div>
+            </article>
+          `
+        )
+        .join("")}
+    </div>
+  `;
+}
+
+function renderSeasonPitchMix(dashboard) {
+  const rows = dashboard?.pitchMix || [];
+  return `
+    <article class="dashboard-card season-card-wide">
+      <div class="card-head">
+        <h3>年間の球種比率</h3>
+        <span class="result-count">${formatNumber(dashboard?.totalPitches)}球</span>
+      </div>
+      ${seasonStackBar(rows)}
+      ${seasonPitchCards(rows)}
+    </article>
+  `;
+}
+
+function renderSeasonPitchSummary(dashboard) {
+  const rows = (dashboard?.pitchMix || []).filter((row) => (Number(row?.count) || 0) > 0);
+  if (!rows.length) {
+    return `
+      <article class="dashboard-card">
+        <div class="card-head"><h3>年間の球種サマリ</h3></div>
+        <div class="section-empty compare-empty">データなし</div>
+      </article>
+    `;
+  }
+  const body = rows
+    .map(
+      (row) => `
+        <tr>
+          <td><span class="pitch-name-cell"><span class="legend-swatch" style="background:${escapeHtml(row.color || "#0F2340")}"></span>${escapeHtml(row.pitchType)}</span></td>
+          <td>${formatNumber(row.count)}</td>
+          <td>${formatPercentValue(row.ratio)}</td>
+          <td>${formatSpeedValue(row.avgSpeed)}</td>
+          <td>${formatSpeedValue(row.maxSpeed)}</td>
+          <td>${formatNumber(row.whiffCount)}</td>
+          <td>${formatPercentValue(row.whiff)}</td>
+          <td>${formatNumber(row.atBats)}</td>
+          <td>${formatNumber(rowHits(row))}</td>
+          <td>${formatNumber(row.homeRuns)}</td>
+          <td>${formatNumber(row.grounders)}</td>
+          <td>${formatNumber(row.flyBalls)}</td>
+          <td>${formatNumber(row.strikeouts)}</td>
+          <td>${formatAverageValue(row.hitRate)}</td>
+        </tr>
+      `
+    )
+    .join("");
+  return `
+    <article class="dashboard-card season-card-wide">
+      <div class="card-head"><h3>年間の球種サマリ</h3></div>
+      <div class="table-scroll">
+        <table class="data-table season-table season-pitch-summary-table">
+          <thead>
+            <tr>
+              <th>球種</th><th>球数</th><th>割合</th><th>平均</th><th>最速</th><th>空振</th><th>空振率</th>
+              <th>被打数</th><th>被安打</th><th>被本</th><th>ゴロ</th><th>フライ</th><th>三振</th><th>被打率</th>
+            </tr>
+          </thead>
+          <tbody>${body}</tbody>
+        </table>
+      </div>
+    </article>
+  `;
+}
+
+function renderSeasonInningSummary(dashboard) {
+  const rows = dashboard?.inningRows || [];
+  if (!rows.some((row) => (Number(row?.count) || 0) > 0)) {
+    return `
+      <article class="dashboard-card">
+        <div class="card-head"><h3>年間のイニング別サマリ</h3></div>
+        <div class="section-empty compare-empty">データなし</div>
+      </article>
+    `;
+  }
+  const body = rows
+    .map(
+      (row) => `
+        <tr>
+          <td>${escapeHtml(row.inning)}</td>
+          <td>${formatNumber(row.count)}</td>
+          <td>${formatSpeedValue(row.avgSpeed)}</td>
+          <td>${formatSpeedValue(row.maxSpeed)}</td>
+          <td>${formatNumber(row.whiffCount)}</td>
+          <td>${formatPercentValue(row.whiff)}</td>
+          <td>${formatNumber(row.atBats)}</td>
+          <td>${formatNumber(rowHits(row))}</td>
+          <td>${formatNumber(row.homeRuns)}</td>
+          <td>${formatNumber(row.grounders)}</td>
+          <td>${formatNumber(row.flyBalls)}</td>
+          <td>${formatNumber(row.strikeouts)}</td>
+          <td>${formatAverageValue(row.hitRate)}</td>
+        </tr>
+      `
+    )
+    .join("");
+  return `
+    <article class="dashboard-card season-card-wide">
+      <div class="card-head"><h3>年間のイニング別サマリ</h3></div>
+      <div class="table-scroll">
+        <table class="data-table season-table season-inning-table">
+          <thead>
+            <tr>
+              <th>回</th><th>球数</th><th>平均</th><th>最速</th><th>空振</th><th>空振率</th>
+              <th>被打数</th><th>被安打</th><th>被本</th><th>ゴロ</th><th>フライ</th><th>三振</th><th>被打率</th>
+            </tr>
+          </thead>
+          <tbody>${body}</tbody>
+        </table>
+      </div>
+    </article>
+  `;
+}
+
+function renderSeasonOutcomes(dashboard) {
+  const outcomes = dashboard?.outcomes || {};
+  const rows = outcomes.rows || [];
+  if (!rows.some((row) => (Number(row?.count) || 0) > 0)) {
+    return `
+      <article class="dashboard-card">
+        <div class="card-head"><h3>年間のアウト内容</h3></div>
+        <div class="section-empty compare-empty">データなし</div>
+      </article>
+    `;
+  }
+  return `
+    <article class="dashboard-card">
+      <div class="card-head">
+        <h3>年間のアウト内容</h3>
+        <span class="result-count">${formatNumber(outcomes.total)}件</span>
+      </div>
+      ${seasonStackBar(rows, "label")}
+      <div class="season-outcome-grid">
+        ${rows
+          .map(
+            (row) => `
+              <div class="outcome-item">
+                <div class="outcome-item-head">
+                  <span class="legend-swatch" style="background:${escapeHtml(row.color || "#0F2340")}"></span>
+                  <strong>${escapeHtml(row.label)}</strong>
+                </div>
+                <div class="outcome-item-values">
+                  <span>${formatNumber(row.count)}件</span>
+                  <span>${formatPercentValue(row.ratio)}</span>
+                </div>
+              </div>
+            `
+          )
+          .join("")}
+      </div>
+    </article>
+  `;
+}
+
+function renderSeasonFinish(dashboard) {
+  const finish = dashboard?.finish || {};
+  const rows = (finish.rows || []).filter((row) => (Number(row?.count) || 0) > 0);
+  if (!rows.length) {
+    return `
+      <article class="dashboard-card">
+        <div class="card-head"><h3>年間の決め球サマリ</h3></div>
+        <div class="section-empty compare-empty">データなし</div>
+      </article>
+    `;
+  }
+  const body = rows
+    .map(
+      (row) => `
+        <tr>
+          <td><span class="pitch-name-cell"><span class="legend-swatch" style="background:${escapeHtml(row.color || "#0F2340")}"></span>${escapeHtml(row.pitchType)}</span></td>
+          <td>${formatNumber(row.count)}</td>
+          <td>${formatPercentValue(row.ratio)}</td>
+          <td>${formatNumber(row.looking)}</td>
+          <td>${formatNumber(row.swinging)}</td>
+        </tr>
+      `
+    )
+    .join("");
+  return `
+    <article class="dashboard-card">
+      <div class="card-head">
+        <h3>年間の決め球サマリ</h3>
+        <span class="result-count">${formatNumber(finish.total)}件</span>
+      </div>
+      ${seasonStackBar(rows)}
+      <div class="table-scroll">
+        <table class="data-table season-table">
+          <thead><tr><th>球種</th><th>三振</th><th>割合</th><th>見逃し</th><th>空振り</th></tr></thead>
+          <tbody>${body}</tbody>
+        </table>
+      </div>
+    </article>
+  `;
+}
+
+function renderRecentGames(dashboard) {
+  const rows = dashboard?.recentGames || [];
+  if (!rows.length) {
+    return `
+      <article class="dashboard-card season-card-wide">
+        <div class="card-head"><h3>最近6試合の成績</h3></div>
+        <div class="section-empty compare-empty">データなし</div>
+      </article>
+    `;
+  }
+  const body = rows
+    .map(
+      (row) => `
+        <tr>
+          <td>${escapeHtml(row.date)}</td>
+          <td class="season-matchup-cell">${escapeHtml(row.matchup || row.team || "-")}</td>
+          <td>${escapeHtml(row.innings)}</td>
+          <td>${formatNumber(row.pitches)}</td>
+          <td>${formatNumber(row.batters)}</td>
+          <td>${formatNumber(row.hits)}</td>
+          <td>${formatNumber(row.homeRuns)}</td>
+          <td>${formatNumber(row.strikeouts)}</td>
+          <td>${formatNumber(row.walks)}</td>
+          <td>${formatNumber(row.runs)}</td>
+          <td>${formatNumber(row.earnedRuns)}</td>
+          <td>${formatNumber(row.gameEra, 2)}</td>
+        </tr>
+      `
+    )
+    .join("");
+  return `
+    <article class="dashboard-card season-card-wide">
+      <div class="card-head"><h3>最近6試合の成績</h3></div>
+      <div class="table-scroll">
+        <table class="data-table season-table recent-game-table">
+          <thead>
+            <tr>
+              <th>日付</th><th>カード</th><th>投球回</th><th>球数</th><th>打者</th><th>被安打</th>
+              <th>被本</th><th>奪三振</th><th>与四球</th><th>失点</th><th>自責</th><th>防御率</th>
+            </tr>
+          </thead>
+          <tbody>${body}</tbody>
+        </table>
+      </div>
+    </article>
+  `;
+}
+
+function renderSeasonPanel() {
+  const dashboard = seasonDashboard();
+  els.seasonMetricCount.textContent = dashboard ? `${formatNumber(dashboard.totalPitches)}球` : "0球";
+  if (!state.currentRow) {
+    els.seasonDetailWrap.innerHTML = `<div class="section-empty compare-empty">${escapeHtml(state.error || "選手データを読み込めませんでした。")}</div>`;
+    return;
+  }
+  if (!dashboard) {
+    els.seasonDetailWrap.innerHTML = '<div class="section-empty compare-empty">この年度の一球データ集計はありません。</div>';
+    return;
+  }
+  els.seasonDetailWrap.innerHTML = `
+    <div class="season-detail-grid">
+      ${renderSeasonPitchMix(dashboard)}
+      ${renderSeasonPitchSummary(dashboard)}
+      ${renderSeasonInningSummary(dashboard)}
+      ${renderSeasonOutcomes(dashboard)}
+      ${renderSeasonFinish(dashboard)}
+      ${renderRecentGames(dashboard)}
+    </div>
+  `;
+}
+
 function renderModeToggles() {
-  els.modeToggleGroup.innerHTML = Object.entries(MODE_CONFIG)
+  const modes = Object.entries(MODE_CONFIG).filter(([_mode, config]) => {
+    return !config.pitcherOnly || state.config === TYPE_CONFIG.pitcher;
+  });
+  if (!modes.some(([mode]) => mode === state.activeMode)) {
+    state.activeMode = modes[0]?.[0] || "compare";
+  }
+  els.modeToggleGroup.innerHTML = modes
     .map(
       ([mode, config]) => `
         <button
@@ -776,9 +1139,14 @@ function renderMonthlyPanel() {
 }
 
 function renderPanels() {
+  const showSeason = state.activeMode === "season";
   const showCompare = state.activeMode === "compare";
+  const showMonthly = state.activeMode === "monthly";
+  els.metricToggleGroup.classList.toggle("is-hidden", showSeason);
+  els.seasonPanel.classList.toggle("is-hidden", !showSeason);
   els.comparePanel.classList.toggle("is-hidden", !showCompare);
-  els.monthlyPanel.classList.toggle("is-hidden", showCompare);
+  els.monthlyPanel.classList.toggle("is-hidden", !showMonthly);
+  renderSeasonPanel();
   renderComparePanel();
   renderMonthlyPanel();
 }
@@ -800,19 +1168,21 @@ function renderHeader() {
   }
 
   const monthlyAvailable = monthlySplits().length > 0;
+  const seasonAvailable = Boolean(seasonDashboard());
   els.compareTitle.textContent = `${currentRow.player} 成績ビュー`;
   els.compareSubtitle.textContent = `${currentRow.year}年度 ${state.config.label}`;
   els.comparePlayerName.textContent = currentRow.player;
   els.compareDescription.textContent = previousRow
-    ? `${seasonLabel(previousRow)}との比較と、${monthlyAvailable ? `${seasonLabel(currentRow)}の月別推移` : `${seasonLabel(currentRow)}の月別データなし`}を切り替えて表示できます。`
-    : `${seasonLabel(currentRow)}の成績を表示しています。${monthlyAvailable ? "月別推移も表示できます。" : "この年度の月別データはありません。"}`;
+    ? `${seasonLabel(previousRow)}との比較、${seasonAvailable ? "年度成績" : "年度成績データなし"}、${monthlyAvailable ? `${seasonLabel(currentRow)}の月別推移` : `${seasonLabel(currentRow)}の月別データなし`}を切り替えて表示できます。`
+    : `${seasonLabel(currentRow)}の成績を表示しています。${seasonAvailable ? "年度成績を表示できます。" : "この年度の一球データ集計はありません。"}${monthlyAvailable ? "月別推移も表示できます。" : "この年度の月別データはありません。"}`;
   document.title = `${currentRow.player} | 成績ビュー`;
 }
 
 async function init() {
   const params = currentParams();
   state.config = TYPE_CONFIG[params.get("type")] || TYPE_CONFIG.pitcher;
-  state.activeMetricKeys = state.config.metrics.filter((metric) => metric.default).map((metric) => metric.key);
+  state.activeMode = state.config === TYPE_CONFIG.pitcher ? "season" : "compare";
+  state.activeMetricKeys = [];
 
   try {
     const response = await fetch(state.config.datasetUrl, { cache: "no-store" });
