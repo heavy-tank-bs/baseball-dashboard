@@ -69,9 +69,10 @@ const HEAT_RESULT_META = [
   { id: "take", label: "見逃し" },
   { id: "whiff", label: "空振り" },
   { id: "foul", label: "ファウル" },
-  { id: "ball", label: "ボール" },
-  { id: "free", label: "四死球" },
-  { id: "inPlay", label: "インプレー" },
+  { id: "ground", label: "ゴロ" },
+  { id: "fly", label: "フライ" },
+  { id: "hit", label: "安打" },
+  { id: "homeRun", label: "本塁打" },
   { id: "other", label: "その他" },
 ];
 
@@ -659,30 +660,20 @@ function renderPitchFilterLegend(rows, selectedPitch, scope) {
 
 function classifyHeatResult(result) {
   const normalized = `${result ?? ""}`.trim();
-  if (!normalized) return "other";
+  if (!normalized) return null;
   if (normalized.includes("見逃し") || normalized.includes("見三振")) return "take";
   if (normalized.includes("空振り") || (normalized.includes("三振") && !normalized.includes("見"))) {
     return "whiff";
   }
   if (normalized.includes("ファウル")) return "foul";
-  if (normalized === "ボール") return "ball";
-  if (normalized.includes("四球") || normalized.includes("死球")) return "free";
-  if (
-    normalized.includes("ゴロ") ||
-    normalized.includes("飛") ||
-    normalized.includes("安") ||
-    normalized.includes("本") ||
-    normalized.includes("犠打") ||
-    normalized.includes("犠飛") ||
-    normalized.includes("併打") ||
-    normalized.includes("直") ||
-    normalized.includes("失") ||
-    normalized.includes("野選") ||
-    normalized.includes("２") ||
-    normalized.includes("３")
-  ) {
-    return "inPlay";
+  if (normalized === "ボール") return null;
+  if (normalized.includes("四球") || normalized.includes("死球")) return null;
+  if (normalized.includes("本")) return "homeRun";
+  if (normalized.includes("安") || normalized.includes("２") || normalized.includes("３")) return "hit";
+  if (normalized.includes("ゴロ") || normalized.includes("併打") || normalized.includes("野選") || normalized.includes("犠打")) {
+    return "ground";
   }
+  if (normalized.includes("飛") || normalized.includes("直") || normalized.includes("犠飛")) return "fly";
   return "other";
 }
 
@@ -697,6 +688,7 @@ function buildHeatResultOptions(dashboard = {}) {
   const counts = new Map();
   heatPitchPointsByPitch(dashboard).forEach((point) => {
     const resultId = classifyHeatResult(point.result);
+    if (!resultId) return;
     counts.set(resultId, (counts.get(resultId) || 0) + 1);
   });
   return HEAT_RESULT_META.map((meta) => ({
@@ -721,9 +713,8 @@ function normalizeHeatResultSelection(dashboard = {}) {
   return options;
 }
 
-function renderHeatResultLegend(options, selectedResults = ["all"]) {
+function renderHeatResultLegend(options, selectedResults = ["all"], totalCount = 0) {
   if (!options.length) return "";
-  const total = options.reduce((sum, option) => sum + option.count, 0);
   const allActive = selectedResults.includes("all");
   const buttons = [
     `
@@ -733,7 +724,7 @@ function renderHeatResultLegend(options, selectedResults = ["all"]) {
         data-heat-result="all"
       >
         <span>すべて</span>
-        <span class="heat-legend-count">${total}</span>
+        <span class="heat-legend-count">${totalCount}</span>
       </button>
     `,
     ...options.map(
@@ -826,6 +817,7 @@ function renderInningTable(rows) {
 }
 
 function renderHeatSection(dashboard) {
+  const totalHeatPoints = heatPitchPointsByPitch(dashboard).length;
   const resultOptions = normalizeHeatResultSelection(dashboard);
   const legendRows = dashboard.pitchMix || [];
   const pitchChart = dashboard.pitchChart || {};
@@ -855,7 +847,7 @@ function renderHeatSection(dashboard) {
           </div>
           <div class="heat-filter-group">
             <p class="heat-filter-label">結果</p>
-            ${renderHeatResultLegend(resultOptions, selectedResults)}
+            ${renderHeatResultLegend(resultOptions, selectedResults, totalHeatPoints)}
           </div>
         </div>
         <div class="heatmap-grid">
