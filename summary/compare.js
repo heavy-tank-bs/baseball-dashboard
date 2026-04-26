@@ -64,6 +64,21 @@ const MODE_CONFIG = {
   monthly: { label: "月別成績" },
 };
 
+const MATCHUP_TEAM_NAMES = {
+  "読売ジャイアンツ": "巨人",
+  "阪神タイガース": "阪神",
+  "横浜DeNAベイスターズ": "DeNA",
+  "広島東洋カープ": "広島",
+  "東京ヤクルトスワローズ": "ヤクルト",
+  "中日ドラゴンズ": "中日",
+  "福岡ソフトバンクホークス": "ソフトバンク",
+  "北海道日本ハムファイターズ": "日本ハム",
+  "千葉ロッテマリーンズ": "ロッテ",
+  "オリックス・バファローズ": "オリックス",
+  "埼玉西武ライオンズ": "西武",
+  "東北楽天ゴールデンイーグルス": "楽天",
+};
+
 const MONTH_BUCKETS = [
   { key: "03-04", label: "3・4月", months: ["03", "04"] },
   { key: "05", label: "5月", months: ["05"] },
@@ -560,6 +575,28 @@ function rowHits(row) {
   );
 }
 
+function normalizeMatchupTeam(value) {
+  const trimmed = `${value || ""}`.trim();
+  return MATCHUP_TEAM_NAMES[trimmed] || trimmed;
+}
+
+function opponentLabel(row) {
+  const matchup = `${row?.matchup || ""}`.replace("vs.", "vs");
+  const teams = matchup.split("vs").map(normalizeMatchupTeam).filter(Boolean);
+  const ownTeams = new Set(
+    [
+      row?.team,
+      state.currentRow?.team,
+      ...(Array.isArray(state.currentRow?.teams) ? state.currentRow.teams : []),
+    ]
+      .flatMap((team) => `${team || ""}`.split(" / "))
+      .map(normalizeMatchupTeam)
+      .filter(Boolean)
+  );
+  const opponent = teams.find((team) => !ownTeams.has(team));
+  return opponent ? `vs${opponent}` : matchup || "-";
+}
+
 function seasonStackBar(rows, labelKey = "pitchType") {
   const visibleRows = (rows || []).filter((row) => (Number(row?.count) || 0) > 0);
   if (!visibleRows.length) return '<div class="section-empty compare-empty">データなし</div>';
@@ -580,6 +617,75 @@ function seasonStackBar(rows, labelKey = "pitchType") {
           `;
         })
         .join("")}
+    </div>
+  `;
+}
+
+function polarToCartesian(cx, cy, radius, angle) {
+  const radians = ((angle - 90) * Math.PI) / 180;
+  return {
+    x: cx + (radius * Math.cos(radians)),
+    y: cy + (radius * Math.sin(radians)),
+  };
+}
+
+function pieSlicePath(cx, cy, radius, startAngle, endAngle) {
+  const start = polarToCartesian(cx, cy, radius, endAngle);
+  const end = polarToCartesian(cx, cy, radius, startAngle);
+  const largeArcFlag = endAngle - startAngle <= 180 ? "0" : "1";
+  return [
+    `M ${cx} ${cy}`,
+    `L ${start.x.toFixed(2)} ${start.y.toFixed(2)}`,
+    `A ${radius} ${radius} 0 ${largeArcFlag} 0 ${end.x.toFixed(2)} ${end.y.toFixed(2)}`,
+    "Z",
+  ].join(" ");
+}
+
+function seasonPieChart(rows, labelKey = "label") {
+  const visibleRows = (rows || []).filter((row) => (Number(row?.count) || 0) > 0);
+  const total = visibleRows.reduce((sum, row) => sum + (Number(row.count) || 0), 0);
+  if (!visibleRows.length || !total) return '<div class="section-empty compare-empty">データなし</div>';
+
+  const cx = 150;
+  const cy = 150;
+  const radius = 122;
+  let cursor = 0;
+  const slices = visibleRows
+    .map((row) => {
+      const count = Number(row.count) || 0;
+      const ratio = (count / total) * 100;
+      const angle = (count / total) * 360;
+      const startAngle = cursor;
+      const endAngle = cursor + angle;
+      cursor = endAngle;
+      const labelPoint = polarToCartesian(cx, cy, radius * 0.62, startAngle + (angle / 2));
+      if (visibleRows.length === 1) {
+        return `
+          <circle cx="${cx}" cy="${cy}" r="${radius}" fill="${escapeHtml(row.color || "#0F2340")}" />
+          <text x="${cx}" y="${cy}" class="season-pie-label">${formatPercentValue(100, 1)}</text>
+        `;
+      }
+      return `
+        <path
+          d="${pieSlicePath(cx, cy, radius, startAngle, endAngle)}"
+          fill="${escapeHtml(row.color || "#0F2340")}"
+        >
+          <title>${escapeHtml(row[labelKey] || row.pitchType || row.label || "")} ${formatPercentValue(ratio, 1)}</title>
+        </path>
+        ${
+          ratio >= 6
+            ? `<text x="${labelPoint.x.toFixed(2)}" y="${labelPoint.y.toFixed(2)}" class="season-pie-label">${formatPercentValue(ratio, 1)}</text>`
+            : ""
+        }
+      `;
+    })
+    .join("");
+
+  return `
+    <div class="season-pie-shell">
+      <svg class="season-pie-chart" viewBox="0 0 300 300" role="img" aria-label="割合グラフ">
+        ${slices}
+      </svg>
     </div>
   `;
 }
@@ -616,7 +722,7 @@ function renderSeasonPitchMix(dashboard) {
   return `
     <article class="dashboard-card season-card-wide">
       <div class="card-head">
-        <h3>年間の球種比率</h3>
+        <h3>球種比率</h3>
         <span class="result-count">${formatNumber(dashboard?.totalPitches)}球</span>
       </div>
       ${seasonStackBar(rows)}
@@ -630,7 +736,7 @@ function renderSeasonPitchSummary(dashboard) {
   if (!rows.length) {
     return `
       <article class="dashboard-card">
-        <div class="card-head"><h3>年間の球種サマリ</h3></div>
+        <div class="card-head"><h3>球種サマリ</h3></div>
         <div class="section-empty compare-empty">データなし</div>
       </article>
     `;
@@ -659,7 +765,7 @@ function renderSeasonPitchSummary(dashboard) {
     .join("");
   return `
     <article class="dashboard-card season-card-wide">
-      <div class="card-head"><h3>年間の球種サマリ</h3></div>
+      <div class="card-head"><h3>球種サマリ</h3></div>
       <div class="table-scroll">
         <table class="data-table season-table season-pitch-summary-table">
           <thead>
@@ -680,7 +786,7 @@ function renderSeasonInningSummary(dashboard) {
   if (!rows.some((row) => (Number(row?.count) || 0) > 0)) {
     return `
       <article class="dashboard-card">
-        <div class="card-head"><h3>年間のイニング別サマリ</h3></div>
+        <div class="card-head"><h3>イニング別サマリ</h3></div>
         <div class="section-empty compare-empty">データなし</div>
       </article>
     `;
@@ -708,7 +814,7 @@ function renderSeasonInningSummary(dashboard) {
     .join("");
   return `
     <article class="dashboard-card season-card-wide">
-      <div class="card-head"><h3>年間のイニング別サマリ</h3></div>
+      <div class="card-head"><h3>イニング別サマリ</h3></div>
       <div class="table-scroll">
         <table class="data-table season-table season-inning-table">
           <thead>
@@ -730,7 +836,7 @@ function renderSeasonOutcomes(dashboard) {
   if (!rows.some((row) => (Number(row?.count) || 0) > 0)) {
     return `
       <article class="dashboard-card">
-        <div class="card-head"><h3>年間のアウト内容</h3></div>
+        <div class="card-head"><h3>アウト内容</h3></div>
         <div class="section-empty compare-empty">データなし</div>
       </article>
     `;
@@ -738,10 +844,10 @@ function renderSeasonOutcomes(dashboard) {
   return `
     <article class="dashboard-card">
       <div class="card-head">
-        <h3>年間のアウト内容</h3>
+        <h3>アウト内容</h3>
         <span class="result-count">${formatNumber(outcomes.total)}件</span>
       </div>
-      ${seasonStackBar(rows, "label")}
+      ${seasonPieChart(rows, "label")}
       <div class="season-outcome-grid">
         ${rows
           .map(
@@ -770,7 +876,7 @@ function renderSeasonFinish(dashboard) {
   if (!rows.length) {
     return `
       <article class="dashboard-card">
-        <div class="card-head"><h3>年間の決め球サマリ</h3></div>
+        <div class="card-head"><h3>決め球サマリ</h3></div>
         <div class="section-empty compare-empty">データなし</div>
       </article>
     `;
@@ -791,10 +897,10 @@ function renderSeasonFinish(dashboard) {
   return `
     <article class="dashboard-card">
       <div class="card-head">
-        <h3>年間の決め球サマリ</h3>
+        <h3>決め球サマリ</h3>
         <span class="result-count">${formatNumber(finish.total)}件</span>
       </div>
-      ${seasonStackBar(rows)}
+      ${seasonPieChart(rows, "pitchType")}
       <div class="table-scroll">
         <table class="data-table season-table">
           <thead><tr><th>球種</th><th>三振</th><th>割合</th><th>見逃し</th><th>空振り</th></tr></thead>
@@ -820,7 +926,7 @@ function renderRecentGames(dashboard) {
       (row) => `
         <tr>
           <td>${escapeHtml(row.date)}</td>
-          <td class="season-matchup-cell">${escapeHtml(row.matchup || row.team || "-")}</td>
+          <td class="season-matchup-cell">${escapeHtml(opponentLabel(row))}</td>
           <td>${escapeHtml(row.innings)}</td>
           <td>${formatNumber(row.pitches)}</td>
           <td>${formatNumber(row.batters)}</td>

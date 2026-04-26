@@ -1652,6 +1652,40 @@ select {
   margin-bottom: 18px;
 }
 
+.season-pie-shell {
+  display: grid;
+  place-items: center;
+  margin-bottom: 18px;
+  padding: 16px;
+  border: 1px solid rgba(15, 35, 64, 0.08);
+  border-radius: 20px;
+  background: #f7f3ea;
+}
+
+.season-pie-chart {
+  display: block;
+  width: min(100%, 320px);
+  height: auto;
+}
+
+.season-pie-chart path,
+.season-pie-chart circle {
+  stroke: white;
+  stroke-width: 2;
+}
+
+.season-pie-label {
+  fill: white;
+  font-size: 19px;
+  font-weight: 700;
+  text-anchor: middle;
+  dominant-baseline: middle;
+  paint-order: stroke;
+  stroke: rgba(15, 35, 64, 0.42);
+  stroke-width: 3px;
+  stroke-linejoin: round;
+}
+
 .season-pitch-grid {
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
