@@ -775,6 +775,29 @@ select {
   margin-bottom: 18px;
 }
 
+.heat-filter-stack {
+  display: grid;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.heat-filter-group {
+  display: grid;
+  gap: 8px;
+}
+
+.heat-filter-group .heat-legend {
+  margin-bottom: 0;
+}
+
+.heat-filter-label {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
 .heat-legend-button {
   display: inline-flex;
   align-items: center;
@@ -797,6 +820,22 @@ select {
   background: var(--navy);
   color: white;
   border-color: var(--navy);
+}
+
+.heat-legend-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.8em;
+  padding: 2px 7px;
+  border-radius: 999px;
+  background: rgba(15, 35, 64, 0.08);
+  font-size: 12px;
+  line-height: 1;
+}
+
+.heat-legend-button.active .heat-legend-count {
+  background: rgba(255, 255, 255, 0.2);
 }
 
 .heatmap-card {

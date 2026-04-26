@@ -41,6 +41,7 @@ const state = {
   section: "mix",
   selectedInningPitch: "all",
   selectedHeatPitch: "all",
+  selectedHeatResults: ["all"],
   selectedVelocityPitch: "all",
 };
 
@@ -63,6 +64,18 @@ const PITCH_CHART_FRAME = {
   stageWidth: 252,
   stageHeight: 308,
 };
+
+const HEAT_RESULT_META = [
+  { id: "take", label: "見逃し" },
+  { id: "whiff", label: "空振り" },
+  { id: "foul", label: "ファウル" },
+  { id: "ball", label: "ボール" },
+  { id: "free", label: "四死球" },
+  { id: "inPlay", label: "インプレー" },
+  { id: "other", label: "その他" },
+];
+
+const HEAT_RESULT_ORDER = new Map(HEAT_RESULT_META.map((meta, index) => [meta.id, index]));
 
 function formatPercent(value) {
   if (value === null || value === undefined || value === "") return "-";
@@ -644,6 +657,123 @@ function renderPitchFilterLegend(rows, selectedPitch, scope) {
   return `<div class="heat-legend">${buttons}</div>`;
 }
 
+function classifyHeatResult(result) {
+  const normalized = `${result ?? ""}`.trim();
+  if (!normalized) return "other";
+  if (normalized.includes("見逃し") || normalized.includes("見三振")) return "take";
+  if (normalized.includes("空振り") || (normalized.includes("三振") && !normalized.includes("見"))) {
+    return "whiff";
+  }
+  if (normalized.includes("ファウル")) return "foul";
+  if (normalized === "ボール") return "ball";
+  if (normalized.includes("四球") || normalized.includes("死球")) return "free";
+  if (
+    normalized.includes("ゴロ") ||
+    normalized.includes("飛") ||
+    normalized.includes("安") ||
+    normalized.includes("本") ||
+    normalized.includes("犠打") ||
+    normalized.includes("犠飛") ||
+    normalized.includes("併打") ||
+    normalized.includes("直") ||
+    normalized.includes("失") ||
+    normalized.includes("野選") ||
+    normalized.includes("２") ||
+    normalized.includes("３")
+  ) {
+    return "inPlay";
+  }
+  return "other";
+}
+
+function heatPitchPointsByPitch(dashboard = {}) {
+  const pitchChart = dashboard.pitchChart || {};
+  const points = [...(pitchChart.right || []), ...(pitchChart.left || [])];
+  if (state.selectedHeatPitch === "all") return points;
+  return points.filter((point) => point.pitchType === state.selectedHeatPitch);
+}
+
+function buildHeatResultOptions(dashboard = {}) {
+  const counts = new Map();
+  heatPitchPointsByPitch(dashboard).forEach((point) => {
+    const resultId = classifyHeatResult(point.result);
+    counts.set(resultId, (counts.get(resultId) || 0) + 1);
+  });
+  return HEAT_RESULT_META.map((meta) => ({
+    ...meta,
+    count: counts.get(meta.id) || 0,
+  })).filter((meta) => meta.count > 0);
+}
+
+function normalizeHeatResultSelection(dashboard = {}) {
+  const options = buildHeatResultOptions(dashboard);
+  const available = new Set(options.map((option) => option.id));
+  const current =
+    Array.isArray(state.selectedHeatResults) && state.selectedHeatResults.length
+      ? state.selectedHeatResults
+      : ["all"];
+  if (current.includes("all")) {
+    state.selectedHeatResults = ["all"];
+    return options;
+  }
+  const next = current.filter((resultId) => available.has(resultId));
+  state.selectedHeatResults = next.length ? next : ["all"];
+  return options;
+}
+
+function renderHeatResultLegend(options, selectedResults = ["all"]) {
+  if (!options.length) return "";
+  const total = options.reduce((sum, option) => sum + option.count, 0);
+  const allActive = selectedResults.includes("all");
+  const buttons = [
+    `
+      <button
+        type="button"
+        class="heat-legend-button ${allActive ? "active" : ""}"
+        data-heat-result="all"
+      >
+        <span>すべて</span>
+        <span class="heat-legend-count">${total}</span>
+      </button>
+    `,
+    ...options.map(
+      (option) => `
+        <button
+          type="button"
+          class="heat-legend-button ${selectedResults.includes(option.id) ? "active" : ""}"
+          data-heat-result="${option.id}"
+        >
+          <span>${option.label}</span>
+          <span class="heat-legend-count">${option.count}</span>
+        </button>
+      `
+    ),
+  ].join("");
+  return `<div class="heat-legend heat-legend-results">${buttons}</div>`;
+}
+
+function toggleHeatResultSelection(resultId, dashboard = {}) {
+  const availableIds = new Set(buildHeatResultOptions(dashboard).map((option) => option.id));
+  if (resultId === "all" || !availableIds.has(resultId)) {
+    state.selectedHeatResults = ["all"];
+    return;
+  }
+  const current =
+    Array.isArray(state.selectedHeatResults) && state.selectedHeatResults.length
+      ? state.selectedHeatResults
+      : ["all"];
+  if (current.includes("all")) {
+    state.selectedHeatResults = [resultId];
+    return;
+  }
+  const next = current.includes(resultId)
+    ? current.filter((id) => id !== resultId)
+    : [...current, resultId].sort(
+        (left, right) => (HEAT_RESULT_ORDER.get(left) ?? 99) - (HEAT_RESULT_ORDER.get(right) ?? 99)
+      );
+  state.selectedHeatResults = next.length ? next : ["all"];
+}
+
 function renderInningTable(rows) {
   const body = rows
     .map(
@@ -696,12 +826,21 @@ function renderInningTable(rows) {
 }
 
 function renderHeatSection(dashboard) {
+  const resultOptions = normalizeHeatResultSelection(dashboard);
   const legendRows = dashboard.pitchMix || [];
   const pitchChart = dashboard.pitchChart || {};
   const bounds = pitchChart.bounds || {};
   const selectedPitch = state.selectedHeatPitch;
-  const filterPoints = (points) =>
-    selectedPitch === "all" ? points : points.filter((point) => point.pitchType === selectedPitch);
+  const selectedResults =
+    Array.isArray(state.selectedHeatResults) && state.selectedHeatResults.length
+      ? state.selectedHeatResults
+      : ["all"];
+  const filterPoints = (points) => {
+    const pitchFiltered =
+      selectedPitch === "all" ? points : points.filter((point) => point.pitchType === selectedPitch);
+    if (selectedResults.includes("all")) return pitchFiltered;
+    return pitchFiltered.filter((point) => selectedResults.includes(classifyHeatResult(point.result)));
+  };
 
   return `
     <div class="section-grid page-heat">
@@ -709,7 +848,16 @@ function renderHeatSection(dashboard) {
         <div class="card-head">
           <h3>配球チャート</h3>
         </div>
-        ${renderPitchFilterLegend(legendRows, state.selectedHeatPitch, "heat")}
+        <div class="heat-filter-stack">
+          <div class="heat-filter-group">
+            <p class="heat-filter-label">球種</p>
+            ${renderPitchFilterLegend(legendRows, state.selectedHeatPitch, "heat")}
+          </div>
+          <div class="heat-filter-group">
+            <p class="heat-filter-label">結果</p>
+            ${renderHeatResultLegend(resultOptions, selectedResults)}
+          </div>
+        </div>
         <div class="heatmap-grid">
           ${renderPitchChartCard("vs 右打者", filterPoints(pitchChart.right || []), "右", bounds)}
           ${renderPitchChartCard("vs 左打者", filterPoints(pitchChart.left || []), "左", bounds)}
@@ -901,7 +1049,7 @@ function renderPitchChartCard(title, points, hand, bounds = {}) {
           ${markers}
         </svg>
       </div>
-      ${!points.length ? '<p class="pitch-chart-note">該当投球なし</p>' : ""}
+      ${!points.length ? '<p class="pitch-chart-note">選択条件に合う投球がありません。</p>' : ""}
     </article>
   `;
 }
@@ -1688,6 +1836,17 @@ function bindEvents() {
     state.selectedId = null;
     rerender();
     if (state.player !== "all") scrollToViewer();
+  });
+
+  els.viewerPanel.addEventListener("click", (event) => {
+    if (!(event.target instanceof Element)) return;
+    const heatResultButton = event.target.closest("[data-heat-result]");
+    if (!heatResultButton) return;
+    const entries = filteredEntries();
+    const entry = selectedEntry(entries);
+    if (!entry) return;
+    toggleHeatResultSelection(heatResultButton.dataset.heatResult || "all", entry.dashboard);
+    renderViewer(entry);
   });
 
   const compactViewport = window.matchMedia("(max-width: 760px)");
