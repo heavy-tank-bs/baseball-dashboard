@@ -1734,6 +1734,18 @@ select {
   min-width: 1120px;
 }
 
+.pitcher-game-split-table {
+  min-width: 1320px;
+}
+
+.pitcher-decision-inning-table {
+  min-width: 620px;
+}
+
+.batter-recent-game-table {
+  min-width: 980px;
+}
+
 .batter-season-table {
   min-width: 1320px;
 }

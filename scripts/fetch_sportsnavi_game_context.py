@@ -195,6 +195,45 @@ def parse_intentional_walks_from_stats(html: str) -> dict[str, dict]:
     return results
 
 
+def parse_inning_scores_from_stats(html: str) -> dict:
+    soup = BeautifulSoup(html, "html.parser")
+    for table in soup.select("table"):
+        rows = table.select("tr")
+        if len(rows) < 3:
+            continue
+        header = [text(cell) for cell in rows[0].select("th,td")]
+        if "計" not in header or "1" not in header:
+            continue
+
+        inning_indexes: list[tuple[int, int]] = []
+        for index, label in enumerate(header):
+            value = parse_int(label)
+            if value is not None and value > 0:
+                inning_indexes.append((index, value))
+        if not inning_indexes:
+            continue
+
+        teams = []
+        for row in rows[1:3]:
+            cells = [text(cell) for cell in row.select("th,td")]
+            if not cells:
+                continue
+            team = normalize_team_name(cells[0])
+            inning_scores = []
+            for cell_index, inning in inning_indexes:
+                raw_score = cells[cell_index] if cell_index < len(cells) else ""
+                score = None if raw_score == "X" else parse_int(raw_score)
+                inning_scores.append({"inning": inning, "runs": score, "raw": raw_score})
+            teams.append({"team": team, "innings": inning_scores})
+
+        if len(teams) >= 2:
+            return {
+                "home": teams[1],
+                "away": teams[0],
+            }
+    return {"home": {"team": "", "innings": []}, "away": {"team": "", "innings": []}}
+
+
 def fetch_schedule_games(session: requests.Session, season: int, through_date: date, start_date: date | None = None) -> list[dict]:
     rows: dict[str, dict] = {}
     start_date = start_date or date(season, 1, 1)
@@ -226,9 +265,11 @@ def build_context(season: int, through_date: date, start_date: date | None = Non
         try:
             html = get_with_retry(session, row["statsUrl"])
             intentional_walks = parse_intentional_walks_from_stats(html)
+            inning_scores = parse_inning_scores_from_stats(html)
         except Exception as exc:  # pragma: no cover - network dependent
             fetch_errors.append({"gameId": row["gameId"], "date": row["date"], "error": str(exc)})
             intentional_walks = {}
+            inning_scores = {"home": {"team": row["homeTeam"], "innings": []}, "away": {"team": row["awayTeam"], "innings": []}}
 
         team_total = sum(bucket["intentionalWalks"] for bucket in intentional_walks.values())
         if team_total:
@@ -252,6 +293,7 @@ def build_context(season: int, through_date: date, start_date: date | None = Non
                     "total": team_total,
                     "teams": intentional_walks,
                 },
+                "inningScores": inning_scores,
             }
         )
 

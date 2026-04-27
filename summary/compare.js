@@ -986,6 +986,210 @@ function renderRecentGames(dashboard) {
   `;
 }
 
+function pitcherHandLabel(row) {
+  const label = row?.label || "-";
+  if (label === "右") return "対右打者";
+  if (label === "左") return "対左打者";
+  return label;
+}
+
+function renderPitcherHandSummary(dashboard) {
+  const rows = dashboard?.batterHandRows || [];
+  const visibleRows = rows.filter((row) => (Number(row?.count) || 0) > 0);
+  if (!visibleRows.length) {
+    return `
+      <article class="dashboard-card season-card-wide">
+        <div class="card-head"><h3>対左右別成績</h3></div>
+        <div class="section-empty compare-empty">データなし</div>
+      </article>
+    `;
+  }
+  const body = visibleRows
+    .map(
+      (row) => `
+        <tr>
+          <td>${escapeHtml(pitcherHandLabel(row))}</td>
+          <td>${formatNumber(row.count)}</td>
+          <td>${formatPercentValue(row.ratio)}</td>
+          <td>${formatSpeedValue(row.avgSpeed)}</td>
+          <td>${formatSpeedValue(row.maxSpeed)}</td>
+          <td>${formatNumber(row.whiffCount)}</td>
+          <td>${formatPercentValue(row.whiff)}</td>
+          <td>${formatNumber(row.atBats)}</td>
+          <td>${formatNumber(rowHits(row))}</td>
+          <td>${formatNumber(row.homeRuns)}</td>
+          <td>${formatNumber(row.grounders)}</td>
+          <td>${formatNumber(row.flyBalls)}</td>
+          <td>${formatNumber(row.strikeouts)}</td>
+          <td>${formatAverageValue(row.hitRate)}</td>
+        </tr>
+      `
+    )
+    .join("");
+  return `
+    <article class="dashboard-card season-card-wide">
+      <div class="card-head"><h3>対左右別成績</h3></div>
+      <div class="table-scroll">
+        <table class="data-table season-table season-pitch-summary-table">
+          <thead>
+            <tr>
+              <th>区分</th><th>球数</th><th>割合</th><th>平均</th><th>最速</th><th>空振</th><th>空振率</th>
+              <th>被打数</th><th>被安打</th><th>被本</th><th>ゴロ</th><th>フライ</th><th>三振</th><th>被打率</th>
+            </tr>
+          </thead>
+          <tbody>${body}</tbody>
+        </table>
+      </div>
+    </article>
+  `;
+}
+
+function pitcherGameSplitLabel(sectionKey, row) {
+  const label = row?.label || "-";
+  if (sectionKey === "opponentRows" && label !== "-") return `vs${label}`;
+  return label;
+}
+
+function renderPitcherGameSplitTable(sectionKey, title, rows = []) {
+  const visibleRows = rows.filter((row) => (Number(row?.games) || 0) > 0);
+  if (!visibleRows.length) {
+    return `
+      <article class="dashboard-card season-card-wide">
+        <div class="card-head"><h3>${escapeHtml(title)}</h3></div>
+        <div class="section-empty compare-empty">データなし</div>
+      </article>
+    `;
+  }
+  const body = visibleRows
+    .map(
+      (row) => `
+        <tr>
+          <td>${escapeHtml(pitcherGameSplitLabel(sectionKey, row))}</td>
+          <td>${formatNumber(row.games)}</td>
+          <td>${escapeHtml(row.innings || "-")}</td>
+          <td>${formatNumber(row.batters)}</td>
+          <td>${formatNumber(row.pitches)}</td>
+          <td>${formatNumber(row.hits)}</td>
+          <td>${formatNumber(row.homeRuns)}</td>
+          <td>${formatNumber(row.strikeouts)}</td>
+          <td>${formatNumber(row.walks)}</td>
+          <td>${formatNumber(row.hitByPitch)}</td>
+          <td>${formatNumber(row.runs)}</td>
+          <td>${formatNumber(row.earnedRuns)}</td>
+          <td>${formatNumber(row.era, 2)}</td>
+          <td>${formatNumber(row.whip, 2)}</td>
+          <td>${formatAverageValue(row.battingAverageAllowed)}</td>
+        </tr>
+      `
+    )
+    .join("");
+  return `
+    <article class="dashboard-card season-card-wide">
+      <div class="card-head"><h3>${escapeHtml(title)}</h3></div>
+      <div class="table-scroll">
+        <table class="data-table season-table pitcher-game-split-table">
+          <thead>
+            <tr>
+              <th>区分</th><th>試合</th><th>投球回</th><th>打者</th><th>球数</th><th>被安打</th><th>被本</th>
+              <th>奪三振</th><th>与四球</th><th>与死球</th><th>失点</th><th>自責</th><th>防御率</th><th>WHIP</th><th>被打率</th>
+            </tr>
+          </thead>
+          <tbody>${body}</tbody>
+        </table>
+      </div>
+    </article>
+  `;
+}
+
+function renderPitcherDecisionInningTable(title, rows = [], available = true) {
+  const visibleRows = rows.filter((row) => (Number(row?.total) || 0) > 0);
+  if (!available) {
+    return `
+      <article class="dashboard-card season-card-wide">
+        <div class="card-head"><h3>${escapeHtml(title)}</h3></div>
+        <div class="section-empty compare-empty">現在のデータには失点発生イニングが含まれていないため、イニング別には算出できません。</div>
+      </article>
+    `;
+  }
+  if (!visibleRows.length) {
+    return `
+      <article class="dashboard-card season-card-wide">
+        <div class="card-head"><h3>${escapeHtml(title)}</h3></div>
+        <div class="section-empty compare-empty">データなし</div>
+      </article>
+    `;
+  }
+  const body = visibleRows
+    .map(
+      (row) => `
+        <tr>
+          <td>${escapeHtml(row.inning)}</td>
+          <td>${formatNumber(row.win)}</td>
+          <td>${formatNumber(row.loss)}</td>
+          <td>${formatNumber(row.noDecision)}</td>
+          <td>${formatNumber(row.total)}</td>
+        </tr>
+      `
+    )
+    .join("");
+  return `
+    <article class="dashboard-card season-card-wide">
+      <div class="card-head"><h3>${escapeHtml(title)}</h3></div>
+      <div class="table-scroll">
+        <table class="data-table season-table pitcher-decision-inning-table">
+          <thead>
+            <tr><th>回</th><th>勝</th><th>負</th><th>勝敗無</th><th>合計</th></tr>
+          </thead>
+          <tbody>${body}</tbody>
+        </table>
+      </div>
+    </article>
+  `;
+}
+
+function renderBatterRecentGames(dashboard) {
+  const rows = dashboard?.recentGames || [];
+  if (!rows.length) {
+    return `
+      <article class="dashboard-card season-card-wide">
+        <div class="card-head"><h3>最近6試合の成績</h3></div>
+        <div class="section-empty compare-empty">データなし</div>
+      </article>
+    `;
+  }
+  const body = rows
+    .map(
+      (row) => `
+        <tr>
+          <td>${escapeHtml(row.date)}</td>
+          <td class="season-matchup-cell">${escapeHtml(opponentLabel(row))}</td>
+          <td>${formatNumber(row.plateAppearances)}</td>
+          <td>${formatNumber(row.atBats)}</td>
+          <td>${formatNumber(row.hits)}</td>
+          <td>${formatNumber(row.homeRuns)}</td>
+          <td>${formatNumber(row.runsBattedIn)}</td>
+          <td>${formatNumber(row.walks)}</td>
+          <td>${formatNumber(row.strikeouts)}</td>
+          <td>${formatAverageValue(row.battingAverage)}</td>
+        </tr>
+      `
+    )
+    .join("");
+  return `
+    <article class="dashboard-card season-card-wide">
+      <div class="card-head"><h3>最近6試合の成績</h3></div>
+      <div class="table-scroll">
+        <table class="data-table season-table batter-recent-game-table">
+          <thead>
+            <tr><th>日付</th><th>カード</th><th>打席</th><th>打数</th><th>安打</th><th>本塁打</th><th>打点</th><th>四球</th><th>三振</th><th>打率</th></tr>
+          </thead>
+          <tbody>${body}</tbody>
+        </table>
+      </div>
+    </article>
+  `;
+}
+
 const BATTER_SEASON_SECTIONS = [
   ["byOpponent", "対チーム別打撃成績"],
   ["byStadium", "球場別打撃成績"],
@@ -1067,6 +1271,7 @@ function renderBatterSeasonPanel(dashboard) {
       ${BATTER_SEASON_SECTIONS
         .map(([key, title]) => renderBatterSplitTable(key, title, dashboard?.[key] || []))
         .join("")}
+      ${renderBatterRecentGames(dashboard)}
     </div>
   `;
 }
@@ -1077,6 +1282,11 @@ function renderPitcherSeasonPanel(dashboard) {
       ${renderSeasonPitchMix(dashboard)}
       ${renderSeasonPitchSummary(dashboard)}
       ${renderSeasonInningSummary(dashboard)}
+      ${renderPitcherHandSummary(dashboard)}
+      ${renderPitcherGameSplitTable("opponentRows", "対チーム別投手成績", dashboard?.opponentRows || [])}
+      ${renderPitcherGameSplitTable("stadiumRows", "球場別投手成績", dashboard?.stadiumRows || [])}
+      ${renderPitcherDecisionInningTable("イニング別失点数（勝・負・勝敗無ごと）", dashboard?.inningRunRows || [], Boolean(dashboard?.inningRunRowsAvailable))}
+      ${renderPitcherDecisionInningTable("イニング別四死球数（勝・負・勝敗無ごと）", dashboard?.inningWalkRows || [])}
       ${renderSeasonOutcomes(dashboard)}
       ${renderSeasonFinish(dashboard)}
       ${renderRecentGames(dashboard)}
