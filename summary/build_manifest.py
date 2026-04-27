@@ -2118,6 +2118,213 @@ def finalize_season_dashboard(player: dict) -> dict | None:
     }
 
 
+def parse_speed_number(value) -> float | None:
+    if value in (None, ""):
+        return None
+    text_value = str(value).strip().replace("km/h", "")
+    return parse_float(text_value)
+
+
+def matchup_opponent_team(team: str, matchup: str) -> str:
+    home_team, away_team = parse_matchup_teams(matchup or "")
+    normalized_team = normalize_team_name(team)
+    if normalized_team == home_team:
+        return away_team
+    if normalized_team == away_team:
+        return home_team
+    return ""
+
+
+def build_game_context_index(game_contexts: dict[str, dict]) -> dict[str, dict]:
+    index: dict[str, dict] = {}
+    for payload in game_contexts.values():
+        for game in payload.get("games") or []:
+            game_id = str(game.get("gameId") or "")
+            if not game_id:
+                continue
+            index[game_id] = game
+    return index
+
+
+def build_batter_split_bucket(label: str, order: int = 0) -> dict:
+    return {
+        "label": label,
+        "order": order,
+        "plateAppearances": 0,
+        "atBats": 0,
+        "hits": 0,
+        "singles": 0,
+        "doubles": 0,
+        "triples": 0,
+        "homeRuns": 0,
+        "walks": 0,
+        "hitByPitch": 0,
+        "sacBunts": 0,
+        "sacFlies": 0,
+        "strikeouts": 0,
+    }
+
+
+def record_batter_plate_result(bucket: dict, result: str) -> None:
+    normalize_result = getattr(DASHBOARD, "normalize_result", lambda value: (value or "").split("[", 1)[0].strip())
+    is_ab_result = getattr(DASHBOARD, "is_ab_result", lambda value: False)
+    classify_hit_type = getattr(DASHBOARD, "classify_hit_type", lambda value: None)
+    classify_plate_appearance_result = getattr(DASHBOARD, "classify_plate_appearance_result", lambda value: None)
+
+    primary = normalize_result(result or "")
+    if not primary:
+        return
+
+    bucket["plateAppearances"] += 1
+    if "四球" in primary:
+        bucket["walks"] += 1
+    if "死球" in primary:
+        bucket["hitByPitch"] += 1
+    if any(word in primary for word in ("空三振", "見三振", "バ三振", "振逃")):
+        bucket["strikeouts"] += 1
+    if primary.endswith("犠打"):
+        bucket["sacBunts"] += 1
+    if (not is_ab_result(primary)) and classify_plate_appearance_result(primary) == "flyballs":
+        bucket["sacFlies"] += 1
+
+    if not is_ab_result(primary):
+        return
+
+    bucket["atBats"] += 1
+    hit_type = classify_hit_type(primary)
+    if not hit_type:
+        return
+    bucket["hits"] += 1
+    if hit_type == "home_runs":
+        bucket["homeRuns"] += 1
+    else:
+        bucket[hit_type] += 1
+
+
+def finalize_batter_split_bucket(bucket: dict) -> dict:
+    total_bases = (
+        bucket["singles"]
+        + (2 * bucket["doubles"])
+        + (3 * bucket["triples"])
+        + (4 * bucket["homeRuns"])
+    )
+    avg = bucket["hits"] / bucket["atBats"] if bucket["atBats"] else None
+    obp_denominator = bucket["atBats"] + bucket["walks"] + bucket["hitByPitch"] + bucket["sacFlies"]
+    obp = (
+        (bucket["hits"] + bucket["walks"] + bucket["hitByPitch"]) / obp_denominator
+        if obp_denominator
+        else None
+    )
+    slg = total_bases / bucket["atBats"] if bucket["atBats"] else None
+    ops = (obp + slg) if obp is not None and slg is not None else None
+    return {
+        "label": bucket["label"],
+        "plateAppearances": bucket["plateAppearances"],
+        "atBats": bucket["atBats"],
+        "hits": bucket["hits"],
+        "singles": bucket["singles"],
+        "doubles": bucket["doubles"],
+        "triples": bucket["triples"],
+        "homeRuns": bucket["homeRuns"],
+        "walks": bucket["walks"],
+        "hitByPitch": bucket["hitByPitch"],
+        "sacBunts": bucket["sacBunts"],
+        "sacFlies": bucket["sacFlies"],
+        "strikeouts": bucket["strikeouts"],
+        "battingAverage": round_or_none(avg, 3),
+        "onBasePercentage": round_or_none(obp, 3),
+        "sluggingPercentage": round_or_none(slg, 3),
+        "ops": round_or_none(ops, 3),
+    }
+
+
+def build_batter_season_dashboard(
+    batter_entries: list[dict],
+    game_contexts: dict[str, dict],
+) -> dict[tuple[str, str], dict]:
+    game_context_index = build_game_context_index(game_contexts)
+    dashboards: dict[tuple[str, str], dict] = {}
+
+    def source_for(entry: dict) -> dict:
+        year = (entry.get("date") or "")[:4]
+        team = entry.get("team") or ""
+        player_name = entry.get("player") or ""
+        batter_id = entry.get("batterId") or ""
+        bucket_key = (year, batter_id or f"{team}::{player_name}")
+        source = dashboards.get(bucket_key)
+        if source is None:
+            source = {
+                "totalPlateAppearances": 0,
+                "byOpponent": {},
+                "byStadium": {},
+                "byPitchType": {},
+                "byVelocity": {},
+                "byPitcherHand": {},
+                "byBattingOrder": {},
+                "byPlateAppearance": {},
+                "byStrikeCount": {},
+            }
+            dashboards[bucket_key] = source
+        return source
+
+    def add_to_group(groups: dict, key: str, label: str, order: int, result: str) -> None:
+        if not label:
+            label = "-"
+        bucket = groups.setdefault(key or label, build_batter_split_bucket(label, order))
+        record_batter_plate_result(bucket, result)
+
+    for entry in batter_entries:
+        year = (entry.get("date") or "")[:4]
+        if not year:
+            continue
+        source = source_for(entry)
+        team = entry.get("team") or ""
+        opponent = matchup_opponent_team(team, entry.get("matchup") or "")
+        game_context = game_context_index.get(str(entry.get("gameId") or "")) or {}
+        stadium = game_context.get("stadium") or "-"
+        batting_order = parse_int(entry.get("order"))
+        order_label = f"{batting_order}番" if 1 <= batting_order <= 9 else "途中出場"
+
+        for plate_index, plate in enumerate(((entry.get("dashboard") or {}).get("plateAppearances") or []), start=1):
+            result = plate.get("result") or ""
+            if not result:
+                continue
+            source["totalPlateAppearances"] += 1
+            speed = parse_speed_number(plate.get("speed"))
+            velocity_label = "150km/h以上" if speed is not None and speed >= 150 else "150km/h未満"
+            pitcher_hand = plate.get("pitcherHand") or "-"
+            plate_label = "5打席目以上" if plate_index >= 5 else f"{plate_index}打席目"
+            strike_count = parse_int(plate.get("strikes"))
+            strike_label = f"{min(strike_count, 2)}ストライク"
+
+            add_to_group(source["byOpponent"], opponent, opponent or "-", team_sort_key(opponent)[0], result)
+            add_to_group(source["byStadium"], stadium, stadium, 0, result)
+            add_to_group(source["byPitchType"], plate.get("pitchType") or "-", plate.get("pitchType") or "-", 0, result)
+            add_to_group(source["byVelocity"], velocity_label, velocity_label, 0 if velocity_label == "150km/h以上" else 1, result)
+            add_to_group(source["byPitcherHand"], pitcher_hand, pitcher_hand, 0 if pitcher_hand == "右" else 1, result)
+            add_to_group(source["byBattingOrder"], order_label, order_label, batting_order if 1 <= batting_order <= 9 else 99, result)
+            add_to_group(source["byPlateAppearance"], plate_label, plate_label, 5 if plate_index >= 5 else plate_index, result)
+            add_to_group(source["byStrikeCount"], strike_label, strike_label, min(strike_count, 2), result)
+
+    finalized: dict[tuple[str, str], dict] = {}
+    for bucket_key, source in dashboards.items():
+        dashboard = {"totalPlateAppearances": source["totalPlateAppearances"]}
+        for key in (
+            "byOpponent",
+            "byStadium",
+            "byPitchType",
+            "byVelocity",
+            "byPitcherHand",
+            "byBattingOrder",
+            "byPlateAppearance",
+            "byStrikeCount",
+        ):
+            rows = sorted(source[key].values(), key=lambda row: (row["order"], row["label"]))
+            dashboard[key] = [finalize_batter_split_bucket(row) for row in rows]
+        finalized[bucket_key] = dashboard
+    return finalized
+
+
 def build_player_totals(entries: list[dict], game_decisions: dict[str, dict]) -> dict:
     monthly_splits_by_player = build_pitcher_monthly_splits(entries, game_decisions)
     league_totals: dict[tuple[str, str], dict] = defaultdict(
@@ -2498,8 +2705,10 @@ def build_batter_totals(
     batting_stats_by_game: dict[str, dict[str, dict]],
     batter_entries: list[dict],
     park_factors: dict,
+    game_contexts: dict[str, dict],
 ) -> dict:
     monthly_splits_by_player = build_batter_monthly_splits(entries, batting_stats_by_game, batter_entries, park_factors)
+    season_dashboards_by_player = build_batter_season_dashboard(batter_entries, game_contexts)
     is_ab_result = getattr(DASHBOARD, "is_ab_result", lambda value: True)
     classify_plate_appearance_result = getattr(DASHBOARD, "classify_plate_appearance_result", lambda value: None)
     players: dict[tuple[str, str], dict] = {}
@@ -2780,46 +2989,48 @@ def build_batter_totals(
             and park_adjustment is not None
             else None
         )
-        rows.append(
-            {
-                "year": player["year"],
-                "batterId": player["batterId"],
-                "player": player["player"],
-                "team": teams[0] if len(teams) == 1 else " / ".join(teams),
-                "teams": teams,
-                "league": player["league"],
-                "games": player["games"],
-                "plateAppearances": player["plateAppearances"],
-                "atBats": player["atBats"],
-                "runs": player["runs"],
-                "hits": player["hits"],
-                "singles": player["singles"],
-                "doubles": player["doubles"],
-                "triples": player["triples"],
-                "homeRuns": player["homeRuns"],
-                "runsBattedIn": player["runsBattedIn"],
-                "walks": player["walks"],
-                "unintentionalWalks": player["unintentionalWalks"],
-                "intentionalWalks": player["intentionalWalks"],
-                "hitByPitch": player["hitByPitch"],
-                "sacBunts": player["sacBunts"],
-                "sacFlies": player["sacFlies"],
-                "steals": player["steals"],
-                "strikeouts": player["strikeouts"],
-                "battingAverage": round_or_none(batting_average, 3),
-                "onBasePercentage": round_or_none(on_base_percentage, 3),
-                "isoDiscipline": round_or_none(iso_discipline, 3),
-                "sluggingPercentage": round_or_none(slugging, 3),
-                "isoPower": round_or_none(iso_power, 3),
-                "babip": round_or_none(babip, 3),
-                "ops": round_or_none(ops, 3),
-                "wrc": round_or_none(wrc, 1),
-                "wrcPlus": round_or_none(wrc_plus, 1),
-                "parkFactor": round_or_none(raw_park_factor, 1),
-                "effectiveParkFactor": round_or_none(effective_park_factor, 1),
-                "monthlySplits": monthly_splits_by_player.get(player["_bucketKey"], []),
-            }
-        )
+        player_row = {
+            "year": player["year"],
+            "batterId": player["batterId"],
+            "player": player["player"],
+            "team": teams[0] if len(teams) == 1 else " / ".join(teams),
+            "teams": teams,
+            "league": player["league"],
+            "games": player["games"],
+            "plateAppearances": player["plateAppearances"],
+            "atBats": player["atBats"],
+            "runs": player["runs"],
+            "hits": player["hits"],
+            "singles": player["singles"],
+            "doubles": player["doubles"],
+            "triples": player["triples"],
+            "homeRuns": player["homeRuns"],
+            "runsBattedIn": player["runsBattedIn"],
+            "walks": player["walks"],
+            "unintentionalWalks": player["unintentionalWalks"],
+            "intentionalWalks": player["intentionalWalks"],
+            "hitByPitch": player["hitByPitch"],
+            "sacBunts": player["sacBunts"],
+            "sacFlies": player["sacFlies"],
+            "steals": player["steals"],
+            "strikeouts": player["strikeouts"],
+            "battingAverage": round_or_none(batting_average, 3),
+            "onBasePercentage": round_or_none(on_base_percentage, 3),
+            "isoDiscipline": round_or_none(iso_discipline, 3),
+            "sluggingPercentage": round_or_none(slugging, 3),
+            "isoPower": round_or_none(iso_power, 3),
+            "babip": round_or_none(babip, 3),
+            "ops": round_or_none(ops, 3),
+            "wrc": round_or_none(wrc, 1),
+            "wrcPlus": round_or_none(wrc_plus, 1),
+            "parkFactor": round_or_none(raw_park_factor, 1),
+            "effectiveParkFactor": round_or_none(effective_park_factor, 1),
+            "monthlySplits": monthly_splits_by_player.get(player["_bucketKey"], []),
+        }
+        season_dashboard = season_dashboards_by_player.get(player["_bucketKey"])
+        if season_dashboard:
+            player_row["seasonDashboard"] = season_dashboard
+        rows.append(player_row)
 
     rows.sort(key=lambda row: (row["year"], team_sort_key(row["team"].split(" / ")[0]), row["player"]))
     return {
@@ -2860,6 +3071,7 @@ def collect_batter_entries(batting_stats_by_game: dict[str, dict[str, dict]]) ->
     build_plate_appearances = getattr(DASHBOARD, "build_plate_appearances")
     normalize_result = getattr(DASHBOARD, "normalize_result", lambda value: (value or "").split("[", 1)[0].strip())
     parse_inning = getattr(DASHBOARD, "parse_inning", lambda value: None)
+    advance_count = getattr(DASHBOARD, "advance_count", lambda balls, strikes, result: (balls, strikes))
     grouped_games: dict[tuple[str, str, str], dict] = {}
     entries: list[dict] = []
 
@@ -2937,6 +3149,10 @@ def collect_batter_entries(batting_stats_by_game: dict[str, dict[str, dict]]) ->
 
             for index, pitches in enumerate(ordered_pas, start=1):
                 final = pitches[-1]
+                balls = 0
+                strikes = 0
+                for pitch in pitches[:-1]:
+                    balls, strikes = advance_count(balls, strikes, pitch.get("result") or "")
                 plate_rows.append(
                     {
                         "id": final.get("pa_index") or f"{batter_id or batter_name}-{index}",
@@ -2946,7 +3162,10 @@ def collect_batter_entries(batting_stats_by_game: dict[str, dict[str, dict]]) ->
                         "pitchType": final.get("pitchType") or "-",
                         "speed": final.get("speed") or "-",
                         "pitcher": final.get("pitcher") or "",
+                        "pitcherHand": final.get("pitcher_hand") or "",
                         "pitchNo": parse_int(final.get("pitchNo")),
+                        "balls": balls,
+                        "strikes": strikes,
                         "batterHand": batter_hand,
                         "points": serialize_batter_plate_points(pitches, pitch_color_map),
                     }
@@ -3138,7 +3357,7 @@ def main() -> None:
     batter_entries = collect_batter_entries(batting_stats_by_game)
     batter_manifest = build_manifest(batter_entries)
     player_totals = build_player_totals(entries, game_decisions)
-    batter_totals = build_batter_totals(entries, batting_stats_by_game, batter_entries, park_factors)
+    batter_totals = build_batter_totals(entries, batting_stats_by_game, batter_entries, park_factors, game_contexts)
     MANIFEST_PATH.write_text(
         "window.PITCH_DASHBOARD_MANIFEST = "
         + json.dumps(manifest, ensure_ascii=False, indent=2)

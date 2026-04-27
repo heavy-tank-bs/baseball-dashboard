@@ -1713,6 +1713,25 @@ select {
   min-width: 1120px;
 }
 
+.batter-season-table {
+  min-width: 1320px;
+}
+
+.batter-season-table th:first-child,
+.batter-season-table td:first-child {
+  position: sticky;
+  left: 0;
+  z-index: 2;
+  min-width: 148px;
+  background: white;
+  box-shadow: inset -1px 0 0 rgba(15, 35, 64, 0.08);
+}
+
+.batter-season-table th:first-child {
+  z-index: 4;
+  background: var(--card-strong);
+}
+
 .season-matchup-cell {
   max-width: 280px;
   overflow: hidden;

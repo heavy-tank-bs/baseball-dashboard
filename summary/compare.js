@@ -1,7 +1,7 @@
 const TYPE_CONFIG = {
   pitcher: {
     label: "投手",
-    datasetUrl: "./player_totals.json?v=20260426-01",
+    datasetUrl: "./player_totals.json?v=20260426-02",
     annualHref: "./annual.html",
     annualLabel: "年度別投手成績へ戻る",
     idKey: "pitcherId",
@@ -30,7 +30,7 @@ const TYPE_CONFIG = {
   },
   batter: {
     label: "打者",
-    datasetUrl: "./batter_totals.json?v=20260422-01",
+    datasetUrl: "./batter_totals.json?v=20260426-02",
     annualHref: "./annual-batter.html",
     annualLabel: "年度別打者成績へ戻る",
     idKey: "batterId",
@@ -59,7 +59,7 @@ const TYPE_CONFIG = {
 };
 
 const MODE_CONFIG = {
-  season: { label: "年度成績", pitcherOnly: true },
+  season: { label: "年度成績" },
   compare: { label: "前年比較" },
   monthly: { label: "月別成績" },
 };
@@ -563,7 +563,7 @@ function monthlySplits() {
 }
 
 function seasonDashboard() {
-  return state.config === TYPE_CONFIG.pitcher ? state.currentRow?.seasonDashboard || null : null;
+  return state.currentRow?.seasonDashboard || null;
 }
 
 function rowHits(row) {
@@ -959,18 +959,93 @@ function renderRecentGames(dashboard) {
   `;
 }
 
-function renderSeasonPanel() {
-  const dashboard = seasonDashboard();
-  els.seasonMetricCount.textContent = dashboard ? `${formatNumber(dashboard.totalPitches)}球` : "0球";
-  if (!state.currentRow) {
-    els.seasonDetailWrap.innerHTML = `<div class="section-empty compare-empty">${escapeHtml(state.error || "選手データを読み込めませんでした。")}</div>`;
-    return;
+const BATTER_SEASON_SECTIONS = [
+  ["byOpponent", "対チーム別打撃成績"],
+  ["byStadium", "球場別打撃成績"],
+  ["byPitchType", "球種別打撃成績"],
+  ["byVelocity", "球速別打撃成績"],
+  ["byPitcherHand", "対左右別打撃成績"],
+  ["byBattingOrder", "打順別打撃成績"],
+  ["byPlateAppearance", "打席別打撃成績"],
+  ["byStrikeCount", "カウント別打撃成績"],
+];
+
+function batterSplitLabel(sectionKey, row) {
+  const label = row?.label || "-";
+  if (sectionKey === "byPitcherHand") {
+    if (label === "右") return "右投手";
+    if (label === "左") return "左投手";
   }
-  if (!dashboard) {
-    els.seasonDetailWrap.innerHTML = '<div class="section-empty compare-empty">この年度の一球データ集計はありません。</div>';
-    return;
+  if (sectionKey === "byOpponent" && label !== "-") {
+    return `vs${label}`;
   }
-  els.seasonDetailWrap.innerHTML = `
+  return label;
+}
+
+function renderBatterSplitTable(sectionKey, title, rows = []) {
+  const visibleRows = rows.filter((row) => (Number(row?.plateAppearances) || 0) > 0);
+  if (!visibleRows.length) {
+    return `
+      <article class="dashboard-card season-card-wide">
+        <div class="card-head"><h3>${escapeHtml(title)}</h3></div>
+        <div class="section-empty compare-empty">データなし</div>
+      </article>
+    `;
+  }
+  const body = visibleRows
+    .map(
+      (row) => `
+        <tr>
+          <td>${escapeHtml(batterSplitLabel(sectionKey, row))}</td>
+          <td>${formatNumber(row.plateAppearances)}</td>
+          <td>${formatNumber(row.atBats)}</td>
+          <td>${formatNumber(row.hits)}</td>
+          <td>${formatNumber(row.doubles)}</td>
+          <td>${formatNumber(row.triples)}</td>
+          <td>${formatNumber(row.homeRuns)}</td>
+          <td>${formatNumber(row.walks)}</td>
+          <td>${formatNumber(row.hitByPitch)}</td>
+          <td>${formatNumber(row.sacBunts)}</td>
+          <td>${formatNumber(row.sacFlies)}</td>
+          <td>${formatNumber(row.strikeouts)}</td>
+          <td>${formatAverageValue(row.battingAverage)}</td>
+          <td>${formatAverageValue(row.onBasePercentage)}</td>
+          <td>${formatAverageValue(row.sluggingPercentage)}</td>
+          <td>${formatAverageValue(row.ops)}</td>
+        </tr>
+      `
+    )
+    .join("");
+  return `
+    <article class="dashboard-card season-card-wide">
+      <div class="card-head"><h3>${escapeHtml(title)}</h3></div>
+      <div class="table-scroll">
+        <table class="data-table season-table batter-season-table">
+          <thead>
+            <tr>
+              <th>区分</th><th>打席</th><th>打数</th><th>安打</th><th>二塁打</th><th>三塁打</th><th>本塁打</th>
+              <th>四球</th><th>死球</th><th>犠打</th><th>犠飛</th><th>三振</th><th>打率</th><th>出塁率</th><th>長打率</th><th>OPS</th>
+            </tr>
+          </thead>
+          <tbody>${body}</tbody>
+        </table>
+      </div>
+    </article>
+  `;
+}
+
+function renderBatterSeasonPanel(dashboard) {
+  return `
+    <div class="season-detail-grid">
+      ${BATTER_SEASON_SECTIONS
+        .map(([key, title]) => renderBatterSplitTable(key, title, dashboard?.[key] || []))
+        .join("")}
+    </div>
+  `;
+}
+
+function renderPitcherSeasonPanel(dashboard) {
+  return `
     <div class="season-detail-grid">
       ${renderSeasonPitchMix(dashboard)}
       ${renderSeasonPitchSummary(dashboard)}
@@ -982,10 +1057,31 @@ function renderSeasonPanel() {
   `;
 }
 
+function renderSeasonPanel() {
+  const dashboard = seasonDashboard();
+  els.seasonMetricCount.textContent = dashboard
+    ? state.config === TYPE_CONFIG.pitcher
+      ? `${formatNumber(dashboard.totalPitches)}球`
+      : `${formatNumber(dashboard.totalPlateAppearances)}打席`
+    : state.config === TYPE_CONFIG.pitcher
+      ? "0球"
+      : "0打席";
+  if (!state.currentRow) {
+    els.seasonDetailWrap.innerHTML = `<div class="section-empty compare-empty">${escapeHtml(state.error || "選手データを読み込めませんでした。")}</div>`;
+    return;
+  }
+  if (!dashboard) {
+    els.seasonDetailWrap.innerHTML = '<div class="section-empty compare-empty">この年度の一球データ集計はありません。</div>';
+    return;
+  }
+  els.seasonDetailWrap.innerHTML =
+    state.config === TYPE_CONFIG.pitcher
+      ? renderPitcherSeasonPanel(dashboard)
+      : renderBatterSeasonPanel(dashboard);
+}
+
 function renderModeToggles() {
-  const modes = Object.entries(MODE_CONFIG).filter(([_mode, config]) => {
-    return !config.pitcherOnly || state.config === TYPE_CONFIG.pitcher;
-  });
+  const modes = Object.entries(MODE_CONFIG);
   if (!modes.some(([mode]) => mode === state.activeMode)) {
     state.activeMode = modes[0]?.[0] || "compare";
   }
@@ -1287,7 +1383,7 @@ function renderHeader() {
 async function init() {
   const params = currentParams();
   state.config = TYPE_CONFIG[params.get("type")] || TYPE_CONFIG.pitcher;
-  state.activeMode = state.config === TYPE_CONFIG.pitcher ? "season" : "compare";
+  state.activeMode = "season";
   state.activeMetricKeys = [];
 
   try {
