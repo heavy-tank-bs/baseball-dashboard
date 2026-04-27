@@ -1690,6 +1690,27 @@ select {
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
+.season-pitch-mix-legend {
+  grid-template-columns: 1fr;
+  align-content: center;
+  margin-top: 0;
+}
+
+.season-pitch-mix-legend .outcome-item-head strong {
+  font-size: var(--table-font-size);
+}
+
+.season-pitch-mix-layout {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.9fr) minmax(320px, 1.1fr);
+  gap: 18px;
+  align-items: center;
+}
+
+.season-pitch-mix-layout .season-pie-shell {
+  margin-bottom: 0;
+}
+
 .season-table {
   min-width: 100%;
   width: max-content;
@@ -2074,6 +2095,10 @@ select {
 
   .season-pitch-grid,
   .season-outcome-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .season-pitch-mix-layout {
     grid-template-columns: 1fr;
   }
 

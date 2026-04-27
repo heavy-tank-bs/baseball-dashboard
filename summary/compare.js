@@ -717,6 +717,31 @@ function seasonPitchCards(rows) {
   `;
 }
 
+function seasonPitchMixLegend(rows) {
+  const visibleRows = (rows || []).filter((row) => (Number(row?.count) || 0) > 0);
+  if (!visibleRows.length) return "";
+  return `
+    <div class="season-outcome-grid season-pitch-mix-legend">
+      ${visibleRows
+        .map(
+          (row) => `
+            <div class="outcome-item">
+              <div class="outcome-item-head">
+                <span class="legend-swatch" style="background:${escapeHtml(row.color || "#0F2340")}"></span>
+                <strong>${escapeHtml(row.pitchType)}</strong>
+              </div>
+              <div class="outcome-item-values">
+                <span>${formatNumber(row.count)}球</span>
+                <span>${formatPercentValue(row.ratio)}</span>
+              </div>
+            </div>
+          `
+        )
+        .join("")}
+    </div>
+  `;
+}
+
 function renderSeasonPitchMix(dashboard) {
   const rows = dashboard?.pitchMix || [];
   return `
@@ -725,8 +750,10 @@ function renderSeasonPitchMix(dashboard) {
         <h3>球種比率</h3>
         <span class="result-count">${formatNumber(dashboard?.totalPitches)}球</span>
       </div>
-      ${seasonStackBar(rows)}
-      ${seasonPitchCards(rows)}
+      <div class="season-pitch-mix-layout">
+        ${seasonPieChart(rows, "pitchType")}
+        ${seasonPitchMixLegend(rows)}
+      </div>
     </article>
   `;
 }
