@@ -1,7 +1,7 @@
 const TYPE_CONFIG = {
   pitcher: {
     label: "投手",
-    datasetUrl: "./player_totals.json?v=20260426-02",
+    datasetUrl: "./player_totals.json?v=20260427-10",
     annualHref: "./annual.html",
     annualLabel: "年度別投手成績へ戻る",
     idKey: "pitcherId",
@@ -195,6 +195,12 @@ function formatPercentValue(value, digits = 1) {
   if (value === null || value === undefined || value === "") return "-";
   const number = Number(value);
   return Number.isFinite(number) ? `${number.toFixed(digits)}%` : `${value}`;
+}
+
+function formatPlusValue(value) {
+  if (value === null || value === undefined || value === "") return "-";
+  const number = Number(value);
+  return Number.isFinite(number) ? number.toFixed(0) : `${value}`;
 }
 
 function formatAverageValue(value) {
@@ -763,7 +769,7 @@ function renderSeasonPitchSummary(dashboard) {
   if (!rows.length) {
     return `
       <article class="dashboard-card">
-        <div class="card-head"><h3>球種サマリ</h3></div>
+        <div class="card-head"><h3>球種別サマリ</h3></div>
         <div class="section-empty compare-empty">データなし</div>
       </article>
     `;
@@ -792,7 +798,7 @@ function renderSeasonPitchSummary(dashboard) {
     .join("");
   return `
     <article class="dashboard-card season-card-wide">
-      <div class="card-head"><h3>球種サマリ</h3></div>
+      <div class="card-head"><h3>球種別サマリ</h3></div>
       <div class="table-scroll">
         <table class="data-table season-table season-pitch-summary-table">
           <thead>
@@ -804,6 +810,76 @@ function renderSeasonPitchSummary(dashboard) {
           <tbody>${body}</tbody>
         </table>
       </div>
+    </article>
+  `;
+}
+
+function renderMetricDescriptions() {
+  const descriptions = [
+    ["whiff%", "空振り数 ÷ スイング数"],
+    ["csw%", "空振り数と見逃しストライク数の合計 ÷ 全投球数"],
+    ["zone%", "ストライクゾーン内の投球数 ÷ 投球座標を取得できた投球数"],
+    ["z-swing%", "ゾーン内スイング数 ÷ ゾーン内投球数"],
+    ["o-contact%", "ゾーン外コンタクト数 ÷ ゾーン外スイング数"],
+    ["chase%", "ゾーン外スイング数 ÷ ゾーン外投球数"],
+    ["chase+", "球種別chase% ÷ 同リーグ平均chase% × 100"],
+  ];
+  return `
+    <dl class="metric-description-list">
+      ${descriptions
+        .map(
+          ([label, description]) => `
+            <div>
+              <dt>${escapeHtml(label)}</dt>
+              <dd>${escapeHtml(description)}</dd>
+            </div>
+          `
+        )
+        .join("")}
+    </dl>
+  `;
+}
+
+function renderSeasonPitchMetricSummary(dashboard) {
+  const rows = (dashboard?.pitchMix || []).filter((row) => (Number(row?.count) || 0) > 0);
+  if (!rows.length) {
+    return `
+      <article class="dashboard-card">
+        <div class="card-head"><h3>球種別サマリ（各種指標）</h3></div>
+        <div class="section-empty compare-empty">データなし</div>
+      </article>
+    `;
+  }
+  const body = rows
+    .map(
+      (row) => `
+        <tr>
+          <td><span class="pitch-name-cell"><span class="legend-swatch" style="background:${escapeHtml(row.color || "#0F2340")}"></span>${escapeHtml(row.pitchType)}</span></td>
+          <td>${formatPercentValue(row.whiffRate)}</td>
+          <td>${formatPercentValue(row.csw)}</td>
+          <td>${formatPercentValue(row.zoneRate)}</td>
+          <td>${formatPercentValue(row.zSwing)}</td>
+          <td>${formatPercentValue(row.oContact)}</td>
+          <td>${formatPercentValue(row.chase)}</td>
+          <td>${formatPlusValue(row.chasePlus)}</td>
+        </tr>
+      `
+    )
+    .join("");
+  return `
+    <article class="dashboard-card season-card-wide">
+      <div class="card-head"><h3>球種別サマリ（各種指標）</h3></div>
+      <div class="table-scroll">
+        <table class="data-table season-table season-pitch-metric-summary-table">
+          <thead>
+            <tr>
+              <th>球種</th><th>whiff%</th><th>csw%</th><th>zone%</th><th>z-swing%</th><th>o-contact%</th><th>chase%</th><th>chase+</th>
+            </tr>
+          </thead>
+          <tbody>${body}</tbody>
+        </table>
+      </div>
+      ${renderMetricDescriptions()}
     </article>
   `;
 }
@@ -1303,6 +1379,7 @@ function renderPitcherSeasonPanel(dashboard) {
     <div class="season-detail-grid">
       ${renderSeasonPitchMix(dashboard)}
       ${renderSeasonPitchSummary(dashboard)}
+      ${renderSeasonPitchMetricSummary(dashboard)}
       ${renderSeasonInningSummary(dashboard)}
       ${renderPitcherHandSummary(dashboard)}
       ${renderPitcherGameSplitTable("opponentRows", "対チーム別投手成績", dashboard?.opponentRows || [])}

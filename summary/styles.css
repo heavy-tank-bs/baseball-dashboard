@@ -1779,6 +1779,10 @@ select {
   min-width: 1280px;
 }
 
+.season-pitch-metric-summary-table {
+  min-width: 980px;
+}
+
 .season-inning-table {
   min-width: 1120px;
 }

@@ -2006,6 +2006,14 @@ def build_annual_stat_bucket() -> dict:
         "speedCount": 0,
         "maxSpeed": None,
         "whiffCount": 0,
+        "swingCount": 0,
+        "calledStrikeCount": 0,
+        "locatedCount": 0,
+        "zoneCount": 0,
+        "outZoneCount": 0,
+        "zoneSwingCount": 0,
+        "outZoneSwingCount": 0,
+        "outZoneContactCount": 0,
         "atBats": 0,
         "singles": 0,
         "doubles": 0,
@@ -2037,6 +2045,14 @@ def add_serialized_stat_row(bucket: dict, row: dict) -> None:
         bucket["maxSpeed"] = max(max_speed, bucket["maxSpeed"] or max_speed)
 
     bucket["whiffCount"] += parse_int(row.get("whiffCount"))
+    bucket["swingCount"] += parse_int(row.get("swingCount"))
+    bucket["calledStrikeCount"] += parse_int(row.get("calledStrikeCount"))
+    bucket["locatedCount"] += parse_int(row.get("locatedCount"))
+    bucket["zoneCount"] += parse_int(row.get("zoneCount"))
+    bucket["outZoneCount"] += parse_int(row.get("outZoneCount"))
+    bucket["zoneSwingCount"] += parse_int(row.get("zoneSwingCount"))
+    bucket["outZoneSwingCount"] += parse_int(row.get("outZoneSwingCount"))
+    bucket["outZoneContactCount"] += parse_int(row.get("outZoneContactCount"))
     bucket["atBats"] += parse_int(row.get("atBats"))
     bucket["singles"] += parse_int(row.get("singles"))
     bucket["doubles"] += parse_int(row.get("doubles"))
@@ -2047,7 +2063,7 @@ def add_serialized_stat_row(bucket: dict, row: dict) -> None:
     bucket["strikeouts"] += parse_int(row.get("strikeouts"))
 
 
-def serialize_annual_stat_bucket(stats: dict, total: int | None = None) -> dict:
+def serialize_annual_stat_bucket(stats: dict, total: int | None = None, chase_plus_baseline: float | None = None) -> dict:
     count = parse_int(stats.get("count"))
     speed_count = parse_int(stats.get("speedCount"))
     speed_total = parse_float(stats.get("speedTotal")) or 0.0
@@ -2061,6 +2077,15 @@ def serialize_annual_stat_bucket(stats: dict, total: int | None = None) -> dict:
     at_bats = parse_int(stats.get("atBats"))
     whiff = parse_int(stats.get("whiffCount")) / count * 100 if count else None
     hit_rate = hits / at_bats if at_bats else None
+    swings = parse_int(stats.get("swingCount"))
+    called_strikes = parse_int(stats.get("calledStrikeCount"))
+    located = parse_int(stats.get("locatedCount"))
+    zone = parse_int(stats.get("zoneCount"))
+    out_zone = parse_int(stats.get("outZoneCount"))
+    zone_swings = parse_int(stats.get("zoneSwingCount"))
+    out_zone_swings = parse_int(stats.get("outZoneSwingCount"))
+    out_zone_contacts = parse_int(stats.get("outZoneContactCount"))
+    chase = out_zone_swings / out_zone * 100 if out_zone else None
     row = {
         "count": count,
         "ratio": round_or_none(count / total * 100, 1) if total else 0.0,
@@ -2070,6 +2095,21 @@ def serialize_annual_stat_bucket(stats: dict, total: int | None = None) -> dict:
         "speedCount": speed_count,
         "whiffCount": parse_int(stats.get("whiffCount")),
         "whiff": round_or_none(whiff, 1),
+        "swingCount": swings,
+        "calledStrikeCount": called_strikes,
+        "locatedCount": located,
+        "zoneCount": zone,
+        "outZoneCount": out_zone,
+        "zoneSwingCount": zone_swings,
+        "outZoneSwingCount": out_zone_swings,
+        "outZoneContactCount": out_zone_contacts,
+        "whiffRate": round_or_none(parse_int(stats.get("whiffCount")) / swings * 100, 1) if swings else None,
+        "csw": round_or_none((parse_int(stats.get("whiffCount")) + called_strikes) / count * 100, 1) if count else None,
+        "zoneRate": round_or_none(zone / located * 100, 1) if located else None,
+        "zSwing": round_or_none(zone_swings / zone * 100, 1) if zone else None,
+        "oContact": round_or_none(out_zone_contacts / out_zone_swings * 100, 1) if out_zone_swings else None,
+        "chase": round_or_none(chase, 1),
+        "chasePlus": round_or_none(chase / chase_plus_baseline * 100, 0) if chase is not None and chase_plus_baseline else None,
         "atBats": at_bats,
         "singles": parse_int(stats.get("singles")),
         "doubles": parse_int(stats.get("doubles")),
@@ -2234,6 +2274,7 @@ def season_dashboard_source(player_bucket: dict) -> dict:
             "finish": defaultdict(lambda: {"count": 0, "looking": 0, "swinging": 0}),
             "finishTotal": 0,
             "pitchColors": {},
+            "metricBaselines": {},
             "recentGames": [],
             "hasData": False,
         }
@@ -2320,6 +2361,10 @@ def add_season_dashboard_entry(player_bucket: dict, entry: dict, decision_row: d
     for pitch_type, color in (dashboard.get("pitchColors") or {}).items():
         if pitch_type and color:
             source["pitchColors"].setdefault(pitch_type, color)
+
+    chase_baseline = parse_float((dashboard.get("metricBaselines") or {}).get("chase"))
+    if chase_baseline is not None:
+        source["metricBaselines"].setdefault("chase", chase_baseline)
 
     for row in pitch_mix:
         pitch_type = row.get("pitchType") or "-"
@@ -2453,11 +2498,13 @@ def finalize_season_dashboard(player: dict) -> dict | None:
         return None
 
     total_pitches = parse_int(source.get("totalPitches"))
+    metric_baselines = source.get("metricBaselines") or {}
+    chase_baseline = parse_float(metric_baselines.get("chase"))
     pitch_rows = []
     for idx, (pitch_type, stats) in enumerate(
         sorted(source["pitchTypes"].items(), key=lambda item: (-parse_int(item[1].get("count")), item[0]))
     ):
-        row = serialize_annual_stat_bucket(stats, total_pitches)
+        row = serialize_annual_stat_bucket(stats, total_pitches, chase_baseline)
         row.update(
             {
                 "pitchType": pitch_type,
@@ -2567,6 +2614,10 @@ def finalize_season_dashboard(player: dict) -> dict | None:
     return {
         "totalPitches": total_pitches,
         "pitchMix": pitch_rows,
+        "metricBaselines": {
+            "chase": round_or_none(chase_baseline, 1),
+            "chaseScope": "league",
+        },
         "inningRows": inning_rows,
         "batterHandRows": batter_hand_rows,
         "opponentRows": opponent_rows,

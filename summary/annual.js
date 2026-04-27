@@ -490,7 +490,7 @@ function bindEvents() {
 
 async function init() {
   try {
-    const response = await fetch("./player_totals.json?v=20260421-04", { cache: "no-store" });
+    const response = await fetch("./player_totals.json?v=20260427-10", { cache: "no-store" });
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     state.data = await response.json();
     bindEvents();
