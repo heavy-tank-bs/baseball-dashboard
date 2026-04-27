@@ -33,8 +33,8 @@
       "pitchType": "ストレート",
       "speed": "152km/h",
       "result": "ボール",
-      "top": null,
-      "left": null
+      "top": 4.32,
+      "left": 14.399999999999999
     },
     {
       "pa_index": "0810100",
@@ -49,8 +49,8 @@
       "pitchType": "ストレート",
       "speed": "151km/h",
       "result": "ファウル",
-      "top": null,
-      "left": null
+      "top": 33.48,
+      "left": 10.08
     },
     {
       "pa_index": "0810100",
@@ -65,8 +65,8 @@
       "pitchType": "ストレート",
       "speed": "148km/h",
       "result": "ファウル",
-      "top": null,
-      "left": null
+      "top": 16.919999999999998,
+      "left": 28.08
     },
     {
       "pa_index": "0810100",
@@ -81,8 +81,8 @@
       "pitchType": "ストレート",
       "speed": "149km/h",
       "result": "ボール",
-      "top": null,
-      "left": null
+      "top": 15.84,
+      "left": 45.72
     },
     {
       "pa_index": "0810100",
@@ -97,8 +97,8 @@
       "pitchType": "フォーク",
       "speed": "144km/h",
       "result": "二ゴロ [ダイビングキャッチ、好プレイ]",
-      "top": null,
-      "left": null
+      "top": 46.08,
+      "left": 27.0
     },
     {
       "pa_index": "0810200",
@@ -113,8 +113,8 @@
       "pitchType": "カーブ",
       "speed": "122km/h",
       "result": "見逃し",
-      "top": null,
-      "left": null
+      "top": 30.24,
+      "left": 34.92
     },
     {
       "pa_index": "0810200",
@@ -129,8 +129,8 @@
       "pitchType": "ストレート",
       "speed": "152km/h",
       "result": "ボール",
-      "top": null,
-      "left": null
+      "top": 5.76,
+      "left": 45.72
     },
     {
       "pa_index": "0810200",
@@ -145,8 +145,8 @@
       "pitchType": "カーブ",
       "speed": "121km/h",
       "result": "見逃し",
-      "top": null,
-      "left": null
+      "top": 10.08,
+      "left": 36.72
     },
     {
       "pa_index": "0810200",
@@ -161,8 +161,8 @@
       "pitchType": "ストレート",
       "speed": "148km/h",
       "result": "ボール",
-      "top": null,
-      "left": null
+      "top": 7.56,
+      "left": 2.88
     },
     {
       "pa_index": "0810200",
@@ -177,8 +177,8 @@
       "pitchType": "フォーク",
       "speed": "144km/h",
       "result": "一安 [グラブトス、送球が逸れる]",
-      "top": null,
-      "left": null
+      "top": 52.559999999999995,
+      "left": 37.44
     },
     {
       "pa_index": "0810300",
@@ -193,8 +193,8 @@
       "pitchType": "ストレート",
       "speed": "146km/h",
       "result": "ボール [バント構え]",
-      "top": null,
-      "left": null
+      "top": 32.76,
+      "left": 2.16
     },
     {
       "pa_index": "0810300",
@@ -209,8 +209,8 @@
       "pitchType": "ストレート",
       "speed": "-",
       "result": "ファウル [バントファウル]",
-      "top": null,
-      "left": null
+      "top": 5.76,
+      "left": 15.84
     },
     {
       "pa_index": "0810300",
@@ -225,8 +225,8 @@
       "pitchType": "フォーク",
       "speed": "142km/h",
       "result": "空振り [ワンバウンド、バント空振り]",
-      "top": null,
-      "left": null
+      "top": 59.04,
+      "left": 24.119999999999997
     },
     {
       "pa_index": "0810300",
@@ -241,8 +241,8 @@
       "pitchType": "フォーク",
       "speed": "140km/h",
       "result": "投犠打",
-      "top": null,
-      "left": null
+      "top": 44.64,
+      "left": 14.04
     },
     {
       "pa_index": "0810400",
@@ -257,8 +257,8 @@
       "pitchType": "ストレート",
       "speed": "149km/h",
       "result": "三邪飛",
-      "top": null,
-      "left": null
+      "top": 45.36,
+      "left": 29.88
     }
   ]
 }

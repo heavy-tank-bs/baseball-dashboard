@@ -33,8 +33,8 @@
       "pitchType": "チェンジアップ",
       "speed": "134km/h",
       "result": "空振り [ワンバウンド]",
-      "top": null,
-      "left": null
+      "top": 60.12,
+      "left": 11.52
     },
     {
       "pa_index": "0610100",
@@ -49,8 +49,8 @@
       "pitchType": "カーブ",
       "speed": "134km/h",
       "result": "ボール",
-      "top": null,
-      "left": null
+      "top": 48.239999999999995,
+      "left": 47.519999999999996
     },
     {
       "pa_index": "0610100",
@@ -65,8 +65,8 @@
       "pitchType": "スプリット",
       "speed": "141km/h",
       "result": "ボール",
-      "top": null,
-      "left": null
+      "top": 6.84,
+      "left": 47.519999999999996
     },
     {
       "pa_index": "0610100",
@@ -81,8 +81,8 @@
       "pitchType": "ストレート",
       "speed": "151km/h",
       "result": "中飛",
-      "top": null,
-      "left": null
+      "top": 53.28,
+      "left": 37.44
     },
     {
       "pa_index": "0610200",
@@ -97,8 +97,8 @@
       "pitchType": "スプリット",
       "speed": "142km/h",
       "result": "ボール [ワンバウンド]",
-      "top": null,
-      "left": null
+      "top": 61.559999999999995,
+      "left": 24.48
     },
     {
       "pa_index": "0610200",
@@ -113,8 +113,8 @@
       "pitchType": "シュート",
       "speed": "146km/h",
       "result": "ファウル",
-      "top": null,
-      "left": null
+      "top": 31.68,
+      "left": 25.919999999999998
     },
     {
       "pa_index": "0610200",
@@ -129,8 +129,8 @@
       "pitchType": "ストレート",
       "speed": "-",
       "result": "三ゴロ",
-      "top": null,
-      "left": null
+      "top": 57.239999999999995,
+      "left": 11.879999999999999
     },
     {
       "pa_index": "0610300",
@@ -145,8 +145,8 @@
       "pitchType": "ストレート",
       "speed": "152km/h",
       "result": "ファウル [フェンスよじ登る]",
-      "top": null,
-      "left": null
+      "top": 36.36,
+      "left": 28.799999999999997
     },
     {
       "pa_index": "0610300",
@@ -161,8 +161,8 @@
       "pitchType": "ストレート",
       "speed": "151km/h",
       "result": "右飛",
-      "top": null,
-      "left": null
+      "top": 18.36,
+      "left": 19.439999999999998
     }
   ]
 }

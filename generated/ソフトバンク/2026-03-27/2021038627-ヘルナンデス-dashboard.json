@@ -33,8 +33,8 @@
       "pitchType": "ストレート",
       "speed": "-",
       "result": "見逃し",
-      "top": null,
-      "left": null
+      "top": 50.4,
+      "left": 36.0
     },
     {
       "pa_index": "0710100",
@@ -49,8 +49,8 @@
       "pitchType": "ストレート",
       "speed": "-",
       "result": "ボール",
-      "top": null,
-      "left": null
+      "top": 10.799999999999999,
+      "left": 47.519999999999996
     },
     {
       "pa_index": "0710100",
@@ -65,8 +65,8 @@
       "pitchType": "スライダー",
       "speed": "142km/h",
       "result": "ファウル",
-      "top": null,
-      "left": null
+      "top": 34.56,
+      "left": 41.76
     },
     {
       "pa_index": "0710100",
@@ -81,8 +81,8 @@
       "pitchType": "ストレート",
       "speed": "155km/h",
       "result": "ファウル [高めのつり球を要求]",
-      "top": null,
-      "left": null
+      "top": 14.04,
+      "left": 4.32
     },
     {
       "pa_index": "0710100",
@@ -97,8 +97,8 @@
       "pitchType": "ストレート",
       "speed": "156km/h",
       "result": "見三振",
-      "top": null,
-      "left": null
+      "top": 10.799999999999999,
+      "left": 38.879999999999995
     },
     {
       "pa_index": "0710200",
@@ -113,8 +113,8 @@
       "pitchType": "スライダー",
       "speed": "142km/h",
       "result": "ボール",
-      "top": null,
-      "left": null
+      "top": 56.879999999999995,
+      "left": 14.399999999999999
     },
     {
       "pa_index": "0710200",
@@ -129,8 +129,8 @@
       "pitchType": "ストレート",
       "speed": "156km/h",
       "result": "空振り",
-      "top": null,
-      "left": null
+      "top": 33.48,
+      "left": 12.24
     },
     {
       "pa_index": "0710200",
@@ -145,8 +145,8 @@
       "pitchType": "ストレート",
       "speed": "157km/h",
       "result": "見逃し",
-      "top": null,
-      "left": null
+      "top": 30.599999999999998,
+      "left": 38.519999999999996
     },
     {
       "pa_index": "0710200",
@@ -161,8 +161,8 @@
       "pitchType": "ストレート",
       "speed": "155km/h",
       "result": "右本 [ラッキーゾーン]",
-      "top": null,
-      "left": null
+      "top": 48.96,
+      "left": 19.439999999999998
     },
     {
       "pa_index": "0710300",
@@ -177,8 +177,8 @@
       "pitchType": "ストレート",
       "speed": "-",
       "result": "ファウル",
-      "top": null,
-      "left": null
+      "top": 16.2,
+      "left": 11.52
     },
     {
       "pa_index": "0710300",
@@ -193,8 +193,8 @@
       "pitchType": "ストレート",
       "speed": "155km/h",
       "result": "ボール",
-      "top": null,
-      "left": null
+      "top": 4.32,
+      "left": 15.84
     },
     {
       "pa_index": "0710300",
@@ -209,8 +209,8 @@
       "pitchType": "スライダー",
       "speed": "142km/h",
       "result": "空振り",
-      "top": null,
-      "left": null
+      "top": 46.08,
+      "left": 36.0
     },
     {
       "pa_index": "0710300",
@@ -225,8 +225,8 @@
       "pitchType": "スライダー",
       "speed": "143km/h",
       "result": "空三振",
-      "top": null,
-      "left": null
+      "top": 52.199999999999996,
+      "left": 45.72
     },
     {
       "pa_index": "0710400",
@@ -241,8 +241,8 @@
       "pitchType": "ストレート",
       "speed": "153km/h",
       "result": "ファウル",
-      "top": null,
-      "left": null
+      "top": 6.12,
+      "left": 24.119999999999997
     },
     {
       "pa_index": "0710400",
@@ -257,8 +257,8 @@
       "pitchType": "ストレート",
       "speed": "154km/h",
       "result": "空振り [高めのつり球を要求]",
-      "top": null,
-      "left": null
+      "top": 9.0,
+      "left": 24.48
     },
     {
       "pa_index": "0710400",
@@ -273,8 +273,8 @@
       "pitchType": "ストレート",
       "speed": "154km/h",
       "result": "中安 [高めのつり球を要求]",
-      "top": null,
-      "left": null
+      "top": 4.32,
+      "left": 38.879999999999995
     },
     {
       "pa_index": "0710500",
@@ -289,8 +289,8 @@
       "pitchType": "ストレート",
       "speed": "-",
       "result": "捕邪飛",
-      "top": null,
-      "left": null
+      "top": 45.36,
+      "left": 10.08
     }
   ]
 }

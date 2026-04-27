@@ -97,6 +97,12 @@ function formatSpeed(value) {
   return Number.isFinite(number) ? `${number.toFixed(1)} km/h` : `${value}`;
 }
 
+function formatPlus(value) {
+  if (value === null || value === undefined || value === "") return "-";
+  const number = Number(value);
+  return Number.isFinite(number) ? number.toFixed(0) : `${value}`;
+}
+
 function escapeHtml(value) {
   return `${value ?? ""}`
     .replaceAll("&", "&amp;")
@@ -548,6 +554,12 @@ function renderPitchMixSection(dashboard) {
         </div>
         ${renderPitchSummaryTable(rows)}
       </section>
+      <section class="dashboard-card">
+        <div class="card-head">
+          <h3>球種別サマリ（各種指標）</h3>
+        </div>
+        ${renderPitchMetricSummaryTable(rows)}
+      </section>
     </div>
   `;
 }
@@ -589,6 +601,7 @@ function renderPitchSummaryTable(rows) {
           <tr>
             <th>球種</th>
             <th>平均球速</th>
+            <th>最速</th>
             <th>球数</th>
             <th>空振数</th>
             <th>空振率</th>
@@ -1677,6 +1690,12 @@ function renderPitchMixSection(dashboard) {
         </div>
         ${renderPitchSummaryTable(rows)}
       </section>
+      <section class="dashboard-card">
+        <div class="card-head">
+          <h3>球種別サマリ（各種指標）</h3>
+        </div>
+        ${renderPitchMetricSummaryTable(rows)}
+      </section>
     </div>
   `;
 }
@@ -1735,6 +1754,74 @@ function renderPitchSummaryTable(rows) {
         </thead>
         <tbody>${body}</tbody>
       </table>
+    </div>
+  `;
+}
+
+function renderPitchMetricSummaryTable(rows) {
+  const body = rows
+    .map(
+      (row) => `
+        <tr>
+          <td>
+            <span class="pitch-name-cell">
+              <span class="legend-swatch" style="background:${row.color}"></span>
+              <span>${row.pitchType}</span>
+            </span>
+          </td>
+          <td>${formatPercent(row.whiffRate ?? row.whiff)}</td>
+          <td>${formatPercent(row.csw)}</td>
+          <td>${formatPercent(row.zoneRate)}</td>
+          <td>${formatPercent(row.zSwing)}</td>
+          <td>${formatPercent(row.oContact)}</td>
+          <td>${formatPercent(row.chase)}</td>
+          <td>${formatPlus(row.chasePlus)}</td>
+        </tr>
+      `
+    )
+    .join("");
+
+  const descriptions = [
+    ["whiff%", "空振り数 ÷ スイング数。"],
+    ["csw%", "空振り数と見逃しストライク数の合計 ÷ 全投球数。"],
+    ["zone%", "ストライクゾーン内の投球数 ÷ 投球座標を取得できた投球数。"],
+    ["z-swing%", "ゾーン内スイング数 ÷ ゾーン内投球数。"],
+    ["o-contact%", "ゾーン外コンタクト数 ÷ ゾーン外スイング数。"],
+    ["chase%", "ゾーン外スイング数 ÷ ゾーン外投球数。座標欠損の投球は除外。"],
+    ["chase+", "球種別chase% ÷ 同リーグ平均chase% × 100。リーグ平均は座標欠損の投球を除外。"],
+  ];
+
+  const notes = descriptions
+    .map(
+      ([label, description]) => `
+        <div>
+          <dt>${label}</dt>
+          <dd>${description}</dd>
+        </div>
+      `
+    )
+    .join("");
+
+  return `
+    <div class="pitch-metric-summary">
+      <div class="table-scroll">
+        <table class="data-table wide-table pitch-metric-summary-table">
+          <thead>
+            <tr>
+              <th>球種</th>
+              <th>whiff%</th>
+              <th>csw%</th>
+              <th>zone%</th>
+              <th>z-swing%</th>
+              <th>o-contact%</th>
+              <th>chase%</th>
+              <th>chase+</th>
+            </tr>
+          </thead>
+          <tbody>${body}</tbody>
+        </table>
+      </div>
+      <dl class="metric-description-list">${notes}</dl>
     </div>
   `;
 }

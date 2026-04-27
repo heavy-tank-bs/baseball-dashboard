@@ -717,8 +717,15 @@ select {
   min-width: 1190px;
 }
 
+.pitch-metric-summary-table {
+  width: 980px;
+  min-width: 980px;
+}
+
 .pitch-summary-table th:first-child,
 .pitch-summary-table td:first-child,
+.pitch-metric-summary-table th:first-child,
+.pitch-metric-summary-table td:first-child,
 .inning-table th:first-child,
 .inning-table td:first-child,
 .inning-table th:nth-child(2),
@@ -731,6 +738,8 @@ select {
 
 .pitch-summary-table th:first-child,
 .pitch-summary-table td:first-child,
+.pitch-metric-summary-table th:first-child,
+.pitch-metric-summary-table td:first-child,
 .inning-table th:first-child,
 .inning-table td:first-child {
   left: 0;
@@ -747,10 +756,39 @@ select {
 }
 
 .pitch-summary-table th:first-child,
+.pitch-metric-summary-table th:first-child,
 .inning-table th:first-child,
 .inning-table th:nth-child(2) {
   background: var(--card-strong);
   z-index: 4;
+}
+
+.metric-description-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 12px 18px;
+  margin: 16px 0 0;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--card-strong);
+}
+
+.metric-description-list div {
+  display: grid;
+  gap: 4px;
+}
+
+.metric-description-list dt {
+  color: var(--text);
+  font-weight: 800;
+}
+
+.metric-description-list dd {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.6;
 }
 
 .pitch-name-cell {
@@ -2331,6 +2369,11 @@ select {
     min-width: 1130px;
   }
 
+  .pitch-metric-summary-table {
+    width: 940px;
+    min-width: 940px;
+  }
+
   .inning-table {
     width: 1140px;
     min-width: 1140px;
@@ -2377,6 +2420,11 @@ select {
   .pitch-summary-table {
     width: 1060px;
     min-width: 1060px;
+  }
+
+  .pitch-metric-summary-table {
+    width: 900px;
+    min-width: 900px;
   }
 
   .inning-table {

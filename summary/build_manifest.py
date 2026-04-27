@@ -1456,7 +1456,152 @@ def count_intentional_walks(rows: list[dict]) -> int:
     return total
 
 
-def serialize_dashboard(payload: dict) -> dict:
+def is_located_pitch(row: dict) -> bool:
+    return parse_float(row.get("left")) is not None and parse_float(row.get("top")) is not None
+
+
+def is_zone_pitch(row: dict) -> bool:
+    left = parse_float(row.get("left"))
+    top = parse_float(row.get("top"))
+    if left is None or top is None:
+        return False
+    return (
+        HEATMAP_WIDTH * 0.2 <= left <= HEATMAP_WIDTH * 0.8
+        and HEATMAP_HEIGHT * 0.2 <= top <= HEATMAP_HEIGHT * 0.8
+    )
+
+
+def is_called_strike_result(result: str) -> bool:
+    primary = DASHBOARD.normalize_result(result or "")
+    return "見逃し" in primary or "見三振" in primary or primary == "ストライク"
+
+
+def is_ball_result(result: str) -> bool:
+    primary = DASHBOARD.normalize_result(result or "")
+    return "ボール" in primary or "四球" in primary or "死球" in primary
+
+
+def is_contact_result(result: str) -> bool:
+    primary = DASHBOARD.normalize_result(result or "")
+    if not primary or DASHBOARD.is_swing_miss_result(primary) or is_called_strike_result(primary) or is_ball_result(primary):
+        return False
+    return True
+
+
+def is_swing_result(result: str) -> bool:
+    return DASHBOARD.is_swing_miss_result(result or "") or is_contact_result(result or "")
+
+
+def build_plate_discipline_bucket() -> dict:
+    return {
+        "pitches": 0,
+        "located": 0,
+        "zone": 0,
+        "outZone": 0,
+        "swings": 0,
+        "whiffs": 0,
+        "calledStrikes": 0,
+        "zoneSwings": 0,
+        "outZoneSwings": 0,
+        "outZoneContacts": 0,
+    }
+
+
+def record_plate_discipline_pitch(bucket: dict, row: dict) -> None:
+    result = row.get("result") or ""
+    swing = is_swing_result(result)
+    whiff = DASHBOARD.is_swing_miss_result(result)
+    called_strike = is_called_strike_result(result)
+    located = is_located_pitch(row)
+    in_zone = is_zone_pitch(row) if located else False
+
+    bucket["pitches"] += 1
+    if swing:
+        bucket["swings"] += 1
+    if whiff:
+        bucket["whiffs"] += 1
+    if called_strike:
+        bucket["calledStrikes"] += 1
+    if not located:
+        return
+
+    bucket["located"] += 1
+    if in_zone:
+        bucket["zone"] += 1
+        if swing:
+            bucket["zoneSwings"] += 1
+    else:
+        bucket["outZone"] += 1
+        if swing:
+            bucket["outZoneSwings"] += 1
+            if is_contact_result(result):
+                bucket["outZoneContacts"] += 1
+
+
+def finalize_plate_discipline_bucket(bucket: dict, overall_chase: float | None = None) -> dict:
+    swings = parse_int(bucket.get("swings"))
+    pitches = parse_int(bucket.get("pitches"))
+    located = parse_int(bucket.get("located"))
+    zone = parse_int(bucket.get("zone"))
+    out_zone = parse_int(bucket.get("outZone"))
+    out_zone_swings = parse_int(bucket.get("outZoneSwings"))
+    chase = (out_zone_swings / out_zone * 100) if out_zone else None
+    return {
+        "swingCount": swings,
+        "calledStrikeCount": parse_int(bucket.get("calledStrikes")),
+        "locatedCount": located,
+        "zoneCount": zone,
+        "outZoneCount": out_zone,
+        "zoneSwingCount": parse_int(bucket.get("zoneSwings")),
+        "outZoneSwingCount": out_zone_swings,
+        "outZoneContactCount": parse_int(bucket.get("outZoneContacts")),
+        "whiffRate": round_or_none(parse_int(bucket.get("whiffs")) / swings * 100, 1) if swings else None,
+        "csw": round_or_none((parse_int(bucket.get("whiffs")) + parse_int(bucket.get("calledStrikes"))) / pitches * 100, 1) if pitches else None,
+        "zoneRate": round_or_none(zone / located * 100, 1) if located else None,
+        "zSwing": round_or_none(parse_int(bucket.get("zoneSwings")) / zone * 100, 1) if zone else None,
+        "oContact": round_or_none(parse_int(bucket.get("outZoneContacts")) / out_zone_swings * 100, 1) if out_zone_swings else None,
+        "chase": round_or_none(chase, 1),
+        "chasePlus": round_or_none((chase / overall_chase * 100), 0) if chase is not None and overall_chase else None,
+    }
+
+
+def build_pitch_discipline_summary(rows: list[dict], chase_plus_baseline: float | None = None) -> tuple[dict[str, dict], float | None]:
+    by_pitch: dict[str, dict] = defaultdict(build_plate_discipline_bucket)
+    overall = build_plate_discipline_bucket()
+    for row in rows:
+        pitch_type = row.get("pitchType") or "-"
+        record_plate_discipline_pitch(overall, row)
+        record_plate_discipline_pitch(by_pitch[pitch_type], row)
+    overall_rates = finalize_plate_discipline_bucket(overall)
+    overall_chase = overall_rates.get("chase")
+    chase_baseline = chase_plus_baseline or overall_chase
+    return {
+        pitch_type: finalize_plate_discipline_bucket(bucket, chase_baseline)
+        for pitch_type, bucket in by_pitch.items()
+    }, chase_baseline
+
+
+def build_league_chase_baselines(grouped_entries: dict[tuple[str, str, str], dict]) -> dict[str, float | None]:
+    buckets: dict[str, dict] = defaultdict(build_plate_discipline_bucket)
+    for (team, date, prefix) in grouped_entries:
+        json_path = GENERATED_DIR / team / date / f"{prefix}-dashboard.json"
+        payload = safe_load_json(json_path)
+        if not payload:
+            continue
+        league = team_league(team)
+        if not league:
+            continue
+        for row in payload.get("pitches") or []:
+            record_plate_discipline_pitch(buckets[league], row)
+            record_plate_discipline_pitch(buckets["NPB"], row)
+
+    return {
+        league: finalize_plate_discipline_bucket(bucket).get("chase")
+        for league, bucket in buckets.items()
+    }
+
+
+def serialize_dashboard(payload: dict, chase_plus_baseline: float | None = None) -> dict:
     rows = payload.get("pitches") or []
     if not rows:
         return {}
@@ -1472,6 +1617,7 @@ def serialize_dashboard(payload: dict) -> dict:
         _velocity_trend,
     ) = DASHBOARD.summarize(rows)
 
+    discipline_by_pitch, chase_baseline = build_pitch_discipline_summary(rows, chase_plus_baseline)
     pitch_mix = []
     for idx, (pitch_type, count) in enumerate(pitch_counts.most_common()):
         stats = pitch_stats[pitch_type]
@@ -1498,6 +1644,7 @@ def serialize_dashboard(payload: dict) -> dict:
                 "strikeouts": summary["strikeouts"],
                 "hitRate": round(summary["hit_rate"], 3) if summary["hit_rate"] is not None else None,
                 "color": PITCH_COLORS[idx % len(PITCH_COLORS)],
+                **discipline_by_pitch.get(pitch_type, {}),
             }
         )
 
@@ -1557,6 +1704,10 @@ def serialize_dashboard(payload: dict) -> dict:
         "velocity": velocity_summary,
         "countMix": count_mix,
         "pitchColors": pitch_color_map,
+        "metricBaselines": {
+            "chase": round_or_none(chase_baseline, 1),
+            "chaseScope": "league" if chase_plus_baseline else "game",
+        },
     }
 
 
@@ -3589,6 +3740,7 @@ def collect_entries() -> list[dict]:
                 )
                 entry["pages"][page_no] = site_path(png_path)
 
+    league_chase_baselines = build_league_chase_baselines(grouped)
     entries: list[dict] = []
     for (team, date, prefix), entry in grouped.items():
         json_path = GENERATED_DIR / team / date / f"{prefix}-dashboard.json"
@@ -3602,9 +3754,9 @@ def collect_entries() -> list[dict]:
         title, matchup = infer_title(prefix, date, payload)
         statline = payload.get("statline", {})
         metadata = payload.get("metadata", {})
-        dashboard = serialize_dashboard(payload)
         pitcher_id = extract_pitcher_id(payload)
         league = team_league(team)
+        dashboard = serialize_dashboard(payload, league_chase_baselines.get(league) or league_chase_baselines.get("NPB"))
 
         entries.append(
             {
