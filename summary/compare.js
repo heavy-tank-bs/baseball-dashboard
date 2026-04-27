@@ -1119,18 +1119,36 @@ function renderPitcherDecisionInningTable(title, rows = [], available = true) {
       </article>
     `;
   }
-  const body = visibleRows
-    .map(
-      (row) => `
+  const innings = Array.from({ length: 12 }, (_item, index) => index + 1);
+  const rowByInning = new Map(rows.map((row) => [Number(row?.inning), row]));
+  const conditionRows = [
+    ["total", "合計"],
+    ["win", "勝利"],
+    ["loss", "敗戦"],
+    ["noDecision", "勝敗無"],
+  ];
+  const cellClass = (key, value) => {
+    const count = Number(value) || 0;
+    if (key === "total" && count === 0) return " inning-cell-zero";
+    if (count >= 3) return " inning-cell-high";
+    if (count >= 2) return " inning-cell-mid";
+    if (count >= 1) return " inning-cell-low";
+    return "";
+  };
+  const body = conditionRows
+    .map(([key, label]) => {
+      const values = innings.map((inning) => Number(rowByInning.get(inning)?.[key]) || 0);
+      const total = values.reduce((sum, value) => sum + value, 0);
+      return `
         <tr>
-          <td>${escapeHtml(row.inning)}</td>
-          <td>${formatNumber(row.win)}</td>
-          <td>${formatNumber(row.loss)}</td>
-          <td>${formatNumber(row.noDecision)}</td>
-          <td>${formatNumber(row.total)}</td>
+          <th scope="row">${escapeHtml(label)}</th>
+          ${values
+            .map((value) => `<td class="${cellClass(key, value).trim()}">${formatNumber(value)}</td>`)
+            .join("")}
+          <td class="inning-cell-total">${formatNumber(total)}</td>
         </tr>
-      `
-    )
+      `;
+    })
     .join("");
   return `
     <article class="dashboard-card season-card-wide">
@@ -1138,7 +1156,11 @@ function renderPitcherDecisionInningTable(title, rows = [], available = true) {
       <div class="table-scroll">
         <table class="data-table season-table pitcher-decision-inning-table">
           <thead>
-            <tr><th>回</th><th>勝</th><th>負</th><th>勝敗無</th><th>合計</th></tr>
+            <tr>
+              <th>条件</th>
+              ${innings.map((inning) => `<th>${inning}回</th>`).join("")}
+              <th>合計</th>
+            </tr>
           </thead>
           <tbody>${body}</tbody>
         </table>
@@ -1285,8 +1307,8 @@ function renderPitcherSeasonPanel(dashboard) {
       ${renderPitcherHandSummary(dashboard)}
       ${renderPitcherGameSplitTable("opponentRows", "対チーム別投手成績", dashboard?.opponentRows || [])}
       ${renderPitcherGameSplitTable("stadiumRows", "球場別投手成績", dashboard?.stadiumRows || [])}
-      ${renderPitcherDecisionInningTable("イニング別失点数（勝・負・勝敗無ごと）", dashboard?.inningRunRows || [], Boolean(dashboard?.inningRunRowsAvailable))}
-      ${renderPitcherDecisionInningTable("イニング別四死球数（勝・負・勝敗無ごと）", dashboard?.inningWalkRows || [])}
+      ${renderPitcherDecisionInningTable("イニング別失点数", dashboard?.inningRunRows || [], Boolean(dashboard?.inningRunRowsAvailable))}
+      ${renderPitcherDecisionInningTable("イニング別四死球数", dashboard?.inningWalkRows || [])}
       ${renderSeasonOutcomes(dashboard)}
       ${renderSeasonFinish(dashboard)}
       ${renderRecentGames(dashboard)}

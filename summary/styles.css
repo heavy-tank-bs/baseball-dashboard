@@ -1739,7 +1739,55 @@ select {
 }
 
 .pitcher-decision-inning-table {
-  min-width: 620px;
+  min-width: 860px;
+  border-collapse: collapse;
+  border: 1px solid #bfbfbf;
+}
+
+.pitcher-decision-inning-table th,
+.pitcher-decision-inning-table td {
+  padding: 4px 8px;
+  border: 1px solid #bfbfbf;
+  border-bottom: 1px solid #bfbfbf;
+  color: #000;
+  font-size: 14px;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.pitcher-decision-inning-table thead th {
+  background: #c8c8ff;
+  color: #000;
+  font-weight: 700;
+}
+
+.pitcher-decision-inning-table tbody th {
+  background: #f8f8f8;
+  color: #000;
+  font-weight: 700;
+}
+
+.pitcher-decision-inning-table .inning-cell-zero {
+  background: #b8ffb8;
+}
+
+.pitcher-decision-inning-table .inning-cell-low {
+  background: #ff9d8b;
+}
+
+.pitcher-decision-inning-table .inning-cell-mid {
+  background: #ff765e;
+  font-weight: 700;
+}
+
+.pitcher-decision-inning-table .inning-cell-high {
+  background: #ff593f;
+  font-weight: 700;
+}
+
+.pitcher-decision-inning-table .inning-cell-total {
+  background: #f8f8f8;
+  font-weight: 700;
 }
 
 .batter-recent-game-table {
