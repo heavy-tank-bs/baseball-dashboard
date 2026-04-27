@@ -791,6 +791,10 @@ select {
   line-height: 1.6;
 }
 
+.metric-description-list dd span {
+  display: block;
+}
+
 .pitch-name-cell {
   display: inline-flex;
   align-items: center;
