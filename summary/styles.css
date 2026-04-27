@@ -1722,6 +1722,21 @@ select {
   font-variant-numeric: tabular-nums;
 }
 
+.season-table th:first-child,
+.season-table td:first-child {
+  position: sticky;
+  left: 0;
+  z-index: 2;
+  min-width: 96px;
+  background: white;
+  box-shadow: inset -1px 0 0 rgba(15, 35, 64, 0.08);
+}
+
+.season-table th:first-child {
+  z-index: 4;
+  background: var(--card-strong);
+}
+
 .season-pitch-summary-table {
   min-width: 1280px;
 }
