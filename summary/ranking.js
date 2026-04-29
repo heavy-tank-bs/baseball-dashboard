@@ -40,11 +40,10 @@ const TYPE_CONFIG = {
     customLabel: "投球回数を指定",
     denominatorLabel: "投球回",
     metrics: [
-      { key: "games", label: "登板", field: "games", kind: "number", digits: 0 },
       { key: "wins", label: "勝利", field: "wins", kind: "number", digits: 0 },
       { key: "losses", label: "敗戦", field: "losses", kind: "number", digits: 0, lowerIsBetter: true },
-      { key: "saves", label: "セーブ", field: "saves", kind: "number", digits: 0 },
-      { key: "holds", label: "ホールド", field: "holds", kind: "number", digits: 0 },
+      { key: "saves", label: "セーブ", field: "saves", kind: "number", digits: 0, hideThreshold: true },
+      { key: "holds", label: "ホールド", field: "holds", kind: "number", digits: 0, hideThreshold: true },
       { key: "inningsOuts", label: "投球回", field: "inningsOuts", kind: "innings" },
       { key: "batters", label: "打者", field: "batters", kind: "number", digits: 0 },
       { key: "pitches", label: "球数", field: "pitches", kind: "number", digits: 0 },
@@ -67,7 +66,7 @@ const TYPE_CONFIG = {
       { key: "goFo", label: "GO/FO", field: "goFo", kind: "decimal", digits: 2 },
       { key: "groundOutRate", label: "ゴロアウト率", field: "groundOutRate", kind: "percent" },
       { key: "flyOutRate", label: "フライアウト率", field: "flyOutRate", kind: "percent" },
-      { key: "whiffRateSeason", label: "空振率", field: "whiffRate", kind: "percent" },
+      { key: "whiffRateSeason", label: "空振り率", field: "whiffRate", kind: "percent", source: "pitch" },
       { key: "whiffRate", label: "whiff%", field: "whiffRate", kind: "percent", source: "pitch" },
       { key: "csw", label: "csw%", field: "csw", kind: "percent", source: "pitch" },
       { key: "zoneRate", label: "zone%", field: "zoneRate", kind: "percent", source: "pitch" },
@@ -84,9 +83,6 @@ const TYPE_CONFIG = {
     customLabel: "打席数を指定",
     denominatorLabel: "打席",
     metrics: [
-      { key: "games", label: "試合", field: "games", kind: "number", digits: 0 },
-      { key: "plateAppearances", label: "打席", field: "plateAppearances", kind: "number", digits: 0 },
-      { key: "atBats", label: "打数", field: "atBats", kind: "number", digits: 0 },
       { key: "runs", label: "得点", field: "runs", kind: "number", digits: 0 },
       { key: "hits", label: "安打", field: "hits", kind: "number", digits: 0 },
       { key: "singles", label: "単打", field: "singles", kind: "number", digits: 0 },
@@ -284,7 +280,7 @@ function passesThreshold(row) {
 
 function metricRows() {
   const metric = currentMetric();
-  const rows = baseRows().filter((row) => passesThreshold(row));
+  const rows = baseRows().filter((row) => metric.hideThreshold || passesThreshold(row));
   if (metric.source === "pitch") {
     return rows
       .flatMap((playerRow) =>
@@ -395,6 +391,11 @@ function renderMetricOptions() {
 }
 
 function renderThresholdControls() {
+  const metric = currentMetric();
+  if (metric.hideThreshold) {
+    els.thresholdField.classList.add("is-hidden");
+    return;
+  }
   els.thresholdField.classList.remove("is-hidden");
   const maxValue = maxThreshold();
   if (state.customThreshold === null || state.customThreshold === undefined) {
