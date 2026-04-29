@@ -40,8 +40,34 @@ const TYPE_CONFIG = {
     customLabel: "投球回数を指定",
     denominatorLabel: "投球回",
     metrics: [
+      { key: "games", label: "登板", field: "games", kind: "number", digits: 0 },
+      { key: "wins", label: "勝利", field: "wins", kind: "number", digits: 0 },
+      { key: "losses", label: "敗戦", field: "losses", kind: "number", digits: 0, lowerIsBetter: true },
+      { key: "saves", label: "セーブ", field: "saves", kind: "number", digits: 0 },
+      { key: "holds", label: "ホールド", field: "holds", kind: "number", digits: 0 },
+      { key: "inningsOuts", label: "投球回", field: "inningsOuts", kind: "innings" },
+      { key: "batters", label: "打者", field: "batters", kind: "number", digits: 0 },
+      { key: "pitches", label: "球数", field: "pitches", kind: "number", digits: 0 },
+      { key: "hits", label: "被安打", field: "hits", kind: "number", digits: 0, lowerIsBetter: true },
+      { key: "homeRuns", label: "被本塁打", field: "homeRuns", kind: "number", digits: 0, lowerIsBetter: true },
+      { key: "strikeouts", label: "奪三振", field: "strikeouts", kind: "number", digits: 0 },
+      { key: "walks", label: "与四球", field: "walks", kind: "number", digits: 0, lowerIsBetter: true },
+      { key: "hitByPitch", label: "与死球", field: "hitByPitch", kind: "number", digits: 0, lowerIsBetter: true },
+      { key: "runs", label: "失点", field: "runs", kind: "number", digits: 0, lowerIsBetter: true },
+      { key: "earnedRuns", label: "自責点", field: "earnedRuns", kind: "number", digits: 0, lowerIsBetter: true },
       { key: "era", label: "防御率", field: "era", kind: "decimal", digits: 2, lowerIsBetter: true, qualifier: true },
+      { key: "whip", label: "WHIP", field: "whip", kind: "decimal", digits: 2, lowerIsBetter: true },
+      { key: "kPer9", label: "K/9", field: "kPer9", kind: "decimal", digits: 2 },
+      { key: "bbPer9", label: "BB/9", field: "bbPer9", kind: "decimal", digits: 2, lowerIsBetter: true },
+      { key: "hPer9", label: "H/9", field: "hPer9", kind: "decimal", digits: 2, lowerIsBetter: true },
+      { key: "hrPer9", label: "HR/9", field: "hrPer9", kind: "decimal", digits: 2, lowerIsBetter: true },
+      { key: "kBb", label: "K/BB", field: "kBb", kind: "decimal", digits: 2 },
       { key: "fip", label: "FIP", field: "fip", kind: "decimal", digits: 2, lowerIsBetter: true, qualifier: true },
+      { key: "battingAverageAllowed", label: "被打率", field: "battingAverageAllowed", kind: "average", lowerIsBetter: true },
+      { key: "goFo", label: "GO/FO", field: "goFo", kind: "decimal", digits: 2 },
+      { key: "groundOutRate", label: "ゴロアウト率", field: "groundOutRate", kind: "percent" },
+      { key: "flyOutRate", label: "フライアウト率", field: "flyOutRate", kind: "percent" },
+      { key: "whiffRateSeason", label: "空振率", field: "whiffRate", kind: "percent" },
       { key: "whiffRate", label: "whiff%", field: "whiffRate", kind: "percent", source: "pitch" },
       { key: "csw", label: "csw%", field: "csw", kind: "percent", source: "pitch" },
       { key: "zoneRate", label: "zone%", field: "zoneRate", kind: "percent", source: "pitch" },
@@ -58,12 +84,31 @@ const TYPE_CONFIG = {
     customLabel: "打席数を指定",
     denominatorLabel: "打席",
     metrics: [
+      { key: "games", label: "試合", field: "games", kind: "number", digits: 0 },
+      { key: "plateAppearances", label: "打席", field: "plateAppearances", kind: "number", digits: 0 },
+      { key: "atBats", label: "打数", field: "atBats", kind: "number", digits: 0 },
+      { key: "runs", label: "得点", field: "runs", kind: "number", digits: 0 },
+      { key: "hits", label: "安打", field: "hits", kind: "number", digits: 0 },
+      { key: "singles", label: "単打", field: "singles", kind: "number", digits: 0 },
+      { key: "doubles", label: "二塁打", field: "doubles", kind: "number", digits: 0 },
+      { key: "triples", label: "三塁打", field: "triples", kind: "number", digits: 0 },
+      { key: "homeRuns", label: "本塁打", field: "homeRuns", kind: "number", digits: 0 },
+      { key: "runsBattedIn", label: "打点", field: "runsBattedIn", kind: "number", digits: 0 },
+      { key: "walks", label: "四球", field: "walks", kind: "number", digits: 0 },
+      { key: "hitByPitch", label: "死球", field: "hitByPitch", kind: "number", digits: 0 },
+      { key: "sacBunts", label: "犠打", field: "sacBunts", kind: "number", digits: 0 },
+      { key: "sacFlies", label: "犠飛", field: "sacFlies", kind: "number", digits: 0 },
+      { key: "steals", label: "盗塁", field: "steals", kind: "number", digits: 0 },
+      { key: "strikeouts", label: "三振", field: "strikeouts", kind: "number", digits: 0, lowerIsBetter: true },
       { key: "battingAverage", label: "打率", field: "battingAverage", kind: "average", qualifier: true },
       { key: "onBasePercentage", label: "出塁率", field: "onBasePercentage", kind: "average", qualifier: true },
-      { key: "sluggingPercentage", label: "長打率", field: "sluggingPercentage", kind: "average", qualifier: true },
-      { key: "ops", label: "OPS", field: "ops", kind: "average", qualifier: true },
       { key: "isoDiscipline", label: "IsoD", field: "isoDiscipline", kind: "average", qualifier: true },
+      { key: "sluggingPercentage", label: "長打率", field: "sluggingPercentage", kind: "average", qualifier: true },
       { key: "isoPower", label: "IsoP", field: "isoPower", kind: "average", qualifier: true },
+      { key: "babip", label: "BABIP", field: "babip", kind: "average" },
+      { key: "ops", label: "OPS", field: "ops", kind: "average", qualifier: true },
+      { key: "wrc", label: "wRC", field: "wrc", kind: "decimal", digits: 1 },
+      { key: "wrcPlus", label: "wRC+", field: "wrcPlus", kind: "decimal", digits: 1 },
     ],
   },
 };
@@ -157,6 +202,9 @@ function parseInningsToOuts(value) {
 function formatMetricValue(metric, value) {
   if (value === null || value === undefined || !Number.isFinite(Number(value))) return "-";
   const number = Number(value);
+  if (metric.kind === "innings") {
+    return formatInningsFromOuts(number);
+  }
   if (metric.kind === "average") {
     return number.toFixed(3).replace(/^0/, "");
   }
@@ -382,7 +430,6 @@ function chartAxisMax(metric, maxValue) {
 
 function renderTable(rows) {
   const metric = currentMetric();
-  const pitchMetric = metric.source === "pitch";
   if (!rows.length) {
     return '<div class="section-empty">条件に合うランキングデータがありません。</div>';
   }
@@ -391,10 +438,7 @@ function renderTable(rows) {
       (row, index) => `
         <tr>
           <td>${index + 1}</td>
-          <td>${escapeHtml(row.player)}</td>
-          ${pitchMetric ? `<td>${escapeHtml(row.pitchType || "-")}</td>` : ""}
-          <td>${escapeHtml(row.team || "-")}</td>
-          <td>${formatDenominator(row)}</td>
+          <td>${escapeHtml(row.pitchType ? `${row.player} / ${row.pitchType}` : row.player)}</td>
           <td>${escapeHtml(formatMetricValue(metric, row.value))}</td>
         </tr>
       `
@@ -406,10 +450,7 @@ function renderTable(rows) {
         <thead>
           <tr>
             <th>順位</th>
-            <th>選手</th>
-            ${pitchMetric ? "<th>球種</th>" : ""}
-            <th>球団</th>
-            <th>${pitchMetric ? "球数" : config.denominatorLabel}</th>
+            <th>選手名</th>
             <th>${escapeHtml(metric.label)}</th>
           </tr>
         </thead>
@@ -431,11 +472,11 @@ function renderChart(rows) {
   const plotTop = 22;
   const plotHeight = 230;
   const labelHeight = 96;
-  const gap = rows.length > 10 ? 52 : 66;
-  const plotWidth = Math.max(460, rows.length * gap);
+  const plotWidth = 680;
+  const gap = plotWidth / Math.max(rows.length, 1);
   const width = plotLeft + plotWidth + 24;
   const height = plotTop + plotHeight + labelHeight;
-  const barWidthValue = Math.min(30, gap * 0.48);
+  const barWidthValue = Math.max(12, Math.min(34, gap * 0.56));
   const ticks = [1, 0.75, 0.5, 0.25, 0];
   const tickLines = ticks
     .map((ratio) => {

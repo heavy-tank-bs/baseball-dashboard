@@ -1955,7 +1955,7 @@ select {
 
 .ranking-content-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.18fr) minmax(320px, 0.82fr);
+  grid-template-columns: minmax(280px, 370px) minmax(0, 1fr);
   gap: 18px;
   align-items: start;
 }
@@ -1983,7 +1983,7 @@ select {
 }
 
 .ranking-table {
-  min-width: 620px;
+  min-width: 320px;
 }
 
 .ranking-table th,
@@ -1994,12 +1994,18 @@ select {
 
 .ranking-table th:first-child,
 .ranking-table td:first-child {
-  width: 64px;
+  width: 56px;
   text-align: right;
+}
+
+.ranking-table th:nth-child(2),
+.ranking-table td:nth-child(2) {
+  width: auto;
 }
 
 .ranking-table th:last-child,
 .ranking-table td:last-child {
+  width: 92px;
   text-align: right;
   font-weight: 800;
 }
@@ -2012,8 +2018,8 @@ select {
 
 .ranking-axis-chart {
   display: block;
-  width: max(100%, 620px);
-  min-width: 620px;
+  width: 100%;
+  min-width: 0;
   height: auto;
 }
 
