@@ -226,12 +226,7 @@ function rowDenominator(row) {
   return Number(row.plateAppearances) || 0;
 }
 
-function qualifierApplies(metric) {
-  return Boolean(metric.qualifier);
-}
-
-function passesThreshold(row, metric) {
-  if (!qualifierApplies(metric)) return true;
+function passesThreshold(row) {
   const denominator = rowDenominator(row);
   if (state.thresholdMode === "qualified") {
     return denominator >= qualificationThreshold(row);
@@ -241,7 +236,7 @@ function passesThreshold(row, metric) {
 
 function metricRows() {
   const metric = currentMetric();
-  const rows = baseRows();
+  const rows = baseRows().filter((row) => passesThreshold(row));
   if (metric.source === "pitch") {
     return rows
       .flatMap((playerRow) =>
@@ -256,6 +251,7 @@ function metricRows() {
             pitchType: pitchRow.pitchType,
             value,
             denominator: Number(pitchRow.count) || 0,
+            playerDenominator: rowDenominator(playerRow),
           };
         })
       )
@@ -275,7 +271,7 @@ function metricRows() {
         raw: row,
       };
     })
-    .filter((row) => row.value !== null && passesThreshold(row.raw, metric));
+    .filter((row) => row.value !== null);
 }
 
 function sortedRows() {
@@ -351,12 +347,7 @@ function renderMetricOptions() {
 }
 
 function renderThresholdControls() {
-  const metric = currentMetric();
-  const applies = qualifierApplies(metric);
-  els.thresholdField.classList.toggle("is-hidden", !applies);
-  if (!applies) {
-    return;
-  }
+  els.thresholdField.classList.remove("is-hidden");
   const maxValue = maxThreshold();
   if (state.customThreshold === null || state.customThreshold === undefined) {
     state.customThreshold = defaultCustomThreshold();
@@ -376,32 +367,17 @@ function renderThresholdControls() {
   els.thresholdMaxLabel.textContent = thresholdDisplay(maxValue);
 }
 
-function qualificationNote(metric) {
-  if (!qualifierApplies(metric)) {
-    return `${metric.label}は選択条件内の選手と球種を対象に表示しています`;
-  }
-  if (config.thresholdKind === "plateAppearances") {
-    return state.thresholdMode === "qualified"
-      ? "2025年は規定打席443 2026年はチーム別消化試合数×3.1で暫定規定打席を計算しています"
-      : `打席数${state.customThreshold}以上の選手を表示しています`;
-  }
-  return state.thresholdMode === "qualified"
-    ? "2025年は規定投球回143回 2026年はチーム別消化試合数と同じ投球回を暫定規定投球回として計算しています"
-    : `投球回${formatInningsFromOuts(state.customThreshold)}以上の選手を表示しています`;
+function truncateLabel(value, maxLength = 9) {
+  const text = `${value || ""}`;
+  return text.length > maxLength ? `${text.slice(0, maxLength)}…` : text;
 }
 
-function barWidth(row, rows, metric) {
-  const values = rows.map((item) => item.value).filter((value) => Number.isFinite(value));
-  if (!values.length) return 0;
-  if (metric.lowerIsBetter) {
-    const min = Math.min(...values);
-    const max = Math.max(...values);
-    if (min === max) return 100;
-    return 28 + ((max - row.value) / (max - min)) * 72;
-  }
-  const max = Math.max(...values);
-  if (!max) return 0;
-  return Math.max(8, (row.value / max) * 100);
+function chartAxisMax(metric, maxValue) {
+  if (!Number.isFinite(maxValue) || maxValue <= 0) return 1;
+  if (metric.kind === "percent") return Math.min(100, Math.ceil(maxValue / 10) * 10);
+  if (metric.kind === "plus") return Math.ceil(maxValue / 10) * 10;
+  if (metric.kind === "average") return Math.ceil(maxValue * 20) / 20;
+  return Math.ceil(maxValue * 2) / 2;
 }
 
 function renderTable(rows) {
@@ -448,25 +424,56 @@ function renderChart(rows) {
   if (!rows.length) {
     return '<div class="section-empty">グラフデータがありません。</div>';
   }
+  const values = rows.map((row) => Number(row.value)).filter((value) => Number.isFinite(value));
+  const maxValue = Math.max(...values, 0);
+  const yMax = chartAxisMax(metric, maxValue);
+  const plotLeft = 56;
+  const plotTop = 22;
+  const plotHeight = 230;
+  const labelHeight = 96;
+  const gap = rows.length > 10 ? 52 : 66;
+  const plotWidth = Math.max(460, rows.length * gap);
+  const width = plotLeft + plotWidth + 24;
+  const height = plotTop + plotHeight + labelHeight;
+  const barWidthValue = Math.min(30, gap * 0.48);
+  const ticks = [1, 0.75, 0.5, 0.25, 0];
+  const tickLines = ticks
+    .map((ratio) => {
+      const value = yMax * ratio;
+      const y = plotTop + plotHeight - ratio * plotHeight;
+      return `
+        <g>
+          <line x1="${plotLeft}" y1="${y.toFixed(1)}" x2="${(plotLeft + plotWidth).toFixed(1)}" y2="${y.toFixed(1)}" class="ranking-chart-grid-line"></line>
+          <text x="${plotLeft - 8}" y="${(y + 4).toFixed(1)}" class="ranking-chart-y-label">${escapeHtml(formatMetricValue(metric, value))}</text>
+        </g>
+      `;
+    })
+    .join("");
+  const bars = rows
+    .map((row, index) => {
+      const x = plotLeft + index * gap + (gap - barWidthValue) / 2;
+      const barHeight = yMax ? (Number(row.value) / yMax) * plotHeight : 0;
+      const y = plotTop + plotHeight - barHeight;
+      const label = row.pitchType ? `${row.player} / ${row.pitchType}` : row.player;
+      const xCenter = x + barWidthValue / 2;
+      return `
+        <g>
+          <title>${escapeHtml(`${label}\n${metric.label}: ${formatMetricValue(metric, row.value)}`)}</title>
+          <rect x="${x.toFixed(1)}" y="${y.toFixed(1)}" width="${barWidthValue.toFixed(1)}" height="${Math.max(barHeight, 2).toFixed(1)}" class="ranking-chart-bar"></rect>
+          <text x="${xCenter.toFixed(1)}" y="${(y - 7).toFixed(1)}" class="ranking-chart-value">${escapeHtml(formatMetricValue(metric, row.value))}</text>
+          <text x="${xCenter.toFixed(1)}" y="${(plotTop + plotHeight + 18).toFixed(1)}" class="ranking-chart-x-label" transform="rotate(-45 ${xCenter.toFixed(1)} ${(plotTop + plotHeight + 18).toFixed(1)})">${escapeHtml(truncateLabel(row.player))}</text>
+        </g>
+      `;
+    })
+    .join("");
   return `
-    <div class="ranking-bar-list">
-      ${rows
-        .map((row, index) => {
-          const width = barWidth(row, rows, metric);
-          const label = row.pitchType ? `${row.player} / ${row.pitchType}` : row.player;
-          return `
-            <div class="ranking-bar-row">
-              <div class="ranking-bar-head">
-                <span>${index + 1}. ${escapeHtml(label)}</span>
-                <strong>${escapeHtml(formatMetricValue(metric, row.value))}</strong>
-              </div>
-              <div class="ranking-bar-track">
-                <span class="ranking-bar-fill" style="width:${width.toFixed(1)}%"></span>
-              </div>
-            </div>
-          `;
-        })
-        .join("")}
+    <div class="ranking-chart-scroll">
+      <svg class="ranking-axis-chart" viewBox="0 0 ${width} ${height}" role="img" aria-label="${escapeHtml(metric.label)}ランキング">
+        ${tickLines}
+        <line x1="${plotLeft}" y1="${plotTop}" x2="${plotLeft}" y2="${plotTop + plotHeight}" class="ranking-chart-axis-line"></line>
+        <line x1="${plotLeft}" y1="${plotTop + plotHeight}" x2="${plotLeft + plotWidth}" y2="${plotTop + plotHeight}" class="ranking-chart-axis-line"></line>
+        ${bars}
+      </svg>
     </div>
   `;
 }
@@ -476,7 +483,7 @@ function renderRanking() {
   const allRows = sortedRows();
   const rows = allRows.slice(0, state.limit);
   els.rankingResultCount.textContent = `${allRows.length}件`;
-  els.rankingNote.textContent = qualificationNote(metric);
+  els.rankingNote.textContent = "";
   els.rankingBody.innerHTML = `
     <div class="ranking-content-grid">
       <article class="ranking-table-card">
@@ -488,8 +495,8 @@ function renderRanking() {
       </article>
       <article class="ranking-chart-card">
         <div class="card-head ranking-card-head">
-          <h3>棒グラフ</h3>
-          <span class="result-count">${escapeHtml(metric.label)}</span>
+          <h3>${escapeHtml(metric.label)}</h3>
+          <span class="result-count">上位${state.limit}件</span>
         </div>
         ${renderChart(rows)}
       </article>

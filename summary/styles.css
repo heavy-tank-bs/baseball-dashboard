@@ -2004,6 +2004,54 @@ select {
   font-weight: 800;
 }
 
+.ranking-chart-scroll {
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 4px 0 2px;
+}
+
+.ranking-axis-chart {
+  display: block;
+  width: max(100%, 620px);
+  min-width: 620px;
+  height: auto;
+}
+
+.ranking-chart-grid-line {
+  stroke: rgba(15, 35, 64, 0.1);
+  stroke-width: 1;
+}
+
+.ranking-chart-axis-line {
+  stroke: rgba(15, 35, 64, 0.28);
+  stroke-width: 1.4;
+}
+
+.ranking-chart-bar {
+  fill: var(--navy);
+}
+
+.ranking-chart-y-label,
+.ranking-chart-x-label,
+.ranking-chart-value {
+  fill: var(--muted);
+  font-size: 11px;
+}
+
+.ranking-chart-y-label {
+  text-anchor: end;
+}
+
+.ranking-chart-x-label {
+  text-anchor: end;
+}
+
+.ranking-chart-value {
+  fill: var(--text);
+  font-weight: 800;
+  text-anchor: middle;
+}
+
 .ranking-bar-list {
   display: grid;
   gap: 14px;
