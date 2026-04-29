@@ -85,10 +85,10 @@ select {
 
 .hero-nav {
   display: grid;
-  grid-template-columns: repeat(2, minmax(180px, 1fr));
+  grid-template-columns: repeat(3, minmax(160px, 1fr));
   gap: 10px;
   align-self: flex-end;
-  width: min(100%, 440px);
+  width: min(100%, 680px);
 }
 
 .hero-nav-link {
@@ -1930,6 +1930,126 @@ select {
   display: none;
 }
 
+.ranking-filters-grid {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.ranking-threshold-field {
+  margin-top: 2px;
+}
+
+.ranking-threshold-controls {
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.threshold-mode-select {
+  width: 180px;
+  padding: 7px 10px;
+  border-radius: 10px;
+}
+
+.ranking-threshold-input {
+  width: 86px;
+}
+
+.ranking-content-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.18fr) minmax(320px, 0.82fr);
+  gap: 18px;
+  align-items: start;
+}
+
+.ranking-table-card,
+.ranking-chart-card {
+  min-width: 0;
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: var(--card-strong);
+}
+
+.ranking-card-head {
+  margin-bottom: 14px;
+}
+
+.ranking-card-head h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.ranking-table-scroll {
+  overflow-x: auto;
+}
+
+.ranking-table {
+  min-width: 620px;
+}
+
+.ranking-table th,
+.ranking-table td {
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+.ranking-table th:first-child,
+.ranking-table td:first-child {
+  width: 64px;
+  text-align: right;
+}
+
+.ranking-table th:last-child,
+.ranking-table td:last-child {
+  text-align: right;
+  font-weight: 800;
+}
+
+.ranking-bar-list {
+  display: grid;
+  gap: 14px;
+}
+
+.ranking-bar-row {
+  display: grid;
+  gap: 7px;
+}
+
+.ranking-bar-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 14px;
+}
+
+.ranking-bar-head span {
+  min-width: 0;
+  overflow: hidden;
+  color: var(--text);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ranking-bar-head strong {
+  flex: none;
+  color: var(--navy);
+  font-variant-numeric: tabular-nums;
+}
+
+.ranking-bar-track {
+  height: 12px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(15, 35, 64, 0.08);
+}
+
+.ranking-bar-fill {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--navy), var(--gold));
+}
+
 .annual-table {
   width: 1940px;
   min-width: 1940px;
@@ -2276,6 +2396,14 @@ select {
   .compare-mode-group,
   .season-meta-grid {
     grid-template-columns: 1fr;
+  }
+
+  .ranking-content-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ranking-chart-card {
+    display: none;
   }
 
   .compare-head,

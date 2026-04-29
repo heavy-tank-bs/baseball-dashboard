@@ -17,17 +17,21 @@ SUMMARY_FILES = (
     "batter.html",
     "annual.html",
     "annual-batter.html",
+    "ranking-pitcher.html",
+    "ranking-batter.html",
     "compare.html",
     "styles.css",
     "app.js",
     "batter.js",
     "annual.js",
     "annual-batter.js",
+    "ranking.js",
     "compare.js",
     "manifest.js",
     "batter_manifest.js",
     "player_totals.json",
     "batter_totals.json",
+    "sportsnavi_game_context_2026.json",
 )
 GENERATED_EXTENSIONS = {".json", ".png"}
 ROOT_INDEX_HTML = """<!doctype html>
