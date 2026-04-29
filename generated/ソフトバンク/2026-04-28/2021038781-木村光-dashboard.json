@@ -1,0 +1,72 @@
+{
+  "game_id": "2021038781",
+  "metadata": {
+    "date_jp": "2026年4月28日",
+    "matchup": "オリックス・バファローズvs福岡ソフトバンクホークス"
+  },
+  "statline": {
+    "player": "木村 光",
+    "era": "0.87",
+    "innings": "0.2",
+    "pitches": "3",
+    "batters": "1",
+    "hits": "0",
+    "hr": "0",
+    "k": "0",
+    "bb": "0",
+    "hbp": "0",
+    "balk": "0",
+    "runs": "0",
+    "er": "0"
+  },
+  "pitches": [
+    {
+      "pa_index": "0820500",
+      "pitcher": "木村 光",
+      "pitcher_id": "1851115",
+      "pitcher_hand": "右",
+      "batter": "太田 椋",
+      "batter_id": "1800098",
+      "batter_hand": "右",
+      "seq": "1",
+      "pitchNo": "1",
+      "pitchType": "スプリット",
+      "speed": "139km/h",
+      "result": "ボール [ワンバウンド]",
+      "top": 60.48,
+      "left": 25.2
+    },
+    {
+      "pa_index": "0820500",
+      "pitcher": "木村 光",
+      "pitcher_id": "1851115",
+      "pitcher_hand": "右",
+      "batter": "太田 椋",
+      "batter_id": "1800098",
+      "batter_hand": "右",
+      "seq": "2",
+      "pitchNo": "2",
+      "pitchType": "シュート",
+      "speed": "142km/h",
+      "result": "空振り",
+      "top": 56.879999999999995,
+      "left": 43.559999999999995
+    },
+    {
+      "pa_index": "0820500",
+      "pitcher": "木村 光",
+      "pitcher_id": "1851115",
+      "pitcher_hand": "右",
+      "batter": "太田 椋",
+      "batter_id": "1800098",
+      "batter_hand": "右",
+      "seq": "3",
+      "pitchNo": "3",
+      "pitchType": "スプリット",
+      "speed": "-",
+      "result": "二併打 [投手吼える]",
+      "top": 55.44,
+      "left": 35.64
+    }
+  ]
+}
