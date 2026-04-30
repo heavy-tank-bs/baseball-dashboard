@@ -111,6 +111,7 @@ const SORT_COLUMNS = [
   { key: "hits", label: "被安打", type: "number", value: (row) => row.hits },
   { key: "whip", label: "WHIP", type: "number", value: (row) => row.whip },
   { key: "battingAverageAllowed", label: "被打率", type: "number", value: (row) => row.battingAverageAllowed },
+  { key: "babipAllowed", label: "被BABIP", type: "number", value: (row) => row.babipAllowed },
   { key: "strikeouts", label: "奪三振", type: "number", value: (row) => row.strikeouts },
   { key: "kPer9", label: "K/9", type: "number", value: (row) => row.kPer9 },
   { key: "walks", label: "与四球", type: "number", value: (row) => row.walks },
@@ -402,6 +403,7 @@ function renderTable() {
           <td>${row.hits}</td>
           <td>${formatDecimal(row.whip, 2)}</td>
           <td>${formatAverage(row.battingAverageAllowed)}</td>
+          <td>${formatAverage(row.babipAllowed)}</td>
           <td>${row.strikeouts}</td>
           <td>${formatDecimal(row.kPer9, 2)}</td>
           <td>${row.walks}</td>
@@ -490,7 +492,7 @@ function bindEvents() {
 
 async function init() {
   try {
-    const response = await fetch("./player_totals.json?v=20260427-10", { cache: "no-store" });
+    const response = await fetch("./player_totals.json?v=20260430-3", { cache: "no-store" });
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     state.data = await response.json();
     bindEvents();

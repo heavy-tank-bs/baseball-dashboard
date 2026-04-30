@@ -32,7 +32,7 @@ const PAGE_TYPE = document.body.dataset.rankingType === "batter" ? "batter" : "p
 
 const TYPE_CONFIG = {
   pitcher: {
-    datasetUrl: "./player_totals.json?v=20260427-10",
+    datasetUrl: "./player_totals.json?v=20260430-3",
     thresholdKind: "innings",
     fixedQualification: 143 * 3,
     thresholdLabel: "投球回条件",
@@ -63,6 +63,7 @@ const TYPE_CONFIG = {
       { key: "kBb", label: "K/BB", field: "kBb", kind: "decimal", digits: 2 },
       { key: "fip", label: "FIP", field: "fip", kind: "decimal", digits: 2, lowerIsBetter: true, qualifier: true },
       { key: "battingAverageAllowed", label: "被打率", field: "battingAverageAllowed", kind: "average", lowerIsBetter: true },
+      { key: "babipAllowed", label: "被BABIP", field: "babipAllowed", kind: "average", lowerIsBetter: true },
       { key: "goFo", label: "GO/FO", field: "goFo", kind: "decimal", digits: 2 },
       { key: "groundOutRate", label: "ゴロアウト率", field: "groundOutRate", kind: "percent" },
       { key: "flyOutRate", label: "フライアウト率", field: "flyOutRate", kind: "percent" },

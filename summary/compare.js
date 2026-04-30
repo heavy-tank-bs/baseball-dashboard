@@ -1,7 +1,7 @@
 const TYPE_CONFIG = {
   pitcher: {
     label: "投手",
-    datasetUrl: "./player_totals.json?v=20260427-10",
+    datasetUrl: "./player_totals.json?v=20260430-3",
     annualHref: "./annual.html",
     annualLabel: "年度別投手成績へ戻る",
     idKey: "pitcherId",
@@ -16,6 +16,7 @@ const TYPE_CONFIG = {
       { key: "fip", label: "FIP", kind: "decimal", digits: 2, lowerIsBetter: true, default: true },
       { key: "whip", label: "WHIP", kind: "decimal", digits: 2, lowerIsBetter: true, default: true },
       { key: "battingAverageAllowed", label: "被打率", kind: "average", digits: 3, lowerIsBetter: true },
+      { key: "babipAllowed", label: "被BABIP", kind: "average", digits: 3, lowerIsBetter: true },
       { key: "strikeouts", label: "奪三振", kind: "number", digits: 0, default: true },
       { key: "kPer9", label: "K/9", kind: "decimal", digits: 2 },
       { key: "walks", label: "四球", kind: "number", digits: 0 },
@@ -400,6 +401,7 @@ function aggregatePitcherBucket(rows, bucket) {
   const strikeouts = sumMetric(rows, "strikeouts");
   const homeRuns = sumMetric(rows, "homeRuns");
   const hitByPitch = sumMetric(rows, "hitByPitch");
+  const sacrificeFlies = sumMetric(rows, "sacrificeFlies");
   const pitches = sumMetric(rows, "pitches");
   const hasPitchCount = rows.some((row) => Boolean(row?.hasPitchCount));
   const flyBalls = sumMetric(rows, "flyBalls");
@@ -413,6 +415,7 @@ function aggregatePitcherBucket(rows, bucket) {
   const hrPer9 = safeDivide(homeRuns, inningsOuts, 27);
   const kBb = safeDivide(strikeouts, walks);
   const battingAverageAllowed = safeDivide(hits, atBats);
+  const babipAllowed = safeDivide(hits - homeRuns, atBats - strikeouts - homeRuns + sacrificeFlies);
   const goFo = safeDivide(grounders, flyBalls);
   const groundOutRate = safeDivide(grounders, outEventTotal, 100);
   const flyOutRate = safeDivide(flyBalls, outEventTotal, 100);
@@ -458,6 +461,7 @@ function aggregatePitcherBucket(rows, bucket) {
     lookingStrikeouts: sumMetric(rows, "lookingStrikeouts"),
     swingingStrikeouts: sumMetric(rows, "swingingStrikeouts"),
     sacrificeBunts: sumMetric(rows, "sacrificeBunts"),
+    sacrificeFlies,
     interference: sumMetric(rows, "interference"),
     era,
     whip,
@@ -469,6 +473,7 @@ function aggregatePitcherBucket(rows, bucket) {
     fip,
     fipConstant: Number.isFinite(Number(fipConstant)) ? Number(fipConstant) : null,
     battingAverageAllowed,
+    babipAllowed,
     goFo,
     groundOutRate,
     flyOutRate,

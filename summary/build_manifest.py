@@ -524,6 +524,7 @@ def build_pitcher_monthly_splits(entries: list[dict], game_decisions: dict[str, 
             "lookingStrikeouts": 0,
             "swingingStrikeouts": 0,
             "sacrificeBunts": 0,
+            "sacrificeFlies": 0,
             "interference": 0,
             "hasPitchCount": False,
         }
@@ -534,6 +535,8 @@ def build_pitcher_monthly_splits(entries: list[dict], game_decisions: dict[str, 
         teams = sorted(bucket["teams"], key=team_sort_key)
         at_bats = bucket["atBats"]
         batting_average = bucket["hits"] / at_bats if at_bats else None
+        babip_denominator = bucket["atBats"] - bucket["strikeouts"] - bucket["homeRuns"] + bucket["sacrificeFlies"]
+        babip_allowed = ((bucket["hits"] - bucket["homeRuns"]) / babip_denominator) if babip_denominator > 0 else None
         era = 9 * bucket["earnedRuns"] / ip if ip else None
         whip = (bucket["hits"] + bucket["walks"]) / ip if ip else None
         k_per_9 = 27 * bucket["strikeouts"] / outs if outs else None
@@ -599,6 +602,7 @@ def build_pitcher_monthly_splits(entries: list[dict], game_decisions: dict[str, 
             "lookingStrikeouts": bucket["lookingStrikeouts"],
             "swingingStrikeouts": bucket["swingingStrikeouts"],
             "sacrificeBunts": bucket["sacrificeBunts"],
+            "sacrificeFlies": bucket["sacrificeFlies"],
             "interference": bucket["interference"],
             "era": round_or_none(era, 2),
             "whip": round_or_none(whip, 2),
@@ -610,6 +614,7 @@ def build_pitcher_monthly_splits(entries: list[dict], game_decisions: dict[str, 
             "fip": round_or_none(fip, 2),
             "fipConstant": round_or_none(fip_constant, 4),
             "battingAverageAllowed": round_or_none(batting_average, 3),
+            "babipAllowed": round_or_none(babip_allowed, 3),
             "goFo": round_or_none(go_fo, 2),
             "groundOutRate": round_or_none(ground_out_rate, 1),
             "flyOutRate": round_or_none(fly_out_rate, 1),
@@ -630,6 +635,7 @@ def build_pitcher_monthly_splits(entries: list[dict], game_decisions: dict[str, 
         pitch_rows = dashboard.get("pitchMix") or []
         outcome_rows = {row.get("id"): parse_int(row.get("count")) for row in (dashboard.get("outcomes", {}).get("rows") or [])}
         intentional_walks = max(parse_int(dashboard.get("intentionalWalks")), 0)
+        sacrifice_flies = max(parse_int(dashboard.get("sacrificeFlies")), 0)
         unintentional_walks = max(parse_int(statline.get("bb")) - intentional_walks, 0)
 
         league_bucket = league_totals[(year, league)]
@@ -674,6 +680,7 @@ def build_pitcher_monthly_splits(entries: list[dict], game_decisions: dict[str, 
         month_bucket["lookingStrikeouts"] += outcome_rows.get("lookingStrikeouts", 0)
         month_bucket["swingingStrikeouts"] += outcome_rows.get("swingingStrikeouts", 0)
         month_bucket["sacrificeBunts"] += outcome_rows.get("sacrificeBunts", 0)
+        month_bucket["sacrificeFlies"] += sacrifice_flies
         month_bucket["interference"] += outcome_rows.get("interference", 0)
 
     league_constants: dict[tuple[str, str], float | None] = {}
@@ -1456,6 +1463,19 @@ def count_intentional_walks(rows: list[dict]) -> int:
     return total
 
 
+def count_sacrifice_flies(rows: list[dict]) -> int:
+    build_plate_appearances = getattr(DASHBOARD, "build_plate_appearances")
+    is_ab_result = getattr(DASHBOARD, "is_ab_result", lambda value: True)
+    classify_plate_appearance_result = getattr(DASHBOARD, "classify_plate_appearance_result", lambda value: None)
+    total = 0
+    for pitches in build_plate_appearances(rows).values():
+        final = pitches[-1]
+        result = final.get("result") or ""
+        if result and not is_ab_result(result) and classify_plate_appearance_result(result) == "flyballs":
+            total += 1
+    return total
+
+
 def is_located_pitch(row: dict) -> bool:
     return parse_float(row.get("left")) is not None and parse_float(row.get("top")) is not None
 
@@ -1685,6 +1705,7 @@ def serialize_dashboard(payload: dict, chase_plus_baseline: float | None = None)
     outcome_summary = build_outcome_summary(rows)
     velocity_summary = build_velocity_summary(rows, pitch_color_map)
     intentional_walks = count_intentional_walks(rows)
+    sacrifice_flies = count_sacrifice_flies(rows)
     return {
         "totalPitches": total,
         "pitchMix": pitch_mix,
@@ -1701,6 +1722,7 @@ def serialize_dashboard(payload: dict, chase_plus_baseline: float | None = None)
         },
         "outcomes": outcome_summary,
         "intentionalWalks": intentional_walks,
+        "sacrificeFlies": sacrifice_flies,
         "velocity": velocity_summary,
         "countMix": count_mix,
         "pitchColors": pitch_color_map,
@@ -2022,6 +2044,7 @@ def build_annual_stat_bucket() -> dict:
         "grounders": 0,
         "flyBalls": 0,
         "strikeouts": 0,
+        "sacrificeFlies": 0,
     }
 
 
@@ -2061,6 +2084,7 @@ def add_serialized_stat_row(bucket: dict, row: dict) -> None:
     bucket["grounders"] += parse_int(row.get("grounders"))
     bucket["flyBalls"] += parse_int(row.get("flyBalls"))
     bucket["strikeouts"] += parse_int(row.get("strikeouts"))
+    bucket["sacrificeFlies"] += parse_int(row.get("sacrificeFlies") or row.get("sacFlies"))
 
 
 def serialize_annual_stat_bucket(stats: dict, total: int | None = None, chase_plus_baseline: float | None = None) -> dict:
@@ -2077,6 +2101,9 @@ def serialize_annual_stat_bucket(stats: dict, total: int | None = None, chase_pl
     at_bats = parse_int(stats.get("atBats"))
     whiff = parse_int(stats.get("whiffCount")) / count * 100 if count else None
     hit_rate = hits / at_bats if at_bats else None
+    sacrifice_flies = parse_int(stats.get("sacrificeFlies"))
+    babip_denominator = at_bats - parse_int(stats.get("strikeouts")) - parse_int(stats.get("homeRuns")) + sacrifice_flies
+    babip_allowed = ((hits - parse_int(stats.get("homeRuns"))) / babip_denominator) if babip_denominator > 0 else None
     swings = parse_int(stats.get("swingCount"))
     called_strikes = parse_int(stats.get("calledStrikeCount"))
     located = parse_int(stats.get("locatedCount"))
@@ -2118,7 +2145,9 @@ def serialize_annual_stat_bucket(stats: dict, total: int | None = None, chase_pl
         "grounders": parse_int(stats.get("grounders")),
         "flyBalls": parse_int(stats.get("flyBalls")),
         "strikeouts": parse_int(stats.get("strikeouts")),
+        "sacrificeFlies": sacrifice_flies,
         "hitRate": round_or_none(hit_rate, 3),
+        "babipAllowed": round_or_none(babip_allowed, 3),
     }
     return row
 
@@ -2153,6 +2182,7 @@ def build_serialized_pitch_stat_row(label: str, rows: list[dict], order: int = 0
                 "strikeouts": summary["strikeouts"],
             },
         )
+    bucket["sacrificeFlies"] += count_sacrifice_flies(rows)
 
     row = serialize_annual_stat_bucket(bucket, total)
     row.update({"label": label, "order": order})
@@ -2210,6 +2240,7 @@ def build_pitcher_game_split_bucket(label: str, order: int = 0) -> dict:
         "runs": 0,
         "earnedRuns": 0,
         "atBats": 0,
+        "sacrificeFlies": 0,
     }
 
 
@@ -2229,6 +2260,7 @@ def record_pitcher_game_split(bucket: dict, entry: dict) -> None:
     bucket["runs"] += parse_int(statline.get("runs"))
     bucket["earnedRuns"] += parse_int(statline.get("er"))
     bucket["atBats"] += sum(parse_int(row.get("atBats")) for row in pitch_rows)
+    bucket["sacrificeFlies"] += parse_int(dashboard.get("sacrificeFlies"))
 
 
 def finalize_pitcher_game_split_bucket(bucket: dict) -> dict:
@@ -2237,6 +2269,17 @@ def finalize_pitcher_game_split_bucket(bucket: dict) -> dict:
     era = 9 * parse_int(bucket.get("earnedRuns")) / ip if ip else None
     whip = (parse_int(bucket.get("hits")) + parse_int(bucket.get("walks"))) / ip if ip else None
     batting_average = parse_int(bucket.get("hits")) / parse_int(bucket.get("atBats")) if parse_int(bucket.get("atBats")) else None
+    babip_denominator = (
+        parse_int(bucket.get("atBats"))
+        - parse_int(bucket.get("strikeouts"))
+        - parse_int(bucket.get("homeRuns"))
+        + parse_int(bucket.get("sacrificeFlies"))
+    )
+    babip_allowed = (
+        (parse_int(bucket.get("hits")) - parse_int(bucket.get("homeRuns"))) / babip_denominator
+        if babip_denominator > 0
+        else None
+    )
     return {
         "label": bucket.get("label") or "-",
         "games": parse_int(bucket.get("games")),
@@ -2251,9 +2294,11 @@ def finalize_pitcher_game_split_bucket(bucket: dict) -> dict:
         "hitByPitch": parse_int(bucket.get("hitByPitch")),
         "runs": parse_int(bucket.get("runs")),
         "earnedRuns": parse_int(bucket.get("earnedRuns")),
+        "sacrificeFlies": parse_int(bucket.get("sacrificeFlies")),
         "era": round_or_none(era, 2),
         "whip": round_or_none(whip, 2),
         "battingAverageAllowed": round_or_none(batting_average, 3),
+        "babipAllowed": round_or_none(babip_allowed, 3),
     }
 
 
@@ -2881,6 +2926,7 @@ def build_player_totals(entries: list[dict], game_decisions: dict[str, dict], ga
         pitch_rows = dashboard.get("pitchMix") or []
         outcome_rows = {row.get("id"): parse_int(row.get("count")) for row in (dashboard.get("outcomes", {}).get("rows") or [])}
         intentional_walks = max(parse_int(dashboard.get("intentionalWalks")), 0)
+        sacrifice_flies = max(parse_int(dashboard.get("sacrificeFlies")), 0)
         unintentional_walks = max(parse_int(statline.get("bb")) - intentional_walks, 0)
         years.add(year)
 
@@ -2932,6 +2978,7 @@ def build_player_totals(entries: list[dict], game_decisions: dict[str, dict], ga
                 "lookingStrikeouts": 0,
                 "swingingStrikeouts": 0,
                 "sacrificeBunts": 0,
+                "sacrificeFlies": 0,
                 "interference": 0,
                 "battingAverageAllowedOverride": None,
                 "groundOutRateOverride": None,
@@ -2976,6 +3023,7 @@ def build_player_totals(entries: list[dict], game_decisions: dict[str, dict], ga
         player_bucket["lookingStrikeouts"] += outcome_rows.get("lookingStrikeouts", 0)
         player_bucket["swingingStrikeouts"] += outcome_rows.get("swingingStrikeouts", 0)
         player_bucket["sacrificeBunts"] += outcome_rows.get("sacrificeBunts", 0)
+        player_bucket["sacrificeFlies"] += sacrifice_flies
         player_bucket["interference"] += outcome_rows.get("interference", 0)
 
     raw_out_rate_index = load_raw_out_rate_index(years)
@@ -3040,6 +3088,7 @@ def build_player_totals(entries: list[dict], game_decisions: dict[str, dict], ga
                 "lookingStrikeouts": 0,
                 "swingingStrikeouts": 0,
                 "sacrificeBunts": 0,
+                "sacrificeFlies": 0,
                 "interference": 0,
                 "battingAverageAllowedOverride": None,
                 "groundOutRateOverride": None,
@@ -3124,6 +3173,8 @@ def build_player_totals(entries: list[dict], game_decisions: dict[str, dict], ga
             if player.get("battingAverageAllowedOverride") is not None
             else batting_average
         )
+        babip_denominator = player["atBats"] - player["strikeouts"] - player["homeRuns"] + player["sacrificeFlies"]
+        babip_allowed = ((player["hits"] - player["homeRuns"]) / babip_denominator) if babip_denominator > 0 else None
         era = 9 * player["earnedRuns"] / ip if ip else None
         whip = (player["hits"] + player["walks"]) / ip if ip else None
         k_per_9 = 27 * player["strikeouts"] / outs if outs else None
@@ -3194,6 +3245,7 @@ def build_player_totals(entries: list[dict], game_decisions: dict[str, dict], ga
             "lookingStrikeouts": player["lookingStrikeouts"],
             "swingingStrikeouts": player["swingingStrikeouts"],
             "sacrificeBunts": player["sacrificeBunts"],
+            "sacrificeFlies": player["sacrificeFlies"],
             "interference": player["interference"],
             "era": round_or_none(era, 2),
             "whip": round_or_none(whip, 2),
@@ -3205,6 +3257,7 @@ def build_player_totals(entries: list[dict], game_decisions: dict[str, dict], ga
             "fip": round_or_none(fip, 2),
             "fipConstant": round_or_none(fip_constant, 4),
             "battingAverageAllowed": round_or_none(batting_average, 3),
+            "babipAllowed": round_or_none(babip_allowed, 3),
             "goFo": round_or_none(go_fo, 2),
             "groundOutRate": round_or_none(ground_out_rate, 1),
             "flyOutRate": round_or_none(fly_out_rate, 1),
