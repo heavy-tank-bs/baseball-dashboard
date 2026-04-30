@@ -1,21 +1,21 @@
 {
-  "updatedAt": "2026-04-30T10:23:28+09:00",
+  "updatedAt": "2026-04-30T22:49:05+09:00",
   "season": 2026,
-  "throughDate": "2026-04-29",
+  "throughDate": "2026-04-30",
   "source": {
     "schedule": "https://baseball.yahoo.co.jp/npb/schedule/?date=YYYY-MM-DD",
     "stats": "https://baseball.yahoo.co.jp/npb/game/{gameId}/stats",
     "intentionalWalkDetection": "Counts batting detail cells containing one of: 申告敬遠, 敬遠, 故意四球."
   },
   "summary": {
-    "scheduledGames": 166,
-    "completedGames": 158,
+    "scheduledGames": 170,
+    "completedGames": 162,
     "canceledGames": 7,
     "otherStatusGames": 1,
     "gamesWithIntentionalWalks": 0,
     "intentionalWalkPlateAppearances": 0,
     "statusCounts": {
-      "試合終了": 158,
+      "試合終了": 162,
       "試合中止": 7,
       "ノーゲーム": 1
     },
@@ -20737,6 +20737,546 @@
               "inning": 9,
               "runs": 0,
               "raw": "0"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "date": "2026-04-30",
+      "gameId": "2021038788",
+      "status": "試合終了",
+      "stadium": "東京ドーム",
+      "homeTeam": "読売ジャイアンツ",
+      "awayTeam": "広島東洋カープ",
+      "homeScore": 2,
+      "awayScore": 3,
+      "totalRuns": 5,
+      "scheduleUrl": "https://baseball.yahoo.co.jp/npb/schedule/?date=2026-04-30",
+      "statsUrl": "https://baseball.yahoo.co.jp/npb/game/2021038788/stats",
+      "intentionalWalks": {
+        "total": 0,
+        "teams": {
+          "広島東洋カープ": {
+            "team": "広島東洋カープ",
+            "intentionalWalks": 0,
+            "players": []
+          },
+          "読売ジャイアンツ": {
+            "team": "読売ジャイアンツ",
+            "intentionalWalks": 0,
+            "players": []
+          }
+        }
+      },
+      "inningScores": {
+        "home": {
+          "team": "読売ジャイアンツ",
+          "innings": [
+            {
+              "inning": 1,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 2,
+              "runs": 1,
+              "raw": "1"
+            },
+            {
+              "inning": 3,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 4,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 5,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 6,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 7,
+              "runs": 1,
+              "raw": "1"
+            },
+            {
+              "inning": 8,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 9,
+              "runs": 0,
+              "raw": "0"
+            }
+          ]
+        },
+        "away": {
+          "team": "広島東洋カープ",
+          "innings": [
+            {
+              "inning": 1,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 2,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 3,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 4,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 5,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 6,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 7,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 8,
+              "runs": 3,
+              "raw": "3"
+            },
+            {
+              "inning": 9,
+              "runs": 0,
+              "raw": "0"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "date": "2026-04-30",
+      "gameId": "2021038789",
+      "status": "試合終了",
+      "stadium": "神宮",
+      "homeTeam": "東京ヤクルトスワローズ",
+      "awayTeam": "阪神タイガース",
+      "homeScore": 2,
+      "awayScore": 10,
+      "totalRuns": 12,
+      "scheduleUrl": "https://baseball.yahoo.co.jp/npb/schedule/?date=2026-04-30",
+      "statsUrl": "https://baseball.yahoo.co.jp/npb/game/2021038789/stats",
+      "intentionalWalks": {
+        "total": 0,
+        "teams": {
+          "阪神タイガース": {
+            "team": "阪神タイガース",
+            "intentionalWalks": 0,
+            "players": []
+          },
+          "東京ヤクルトスワローズ": {
+            "team": "東京ヤクルトスワローズ",
+            "intentionalWalks": 0,
+            "players": []
+          }
+        }
+      },
+      "inningScores": {
+        "home": {
+          "team": "東京ヤクルトスワローズ",
+          "innings": [
+            {
+              "inning": 1,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 2,
+              "runs": 2,
+              "raw": "2"
+            },
+            {
+              "inning": 3,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 4,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 5,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 6,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 7,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 8,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 9,
+              "runs": 0,
+              "raw": "0"
+            }
+          ]
+        },
+        "away": {
+          "team": "阪神タイガース",
+          "innings": [
+            {
+              "inning": 1,
+              "runs": 3,
+              "raw": "3"
+            },
+            {
+              "inning": 2,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 3,
+              "runs": 1,
+              "raw": "1"
+            },
+            {
+              "inning": 4,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 5,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 6,
+              "runs": 2,
+              "raw": "2"
+            },
+            {
+              "inning": 7,
+              "runs": 3,
+              "raw": "3"
+            },
+            {
+              "inning": 8,
+              "runs": 1,
+              "raw": "1"
+            },
+            {
+              "inning": 9,
+              "runs": 0,
+              "raw": "0"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "date": "2026-04-30",
+      "gameId": "2021038790",
+      "status": "試合終了",
+      "stadium": "バンテリンドーム",
+      "homeTeam": "中日ドラゴンズ",
+      "awayTeam": "横浜DeNAベイスターズ",
+      "homeScore": 2,
+      "awayScore": 6,
+      "totalRuns": 8,
+      "scheduleUrl": "https://baseball.yahoo.co.jp/npb/schedule/?date=2026-04-30",
+      "statsUrl": "https://baseball.yahoo.co.jp/npb/game/2021038790/stats",
+      "intentionalWalks": {
+        "total": 0,
+        "teams": {
+          "横浜DeNAベイスターズ": {
+            "team": "横浜DeNAベイスターズ",
+            "intentionalWalks": 0,
+            "players": []
+          },
+          "中日ドラゴンズ": {
+            "team": "中日ドラゴンズ",
+            "intentionalWalks": 0,
+            "players": []
+          }
+        }
+      },
+      "inningScores": {
+        "home": {
+          "team": "中日ドラゴンズ",
+          "innings": [
+            {
+              "inning": 1,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 2,
+              "runs": 1,
+              "raw": "1"
+            },
+            {
+              "inning": 3,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 4,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 5,
+              "runs": 1,
+              "raw": "1"
+            },
+            {
+              "inning": 6,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 7,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 8,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 9,
+              "runs": 0,
+              "raw": "0"
+            }
+          ]
+        },
+        "away": {
+          "team": "横浜DeNAベイスターズ",
+          "innings": [
+            {
+              "inning": 1,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 2,
+              "runs": 1,
+              "raw": "1"
+            },
+            {
+              "inning": 3,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 4,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 5,
+              "runs": 1,
+              "raw": "1"
+            },
+            {
+              "inning": 6,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 7,
+              "runs": 2,
+              "raw": "2"
+            },
+            {
+              "inning": 8,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 9,
+              "runs": 2,
+              "raw": "2"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "date": "2026-04-30",
+      "gameId": "2021038791",
+      "status": "試合終了",
+      "stadium": "ベルーナドーム",
+      "homeTeam": "埼玉西武ライオンズ",
+      "awayTeam": "北海道日本ハムファイターズ",
+      "homeScore": 2,
+      "awayScore": 3,
+      "totalRuns": 5,
+      "scheduleUrl": "https://baseball.yahoo.co.jp/npb/schedule/?date=2026-04-30",
+      "statsUrl": "https://baseball.yahoo.co.jp/npb/game/2021038791/stats",
+      "intentionalWalks": {
+        "total": 0,
+        "teams": {
+          "北海道日本ハムファイターズ": {
+            "team": "北海道日本ハムファイターズ",
+            "intentionalWalks": 0,
+            "players": []
+          },
+          "埼玉西武ライオンズ": {
+            "team": "埼玉西武ライオンズ",
+            "intentionalWalks": 0,
+            "players": []
+          }
+        }
+      },
+      "inningScores": {
+        "home": {
+          "team": "埼玉西武ライオンズ",
+          "innings": [
+            {
+              "inning": 1,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 2,
+              "runs": 1,
+              "raw": "1"
+            },
+            {
+              "inning": 3,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 4,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 5,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 6,
+              "runs": 1,
+              "raw": "1"
+            },
+            {
+              "inning": 7,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 8,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 9,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 10,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 11,
+              "runs": 0,
+              "raw": "0"
+            }
+          ]
+        },
+        "away": {
+          "team": "北海道日本ハムファイターズ",
+          "innings": [
+            {
+              "inning": 1,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 2,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 3,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 4,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 5,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 6,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 7,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 8,
+              "runs": 2,
+              "raw": "2"
+            },
+            {
+              "inning": 9,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 10,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 11,
+              "runs": 1,
+              "raw": "1"
             }
           ]
         }
