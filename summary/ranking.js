@@ -40,20 +40,20 @@ const TYPE_CONFIG = {
     customLabel: "投球回数を指定",
     denominatorLabel: "投球回",
     metrics: [
-      { key: "wins", label: "勝利", field: "wins", kind: "number", digits: 0 },
+      { key: "wins", label: "勝利", field: "wins", kind: "number", digits: 0, hideThreshold: true },
       { key: "losses", label: "敗戦", field: "losses", kind: "number", digits: 0, lowerIsBetter: true },
       { key: "saves", label: "セーブ", field: "saves", kind: "number", digits: 0, hideThreshold: true },
       { key: "holds", label: "ホールド", field: "holds", kind: "number", digits: 0, hideThreshold: true },
       { key: "inningsOuts", label: "投球回", field: "inningsOuts", kind: "innings" },
-      { key: "batters", label: "打者", field: "batters", kind: "number", digits: 0 },
+      { key: "batters", label: "打者", field: "batters", kind: "number", digits: 0, hideThreshold: true },
       { key: "pitches", label: "球数", field: "pitches", kind: "number", digits: 0 },
-      { key: "hits", label: "被安打", field: "hits", kind: "number", digits: 0, lowerIsBetter: true },
-      { key: "homeRuns", label: "被本塁打", field: "homeRuns", kind: "number", digits: 0, lowerIsBetter: true },
-      { key: "strikeouts", label: "奪三振", field: "strikeouts", kind: "number", digits: 0 },
-      { key: "walks", label: "与四球", field: "walks", kind: "number", digits: 0, lowerIsBetter: true },
-      { key: "hitByPitch", label: "与死球", field: "hitByPitch", kind: "number", digits: 0, lowerIsBetter: true },
-      { key: "runs", label: "失点", field: "runs", kind: "number", digits: 0, lowerIsBetter: true },
-      { key: "earnedRuns", label: "自責点", field: "earnedRuns", kind: "number", digits: 0, lowerIsBetter: true },
+      { key: "hits", label: "被安打", field: "hits", kind: "number", digits: 0, lowerIsBetter: true, hideThreshold: true },
+      { key: "homeRuns", label: "被本塁打", field: "homeRuns", kind: "number", digits: 0, lowerIsBetter: true, hideThreshold: true },
+      { key: "strikeouts", label: "奪三振", field: "strikeouts", kind: "number", digits: 0, hideThreshold: true },
+      { key: "walks", label: "与四球", field: "walks", kind: "number", digits: 0, lowerIsBetter: true, hideThreshold: true },
+      { key: "hitByPitch", label: "与死球", field: "hitByPitch", kind: "number", digits: 0, lowerIsBetter: true, hideThreshold: true },
+      { key: "runs", label: "失点", field: "runs", kind: "number", digits: 0, lowerIsBetter: true, hideThreshold: true },
+      { key: "earnedRuns", label: "自責点", field: "earnedRuns", kind: "number", digits: 0, lowerIsBetter: true, hideThreshold: true },
       { key: "era", label: "防御率", field: "era", kind: "decimal", digits: 2, lowerIsBetter: true, qualifier: true },
       { key: "whip", label: "WHIP", field: "whip", kind: "decimal", digits: 2, lowerIsBetter: true },
       { key: "kPer9", label: "K/9", field: "kPer9", kind: "decimal", digits: 2 },
@@ -83,19 +83,19 @@ const TYPE_CONFIG = {
     customLabel: "打席数を指定",
     denominatorLabel: "打席",
     metrics: [
-      { key: "runs", label: "得点", field: "runs", kind: "number", digits: 0 },
-      { key: "hits", label: "安打", field: "hits", kind: "number", digits: 0 },
-      { key: "singles", label: "単打", field: "singles", kind: "number", digits: 0 },
-      { key: "doubles", label: "二塁打", field: "doubles", kind: "number", digits: 0 },
-      { key: "triples", label: "三塁打", field: "triples", kind: "number", digits: 0 },
-      { key: "homeRuns", label: "本塁打", field: "homeRuns", kind: "number", digits: 0 },
-      { key: "runsBattedIn", label: "打点", field: "runsBattedIn", kind: "number", digits: 0 },
-      { key: "walks", label: "四球", field: "walks", kind: "number", digits: 0 },
-      { key: "hitByPitch", label: "死球", field: "hitByPitch", kind: "number", digits: 0 },
-      { key: "sacBunts", label: "犠打", field: "sacBunts", kind: "number", digits: 0 },
-      { key: "sacFlies", label: "犠飛", field: "sacFlies", kind: "number", digits: 0 },
-      { key: "steals", label: "盗塁", field: "steals", kind: "number", digits: 0 },
-      { key: "strikeouts", label: "三振", field: "strikeouts", kind: "number", digits: 0, lowerIsBetter: true },
+      { key: "runs", label: "得点", field: "runs", kind: "number", digits: 0, hideThreshold: true },
+      { key: "hits", label: "安打", field: "hits", kind: "number", digits: 0, hideThreshold: true },
+      { key: "singles", label: "単打", field: "singles", kind: "number", digits: 0, hideThreshold: true },
+      { key: "doubles", label: "二塁打", field: "doubles", kind: "number", digits: 0, hideThreshold: true },
+      { key: "triples", label: "三塁打", field: "triples", kind: "number", digits: 0, hideThreshold: true },
+      { key: "homeRuns", label: "本塁打", field: "homeRuns", kind: "number", digits: 0, hideThreshold: true },
+      { key: "runsBattedIn", label: "打点", field: "runsBattedIn", kind: "number", digits: 0, hideThreshold: true },
+      { key: "walks", label: "四球", field: "walks", kind: "number", digits: 0, hideThreshold: true },
+      { key: "hitByPitch", label: "死球", field: "hitByPitch", kind: "number", digits: 0, hideThreshold: true },
+      { key: "sacBunts", label: "犠打", field: "sacBunts", kind: "number", digits: 0, hideThreshold: true },
+      { key: "sacFlies", label: "犠飛", field: "sacFlies", kind: "number", digits: 0, hideThreshold: true },
+      { key: "steals", label: "盗塁", field: "steals", kind: "number", digits: 0, hideThreshold: true },
+      { key: "strikeouts", label: "三振", field: "strikeouts", kind: "number", digits: 0, lowerIsBetter: true, hideThreshold: true },
       { key: "battingAverage", label: "打率", field: "battingAverage", kind: "average", qualifier: true },
       { key: "onBasePercentage", label: "出塁率", field: "onBasePercentage", kind: "average", qualifier: true },
       { key: "isoDiscipline", label: "IsoD", field: "isoDiscipline", kind: "average", qualifier: true },
@@ -118,6 +118,7 @@ const state = {
   league: "all",
   team: "all",
   metricKey: config.metrics[0].key,
+  pitchType: "all",
   limit: 10,
   thresholdMode: "qualified",
   customThreshold: null,
@@ -129,6 +130,8 @@ const els = {
   leagueSelect: document.getElementById("leagueSelect"),
   teamSelect: document.getElementById("teamSelect"),
   metricSelect: document.getElementById("metricSelect"),
+  pitchTypeField: document.getElementById("pitchTypeField"),
+  pitchTypeSelect: document.getElementById("pitchTypeSelect"),
   limitSelect: document.getElementById("limitSelect"),
   thresholdField: document.getElementById("thresholdField"),
   thresholdLabel: document.getElementById("thresholdLabel"),
@@ -278,9 +281,25 @@ function passesThreshold(row) {
   return denominator >= state.customThreshold;
 }
 
+function eligibleBaseRows(metric = currentMetric()) {
+  return baseRows().filter((row) => metric.hideThreshold || passesThreshold(row));
+}
+
+function availablePitchTypes() {
+  const metric = currentMetric();
+  if (metric.source !== "pitch") return [];
+  const types = new Set();
+  for (const row of eligibleBaseRows(metric)) {
+    for (const pitchRow of row.seasonDashboard?.pitchMix || []) {
+      if (pitchRow.pitchType) types.add(pitchRow.pitchType);
+    }
+  }
+  return [...types].sort((a, b) => a.localeCompare(b, "ja"));
+}
+
 function metricRows() {
   const metric = currentMetric();
-  const rows = baseRows().filter((row) => metric.hideThreshold || passesThreshold(row));
+  const rows = eligibleBaseRows(metric);
   if (metric.source === "pitch") {
     return rows
       .flatMap((playerRow) =>
@@ -299,7 +318,8 @@ function metricRows() {
           };
         })
       )
-      .filter((row) => row.value !== null && row.denominator > 0);
+      .filter((row) => row.value !== null && row.denominator > 0)
+      .filter((row) => state.pitchType === "all" || row.pitchType === state.pitchType);
   }
   return rows
     .map((row) => {
@@ -388,6 +408,27 @@ function renderMetricOptions() {
   els.metricSelect.innerHTML = config.metrics
     .map((metric) => `<option value="${metric.key}" ${metric.key === state.metricKey ? "selected" : ""}>${escapeHtml(metric.label)}</option>`)
     .join("");
+}
+
+function renderPitchTypeControls() {
+  if (!els.pitchTypeField || !els.pitchTypeSelect) return;
+  const metric = currentMetric();
+  if (metric.source !== "pitch") {
+    state.pitchType = "all";
+    els.pitchTypeField.classList.add("is-hidden");
+    return;
+  }
+  els.pitchTypeField.classList.remove("is-hidden");
+  const pitchTypes = availablePitchTypes();
+  if (state.pitchType !== "all" && !pitchTypes.includes(state.pitchType)) {
+    state.pitchType = "all";
+  }
+  els.pitchTypeSelect.innerHTML = [
+    `<option value="all" ${state.pitchType === "all" ? "selected" : ""}>すべて</option>`,
+    ...pitchTypes.map(
+      (pitchType) => `<option value="${escapeHtml(pitchType)}" ${pitchType === state.pitchType ? "selected" : ""}>${escapeHtml(pitchType)}</option>`
+    ),
+  ].join("");
 }
 
 function renderThresholdControls() {
@@ -552,6 +593,7 @@ function render() {
   renderTeamOptions();
   renderMetricOptions();
   renderThresholdControls();
+  renderPitchTypeControls();
   if (state.error) {
     els.rankingBody.innerHTML = `<div class="section-empty">${escapeHtml(state.error)}</div>`;
     return;
@@ -596,10 +638,17 @@ function bindEvents() {
   });
   els.metricSelect.addEventListener("change", (event) => {
     state.metricKey = event.target.value;
+    state.pitchType = "all";
     state.thresholdMode = "qualified";
     state.customThreshold = defaultCustomThreshold();
     render();
   });
+  if (els.pitchTypeSelect) {
+    els.pitchTypeSelect.addEventListener("change", (event) => {
+      state.pitchType = event.target.value;
+      render();
+    });
+  }
   els.limitSelect.addEventListener("change", (event) => {
     state.limit = Number(event.target.value) || 10;
     render();
