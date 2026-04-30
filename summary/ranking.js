@@ -66,7 +66,7 @@ const TYPE_CONFIG = {
       { key: "goFo", label: "GO/FO", field: "goFo", kind: "decimal", digits: 2 },
       { key: "groundOutRate", label: "ゴロアウト率", field: "groundOutRate", kind: "percent" },
       { key: "flyOutRate", label: "フライアウト率", field: "flyOutRate", kind: "percent" },
-      { key: "whiffRateSeason", label: "空振り率", field: "whiffRate", kind: "percent", source: "pitch" },
+      { key: "whiffRateSeason", label: "空振り率", field: "whiff", kind: "percent", source: "pitch" },
       { key: "whiffRate", label: "whiff%", field: "whiffRate", kind: "percent", source: "pitch" },
       { key: "csw", label: "csw%", field: "csw", kind: "percent", source: "pitch" },
       { key: "zoneRate", label: "zone%", field: "zoneRate", kind: "percent", source: "pitch" },

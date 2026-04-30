@@ -385,7 +385,13 @@ function aggregatePitcherBucket(rows, bucket) {
   const latestRow = rows[rows.length - 1] || rows[0] || null;
   if (!latestRow) return null;
   const inningsOuts = sumMetric(rows, "inningsOuts");
-  const outEventTotal = sumMetric(rows, "grounders") + sumMetric(rows, "flyBalls");
+  const outEventTotal =
+    sumMetric(rows, "grounders") +
+    sumMetric(rows, "flyBalls") +
+    sumMetric(rows, "lookingStrikeouts") +
+    sumMetric(rows, "swingingStrikeouts") +
+    sumMetric(rows, "sacrificeBunts") +
+    sumMetric(rows, "interference");
   const fipConstant = rows.find((row) => Number.isFinite(Number(row?.fipConstant)))?.fipConstant ?? latestRow.fipConstant ?? null;
   const atBats = sumMetric(rows, "atBats");
   const hits = sumMetric(rows, "hits");
