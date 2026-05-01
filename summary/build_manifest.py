@@ -3424,6 +3424,7 @@ def build_batter_totals(
     sacrifice_flies_by_player: dict[tuple[str, str], int] = defaultdict(int)
     intentional_walks_by_player: dict[tuple[str, str], int] = defaultdict(int)
     scoring_position_by_player: dict[tuple[str, str], dict[str, int]] = defaultdict(lambda: {"atBats": 0, "hits": 0})
+    plate_discipline_by_player: dict[tuple[str, str], dict] = defaultdict(build_plate_discipline_bucket)
 
     for entry in entries:
         game_id = entry.get("gameId") or ""
@@ -3440,6 +3441,10 @@ def build_batter_totals(
         player_name = entry.get("player") or ""
         bucket_key = (year, batter_id or f"{team}::{player_name}")
         plate_rows = ((entry.get("dashboard") or {}).get("plateAppearances") or [])
+        discipline_bucket = plate_discipline_by_player[bucket_key]
+        for plate in plate_rows:
+            for point in plate.get("points") or []:
+                record_plate_discipline_pitch(discipline_bucket, point)
         sacrifice_flies_by_player[bucket_key] += sum(
             1
             for plate in plate_rows
@@ -3600,6 +3605,12 @@ def build_batter_totals(
         scoring_position_stats = scoring_position_by_player.get(player["_bucketKey"], {})
         player["scoringPositionAtBats"] = parse_int(scoring_position_stats.get("atBats"))
         player["scoringPositionHits"] = parse_int(scoring_position_stats.get("hits"))
+        plate_discipline = finalize_plate_discipline_bucket(
+            plate_discipline_by_player.get(player["_bucketKey"], build_plate_discipline_bucket())
+        )
+        player["ballZoneSwingRate"] = plate_discipline.get("chase")
+        player["ballZonePitchCount"] = plate_discipline.get("outZoneCount", 0)
+        player["ballZoneSwingCount"] = plate_discipline.get("outZoneSwingCount", 0)
         finalized_players.append(player)
 
     league_buckets: dict[tuple[str, str], dict] = defaultdict(
@@ -3742,6 +3753,9 @@ def build_batter_totals(
             "scoringPositionHits": player["scoringPositionHits"],
             "battingAverage": round_or_none(batting_average, 3),
             "scoringPositionBattingAverage": round_or_none(scoring_position_batting_average, 3),
+            "ballZoneSwingRate": player.get("ballZoneSwingRate"),
+            "ballZonePitchCount": player.get("ballZonePitchCount", 0),
+            "ballZoneSwingCount": player.get("ballZoneSwingCount", 0),
             "onBasePercentage": round_or_none(on_base_percentage, 3),
             "isoDiscipline": round_or_none(iso_discipline, 3),
             "sluggingPercentage": round_or_none(slugging, 3),

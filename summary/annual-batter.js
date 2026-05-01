@@ -63,6 +63,12 @@ function formatDecimal(value, digits = 1) {
   return Number.isFinite(number) ? number.toFixed(digits) : `${value}`;
 }
 
+function formatPercent(value, digits = 1) {
+  if (value === null || value === undefined || value === "") return "-";
+  const number = Number(value);
+  return Number.isFinite(number) ? `${number.toFixed(digits)}%` : `${value}`;
+}
+
 function teamSortKey(team) {
   const primary = `${team || ""}`.split(" / ")[0];
   const index = TEAM_ORDER.indexOf(primary);
@@ -122,6 +128,7 @@ const SORT_COLUMNS = [
   { key: "games", label: "試合", type: "number", value: (row) => row.games },
   { key: "battingAverage", label: "打率", type: "number", value: (row) => row.battingAverage },
   { key: "scoringPositionBattingAverage", label: "得点圏打率", type: "number", value: (row) => row.scoringPositionBattingAverage },
+  { key: "ballZoneSwingRate", label: "ボールゾーンスイング率", type: "number", value: (row) => row.ballZoneSwingRate },
   { key: "plateAppearances", label: "打席", type: "number", value: (row) => row.plateAppearances },
   { key: "atBats", label: "打数", type: "number", value: (row) => row.atBats },
   { key: "runs", label: "得点", type: "number", value: (row) => row.runs },
@@ -414,6 +421,7 @@ function renderTable() {
           <td>${row.games}</td>
           <td>${formatAverage(row.battingAverage)}</td>
           <td>${formatAverage(row.scoringPositionBattingAverage)}</td>
+          <td>${formatPercent(row.ballZoneSwingRate, 1)}</td>
           <td>${row.plateAppearances}</td>
           <td>${row.atBats}</td>
           <td>${row.runs}</td>
@@ -515,7 +523,7 @@ function bindEvents() {
 async function init() {
   try {
     const [response, contextResponse] = await Promise.all([
-      fetch("./batter_totals.json?v=20260501-1", { cache: "no-store" }),
+      fetch("./batter_totals.json?v=20260501-2", { cache: "no-store" }),
       fetch("./sportsnavi_game_context_2026.json?v=20260429-1", { cache: "no-store" }).catch(() => null),
     ]);
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
