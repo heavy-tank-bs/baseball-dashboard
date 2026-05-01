@@ -342,6 +342,20 @@ def load_raw_pitcher_stat_rows(excluded_years: set[str]) -> list[tuple[str, dict
     return rows
 
 
+def raw_pitcher_at_bats(row: dict[str, str]) -> int:
+    explicit_at_bats = parse_int(row.get("打数") or row.get("被打数"))
+    if explicit_at_bats:
+        return explicit_at_bats
+    batters = parse_int(row.get("打者"))
+    if not batters:
+        return 0
+    non_at_bats = sum(
+        parse_int(row.get(key))
+        for key in ("与四球", "与死球", "犠打", "犠飛", "打撃妨害", "守備妨害")
+    )
+    return max(batters - non_at_bats, 0)
+
+
 def load_raw_batter_stat_rows(excluded_years: set[str]) -> list[tuple[str, dict[str, str]]]:
     if not RAW_DATA_DIR.exists():
         return []
@@ -3241,7 +3255,8 @@ def build_player_totals(entries: list[dict], game_decisions: dict[str, dict], ga
         player_bucket["balks"] += parse_int(row.get("ボーク"))
         player_bucket["runs"] += parse_int(row.get("失点"))
         player_bucket["earnedRuns"] += parse_int(row.get("自責点"))
-        batting_average_allowed = parse_float(row.get("被安打率"))
+        player_bucket["atBats"] += raw_pitcher_at_bats(row)
+        batting_average_allowed = parse_float(row.get("被打率"))
         if batting_average_allowed is not None:
             player_bucket["battingAverageAllowedOverride"] = batting_average_allowed
         out_rate_override = lookup_out_rate_override(
