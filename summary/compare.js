@@ -1327,6 +1327,27 @@ const BATTER_SEASON_SECTIONS = [
   ["byStrikeCount", "カウント別打撃成績"],
 ];
 
+const BATTER_SPLIT_HEADER_LABELS = {
+  byOpponent: "対戦相手",
+  byStadium: "球場名",
+  byPitchType: "球種",
+  byVelocity: "球速",
+  byBattingOrder: "打順",
+  byPlateAppearance: "打席",
+  byStrikeCount: "カウント",
+};
+
+const BATTER_SPLIT_TABLE_CLASSES = {
+  byOpponent: "batter-season-table--opponent",
+  byStadium: "batter-season-table--stadium",
+  byPitchType: "batter-season-table--pitch-type",
+  byVelocity: "batter-season-table--velocity",
+  byPitcherHand: "batter-season-table--pitcher-hand",
+  byBattingOrder: "batter-season-table--batting-order",
+  byPlateAppearance: "batter-season-table--plate-appearance",
+  byStrikeCount: "batter-season-table--strike-count",
+};
+
 function batterSplitLabel(sectionKey, row) {
   const label = row?.label || "-";
   if (sectionKey === "byPitcherHand") {
@@ -1340,6 +1361,8 @@ function batterSplitLabel(sectionKey, row) {
 }
 
 function renderBatterSplitTable(sectionKey, title, rows = []) {
+  const splitHeader = BATTER_SPLIT_HEADER_LABELS[sectionKey] || "区分";
+  const splitTableClass = BATTER_SPLIT_TABLE_CLASSES[sectionKey] || "";
   const visibleRows = rows.filter((row) => (Number(row?.plateAppearances) || 0) > 0);
   if (!visibleRows.length) {
     return `
@@ -1353,7 +1376,7 @@ function renderBatterSplitTable(sectionKey, title, rows = []) {
     .map(
       (row) => `
         <tr>
-          <td>${escapeHtml(batterSplitLabel(sectionKey, row))}</td>
+          <td class="batter-split-label-cell">${escapeHtml(batterSplitLabel(sectionKey, row))}</td>
           <td>${formatAverageValue(row.battingAverage)}</td>
           <td>${formatNumber(row.plateAppearances)}</td>
           <td>${formatNumber(row.atBats)}</td>
@@ -1377,10 +1400,10 @@ function renderBatterSplitTable(sectionKey, title, rows = []) {
     <article class="dashboard-card season-card-wide">
       <div class="card-head"><h3>${escapeHtml(title)}</h3></div>
       <div class="table-scroll">
-        <table class="data-table season-table batter-season-table">
+        <table class="data-table season-table batter-season-table ${splitTableClass}">
           <thead>
             <tr>
-              <th>区分</th><th>打率</th><th>打席</th><th>打数</th><th>安打</th><th>二塁打</th><th>三塁打</th><th>本塁打</th>
+              <th class="batter-split-label-heading">${escapeHtml(splitHeader)}</th><th>打率</th><th>打席</th><th>打数</th><th>安打</th><th>二塁打</th><th>三塁打</th><th>本塁打</th>
               <th>四球</th><th>死球</th><th>犠打</th><th>犠飛</th><th>三振</th><th>出塁率</th><th>長打率</th><th>OPS</th>
             </tr>
           </thead>

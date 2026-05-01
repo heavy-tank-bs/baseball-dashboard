@@ -2006,6 +2006,7 @@ button.type-switch-link {
 
 .batter-season-table {
   min-width: 1320px;
+  --batter-split-width: 86px;
 }
 
 .batter-season-table th:first-child,
@@ -2013,7 +2014,11 @@ button.type-switch-link {
   position: sticky;
   left: 0;
   z-index: 2;
-  min-width: 148px;
+  width: var(--batter-split-width);
+  min-width: var(--batter-split-width);
+  max-width: var(--batter-split-width);
+  padding-right: 6px;
+  padding-left: 6px;
   background: white;
   box-shadow: inset -1px 0 0 rgba(15, 35, 64, 0.08);
 }
@@ -2023,11 +2028,49 @@ button.type-switch-link {
   background: var(--card-strong);
 }
 
+.batter-split-label-cell,
+.batter-split-label-heading {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.batter-season-table--opponent {
+  --batter-split-width: 106px;
+}
+
+.batter-season-table--stadium {
+  --batter-split-width: 112px;
+}
+
+.batter-season-table--pitch-type {
+  --batter-split-width: 104px;
+}
+
+.batter-season-table--velocity {
+  --batter-split-width: 116px;
+}
+
+.batter-season-table--pitcher-hand {
+  --batter-split-width: 66px;
+}
+
+.batter-season-table--batting-order {
+  --batter-split-width: 48px;
+}
+
+.batter-season-table--plate-appearance {
+  --batter-split-width: 110px;
+}
+
+.batter-season-table--strike-count {
+  --batter-split-width: 86px;
+}
+
 .season-matchup-cell {
   max-width: 280px;
   overflow: hidden;
   text-overflow: ellipsis;
-  text-align: left !important;
+  text-align: center !important;
 }
 
 .season-outcome-grid {
