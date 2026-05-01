@@ -85,10 +85,16 @@ select {
 
 .hero-nav {
   display: grid;
-  grid-template-columns: repeat(3, minmax(160px, 1fr));
+  grid-template-columns: repeat(4, minmax(128px, 1fr));
   gap: 10px;
   align-self: flex-end;
-  width: min(100%, 680px);
+  width: min(100%, 840px);
+}
+
+.hero-nav-group {
+  display: grid;
+  gap: 8px;
+  min-width: 0;
 }
 
 .hero-nav-link {
@@ -108,11 +114,99 @@ select {
   transition: transform 120ms ease, border-color 120ms ease, background 120ms ease;
 }
 
+.hero-nav-parent {
+  min-height: 46px;
+  cursor: default;
+}
+
+.hero-nav-single {
+  min-height: 88px;
+}
+
+.hero-nav-subrow {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 6px;
+}
+
+.hero-nav-sublink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  min-height: 34px;
+  padding: 7px 8px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.86);
+  text-decoration: none;
+  font-size: 14px;
+  line-height: 1.2;
+  transition: transform 120ms ease, border-color 120ms ease, background 120ms ease;
+}
+
 .hero-nav-link:hover,
-.hero-nav-link.active {
+.hero-nav-link.active,
+.hero-nav-group.active .hero-nav-parent,
+.hero-nav-sublink:hover,
+.hero-nav-sublink.active {
   transform: translateY(-1px);
   border-color: rgba(255, 255, 255, 0.38);
   background: rgba(255, 255, 255, 0.18);
+}
+
+.type-switch-section {
+  margin: -6px 0 24px;
+}
+
+.type-switch {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 180px));
+  justify-content: center;
+  gap: 10px;
+  width: min(100%, 420px);
+  margin: 0 auto;
+  padding: 8px;
+  border: 1px solid rgba(216, 208, 196, 0.72);
+  border-radius: 24px;
+  background: rgba(255, 253, 248, 0.9);
+  box-shadow: 0 12px 34px rgba(15, 35, 64, 0.08);
+}
+
+.type-switch-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  min-height: 44px;
+  padding: 10px 16px;
+  border: 1px solid rgba(15, 35, 64, 0.12);
+  border-radius: 18px;
+  background: white;
+  color: var(--navy);
+  text-align: center;
+  text-decoration: none;
+  font-weight: 700;
+  line-height: 1.25;
+  cursor: pointer;
+  transition: transform 120ms ease, border-color 120ms ease, background 120ms ease, color 120ms ease;
+}
+
+button.type-switch-link {
+  appearance: none;
+}
+
+.type-switch-link:hover,
+.type-switch-link.active {
+  transform: translateY(-1px);
+  border-color: rgba(15, 35, 64, 0.36);
+}
+
+.type-switch-link.active {
+  background: var(--navy);
+  color: white;
+  box-shadow: 0 10px 22px rgba(15, 35, 64, 0.18);
 }
 
 .hero-stats {
@@ -426,6 +520,11 @@ select {
 .action-link.secondary {
   background: #ece6da;
   color: var(--text);
+}
+
+.action-link.is-disabled {
+  pointer-events: none;
+  opacity: 0.45;
 }
 
 .meta-grid {
@@ -1780,7 +1879,15 @@ select {
 }
 
 .season-pitch-summary-table {
-  min-width: 1280px;
+  min-width: 1180px;
+}
+
+.season-pitch-summary-table th:first-child,
+.season-pitch-summary-table td:first-child,
+.season-pitch-metric-summary-table th:first-child,
+.season-pitch-metric-summary-table td:first-child {
+  width: 74px;
+  min-width: 74px;
 }
 
 .season-pitch-metric-summary-table {
@@ -1791,12 +1898,22 @@ select {
   min-width: 1120px;
 }
 
+.season-inning-table th:first-child,
+.season-inning-table td:first-child {
+  width: 54px;
+  min-width: 54px;
+}
+
 .recent-game-table {
   min-width: 1120px;
 }
 
 .pitcher-game-split-table {
-  min-width: 1320px;
+  min-width: 1180px;
+}
+
+.season-pitch-hand-summary-table {
+  min-width: 840px;
 }
 
 .pitcher-decision-inning-table {
@@ -1932,6 +2049,76 @@ select {
 
 .ranking-filters-grid {
   grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.player-filters-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.player-action-panel {
+  padding-top: 16px;
+}
+
+.player-output-card {
+  display: grid;
+  gap: 16px;
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: white;
+}
+
+.player-output-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.player-output-head h3 {
+  margin: 4px 0 0;
+  font-size: 28px;
+}
+
+.player-stats-empty {
+  min-height: 92px;
+}
+
+.player-stats-frame {
+  display: block;
+  width: 100%;
+  min-height: 640px;
+  border: 0;
+}
+
+body.compare-embed {
+  background: transparent;
+}
+
+body.compare-embed .site-shell {
+  max-width: none;
+  padding: 0;
+}
+
+body.compare-embed .hero,
+body.compare-embed .type-switch-section,
+body.compare-embed .annual-main > .panel-block:first-child {
+  display: none;
+}
+
+body.compare-embed .panel {
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+body.compare-embed #seasonPanel {
+  padding: 0;
+}
+
+body.compare-embed .season-detail-wrap {
+  margin-top: 14px;
 }
 
 .ranking-threshold-field {
@@ -2492,7 +2679,8 @@ select {
 
   .compare-head,
   .compare-values,
-  .compare-season-item {
+  .compare-season-item,
+  .player-output-head {
     flex-direction: column;
     align-items: flex-start;
   }

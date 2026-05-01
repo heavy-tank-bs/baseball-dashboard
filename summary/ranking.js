@@ -33,6 +33,7 @@ const PAGE_TYPE = document.body.dataset.rankingType === "batter" ? "batter" : "p
 const TYPE_CONFIG = {
   pitcher: {
     datasetUrl: "./player_totals.json?v=20260430-3",
+    idKey: "pitcherId",
     thresholdKind: "innings",
     fixedQualification: 143 * 3,
     thresholdLabel: "投球回条件",
@@ -76,7 +77,8 @@ const TYPE_CONFIG = {
     ],
   },
   batter: {
-    datasetUrl: "./batter_totals.json?v=20260501-1",
+    datasetUrl: "./batter_totals.json?v=20260501-2",
+    idKey: "batterId",
     thresholdKind: "plateAppearances",
     fixedQualification: 443,
     thresholdLabel: "打席数条件",
@@ -224,6 +226,19 @@ function formatDenominator(row) {
   return `${row.denominator}`;
 }
 
+function playerPersonalHref(row) {
+  const params = new URLSearchParams({
+    type: PAGE_TYPE,
+    year: row.year || "",
+    player: row.player || "",
+    team: row.team || "",
+  });
+  if (row.playerId) {
+    params.set("playerId", row.playerId);
+  }
+  return `./player.html?${params.toString()}`;
+}
+
 function currentMetric() {
   return config.metrics.find((metric) => metric.key === state.metricKey) || config.metrics[0];
 }
@@ -313,6 +328,7 @@ function metricRows() {
             league: playerRow.league,
             team: playerRow.team,
             player: playerRow.player,
+            playerId: playerRow[config.idKey],
             pitchType: pitchRow.pitchType,
             value,
             denominator: Number(pitchRow.count) || 0,
@@ -332,6 +348,7 @@ function metricRows() {
         league: row.league,
         team: row.team,
         player: row.player,
+        playerId: row[config.idKey],
         value,
         denominator: rowDenominator(row),
         raw: row,
@@ -482,7 +499,7 @@ function renderTable(rows) {
       (row, index) => `
         <tr>
           <td>${index + 1}</td>
-          <td>${escapeHtml(row.pitchType ? `${row.player} / ${row.pitchType}` : row.player)}</td>
+          <td><a class="annual-player-link ranking-player-link" href="${playerPersonalHref(row)}">${escapeHtml(row.pitchType ? `${row.player} / ${row.pitchType}` : row.player)}</a></td>
           <td>${escapeHtml(formatMetricValue(metric, row.value))}</td>
         </tr>
       `

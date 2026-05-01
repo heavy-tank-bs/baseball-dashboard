@@ -102,6 +102,7 @@ const state = {
   previousRow: null,
   activeMetricKeys: [],
   activeMode: "compare",
+  embedded: false,
   error: "",
 };
 
@@ -112,6 +113,8 @@ const els = {
   comparePlayerName: document.getElementById("comparePlayerName"),
   compareDescription: document.getElementById("compareDescription"),
   compareBackLink: document.getElementById("compareBackLink"),
+  comparePitcherTypeLink: document.getElementById("comparePitcherTypeLink"),
+  compareBatterTypeLink: document.getElementById("compareBatterTypeLink"),
   modeToggleGroup: document.getElementById("modeToggleGroup"),
   metricToggleGroup: document.getElementById("metricToggleGroup"),
   seasonPanel: document.getElementById("seasonPanel"),
@@ -1115,10 +1118,7 @@ function renderPitcherHandSummary(dashboard) {
       (row) => `
         <tr>
           <td>${escapeHtml(pitcherHandLabel(row))}</td>
-          <td>${formatNumber(row.count)}</td>
-          <td>${formatPercentValue(row.ratio)}</td>
-          <td>${formatSpeedValue(row.avgSpeed)}</td>
-          <td>${formatSpeedValue(row.maxSpeed)}</td>
+          <td>${formatAverageValue(row.hitRate)}</td>
           <td>${formatNumber(row.whiffCount)}</td>
           <td>${formatPercentValue(row.whiff)}</td>
           <td>${formatNumber(row.atBats)}</td>
@@ -1127,7 +1127,6 @@ function renderPitcherHandSummary(dashboard) {
           <td>${formatNumber(row.grounders)}</td>
           <td>${formatNumber(row.flyBalls)}</td>
           <td>${formatNumber(row.strikeouts)}</td>
-          <td>${formatAverageValue(row.hitRate)}</td>
         </tr>
       `
     )
@@ -1136,11 +1135,11 @@ function renderPitcherHandSummary(dashboard) {
     <article class="dashboard-card season-card-wide">
       <div class="card-head"><h3>対左右別成績</h3></div>
       <div class="table-scroll">
-        <table class="data-table season-table season-pitch-summary-table">
+        <table class="data-table season-table season-pitch-hand-summary-table">
           <thead>
             <tr>
-              <th>区分</th><th>球数</th><th>割合</th><th>平均</th><th>最速</th><th>空振</th><th>空振率</th>
-              <th>被打数</th><th>被安打</th><th>被本</th><th>ゴロ</th><th>フライ</th><th>三振</th><th>被打率</th>
+              <th>区分</th><th>被打率</th><th>空振</th><th>空振率</th><th>被打数</th><th>被安打</th><th>被本</th>
+              <th>ゴロ</th><th>フライ</th><th>三振</th>
             </tr>
           </thead>
           <tbody>${body}</tbody>
@@ -1172,9 +1171,9 @@ function renderPitcherGameSplitTable(sectionKey, title, rows = []) {
         <tr>
           <td>${escapeHtml(pitcherGameSplitLabel(sectionKey, row))}</td>
           <td>${formatNumber(row.games)}</td>
+          <td>${formatNumber(row.era, 2)}</td>
           <td>${escapeHtml(row.innings || "-")}</td>
           <td>${formatNumber(row.batters)}</td>
-          <td>${formatNumber(row.pitches)}</td>
           <td>${formatNumber(row.hits)}</td>
           <td>${formatNumber(row.homeRuns)}</td>
           <td>${formatNumber(row.strikeouts)}</td>
@@ -1182,7 +1181,6 @@ function renderPitcherGameSplitTable(sectionKey, title, rows = []) {
           <td>${formatNumber(row.hitByPitch)}</td>
           <td>${formatNumber(row.runs)}</td>
           <td>${formatNumber(row.earnedRuns)}</td>
-          <td>${formatNumber(row.era, 2)}</td>
           <td>${formatNumber(row.whip, 2)}</td>
           <td>${formatAverageValue(row.battingAverageAllowed)}</td>
         </tr>
@@ -1196,8 +1194,8 @@ function renderPitcherGameSplitTable(sectionKey, title, rows = []) {
         <table class="data-table season-table pitcher-game-split-table">
           <thead>
             <tr>
-              <th>区分</th><th>試合</th><th>投球回</th><th>打者</th><th>球数</th><th>被安打</th><th>被本</th>
-              <th>奪三振</th><th>与四球</th><th>与死球</th><th>失点</th><th>自責</th><th>防御率</th><th>WHIP</th><th>被打率</th>
+              <th>区分</th><th>試合</th><th>防御率</th><th>投球回</th><th>打者</th><th>被安打</th><th>被本</th>
+              <th>奪三振</th><th>与四球</th><th>与死球</th><th>失点</th><th>自責</th><th>WHIP</th><th>被打率</th>
             </tr>
           </thead>
           <tbody>${body}</tbody>
@@ -1291,6 +1289,7 @@ function renderBatterRecentGames(dashboard) {
         <tr>
           <td>${escapeHtml(row.date)}</td>
           <td class="season-matchup-cell">${escapeHtml(opponentLabel(row))}</td>
+          <td>${formatAverageValue(row.battingAverage)}</td>
           <td>${formatNumber(row.plateAppearances)}</td>
           <td>${formatNumber(row.atBats)}</td>
           <td>${formatNumber(row.hits)}</td>
@@ -1298,7 +1297,6 @@ function renderBatterRecentGames(dashboard) {
           <td>${formatNumber(row.runsBattedIn)}</td>
           <td>${formatNumber(row.walks)}</td>
           <td>${formatNumber(row.strikeouts)}</td>
-          <td>${formatAverageValue(row.battingAverage)}</td>
         </tr>
       `
     )
@@ -1309,7 +1307,7 @@ function renderBatterRecentGames(dashboard) {
       <div class="table-scroll">
         <table class="data-table season-table batter-recent-game-table">
           <thead>
-            <tr><th>日付</th><th>カード</th><th>打席</th><th>打数</th><th>安打</th><th>本塁打</th><th>打点</th><th>四球</th><th>三振</th><th>打率</th></tr>
+            <tr><th>日付</th><th>カード</th><th>打率</th><th>打席</th><th>打数</th><th>安打</th><th>本塁打</th><th>打点</th><th>四球</th><th>三振</th></tr>
           </thead>
           <tbody>${body}</tbody>
         </table>
@@ -1356,6 +1354,7 @@ function renderBatterSplitTable(sectionKey, title, rows = []) {
       (row) => `
         <tr>
           <td>${escapeHtml(batterSplitLabel(sectionKey, row))}</td>
+          <td>${formatAverageValue(row.battingAverage)}</td>
           <td>${formatNumber(row.plateAppearances)}</td>
           <td>${formatNumber(row.atBats)}</td>
           <td>${formatNumber(row.hits)}</td>
@@ -1367,7 +1366,6 @@ function renderBatterSplitTable(sectionKey, title, rows = []) {
           <td>${formatNumber(row.sacBunts)}</td>
           <td>${formatNumber(row.sacFlies)}</td>
           <td>${formatNumber(row.strikeouts)}</td>
-          <td>${formatAverageValue(row.battingAverage)}</td>
           <td>${formatAverageValue(row.onBasePercentage)}</td>
           <td>${formatAverageValue(row.sluggingPercentage)}</td>
           <td>${formatAverageValue(row.ops)}</td>
@@ -1382,8 +1380,8 @@ function renderBatterSplitTable(sectionKey, title, rows = []) {
         <table class="data-table season-table batter-season-table">
           <thead>
             <tr>
-              <th>区分</th><th>打席</th><th>打数</th><th>安打</th><th>二塁打</th><th>三塁打</th><th>本塁打</th>
-              <th>四球</th><th>死球</th><th>犠打</th><th>犠飛</th><th>三振</th><th>打率</th><th>出塁率</th><th>長打率</th><th>OPS</th>
+              <th>区分</th><th>打率</th><th>打席</th><th>打数</th><th>安打</th><th>二塁打</th><th>三塁打</th><th>本塁打</th>
+              <th>四球</th><th>死球</th><th>犠打</th><th>犠飛</th><th>三振</th><th>出塁率</th><th>長打率</th><th>OPS</th>
             </tr>
           </thead>
           <tbody>${body}</tbody>
@@ -1717,6 +1715,19 @@ function renderPanels() {
   renderSeasonPanel();
   renderComparePanel();
   renderMonthlyPanel();
+  postEmbedHeight();
+}
+
+function postEmbedHeight() {
+  if (!state.embedded || window.parent === window) return;
+  window.requestAnimationFrame(() => {
+    const height = Math.max(
+      document.documentElement.scrollHeight,
+      document.body.scrollHeight,
+      document.querySelector(".site-shell")?.scrollHeight || 0
+    );
+    window.parent.postMessage({ type: "playerStatsHeight", height }, window.location.origin);
+  });
 }
 
 function renderHeader() {
@@ -1725,6 +1736,8 @@ function renderHeader() {
   els.compareEyebrow.textContent = state.config.label;
   els.compareBackLink.href = state.config.annualHref;
   els.compareBackLink.textContent = state.config.annualLabel;
+  els.comparePitcherTypeLink?.classList.toggle("active", state.config === TYPE_CONFIG.pitcher);
+  els.compareBatterTypeLink?.classList.toggle("active", state.config === TYPE_CONFIG.batter);
 
   if (!currentRow) {
     els.compareTitle.textContent = "選手成績ビュー";
@@ -1748,6 +1761,8 @@ function renderHeader() {
 
 async function init() {
   const params = currentParams();
+  state.embedded = params.get("embed") === "1";
+  document.body.classList.toggle("compare-embed", state.embedded);
   state.config = TYPE_CONFIG[params.get("type")] || TYPE_CONFIG.pitcher;
   state.activeMode = "season";
   state.activeMetricKeys = [];
@@ -1770,6 +1785,10 @@ async function init() {
   renderModeToggles();
   renderMetricToggles();
   renderPanels();
+  if (state.embedded && "ResizeObserver" in window) {
+    const resizeObserver = new ResizeObserver(() => postEmbedHeight());
+    resizeObserver.observe(document.body);
+  }
 }
 
 init();

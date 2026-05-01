@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>選手成績ビュー</title>
-  <link rel="stylesheet" href="./styles.css?v=20260501-1">
+  <link rel="stylesheet" href="./styles.css?v=20260501-5">
 </head>
 <body>
   <div class="site-shell">
@@ -16,15 +16,20 @@
           <p id="compareSubtitle" class="compare-subtitle"></p>
         </div>
         <nav class="hero-nav" aria-label="ページ移動">
-          <a class="hero-nav-link" href="./index.html">試合別投手成績</a>
-          <a class="hero-nav-link" href="./batter.html">試合別打者成績</a>
-          <a class="hero-nav-link" href="./annual.html">年度別投手成績</a>
-          <a class="hero-nav-link" href="./annual-batter.html">年度別打者成績</a>
-          <a class="hero-nav-link" href="./ranking-pitcher.html">投手ランキング</a>
-          <a class="hero-nav-link" href="./ranking-batter.html">打者ランキング</a>
+          <a class="hero-nav-link" href="./index.html">試合別成績</a>
+          <a class="hero-nav-link" href="./annual.html">年度別成績</a>
+          <a class="hero-nav-link" href="./ranking-pitcher.html">ランキング</a>
+          <a class="hero-nav-link active" href="./player.html">個人成績</a>
         </nav>
       </div>
     </header>
+
+    <section class="type-switch-section" aria-label="投手・打者切替">
+      <div class="type-switch">
+        <a id="comparePitcherTypeLink" class="type-switch-link" href="./player.html?type=pitcher">投手</a>
+        <a id="compareBatterTypeLink" class="type-switch-link" href="./player.html?type=batter">打者</a>
+      </div>
+    </section>
 
     <main class="panel annual-main">
       <section class="panel-block">
@@ -68,6 +73,6 @@
     </main>
   </div>
 
-  <script defer src="./compare.js?v=20260501-2"></script>
+  <script defer src="./compare.js?v=20260501-4"></script>
 </body>
 </html>

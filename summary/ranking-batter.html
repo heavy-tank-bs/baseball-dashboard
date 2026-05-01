@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>NPB dashboard | 打者ランキング</title>
-  <link rel="stylesheet" href="./styles.css?v=20260501-1">
+  <link rel="stylesheet" href="./styles.css?v=20260501-5">
 </head>
 <body data-ranking-type="batter">
   <div class="site-shell">
@@ -16,15 +16,20 @@
           <p class="hero-subtitle">年度・リーグ・球団を絞り込んで打者指標をランキング表示します</p>
         </div>
         <nav class="hero-nav" aria-label="ページ移動">
-          <a class="hero-nav-link" href="./index.html">試合別投手成績</a>
-          <a class="hero-nav-link" href="./batter.html">試合別打者成績</a>
-          <a class="hero-nav-link" href="./annual.html">年度別投手成績</a>
-          <a class="hero-nav-link" href="./annual-batter.html">年度別打者成績</a>
-          <a class="hero-nav-link" href="./ranking-pitcher.html">投手ランキング</a>
-          <a class="hero-nav-link active" href="./ranking-batter.html">打者ランキング</a>
+          <a class="hero-nav-link" href="./index.html">試合別成績</a>
+          <a class="hero-nav-link" href="./annual.html">年度別成績</a>
+          <a class="hero-nav-link active" href="./ranking-pitcher.html">ランキング</a>
+          <a class="hero-nav-link" href="./player.html">個人成績</a>
         </nav>
       </div>
     </header>
+
+    <section class="type-switch-section" aria-label="投手・打者切替">
+      <div class="type-switch">
+        <a class="type-switch-link" href="./ranking-pitcher.html">投手</a>
+        <a class="type-switch-link active" href="./ranking-batter.html">打者</a>
+      </div>
+    </section>
 
     <main class="panel annual-main">
       <section class="panel-block">
@@ -81,6 +86,6 @@
     </main>
   </div>
 
-  <script src="./ranking.js?v=20260501-1"></script>
+  <script src="./ranking.js?v=20260501-2"></script>
 </body>
 </html>

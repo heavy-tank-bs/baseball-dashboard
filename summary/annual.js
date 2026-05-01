@@ -180,7 +180,7 @@ function playerValue(row) {
   return row.pitcherId || `${row.team}::${row.player}`;
 }
 
-function playerCompareHref(row) {
+function playerPersonalHref(row) {
   const params = new URLSearchParams({
     type: "pitcher",
     year: row.year || "",
@@ -190,7 +190,7 @@ function playerCompareHref(row) {
   if (row.pitcherId) {
     params.set("playerId", row.pitcherId);
   }
-  return `./compare.html?${params.toString()}`;
+  return `./player.html?${params.toString()}`;
 }
 
 function compareDefault(a, b) {
@@ -440,7 +440,7 @@ function renderTable() {
     .map(
       (row) => `
         <tr>
-          <td><a class="annual-player-link" href="${playerCompareHref(row)}">${escapeHtml(row.player)}</a></td>
+          <td><a class="annual-player-link" href="${playerPersonalHref(row)}">${escapeHtml(row.player)}</a></td>
           <td>${escapeHtml(row.team)}</td>
           <td>${row.games}</td>
           <td>${row.wins ?? 0}</td>

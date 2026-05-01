@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>NPB dashboard | 年度別投手成績</title>
+  <title>NPB dashboard | 個人成績</title>
   <link rel="stylesheet" href="./styles.css?v=20260501-5">
 </head>
 <body>
@@ -12,32 +12,32 @@
       <div class="hero-bar">
         <div class="hero-copy">
           <p class="hero-kicker">NPB dashboard</p>
-          <h1>年度別投手成績</h1>
-          <p class="hero-subtitle">シーズン単位の投手成績を絞り込んで比較します。</p>
+          <h1>個人成績</h1>
+          <p class="hero-subtitle">選手ごとの年度成績ビューを表示します。</p>
         </div>
         <nav class="hero-nav" aria-label="ページ移動">
           <a class="hero-nav-link" href="./index.html">試合別成績</a>
-          <a class="hero-nav-link active" href="./annual.html">年度別成績</a>
+          <a class="hero-nav-link" href="./annual.html">年度別成績</a>
           <a class="hero-nav-link" href="./ranking-pitcher.html">ランキング</a>
-          <a class="hero-nav-link" href="./player.html">個人成績</a>
+          <a class="hero-nav-link active" href="./player.html">個人成績</a>
         </nav>
       </div>
     </header>
 
     <section class="type-switch-section" aria-label="投手・打者切替">
-      <div class="type-switch">
-        <a class="type-switch-link active" href="./annual.html">投手</a>
-        <a class="type-switch-link" href="./annual-batter.html">打者</a>
+      <div id="playerTypeSwitch" class="type-switch">
+        <button class="type-switch-link active" type="button" data-player-type="pitcher">投手</button>
+        <button class="type-switch-link" type="button" data-player-type="batter">打者</button>
       </div>
     </section>
 
     <main class="panel annual-main">
       <section class="panel-block">
         <div class="section-head">
-          <h2>年度別投手成績</h2>
-          <span id="annualResultCount" class="result-count">0件</span>
+          <h2>個人成績</h2>
+          <span id="playerResultCount" class="result-count">0件</span>
         </div>
-        <div class="filters-grid">
+        <div class="filters-grid player-filters-grid">
           <label class="filter-field">
             <span>年度</span>
             <select id="yearSelect" class="field-select"></select>
@@ -50,33 +50,28 @@
             <span>球団</span>
             <select id="teamSelect" class="field-select"></select>
           </label>
-          <label class="filter-field">
+          <label class="filter-field player-select-field">
             <span>選手</span>
             <select id="playerSelect" class="field-select"></select>
-          </label>
-          <label class="filter-field innings-filter">
-            <div class="filter-inline">
-              <span>投球回下限</span>
-              <div class="innings-inline">
-                <input id="inningsInput" class="innings-input" type="text" inputmode="decimal" value="0" aria-label="投球回下限入力">
-              </div>
-            </div>
-            <input id="inningsRange" class="range-input" type="range" min="0" max="0" step="1" value="0">
-            <div class="range-scale">
-              <span>0</span>
-              <span id="inningsMaxLabel">0</span>
-            </div>
           </label>
         </div>
       </section>
 
-      <section class="panel-block">
-        <p id="annualNote" class="annual-note"></p>
-        <div id="annualTableWrap"></div>
+      <section class="panel-block player-action-panel">
+        <div class="player-output-card">
+          <div class="player-output-head">
+            <div>
+              <p id="playerSelectionLabel" class="annual-note">選手を選択してください。</p>
+              <h3 id="playerSelectionTitle">-</h3>
+            </div>
+          </div>
+          <div id="playerStatsEmpty" class="section-empty player-stats-empty">選手を選択してください。</div>
+          <iframe id="playerStatsFrame" class="player-stats-frame is-hidden" title="個人成績"></iframe>
+        </div>
       </section>
     </main>
   </div>
 
-  <script src="./annual.js?v=20260501-3"></script>
+  <script src="./player.js?v=20260501-5"></script>
 </body>
 </html>
