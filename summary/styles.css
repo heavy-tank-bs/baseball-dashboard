@@ -2224,19 +2224,19 @@ select {
 }
 
 .annual-batter-table {
-  width: 2250px;
-  min-width: 2250px;
+  width: 2660px;
+  min-width: 2660px;
   table-layout: fixed;
 }
 
 .annual-batter-table th:first-child,
 .annual-batter-table td:first-child {
-  width: 128px;
+  width: 140px;
 }
 
 .annual-batter-table th:nth-child(2),
 .annual-batter-table td:nth-child(2) {
-  width: 110px;
+  width: 118px;
 }
 
 .annual-batter-table th:first-child,
@@ -2299,12 +2299,7 @@ select {
 .annual-batter-table td:nth-child(16),
 .annual-batter-table th:nth-child(17),
 .annual-batter-table td:nth-child(17) {
-  width: 78px;
-}
-
-.annual-batter-table th:nth-child(5),
-.annual-batter-table td:nth-child(5) {
-  width: 112px;
+  width: 92px;
 }
 
 .annual-batter-table th:nth-child(18),
@@ -2320,10 +2315,18 @@ select {
 .annual-batter-table th:nth-child(23),
 .annual-batter-table td:nth-child(23),
 .annual-batter-table th:nth-child(24),
-.annual-batter-table td:nth-child(24),
+.annual-batter-table td:nth-child(24) {
+  width: 106px;
+}
+
 .annual-batter-table th:nth-child(25),
 .annual-batter-table td:nth-child(25) {
-  width: 100px;
+  width: 124px;
+}
+
+.annual-batter-table th:nth-child(26),
+.annual-batter-table td:nth-child(26) {
+  width: 154px;
 }
 
 .annual-batter-table th,
@@ -2333,8 +2336,13 @@ select {
 }
 
 .annual-batter-table .sort-header {
+  white-space: nowrap;
+  line-height: 1.15;
+}
+
+.annual-batter-table th:nth-child(26) .sort-header {
   white-space: normal;
-  line-height: 1.2;
+  line-height: 1.1;
 }
 
 .sort-header {

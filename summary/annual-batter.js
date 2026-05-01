@@ -127,8 +127,6 @@ const SORT_COLUMNS = [
   { key: "player", label: "選手", type: "string", value: (row) => row.player },
   { key: "games", label: "試合", type: "number", value: (row) => row.games },
   { key: "battingAverage", label: "打率", type: "number", value: (row) => row.battingAverage },
-  { key: "scoringPositionBattingAverage", label: "得点圏打率", type: "number", value: (row) => row.scoringPositionBattingAverage },
-  { key: "ballZoneSwingRate", label: "ボールゾーンスイング率", type: "number", value: (row) => row.ballZoneSwingRate },
   { key: "plateAppearances", label: "打席", type: "number", value: (row) => row.plateAppearances },
   { key: "atBats", label: "打数", type: "number", value: (row) => row.atBats },
   { key: "runs", label: "得点", type: "number", value: (row) => row.runs },
@@ -149,6 +147,14 @@ const SORT_COLUMNS = [
   { key: "ops", label: "OPS", type: "number", value: (row) => row.ops },
   { key: "wrcPlus", label: "wRC+", type: "number", value: (row) => row.wrcPlus },
   { key: "babip", label: "BABIP", type: "number", value: (row) => row.babip },
+  { key: "scoringPositionBattingAverage", label: "得点圏打率", type: "number", value: (row) => row.scoringPositionBattingAverage },
+  {
+    key: "ballZoneSwingRate",
+    label: "ボールゾーンスイング率",
+    headerLabel: "ボールゾーン<br>スイング率",
+    type: "number",
+    value: (row) => row.ballZoneSwingRate,
+  },
 ];
 
 const playerColumnIndex = SORT_COLUMNS.findIndex((column) => column.key === "player");
@@ -229,9 +235,9 @@ function renderSortHeader(column) {
         type="button"
         class="sort-header${active ? " active" : ""}"
         data-sort-key="${column.key}"
-        aria-label="${column.label}で並び替え"
+        aria-label="${escapeHtml(column.label)}で並び替え"
       >
-        <span>${column.label}</span>
+        <span>${column.headerLabel || escapeHtml(column.label)}</span>
         <span class="sort-indicator" aria-hidden="true">${sortIndicator(column.key)}</span>
       </button>
     </th>
@@ -420,8 +426,6 @@ function renderTable() {
           <td>${escapeHtml(row.team)}</td>
           <td>${row.games}</td>
           <td>${formatAverage(row.battingAverage)}</td>
-          <td>${formatAverage(row.scoringPositionBattingAverage)}</td>
-          <td>${formatPercent(row.ballZoneSwingRate, 1)}</td>
           <td>${row.plateAppearances}</td>
           <td>${row.atBats}</td>
           <td>${row.runs}</td>
@@ -442,6 +446,8 @@ function renderTable() {
           <td>${formatAverage(row.ops)}</td>
           <td>${formatDecimal(row.wrcPlus, 1)}</td>
           <td>${formatAverage(row.babip)}</td>
+          <td>${formatAverage(row.scoringPositionBattingAverage)}</td>
+          <td>${formatPercent(row.ballZoneSwingRate, 1)}</td>
         </tr>
       `
     )

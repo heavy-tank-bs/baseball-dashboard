@@ -31,7 +31,7 @@ const TYPE_CONFIG = {
   },
   batter: {
     label: "打者",
-    datasetUrl: "./batter_totals.json?v=20260501-1",
+    datasetUrl: "./batter_totals.json?v=20260501-2",
     annualHref: "./annual-batter.html",
     annualLabel: "年度別打者成績へ戻る",
     idKey: "batterId",
@@ -41,6 +41,7 @@ const TYPE_CONFIG = {
       { key: "atBats", label: "打数", kind: "number", digits: 0 },
       { key: "battingAverage", label: "打率", kind: "average", digits: 3, default: true },
       { key: "scoringPositionBattingAverage", label: "得点圏打率", kind: "average", digits: 3 },
+      { key: "ballZoneSwingRate", label: "ボールゾーンスイング率", kind: "percent", digits: 1 },
       { key: "onBasePercentage", label: "出塁率", kind: "average", digits: 3, default: true },
       { key: "sluggingPercentage", label: "長打率", kind: "average", digits: 3 },
       { key: "ops", label: "OPS", kind: "average", digits: 3, default: true },
@@ -494,6 +495,10 @@ function aggregateBatterBucket(rows, bucket) {
   const sacFlies = sumMetric(rows, "sacFlies");
   const strikeouts = sumMetric(rows, "strikeouts");
   const homeRuns = sumMetric(rows, "homeRuns");
+  const scoringPositionAtBats = sumMetric(rows, "scoringPositionAtBats");
+  const scoringPositionHits = sumMetric(rows, "scoringPositionHits");
+  const ballZonePitchCount = sumMetric(rows, "ballZonePitchCount");
+  const ballZoneSwingCount = sumMetric(rows, "ballZoneSwingCount");
   const singles = sumMetric(rows, "singles");
   const doubles = sumMetric(rows, "doubles");
   const triples = sumMetric(rows, "triples");
@@ -508,6 +513,7 @@ function aggregateBatterBucket(rows, bucket) {
     battingAverage !== null && sluggingPercentage !== null ? sluggingPercentage - battingAverage : null;
   const babip = safeDivide(hits - homeRuns, atBats - strikeouts - homeRuns + sacFlies);
   const ops = onBasePercentage !== null && sluggingPercentage !== null ? onBasePercentage + sluggingPercentage : null;
+  const ballZoneSwingRate = safeDivide(ballZoneSwingCount, ballZonePitchCount, 100);
   const teams = [...new Set(rows.flatMap((row) => (Array.isArray(row?.teams) ? row.teams : [row?.team]).filter(Boolean)))];
 
   return {
@@ -536,8 +542,11 @@ function aggregateBatterBucket(rows, bucket) {
     strikeouts,
     scoringPositionAtBats,
     scoringPositionHits,
+    ballZonePitchCount,
+    ballZoneSwingCount,
     battingAverage,
     scoringPositionBattingAverage,
+    ballZoneSwingRate,
     onBasePercentage,
     isoDiscipline,
     sluggingPercentage,
