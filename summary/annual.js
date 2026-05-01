@@ -13,13 +13,17 @@ const TEAM_ORDER = [
   "楽天",
 ];
 
+const FULL_SEASON_GAMES = 143;
+
 const state = {
   data: null,
+  teamGamesByYear: new Map(),
   year: "",
   league: "all",
   team: "all",
   player: "all",
   inningsMinOuts: 0,
+  thresholdCustomized: false,
   sortKey: "",
   sortDirection: "",
 };
@@ -95,6 +99,46 @@ function compareTeam(a, b) {
   const [bIndex, bName] = teamSortKey(b);
   if (aIndex !== bIndex) return aIndex - bIndex;
   return aName.localeCompare(bName, "ja");
+}
+
+function hasScore(value) {
+  return value !== null && value !== undefined && value !== "" && Number.isFinite(Number(value));
+}
+
+function isCompletedGame(game) {
+  return hasScore(game?.homeScore) && hasScore(game?.awayScore);
+}
+
+function rebuildTeamGames(context) {
+  const gamesByYear = new Map();
+  const games = Array.isArray(context?.games) ? context.games : [];
+  for (const game of games) {
+    if (!isCompletedGame(game)) continue;
+    const year = `${game.date || context?.season || ""}`.slice(0, 4);
+    if (!year) continue;
+    if (!gamesByYear.has(year)) {
+      gamesByYear.set(year, new Map());
+    }
+    const counts = gamesByYear.get(year);
+    for (const team of [game.homeTeam, game.awayTeam]) {
+      if (!team) continue;
+      counts.set(team, (counts.get(team) || 0) + 1);
+    }
+  }
+  state.teamGamesByYear = gamesByYear;
+}
+
+function minimumTeamGamesForYear(year) {
+  if (year === "2025") return FULL_SEASON_GAMES;
+  const counts = state.teamGamesByYear.get(year);
+  if (!counts) return 0;
+  const games = [...counts.values()].filter((value) => Number.isFinite(value) && value > 0);
+  return games.length ? Math.min(...games) : 0;
+}
+
+function qualifiedInningsOuts() {
+  const games = minimumTeamGamesForYear(state.year);
+  return games > 0 ? games * 3 : 0;
 }
 
 const SORT_COLUMNS = [
@@ -336,7 +380,12 @@ function renderNote() {
 }
 
 function renderInningsFilter() {
-  const maxOuts = filteredPlayersBase().reduce((max, row) => Math.max(max, row.inningsOuts || 0), 0);
+  const qualifiedOuts = qualifiedInningsOuts();
+  const rowMaxOuts = filteredPlayersBase().reduce((max, row) => Math.max(max, row.inningsOuts || 0), 0);
+  const maxOuts = Math.max(rowMaxOuts, qualifiedOuts);
+  if (!state.thresholdCustomized) {
+    state.inningsMinOuts = qualifiedOuts;
+  }
   if (state.inningsMinOuts > maxOuts) {
     state.inningsMinOuts = maxOuts;
   }
@@ -348,6 +397,7 @@ function renderInningsFilter() {
 
 function applyInningsInput(rawValue) {
   const maxOuts = Number(els.inningsRange.max) || 0;
+  state.thresholdCustomized = true;
   state.inningsMinOuts = Math.min(parseInningsToOuts(rawValue), maxOuts);
   render();
 }
@@ -447,6 +497,7 @@ function bindEvents() {
     state.year = event.target.value;
     state.team = "all";
     state.player = "all";
+    state.thresholdCustomized = false;
     render();
   });
 
@@ -469,6 +520,7 @@ function bindEvents() {
   });
 
   els.inningsRange.addEventListener("input", (event) => {
+    state.thresholdCustomized = true;
     state.inningsMinOuts = Number(event.target.value) || 0;
     render();
   });
@@ -492,9 +544,15 @@ function bindEvents() {
 
 async function init() {
   try {
-    const response = await fetch("./player_totals.json?v=20260430-3", { cache: "no-store" });
+    const [response, contextResponse] = await Promise.all([
+      fetch("./player_totals.json?v=20260430-3", { cache: "no-store" }),
+      fetch("./sportsnavi_game_context_2026.json?v=20260429-1", { cache: "no-store" }).catch(() => null),
+    ]);
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     state.data = await response.json();
+    if (contextResponse?.ok) {
+      rebuildTeamGames(await contextResponse.json());
+    }
     bindEvents();
     render();
   } catch (error) {
