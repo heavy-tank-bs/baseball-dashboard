@@ -2101,8 +2101,11 @@ body.compare-embed .site-shell {
 }
 
 body.compare-embed .hero,
-body.compare-embed .type-switch-section,
-body.compare-embed .annual-main > .panel-block:first-child {
+body.compare-embed .type-switch-section {
+  display: none;
+}
+
+body.compare-embed .compare-back-link {
   display: none;
 }
 
@@ -2113,7 +2116,13 @@ body.compare-embed .panel {
   box-shadow: none;
 }
 
-body.compare-embed #seasonPanel {
+body.compare-embed .annual-main > .panel-block:first-child {
+  padding: 0 0 18px;
+}
+
+body.compare-embed #seasonPanel,
+body.compare-embed #comparePanel,
+body.compare-embed #monthlyPanel {
   padding: 0;
 }
 
