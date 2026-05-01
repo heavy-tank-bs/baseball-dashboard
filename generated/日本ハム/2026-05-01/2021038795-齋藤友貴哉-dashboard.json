@@ -1,0 +1,72 @@
+{
+  "game_id": "2021038795",
+  "metadata": {
+    "date_jp": "2026年5月1日",
+    "matchup": "北海道日本ハムファイターズvsオリックス・バファローズ"
+  },
+  "statline": {
+    "player": "齋藤 友貴哉",
+    "era": "1.80",
+    "innings": "0.1",
+    "pitches": "3",
+    "batters": "1",
+    "hits": "0",
+    "hr": "0",
+    "k": "0",
+    "bb": "0",
+    "hbp": "0",
+    "balk": "0",
+    "runs": "0",
+    "er": "0"
+  },
+  "pitches": [
+    {
+      "pa_index": "0610400",
+      "pitcher": "齋藤 友貴哉",
+      "pitcher_id": "1800068",
+      "pitcher_hand": "右",
+      "batter": "若月 健矢",
+      "batter_id": "1300109",
+      "batter_hand": "右",
+      "seq": "1",
+      "pitchNo": "1",
+      "pitchType": "ツーシーム",
+      "speed": "156km/h",
+      "result": "ボール",
+      "top": 60.12,
+      "left": 37.8
+    },
+    {
+      "pa_index": "0610400",
+      "pitcher": "齋藤 友貴哉",
+      "pitcher_id": "1800068",
+      "pitcher_hand": "右",
+      "batter": "若月 健矢",
+      "batter_id": "1300109",
+      "batter_hand": "右",
+      "seq": "2",
+      "pitchNo": "2",
+      "pitchType": "ツーシーム",
+      "speed": "156km/h",
+      "result": "ファウル",
+      "top": 21.96,
+      "left": 30.24
+    },
+    {
+      "pa_index": "0610400",
+      "pitcher": "齋藤 友貴哉",
+      "pitcher_id": "1800068",
+      "pitcher_hand": "右",
+      "batter": "若月 健矢",
+      "batter_id": "1300109",
+      "batter_hand": "右",
+      "seq": "3",
+      "pitchNo": "3",
+      "pitchType": "スライダー",
+      "speed": "-",
+      "result": "二ゴロ [バットの先]",
+      "top": 32.4,
+      "left": 18.0
+    }
+  ]
+}
