@@ -76,7 +76,7 @@ const TYPE_CONFIG = {
     ],
   },
   batter: {
-    datasetUrl: "./batter_totals.json?v=20260427-10",
+    datasetUrl: "./batter_totals.json?v=20260501-1",
     thresholdKind: "plateAppearances",
     fixedQualification: 443,
     thresholdLabel: "打席数条件",
@@ -98,6 +98,7 @@ const TYPE_CONFIG = {
       { key: "steals", label: "盗塁", field: "steals", kind: "number", digits: 0, hideThreshold: true },
       { key: "strikeouts", label: "三振", field: "strikeouts", kind: "number", digits: 0, lowerIsBetter: true, hideThreshold: true },
       { key: "battingAverage", label: "打率", field: "battingAverage", kind: "average", qualifier: true },
+      { key: "scoringPositionBattingAverage", label: "得点圏打率", field: "scoringPositionBattingAverage", kind: "average", qualifier: true },
       { key: "onBasePercentage", label: "出塁率", field: "onBasePercentage", kind: "average", qualifier: true },
       { key: "isoDiscipline", label: "IsoD", field: "isoDiscipline", kind: "average", qualifier: true },
       { key: "sluggingPercentage", label: "長打率", field: "sluggingPercentage", kind: "average", qualifier: true },

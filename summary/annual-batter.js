@@ -76,6 +76,7 @@ const SORT_COLUMNS = [
   { key: "player", label: "選手", type: "string", value: (row) => row.player },
   { key: "games", label: "試合", type: "number", value: (row) => row.games },
   { key: "battingAverage", label: "打率", type: "number", value: (row) => row.battingAverage },
+  { key: "scoringPositionBattingAverage", label: "得点圏打率", type: "number", value: (row) => row.scoringPositionBattingAverage },
   { key: "plateAppearances", label: "打席", type: "number", value: (row) => row.plateAppearances },
   { key: "atBats", label: "打数", type: "number", value: (row) => row.atBats },
   { key: "runs", label: "得点", type: "number", value: (row) => row.runs },
@@ -361,6 +362,7 @@ function renderTable() {
           <td>${escapeHtml(row.team)}</td>
           <td>${row.games}</td>
           <td>${formatAverage(row.battingAverage)}</td>
+          <td>${formatAverage(row.scoringPositionBattingAverage)}</td>
           <td>${row.plateAppearances}</td>
           <td>${row.atBats}</td>
           <td>${row.runs}</td>
@@ -459,7 +461,7 @@ function bindEvents() {
 
 async function init() {
   try {
-    const response = await fetch("./batter_totals.json?v=20260421-04", { cache: "no-store" });
+    const response = await fetch("./batter_totals.json?v=20260501-1", { cache: "no-store" });
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     state.data = await response.json();
     bindEvents();

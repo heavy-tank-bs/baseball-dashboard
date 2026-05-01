@@ -31,7 +31,7 @@ const TYPE_CONFIG = {
   },
   batter: {
     label: "打者",
-    datasetUrl: "./batter_totals.json?v=20260426-02",
+    datasetUrl: "./batter_totals.json?v=20260501-1",
     annualHref: "./annual-batter.html",
     annualLabel: "年度別打者成績へ戻る",
     idKey: "batterId",
@@ -40,6 +40,7 @@ const TYPE_CONFIG = {
       { key: "plateAppearances", label: "打席", kind: "number", digits: 0, default: true },
       { key: "atBats", label: "打数", kind: "number", digits: 0 },
       { key: "battingAverage", label: "打率", kind: "average", digits: 3, default: true },
+      { key: "scoringPositionBattingAverage", label: "得点圏打率", kind: "average", digits: 3 },
       { key: "onBasePercentage", label: "出塁率", kind: "average", digits: 3, default: true },
       { key: "sluggingPercentage", label: "長打率", kind: "average", digits: 3 },
       { key: "ops", label: "OPS", kind: "average", digits: 3, default: true },
@@ -396,6 +397,8 @@ function aggregatePitcherBucket(rows, bucket) {
   const fipConstant = rows.find((row) => Number.isFinite(Number(row?.fipConstant)))?.fipConstant ?? latestRow.fipConstant ?? null;
   const atBats = sumMetric(rows, "atBats");
   const hits = sumMetric(rows, "hits");
+  const scoringPositionAtBats = sumMetric(rows, "scoringPositionAtBats");
+  const scoringPositionHits = sumMetric(rows, "scoringPositionHits");
   const walks = sumMetric(rows, "walks");
   const unintentionalWalks = sumMetric(rows, "unintentionalWalks");
   const strikeouts = sumMetric(rows, "strikeouts");
@@ -496,6 +499,7 @@ function aggregateBatterBucket(rows, bucket) {
   const triples = sumMetric(rows, "triples");
   const totalBases = singles + (2 * doubles) + (3 * triples) + (4 * homeRuns);
   const battingAverage = safeDivide(hits, atBats);
+  const scoringPositionBattingAverage = safeDivide(scoringPositionHits, scoringPositionAtBats);
   const onBasePercentage = safeDivide(hits + walks + hitByPitch, atBats + walks + hitByPitch + sacFlies);
   const sluggingPercentage = safeDivide(totalBases, atBats);
   const isoDiscipline =
@@ -530,7 +534,10 @@ function aggregateBatterBucket(rows, bucket) {
     sacFlies,
     steals: sumMetric(rows, "steals"),
     strikeouts,
+    scoringPositionAtBats,
+    scoringPositionHits,
     battingAverage,
+    scoringPositionBattingAverage,
     onBasePercentage,
     isoDiscipline,
     sluggingPercentage,
