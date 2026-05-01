@@ -2120,6 +2120,14 @@ body.compare-embed .annual-main > .panel-block:first-child {
   padding: 0 0 18px;
 }
 
+body.compare-embed .annual-main > .panel-block:first-child > .compare-head {
+  display: none;
+}
+
+body.compare-embed .compare-mode-group {
+  margin-top: 0;
+}
+
 body.compare-embed #seasonPanel,
 body.compare-embed #comparePanel,
 body.compare-embed #monthlyPanel {
