@@ -1908,6 +1908,17 @@ button.type-switch-link {
   min-width: 1120px;
 }
 
+.recent-game-table th:first-child,
+.recent-game-table td:first-child,
+.batter-recent-game-table th:first-child,
+.batter-recent-game-table td:first-child {
+  width: 96px;
+  min-width: 96px;
+  max-width: 96px;
+  padding-right: 6px;
+  padding-left: 6px;
+}
+
 .pitcher-game-split-table {
   min-width: 1180px;
 }

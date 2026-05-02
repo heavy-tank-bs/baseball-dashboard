@@ -82,6 +82,15 @@ const MATCHUP_TEAM_NAMES = {
   "東北楽天ゴールデンイーグルス": "楽天",
 };
 
+const STADIUM_LABELS = {
+  バンテリンドーム: "バンテリンD",
+  バンテリンドームナゴヤ: "バンテリンD",
+  マツダスタジアム: "マツダ",
+  東京ドーム: "東京D",
+  京セラドーム大阪: "京セラD",
+  京セラD大阪: "京セラD",
+};
+
 const MONTH_BUCKETS = [
   { key: "03-04", label: "3・4月", months: ["03", "04"] },
   { key: "05", label: "5月", months: ["05"] },
@@ -614,6 +623,12 @@ function rowHits(row) {
 function normalizeMatchupTeam(value) {
   const trimmed = `${value || ""}`.trim();
   return MATCHUP_TEAM_NAMES[trimmed] || trimmed;
+}
+
+function stadiumLabel(value) {
+  const trimmed = `${value || ""}`.trim();
+  if (!trimmed || trimmed === "-") return trimmed || "-";
+  return STADIUM_LABELS[trimmed] || trimmed;
 }
 
 function opponentLabel(row) {
@@ -1152,6 +1167,7 @@ function renderPitcherHandSummary(dashboard) {
 function pitcherGameSplitLabel(sectionKey, row) {
   const label = row?.label || "-";
   if (sectionKey === "opponentRows" && label !== "-") return `vs${label}`;
+  if (sectionKey === "stadiumRows") return stadiumLabel(label);
   return label;
 }
 
@@ -1356,6 +1372,9 @@ function batterSplitLabel(sectionKey, row) {
   }
   if (sectionKey === "byOpponent" && label !== "-") {
     return `vs${label}`;
+  }
+  if (sectionKey === "byStadium") {
+    return stadiumLabel(label);
   }
   return label;
 }
