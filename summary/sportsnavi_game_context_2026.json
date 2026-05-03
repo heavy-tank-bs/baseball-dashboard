@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-05-02T23:01:26+09:00",
+  "updatedAt": "2026-05-03T14:02:48+09:00",
   "season": 2026,
   "throughDate": "2026-05-02",
   "source": {
@@ -12,8 +12,8 @@
     "completedGames": 174,
     "canceledGames": 7,
     "otherStatusGames": 1,
-    "gamesWithIntentionalWalks": 0,
-    "intentionalWalkPlateAppearances": 0,
+    "gamesWithIntentionalWalks": 34,
+    "intentionalWalkPlateAppearances": 43,
     "statusCounts": {
       "試合終了": 174,
       "試合中止": 7,
@@ -295,17 +295,49 @@
       "scheduleUrl": "https://baseball.yahoo.co.jp/npb/schedule/?date=2026-03-27",
       "statsUrl": "https://baseball.yahoo.co.jp/npb/game/2021038624/stats",
       "intentionalWalks": {
-        "total": 0,
+        "total": 2,
         "teams": {
           "中日ドラゴンズ": {
             "team": "中日ドラゴンズ",
-            "intentionalWalks": 0,
-            "players": []
+            "intentionalWalks": 1,
+            "players": [
+              {
+                "order": 1,
+                "player": "カリステ",
+                "playerId": "1560639",
+                "intentionalWalks": 1,
+                "details": [
+                  "故意四"
+                ],
+                "events": [
+                  {
+                    "inning": 8,
+                    "detail": "故意四"
+                  }
+                ]
+              }
+            ]
           },
           "広島東洋カープ": {
             "team": "広島東洋カープ",
-            "intentionalWalks": 0,
-            "players": []
+            "intentionalWalks": 1,
+            "players": [
+              {
+                "order": 8,
+                "player": "坂倉 将吾",
+                "playerId": "1600124",
+                "intentionalWalks": 1,
+                "details": [
+                  "故意四"
+                ],
+                "events": [
+                  {
+                    "inning": 10,
+                    "detail": "故意四"
+                  }
+                ]
+              }
+            ]
           }
         }
       },
@@ -1865,7 +1897,7 @@
       "scheduleUrl": "https://baseball.yahoo.co.jp/npb/schedule/?date=2026-03-29",
       "statsUrl": "https://baseball.yahoo.co.jp/npb/game/2021038636/stats",
       "intentionalWalks": {
-        "total": 0,
+        "total": 1,
         "teams": {
           "中日ドラゴンズ": {
             "team": "中日ドラゴンズ",
@@ -1874,8 +1906,24 @@
           },
           "広島東洋カープ": {
             "team": "広島東洋カープ",
-            "intentionalWalks": 0,
-            "players": []
+            "intentionalWalks": 1,
+            "players": [
+              {
+                "order": 9,
+                "player": "勝田 成",
+                "playerId": "2110422",
+                "intentionalWalks": 1,
+                "details": [
+                  "故意四"
+                ],
+                "events": [
+                  {
+                    "inning": 2,
+                    "detail": "故意四"
+                  }
+                ]
+              }
+            ]
           }
         }
       },
@@ -2385,7 +2433,7 @@
       "scheduleUrl": "https://baseball.yahoo.co.jp/npb/schedule/?date=2026-03-31",
       "statsUrl": "https://baseball.yahoo.co.jp/npb/game/2021038640/stats",
       "intentionalWalks": {
-        "total": 0,
+        "total": 2,
         "teams": {
           "広島東洋カープ": {
             "team": "広島東洋カープ",
@@ -2394,8 +2442,29 @@
           },
           "東京ヤクルトスワローズ": {
             "team": "東京ヤクルトスワローズ",
-            "intentionalWalks": 0,
-            "players": []
+            "intentionalWalks": 2,
+            "players": [
+              {
+                "order": 9,
+                "player": "伊藤 琉偉",
+                "playerId": "2112175",
+                "intentionalWalks": 2,
+                "details": [
+                  "故意四",
+                  "故意四"
+                ],
+                "events": [
+                  {
+                    "inning": 4,
+                    "detail": "故意四"
+                  },
+                  {
+                    "inning": 5,
+                    "detail": "故意四"
+                  }
+                ]
+              }
+            ]
           }
         }
       },
@@ -2515,7 +2584,7 @@
       "scheduleUrl": "https://baseball.yahoo.co.jp/npb/schedule/?date=2026-03-31",
       "statsUrl": "https://baseball.yahoo.co.jp/npb/game/2021038641/stats",
       "intentionalWalks": {
-        "total": 0,
+        "total": 1,
         "teams": {
           "読売ジャイアンツ": {
             "team": "読売ジャイアンツ",
@@ -2524,8 +2593,24 @@
           },
           "中日ドラゴンズ": {
             "team": "中日ドラゴンズ",
-            "intentionalWalks": 0,
-            "players": []
+            "intentionalWalks": 1,
+            "players": [
+              {
+                "order": 8,
+                "player": "村松 開人",
+                "playerId": "1750223",
+                "intentionalWalks": 1,
+                "details": [
+                  "故意四"
+                ],
+                "events": [
+                  {
+                    "inning": 7,
+                    "detail": "故意四"
+                  }
+                ]
+              }
+            ]
           }
         }
       },
@@ -2905,12 +2990,28 @@
       "scheduleUrl": "https://baseball.yahoo.co.jp/npb/schedule/?date=2026-03-31",
       "statsUrl": "https://baseball.yahoo.co.jp/npb/game/2021038644/stats",
       "intentionalWalks": {
-        "total": 0,
+        "total": 1,
         "teams": {
           "福岡ソフトバンクホークス": {
             "team": "福岡ソフトバンクホークス",
-            "intentionalWalks": 0,
-            "players": []
+            "intentionalWalks": 1,
+            "players": [
+              {
+                "order": 10,
+                "player": "野村 勇",
+                "playerId": "2104035",
+                "intentionalWalks": 1,
+                "details": [
+                  "故意四"
+                ],
+                "events": [
+                  {
+                    "inning": 8,
+                    "detail": "故意四"
+                  }
+                ]
+              }
+            ]
           },
           "東北楽天ゴールデンイーグルス": {
             "team": "東北楽天ゴールデンイーグルス",
@@ -3035,7 +3136,7 @@
       "scheduleUrl": "https://baseball.yahoo.co.jp/npb/schedule/?date=2026-03-31",
       "statsUrl": "https://baseball.yahoo.co.jp/npb/game/2021038645/stats",
       "intentionalWalks": {
-        "total": 0,
+        "total": 1,
         "teams": {
           "オリックス・バファローズ": {
             "team": "オリックス・バファローズ",
@@ -3044,8 +3145,24 @@
           },
           "埼玉西武ライオンズ": {
             "team": "埼玉西武ライオンズ",
-            "intentionalWalks": 0,
-            "players": []
+            "intentionalWalks": 1,
+            "players": [
+              {
+                "order": 9,
+                "player": "カナリオ",
+                "playerId": "2117028",
+                "intentionalWalks": 1,
+                "details": [
+                  "故意四"
+                ],
+                "events": [
+                  {
+                    "inning": 8,
+                    "detail": "故意四"
+                  }
+                ]
+              }
+            ]
           }
         }
       },
@@ -3425,17 +3542,49 @@
       "scheduleUrl": "https://baseball.yahoo.co.jp/npb/schedule/?date=2026-04-01",
       "statsUrl": "https://baseball.yahoo.co.jp/npb/game/2021038649/stats",
       "intentionalWalks": {
-        "total": 0,
+        "total": 2,
         "teams": {
           "千葉ロッテマリーンズ": {
             "team": "千葉ロッテマリーンズ",
-            "intentionalWalks": 0,
-            "players": []
+            "intentionalWalks": 1,
+            "players": [
+              {
+                "order": 2,
+                "player": "岡 大海",
+                "playerId": "1300044",
+                "intentionalWalks": 1,
+                "details": [
+                  "故意四"
+                ],
+                "events": [
+                  {
+                    "inning": 7,
+                    "detail": "故意四"
+                  }
+                ]
+              }
+            ]
           },
           "北海道日本ハムファイターズ": {
             "team": "北海道日本ハムファイターズ",
-            "intentionalWalks": 0,
-            "players": []
+            "intentionalWalks": 1,
+            "players": [
+              {
+                "order": 7,
+                "player": "万波 中正",
+                "playerId": "1800093",
+                "intentionalWalks": 1,
+                "details": [
+                  "故意四"
+                ],
+                "events": [
+                  {
+                    "inning": 8,
+                    "detail": "故意四"
+                  }
+                ]
+              }
+            ]
           }
         }
       },
@@ -4725,12 +4874,28 @@
       "scheduleUrl": "https://baseball.yahoo.co.jp/npb/schedule/?date=2026-04-03",
       "statsUrl": "https://baseball.yahoo.co.jp/npb/game/2021038659/stats",
       "intentionalWalks": {
-        "total": 0,
+        "total": 1,
         "teams": {
           "中日ドラゴンズ": {
             "team": "中日ドラゴンズ",
-            "intentionalWalks": 0,
-            "players": []
+            "intentionalWalks": 1,
+            "players": [
+              {
+                "order": 5,
+                "player": "細川 成也",
+                "playerId": "1600085",
+                "intentionalWalks": 1,
+                "details": [
+                  "故意四"
+                ],
+                "events": [
+                  {
+                    "inning": 5,
+                    "detail": "故意四"
+                  }
+                ]
+              }
+            ]
           },
           "東京ヤクルトスワローズ": {
             "team": "東京ヤクルトスワローズ",
@@ -5375,12 +5540,28 @@
       "scheduleUrl": "https://baseball.yahoo.co.jp/npb/schedule/?date=2026-04-04",
       "statsUrl": "https://baseball.yahoo.co.jp/npb/game/2021038664/stats",
       "intentionalWalks": {
-        "total": 0,
+        "total": 1,
         "teams": {
           "横浜DeNAベイスターズ": {
             "team": "横浜DeNAベイスターズ",
-            "intentionalWalks": 0,
-            "players": []
+            "intentionalWalks": 1,
+            "players": [
+              {
+                "order": 11,
+                "player": "林 琢真",
+                "playerId": "1850208",
+                "intentionalWalks": 1,
+                "details": [
+                  "故意四"
+                ],
+                "events": [
+                  {
+                    "inning": 1,
+                    "detail": "故意四"
+                  }
+                ]
+              }
+            ]
           },
           "読売ジャイアンツ": {
             "team": "読売ジャイアンツ",
@@ -5775,7 +5956,7 @@
       "scheduleUrl": "https://baseball.yahoo.co.jp/npb/schedule/?date=2026-04-04",
       "statsUrl": "https://baseball.yahoo.co.jp/npb/game/2021038667/stats",
       "intentionalWalks": {
-        "total": 0,
+        "total": 1,
         "teams": {
           "オリックス・バファローズ": {
             "team": "オリックス・バファローズ",
@@ -5784,8 +5965,24 @@
           },
           "北海道日本ハムファイターズ": {
             "team": "北海道日本ハムファイターズ",
-            "intentionalWalks": 0,
-            "players": []
+            "intentionalWalks": 1,
+            "players": [
+              {
+                "order": 3,
+                "player": "清宮 幸太郎",
+                "playerId": "1700025",
+                "intentionalWalks": 1,
+                "details": [
+                  "故意四"
+                ],
+                "events": [
+                  {
+                    "inning": 7,
+                    "detail": "故意四"
+                  }
+                ]
+              }
+            ]
           }
         }
       },
@@ -6685,12 +6882,28 @@
       "scheduleUrl": "https://baseball.yahoo.co.jp/npb/schedule/?date=2026-04-05",
       "statsUrl": "https://baseball.yahoo.co.jp/npb/game/2021038674/stats",
       "intentionalWalks": {
-        "total": 0,
+        "total": 1,
         "teams": {
           "東北楽天ゴールデンイーグルス": {
             "team": "東北楽天ゴールデンイーグルス",
-            "intentionalWalks": 0,
-            "players": []
+            "intentionalWalks": 1,
+            "players": [
+              {
+                "order": 5,
+                "player": "ボイト",
+                "playerId": "1760551",
+                "intentionalWalks": 1,
+                "details": [
+                  "故意四"
+                ],
+                "events": [
+                  {
+                    "inning": 6,
+                    "detail": "故意四"
+                  }
+                ]
+              }
+            ]
           },
           "埼玉西武ライオンズ": {
             "team": "埼玉西武ライオンズ",
@@ -6975,12 +7188,28 @@
       "scheduleUrl": "https://baseball.yahoo.co.jp/npb/schedule/?date=2026-04-07",
       "statsUrl": "https://baseball.yahoo.co.jp/npb/game/2021038676/stats",
       "intentionalWalks": {
-        "total": 0,
+        "total": 1,
         "teams": {
           "中日ドラゴンズ": {
             "team": "中日ドラゴンズ",
-            "intentionalWalks": 0,
-            "players": []
+            "intentionalWalks": 1,
+            "players": [
+              {
+                "order": 4,
+                "player": "細川 成也",
+                "playerId": "1600085",
+                "intentionalWalks": 1,
+                "details": [
+                  "故意四"
+                ],
+                "events": [
+                  {
+                    "inning": 3,
+                    "detail": "故意四"
+                  }
+                ]
+              }
+            ]
           },
           "横浜DeNAベイスターズ": {
             "team": "横浜DeNAベイスターズ",
@@ -7755,17 +7984,64 @@
       "scheduleUrl": "https://baseball.yahoo.co.jp/npb/schedule/?date=2026-04-08",
       "statsUrl": "https://baseball.yahoo.co.jp/npb/game/2021038682/stats",
       "intentionalWalks": {
-        "total": 0,
+        "total": 3,
         "teams": {
           "中日ドラゴンズ": {
             "team": "中日ドラゴンズ",
-            "intentionalWalks": 0,
-            "players": []
+            "intentionalWalks": 2,
+            "players": [
+              {
+                "order": 1,
+                "player": "福永 裕基",
+                "playerId": "2103780",
+                "intentionalWalks": 1,
+                "details": [
+                  "故意四"
+                ],
+                "events": [
+                  {
+                    "inning": 2,
+                    "detail": "故意四"
+                  }
+                ]
+              },
+              {
+                "order": 4,
+                "player": "細川 成也",
+                "playerId": "1600085",
+                "intentionalWalks": 1,
+                "details": [
+                  "故意四"
+                ],
+                "events": [
+                  {
+                    "inning": 11,
+                    "detail": "故意四"
+                  }
+                ]
+              }
+            ]
           },
           "横浜DeNAベイスターズ": {
             "team": "横浜DeNAベイスターズ",
-            "intentionalWalks": 0,
-            "players": []
+            "intentionalWalks": 1,
+            "players": [
+              {
+                "order": 10,
+                "player": "石上 泰輝",
+                "playerId": "2112189",
+                "intentionalWalks": 1,
+                "details": [
+                  "故意四"
+                ],
+                "events": [
+                  {
+                    "inning": 2,
+                    "detail": "故意四"
+                  }
+                ]
+              }
+            ]
           }
         }
       },
@@ -8035,7 +8311,7 @@
       "scheduleUrl": "https://baseball.yahoo.co.jp/npb/schedule/?date=2026-04-08",
       "statsUrl": "https://baseball.yahoo.co.jp/npb/game/2021038684/stats",
       "intentionalWalks": {
-        "total": 0,
+        "total": 1,
         "teams": {
           "読売ジャイアンツ": {
             "team": "読売ジャイアンツ",
@@ -8044,8 +8320,24 @@
           },
           "広島東洋カープ": {
             "team": "広島東洋カープ",
-            "intentionalWalks": 0,
-            "players": []
+            "intentionalWalks": 1,
+            "players": [
+              {
+                "order": 10,
+                "player": "モンテロ",
+                "playerId": "1961927",
+                "intentionalWalks": 1,
+                "details": [
+                  "故意四"
+                ],
+                "events": [
+                  {
+                    "inning": 5,
+                    "detail": "故意四"
+                  }
+                ]
+              }
+            ]
           }
         }
       },
@@ -8555,12 +8847,28 @@
       "scheduleUrl": "https://baseball.yahoo.co.jp/npb/schedule/?date=2026-04-09",
       "statsUrl": "https://baseball.yahoo.co.jp/npb/game/2021038688/stats",
       "intentionalWalks": {
-        "total": 0,
+        "total": 1,
         "teams": {
           "東京ヤクルトスワローズ": {
             "team": "東京ヤクルトスワローズ",
-            "intentionalWalks": 0,
-            "players": []
+            "intentionalWalks": 1,
+            "players": [
+              {
+                "order": 7,
+                "player": "伊藤 琉偉",
+                "playerId": "2112175",
+                "intentionalWalks": 1,
+                "details": [
+                  "故意四"
+                ],
+                "events": [
+                  {
+                    "inning": 4,
+                    "detail": "故意四"
+                  }
+                ]
+              }
+            ]
           },
           "阪神タイガース": {
             "team": "阪神タイガース",
@@ -10515,12 +10823,28 @@
       "scheduleUrl": "https://baseball.yahoo.co.jp/npb/schedule/?date=2026-04-12",
       "statsUrl": "https://baseball.yahoo.co.jp/npb/game/2021038706/stats",
       "intentionalWalks": {
-        "total": 0,
+        "total": 1,
         "teams": {
           "阪神タイガース": {
             "team": "阪神タイガース",
-            "intentionalWalks": 0,
-            "players": []
+            "intentionalWalks": 1,
+            "players": [
+              {
+                "order": 5,
+                "player": "大山 悠輔",
+                "playerId": "1600113",
+                "intentionalWalks": 1,
+                "details": [
+                  "故意四"
+                ],
+                "events": [
+                  {
+                    "inning": 5,
+                    "detail": "故意四"
+                  }
+                ]
+              }
+            ]
           },
           "中日ドラゴンズ": {
             "team": "中日ドラゴンズ",
@@ -11045,12 +11369,33 @@
       "scheduleUrl": "https://baseball.yahoo.co.jp/npb/schedule/?date=2026-04-14",
       "statsUrl": "https://baseball.yahoo.co.jp/npb/game/2021038710/stats",
       "intentionalWalks": {
-        "total": 0,
+        "total": 2,
         "teams": {
           "横浜DeNAベイスターズ": {
             "team": "横浜DeNAベイスターズ",
-            "intentionalWalks": 0,
-            "players": []
+            "intentionalWalks": 2,
+            "players": [
+              {
+                "order": 8,
+                "player": "松尾 汐恩",
+                "playerId": "2100277",
+                "intentionalWalks": 2,
+                "details": [
+                  "故意四",
+                  "故意四"
+                ],
+                "events": [
+                  {
+                    "inning": 4,
+                    "detail": "故意四"
+                  },
+                  {
+                    "inning": 5,
+                    "detail": "故意四"
+                  }
+                ]
+              }
+            ]
           },
           "東京ヤクルトスワローズ": {
             "team": "東京ヤクルトスワローズ",
@@ -11695,12 +12040,28 @@
       "scheduleUrl": "https://baseball.yahoo.co.jp/npb/schedule/?date=2026-04-14",
       "statsUrl": "https://baseball.yahoo.co.jp/npb/game/2021038715/stats",
       "intentionalWalks": {
-        "total": 0,
+        "total": 1,
         "teams": {
           "東北楽天ゴールデンイーグルス": {
             "team": "東北楽天ゴールデンイーグルス",
-            "intentionalWalks": 0,
-            "players": []
+            "intentionalWalks": 1,
+            "players": [
+              {
+                "order": 5,
+                "player": "村林 一輝",
+                "playerId": "1600007",
+                "intentionalWalks": 1,
+                "details": [
+                  "故意四"
+                ],
+                "events": [
+                  {
+                    "inning": 5,
+                    "detail": "故意四"
+                  }
+                ]
+              }
+            ]
           },
           "福岡ソフトバンクホークス": {
             "team": "福岡ソフトバンクホークス",
@@ -12605,7 +12966,7 @@
       "scheduleUrl": "https://baseball.yahoo.co.jp/npb/schedule/?date=2026-04-16",
       "statsUrl": "https://baseball.yahoo.co.jp/npb/game/2021038723/stats",
       "intentionalWalks": {
-        "total": 0,
+        "total": 1,
         "teams": {
           "北海道日本ハムファイターズ": {
             "team": "北海道日本ハムファイターズ",
@@ -12614,8 +12975,24 @@
           },
           "千葉ロッテマリーンズ": {
             "team": "千葉ロッテマリーンズ",
-            "intentionalWalks": 0,
-            "players": []
+            "intentionalWalks": 1,
+            "players": [
+              {
+                "order": 2,
+                "player": "西川 史礁",
+                "playerId": "1950286",
+                "intentionalWalks": 1,
+                "details": [
+                  "故意四"
+                ],
+                "events": [
+                  {
+                    "inning": 4,
+                    "detail": "故意四"
+                  }
+                ]
+              }
+            ]
           }
         }
       },
@@ -13125,7 +13502,7 @@
       "scheduleUrl": "https://baseball.yahoo.co.jp/npb/schedule/?date=2026-04-17",
       "statsUrl": "https://baseball.yahoo.co.jp/npb/game/2021038727/stats",
       "intentionalWalks": {
-        "total": 0,
+        "total": 1,
         "teams": {
           "中日ドラゴンズ": {
             "team": "中日ドラゴンズ",
@@ -13134,8 +13511,24 @@
           },
           "阪神タイガース": {
             "team": "阪神タイガース",
-            "intentionalWalks": 0,
-            "players": []
+            "intentionalWalks": 1,
+            "players": [
+              {
+                "order": 9,
+                "player": "小幡 竜平",
+                "playerId": "1800066",
+                "intentionalWalks": 1,
+                "details": [
+                  "故意四"
+                ],
+                "events": [
+                  {
+                    "inning": 4,
+                    "detail": "故意四"
+                  }
+                ]
+              }
+            ]
           }
         }
       },
@@ -13255,12 +13648,28 @@
       "scheduleUrl": "https://baseball.yahoo.co.jp/npb/schedule/?date=2026-04-17",
       "statsUrl": "https://baseball.yahoo.co.jp/npb/game/2021038728/stats",
       "intentionalWalks": {
-        "total": 0,
+        "total": 1,
         "teams": {
           "横浜DeNAベイスターズ": {
             "team": "横浜DeNAベイスターズ",
-            "intentionalWalks": 0,
-            "players": []
+            "intentionalWalks": 1,
+            "players": [
+              {
+                "order": 13,
+                "player": "宮下 朝陽",
+                "playerId": "2100014",
+                "intentionalWalks": 1,
+                "details": [
+                  "故意四"
+                ],
+                "events": [
+                  {
+                    "inning": 6,
+                    "detail": "故意四"
+                  }
+                ]
+              }
+            ]
           },
           "広島東洋カープ": {
             "team": "広島東洋カープ",
@@ -13925,12 +14334,28 @@
       "scheduleUrl": "https://baseball.yahoo.co.jp/npb/schedule/?date=2026-04-18",
       "statsUrl": "https://baseball.yahoo.co.jp/npb/game/2021038733/stats",
       "intentionalWalks": {
-        "total": 0,
+        "total": 1,
         "teams": {
           "中日ドラゴンズ": {
             "team": "中日ドラゴンズ",
-            "intentionalWalks": 0,
-            "players": []
+            "intentionalWalks": 1,
+            "players": [
+              {
+                "order": 6,
+                "player": "細川 成也",
+                "playerId": "1600085",
+                "intentionalWalks": 1,
+                "details": [
+                  "故意四"
+                ],
+                "events": [
+                  {
+                    "inning": 3,
+                    "detail": "故意四"
+                  }
+                ]
+              }
+            ]
           },
           "阪神タイガース": {
             "team": "阪神タイガース",
@@ -15095,7 +15520,7 @@
       "scheduleUrl": "https://baseball.yahoo.co.jp/npb/schedule/?date=2026-04-19",
       "statsUrl": "https://baseball.yahoo.co.jp/npb/game/2021038742/stats",
       "intentionalWalks": {
-        "total": 0,
+        "total": 1,
         "teams": {
           "千葉ロッテマリーンズ": {
             "team": "千葉ロッテマリーンズ",
@@ -15104,8 +15529,24 @@
           },
           "東北楽天ゴールデンイーグルス": {
             "team": "東北楽天ゴールデンイーグルス",
-            "intentionalWalks": 0,
-            "players": []
+            "intentionalWalks": 1,
+            "players": [
+              {
+                "order": 8,
+                "player": "伊藤 裕季也",
+                "playerId": "1800044",
+                "intentionalWalks": 1,
+                "details": [
+                  "故意四"
+                ],
+                "events": [
+                  {
+                    "inning": 6,
+                    "detail": "故意四"
+                  }
+                ]
+              }
+            ]
           }
         }
       },
@@ -15615,12 +16056,28 @@
       "scheduleUrl": "https://baseball.yahoo.co.jp/npb/schedule/?date=2026-04-21",
       "statsUrl": "https://baseball.yahoo.co.jp/npb/game/2021038746/stats",
       "intentionalWalks": {
-        "total": 0,
+        "total": 1,
         "teams": {
           "東京ヤクルトスワローズ": {
             "team": "東京ヤクルトスワローズ",
-            "intentionalWalks": 0,
-            "players": []
+            "intentionalWalks": 1,
+            "players": [
+              {
+                "order": 8,
+                "player": "武岡 龍世",
+                "playerId": "1900029",
+                "intentionalWalks": 1,
+                "details": [
+                  "故意四"
+                ],
+                "events": [
+                  {
+                    "inning": 2,
+                    "detail": "故意四"
+                  }
+                ]
+              }
+            ]
           },
           "広島東洋カープ": {
             "team": "広島東洋カープ",
@@ -16525,12 +16982,28 @@
       "scheduleUrl": "https://baseball.yahoo.co.jp/npb/schedule/?date=2026-04-22",
       "statsUrl": "https://baseball.yahoo.co.jp/npb/game/2021038753/stats",
       "intentionalWalks": {
-        "total": 0,
+        "total": 1,
         "teams": {
           "東北楽天ゴールデンイーグルス": {
             "team": "東北楽天ゴールデンイーグルス",
-            "intentionalWalks": 0,
-            "players": []
+            "intentionalWalks": 1,
+            "players": [
+              {
+                "order": 5,
+                "player": "村林 一輝",
+                "playerId": "1600007",
+                "intentionalWalks": 1,
+                "details": [
+                  "故意四"
+                ],
+                "events": [
+                  {
+                    "inning": 10,
+                    "detail": "故意四"
+                  }
+                ]
+              }
+            ]
           },
           "北海道日本ハムファイターズ": {
             "team": "北海道日本ハムファイターズ",
@@ -17315,7 +17788,7 @@
       "scheduleUrl": "https://baseball.yahoo.co.jp/npb/schedule/?date=2026-04-24",
       "statsUrl": "https://baseball.yahoo.co.jp/npb/game/2021038761/stats",
       "intentionalWalks": {
-        "total": 0,
+        "total": 2,
         "teams": {
           "読売ジャイアンツ": {
             "team": "読売ジャイアンツ",
@@ -17324,8 +17797,39 @@
           },
           "横浜DeNAベイスターズ": {
             "team": "横浜DeNAベイスターズ",
-            "intentionalWalks": 0,
-            "players": []
+            "intentionalWalks": 2,
+            "players": [
+              {
+                "order": 9,
+                "player": "勝又 温史",
+                "playerId": "1800046",
+                "intentionalWalks": 1,
+                "details": [
+                  "故意四"
+                ],
+                "events": [
+                  {
+                    "inning": 4,
+                    "detail": "故意四"
+                  }
+                ]
+              },
+              {
+                "order": 12,
+                "player": "ビシエド",
+                "playerId": "1600021",
+                "intentionalWalks": 1,
+                "details": [
+                  "故意四"
+                ],
+                "events": [
+                  {
+                    "inning": 11,
+                    "detail": "故意四"
+                  }
+                ]
+              }
+            ]
           }
         }
       },
@@ -17985,7 +18489,7 @@
       "scheduleUrl": "https://baseball.yahoo.co.jp/npb/schedule/?date=2026-04-25",
       "statsUrl": "https://baseball.yahoo.co.jp/npb/game/2021038766/stats",
       "intentionalWalks": {
-        "total": 0,
+        "total": 2,
         "teams": {
           "広島東洋カープ": {
             "team": "広島東洋カープ",
@@ -17994,8 +18498,39 @@
           },
           "阪神タイガース": {
             "team": "阪神タイガース",
-            "intentionalWalks": 0,
-            "players": []
+            "intentionalWalks": 2,
+            "players": [
+              {
+                "order": 4,
+                "player": "佐藤 輝明",
+                "playerId": "2000051",
+                "intentionalWalks": 1,
+                "details": [
+                  "故意四"
+                ],
+                "events": [
+                  {
+                    "inning": 8,
+                    "detail": "故意四"
+                  }
+                ]
+              },
+              {
+                "order": 7,
+                "player": "髙寺 望夢",
+                "playerId": "2000057",
+                "intentionalWalks": 1,
+                "details": [
+                  "故意四"
+                ],
+                "events": [
+                  {
+                    "inning": 8,
+                    "detail": "故意四"
+                  }
+                ]
+              }
+            ]
           }
         }
       },
@@ -18535,12 +19070,28 @@
       "scheduleUrl": "https://baseball.yahoo.co.jp/npb/schedule/?date=2026-04-26",
       "statsUrl": "https://baseball.yahoo.co.jp/npb/game/2021038770/stats",
       "intentionalWalks": {
-        "total": 0,
+        "total": 1,
         "teams": {
           "読売ジャイアンツ": {
             "team": "読売ジャイアンツ",
-            "intentionalWalks": 0,
-            "players": []
+            "intentionalWalks": 1,
+            "players": [
+              {
+                "order": 6,
+                "player": "岸田 行倫",
+                "playerId": "1700043",
+                "intentionalWalks": 1,
+                "details": [
+                  "故意四"
+                ],
+                "events": [
+                  {
+                    "inning": 8,
+                    "detail": "故意四"
+                  }
+                ]
+              }
+            ]
           },
           "横浜DeNAベイスターズ": {
             "team": "横浜DeNAベイスターズ",
@@ -18925,7 +19476,7 @@
       "scheduleUrl": "https://baseball.yahoo.co.jp/npb/schedule/?date=2026-04-26",
       "statsUrl": "https://baseball.yahoo.co.jp/npb/game/2021038773/stats",
       "intentionalWalks": {
-        "total": 0,
+        "total": 1,
         "teams": {
           "埼玉西武ライオンズ": {
             "team": "埼玉西武ライオンズ",
@@ -18934,8 +19485,24 @@
           },
           "東北楽天ゴールデンイーグルス": {
             "team": "東北楽天ゴールデンイーグルス",
-            "intentionalWalks": 0,
-            "players": []
+            "intentionalWalks": 1,
+            "players": [
+              {
+                "order": 3,
+                "player": "辰己 涼介",
+                "playerId": "1800117",
+                "intentionalWalks": 1,
+                "details": [
+                  "故意四"
+                ],
+                "events": [
+                  {
+                    "inning": 8,
+                    "detail": "故意四"
+                  }
+                ]
+              }
+            ]
           }
         }
       },
@@ -19585,12 +20152,28 @@
       "scheduleUrl": "https://baseball.yahoo.co.jp/npb/schedule/?date=2026-04-28",
       "statsUrl": "https://baseball.yahoo.co.jp/npb/game/2021038779/stats",
       "intentionalWalks": {
-        "total": 0,
+        "total": 1,
         "teams": {
           "北海道日本ハムファイターズ": {
             "team": "北海道日本ハムファイターズ",
-            "intentionalWalks": 0,
-            "players": []
+            "intentionalWalks": 1,
+            "players": [
+              {
+                "order": 10,
+                "player": "万波 中正",
+                "playerId": "1800093",
+                "intentionalWalks": 1,
+                "details": [
+                  "故意四"
+                ],
+                "events": [
+                  {
+                    "inning": 7,
+                    "detail": "故意四"
+                  }
+                ]
+              }
+            ]
           },
           "埼玉西武ライオンズ": {
             "team": "埼玉西武ライオンズ",
@@ -19845,17 +20428,49 @@
       "scheduleUrl": "https://baseball.yahoo.co.jp/npb/schedule/?date=2026-04-28",
       "statsUrl": "https://baseball.yahoo.co.jp/npb/game/2021038781/stats",
       "intentionalWalks": {
-        "total": 0,
+        "total": 2,
         "teams": {
           "福岡ソフトバンクホークス": {
             "team": "福岡ソフトバンクホークス",
-            "intentionalWalks": 0,
-            "players": []
+            "intentionalWalks": 1,
+            "players": [
+              {
+                "order": 4,
+                "player": "近藤 健介",
+                "playerId": "1100097",
+                "intentionalWalks": 1,
+                "details": [
+                  "故意四"
+                ],
+                "events": [
+                  {
+                    "inning": 8,
+                    "detail": "故意四"
+                  }
+                ]
+              }
+            ]
           },
           "オリックス・バファローズ": {
             "team": "オリックス・バファローズ",
-            "intentionalWalks": 0,
-            "players": []
+            "intentionalWalks": 1,
+            "players": [
+              {
+                "order": 4,
+                "player": "太田 椋",
+                "playerId": "1800098",
+                "intentionalWalks": 1,
+                "details": [
+                  "故意四"
+                ],
+                "events": [
+                  {
+                    "inning": 6,
+                    "detail": "故意四"
+                  }
+                ]
+              }
+            ]
           }
         }
       },
@@ -21145,12 +21760,28 @@
       "scheduleUrl": "https://baseball.yahoo.co.jp/npb/schedule/?date=2026-04-30",
       "statsUrl": "https://baseball.yahoo.co.jp/npb/game/2021038791/stats",
       "intentionalWalks": {
-        "total": 0,
+        "total": 1,
         "teams": {
           "北海道日本ハムファイターズ": {
             "team": "北海道日本ハムファイターズ",
-            "intentionalWalks": 0,
-            "players": []
+            "intentionalWalks": 1,
+            "players": [
+              {
+                "order": 8,
+                "player": "レイエス",
+                "playerId": "1860140",
+                "intentionalWalks": 1,
+                "details": [
+                  "故意四"
+                ],
+                "events": [
+                  {
+                    "inning": 11,
+                    "detail": "故意四"
+                  }
+                ]
+              }
+            ]
           },
           "埼玉西武ライオンズ": {
             "team": "埼玉西武ライオンズ",
@@ -21425,12 +22056,28 @@
       "scheduleUrl": "https://baseball.yahoo.co.jp/npb/schedule/?date=2026-05-01",
       "statsUrl": "https://baseball.yahoo.co.jp/npb/game/2021038793/stats",
       "intentionalWalks": {
-        "total": 0,
+        "total": 1,
         "teams": {
           "読売ジャイアンツ": {
             "team": "読売ジャイアンツ",
-            "intentionalWalks": 0,
-            "players": []
+            "intentionalWalks": 1,
+            "players": [
+              {
+                "order": 6,
+                "player": "大城 卓三",
+                "playerId": "1700044",
+                "intentionalWalks": 1,
+                "details": [
+                  "故意四"
+                ],
+                "events": [
+                  {
+                    "inning": 5,
+                    "detail": "故意四"
+                  }
+                ]
+              }
+            ]
           },
           "阪神タイガース": {
             "team": "阪神タイガース",
@@ -21945,12 +22592,28 @@
       "scheduleUrl": "https://baseball.yahoo.co.jp/npb/schedule/?date=2026-05-01",
       "statsUrl": "https://baseball.yahoo.co.jp/npb/game/2021038797/stats",
       "intentionalWalks": {
-        "total": 0,
+        "total": 1,
         "teams": {
           "東北楽天ゴールデンイーグルス": {
             "team": "東北楽天ゴールデンイーグルス",
-            "intentionalWalks": 0,
-            "players": []
+            "intentionalWalks": 1,
+            "players": [
+              {
+                "order": 2,
+                "player": "辰己 涼介",
+                "playerId": "1800117",
+                "intentionalWalks": 1,
+                "details": [
+                  "故意四"
+                ],
+                "events": [
+                  {
+                    "inning": 7,
+                    "detail": "故意四"
+                  }
+                ]
+              }
+            ]
           },
           "福岡ソフトバンクホークス": {
             "team": "福岡ソフトバンクホークス",

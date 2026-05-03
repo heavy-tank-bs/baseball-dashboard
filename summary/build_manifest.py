@@ -94,7 +94,7 @@ RAW_BATTER_STATS_PATTERN = re.compile(r"^(?P<season>\d{4})_打撃成績\.csv$")
 RAW_OUT_RATE_PATTERN = re.compile(r"^アウト比率_(?P<season>\d{4})\.csv$")
 PITCH_COLOR_FALLBACK = ["#0F2340", "#355C8C", "#6A89B4", "#C8A55A", "#D6C192", "#9D8B75", "#7D97B5"]
 EMPTY_HEATMAP = [[0 for _ in range(5)] for _ in range(5)]
-INTENTIONAL_WALK_TERMS = ("\u7533\u544a\u656c\u9060", "\u656c\u9060", "\u6545\u610f\u56db\u7403")
+INTENTIONAL_WALK_TERMS = ("\u7533\u544a\u656c\u9060", "\u656c\u9060", "\u6545\u610f\u56db\u7403", "\u6545\u610f\u56db")
 OUTCOME_META = [
     ("grounders", "ゴロ", "#0F2340"),
     ("flyballs", "フライ", "#355C8C"),
@@ -488,7 +488,11 @@ def month_label(month_key: str) -> str:
     return f"{month_number}月" if month_number else str(month_key or "-")
 
 
-def build_pitcher_monthly_splits(entries: list[dict], game_decisions: dict[str, dict]) -> dict[tuple[str, str], list[dict]]:
+def build_pitcher_monthly_splits(
+    entries: list[dict],
+    game_decisions: dict[str, dict],
+    game_contexts: dict[str, dict] | None = None,
+) -> dict[tuple[str, str], list[dict]]:
     league_totals: dict[tuple[str, str], dict] = defaultdict(
         lambda: {
             "outs": 0,
@@ -500,6 +504,9 @@ def build_pitcher_monthly_splits(entries: list[dict], game_decisions: dict[str, 
         }
     )
     players: dict[tuple[str, str], dict[str, dict]] = defaultdict(dict)
+    game_contexts = game_contexts or {}
+    context_game_ids = context_intentional_walk_game_ids(game_contexts)
+    context_intentional_walks_by_entry = build_pitcher_context_intentional_walks(entries, game_contexts)
 
     def empty_bucket(entry: dict, year: str, month: str, pitcher_key: str, league: str) -> dict:
         return {
@@ -649,7 +656,10 @@ def build_pitcher_monthly_splits(entries: list[dict], game_decisions: dict[str, 
         outs = innings_to_outs(statline.get("innings"))
         pitch_rows = dashboard.get("pitchMix") or []
         outcome_rows = {row.get("id"): parse_int(row.get("count")) for row in (dashboard.get("outcomes", {}).get("rows") or [])}
-        intentional_walks = max(parse_int(dashboard.get("intentionalWalks")), 0)
+        if str(entry.get("gameId") or "") in context_game_ids:
+            intentional_walks = max(parse_int(context_intentional_walks_by_entry.get(entry["id"])), 0)
+        else:
+            intentional_walks = max(parse_int(dashboard.get("intentionalWalks")), 0)
         sacrifice_flies = max(parse_int(dashboard.get("sacrificeFlies")), 0)
         unintentional_walks = max(parse_int(statline.get("bb")) - intentional_walks, 0)
 
@@ -724,6 +734,7 @@ def build_batter_monthly_splits(
     batting_stats_by_game: dict[str, dict[str, dict]],
     batter_entries: list[dict],
     park_factors: dict,
+    game_contexts: dict[str, dict] | None = None,
 ) -> dict[tuple[str, str], list[dict]]:
     is_ab_result = getattr(DASHBOARD, "is_ab_result", lambda value: True)
     classify_plate_appearance_result = getattr(DASHBOARD, "classify_plate_appearance_result", lambda value: None)
@@ -732,6 +743,8 @@ def build_batter_monthly_splits(
     sacrifice_flies_by_player: dict[tuple[str, str, str], int] = defaultdict(int)
     intentional_walks_by_player: dict[tuple[str, str, str], int] = defaultdict(int)
     scoring_position_by_player: dict[tuple[str, str, str], dict[str, int]] = defaultdict(lambda: {"atBats": 0, "hits": 0})
+    game_contexts = game_contexts or {}
+    context_game_ids = context_intentional_walk_game_ids(game_contexts)
 
     def empty_bucket(year: str, month: str, team: str, league: str, batter_id: str, player_name: str, bucket_key: str) -> dict:
         return {
@@ -886,13 +899,16 @@ def build_batter_monthly_splits(
             and not is_ab_result(plate.get("result") or "")
             and classify_plate_appearance_result(plate.get("result") or "") == "flyballs"
         )
-        intentional_walks_by_player[(year, bucket_key, month)] += sum(
-            1 for plate in plate_rows if is_intentional_walk_text(plate.get("result"))
-        )
+        if str(entry.get("gameId") or "") not in context_game_ids:
+            intentional_walks_by_player[(year, bucket_key, month)] += sum(
+                1 for plate in plate_rows if is_intentional_walk_text(plate.get("result"))
+            )
         scoring_position_stats = build_scoring_position_statline(plate_rows)
         scoring_position_bucket = scoring_position_by_player[(year, bucket_key, month)]
         scoring_position_bucket["atBats"] += scoring_position_stats["atBats"]
         scoring_position_bucket["hits"] += scoring_position_stats["hits"]
+
+    add_context_batter_intentional_walks(intentional_walks_by_player, game_contexts, monthly=True)
 
     for game_id, teams in batting_stats_by_game.items():
         date = game_dates.get(game_id, "")
@@ -2743,6 +2759,156 @@ def build_game_context_index(game_contexts: dict[str, dict]) -> dict[str, dict]:
     return index
 
 
+def context_intentional_walk_game_ids(game_contexts: dict[str, dict]) -> set[str]:
+    game_ids: set[str] = set()
+    for payload in game_contexts.values():
+        for game in payload.get("games") or []:
+            game_id = str(game.get("gameId") or "")
+            if game_id and "intentionalWalks" in game:
+                game_ids.add(game_id)
+    return game_ids
+
+
+def iter_context_intentional_walks(game_contexts: dict[str, dict]):
+    for payload in game_contexts.values():
+        for game in payload.get("games") or []:
+            game_id = str(game.get("gameId") or "")
+            if not game_id:
+                continue
+            date = str(game.get("date") or "")
+            teams = ((game.get("intentionalWalks") or {}).get("teams") or {})
+            for team_name, team_row in teams.items():
+                batting_team = normalize_matchup_team_name(team_row.get("team") or team_name)
+                for player_row in team_row.get("players") or []:
+                    player_id = str(player_row.get("playerId") or "").strip()
+                    player_name = str(player_row.get("player") or "").strip()
+                    events = player_row.get("events") or []
+                    if not events:
+                        events = [
+                            {"inning": None, "detail": detail}
+                            for detail in (player_row.get("details") or [])
+                        ]
+                    if not events:
+                        events = [
+                            {"inning": None, "detail": ""}
+                            for _ in range(parse_int(player_row.get("intentionalWalks")))
+                        ]
+                    for event in events:
+                        yield {
+                            "gameId": game_id,
+                            "date": date,
+                            "game": game,
+                            "team": batting_team,
+                            "player": player_name,
+                            "playerId": player_id,
+                            "inning": parse_int(event.get("inning")),
+                            "detail": event.get("detail") or "",
+                        }
+
+
+def context_batter_bucket_key(event: dict) -> str:
+    return event.get("playerId") or f"{event.get('team', '')}::{event.get('player', '')}"
+
+
+def add_context_batter_intentional_walks(target: dict, game_contexts: dict[str, dict], monthly: bool = False) -> None:
+    for event in iter_context_intentional_walks(game_contexts):
+        year = str(event.get("date") or "")[:4]
+        if not year:
+            continue
+        player_key = context_batter_bucket_key(event)
+        if monthly:
+            month = month_key_from_date(event.get("date"))
+            if month:
+                target[(year, player_key, month)] += 1
+        else:
+            target[(year, player_key)] += 1
+
+
+def pa_index_half(value) -> str:
+    text = str(value or "").strip()
+    return text[2:3] if len(text) >= 3 and text[:3].isdigit() else ""
+
+
+def context_batting_half(game: dict, batting_team: str) -> str:
+    home_team = normalize_matchup_team_name(game.get("homeTeam") or "")
+    away_team = normalize_matchup_team_name(game.get("awayTeam") or "")
+    normalized_team = normalize_matchup_team_name(batting_team)
+    if normalized_team == away_team:
+        return "1"
+    if normalized_team == home_team:
+        return "2"
+    return ""
+
+
+def context_pitching_team(game: dict, batting_team: str) -> str:
+    home_team = normalize_matchup_team_name(game.get("homeTeam") or "")
+    away_team = normalize_matchup_team_name(game.get("awayTeam") or "")
+    normalized_team = normalize_matchup_team_name(batting_team)
+    if normalized_team == away_team:
+        return home_team
+    if normalized_team == home_team:
+        return away_team
+    return ""
+
+
+def logged_pitch_row_walks(rows: list[dict]) -> int:
+    build_plate_appearances = getattr(DASHBOARD, "build_plate_appearances")
+    normalize_result = getattr(DASHBOARD, "normalize_result", lambda value: (value or "").split("[", 1)[0].strip())
+    total = 0
+    for pitches in build_plate_appearances(rows).values():
+        final = pitches[-1]
+        if "四球" in normalize_result(final.get("result") or ""):
+            total += 1
+    return total
+
+
+def pitcher_has_context_event_inning(entry: dict, event: dict) -> bool:
+    inning = parse_int(event.get("inning"))
+    if inning <= 0:
+        return True
+    batting_half = context_batting_half(event.get("game") or {}, event.get("team") or "")
+    parse_inning = getattr(DASHBOARD, "parse_inning", lambda value: None)
+    for row in entry.get("_pitchRows") or []:
+        if parse_inning(row.get("pa_index")) != inning:
+            continue
+        if batting_half and pa_index_half(row.get("pa_index")) != batting_half:
+            continue
+        return True
+    return False
+
+
+def build_pitcher_context_intentional_walks(entries: list[dict], game_contexts: dict[str, dict]) -> dict[str, int]:
+    by_game_team: dict[tuple[str, str], list[dict]] = defaultdict(list)
+    surplus_by_entry: dict[str, int] = {}
+    assigned: dict[str, int] = defaultdict(int)
+
+    for entry in entries:
+        game_id = str(entry.get("gameId") or "")
+        team = normalize_matchup_team_name(entry.get("team") or "")
+        if not game_id or not team:
+            continue
+        by_game_team[(game_id, team)].append(entry)
+        official_walks = parse_int((entry.get("statline") or {}).get("bb"))
+        surplus_by_entry[entry["id"]] = max(official_walks - logged_pitch_row_walks(entry.get("_pitchRows") or []), 0)
+
+    for event in iter_context_intentional_walks(game_contexts):
+        pitching_team = context_pitching_team(event.get("game") or {}, event.get("team") or "")
+        candidates = [
+            entry
+            for entry in by_game_team.get((event["gameId"], pitching_team), [])
+            if surplus_by_entry.get(entry["id"], 0) - assigned.get(entry["id"], 0) > 0
+        ]
+        inning_candidates = [entry for entry in candidates if pitcher_has_context_event_inning(entry, event)]
+        selected = min(
+            inning_candidates or candidates,
+            key=lambda entry: (entry.get("order", 10**9), entry.get("player") or ""),
+            default=None,
+        )
+        if selected:
+            assigned[selected["id"]] += 1
+    return dict(assigned)
+
+
 def build_batter_split_bucket(label: str, order: int = 0) -> dict:
     return {
         "label": label,
@@ -3038,8 +3204,10 @@ def build_batter_season_dashboard(
 
 
 def build_player_totals(entries: list[dict], game_decisions: dict[str, dict], game_contexts: dict[str, dict]) -> dict:
-    monthly_splits_by_player = build_pitcher_monthly_splits(entries, game_decisions)
+    monthly_splits_by_player = build_pitcher_monthly_splits(entries, game_decisions, game_contexts)
     game_context_index = build_game_context_index(game_contexts)
+    context_game_ids = context_intentional_walk_game_ids(game_contexts)
+    context_intentional_walks_by_entry = build_pitcher_context_intentional_walks(entries, game_contexts)
     league_totals: dict[tuple[str, str], dict] = defaultdict(
         lambda: {
             "games": 0,
@@ -3065,7 +3233,10 @@ def build_player_totals(entries: list[dict], game_decisions: dict[str, dict], ga
         outs = innings_to_outs(statline.get("innings"))
         pitch_rows = dashboard.get("pitchMix") or []
         outcome_rows = {row.get("id"): parse_int(row.get("count")) for row in (dashboard.get("outcomes", {}).get("rows") or [])}
-        intentional_walks = max(parse_int(dashboard.get("intentionalWalks")), 0)
+        if str(entry.get("gameId") or "") in context_game_ids:
+            intentional_walks = max(parse_int(context_intentional_walks_by_entry.get(entry["id"])), 0)
+        else:
+            intentional_walks = max(parse_int(dashboard.get("intentionalWalks")), 0)
         sacrifice_flies = max(parse_int(dashboard.get("sacrificeFlies")), 0)
         unintentional_walks = max(parse_int(statline.get("bb")) - intentional_walks, 0)
         years.add(year)
@@ -3413,10 +3584,10 @@ def build_player_totals(entries: list[dict], game_decisions: dict[str, dict], ga
     player_rows.sort(key=lambda row: (row["year"], team_sort_key(row["team"].split(" / ")[0]), row["player"]))
     return {
         "updatedAt": datetime.now().isoformat(timespec="seconds"),
-        "source": "generated/*/*/*-dashboard.json + 元データ/*_投手成績.csv",
+        "source": "generated/*/*/*-dashboard.json + summary/sportsnavi_game_context_*.json + 元データ/*_投手成績.csv",
         "years": sorted(years),
         "notes": {
-            "fip": "FIP uses uBB derived from intentional-walk detection in generated plate-appearance results when available.",
+            "fip": "FIP uses uBB derived from Sports Navi intentional-walk context when available.",
         },
         "leagueStats": league_rows,
         "players": player_rows,
@@ -3430,7 +3601,7 @@ def build_batter_totals(
     park_factors: dict,
     game_contexts: dict[str, dict],
 ) -> dict:
-    monthly_splits_by_player = build_batter_monthly_splits(entries, batting_stats_by_game, batter_entries, park_factors)
+    monthly_splits_by_player = build_batter_monthly_splits(entries, batting_stats_by_game, batter_entries, park_factors, game_contexts)
     season_dashboards_by_player = build_batter_season_dashboard(batter_entries, game_contexts)
     is_ab_result = getattr(DASHBOARD, "is_ab_result", lambda value: True)
     classify_plate_appearance_result = getattr(DASHBOARD, "classify_plate_appearance_result", lambda value: None)
@@ -3441,6 +3612,7 @@ def build_batter_totals(
     intentional_walks_by_player: dict[tuple[str, str], int] = defaultdict(int)
     scoring_position_by_player: dict[tuple[str, str], dict[str, int]] = defaultdict(lambda: {"atBats": 0, "hits": 0})
     plate_discipline_by_player: dict[tuple[str, str], dict] = defaultdict(build_plate_discipline_bucket)
+    context_game_ids = context_intentional_walk_game_ids(game_contexts)
 
     for entry in entries:
         game_id = entry.get("gameId") or ""
@@ -3468,13 +3640,16 @@ def build_batter_totals(
             and not is_ab_result(plate.get("result") or "")
             and classify_plate_appearance_result(plate.get("result") or "") == "flyballs"
         )
-        intentional_walks_by_player[bucket_key] += sum(
-            1 for plate in plate_rows if is_intentional_walk_text(plate.get("result"))
-        )
+        if str(entry.get("gameId") or "") not in context_game_ids:
+            intentional_walks_by_player[bucket_key] += sum(
+                1 for plate in plate_rows if is_intentional_walk_text(plate.get("result"))
+            )
         scoring_position_stats = build_scoring_position_statline(plate_rows)
         scoring_position_bucket = scoring_position_by_player[bucket_key]
         scoring_position_bucket["atBats"] += scoring_position_stats["atBats"]
         scoring_position_bucket["hits"] += scoring_position_stats["hits"]
+
+    add_context_batter_intentional_walks(intentional_walks_by_player, game_contexts)
 
     for game_id, teams in batting_stats_by_game.items():
         date = game_dates.get(game_id, "")
@@ -3792,9 +3967,9 @@ def build_batter_totals(
     rows.sort(key=lambda row: (row["year"], team_sort_key(row["team"].split(" / ")[0]), row["player"]))
     return {
         "updatedAt": datetime.now().isoformat(timespec="seconds"),
-        "source": "Sports Navi game batting tables for games present under generated/*/*/*-dashboard.json + 元データ/*_打撃成績.csv",
+        "source": "Sports Navi game batting tables and intentional-walk context for games present under generated/*/*/*-dashboard.json + 元データ/*_打撃成績.csv",
         "notes": {
-            "uBB": "Unintentional walks are derived from generated plate-appearance results when an intentional-walk label is present.",
+            "uBB": "Unintentional walks are derived from Sports Navi intentional-walk context when available.",
             "obp": "OBP remains the official BB-based formula rather than a uBB-based variant.",
             "wrcPlus": "wRC+ は対象試合の league R/PA と team park factor の半分補正を使った暫定値です。",
         },

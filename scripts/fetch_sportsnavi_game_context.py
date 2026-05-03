@@ -33,7 +33,7 @@ TEAM_NAME_MAP = {
     "楽天": "東北楽天ゴールデンイーグルス",
 }
 
-INTENTIONAL_WALK_TERMS = ("申告敬遠", "敬遠", "故意四球")
+INTENTIONAL_WALK_TERMS = ("申告敬遠", "敬遠", "故意四球", "故意四")
 
 
 def text(node) -> str:
@@ -52,6 +52,11 @@ def parse_int(value) -> int | None:
         return int(float(normalized))
     except Exception:
         return None
+
+
+def parse_inning_label(value) -> int | None:
+    match = re.search(r"\d+", str(value or ""))
+    return int(match.group(0)) if match else None
 
 
 def normalize_team_name(team: str) -> str:
@@ -160,18 +165,24 @@ def parse_intentional_walks_from_stats(html: str) -> dict[str, dict]:
             match = re.search(r"/npb/player/(\d+)/top", href)
             player_id = match.group(1) if match else ""
 
-            detail_items: list[str] = []
-            for cell in cells[14:]:
+            detail_items: list[dict] = []
+            for cell_index, cell in enumerate(cells[14:], start=14):
+                inning = parse_inning_label(headers[cell_index]) if cell_index < len(headers) else None
                 details = [text(node) for node in cell.select(".bb-statsTable__dataDetail")]
                 if details:
-                    detail_items.extend(detail for detail in details if detail)
+                    detail_items.extend(
+                        {"inning": inning, "detail": detail}
+                        for detail in details
+                        if detail
+                    )
                     continue
 
                 cell_text = text(cell)
                 if cell_text and cell_text != "-":
-                    detail_items.append(cell_text)
+                    detail_items.append({"inning": inning, "detail": cell_text})
 
-            intentional_walks = sum(1 for detail in detail_items if is_intentional_walk(detail))
+            intentional_events = [item for item in detail_items if is_intentional_walk(item["detail"])]
+            intentional_walks = len(intentional_events)
             if intentional_walks <= 0:
                 continue
 
@@ -182,7 +193,8 @@ def parse_intentional_walks_from_stats(html: str) -> dict[str, dict]:
                     "player": player_name,
                     "playerId": player_id,
                     "intentionalWalks": intentional_walks,
-                    "details": [detail for detail in detail_items if is_intentional_walk(detail)],
+                    "details": [item["detail"] for item in intentional_events],
+                    "events": intentional_events,
                 }
             )
 
