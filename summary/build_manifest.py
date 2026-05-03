@@ -22,6 +22,7 @@ BATTER_TOTALS_PATH = SUMMARY_DIR / "batter_totals.json"
 PARK_FACTORS_PATH = SUMMARY_DIR / "park_factors.json"
 GAME_DECISIONS_CACHE_PATH = SUMMARY_DIR / "game_decisions_cache.json"
 GAME_BATTING_CACHE_PATH = SUMMARY_DIR / "game_batting_cache.json"
+PITCHER_MANIFEST_DETAIL_SUFFIX = "-dashboard-detail.json"
 DASHBOARD_SCRIPT = (
     Path.home()
     / ".codex"
@@ -4077,10 +4078,44 @@ def collect_entries() -> list[dict]:
     return entries
 
 
-def build_manifest(entries: list[dict]) -> dict:
+def pitcher_manifest_detail_path(entry: dict) -> Path:
+    return GENERATED_DIR / entry["team"] / entry["date"] / f"{entry['prefix']}{PITCHER_MANIFEST_DETAIL_SUFFIX}"
+
+
+def pitcher_manifest_entry(entry: dict) -> dict:
+    public_entry = {
+        key: value
+        for key, value in entry.items()
+        if not key.startswith("_") and key != "dashboard"
+    }
+    dashboard = entry.get("dashboard") or {}
+    public_entry["detailPath"] = site_path(pitcher_manifest_detail_path(entry))
+    public_entry["dashboard"] = {"pitchMix": dashboard.get("pitchMix") or []}
+    return public_entry
+
+
+def write_pitcher_manifest_details(entries: list[dict]) -> None:
+    for entry in entries:
+        detail_path = pitcher_manifest_detail_path(entry)
+        detail_path.write_text(
+            json.dumps(
+                {
+                    "id": entry["id"],
+                    "dashboard": entry.get("dashboard") or {},
+                },
+                ensure_ascii=False,
+                indent=2,
+            )
+            + "\n",
+            encoding="utf-8",
+        )
+
+
+def build_manifest(entries: list[dict], entry_serializer=None) -> dict:
     team_counts = Counter(entry["team"] for entry in entries)
     date_counts = Counter(entry["date"] for entry in entries)
     player_counts = Counter(entry["player"] for entry in entries if entry.get("player"))
+    serialize_entry = entry_serializer or (lambda entry: {key: value for key, value in entry.items() if not key.startswith("_")})
 
     teams = [
         {
@@ -4103,13 +4138,14 @@ def build_manifest(entries: list[dict]) -> dict:
         "teams": teams,
         "dates": dates,
         "players": players,
-        "entries": [{key: value for key, value in entry.items() if not key.startswith("_")} for entry in entries],
+        "entries": [serialize_entry(entry) for entry in entries],
     }
 
 
 def main() -> None:
     entries = collect_entries()
-    manifest = build_manifest(entries)
+    manifest = build_manifest(entries, pitcher_manifest_entry)
+    write_pitcher_manifest_details(entries)
     game_decisions = load_or_update_game_decisions(entries)
     batting_stats_by_game = load_or_update_game_batting_stats(entries)
     game_contexts = load_game_contexts()

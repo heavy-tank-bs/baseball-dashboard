@@ -45,6 +45,9 @@ const state = {
   selectedVelocityPitch: "all",
 };
 
+const entryDetailCache = new Map();
+let renderGeneration = 0;
+
 const els = {
   searchInput: document.getElementById("searchInput"),
   clearTeamButton: document.getElementById("clearTeamButton"),
@@ -151,6 +154,37 @@ function compareEntries(a, b) {
   const orderCompare = entryOrder(a) - entryOrder(b);
   if (orderCompare !== 0) return orderCompare;
   return a.player.localeCompare(b.player, "ja");
+}
+
+function mergeEntryDetail(entry, detail) {
+  if (!entry || !detail) return;
+  if (detail.dashboard) {
+    entry.dashboard = {
+      ...(entry.dashboard || {}),
+      ...detail.dashboard,
+    };
+  }
+  entry._detailLoaded = true;
+}
+
+async function ensureEntryDetail(entry) {
+  if (!entry || entry._detailLoaded || !entry.detailPath) return entry;
+  if (!entryDetailCache.has(entry.id)) {
+    entryDetailCache.set(
+      entry.id,
+      fetch(entry.detailPath)
+        .then((response) => {
+          if (!response.ok) throw new Error(`Failed to load ${entry.detailPath}`);
+          return response.json();
+        })
+        .catch((error) => {
+          console.error(error);
+          return null;
+        })
+    );
+  }
+  mergeEntryDetail(entry, await entryDetailCache.get(entry.id));
+  return entry;
 }
 
 function availableDates() {
@@ -1882,13 +1916,16 @@ function renderInningTable(rows) {
   `;
 }
 
-function rerender() {
+async function rerender() {
+  const generation = ++renderGeneration;
   renderTeamFilters();
   renderDateOptions();
   renderPlayerOptions();
   const entries = filteredEntries();
   const entry = selectedEntry(entries);
   renderResultList(entries);
+  await ensureEntryDetail(entry);
+  if (generation !== renderGeneration) return;
   renderViewer(entry);
 }
 
@@ -1920,13 +1957,14 @@ function bindEvents() {
     if (state.player !== "all") scrollToViewer();
   });
 
-  els.viewerPanel.addEventListener("click", (event) => {
+  els.viewerPanel.addEventListener("click", async (event) => {
     if (!(event.target instanceof Element)) return;
     const heatResultButton = event.target.closest("[data-heat-result]");
     if (!heatResultButton) return;
     const entries = filteredEntries();
     const entry = selectedEntry(entries);
     if (!entry) return;
+    await ensureEntryDetail(entry);
     toggleHeatResultSelection(heatResultButton.dataset.heatResult || "all", entry.dashboard);
     renderViewer(entry);
   });
