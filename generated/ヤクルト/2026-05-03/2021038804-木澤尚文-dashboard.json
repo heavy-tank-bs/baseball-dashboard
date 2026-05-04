@@ -1,0 +1,72 @@
+{
+  "game_id": "2021038804",
+  "metadata": {
+    "date_jp": "2026年5月3日",
+    "matchup": "東京ヤクルトスワローズvs横浜DeNAベイスターズ"
+  },
+  "statline": {
+    "player": "木澤 尚文",
+    "era": "2.35",
+    "innings": "0.1",
+    "pitches": "3",
+    "batters": "1",
+    "hits": "0",
+    "hr": "0",
+    "k": "0",
+    "bb": "0",
+    "hbp": "0",
+    "balk": "0",
+    "runs": "0",
+    "er": "0"
+  },
+  "pitches": [
+    {
+      "pa_index": "0610500",
+      "pitcher": "木澤 尚文",
+      "pitcher_id": "2000024",
+      "pitcher_hand": "右",
+      "batter": "三森 大貴",
+      "batter_id": "1600167",
+      "batter_hand": "左",
+      "seq": "1",
+      "pitchNo": "1",
+      "pitchType": "スプリット",
+      "speed": "138km/h",
+      "result": "ボール [ワンバウンド、ハーフスイング]",
+      "top": 59.04,
+      "left": 24.48
+    },
+    {
+      "pa_index": "0610500",
+      "pitcher": "木澤 尚文",
+      "pitcher_id": "2000024",
+      "pitcher_hand": "右",
+      "batter": "三森 大貴",
+      "batter_id": "1600167",
+      "batter_hand": "左",
+      "seq": "2",
+      "pitchNo": "2",
+      "pitchType": "シュート",
+      "speed": "149km/h",
+      "result": "ボール",
+      "top": 7.199999999999999,
+      "left": 41.4
+    },
+    {
+      "pa_index": "0610500",
+      "pitcher": "木澤 尚文",
+      "pitcher_id": "2000024",
+      "pitcher_hand": "右",
+      "batter": "三森 大貴",
+      "batter_id": "1600167",
+      "batter_hand": "左",
+      "seq": "3",
+      "pitchNo": "3",
+      "pitchType": "シュート",
+      "speed": "-",
+      "result": "右飛 [痛烈な当たり]",
+      "top": 42.48,
+      "left": 23.04
+    }
+  ]
+}

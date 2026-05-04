@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-05-03T21:29:31+09:00",
+  "updatedAt": "2026-05-04T10:04:23+09:00",
   "season": 2026,
   "throughDate": "2026-05-03",
   "source": {
@@ -8,14 +8,14 @@
     "intentionalWalkDetection": "Counts batting detail cells containing one of: 申告敬遠, 敬遠, 故意四球."
   },
   "summary": {
-    "scheduledGames": 187,
-    "completedGames": 178,
+    "scheduledGames": 188,
+    "completedGames": 179,
     "canceledGames": 8,
     "otherStatusGames": 1,
     "gamesWithIntentionalWalks": 36,
     "intentionalWalkPlateAppearances": 45,
     "statusCounts": {
-      "試合終了": 178,
+      "試合終了": 179,
       "試合中止": 8,
       "ノーゲーム": 1
     },
@@ -23500,6 +23500,136 @@
               "inning": 9,
               "runs": 0,
               "raw": "0"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "date": "2026-05-03",
+      "gameId": "2021038804",
+      "status": "試合終了",
+      "stadium": "神宮",
+      "homeTeam": "東京ヤクルトスワローズ",
+      "awayTeam": "横浜DeNAベイスターズ",
+      "homeScore": 2,
+      "awayScore": 12,
+      "totalRuns": 14,
+      "scheduleUrl": "https://baseball.yahoo.co.jp/npb/schedule/?date=2026-05-03",
+      "statsUrl": "https://baseball.yahoo.co.jp/npb/game/2021038804/stats",
+      "intentionalWalks": {
+        "total": 0,
+        "teams": {
+          "横浜DeNAベイスターズ": {
+            "team": "横浜DeNAベイスターズ",
+            "intentionalWalks": 0,
+            "players": []
+          },
+          "東京ヤクルトスワローズ": {
+            "team": "東京ヤクルトスワローズ",
+            "intentionalWalks": 0,
+            "players": []
+          }
+        }
+      },
+      "inningScores": {
+        "home": {
+          "team": "東京ヤクルトスワローズ",
+          "innings": [
+            {
+              "inning": 1,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 2,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 3,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 4,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 5,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 6,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 7,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 8,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 9,
+              "runs": 2,
+              "raw": "2"
+            }
+          ]
+        },
+        "away": {
+          "team": "横浜DeNAベイスターズ",
+          "innings": [
+            {
+              "inning": 1,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 2,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 3,
+              "runs": 2,
+              "raw": "2"
+            },
+            {
+              "inning": 4,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 5,
+              "runs": 1,
+              "raw": "1"
+            },
+            {
+              "inning": 6,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 7,
+              "runs": 2,
+              "raw": "2"
+            },
+            {
+              "inning": 8,
+              "runs": 3,
+              "raw": "3"
+            },
+            {
+              "inning": 9,
+              "runs": 4,
+              "raw": "4"
             }
           ]
         }
