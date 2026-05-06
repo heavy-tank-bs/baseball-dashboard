@@ -85,7 +85,8 @@ TEAM_LEAGUES = {
 SPORTSNAVI_GAME_STATS_URL = "https://baseball.yahoo.co.jp/npb/game/{game_id}/stats"
 SPORTSNAVI_JINA_GAME_STATS_URL = "https://r.jina.ai/http://baseball.yahoo.co.jp/npb/game/{game_id}/stats"
 REQUEST_HEADERS = {"User-Agent": "Mozilla/5.0"}
-DECISION_KEY_MAP = {"勝": "wins", "敗": "losses", "S": "saves", "H": "holds"}
+DECISION_KEY_MAP = {"勝": "wins", "敗": "losses", "S": "saves", "Ｓ": "saves", "H": "holds", "Ｈ": "holds"}
+GAME_DECISION_CACHE_VERSION = 2
 
 PAGE_PATTERN = re.compile(r"^(?P<prefix>.+)-dashboard-(?P<page>\d+)\.png$")
 JSON_PATTERN = re.compile(r"^(?P<prefix>.+)-dashboard\.json$")
@@ -1133,7 +1134,7 @@ def parse_game_decisions_from_html(html: str) -> dict[str, dict]:
 
 def parse_game_decisions_from_jina(text_body: str) -> dict[str, dict]:
     decisions: dict[str, dict] = {}
-    pattern = re.compile(r"^\|\s*(勝|敗|S|H)\s*\|\s*\[([^\]]+)\]\(https://baseball\.yahoo\.co\.jp/npb/player/(\d+)/top\)")
+    pattern = re.compile(r"^\|\s*(勝|敗|S|Ｓ|H|Ｈ)\s*\|\s*\[([^\]]+)\]\(https://baseball\.yahoo\.co\.jp/npb/player/(\d+)/top\)")
     for line in text_body.splitlines():
         match = pattern.search(line.strip())
         if not match:
@@ -1165,7 +1166,12 @@ def load_or_update_game_decisions(entries: list[dict]) -> dict[str, dict]:
     cache = load_game_decisions_cache()
     games = cache.setdefault("games", {})
     target_ids = sorted({entry.get("gameId") for entry in entries if entry.get("gameId")})
-    missing_ids = [game_id for game_id in target_ids if game_id not in games]
+    cache_stale = cache.get("decisionParserVersion") != GAME_DECISION_CACHE_VERSION
+    missing_ids = [
+        game_id
+        for game_id in target_ids
+        if cache_stale or game_id not in games or not isinstance(games.get(game_id), dict) or not games.get(game_id)
+    ]
     if missing_ids:
         session = requests.Session()
         for game_id in missing_ids:
@@ -1174,6 +1180,7 @@ def load_or_update_game_decisions(entries: list[dict]) -> dict[str, dict]:
             except Exception as exc:
                 print(f"warning: failed to fetch game decisions for {game_id}: {exc}")
                 games[game_id] = {}
+        cache["decisionParserVersion"] = GAME_DECISION_CACHE_VERSION
         save_game_decisions_cache(cache)
     return games
 
