@@ -1,0 +1,86 @@
+{
+  "updatedAt": "2026-05-06T22:10:32",
+  "source": "Sports Navi game text pages",
+  "notes": {
+    "scope": "Independent provisional wOBA constants from parsed Sports Navi text play-by-play.",
+    "scale": "Raw linear weights are shifted by average OUT value and scaled to league OBP.",
+    "limitations": "Rare plays and mid-plate-appearance runner events are parsed best-effort from Japanese text."
+  },
+  "byYear": {
+    "2026": {
+      "constantsYear": "2026",
+      "source": "Sports Navi text pages through 2026-05-06",
+      "provisional": true,
+      "wOBA": 0.305,
+      "wOBAScale": 1.246,
+      "wBB": 0.702,
+      "wHBP": 0.715,
+      "w1B": 0.888,
+      "w2B": 1.293,
+      "w3B": 2.005,
+      "wHR": 2.374,
+      "eventCounts": {
+        "1B": 2200,
+        "2B": 512,
+        "3B": 52,
+        "HBP": 142,
+        "HR": 292,
+        "IBB": 51,
+        "OTHER": 337,
+        "OUT": 9646,
+        "ROE": 46,
+        "SF": 48,
+        "SH": 207,
+        "uBB": 1067
+      },
+      "denominator": 14005,
+      "leagueObp": 0.305,
+      "rawRunValues": {
+        "1B": 0.4729,
+        "2B": 0.798,
+        "3B": 1.3689,
+        "HBP": 0.3337,
+        "HR": 1.665,
+        "OUT": -0.2401,
+        "uBB": 0.3236
+      },
+      "rawWeights": {
+        "1B": 0.713,
+        "2B": 1.0381,
+        "3B": 1.6089,
+        "HBP": 0.5737,
+        "HR": 1.9051,
+        "uBB": 0.5637
+      },
+      "stateSampleCounts": {
+        "0:000": 3560,
+        "0:001": 26,
+        "0:010": 199,
+        "0:011": 38,
+        "0:100": 859,
+        "0:101": 40,
+        "0:110": 169,
+        "0:111": 56,
+        "1:000": 2598,
+        "1:001": 103,
+        "1:010": 412,
+        "1:011": 140,
+        "1:100": 1022,
+        "1:101": 103,
+        "1:110": 341,
+        "1:111": 136,
+        "2:000": 1986,
+        "2:001": 177,
+        "2:010": 536,
+        "2:011": 150,
+        "2:100": 992,
+        "2:101": 166,
+        "2:110": 428,
+        "2:111": 181
+      },
+      "games": 197,
+      "parsedPlateAppearances": 14600,
+      "fetchErrors": []
+    }
+  }
+}

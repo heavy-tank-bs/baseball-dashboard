@@ -33,6 +33,7 @@ SUMMARY_FILES = (
     "batter_manifest.js",
     "player_totals.json",
     "batter_totals.json",
+    "woba_constants.json",
     "sportsnavi_game_context_2026.json",
 )
 GENERATED_EXTENSIONS = {".json", ".png"}

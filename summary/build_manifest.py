@@ -20,6 +20,7 @@ BATTER_MANIFEST_PATH = SUMMARY_DIR / "batter_manifest.js"
 PLAYER_TOTALS_PATH = SUMMARY_DIR / "player_totals.json"
 BATTER_TOTALS_PATH = SUMMARY_DIR / "batter_totals.json"
 PARK_FACTORS_PATH = SUMMARY_DIR / "park_factors.json"
+WOBA_CONSTANTS_PATH = SUMMARY_DIR / "woba_constants.json"
 GAME_DECISIONS_CACHE_PATH = SUMMARY_DIR / "game_decisions_cache.json"
 GAME_BATTING_CACHE_PATH = SUMMARY_DIR / "game_batting_cache.json"
 PITCHER_MANIFEST_DETAIL_SUFFIX = "-dashboard-detail.json"
@@ -104,8 +105,7 @@ OUTCOME_META = [
     ("interference", "守備妨害", "#9D8B75"),
 ]
 WOBA_CONSTANTS_BY_YEAR = {
-    # FanGraphs 2026 Guts constants, used here provisionally until project-specific
-    # NPB linear weights are defined for each season.
+    # Fallback constants for years without project-specific Sports Navi weights.
     "2026": {
         "source": "https://www.fangraphs.com/tools/guts",
         "provisional": True,
@@ -119,6 +119,7 @@ WOBA_CONSTANTS_BY_YEAR = {
         "wHR": 2.110,
     }
 }
+_PROJECT_WOBA_CONSTANTS_BY_YEAR: dict[str, dict] | None = None
 SOURCE_TEAM_NAME_MAP = {
     "giants": "巨人",
     "tigers": "阪神",
@@ -404,12 +405,32 @@ def load_raw_out_rate_index(excluded_years: set[str]) -> dict[str, dict[tuple[st
 
 
 def get_woba_constants(year: str) -> dict | None:
+    project_constants = load_project_woba_constants_by_year()
+    if year in project_constants:
+        constants = dict(project_constants[year])
+        constants["constantsYear"] = constants.get("constantsYear") or year
+        return constants
     if not WOBA_CONSTANTS_BY_YEAR:
         return None
     selected_year = year if year in WOBA_CONSTANTS_BY_YEAR else max(WOBA_CONSTANTS_BY_YEAR)
     constants = dict(WOBA_CONSTANTS_BY_YEAR[selected_year])
     constants["constantsYear"] = selected_year
     return constants
+
+
+def load_project_woba_constants_by_year() -> dict[str, dict]:
+    global _PROJECT_WOBA_CONSTANTS_BY_YEAR
+    if _PROJECT_WOBA_CONSTANTS_BY_YEAR is not None:
+        return _PROJECT_WOBA_CONSTANTS_BY_YEAR
+    payload = safe_load_json(WOBA_CONSTANTS_PATH) if WOBA_CONSTANTS_PATH.exists() else None
+    by_year = payload.get("byYear") if isinstance(payload, dict) else None
+    constants_by_year: dict[str, dict] = {}
+    if isinstance(by_year, dict):
+        for year, constants in by_year.items():
+            if isinstance(constants, dict):
+                constants_by_year[str(year)] = dict(constants)
+    _PROJECT_WOBA_CONSTANTS_BY_YEAR = constants_by_year
+    return constants_by_year
 
 
 def calculate_woba(stats: dict, constants: dict | None) -> float | None:
@@ -3988,6 +4009,10 @@ def build_batter_totals(
                     "w2B": (constants or {}).get("w2B"),
                     "w3B": (constants or {}).get("w3B"),
                     "wHR": (constants or {}).get("wHR"),
+                    "denominator": (constants or {}).get("denominator"),
+                    "games": (constants or {}).get("games"),
+                    "parsedPlateAppearances": (constants or {}).get("parsedPlateAppearances"),
+                    "eventCounts": (constants or {}).get("eventCounts"),
                 }
                 for year in sorted(years)
                 for constants in [get_woba_constants(year)]
