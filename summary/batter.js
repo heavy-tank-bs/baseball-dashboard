@@ -435,15 +435,15 @@ function renderMetaGrid(entry) {
   return `
     <div class="meta-grid">
       <article class="meta-card">
-        <span>逅・屮</span>
+        <span>球団</span>
         <strong>${entry.team}</strong>
       </article>
       <article class="meta-card">
-        <span>譌･莉・/span>
+        <span>日付</span>
         <strong>${entry.dateLabel || entry.date}</strong>
       </article>
       <article class="meta-card meta-card--wide">
-        <span>蟇ｾ謌ｦ繧ｫ繝ｼ繝・/span>
+        <span>対戦カード</span>
         <strong>${entry.matchup || "-"}</strong>
       </article>
     </div>
