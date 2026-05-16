@@ -1,0 +1,72 @@
+{
+  "game_id": "2021038861",
+  "metadata": {
+    "date_jp": "2026年5月15日",
+    "matchup": "中日ドラゴンズvs東京ヤクルトスワローズ"
+  },
+  "statline": {
+    "player": "齋藤 綱記",
+    "era": "2.19",
+    "innings": "0.1",
+    "pitches": "3",
+    "batters": "1",
+    "hits": "0",
+    "hr": "0",
+    "k": "1",
+    "bb": "0",
+    "hbp": "0",
+    "balk": "0",
+    "runs": "0",
+    "er": "0"
+  },
+  "pitches": [
+    {
+      "pa_index": "0810700",
+      "pitcher": "齋藤 綱記",
+      "pitcher_id": "1400199",
+      "pitcher_hand": "左",
+      "batter": "丸山 和郁",
+      "batter_id": "1650522",
+      "batter_hand": "左",
+      "seq": "1",
+      "pitchNo": "1",
+      "pitchType": "ストレート",
+      "speed": "138km/h",
+      "result": "見逃し",
+      "top": 12.959999999999999,
+      "left": 33.12
+    },
+    {
+      "pa_index": "0810700",
+      "pitcher": "齋藤 綱記",
+      "pitcher_id": "1400199",
+      "pitcher_hand": "左",
+      "batter": "丸山 和郁",
+      "batter_id": "1650522",
+      "batter_hand": "左",
+      "seq": "2",
+      "pitchNo": "2",
+      "pitchType": "スライダー",
+      "speed": "126km/h",
+      "result": "空振り",
+      "top": 55.8,
+      "left": 45.72
+    },
+    {
+      "pa_index": "0810700",
+      "pitcher": "齋藤 綱記",
+      "pitcher_id": "1400199",
+      "pitcher_hand": "左",
+      "batter": "丸山 和郁",
+      "batter_id": "1650522",
+      "batter_hand": "左",
+      "seq": "3",
+      "pitchNo": "3",
+      "pitchType": "スライダー",
+      "speed": "129km/h",
+      "result": "空三振",
+      "top": 57.599999999999994,
+      "left": 44.28
+    }
+  ]
+}
