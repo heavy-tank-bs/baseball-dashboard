@@ -1,0 +1,88 @@
+{
+  "game_id": "2021038878",
+  "metadata": {
+    "date_jp": "2026年5月19日",
+    "matchup": "東京ヤクルトスワローズvs読売ジャイアンツ"
+  },
+  "statline": {
+    "player": "田中 瑛斗",
+    "era": "0.56",
+    "innings": "0.1",
+    "pitches": "4",
+    "batters": "2",
+    "hits": "1",
+    "hr": "0",
+    "k": "0",
+    "bb": "0",
+    "hbp": "0",
+    "balk": "0",
+    "runs": "0",
+    "er": "0"
+  },
+  "pitches": [
+    {
+      "pa_index": "0820400",
+      "pitcher": "田中 瑛斗",
+      "pitcher_id": "1700027",
+      "pitcher_hand": "右",
+      "batter": "内山 壮真",
+      "batter_id": "2000026",
+      "batter_hand": "右",
+      "seq": "1",
+      "pitchNo": "2",
+      "pitchType": "シュート",
+      "speed": "-",
+      "result": "空振り [ファウルチップ]",
+      "top": 18.36,
+      "left": 31.32
+    },
+    {
+      "pa_index": "0820400",
+      "pitcher": "田中 瑛斗",
+      "pitcher_id": "1700027",
+      "pitcher_hand": "右",
+      "batter": "内山 壮真",
+      "batter_id": "2000026",
+      "batter_hand": "右",
+      "seq": "2",
+      "pitchNo": "3",
+      "pitchType": "スイーパー",
+      "speed": "133km/h",
+      "result": "ボール",
+      "top": 36.72,
+      "left": 3.5999999999999996
+    },
+    {
+      "pa_index": "0820400",
+      "pitcher": "田中 瑛斗",
+      "pitcher_id": "1700027",
+      "pitcher_hand": "右",
+      "batter": "内山 壮真",
+      "batter_id": "2000026",
+      "batter_hand": "右",
+      "seq": "3",
+      "pitchNo": "4",
+      "pitchType": "シュート",
+      "speed": "-",
+      "result": "右飛",
+      "top": 42.48,
+      "left": 28.799999999999997
+    },
+    {
+      "pa_index": "0820300",
+      "pitcher": "田中 瑛斗",
+      "pitcher_id": "1700027",
+      "pitcher_hand": "右",
+      "batter": "サンタナ",
+      "batter_id": "2000135",
+      "batter_hand": "右",
+      "seq": "1",
+      "pitchNo": "1",
+      "pitchType": "シュート",
+      "speed": "-",
+      "result": "中安",
+      "top": 24.48,
+      "left": 32.4
+    }
+  ]
+}

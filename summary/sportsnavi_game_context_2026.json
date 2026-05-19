@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-05-19T21:20:11+09:00",
+  "updatedAt": "2026-05-19T23:18:02+09:00",
   "season": 2026,
   "throughDate": "2026-05-19",
   "source": {
@@ -9,16 +9,15 @@
   },
   "summary": {
     "scheduledGames": 262,
-    "completedGames": 252,
+    "completedGames": 253,
     "canceledGames": 8,
-    "otherStatusGames": 2,
+    "otherStatusGames": 1,
     "gamesWithIntentionalWalks": 55,
     "intentionalWalkPlateAppearances": 65,
     "statusCounts": {
-      "試合終了": 252,
+      "試合終了": 253,
       "試合中止": 8,
-      "ノーゲーム": 1,
-      "8回裏": 1
+      "ノーゲーム": 1
     },
     "fetchErrors": 0
   },
@@ -33830,6 +33829,136 @@
     },
     {
       "date": "2026-05-19",
+      "gameId": "2021038881",
+      "status": "試合終了",
+      "stadium": "エスコンF",
+      "homeTeam": "北海道日本ハムファイターズ",
+      "awayTeam": "東北楽天ゴールデンイーグルス",
+      "homeScore": 6,
+      "awayScore": 2,
+      "totalRuns": 8,
+      "scheduleUrl": "https://baseball.yahoo.co.jp/npb/schedule/?date=2026-05-19",
+      "statsUrl": "https://baseball.yahoo.co.jp/npb/game/2021038881/stats",
+      "intentionalWalks": {
+        "total": 0,
+        "teams": {
+          "東北楽天ゴールデンイーグルス": {
+            "team": "東北楽天ゴールデンイーグルス",
+            "intentionalWalks": 0,
+            "players": []
+          },
+          "北海道日本ハムファイターズ": {
+            "team": "北海道日本ハムファイターズ",
+            "intentionalWalks": 0,
+            "players": []
+          }
+        }
+      },
+      "inningScores": {
+        "home": {
+          "team": "北海道日本ハムファイターズ",
+          "innings": [
+            {
+              "inning": 1,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 2,
+              "runs": 4,
+              "raw": "4"
+            },
+            {
+              "inning": 3,
+              "runs": 2,
+              "raw": "2"
+            },
+            {
+              "inning": 4,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 5,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 6,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 7,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 8,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 9,
+              "runs": null,
+              "raw": "X"
+            }
+          ]
+        },
+        "away": {
+          "team": "東北楽天ゴールデンイーグルス",
+          "innings": [
+            {
+              "inning": 1,
+              "runs": 1,
+              "raw": "1"
+            },
+            {
+              "inning": 2,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 3,
+              "runs": 1,
+              "raw": "1"
+            },
+            {
+              "inning": 4,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 5,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 6,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 7,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 8,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 9,
+              "runs": 0,
+              "raw": "0"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "date": "2026-05-19",
       "gameId": "2021038882",
       "status": "試合終了",
       "stadium": "前橋",
@@ -34208,19 +34337,6 @@
       "scheduleUrl": "https://baseball.yahoo.co.jp/npb/schedule/?date=2026-04-26",
       "statsUrl": "https://baseball.yahoo.co.jp/npb/game/2021038775/stats",
       "totalRuns": null
-    },
-    {
-      "date": "2026-05-19",
-      "gameId": "2021038881",
-      "status": "8回裏",
-      "stadium": "エスコンF",
-      "homeTeam": "北海道日本ハムファイターズ",
-      "awayTeam": "東北楽天ゴールデンイーグルス",
-      "homeScore": 6,
-      "awayScore": 2,
-      "scheduleUrl": "https://baseball.yahoo.co.jp/npb/schedule/?date=2026-05-19",
-      "statsUrl": "https://baseball.yahoo.co.jp/npb/game/2021038881/stats",
-      "totalRuns": 8
     }
   ],
   "fetchErrors": []
