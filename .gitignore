@@ -8,6 +8,7 @@
 !/scripts/build_woba_constants.py
 !/scripts/build_park_factors.py
 !/scripts/fetch_sportsnavi_game_context.py
+!/scripts/dashboard_chat_lambda.py
 !/summary/
 !/summary/index.html
 !/summary/batter.html
@@ -20,6 +21,7 @@
 !/summary/annual.js
 !/summary/annual-batter.js
 !/summary/compare.js
+!/summary/chatbot.js
 !/summary/build_manifest.py
 !/summary/manifest.js
 !/summary/batter_manifest.js

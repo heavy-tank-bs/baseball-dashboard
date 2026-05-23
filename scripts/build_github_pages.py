@@ -29,6 +29,7 @@ SUMMARY_FILES = (
     "ranking.js",
     "player.js",
     "compare.js",
+    "chatbot.js",
     "manifest.js",
     "batter_manifest.js",
     "player_totals.json",
