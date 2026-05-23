@@ -651,25 +651,12 @@ def call_openai(payload: dict[str, Any], search_context: str) -> str:
     return extract_response_text(data) or "回答を生成できませんでした。"
 
 
-def allowed_origin(request_origin: str | None) -> str:
-    allowed = [origin.strip() for origin in os.environ.get("ALLOWED_ORIGIN", "*").split(",") if origin.strip()]
-    if "*" in allowed:
-        return "*"
-    if request_origin and request_origin in allowed:
-        return request_origin
-    return allowed[0] if allowed else "*"
-
-
-def json_response(status: int, payload: dict[str, Any], origin: str | None = None) -> dict[str, Any]:
+def json_response(status: int, payload: dict[str, Any], origin: str | None = None) -> dict[str, Any]:  # noqa: ARG001
     body = json.dumps(payload, ensure_ascii=False)
     return {
         "statusCode": status,
         "headers": {
             "Content-Type": "application/json; charset=utf-8",
-            "Access-Control-Allow-Origin": allowed_origin(origin),
-            "Access-Control-Allow-Methods": "POST, GET, OPTIONS",
-            "Access-Control-Allow-Headers": "content-type",
-            "Vary": "Origin",
         },
         "body": body,
     }
