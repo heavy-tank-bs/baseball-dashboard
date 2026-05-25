@@ -16,12 +16,12 @@ const TEAM_ORDER = [
 const TYPE_CONFIG = {
   pitcher: {
     label: "投手",
-    datasetUrl: "./player_totals.json?v=20260430-3",
+    datasetUrl: "./player_totals.json?v=20260511-count",
     idKey: "pitcherId",
   },
   batter: {
     label: "打者",
-    datasetUrl: "./batter_totals.json?v=20260501-2",
+    datasetUrl: "./batter_totals.json?v=20260511-count",
     idKey: "batterId",
   },
 };
@@ -50,8 +50,8 @@ const initialSelection = {
 
 const els = {
   typeButtons: [...document.querySelectorAll("[data-player-type]")],
+  leagueButtons: [...document.querySelectorAll("[data-league]")],
   yearSelect: document.getElementById("yearSelect"),
-  leagueSelect: document.getElementById("leagueSelect"),
   teamSelect: document.getElementById("teamSelect"),
   playerSelect: document.getElementById("playerSelect"),
   playerResultCount: document.getElementById("playerResultCount"),
@@ -192,14 +192,9 @@ function renderYearOptions() {
 }
 
 function renderLeagueOptions() {
-  const options = [
-    { value: "all", label: "すべてのリーグ" },
-    { value: "セ", label: "セ・リーグ" },
-    { value: "パ", label: "パ・リーグ" },
-  ];
-  els.leagueSelect.innerHTML = options
-    .map((option) => `<option value="${option.value}" ${option.value === state.league ? "selected" : ""}>${option.label}</option>`)
-    .join("");
+  els.leagueButtons.forEach((button) => {
+    button.classList.toggle("active", button.dataset.league === state.league);
+  });
 }
 
 function renderTeamOptions() {
@@ -282,11 +277,13 @@ function bindEvents() {
     render();
   });
 
-  els.leagueSelect.addEventListener("change", (event) => {
-    state.league = event.target.value;
-    state.team = "all";
-    state.player = "all";
-    render();
+  els.leagueButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      state.league = button.dataset.league || "all";
+      state.team = "all";
+      state.player = "all";
+      render();
+    });
   });
 
   els.teamSelect.addEventListener("change", (event) => {

@@ -32,7 +32,7 @@ const PAGE_TYPE = document.body.dataset.rankingType === "batter" ? "batter" : "p
 
 const TYPE_CONFIG = {
   pitcher: {
-    datasetUrl: "./player_totals.json?v=20260430-3",
+    datasetUrl: "./player_totals.json?v=20260511-count",
     idKey: "pitcherId",
     thresholdKind: "innings",
     fixedQualification: 143 * 3,
@@ -74,10 +74,12 @@ const TYPE_CONFIG = {
       { key: "zoneRate", label: "zone%", field: "zoneRate", kind: "percent", source: "pitch" },
       { key: "chase", label: "chase%", field: "chase", kind: "percent", source: "pitch" },
       { key: "chasePlus", label: "chase+", field: "chasePlus", kind: "plus", source: "pitch" },
+      { key: "locationScore", label: "Location Score", field: "locationScore", kind: "plus", source: "pitch" },
+      { key: "stuffScore", label: "Stuff Score β", field: "stuffScore", kind: "plus", source: "pitch" },
     ],
   },
   batter: {
-    datasetUrl: "./batter_totals.json?v=20260501-2",
+    datasetUrl: "./batter_totals.json?v=20260511-count",
     idKey: "batterId",
     thresholdKind: "plateAppearances",
     fixedQualification: 443,
@@ -124,6 +126,7 @@ const state = {
   metricKey: config.metrics[0].key,
   pitchType: "all",
   limit: 10,
+  sortOrder: "",
   thresholdMode: "qualified",
   customThreshold: null,
   error: "",
@@ -131,9 +134,10 @@ const state = {
 
 const els = {
   yearSelect: document.getElementById("yearSelect"),
-  leagueSelect: document.getElementById("leagueSelect"),
+  leagueButtons: [...document.querySelectorAll("[data-league]")],
   teamSelect: document.getElementById("teamSelect"),
   metricSelect: document.getElementById("metricSelect"),
+  sortOrderSelect: document.getElementById("sortOrderSelect"),
   pitchTypeField: document.getElementById("pitchTypeField"),
   pitchTypeSelect: document.getElementById("pitchTypeSelect"),
   limitSelect: document.getElementById("limitSelect"),
@@ -241,6 +245,10 @@ function playerPersonalHref(row) {
 
 function currentMetric() {
   return config.metrics.find((metric) => metric.key === state.metricKey) || config.metrics[0];
+}
+
+function defaultSortOrder(metric = currentMetric()) {
+  return metric.lowerIsBetter ? "asc" : "desc";
 }
 
 function baseRows() {
@@ -359,9 +367,10 @@ function metricRows() {
 
 function sortedRows() {
   const metric = currentMetric();
+  const sortOrder = state.sortOrder || defaultSortOrder(metric);
   return metricRows().sort((a, b) => {
     if (a.value !== b.value) {
-      return metric.lowerIsBetter ? a.value - b.value : b.value - a.value;
+      return sortOrder === "asc" ? a.value - b.value : b.value - a.value;
     }
     if (b.denominator !== a.denominator) return b.denominator - a.denominator;
     const teamCompare = compareTeam(a.team, b.team);
@@ -402,14 +411,9 @@ function renderYearOptions() {
 }
 
 function renderLeagueOptions() {
-  const options = [
-    { value: "all", label: "すべてのリーグ" },
-    { value: "セ", label: "セ・リーグ" },
-    { value: "パ", label: "パ・リーグ" },
-  ];
-  els.leagueSelect.innerHTML = options
-    .map((option) => `<option value="${option.value}" ${option.value === state.league ? "selected" : ""}>${option.label}</option>`)
-    .join("");
+  els.leagueButtons.forEach((button) => {
+    button.classList.toggle("active", button.dataset.league === state.league);
+  });
 }
 
 function renderTeamOptions() {
@@ -427,6 +431,11 @@ function renderMetricOptions() {
   els.metricSelect.innerHTML = config.metrics
     .map((metric) => `<option value="${metric.key}" ${metric.key === state.metricKey ? "selected" : ""}>${escapeHtml(metric.label)}</option>`)
     .join("");
+}
+
+function renderSortOrderOptions() {
+  if (!state.sortOrder) state.sortOrder = defaultSortOrder();
+  els.sortOrderSelect.value = state.sortOrder;
 }
 
 function renderPitchTypeControls() {
@@ -508,6 +517,11 @@ function renderTable(rows) {
   return `
     <div class="table-scroll ranking-table-scroll">
       <table class="data-table ranking-table">
+        <colgroup>
+          <col class="ranking-col-rank">
+          <col class="ranking-col-player">
+          <col class="ranking-col-metric">
+        </colgroup>
         <thead>
           <tr>
             <th>順位</th>
@@ -584,6 +598,7 @@ function renderRanking() {
   const metric = currentMetric();
   const allRows = sortedRows();
   const rows = allRows.slice(0, state.limit);
+  const displayLabel = `${state.limit}件表示`;
   els.rankingResultCount.textContent = `${allRows.length}件`;
   els.rankingNote.textContent = "";
   els.rankingBody.innerHTML = `
@@ -591,14 +606,14 @@ function renderRanking() {
       <article class="ranking-table-card">
         <div class="card-head ranking-card-head">
           <h3>${escapeHtml(metric.label)} ランキング</h3>
-          <span class="result-count">上位${state.limit}件</span>
+          <span class="result-count">${displayLabel}</span>
         </div>
         ${renderTable(rows)}
       </article>
       <article class="ranking-chart-card">
         <div class="card-head ranking-card-head">
           <h3>${escapeHtml(metric.label)}</h3>
-          <span class="result-count">上位${state.limit}件</span>
+          <span class="result-count">${displayLabel}</span>
         </div>
         ${renderChart(rows)}
       </article>
@@ -611,6 +626,7 @@ function render() {
   renderLeagueOptions();
   renderTeamOptions();
   renderMetricOptions();
+  renderSortOrderOptions();
   renderThresholdControls();
   renderPitchTypeControls();
   if (state.error) {
@@ -644,11 +660,13 @@ function bindEvents() {
     state.customThreshold = defaultCustomThreshold();
     render();
   });
-  els.leagueSelect.addEventListener("change", (event) => {
-    state.league = event.target.value;
-    state.team = "all";
-    state.customThreshold = defaultCustomThreshold();
-    render();
+  els.leagueButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      state.league = button.dataset.league || "all";
+      state.team = "all";
+      state.customThreshold = defaultCustomThreshold();
+      render();
+    });
   });
   els.teamSelect.addEventListener("change", (event) => {
     state.team = event.target.value;
@@ -658,8 +676,13 @@ function bindEvents() {
   els.metricSelect.addEventListener("change", (event) => {
     state.metricKey = event.target.value;
     state.pitchType = "all";
+    state.sortOrder = defaultSortOrder();
     state.thresholdMode = "qualified";
     state.customThreshold = defaultCustomThreshold();
+    render();
+  });
+  els.sortOrderSelect.addEventListener("change", (event) => {
+    state.sortOrder = event.target.value === "asc" ? "asc" : "desc";
     render();
   });
   if (els.pitchTypeSelect) {

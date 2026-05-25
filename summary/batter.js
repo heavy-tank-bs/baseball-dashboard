@@ -40,7 +40,7 @@ const state = {
 const els = {
   searchInput: document.getElementById("searchInput"),
   clearTeamButton: document.getElementById("clearTeamButton"),
-  teamFilters: document.getElementById("teamFilters"),
+  teamSelect: document.getElementById("teamSelect"),
   dateSelect: document.getElementById("dateSelect"),
   playerSelect: document.getElementById("playerSelect"),
   resultCount: document.getElementById("resultCount"),
@@ -208,25 +208,21 @@ function renderTeamFilters() {
     if (!teams.has(team.name)) teams.set(team.name, { name: team.name, league: "-" });
   });
 
-  els.teamFilters.innerHTML = "";
+  if (state.team !== "all" && !byTeam(state.team).hasData) {
+    state.team = "all";
+    state.player = "all";
+    state.selectedId = null;
+  }
 
-  [...teams.values()].forEach((team) => {
-    const summary = byTeam(team.name);
-    const button = document.createElement("button");
-    button.type = "button";
-    button.className = "team-chip";
-    if (!summary.hasData) button.classList.add("disabled");
-    if (state.team === team.name) button.classList.add("active");
-    button.innerHTML = `<span>${team.name}</span>`;
-    button.disabled = !summary.hasData;
-    button.addEventListener("click", () => {
-      state.team = team.name;
-      state.player = "all";
-      state.selectedId = null;
-      rerender();
-    });
-    els.teamFilters.appendChild(button);
-  });
+  els.teamSelect.innerHTML = [
+    `<option value="all" ${state.team === "all" ? "selected" : ""}>球団を選択</option>`,
+    ...[...teams.values()].map((team) => {
+      const summary = byTeam(team.name);
+      return `<option value="${escapeHtml(team.name)}" ${state.team === team.name ? "selected" : ""} ${
+        summary.hasData ? "" : "disabled"
+      }>${escapeHtml(team.name)}</option>`;
+    }),
+  ].join("");
 }
 
 function renderDateOptions() {
@@ -716,6 +712,14 @@ function bindEvents() {
 
   els.clearTeamButton.addEventListener("click", () => {
     state.team = "all";
+    state.date = "all";
+    state.player = "all";
+    state.selectedId = null;
+    rerender();
+  });
+
+  els.teamSelect.addEventListener("change", (event) => {
+    state.team = event.target.value;
     state.date = "all";
     state.player = "all";
     state.selectedId = null;

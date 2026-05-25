@@ -51,7 +51,7 @@ let renderGeneration = 0;
 const els = {
   searchInput: document.getElementById("searchInput"),
   clearTeamButton: document.getElementById("clearTeamButton"),
-  teamFilters: document.getElementById("teamFilters"),
+  teamSelect: document.getElementById("teamSelect"),
   dateSelect: document.getElementById("dateSelect"),
   playerSelect: document.getElementById("playerSelect"),
   resultCount: document.getElementById("resultCount"),
@@ -113,6 +113,39 @@ function escapeHtml(value) {
     .replaceAll(">", "&gt;")
     .replaceAll('"', "&quot;")
     .replaceAll("'", "&#39;");
+}
+
+function renderResponsiveDataTable({ tableClass, headers, rows, mobileFirstHeader = "項目" }) {
+  const desktopBody = rows
+    .map((row) => `<tr><td>${row.heading}</td>${row.values.map((value) => `<td>${value}</td>`).join("")}</tr>`)
+    .join("");
+  const mobileHeader = rows.map((row) => `<th>${row.heading}</th>`).join("");
+  const mobileBody = headers
+    .slice(1)
+    .map((header, index) => {
+      const values = rows.map((row) => `<td>${row.values[index] ?? "-"}</td>`).join("");
+      return `<tr><th scope="row">${header}</th>${values}</tr>`;
+    })
+    .join("");
+
+  return `
+    <div class="table-scroll responsive-table-desktop">
+      <table class="data-table wide-table ${tableClass}">
+        <thead>
+          <tr>${headers.map((header) => `<th>${header}</th>`).join("")}</tr>
+        </thead>
+        <tbody>${desktopBody}</tbody>
+      </table>
+    </div>
+    <div class="table-scroll mobile-transpose-scroll">
+      <table class="data-table mobile-transpose-table">
+        <thead>
+          <tr><th>${mobileFirstHeader}</th>${mobileHeader}</tr>
+        </thead>
+        <tbody>${mobileBody}</tbody>
+      </table>
+    </div>
+  `;
 }
 
 function pitcherViewLabels(hand) {
@@ -281,25 +314,21 @@ function renderTeamFilters() {
     if (!teams.has(team.name)) teams.set(team.name, { name: team.name, league: "-" });
   });
 
-  els.teamFilters.innerHTML = "";
+  if (state.team !== "all" && !byTeam(state.team).hasData) {
+    state.team = "all";
+    state.player = "all";
+    state.selectedId = null;
+  }
 
-  [...teams.values()].forEach((team) => {
-    const summary = byTeam(team.name);
-    const button = document.createElement("button");
-    button.type = "button";
-    button.className = "team-chip";
-    if (!summary.hasData) button.classList.add("disabled");
-    if (state.team === team.name) button.classList.add("active");
-    button.innerHTML = `<span>${team.name}</span>`;
-    button.disabled = !summary.hasData;
-    button.addEventListener("click", () => {
-      state.team = team.name;
-      state.player = "all";
-      state.selectedId = null;
-      rerender();
-    });
-    els.teamFilters.appendChild(button);
-  });
+  els.teamSelect.innerHTML = [
+    `<option value="all" ${state.team === "all" ? "selected" : ""}>球団を選択</option>`,
+    ...[...teams.values()].map((team) => {
+      const summary = byTeam(team.name);
+      return `<option value="${escapeHtml(team.name)}" ${state.team === team.name ? "selected" : ""} ${
+        summary.hasData ? "" : "disabled"
+      }>${escapeHtml(team.name)}</option>`;
+    }),
+  ].join("");
 }
 
 function renderDateOptions() {
@@ -1735,86 +1764,53 @@ function renderPitchMixSection(dashboard) {
 }
 
 function renderPitchSummaryTable(rows) {
-  const body = rows
-    .map(
-      (row) => `
-        <tr>
-          <td>
-            <span class="pitch-name-cell">
-              <span class="legend-swatch" style="background:${row.color}"></span>
-              <span>${row.pitchType}</span>
-            </span>
-          </td>
-          <td>${formatSpeed(row.avgSpeed)}</td>
-          <td>${formatSpeed(row.maxSpeed)}</td>
-          <td>${row.count}</td>
-          <td>${row.whiffCount ?? 0}</td>
-          <td>${formatPercent(row.whiff)}</td>
-          <td>${row.atBats ?? 0}</td>
-          <td>${row.singles ?? 0}</td>
-          <td>${row.doubles ?? 0}</td>
-          <td>${row.triples ?? 0}</td>
-          <td>${row.homeRuns ?? 0}</td>
-          <td>${row.grounders ?? 0}</td>
-          <td>${row.flyBalls ?? 0}</td>
-          <td>${row.strikeouts ?? 0}</td>
-          <td>${formatAverage(row.hitRate)}</td>
-        </tr>
-      `
-    )
-    .join("");
-
-  return `
-    <div class="table-scroll">
-      <table class="data-table wide-table pitch-summary-table">
-        <thead>
-          <tr>
-            <th>球種</th>
-            <th>平均球速</th>
-            <th>最高球速</th>
-            <th>球数</th>
-            <th>空振数</th>
-            <th>空振率</th>
-            <th>被打数</th>
-            <th>単打</th>
-            <th>二塁打</th>
-            <th>三塁打</th>
-            <th>本塁打</th>
-            <th>ゴロ</th>
-            <th>フライ</th>
-            <th>三振</th>
-            <th>被打率</th>
-          </tr>
-        </thead>
-        <tbody>${body}</tbody>
-      </table>
-    </div>
-  `;
+  return renderResponsiveDataTable({
+    tableClass: "pitch-summary-table",
+    headers: [
+      "球種",
+      "平均球速",
+      "最高球速",
+      "球数",
+      "空振数",
+      "空振率",
+      "被打数",
+      "単打",
+      "二塁打",
+      "三塁打",
+      "本塁打",
+      "ゴロ",
+      "フライ",
+      "三振",
+      "被打率",
+    ],
+    rows: rows.map((row) => ({
+      heading: `
+        <span class="pitch-name-cell">
+          <span class="legend-swatch" style="background:${row.color}"></span>
+          <span>${row.pitchType}</span>
+        </span>
+      `,
+      values: [
+        formatSpeed(row.avgSpeed),
+        formatSpeed(row.maxSpeed),
+        row.count,
+        row.whiffCount ?? 0,
+        formatPercent(row.whiff),
+        row.atBats ?? 0,
+        row.singles ?? 0,
+        row.doubles ?? 0,
+        row.triples ?? 0,
+        row.homeRuns ?? 0,
+        row.grounders ?? 0,
+        row.flyBalls ?? 0,
+        row.strikeouts ?? 0,
+        formatAverage(row.hitRate),
+      ],
+    })),
+  });
 }
 
 function renderPitchMetricSummaryTable(rows) {
-  const body = rows
-    .map(
-      (row) => `
-        <tr>
-          <td>
-            <span class="pitch-name-cell">
-              <span class="legend-swatch" style="background:${row.color}"></span>
-              <span>${row.pitchType}</span>
-            </span>
-          </td>
-          <td>${formatPercent(row.whiffRate ?? row.whiff)}</td>
-          <td>${formatPercent(row.csw)}</td>
-          <td>${formatPercent(row.zoneRate)}</td>
-          <td>${formatPercent(row.zSwing)}</td>
-          <td>${formatPercent(row.oContact)}</td>
-          <td>${formatPercent(row.chase)}</td>
-          <td>${formatPlus(row.chasePlus)}</td>
-        </tr>
-      `
-    )
-    .join("");
-
   const descriptions = [
     ["whiff%", "スイングを空振りにした割合", "空振り数 ÷ スイング数"],
     ["csw%", "空振りと見逃しストライクでストライクを取れた割合", "空振り数と見逃しストライク数の合計 ÷ 全投球数"],
@@ -1823,6 +1819,8 @@ function renderPitchMetricSummaryTable(rows) {
     ["o-contact%", "ゾーン外を振らせた時にバットへ当てられた割合", "ゾーン外コンタクト数 ÷ ゾーン外スイング数"],
     ["chase%", "ゾーン外の球を打者に振らせた割合", "ゾーン外スイング数 ÷ ゾーン外投球数"],
     ["chase+", "リーグ平均を100としてゾーン外を振らせる力を示す指数", "球種別chase% ÷ 同リーグ平均chase% × 100"],
+    ["Location Score", "投球位置の良さを同リーグ・同球種・投手左右・打者左右・カウント状況平均との差で示す独自指標", "位置価値を同条件基準で100平均に変換"],
+    ["Stuff Score β", "球速・空振り・CSW・Chaseを同リーグ・同球種平均との差で示す独自指標", "各要素のplus値を重み付け平均"],
   ];
 
   const notes = descriptions
@@ -1841,79 +1839,85 @@ function renderPitchMetricSummaryTable(rows) {
 
   return `
     <div class="pitch-metric-summary">
-      <div class="table-scroll">
-        <table class="data-table wide-table pitch-metric-summary-table">
-          <thead>
-            <tr>
-              <th>球種</th>
-              <th>whiff%</th>
-              <th>csw%</th>
-              <th>zone%</th>
-              <th>z-swing%</th>
-              <th>o-contact%</th>
-              <th>chase%</th>
-              <th>chase+</th>
-            </tr>
-          </thead>
-          <tbody>${body}</tbody>
-        </table>
-      </div>
+      ${renderResponsiveDataTable({
+        tableClass: "pitch-metric-summary-table",
+        headers: [
+          "球種",
+          "whiff%",
+          "csw%",
+          "zone%",
+          "z-swing%",
+          "o-contact%",
+          "chase%",
+          "chase+",
+          "Location Score",
+          "Stuff Score β",
+        ],
+        rows: rows.map((row) => ({
+          heading: `
+            <span class="pitch-name-cell">
+              <span class="legend-swatch" style="background:${row.color}"></span>
+              <span>${row.pitchType}</span>
+            </span>
+          `,
+          values: [
+            formatPercent(row.whiffRate ?? row.whiff),
+            formatPercent(row.csw),
+            formatPercent(row.zoneRate),
+            formatPercent(row.zSwing),
+            formatPercent(row.oContact),
+            formatPercent(row.chase),
+            formatPlus(row.chasePlus),
+            formatPlus(row.locationScore),
+            formatPlus(row.stuffScore),
+          ],
+        })),
+      })}
       <dl class="metric-description-list">${notes}</dl>
     </div>
   `;
 }
 
 function renderInningTable(rows) {
-  const body = rows
-    .map(
-      (row) => `
-        <tr>
-          <td>${row.inning}回</td>
-          <td>${formatSpeed(row.avgSpeed)}</td>
-          <td>${formatSpeed(row.maxSpeed)}</td>
-          <td>${row.count}</td>
-          <td>${row.whiffCount ?? 0}</td>
-          <td>${formatPercent(row.whiff)}</td>
-          <td>${row.atBats ?? 0}</td>
-          <td>${row.singles ?? 0}</td>
-          <td>${row.doubles ?? 0}</td>
-          <td>${row.triples ?? 0}</td>
-          <td>${row.homeRuns ?? 0}</td>
-          <td>${row.grounders ?? 0}</td>
-          <td>${row.flyBalls ?? 0}</td>
-          <td>${row.strikeouts ?? 0}</td>
-          <td>${formatAverage(row.hitRate)}</td>
-        </tr>
-      `
-    )
-    .join("");
-
-  return `
-    <div class="table-scroll">
-      <table class="data-table wide-table inning-table">
-      <thead>
-        <tr>
-          <th>回</th>
-          <th>平均球速</th>
-          <th>最高球速</th>
-          <th>球数</th>
-          <th>空振数</th>
-          <th>空振率</th>
-          <th>被打数</th>
-          <th>単打</th>
-          <th>二塁打</th>
-          <th>三塁打</th>
-          <th>本塁打</th>
-          <th>ゴロ</th>
-          <th>フライ</th>
-          <th>三振</th>
-          <th>被打率</th>
-        </tr>
-      </thead>
-      <tbody>${body}</tbody>
-      </table>
-    </div>
-  `;
+  return renderResponsiveDataTable({
+    tableClass: "inning-table",
+    headers: [
+      "回",
+      "平均球速",
+      "最高球速",
+      "球数",
+      "空振数",
+      "空振率",
+      "被打数",
+      "単打",
+      "二塁打",
+      "三塁打",
+      "本塁打",
+      "ゴロ",
+      "フライ",
+      "三振",
+      "被打率",
+    ],
+    rows: rows.map((row) => ({
+      heading: `${row.inning}回`,
+      values: [
+        formatSpeed(row.avgSpeed),
+        formatSpeed(row.maxSpeed),
+        row.count,
+        row.whiffCount ?? 0,
+        formatPercent(row.whiff),
+        row.atBats ?? 0,
+        row.singles ?? 0,
+        row.doubles ?? 0,
+        row.triples ?? 0,
+        row.homeRuns ?? 0,
+        row.grounders ?? 0,
+        row.flyBalls ?? 0,
+        row.strikeouts ?? 0,
+        formatAverage(row.hitRate),
+      ],
+    })),
+  });
 }
 
 async function rerender() {
@@ -1937,6 +1941,14 @@ function bindEvents() {
 
   els.clearTeamButton.addEventListener("click", () => {
     state.team = "all";
+    state.date = "all";
+    state.player = "all";
+    state.selectedId = null;
+    rerender();
+  });
+
+  els.teamSelect.addEventListener("change", (event) => {
+    state.team = event.target.value;
     state.date = "all";
     state.player = "all";
     state.selectedId = null;

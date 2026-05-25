@@ -31,7 +31,7 @@ const state = {
 
 const els = {
   yearSelect: document.getElementById("yearSelect"),
-  leagueSelect: document.getElementById("leagueSelect"),
+  leagueButtons: [...document.querySelectorAll("[data-league]")],
   teamSelect: document.getElementById("teamSelect"),
   playerSelect: document.getElementById("playerSelect"),
   plateAppearancesRange: document.getElementById("plateAppearancesRange"),
@@ -325,14 +325,9 @@ function renderYearOptions() {
 }
 
 function renderLeagueOptions() {
-  const options = [
-    { value: "all", label: "すべてのリーグ" },
-    { value: "セ", label: "セ・リーグ" },
-    { value: "パ", label: "パ・リーグ" },
-  ];
-  els.leagueSelect.innerHTML = options
-    .map((option) => `<option value="${option.value}" ${option.value === state.league ? "selected" : ""}>${option.label}</option>`)
-    .join("");
+  els.leagueButtons.forEach((button) => {
+    button.classList.toggle("active", button.dataset.league === state.league);
+  });
 }
 
 function renderTeamOptions() {
@@ -485,11 +480,13 @@ function bindEvents() {
     render();
   });
 
-  els.leagueSelect.addEventListener("change", (event) => {
-    state.league = event.target.value;
-    state.team = "all";
-    state.player = "all";
-    render();
+  els.leagueButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      state.league = button.dataset.league || "all";
+      state.team = "all";
+      state.player = "all";
+      render();
+    });
   });
 
   els.teamSelect.addEventListener("change", (event) => {
@@ -529,7 +526,7 @@ function bindEvents() {
 async function init() {
   try {
     const [response, contextResponse] = await Promise.all([
-      fetch("./batter_totals.json?v=20260501-2", { cache: "no-store" }),
+      fetch("./batter_totals.json?v=20260511-count", { cache: "no-store" }),
       fetch("./sportsnavi_game_context_2026.json?v=20260429-1", { cache: "no-store" }).catch(() => null),
     ]);
     if (!response.ok) throw new Error(`HTTP ${response.status}`);

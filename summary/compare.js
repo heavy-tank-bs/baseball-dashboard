@@ -1,7 +1,7 @@
 const TYPE_CONFIG = {
   pitcher: {
     label: "投手",
-    datasetUrl: "./player_totals.json?v=20260430-3",
+    datasetUrl: "./player_totals.json?v=20260511-count",
     annualHref: "./annual.html",
     annualLabel: "年度別投手成績へ戻る",
     idKey: "pitcherId",
@@ -31,7 +31,7 @@ const TYPE_CONFIG = {
   },
   batter: {
     label: "打者",
-    datasetUrl: "./batter_totals.json?v=20260501-2",
+    datasetUrl: "./batter_totals.json?v=20260511-count",
     annualHref: "./annual-batter.html",
     annualLabel: "年度別打者成績へ戻る",
     idKey: "batterId",
@@ -147,6 +147,39 @@ function escapeHtml(value) {
     .replaceAll(">", "&gt;")
     .replaceAll('"', "&quot;")
     .replaceAll("'", "&#39;");
+}
+
+function renderResponsiveDataTable({ tableClass, headers, rows, mobileFirstHeader = "項目" }) {
+  const desktopBody = rows
+    .map((row) => `<tr><td>${row.heading}</td>${row.values.map((value) => `<td>${value}</td>`).join("")}</tr>`)
+    .join("");
+  const mobileHeader = rows.map((row) => `<th>${row.heading}</th>`).join("");
+  const mobileBody = headers
+    .slice(1)
+    .map((header, index) => {
+      const values = rows.map((row) => `<td>${row.values[index] ?? "-"}</td>`).join("");
+      return `<tr><th scope="row">${header}</th>${values}</tr>`;
+    })
+    .join("");
+
+  return `
+    <div class="table-scroll responsive-table-desktop">
+      <table class="data-table season-table ${tableClass}">
+        <thead>
+          <tr>${headers.map((header) => `<th>${header}</th>`).join("")}</tr>
+        </thead>
+        <tbody>${desktopBody}</tbody>
+      </table>
+    </div>
+    <div class="table-scroll mobile-transpose-scroll">
+      <table class="data-table mobile-transpose-table">
+        <thead>
+          <tr><th>${mobileFirstHeader}</th>${mobileHeader}</tr>
+        </thead>
+        <tbody>${mobileBody}</tbody>
+      </table>
+    </div>
+  `;
 }
 
 function formatInningsFromOuts(outs) {
@@ -819,42 +852,31 @@ function renderSeasonPitchSummary(dashboard) {
       </article>
     `;
   }
-  const body = rows
-    .map(
-      (row) => `
-        <tr>
-          <td><span class="pitch-name-cell"><span class="legend-swatch" style="background:${escapeHtml(row.color || "#0F2340")}"></span>${escapeHtml(row.pitchType)}</span></td>
-          <td>${formatNumber(row.count)}</td>
-          <td>${formatPercentValue(row.ratio)}</td>
-          <td>${formatSpeedValue(row.avgSpeed)}</td>
-          <td>${formatSpeedValue(row.maxSpeed)}</td>
-          <td>${formatNumber(row.whiffCount)}</td>
-          <td>${formatPercentValue(row.whiff)}</td>
-          <td>${formatNumber(row.atBats)}</td>
-          <td>${formatNumber(rowHits(row))}</td>
-          <td>${formatNumber(row.homeRuns)}</td>
-          <td>${formatNumber(row.grounders)}</td>
-          <td>${formatNumber(row.flyBalls)}</td>
-          <td>${formatNumber(row.strikeouts)}</td>
-          <td>${formatAverageValue(row.hitRate)}</td>
-        </tr>
-      `
-    )
-    .join("");
   return `
     <article class="dashboard-card season-card-wide">
       <div class="card-head"><h3>球種別サマリ</h3></div>
-      <div class="table-scroll">
-        <table class="data-table season-table season-pitch-summary-table">
-          <thead>
-            <tr>
-              <th>球種</th><th>球数</th><th>割合</th><th>平均</th><th>最速</th><th>空振</th><th>空振率</th>
-              <th>被打数</th><th>被安打</th><th>被本</th><th>ゴロ</th><th>フライ</th><th>三振</th><th>被打率</th>
-            </tr>
-          </thead>
-          <tbody>${body}</tbody>
-        </table>
-      </div>
+      ${renderResponsiveDataTable({
+        tableClass: "season-pitch-summary-table",
+        headers: ["球種", "球数", "割合", "平均", "最速", "空振", "空振率", "被打数", "被安打", "被本", "ゴロ", "フライ", "三振", "被打率"],
+        rows: rows.map((row) => ({
+          heading: `<span class="pitch-name-cell"><span class="legend-swatch" style="background:${escapeHtml(row.color || "#0F2340")}"></span>${escapeHtml(row.pitchType)}</span>`,
+          values: [
+            formatNumber(row.count),
+            formatPercentValue(row.ratio),
+            formatSpeedValue(row.avgSpeed),
+            formatSpeedValue(row.maxSpeed),
+            formatNumber(row.whiffCount),
+            formatPercentValue(row.whiff),
+            formatNumber(row.atBats),
+            formatNumber(rowHits(row)),
+            formatNumber(row.homeRuns),
+            formatNumber(row.grounders),
+            formatNumber(row.flyBalls),
+            formatNumber(row.strikeouts),
+            formatAverageValue(row.hitRate),
+          ],
+        })),
+      })}
     </article>
   `;
 }
@@ -868,6 +890,8 @@ function renderMetricDescriptions() {
     ["o-contact%", "ゾーン外を振らせた時にバットへ当てられた割合", "ゾーン外コンタクト数 ÷ ゾーン外スイング数"],
     ["chase%", "ゾーン外の球を打者に振らせた割合", "ゾーン外スイング数 ÷ ゾーン外投球数"],
     ["chase+", "リーグ平均を100としてゾーン外を振らせる力を示す指数", "球種別chase% ÷ 同リーグ平均chase% × 100"],
+    ["Location Score", "投球位置の良さを同リーグ・同球種・投手左右・打者左右・カウント状況平均との差で示す独自指標", "位置価値を同条件基準で100平均に変換"],
+    ["Stuff Score β", "球速・空振り・CSW・Chaseを同リーグ・同球種平均との差で示す独自指標", "各要素のplus値を重み付け平均"],
   ];
   return `
     <dl class="metric-description-list">
@@ -898,35 +922,27 @@ function renderSeasonPitchMetricSummary(dashboard) {
       </article>
     `;
   }
-  const body = rows
-    .map(
-      (row) => `
-        <tr>
-          <td><span class="pitch-name-cell"><span class="legend-swatch" style="background:${escapeHtml(row.color || "#0F2340")}"></span>${escapeHtml(row.pitchType)}</span></td>
-          <td>${formatPercentValue(row.whiffRate)}</td>
-          <td>${formatPercentValue(row.csw)}</td>
-          <td>${formatPercentValue(row.zoneRate)}</td>
-          <td>${formatPercentValue(row.zSwing)}</td>
-          <td>${formatPercentValue(row.oContact)}</td>
-          <td>${formatPercentValue(row.chase)}</td>
-          <td>${formatPlusValue(row.chasePlus)}</td>
-        </tr>
-      `
-    )
-    .join("");
   return `
     <article class="dashboard-card season-card-wide">
       <div class="card-head"><h3>球種別サマリ（各種指標）</h3></div>
-      <div class="table-scroll">
-        <table class="data-table season-table season-pitch-metric-summary-table">
-          <thead>
-            <tr>
-              <th>球種</th><th>whiff%</th><th>csw%</th><th>zone%</th><th>z-swing%</th><th>o-contact%</th><th>chase%</th><th>chase+</th>
-            </tr>
-          </thead>
-          <tbody>${body}</tbody>
-        </table>
-      </div>
+      ${renderResponsiveDataTable({
+        tableClass: "season-pitch-metric-summary-table",
+        headers: ["球種", "whiff%", "csw%", "zone%", "z-swing%", "o-contact%", "chase%", "chase+", "Location Score", "Stuff Score β"],
+        rows: rows.map((row) => ({
+          heading: `<span class="pitch-name-cell"><span class="legend-swatch" style="background:${escapeHtml(row.color || "#0F2340")}"></span>${escapeHtml(row.pitchType)}</span>`,
+          values: [
+            formatPercentValue(row.whiffRate),
+            formatPercentValue(row.csw),
+            formatPercentValue(row.zoneRate),
+            formatPercentValue(row.zSwing),
+            formatPercentValue(row.oContact),
+            formatPercentValue(row.chase),
+            formatPlusValue(row.chasePlus),
+            formatPlusValue(row.locationScore),
+            formatPlusValue(row.stuffScore),
+          ],
+        })),
+      })}
       ${renderMetricDescriptions()}
     </article>
   `;
@@ -942,41 +958,30 @@ function renderSeasonInningSummary(dashboard) {
       </article>
     `;
   }
-  const body = rows
-    .map(
-      (row) => `
-        <tr>
-          <td>${escapeHtml(row.inning)}</td>
-          <td>${formatNumber(row.count)}</td>
-          <td>${formatSpeedValue(row.avgSpeed)}</td>
-          <td>${formatSpeedValue(row.maxSpeed)}</td>
-          <td>${formatNumber(row.whiffCount)}</td>
-          <td>${formatPercentValue(row.whiff)}</td>
-          <td>${formatNumber(row.atBats)}</td>
-          <td>${formatNumber(rowHits(row))}</td>
-          <td>${formatNumber(row.homeRuns)}</td>
-          <td>${formatNumber(row.grounders)}</td>
-          <td>${formatNumber(row.flyBalls)}</td>
-          <td>${formatNumber(row.strikeouts)}</td>
-          <td>${formatAverageValue(row.hitRate)}</td>
-        </tr>
-      `
-    )
-    .join("");
   return `
     <article class="dashboard-card season-card-wide">
       <div class="card-head"><h3>イニング別サマリ</h3></div>
-      <div class="table-scroll">
-        <table class="data-table season-table season-inning-table">
-          <thead>
-            <tr>
-              <th>回</th><th>球数</th><th>平均</th><th>最速</th><th>空振</th><th>空振率</th>
-              <th>被打数</th><th>被安打</th><th>被本</th><th>ゴロ</th><th>フライ</th><th>三振</th><th>被打率</th>
-            </tr>
-          </thead>
-          <tbody>${body}</tbody>
-        </table>
-      </div>
+      ${renderResponsiveDataTable({
+        tableClass: "season-inning-table",
+        headers: ["回", "球数", "平均", "最速", "空振", "空振率", "被打数", "被安打", "被本", "ゴロ", "フライ", "三振", "被打率"],
+        rows: rows.map((row) => ({
+          heading: `${escapeHtml(row.inning)}回`,
+          values: [
+            formatNumber(row.count),
+            formatSpeedValue(row.avgSpeed),
+            formatSpeedValue(row.maxSpeed),
+            formatNumber(row.whiffCount),
+            formatPercentValue(row.whiff),
+            formatNumber(row.atBats),
+            formatNumber(rowHits(row)),
+            formatNumber(row.homeRuns),
+            formatNumber(row.grounders),
+            formatNumber(row.flyBalls),
+            formatNumber(row.strikeouts),
+            formatAverageValue(row.hitRate),
+          ],
+        })),
+      })}
     </article>
   `;
 }
@@ -1128,38 +1133,27 @@ function renderPitcherHandSummary(dashboard) {
       </article>
     `;
   }
-  const body = visibleRows
-    .map(
-      (row) => `
-        <tr>
-          <td>${escapeHtml(pitcherHandLabel(row))}</td>
-          <td>${formatAverageValue(row.hitRate)}</td>
-          <td>${formatNumber(row.whiffCount)}</td>
-          <td>${formatPercentValue(row.whiff)}</td>
-          <td>${formatNumber(row.atBats)}</td>
-          <td>${formatNumber(rowHits(row))}</td>
-          <td>${formatNumber(row.homeRuns)}</td>
-          <td>${formatNumber(row.grounders)}</td>
-          <td>${formatNumber(row.flyBalls)}</td>
-          <td>${formatNumber(row.strikeouts)}</td>
-        </tr>
-      `
-    )
-    .join("");
   return `
     <article class="dashboard-card season-card-wide">
       <div class="card-head"><h3>対左右別成績</h3></div>
-      <div class="table-scroll">
-        <table class="data-table season-table season-pitch-hand-summary-table">
-          <thead>
-            <tr>
-              <th>区分</th><th>被打率</th><th>空振</th><th>空振率</th><th>被打数</th><th>被安打</th><th>被本</th>
-              <th>ゴロ</th><th>フライ</th><th>三振</th>
-            </tr>
-          </thead>
-          <tbody>${body}</tbody>
-        </table>
-      </div>
+      ${renderResponsiveDataTable({
+        tableClass: "season-pitch-hand-summary-table",
+        headers: ["区分", "被打率", "空振", "空振率", "被打数", "被安打", "被本", "ゴロ", "フライ", "三振"],
+        rows: visibleRows.map((row) => ({
+          heading: escapeHtml(pitcherHandLabel(row)),
+          values: [
+            formatAverageValue(row.hitRate),
+            formatNumber(row.whiffCount),
+            formatPercentValue(row.whiff),
+            formatNumber(row.atBats),
+            formatNumber(rowHits(row)),
+            formatNumber(row.homeRuns),
+            formatNumber(row.grounders),
+            formatNumber(row.flyBalls),
+            formatNumber(row.strikeouts),
+          ],
+        })),
+      })}
     </article>
   `;
 }
@@ -1181,42 +1175,31 @@ function renderPitcherGameSplitTable(sectionKey, title, rows = []) {
       </article>
     `;
   }
-  const body = visibleRows
-    .map(
-      (row) => `
-        <tr>
-          <td>${escapeHtml(pitcherGameSplitLabel(sectionKey, row))}</td>
-          <td>${formatNumber(row.games)}</td>
-          <td>${formatNumber(row.era, 2)}</td>
-          <td>${escapeHtml(row.innings || "-")}</td>
-          <td>${formatNumber(row.batters)}</td>
-          <td>${formatNumber(row.hits)}</td>
-          <td>${formatNumber(row.homeRuns)}</td>
-          <td>${formatNumber(row.strikeouts)}</td>
-          <td>${formatNumber(row.walks)}</td>
-          <td>${formatNumber(row.hitByPitch)}</td>
-          <td>${formatNumber(row.runs)}</td>
-          <td>${formatNumber(row.earnedRuns)}</td>
-          <td>${formatNumber(row.whip, 2)}</td>
-          <td>${formatAverageValue(row.battingAverageAllowed)}</td>
-        </tr>
-      `
-    )
-    .join("");
   return `
     <article class="dashboard-card season-card-wide">
       <div class="card-head"><h3>${escapeHtml(title)}</h3></div>
-      <div class="table-scroll">
-        <table class="data-table season-table pitcher-game-split-table">
-          <thead>
-            <tr>
-              <th>区分</th><th>試合</th><th>防御率</th><th>投球回</th><th>打者</th><th>被安打</th><th>被本</th>
-              <th>奪三振</th><th>与四球</th><th>与死球</th><th>失点</th><th>自責</th><th>WHIP</th><th>被打率</th>
-            </tr>
-          </thead>
-          <tbody>${body}</tbody>
-        </table>
-      </div>
+      ${renderResponsiveDataTable({
+        tableClass: "pitcher-game-split-table",
+        headers: ["区分", "試合", "防御率", "投球回", "打者", "被安打", "被本", "奪三振", "与四球", "与死球", "失点", "自責", "WHIP", "被打率"],
+        rows: visibleRows.map((row) => ({
+          heading: escapeHtml(pitcherGameSplitLabel(sectionKey, row)),
+          values: [
+            formatNumber(row.games),
+            formatNumber(row.era, 2),
+            escapeHtml(row.innings || "-"),
+            formatNumber(row.batters),
+            formatNumber(row.hits),
+            formatNumber(row.homeRuns),
+            formatNumber(row.strikeouts),
+            formatNumber(row.walks),
+            formatNumber(row.hitByPitch),
+            formatNumber(row.runs),
+            formatNumber(row.earnedRuns),
+            formatNumber(row.whip, 2),
+            formatAverageValue(row.battingAverageAllowed),
+          ],
+        })),
+      })}
     </article>
   `;
 }
@@ -1391,44 +1374,33 @@ function renderBatterSplitTable(sectionKey, title, rows = []) {
       </article>
     `;
   }
-  const body = visibleRows
-    .map(
-      (row) => `
-        <tr>
-          <td class="batter-split-label-cell">${escapeHtml(batterSplitLabel(sectionKey, row))}</td>
-          <td>${formatAverageValue(row.battingAverage)}</td>
-          <td>${formatNumber(row.plateAppearances)}</td>
-          <td>${formatNumber(row.atBats)}</td>
-          <td>${formatNumber(row.hits)}</td>
-          <td>${formatNumber(row.doubles)}</td>
-          <td>${formatNumber(row.triples)}</td>
-          <td>${formatNumber(row.homeRuns)}</td>
-          <td>${formatNumber(row.walks)}</td>
-          <td>${formatNumber(row.hitByPitch)}</td>
-          <td>${formatNumber(row.sacBunts)}</td>
-          <td>${formatNumber(row.sacFlies)}</td>
-          <td>${formatNumber(row.strikeouts)}</td>
-          <td>${formatAverageValue(row.onBasePercentage)}</td>
-          <td>${formatAverageValue(row.sluggingPercentage)}</td>
-          <td>${formatAverageValue(row.ops)}</td>
-        </tr>
-      `
-    )
-    .join("");
   return `
     <article class="dashboard-card season-card-wide">
       <div class="card-head"><h3>${escapeHtml(title)}</h3></div>
-      <div class="table-scroll">
-        <table class="data-table season-table batter-season-table ${splitTableClass}">
-          <thead>
-            <tr>
-              <th class="batter-split-label-heading">${escapeHtml(splitHeader)}</th><th>打率</th><th>打席</th><th>打数</th><th>安打</th><th>二塁打</th><th>三塁打</th><th>本塁打</th>
-              <th>四球</th><th>死球</th><th>犠打</th><th>犠飛</th><th>三振</th><th>出塁率</th><th>長打率</th><th>OPS</th>
-            </tr>
-          </thead>
-          <tbody>${body}</tbody>
-        </table>
-      </div>
+      ${renderResponsiveDataTable({
+        tableClass: `batter-season-table ${splitTableClass}`,
+        headers: [escapeHtml(splitHeader), "打率", "打席", "打数", "安打", "二塁打", "三塁打", "本塁打", "四球", "死球", "犠打", "犠飛", "三振", "出塁率", "長打率", "OPS"],
+        rows: visibleRows.map((row) => ({
+          heading: `<span class="batter-split-label-cell">${escapeHtml(batterSplitLabel(sectionKey, row))}</span>`,
+          values: [
+            formatAverageValue(row.battingAverage),
+            formatNumber(row.plateAppearances),
+            formatNumber(row.atBats),
+            formatNumber(row.hits),
+            formatNumber(row.doubles),
+            formatNumber(row.triples),
+            formatNumber(row.homeRuns),
+            formatNumber(row.walks),
+            formatNumber(row.hitByPitch),
+            formatNumber(row.sacBunts),
+            formatNumber(row.sacFlies),
+            formatNumber(row.strikeouts),
+            formatAverageValue(row.onBasePercentage),
+            formatAverageValue(row.sluggingPercentage),
+            formatAverageValue(row.ops),
+          ],
+        })),
+      })}
     </article>
   `;
 }
