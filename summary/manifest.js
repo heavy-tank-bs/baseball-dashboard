@@ -1,72 +1,76 @@
 window.PITCH_DASHBOARD_MANIFEST = {
-  "updatedAt": "2026-05-23T21:59:03",
+  "updatedAt": "2026-05-25T21:36:42",
   "generatedRoot": "../generated",
-  "entryCount": 2213,
+  "entryCount": 2267,
   "teamCount": 12,
-  "dateCount": 50,
+  "dateCount": 51,
   "teams": [
     {
       "name": "巨人",
-      "count": 209,
+      "count": 213,
       "hasData": true
     },
     {
       "name": "阪神",
-      "count": 168,
+      "count": 172,
       "hasData": true
     },
     {
       "name": "DeNA",
-      "count": 199,
+      "count": 203,
       "hasData": true
     },
     {
       "name": "広島",
-      "count": 181,
+      "count": 186,
       "hasData": true
     },
     {
       "name": "ヤクルト",
-      "count": 177,
+      "count": 178,
       "hasData": true
     },
     {
       "name": "中日",
-      "count": 181,
+      "count": 186,
       "hasData": true
     },
     {
       "name": "ソフトバンク",
-      "count": 173,
+      "count": 180,
       "hasData": true
     },
     {
       "name": "日本ハム",
-      "count": 185,
+      "count": 190,
       "hasData": true
     },
     {
       "name": "ロッテ",
-      "count": 177,
+      "count": 182,
       "hasData": true
     },
     {
       "name": "オリックス",
-      "count": 189,
+      "count": 194,
       "hasData": true
     },
     {
       "name": "西武",
-      "count": 174,
+      "count": 179,
       "hasData": true
     },
     {
       "name": "東北楽天",
-      "count": 200,
+      "count": 204,
       "hasData": true
     }
   ],
   "dates": [
+    {
+      "date": "2026-05-24",
+      "count": 54
+    },
     {
       "date": "2026-05-23",
       "count": 54
@@ -327,7 +331,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
     },
     {
       "name": "ドリス",
-      "count": 18
+      "count": 19
     },
     {
       "name": "ハワード",
@@ -335,11 +339,11 @@ window.PITCH_DASHBOARD_MANIFEST = {
     },
     {
       "name": "ハーン",
-      "count": 18
+      "count": 19
     },
     {
       "name": "ヘルナンデス",
-      "count": 17
+      "count": 18
     },
     {
       "name": "ペルドモ",
@@ -367,7 +371,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
     },
     {
       "name": "メヒア",
-      "count": 16
+      "count": 17
     },
     {
       "name": "モレッタ",
@@ -391,15 +395,15 @@ window.PITCH_DASHBOARD_MANIFEST = {
     },
     {
       "name": "レイノルズ",
-      "count": 19
+      "count": 20
     },
     {
       "name": "ロング",
-      "count": 14
+      "count": 15
     },
     {
       "name": "ワイナンス",
-      "count": 1
+      "count": 2
     },
     {
       "name": "上原 健太",
@@ -415,7 +419,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
     },
     {
       "name": "上茶谷 大河",
-      "count": 15
+      "count": 16
     },
     {
       "name": "中川 皓太",
@@ -423,7 +427,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
     },
     {
       "name": "中川 虎大",
-      "count": 16
+      "count": 17
     },
     {
       "name": "中川 颯",
@@ -447,7 +451,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
     },
     {
       "name": "中﨑 翔太",
-      "count": 16
+      "count": 17
     },
     {
       "name": "丸山 翔大",
@@ -503,11 +507,11 @@ window.PITCH_DASHBOARD_MANIFEST = {
     },
     {
       "name": "佐藤 隼輔",
-      "count": 8
+      "count": 9
     },
     {
       "name": "入山 海斗",
-      "count": 13
+      "count": 14
     },
     {
       "name": "入江 大生",
@@ -515,7 +519,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
     },
     {
       "name": "八木 彬",
-      "count": 11
+      "count": 12
     },
     {
       "name": "内 星龍",
@@ -535,7 +539,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
     },
     {
       "name": "前田 悠伍",
-      "count": 3
+      "count": 4
     },
     {
       "name": "前田 純",
@@ -543,7 +547,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
     },
     {
       "name": "加治屋 蓮",
-      "count": 20
+      "count": 21
     },
     {
       "name": "加藤 貴之",
@@ -555,7 +559,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
     },
     {
       "name": "北山 亘基",
-      "count": 7
+      "count": 8
     },
     {
       "name": "北浦 竜次",
@@ -563,7 +567,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
     },
     {
       "name": "博志",
-      "count": 4
+      "count": 5
     },
     {
       "name": "又木 鉄平",
@@ -571,7 +575,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
     },
     {
       "name": "及川 雅貴",
-      "count": 9
+      "count": 10
     },
     {
       "name": "古林 睿煬",
@@ -595,7 +599,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
     },
     {
       "name": "吉田 輝星",
-      "count": 8
+      "count": 9
     },
     {
       "name": "吉野 光樹",
@@ -603,7 +607,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
     },
     {
       "name": "坂本 光士郎",
-      "count": 5
+      "count": 6
     },
     {
       "name": "坂本 裕哉",
@@ -611,7 +615,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
     },
     {
       "name": "堀 瑞輝",
-      "count": 5
+      "count": 6
     },
     {
       "name": "堀岡 隼人",
@@ -619,7 +623,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
     },
     {
       "name": "堀田 賢慎",
-      "count": 4
+      "count": 5
     },
     {
       "name": "堀越 啓太",
@@ -683,7 +687,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
     },
     {
       "name": "奥川 恭伸",
-      "count": 6
+      "count": 7
     },
     {
       "name": "宋 家豪",
@@ -731,7 +735,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
     },
     {
       "name": "小野 郁",
-      "count": 7
+      "count": 8
     },
     {
       "name": "尾形 崇斗",
@@ -739,6 +743,10 @@ window.PITCH_DASHBOARD_MANIFEST = {
     },
     {
       "name": "山城 京平",
+      "count": 1
+    },
+    {
+      "name": "山岡 泰輔",
       "count": 1
     },
     {
@@ -755,7 +763,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
     },
     {
       "name": "山﨑 康晃",
-      "count": 15
+      "count": 16
     },
     {
       "name": "山﨑 福也",
@@ -763,19 +771,19 @@ window.PITCH_DASHBOARD_MANIFEST = {
     },
     {
       "name": "山﨑 颯一郎",
-      "count": 18
+      "count": 19
     },
     {
       "name": "岡本 駿",
-      "count": 7
+      "count": 8
     },
     {
       "name": "岩城 颯空",
-      "count": 18
+      "count": 19
     },
     {
       "name": "岩崎 優",
-      "count": 13
+      "count": 14
     },
     {
       "name": "岩田 将貴",
@@ -791,7 +799,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
     },
     {
       "name": "島本 浩也",
-      "count": 16
+      "count": 17
     },
     {
       "name": "島田 舜也",
@@ -847,7 +855,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
     },
     {
       "name": "才木 浩人",
-      "count": 8
+      "count": 9
     },
     {
       "name": "拓也",
@@ -883,7 +891,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
     },
     {
       "name": "木村 光",
-      "count": 16
+      "count": 17
     },
     {
       "name": "木澤 尚文",
@@ -891,7 +899,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
     },
     {
       "name": "杉山 一樹",
-      "count": 10
+      "count": 11
     },
     {
       "name": "杉浦 稔大",
@@ -927,7 +935,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
     },
     {
       "name": "松本 裕樹",
-      "count": 13
+      "count": 14
     },
     {
       "name": "柳 裕也",
@@ -971,7 +979,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
     },
     {
       "name": "森浦 大輔",
-      "count": 18
+      "count": 19
     },
     {
       "name": "森田 駿哉",
@@ -1031,7 +1039,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
     },
     {
       "name": "河野 竜生",
-      "count": 1
+      "count": 2
     },
     {
       "name": "泉 圭輔",
@@ -1039,7 +1047,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
     },
     {
       "name": "津森 宥紀",
-      "count": 11
+      "count": 12
     },
     {
       "name": "津田 淳哉",
@@ -1099,7 +1107,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
     },
     {
       "name": "牧野 憲伸",
-      "count": 17
+      "count": 18
     },
     {
       "name": "玉井 大翔",
@@ -1127,7 +1135,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
     },
     {
       "name": "田中 正義",
-      "count": 14
+      "count": 15
     },
     {
       "name": "田中 瑛斗",
@@ -1139,7 +1147,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
     },
     {
       "name": "田和 廉",
-      "count": 19
+      "count": 20
     },
     {
       "name": "田嶋 大樹",
@@ -1147,7 +1155,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
     },
     {
       "name": "甲斐野 央",
-      "count": 18
+      "count": 19
     },
     {
       "name": "畠 世周",
@@ -1179,7 +1187,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
     },
     {
       "name": "石田 裕太郎",
-      "count": 8
+      "count": 9
     },
     {
       "name": "石黒 佑弥",
@@ -1207,7 +1215,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
     },
     {
       "name": "竹丸 和幸",
-      "count": 7
+      "count": 8
     },
     {
       "name": "竹田 祐",
@@ -1215,7 +1223,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
     },
     {
       "name": "篠原 響",
-      "count": 15
+      "count": 16
     },
     {
       "name": "篠木 健太郎",
@@ -1267,7 +1275,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
     },
     {
       "name": "藤井 聖",
-      "count": 3
+      "count": 4
     },
     {
       "name": "藤原 大翔",
@@ -1279,11 +1287,11 @@ window.PITCH_DASHBOARD_MANIFEST = {
     },
     {
       "name": "藤嶋 健人",
-      "count": 16
+      "count": 17
     },
     {
       "name": "藤平 尚真",
-      "count": 17
+      "count": 18
     },
     {
       "name": "西 勇輝",
@@ -1291,7 +1299,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
     },
     {
       "name": "西垣 雅矢",
-      "count": 18
+      "count": 19
     },
     {
       "name": "西野 勇士",
@@ -1303,7 +1311,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
     },
     {
       "name": "赤星 優志",
-      "count": 13
+      "count": 14
     },
     {
       "name": "赤木 晴哉",
@@ -1323,7 +1331,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
     },
     {
       "name": "遠藤 淳志",
-      "count": 11
+      "count": 12
     },
     {
       "name": "金丸 夢斗",
@@ -1375,7 +1383,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
     },
     {
       "name": "高野 脩汰",
-      "count": 13
+      "count": 14
     },
     {
       "name": "髙 太一",
@@ -1391,7 +1399,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
     },
     {
       "name": "髙橋 宏斗",
-      "count": 7
+      "count": 8
     },
     {
       "name": "髙橋 遥人",
@@ -1415,10 +1423,9218 @@ window.PITCH_DASHBOARD_MANIFEST = {
     },
     {
       "name": "齋藤 綱記",
-      "count": 18
+      "count": 19
     }
   ],
   "entries": [
+    {
+      "id": "巨人-2026-05-24-2021038903-竹丸和幸",
+      "team": "巨人",
+      "league": "セ",
+      "date": "2026-05-24",
+      "prefix": "2021038903-竹丸和幸",
+      "gameId": "2021038903",
+      "order": 110100,
+      "title": "竹丸 和幸",
+      "player": "竹丸 和幸",
+      "pitcherId": "2118993",
+      "matchup": "読売ジャイアンツvs阪神タイガース",
+      "dateLabel": "2026年5月24日",
+      "pages": [],
+      "statline": {
+        "era": "2.91",
+        "innings": "6",
+        "pitches": "99",
+        "batters": "26",
+        "hits": "8",
+        "hr": "2",
+        "k": "5",
+        "bb": "0",
+        "hbp": "0",
+        "balk": "0",
+        "er": "4",
+        "runs": "4"
+      },
+      "detailPath": "../generated/巨人/2026-05-24/2021038903-竹丸和幸-dashboard-detail.json",
+      "dashboard": {
+        "pitchMix": [
+          {
+            "pitchType": "ストレート",
+            "count": 51,
+            "ratio": 51.5,
+            "avgSpeed": "146.7",
+            "maxSpeed": "150.0",
+            "speedTotal": 7483.0,
+            "speedCount": 51,
+            "whiffCount": 3,
+            "whiff": 5.9,
+            "atBats": 11,
+            "singles": 2,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 1,
+            "grounders": 4,
+            "flyBalls": 2,
+            "strikeouts": 2,
+            "hitRate": 0.273,
+            "color": "#0F2340",
+            "swingCount": 21,
+            "calledStrikeCount": 9,
+            "locatedCount": 51,
+            "zoneCount": 25,
+            "outZoneCount": 26,
+            "zoneSwingCount": 18,
+            "outZoneSwingCount": 3,
+            "outZoneContactCount": 3,
+            "whiffRate": 14.3,
+            "csw": 23.5,
+            "zoneRate": 49.0,
+            "zSwing": 72.0,
+            "oContact": 100.0,
+            "chase": 11.5,
+            "chasePlus": 35.0,
+            "locationScore": 98.0,
+            "stuffScore": 93.0
+          },
+          {
+            "pitchType": "スライダー",
+            "count": 24,
+            "ratio": 24.2,
+            "avgSpeed": "128.2",
+            "maxSpeed": "134.0",
+            "speedTotal": 2821.0,
+            "speedCount": 22,
+            "whiffCount": 2,
+            "whiff": 8.3,
+            "atBats": 6,
+            "singles": 1,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 0,
+            "flyBalls": 3,
+            "strikeouts": 2,
+            "hitRate": 0.167,
+            "color": "#355C8C",
+            "swingCount": 10,
+            "calledStrikeCount": 7,
+            "locatedCount": 24,
+            "zoneCount": 12,
+            "outZoneCount": 12,
+            "zoneSwingCount": 5,
+            "outZoneSwingCount": 5,
+            "outZoneContactCount": 3,
+            "whiffRate": 20.0,
+            "csw": 37.5,
+            "zoneRate": 50.0,
+            "zSwing": 41.7,
+            "oContact": 60.0,
+            "chase": 41.7,
+            "chasePlus": 128.0,
+            "locationScore": 102.0,
+            "stuffScore": 99.0
+          },
+          {
+            "pitchType": "チェンジアップ",
+            "count": 16,
+            "ratio": 16.2,
+            "avgSpeed": "124.8",
+            "maxSpeed": "128.0",
+            "speedTotal": 1997.0,
+            "speedCount": 16,
+            "whiffCount": 3,
+            "whiff": 18.8,
+            "atBats": 7,
+            "singles": 2,
+            "doubles": 1,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 1,
+            "flyBalls": 2,
+            "strikeouts": 1,
+            "hitRate": 0.429,
+            "color": "#6A89B4",
+            "swingCount": 13,
+            "calledStrikeCount": 2,
+            "locatedCount": 16,
+            "zoneCount": 8,
+            "outZoneCount": 8,
+            "zoneSwingCount": 7,
+            "outZoneSwingCount": 6,
+            "outZoneContactCount": 3,
+            "whiffRate": 23.1,
+            "csw": 31.2,
+            "zoneRate": 50.0,
+            "zSwing": 87.5,
+            "oContact": 50.0,
+            "chase": 75.0,
+            "chasePlus": 230.0,
+            "locationScore": 100.0,
+            "stuffScore": 100.0
+          },
+          {
+            "pitchType": "カットボール",
+            "count": 7,
+            "ratio": 7.1,
+            "avgSpeed": "133.0",
+            "maxSpeed": "135.0",
+            "speedTotal": 931.0,
+            "speedCount": 7,
+            "whiffCount": 0,
+            "whiff": 0.0,
+            "atBats": 1,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 1,
+            "grounders": 0,
+            "flyBalls": 0,
+            "strikeouts": 0,
+            "hitRate": 1.0,
+            "color": "#C8A55A",
+            "swingCount": 2,
+            "calledStrikeCount": 3,
+            "locatedCount": 7,
+            "zoneCount": 5,
+            "outZoneCount": 2,
+            "zoneSwingCount": 2,
+            "outZoneSwingCount": 0,
+            "outZoneContactCount": 0,
+            "whiffRate": 0.0,
+            "csw": 42.9,
+            "zoneRate": 71.4,
+            "zSwing": 40.0,
+            "oContact": null,
+            "chase": 0.0,
+            "chasePlus": 0.0,
+            "locationScore": 99.0,
+            "stuffScore": 99.0
+          },
+          {
+            "pitchType": "カーブ",
+            "count": 1,
+            "ratio": 1.0,
+            "avgSpeed": "111.0",
+            "maxSpeed": "111.0",
+            "speedTotal": 111.0,
+            "speedCount": 1,
+            "whiffCount": 0,
+            "whiff": 0.0,
+            "atBats": 0,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 0,
+            "flyBalls": 0,
+            "strikeouts": 0,
+            "hitRate": null,
+            "color": "#D6C192",
+            "swingCount": 1,
+            "calledStrikeCount": 0,
+            "locatedCount": 1,
+            "zoneCount": 1,
+            "outZoneCount": 0,
+            "zoneSwingCount": 1,
+            "outZoneSwingCount": 0,
+            "outZoneContactCount": 0,
+            "whiffRate": 0.0,
+            "csw": 0.0,
+            "zoneRate": 100.0,
+            "zSwing": 100.0,
+            "oContact": null,
+            "chase": null,
+            "chasePlus": null,
+            "locationScore": 100.0,
+            "stuffScore": 98.0
+          }
+        ]
+      }
+    },
+    {
+      "id": "巨人-2026-05-24-2021038903-田和廉",
+      "team": "巨人",
+      "league": "セ",
+      "date": "2026-05-24",
+      "prefix": "2021038903-田和廉",
+      "gameId": "2021038903",
+      "order": 710100,
+      "title": "田和 廉",
+      "player": "田和 廉",
+      "pitcherId": "2118291",
+      "matchup": "読売ジャイアンツvs阪神タイガース",
+      "dateLabel": "2026年5月24日",
+      "pages": [],
+      "statline": {
+        "era": "1.59",
+        "innings": "1",
+        "pitches": "22",
+        "batters": "7",
+        "hits": "3",
+        "hr": "0",
+        "k": "1",
+        "bb": "1",
+        "hbp": "0",
+        "balk": "0",
+        "er": "2",
+        "runs": "2"
+      },
+      "detailPath": "../generated/巨人/2026-05-24/2021038903-田和廉-dashboard-detail.json",
+      "dashboard": {
+        "pitchMix": [
+          {
+            "pitchType": "ストレート",
+            "count": 12,
+            "ratio": 54.5,
+            "avgSpeed": "147.3",
+            "maxSpeed": "150.0",
+            "speedTotal": 1768.0,
+            "speedCount": 12,
+            "whiffCount": 1,
+            "whiff": 8.3,
+            "atBats": 4,
+            "singles": 1,
+            "doubles": 1,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 1,
+            "flyBalls": 0,
+            "strikeouts": 1,
+            "hitRate": 0.5,
+            "color": "#0F2340",
+            "swingCount": 5,
+            "calledStrikeCount": 4,
+            "locatedCount": 12,
+            "zoneCount": 7,
+            "outZoneCount": 5,
+            "zoneSwingCount": 3,
+            "outZoneSwingCount": 2,
+            "outZoneContactCount": 1,
+            "whiffRate": 20.0,
+            "csw": 41.7,
+            "zoneRate": 58.3,
+            "zSwing": 42.9,
+            "oContact": 50.0,
+            "chase": 40.0,
+            "chasePlus": 123.0,
+            "locationScore": 100.0,
+            "stuffScore": 104.0
+          },
+          {
+            "pitchType": "カットボール",
+            "count": 7,
+            "ratio": 31.8,
+            "avgSpeed": "139.3",
+            "maxSpeed": "142.0",
+            "speedTotal": 975.0,
+            "speedCount": 7,
+            "whiffCount": 1,
+            "whiff": 14.3,
+            "atBats": 1,
+            "singles": 1,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 0,
+            "flyBalls": 0,
+            "strikeouts": 0,
+            "hitRate": 1.0,
+            "color": "#355C8C",
+            "swingCount": 4,
+            "calledStrikeCount": 0,
+            "locatedCount": 7,
+            "zoneCount": 2,
+            "outZoneCount": 5,
+            "zoneSwingCount": 2,
+            "outZoneSwingCount": 2,
+            "outZoneContactCount": 1,
+            "whiffRate": 25.0,
+            "csw": 14.3,
+            "zoneRate": 28.6,
+            "zSwing": 100.0,
+            "oContact": 50.0,
+            "chase": 40.0,
+            "chasePlus": 123.0,
+            "locationScore": 99.0,
+            "stuffScore": 99.0
+          },
+          {
+            "pitchType": "シンカー",
+            "count": 3,
+            "ratio": 13.6,
+            "avgSpeed": "119.7",
+            "maxSpeed": "122.0",
+            "speedTotal": 359.0,
+            "speedCount": 3,
+            "whiffCount": 0,
+            "whiff": 0.0,
+            "atBats": 1,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 1,
+            "flyBalls": 0,
+            "strikeouts": 0,
+            "hitRate": 0.0,
+            "color": "#6A89B4",
+            "swingCount": 1,
+            "calledStrikeCount": 1,
+            "locatedCount": 3,
+            "zoneCount": 2,
+            "outZoneCount": 1,
+            "zoneSwingCount": 1,
+            "outZoneSwingCount": 0,
+            "outZoneContactCount": 0,
+            "whiffRate": 0.0,
+            "csw": 33.3,
+            "zoneRate": 66.7,
+            "zSwing": 50.0,
+            "oContact": null,
+            "chase": 0.0,
+            "chasePlus": 0.0,
+            "locationScore": 100.0,
+            "stuffScore": 99.0
+          }
+        ]
+      }
+    },
+    {
+      "id": "巨人-2026-05-24-2021038903-赤星優志",
+      "team": "巨人",
+      "league": "セ",
+      "date": "2026-05-24",
+      "prefix": "2021038903-赤星優志",
+      "gameId": "2021038903",
+      "order": 810100,
+      "title": "赤星 優志",
+      "player": "赤星 優志",
+      "pitcherId": "2103689",
+      "matchup": "読売ジャイアンツvs阪神タイガース",
+      "dateLabel": "2026年5月24日",
+      "pages": [],
+      "statline": {
+        "era": "1.31",
+        "innings": "1",
+        "pitches": "15",
+        "batters": "3",
+        "hits": "0",
+        "hr": "0",
+        "k": "0",
+        "bb": "0",
+        "hbp": "0",
+        "balk": "0",
+        "er": "0",
+        "runs": "0"
+      },
+      "detailPath": "../generated/巨人/2026-05-24/2021038903-赤星優志-dashboard-detail.json",
+      "dashboard": {
+        "pitchMix": [
+          {
+            "pitchType": "ストレート",
+            "count": 8,
+            "ratio": 53.3,
+            "avgSpeed": "146.1",
+            "maxSpeed": "148.0",
+            "speedTotal": 1169.0,
+            "speedCount": 8,
+            "whiffCount": 0,
+            "whiff": 0.0,
+            "atBats": 1,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 0,
+            "flyBalls": 1,
+            "strikeouts": 0,
+            "hitRate": 0.0,
+            "color": "#0F2340",
+            "swingCount": 4,
+            "calledStrikeCount": 1,
+            "locatedCount": 8,
+            "zoneCount": 5,
+            "outZoneCount": 3,
+            "zoneSwingCount": 4,
+            "outZoneSwingCount": 0,
+            "outZoneContactCount": 0,
+            "whiffRate": 0.0,
+            "csw": 12.5,
+            "zoneRate": 62.5,
+            "zSwing": 80.0,
+            "oContact": null,
+            "chase": 0.0,
+            "chasePlus": 0.0,
+            "locationScore": 99.0,
+            "stuffScore": 94.0
+          },
+          {
+            "pitchType": "カーブ",
+            "count": 3,
+            "ratio": 20.0,
+            "avgSpeed": "122.3",
+            "maxSpeed": "123.0",
+            "speedTotal": 367.0,
+            "speedCount": 3,
+            "whiffCount": 1,
+            "whiff": 33.3,
+            "atBats": 0,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 0,
+            "flyBalls": 0,
+            "strikeouts": 0,
+            "hitRate": null,
+            "color": "#355C8C",
+            "swingCount": 3,
+            "calledStrikeCount": 0,
+            "locatedCount": 3,
+            "zoneCount": 1,
+            "outZoneCount": 2,
+            "zoneSwingCount": 1,
+            "outZoneSwingCount": 2,
+            "outZoneContactCount": 1,
+            "whiffRate": 33.3,
+            "csw": 33.3,
+            "zoneRate": 33.3,
+            "zSwing": 100.0,
+            "oContact": 50.0,
+            "chase": 100.0,
+            "chasePlus": 307.0,
+            "locationScore": 101.0,
+            "stuffScore": 103.0
+          },
+          {
+            "pitchType": "フォーク",
+            "count": 3,
+            "ratio": 20.0,
+            "avgSpeed": "136.7",
+            "maxSpeed": "138.0",
+            "speedTotal": 410.0,
+            "speedCount": 3,
+            "whiffCount": 0,
+            "whiff": 0.0,
+            "atBats": 1,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 1,
+            "flyBalls": 0,
+            "strikeouts": 0,
+            "hitRate": 0.0,
+            "color": "#6A89B4",
+            "swingCount": 2,
+            "calledStrikeCount": 0,
+            "locatedCount": 3,
+            "zoneCount": 1,
+            "outZoneCount": 2,
+            "zoneSwingCount": 1,
+            "outZoneSwingCount": 1,
+            "outZoneContactCount": 1,
+            "whiffRate": 0.0,
+            "csw": 0.0,
+            "zoneRate": 33.3,
+            "zSwing": 100.0,
+            "oContact": 100.0,
+            "chase": 50.0,
+            "chasePlus": 153.0,
+            "locationScore": 100.0,
+            "stuffScore": 97.0
+          },
+          {
+            "pitchType": "カットボール",
+            "count": 1,
+            "ratio": 6.7,
+            "avgSpeed": "134.0",
+            "maxSpeed": "134.0",
+            "speedTotal": 134.0,
+            "speedCount": 1,
+            "whiffCount": 0,
+            "whiff": 0.0,
+            "atBats": 1,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 0,
+            "flyBalls": 1,
+            "strikeouts": 0,
+            "hitRate": 0.0,
+            "color": "#C8A55A",
+            "swingCount": 1,
+            "calledStrikeCount": 0,
+            "locatedCount": 1,
+            "zoneCount": 1,
+            "outZoneCount": 0,
+            "zoneSwingCount": 1,
+            "outZoneSwingCount": 0,
+            "outZoneContactCount": 0,
+            "whiffRate": 0.0,
+            "csw": 0.0,
+            "zoneRate": 100.0,
+            "zSwing": 100.0,
+            "oContact": null,
+            "chase": null,
+            "chasePlus": null,
+            "locationScore": 101.0,
+            "stuffScore": 98.0
+          }
+        ]
+      }
+    },
+    {
+      "id": "巨人-2026-05-24-2021038903-堀田賢慎",
+      "team": "巨人",
+      "league": "セ",
+      "date": "2026-05-24",
+      "prefix": "2021038903-堀田賢慎",
+      "gameId": "2021038903",
+      "order": 910100,
+      "title": "堀田 賢慎",
+      "player": "堀田 賢慎",
+      "pitcherId": "1900016",
+      "matchup": "読売ジャイアンツvs阪神タイガース",
+      "dateLabel": "2026年5月24日",
+      "pages": [],
+      "statline": {
+        "era": "0.00",
+        "innings": "1",
+        "pitches": "24",
+        "batters": "5",
+        "hits": "1",
+        "hr": "0",
+        "k": "1",
+        "bb": "1",
+        "hbp": "0",
+        "balk": "0",
+        "er": "0",
+        "runs": "0"
+      },
+      "detailPath": "../generated/巨人/2026-05-24/2021038903-堀田賢慎-dashboard-detail.json",
+      "dashboard": {
+        "pitchMix": [
+          {
+            "pitchType": "チェンジアップ",
+            "count": 9,
+            "ratio": 37.5,
+            "avgSpeed": "137.4",
+            "maxSpeed": "139.0",
+            "speedTotal": 1237.0,
+            "speedCount": 9,
+            "whiffCount": 1,
+            "whiff": 11.1,
+            "atBats": 1,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 1,
+            "flyBalls": 0,
+            "strikeouts": 0,
+            "hitRate": 0.0,
+            "color": "#0F2340",
+            "swingCount": 5,
+            "calledStrikeCount": 1,
+            "locatedCount": 9,
+            "zoneCount": 3,
+            "outZoneCount": 6,
+            "zoneSwingCount": 2,
+            "outZoneSwingCount": 3,
+            "outZoneContactCount": 2,
+            "whiffRate": 20.0,
+            "csw": 22.2,
+            "zoneRate": 33.3,
+            "zSwing": 66.7,
+            "oContact": 66.7,
+            "chase": 50.0,
+            "chasePlus": 153.0,
+            "locationScore": 100.0,
+            "stuffScore": 98.0
+          },
+          {
+            "pitchType": "ストレート",
+            "count": 9,
+            "ratio": 37.5,
+            "avgSpeed": "147.9",
+            "maxSpeed": "150.0",
+            "speedTotal": 1331.0,
+            "speedCount": 9,
+            "whiffCount": 0,
+            "whiff": 0.0,
+            "atBats": 2,
+            "singles": 0,
+            "doubles": 1,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 1,
+            "flyBalls": 0,
+            "strikeouts": 0,
+            "hitRate": 0.5,
+            "color": "#355C8C",
+            "swingCount": 3,
+            "calledStrikeCount": 2,
+            "locatedCount": 9,
+            "zoneCount": 3,
+            "outZoneCount": 6,
+            "zoneSwingCount": 2,
+            "outZoneSwingCount": 1,
+            "outZoneContactCount": 1,
+            "whiffRate": 0.0,
+            "csw": 22.2,
+            "zoneRate": 33.3,
+            "zSwing": 66.7,
+            "oContact": 100.0,
+            "chase": 16.7,
+            "chasePlus": 51.0,
+            "locationScore": 99.0,
+            "stuffScore": 96.0
+          },
+          {
+            "pitchType": "カーブ",
+            "count": 2,
+            "ratio": 8.3,
+            "avgSpeed": "122.0",
+            "maxSpeed": "123.0",
+            "speedTotal": 244.0,
+            "speedCount": 2,
+            "whiffCount": 0,
+            "whiff": 0.0,
+            "atBats": 0,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 0,
+            "flyBalls": 0,
+            "strikeouts": 0,
+            "hitRate": null,
+            "color": "#6A89B4",
+            "swingCount": 0,
+            "calledStrikeCount": 1,
+            "locatedCount": 2,
+            "zoneCount": 1,
+            "outZoneCount": 1,
+            "zoneSwingCount": 0,
+            "outZoneSwingCount": 0,
+            "outZoneContactCount": 0,
+            "whiffRate": null,
+            "csw": 50.0,
+            "zoneRate": 50.0,
+            "zSwing": 0.0,
+            "oContact": null,
+            "chase": 0.0,
+            "chasePlus": 0.0,
+            "locationScore": 101.0,
+            "stuffScore": 100.0
+          },
+          {
+            "pitchType": "スプリット",
+            "count": 2,
+            "ratio": 8.3,
+            "avgSpeed": "132.5",
+            "maxSpeed": "134.0",
+            "speedTotal": 265.0,
+            "speedCount": 2,
+            "whiffCount": 1,
+            "whiff": 50.0,
+            "atBats": 1,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 0,
+            "flyBalls": 0,
+            "strikeouts": 1,
+            "hitRate": 0.0,
+            "color": "#C8A55A",
+            "swingCount": 1,
+            "calledStrikeCount": 0,
+            "locatedCount": 2,
+            "zoneCount": 0,
+            "outZoneCount": 2,
+            "zoneSwingCount": 0,
+            "outZoneSwingCount": 1,
+            "outZoneContactCount": 0,
+            "whiffRate": 100.0,
+            "csw": 50.0,
+            "zoneRate": 0.0,
+            "zSwing": null,
+            "oContact": 0.0,
+            "chase": 50.0,
+            "chasePlus": 153.0,
+            "locationScore": 100.0,
+            "stuffScore": 102.0
+          },
+          {
+            "pitchType": "カットボール",
+            "count": 2,
+            "ratio": 8.3,
+            "avgSpeed": "133.0",
+            "maxSpeed": "134.0",
+            "speedTotal": 266.0,
+            "speedCount": 2,
+            "whiffCount": 0,
+            "whiff": 0.0,
+            "atBats": 0,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 0,
+            "flyBalls": 0,
+            "strikeouts": 0,
+            "hitRate": null,
+            "color": "#D6C192",
+            "swingCount": 1,
+            "calledStrikeCount": 1,
+            "locatedCount": 2,
+            "zoneCount": 2,
+            "outZoneCount": 0,
+            "zoneSwingCount": 1,
+            "outZoneSwingCount": 0,
+            "outZoneContactCount": 0,
+            "whiffRate": 0.0,
+            "csw": 50.0,
+            "zoneRate": 100.0,
+            "zSwing": 50.0,
+            "oContact": null,
+            "chase": null,
+            "chasePlus": null,
+            "locationScore": 101.0,
+            "stuffScore": 100.0
+          }
+        ]
+      }
+    },
+    {
+      "id": "阪神-2026-05-24-2021038903-才木浩人",
+      "team": "阪神",
+      "league": "セ",
+      "date": "2026-05-24",
+      "prefix": "2021038903-才木浩人",
+      "gameId": "2021038903",
+      "order": 120100,
+      "title": "才木 浩人",
+      "player": "才木 浩人",
+      "pitcherId": "1600115",
+      "matchup": "読売ジャイアンツvs阪神タイガース",
+      "dateLabel": "2026年5月24日",
+      "pages": [],
+      "statline": {
+        "era": "3.15",
+        "innings": "6.1",
+        "pitches": "100",
+        "batters": "25",
+        "hits": "6",
+        "hr": "1",
+        "k": "6",
+        "bb": "1",
+        "hbp": "0",
+        "balk": "0",
+        "er": "3",
+        "runs": "3"
+      },
+      "detailPath": "../generated/阪神/2026-05-24/2021038903-才木浩人-dashboard-detail.json",
+      "dashboard": {
+        "pitchMix": [
+          {
+            "pitchType": "ストレート",
+            "count": 48,
+            "ratio": 48.0,
+            "avgSpeed": "151.6",
+            "maxSpeed": "155.0",
+            "speedTotal": 7275.0,
+            "speedCount": 48,
+            "whiffCount": 7,
+            "whiff": 14.6,
+            "atBats": 14,
+            "singles": 2,
+            "doubles": 2,
+            "triples": 0,
+            "homeRuns": 1,
+            "grounders": 3,
+            "flyBalls": 6,
+            "strikeouts": 1,
+            "hitRate": 0.357,
+            "color": "#0F2340",
+            "swingCount": 31,
+            "calledStrikeCount": 7,
+            "locatedCount": 48,
+            "zoneCount": 29,
+            "outZoneCount": 19,
+            "zoneSwingCount": 23,
+            "outZoneSwingCount": 8,
+            "outZoneContactCount": 5,
+            "whiffRate": 22.6,
+            "csw": 29.2,
+            "zoneRate": 60.4,
+            "zSwing": 79.3,
+            "oContact": 62.5,
+            "chase": 42.1,
+            "chasePlus": 129.0,
+            "locationScore": 102.0,
+            "stuffScore": 109.0
+          },
+          {
+            "pitchType": "フォーク",
+            "count": 24,
+            "ratio": 24.0,
+            "avgSpeed": "134.4",
+            "maxSpeed": "136.0",
+            "speedTotal": 3225.0,
+            "speedCount": 24,
+            "whiffCount": 9,
+            "whiff": 37.5,
+            "atBats": 6,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 1,
+            "flyBalls": 0,
+            "strikeouts": 5,
+            "hitRate": 0.0,
+            "color": "#355C8C",
+            "swingCount": 11,
+            "calledStrikeCount": 0,
+            "locatedCount": 24,
+            "zoneCount": 2,
+            "outZoneCount": 22,
+            "zoneSwingCount": 2,
+            "outZoneSwingCount": 9,
+            "outZoneContactCount": 1,
+            "whiffRate": 81.8,
+            "csw": 37.5,
+            "zoneRate": 8.3,
+            "zSwing": 100.0,
+            "oContact": 11.1,
+            "chase": 40.9,
+            "chasePlus": 125.0,
+            "locationScore": 100.0,
+            "stuffScore": 112.0
+          },
+          {
+            "pitchType": "スライダー",
+            "count": 16,
+            "ratio": 16.0,
+            "avgSpeed": "131.3",
+            "maxSpeed": "138.0",
+            "speedTotal": 2101.0,
+            "speedCount": 16,
+            "whiffCount": 0,
+            "whiff": 0.0,
+            "atBats": 1,
+            "singles": 0,
+            "doubles": 1,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 0,
+            "flyBalls": 0,
+            "strikeouts": 0,
+            "hitRate": 1.0,
+            "color": "#6A89B4",
+            "swingCount": 3,
+            "calledStrikeCount": 6,
+            "locatedCount": 16,
+            "zoneCount": 8,
+            "outZoneCount": 8,
+            "zoneSwingCount": 3,
+            "outZoneSwingCount": 0,
+            "outZoneContactCount": 0,
+            "whiffRate": 0.0,
+            "csw": 37.5,
+            "zoneRate": 50.0,
+            "zSwing": 37.5,
+            "oContact": null,
+            "chase": 0.0,
+            "chasePlus": 0.0,
+            "locationScore": 99.0,
+            "stuffScore": 96.0
+          },
+          {
+            "pitchType": "カーブ",
+            "count": 12,
+            "ratio": 12.0,
+            "avgSpeed": "116.0",
+            "maxSpeed": "119.0",
+            "speedTotal": 1392.0,
+            "speedCount": 12,
+            "whiffCount": 1,
+            "whiff": 8.3,
+            "atBats": 2,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 1,
+            "flyBalls": 1,
+            "strikeouts": 0,
+            "hitRate": 0.0,
+            "color": "#C8A55A",
+            "swingCount": 5,
+            "calledStrikeCount": 0,
+            "locatedCount": 12,
+            "zoneCount": 5,
+            "outZoneCount": 7,
+            "zoneSwingCount": 5,
+            "outZoneSwingCount": 0,
+            "outZoneContactCount": 0,
+            "whiffRate": 20.0,
+            "csw": 8.3,
+            "zoneRate": 41.7,
+            "zSwing": 100.0,
+            "oContact": null,
+            "chase": 0.0,
+            "chasePlus": 0.0,
+            "locationScore": 99.0,
+            "stuffScore": 94.0
+          }
+        ]
+      }
+    },
+    {
+      "id": "阪神-2026-05-24-2021038903-及川雅貴",
+      "team": "阪神",
+      "league": "セ",
+      "date": "2026-05-24",
+      "prefix": "2021038903-及川雅貴",
+      "gameId": "2021038903",
+      "order": 720400,
+      "title": "及川 雅貴",
+      "player": "及川 雅貴",
+      "pitcherId": "1900046",
+      "matchup": "読売ジャイアンツvs阪神タイガース",
+      "dateLabel": "2026年5月24日",
+      "pages": [],
+      "statline": {
+        "era": "3.00",
+        "innings": "0.2",
+        "pitches": "5",
+        "batters": "2",
+        "hits": "0",
+        "hr": "0",
+        "k": "1",
+        "bb": "0",
+        "hbp": "0",
+        "balk": "0",
+        "er": "0",
+        "runs": "0"
+      },
+      "detailPath": "../generated/阪神/2026-05-24/2021038903-及川雅貴-dashboard-detail.json",
+      "dashboard": {
+        "pitchMix": [
+          {
+            "pitchType": "ストレート",
+            "count": 2,
+            "ratio": 40.0,
+            "avgSpeed": "146.0",
+            "maxSpeed": "147.0",
+            "speedTotal": 292.0,
+            "speedCount": 2,
+            "whiffCount": 0,
+            "whiff": 0.0,
+            "atBats": 1,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 0,
+            "flyBalls": 1,
+            "strikeouts": 0,
+            "hitRate": 0.0,
+            "color": "#0F2340",
+            "swingCount": 1,
+            "calledStrikeCount": 1,
+            "locatedCount": 2,
+            "zoneCount": 2,
+            "outZoneCount": 0,
+            "zoneSwingCount": 1,
+            "outZoneSwingCount": 0,
+            "outZoneContactCount": 0,
+            "whiffRate": 0.0,
+            "csw": 50.0,
+            "zoneRate": 100.0,
+            "zSwing": 50.0,
+            "oContact": null,
+            "chase": null,
+            "chasePlus": null,
+            "locationScore": 103.0,
+            "stuffScore": 100.0
+          },
+          {
+            "pitchType": "スライダー",
+            "count": 2,
+            "ratio": 40.0,
+            "avgSpeed": "129.5",
+            "maxSpeed": "130.0",
+            "speedTotal": 259.0,
+            "speedCount": 2,
+            "whiffCount": 1,
+            "whiff": 50.0,
+            "atBats": 1,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 0,
+            "flyBalls": 0,
+            "strikeouts": 1,
+            "hitRate": 0.0,
+            "color": "#355C8C",
+            "swingCount": 1,
+            "calledStrikeCount": 1,
+            "locatedCount": 2,
+            "zoneCount": 1,
+            "outZoneCount": 1,
+            "zoneSwingCount": 0,
+            "outZoneSwingCount": 1,
+            "outZoneContactCount": 0,
+            "whiffRate": 100.0,
+            "csw": 100.0,
+            "zoneRate": 50.0,
+            "zSwing": 0.0,
+            "oContact": 0.0,
+            "chase": 100.0,
+            "chasePlus": 307.0,
+            "locationScore": 100.0,
+            "stuffScore": 104.0
+          },
+          {
+            "pitchType": "カットボール",
+            "count": 1,
+            "ratio": 20.0,
+            "avgSpeed": "141.0",
+            "maxSpeed": "141.0",
+            "speedTotal": 141.0,
+            "speedCount": 1,
+            "whiffCount": 0,
+            "whiff": 0.0,
+            "atBats": 0,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 0,
+            "flyBalls": 0,
+            "strikeouts": 0,
+            "hitRate": null,
+            "color": "#6A89B4",
+            "swingCount": 0,
+            "calledStrikeCount": 0,
+            "locatedCount": 1,
+            "zoneCount": 0,
+            "outZoneCount": 1,
+            "zoneSwingCount": 0,
+            "outZoneSwingCount": 0,
+            "outZoneContactCount": 0,
+            "whiffRate": null,
+            "csw": 0.0,
+            "zoneRate": 0.0,
+            "zSwing": null,
+            "oContact": null,
+            "chase": 0.0,
+            "chasePlus": 0.0,
+            "locationScore": 100.0,
+            "stuffScore": 99.0
+          }
+        ]
+      }
+    },
+    {
+      "id": "阪神-2026-05-24-2021038903-ドリス",
+      "team": "阪神",
+      "league": "セ",
+      "date": "2026-05-24",
+      "prefix": "2021038903-ドリス",
+      "gameId": "2021038903",
+      "order": 820100,
+      "title": "ドリス",
+      "player": "ドリス",
+      "pitcherId": "1600033",
+      "matchup": "読売ジャイアンツvs阪神タイガース",
+      "dateLabel": "2026年5月24日",
+      "pages": [],
+      "statline": {
+        "era": "0.98",
+        "innings": "1",
+        "pitches": "8",
+        "batters": "3",
+        "hits": "0",
+        "hr": "0",
+        "k": "1",
+        "bb": "0",
+        "hbp": "0",
+        "balk": "0",
+        "er": "0",
+        "runs": "0"
+      },
+      "detailPath": "../generated/阪神/2026-05-24/2021038903-ドリス-dashboard-detail.json",
+      "dashboard": {
+        "pitchMix": [
+          {
+            "pitchType": "ツーシーム",
+            "count": 5,
+            "ratio": 62.5,
+            "avgSpeed": "150.4",
+            "maxSpeed": "152.0",
+            "speedTotal": 752.0,
+            "speedCount": 5,
+            "whiffCount": 0,
+            "whiff": 0.0,
+            "atBats": 2,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 2,
+            "flyBalls": 0,
+            "strikeouts": 0,
+            "hitRate": 0.0,
+            "color": "#0F2340",
+            "swingCount": 2,
+            "calledStrikeCount": 2,
+            "locatedCount": 5,
+            "zoneCount": 4,
+            "outZoneCount": 1,
+            "zoneSwingCount": 2,
+            "outZoneSwingCount": 0,
+            "outZoneContactCount": 0,
+            "whiffRate": 0.0,
+            "csw": 40.0,
+            "zoneRate": 80.0,
+            "zSwing": 50.0,
+            "oContact": null,
+            "chase": 0.0,
+            "chasePlus": 0.0,
+            "locationScore": 101.0,
+            "stuffScore": 100.0
+          },
+          {
+            "pitchType": "スプリット",
+            "count": 3,
+            "ratio": 37.5,
+            "avgSpeed": "141.3",
+            "maxSpeed": "142.0",
+            "speedTotal": 424.0,
+            "speedCount": 3,
+            "whiffCount": 1,
+            "whiff": 33.3,
+            "atBats": 1,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 0,
+            "flyBalls": 0,
+            "strikeouts": 1,
+            "hitRate": 0.0,
+            "color": "#355C8C",
+            "swingCount": 1,
+            "calledStrikeCount": 1,
+            "locatedCount": 3,
+            "zoneCount": 2,
+            "outZoneCount": 1,
+            "zoneSwingCount": 1,
+            "outZoneSwingCount": 0,
+            "outZoneContactCount": 0,
+            "whiffRate": 100.0,
+            "csw": 66.7,
+            "zoneRate": 66.7,
+            "zSwing": 50.0,
+            "oContact": null,
+            "chase": 0.0,
+            "chasePlus": 0.0,
+            "locationScore": 102.0,
+            "stuffScore": 103.0
+          }
+        ]
+      }
+    },
+    {
+      "id": "阪神-2026-05-24-2021038903-岩崎優",
+      "team": "阪神",
+      "league": "セ",
+      "date": "2026-05-24",
+      "prefix": "2021038903-岩崎優",
+      "gameId": "2021038903",
+      "order": 920100,
+      "title": "岩崎 優",
+      "player": "岩崎 優",
+      "pitcherId": "1300075",
+      "matchup": "読売ジャイアンツvs阪神タイガース",
+      "dateLabel": "2026年5月24日",
+      "pages": [],
+      "statline": {
+        "era": "1.29",
+        "innings": "1",
+        "pitches": "20",
+        "batters": "3",
+        "hits": "0",
+        "hr": "0",
+        "k": "2",
+        "bb": "0",
+        "hbp": "0",
+        "balk": "0",
+        "er": "0",
+        "runs": "0"
+      },
+      "detailPath": "../generated/阪神/2026-05-24/2021038903-岩崎優-dashboard-detail.json",
+      "dashboard": {
+        "pitchMix": [
+          {
+            "pitchType": "ストレート",
+            "count": 9,
+            "ratio": 45.0,
+            "avgSpeed": "141.5",
+            "maxSpeed": "145.0",
+            "speedTotal": 1132.0,
+            "speedCount": 8,
+            "whiffCount": 1,
+            "whiff": 11.1,
+            "atBats": 1,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 0,
+            "flyBalls": 0,
+            "strikeouts": 1,
+            "hitRate": 0.0,
+            "color": "#0F2340",
+            "swingCount": 6,
+            "calledStrikeCount": 0,
+            "locatedCount": 9,
+            "zoneCount": 4,
+            "outZoneCount": 5,
+            "zoneSwingCount": 4,
+            "outZoneSwingCount": 2,
+            "outZoneContactCount": 1,
+            "whiffRate": 16.7,
+            "csw": 11.1,
+            "zoneRate": 44.4,
+            "zSwing": 100.0,
+            "oContact": 50.0,
+            "chase": 40.0,
+            "chasePlus": 123.0,
+            "locationScore": 99.0,
+            "stuffScore": 98.0
+          },
+          {
+            "pitchType": "スライダー",
+            "count": 7,
+            "ratio": 35.0,
+            "avgSpeed": "126.0",
+            "maxSpeed": "132.0",
+            "speedTotal": 882.0,
+            "speedCount": 7,
+            "whiffCount": 3,
+            "whiff": 42.9,
+            "atBats": 1,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 0,
+            "flyBalls": 0,
+            "strikeouts": 1,
+            "hitRate": 0.0,
+            "color": "#355C8C",
+            "swingCount": 6,
+            "calledStrikeCount": 0,
+            "locatedCount": 7,
+            "zoneCount": 5,
+            "outZoneCount": 2,
+            "zoneSwingCount": 5,
+            "outZoneSwingCount": 1,
+            "outZoneContactCount": 0,
+            "whiffRate": 50.0,
+            "csw": 42.9,
+            "zoneRate": 71.4,
+            "zSwing": 100.0,
+            "oContact": 0.0,
+            "chase": 50.0,
+            "chasePlus": 153.0,
+            "locationScore": 101.0,
+            "stuffScore": 104.0
+          },
+          {
+            "pitchType": "チェンジアップ",
+            "count": 4,
+            "ratio": 20.0,
+            "avgSpeed": "129.0",
+            "maxSpeed": "136.0",
+            "speedTotal": 516.0,
+            "speedCount": 4,
+            "whiffCount": 0,
+            "whiff": 0.0,
+            "atBats": 1,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 0,
+            "flyBalls": 1,
+            "strikeouts": 0,
+            "hitRate": 0.0,
+            "color": "#6A89B4",
+            "swingCount": 2,
+            "calledStrikeCount": 0,
+            "locatedCount": 4,
+            "zoneCount": 2,
+            "outZoneCount": 2,
+            "zoneSwingCount": 2,
+            "outZoneSwingCount": 0,
+            "outZoneContactCount": 0,
+            "whiffRate": 0.0,
+            "csw": 0.0,
+            "zoneRate": 50.0,
+            "zSwing": 100.0,
+            "oContact": null,
+            "chase": 0.0,
+            "chasePlus": 0.0,
+            "locationScore": 101.0,
+            "stuffScore": 96.0
+          }
+        ]
+      }
+    },
+    {
+      "id": "DeNA-2026-05-24-2021038904-石田裕太郎",
+      "team": "DeNA",
+      "league": "セ",
+      "date": "2026-05-24",
+      "prefix": "2021038904-石田裕太郎",
+      "gameId": "2021038904",
+      "order": 110100,
+      "title": "石田 裕太郎",
+      "player": "石田 裕太郎",
+      "pitcherId": "2112182",
+      "matchup": "横浜DeNAベイスターズvs東京ヤクルトスワローズ",
+      "dateLabel": "2026年5月24日",
+      "pages": [],
+      "statline": {
+        "era": "2.14",
+        "innings": "6",
+        "pitches": "88",
+        "batters": "22",
+        "hits": "4",
+        "hr": "0",
+        "k": "6",
+        "bb": "1",
+        "hbp": "0",
+        "balk": "0",
+        "er": "0",
+        "runs": "0"
+      },
+      "detailPath": "../generated/DeNA/2026-05-24/2021038904-石田裕太郎-dashboard-detail.json",
+      "dashboard": {
+        "pitchMix": [
+          {
+            "pitchType": "ストレート",
+            "count": 43,
+            "ratio": 48.9,
+            "avgSpeed": "148.1",
+            "maxSpeed": "151.0",
+            "speedTotal": 6370.0,
+            "speedCount": 43,
+            "whiffCount": 3,
+            "whiff": 7.0,
+            "atBats": 12,
+            "singles": 1,
+            "doubles": 1,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 3,
+            "flyBalls": 4,
+            "strikeouts": 3,
+            "hitRate": 0.167,
+            "color": "#0F2340",
+            "swingCount": 17,
+            "calledStrikeCount": 11,
+            "locatedCount": 43,
+            "zoneCount": 22,
+            "outZoneCount": 21,
+            "zoneSwingCount": 13,
+            "outZoneSwingCount": 4,
+            "outZoneContactCount": 3,
+            "whiffRate": 17.6,
+            "csw": 32.6,
+            "zoneRate": 51.2,
+            "zSwing": 59.1,
+            "oContact": 75.0,
+            "chase": 19.0,
+            "chasePlus": 58.0,
+            "locationScore": 100.0,
+            "stuffScore": 101.0
+          },
+          {
+            "pitchType": "シンカー",
+            "count": 21,
+            "ratio": 23.9,
+            "avgSpeed": "136.2",
+            "maxSpeed": "138.0",
+            "speedTotal": 2861.0,
+            "speedCount": 21,
+            "whiffCount": 4,
+            "whiff": 19.0,
+            "atBats": 7,
+            "singles": 1,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 3,
+            "flyBalls": 0,
+            "strikeouts": 3,
+            "hitRate": 0.143,
+            "color": "#355C8C",
+            "swingCount": 9,
+            "calledStrikeCount": 1,
+            "locatedCount": 21,
+            "zoneCount": 5,
+            "outZoneCount": 16,
+            "zoneSwingCount": 4,
+            "outZoneSwingCount": 5,
+            "outZoneContactCount": 2,
+            "whiffRate": 44.4,
+            "csw": 23.8,
+            "zoneRate": 23.8,
+            "zSwing": 80.0,
+            "oContact": 40.0,
+            "chase": 31.2,
+            "chasePlus": 96.0,
+            "locationScore": 97.0,
+            "stuffScore": 100.0
+          },
+          {
+            "pitchType": "スイーパー",
+            "count": 21,
+            "ratio": 23.9,
+            "avgSpeed": "129.8",
+            "maxSpeed": "134.0",
+            "speedTotal": 2725.0,
+            "speedCount": 21,
+            "whiffCount": 4,
+            "whiff": 19.0,
+            "atBats": 2,
+            "singles": 1,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 1,
+            "flyBalls": 0,
+            "strikeouts": 0,
+            "hitRate": 0.5,
+            "color": "#6A89B4",
+            "swingCount": 11,
+            "calledStrikeCount": 5,
+            "locatedCount": 21,
+            "zoneCount": 9,
+            "outZoneCount": 12,
+            "zoneSwingCount": 5,
+            "outZoneSwingCount": 6,
+            "outZoneContactCount": 3,
+            "whiffRate": 36.4,
+            "csw": 42.9,
+            "zoneRate": 42.9,
+            "zSwing": 55.6,
+            "oContact": 50.0,
+            "chase": 50.0,
+            "chasePlus": 153.0,
+            "locationScore": 100.0,
+            "stuffScore": 108.0
+          },
+          {
+            "pitchType": "カーブ",
+            "count": 3,
+            "ratio": 3.4,
+            "avgSpeed": "108.0",
+            "maxSpeed": "119.0",
+            "speedTotal": 324.0,
+            "speedCount": 3,
+            "whiffCount": 0,
+            "whiff": 0.0,
+            "atBats": 0,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 0,
+            "flyBalls": 0,
+            "strikeouts": 0,
+            "hitRate": null,
+            "color": "#C8A55A",
+            "swingCount": 0,
+            "calledStrikeCount": 1,
+            "locatedCount": 2,
+            "zoneCount": 1,
+            "outZoneCount": 1,
+            "zoneSwingCount": 0,
+            "outZoneSwingCount": 0,
+            "outZoneContactCount": 0,
+            "whiffRate": null,
+            "csw": 33.3,
+            "zoneRate": 50.0,
+            "zSwing": 0.0,
+            "oContact": null,
+            "chase": 0.0,
+            "chasePlus": 0.0,
+            "locationScore": 100.0,
+            "stuffScore": 99.0
+          }
+        ]
+      }
+    },
+    {
+      "id": "DeNA-2026-05-24-2021038904-中川虎大",
+      "team": "DeNA",
+      "league": "セ",
+      "date": "2026-05-24",
+      "prefix": "2021038904-中川虎大",
+      "gameId": "2021038904",
+      "order": 710100,
+      "title": "中川 虎大",
+      "player": "中川 虎大",
+      "pitcherId": "1700067",
+      "matchup": "横浜DeNAベイスターズvs東京ヤクルトスワローズ",
+      "dateLabel": "2026年5月24日",
+      "pages": [],
+      "statline": {
+        "era": "0.53",
+        "innings": "1",
+        "pitches": "15",
+        "batters": "4",
+        "hits": "1",
+        "hr": "0",
+        "k": "2",
+        "bb": "0",
+        "hbp": "0",
+        "balk": "0",
+        "er": "0",
+        "runs": "0"
+      },
+      "detailPath": "../generated/DeNA/2026-05-24/2021038904-中川虎大-dashboard-detail.json",
+      "dashboard": {
+        "pitchMix": [
+          {
+            "pitchType": "フォーク",
+            "count": 8,
+            "ratio": 53.3,
+            "avgSpeed": "138.0",
+            "maxSpeed": "140.0",
+            "speedTotal": 1104.0,
+            "speedCount": 8,
+            "whiffCount": 2,
+            "whiff": 25.0,
+            "atBats": 3,
+            "singles": 1,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 0,
+            "flyBalls": 1,
+            "strikeouts": 1,
+            "hitRate": 0.333,
+            "color": "#0F2340",
+            "swingCount": 7,
+            "calledStrikeCount": 0,
+            "locatedCount": 8,
+            "zoneCount": 5,
+            "outZoneCount": 3,
+            "zoneSwingCount": 5,
+            "outZoneSwingCount": 2,
+            "outZoneContactCount": 1,
+            "whiffRate": 28.6,
+            "csw": 25.0,
+            "zoneRate": 62.5,
+            "zSwing": 100.0,
+            "oContact": 50.0,
+            "chase": 66.7,
+            "chasePlus": 204.0,
+            "locationScore": 101.0,
+            "stuffScore": 99.0
+          },
+          {
+            "pitchType": "ストレート",
+            "count": 7,
+            "ratio": 46.7,
+            "avgSpeed": "150.1",
+            "maxSpeed": "152.0",
+            "speedTotal": 1051.0,
+            "speedCount": 7,
+            "whiffCount": 0,
+            "whiff": 0.0,
+            "atBats": 1,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 0,
+            "flyBalls": 0,
+            "strikeouts": 1,
+            "hitRate": 0.0,
+            "color": "#355C8C",
+            "swingCount": 2,
+            "calledStrikeCount": 4,
+            "locatedCount": 7,
+            "zoneCount": 4,
+            "outZoneCount": 3,
+            "zoneSwingCount": 0,
+            "outZoneSwingCount": 2,
+            "outZoneContactCount": 2,
+            "whiffRate": 0.0,
+            "csw": 57.1,
+            "zoneRate": 57.1,
+            "zSwing": 0.0,
+            "oContact": 100.0,
+            "chase": 66.7,
+            "chasePlus": 204.0,
+            "locationScore": 101.0,
+            "stuffScore": 103.0
+          }
+        ]
+      }
+    },
+    {
+      "id": "DeNA-2026-05-24-2021038904-レイノルズ",
+      "team": "DeNA",
+      "league": "セ",
+      "date": "2026-05-24",
+      "prefix": "2021038904-レイノルズ",
+      "gameId": "2021038904",
+      "order": 810100,
+      "title": "レイノルズ",
+      "player": "レイノルズ",
+      "pitcherId": "2117433",
+      "matchup": "横浜DeNAベイスターズvs東京ヤクルトスワローズ",
+      "dateLabel": "2026年5月24日",
+      "pages": [],
+      "statline": {
+        "era": "2.14",
+        "innings": "1",
+        "pitches": "27",
+        "batters": "4",
+        "hits": "1",
+        "hr": "0",
+        "k": "1",
+        "bb": "0",
+        "hbp": "0",
+        "balk": "0",
+        "er": "0",
+        "runs": "0"
+      },
+      "detailPath": "../generated/DeNA/2026-05-24/2021038904-レイノルズ-dashboard-detail.json",
+      "dashboard": {
+        "pitchMix": [
+          {
+            "pitchType": "カットボール",
+            "count": 14,
+            "ratio": 51.9,
+            "avgSpeed": "139.1",
+            "maxSpeed": "142.0",
+            "speedTotal": 1948.0,
+            "speedCount": 14,
+            "whiffCount": 2,
+            "whiff": 14.3,
+            "atBats": 3,
+            "singles": 0,
+            "doubles": 1,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 1,
+            "flyBalls": 0,
+            "strikeouts": 1,
+            "hitRate": 0.333,
+            "color": "#0F2340",
+            "swingCount": 6,
+            "calledStrikeCount": 6,
+            "locatedCount": 14,
+            "zoneCount": 11,
+            "outZoneCount": 3,
+            "zoneSwingCount": 6,
+            "outZoneSwingCount": 0,
+            "outZoneContactCount": 0,
+            "whiffRate": 33.3,
+            "csw": 57.1,
+            "zoneRate": 78.6,
+            "zSwing": 54.5,
+            "oContact": null,
+            "chase": 0.0,
+            "chasePlus": 0.0,
+            "locationScore": 101.0,
+            "stuffScore": 105.0
+          },
+          {
+            "pitchType": "ストレート",
+            "count": 12,
+            "ratio": 44.4,
+            "avgSpeed": "154.3",
+            "maxSpeed": "158.0",
+            "speedTotal": 1852.0,
+            "speedCount": 12,
+            "whiffCount": 0,
+            "whiff": 0.0,
+            "atBats": 1,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 1,
+            "flyBalls": 0,
+            "strikeouts": 0,
+            "hitRate": 0.0,
+            "color": "#355C8C",
+            "swingCount": 3,
+            "calledStrikeCount": 0,
+            "locatedCount": 12,
+            "zoneCount": 2,
+            "outZoneCount": 10,
+            "zoneSwingCount": 2,
+            "outZoneSwingCount": 1,
+            "outZoneContactCount": 1,
+            "whiffRate": 0.0,
+            "csw": 0.0,
+            "zoneRate": 16.7,
+            "zSwing": 100.0,
+            "oContact": 100.0,
+            "chase": 10.0,
+            "chasePlus": 31.0,
+            "locationScore": 98.0,
+            "stuffScore": 91.0
+          },
+          {
+            "pitchType": "スプリット",
+            "count": 1,
+            "ratio": 3.7,
+            "avgSpeed": "140.0",
+            "maxSpeed": "140.0",
+            "speedTotal": 140.0,
+            "speedCount": 1,
+            "whiffCount": 0,
+            "whiff": 0.0,
+            "atBats": 0,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 0,
+            "flyBalls": 0,
+            "strikeouts": 0,
+            "hitRate": null,
+            "color": "#6A89B4",
+            "swingCount": 0,
+            "calledStrikeCount": 0,
+            "locatedCount": 1,
+            "zoneCount": 0,
+            "outZoneCount": 1,
+            "zoneSwingCount": 0,
+            "outZoneSwingCount": 0,
+            "outZoneContactCount": 0,
+            "whiffRate": null,
+            "csw": 0.0,
+            "zoneRate": 0.0,
+            "zSwing": null,
+            "oContact": null,
+            "chase": 0.0,
+            "chasePlus": 0.0,
+            "locationScore": 99.0,
+            "stuffScore": 99.0
+          }
+        ]
+      }
+    },
+    {
+      "id": "DeNA-2026-05-24-2021038904-山﨑康晃",
+      "team": "DeNA",
+      "league": "セ",
+      "date": "2026-05-24",
+      "prefix": "2021038904-山﨑康晃",
+      "gameId": "2021038904",
+      "order": 910100,
+      "title": "山﨑 康晃",
+      "player": "山﨑 康晃",
+      "pitcherId": "1400109",
+      "matchup": "横浜DeNAベイスターズvs東京ヤクルトスワローズ",
+      "dateLabel": "2026年5月24日",
+      "pages": [],
+      "statline": {
+        "era": "1.76",
+        "innings": "1",
+        "pitches": "11",
+        "batters": "3",
+        "hits": "1",
+        "hr": "0",
+        "k": "1",
+        "bb": "0",
+        "hbp": "0",
+        "balk": "0",
+        "er": "0",
+        "runs": "0"
+      },
+      "detailPath": "../generated/DeNA/2026-05-24/2021038904-山﨑康晃-dashboard-detail.json",
+      "dashboard": {
+        "pitchMix": [
+          {
+            "pitchType": "スプリット",
+            "count": 7,
+            "ratio": 63.6,
+            "avgSpeed": "140.3",
+            "maxSpeed": "142.0",
+            "speedTotal": 982.0,
+            "speedCount": 7,
+            "whiffCount": 2,
+            "whiff": 28.6,
+            "atBats": 1,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 1,
+            "flyBalls": 0,
+            "strikeouts": 0,
+            "hitRate": 0.0,
+            "color": "#0F2340",
+            "swingCount": 5,
+            "calledStrikeCount": 1,
+            "locatedCount": 7,
+            "zoneCount": 4,
+            "outZoneCount": 3,
+            "zoneSwingCount": 3,
+            "outZoneSwingCount": 2,
+            "outZoneContactCount": 0,
+            "whiffRate": 40.0,
+            "csw": 42.9,
+            "zoneRate": 57.1,
+            "zSwing": 75.0,
+            "oContact": 0.0,
+            "chase": 66.7,
+            "chasePlus": 204.0,
+            "locationScore": 101.0,
+            "stuffScore": 103.0
+          },
+          {
+            "pitchType": "ストレート",
+            "count": 3,
+            "ratio": 27.3,
+            "avgSpeed": "150.3",
+            "maxSpeed": "152.0",
+            "speedTotal": 451.0,
+            "speedCount": 3,
+            "whiffCount": 0,
+            "whiff": 0.0,
+            "atBats": 2,
+            "singles": 1,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 0,
+            "flyBalls": 0,
+            "strikeouts": 1,
+            "hitRate": 0.5,
+            "color": "#355C8C",
+            "swingCount": 1,
+            "calledStrikeCount": 1,
+            "locatedCount": 3,
+            "zoneCount": 1,
+            "outZoneCount": 2,
+            "zoneSwingCount": 1,
+            "outZoneSwingCount": 0,
+            "outZoneContactCount": 0,
+            "whiffRate": 0.0,
+            "csw": 33.3,
+            "zoneRate": 33.3,
+            "zSwing": 100.0,
+            "oContact": null,
+            "chase": 0.0,
+            "chasePlus": 0.0,
+            "locationScore": 99.0,
+            "stuffScore": 99.0
+          },
+          {
+            "pitchType": "スライダー",
+            "count": 1,
+            "ratio": 9.1,
+            "avgSpeed": "131.0",
+            "maxSpeed": "131.0",
+            "speedTotal": 131.0,
+            "speedCount": 1,
+            "whiffCount": 0,
+            "whiff": 0.0,
+            "atBats": 0,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 0,
+            "flyBalls": 0,
+            "strikeouts": 0,
+            "hitRate": null,
+            "color": "#6A89B4",
+            "swingCount": 0,
+            "calledStrikeCount": 0,
+            "locatedCount": 1,
+            "zoneCount": 0,
+            "outZoneCount": 1,
+            "zoneSwingCount": 0,
+            "outZoneSwingCount": 0,
+            "outZoneContactCount": 0,
+            "whiffRate": null,
+            "csw": 0.0,
+            "zoneRate": 0.0,
+            "zSwing": null,
+            "oContact": null,
+            "chase": 0.0,
+            "chasePlus": 0.0,
+            "locationScore": 100.0,
+            "stuffScore": 99.0
+          }
+        ]
+      }
+    },
+    {
+      "id": "広島-2026-05-24-2021038905-岡本駿",
+      "team": "広島",
+      "league": "セ",
+      "date": "2026-05-24",
+      "prefix": "2021038905-岡本駿",
+      "gameId": "2021038905",
+      "order": 120100,
+      "title": "岡本 駿",
+      "player": "岡本 駿",
+      "pitcherId": "2114807",
+      "matchup": "中日ドラゴンズvs広島東洋カープ",
+      "dateLabel": "2026年5月24日",
+      "pages": [],
+      "statline": {
+        "era": "2.38",
+        "innings": "5",
+        "pitches": "100",
+        "batters": "22",
+        "hits": "6",
+        "hr": "0",
+        "k": "4",
+        "bb": "3",
+        "hbp": "0",
+        "balk": "0",
+        "er": "3",
+        "runs": "3"
+      },
+      "detailPath": "../generated/広島/2026-05-24/2021038905-岡本駿-dashboard-detail.json",
+      "dashboard": {
+        "pitchMix": [
+          {
+            "pitchType": "ストレート",
+            "count": 34,
+            "ratio": 34.0,
+            "avgSpeed": "146.5",
+            "maxSpeed": "149.0",
+            "speedTotal": 4688.0,
+            "speedCount": 32,
+            "whiffCount": 1,
+            "whiff": 2.9,
+            "atBats": 9,
+            "singles": 2,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 1,
+            "flyBalls": 3,
+            "strikeouts": 3,
+            "hitRate": 0.222,
+            "color": "#0F2340",
+            "swingCount": 20,
+            "calledStrikeCount": 5,
+            "locatedCount": 33,
+            "zoneCount": 20,
+            "outZoneCount": 13,
+            "zoneSwingCount": 15,
+            "outZoneSwingCount": 5,
+            "outZoneContactCount": 4,
+            "whiffRate": 5.0,
+            "csw": 17.6,
+            "zoneRate": 60.6,
+            "zSwing": 75.0,
+            "oContact": 80.0,
+            "chase": 38.5,
+            "chasePlus": 118.0,
+            "locationScore": 99.0,
+            "stuffScore": 89.0
+          },
+          {
+            "pitchType": "ツーシーム",
+            "count": 26,
+            "ratio": 26.0,
+            "avgSpeed": "141.2",
+            "maxSpeed": "144.0",
+            "speedTotal": 3390.0,
+            "speedCount": 24,
+            "whiffCount": 4,
+            "whiff": 15.4,
+            "atBats": 3,
+            "singles": 2,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 0,
+            "flyBalls": 1,
+            "strikeouts": 0,
+            "hitRate": 0.667,
+            "color": "#355C8C",
+            "swingCount": 12,
+            "calledStrikeCount": 4,
+            "locatedCount": 26,
+            "zoneCount": 12,
+            "outZoneCount": 14,
+            "zoneSwingCount": 8,
+            "outZoneSwingCount": 4,
+            "outZoneContactCount": 2,
+            "whiffRate": 33.3,
+            "csw": 30.8,
+            "zoneRate": 46.2,
+            "zSwing": 66.7,
+            "oContact": 50.0,
+            "chase": 28.6,
+            "chasePlus": 88.0,
+            "locationScore": 100.0,
+            "stuffScore": 107.0
+          },
+          {
+            "pitchType": "スライダー",
+            "count": 17,
+            "ratio": 17.0,
+            "avgSpeed": "127.9",
+            "maxSpeed": "132.0",
+            "speedTotal": 2046.0,
+            "speedCount": 16,
+            "whiffCount": 0,
+            "whiff": 0.0,
+            "atBats": 4,
+            "singles": 2,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 0,
+            "flyBalls": 2,
+            "strikeouts": 0,
+            "hitRate": 0.5,
+            "color": "#6A89B4",
+            "swingCount": 7,
+            "calledStrikeCount": 3,
+            "locatedCount": 17,
+            "zoneCount": 5,
+            "outZoneCount": 12,
+            "zoneSwingCount": 3,
+            "outZoneSwingCount": 4,
+            "outZoneContactCount": 4,
+            "whiffRate": 0.0,
+            "csw": 17.6,
+            "zoneRate": 29.4,
+            "zSwing": 60.0,
+            "oContact": 100.0,
+            "chase": 33.3,
+            "chasePlus": 102.0,
+            "locationScore": 97.0,
+            "stuffScore": 92.0
+          },
+          {
+            "pitchType": "カットボール",
+            "count": 16,
+            "ratio": 16.0,
+            "avgSpeed": "137.5",
+            "maxSpeed": "139.0",
+            "speedTotal": 2200.0,
+            "speedCount": 16,
+            "whiffCount": 2,
+            "whiff": 12.5,
+            "atBats": 2,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 0,
+            "flyBalls": 1,
+            "strikeouts": 1,
+            "hitRate": 0.0,
+            "color": "#C8A55A",
+            "swingCount": 9,
+            "calledStrikeCount": 1,
+            "locatedCount": 16,
+            "zoneCount": 7,
+            "outZoneCount": 9,
+            "zoneSwingCount": 6,
+            "outZoneSwingCount": 3,
+            "outZoneContactCount": 2,
+            "whiffRate": 22.2,
+            "csw": 18.8,
+            "zoneRate": 43.8,
+            "zSwing": 85.7,
+            "oContact": 66.7,
+            "chase": 33.3,
+            "chasePlus": 102.0,
+            "locationScore": 99.0,
+            "stuffScore": 97.0
+          },
+          {
+            "pitchType": "チェンジアップ",
+            "count": 6,
+            "ratio": 6.0,
+            "avgSpeed": "134.6",
+            "maxSpeed": "136.0",
+            "speedTotal": 673.0,
+            "speedCount": 5,
+            "whiffCount": 0,
+            "whiff": 0.0,
+            "atBats": 1,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 1,
+            "flyBalls": 0,
+            "strikeouts": 0,
+            "hitRate": 0.0,
+            "color": "#D6C192",
+            "swingCount": 3,
+            "calledStrikeCount": 1,
+            "locatedCount": 6,
+            "zoneCount": 3,
+            "outZoneCount": 3,
+            "zoneSwingCount": 2,
+            "outZoneSwingCount": 1,
+            "outZoneContactCount": 1,
+            "whiffRate": 0.0,
+            "csw": 16.7,
+            "zoneRate": 50.0,
+            "zSwing": 66.7,
+            "oContact": 100.0,
+            "chase": 33.3,
+            "chasePlus": 102.0,
+            "locationScore": 102.0,
+            "stuffScore": 97.0
+          },
+          {
+            "pitchType": "カーブ",
+            "count": 1,
+            "ratio": 1.0,
+            "avgSpeed": "125.0",
+            "maxSpeed": "125.0",
+            "speedTotal": 125.0,
+            "speedCount": 1,
+            "whiffCount": 0,
+            "whiff": 0.0,
+            "atBats": 0,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 0,
+            "flyBalls": 0,
+            "strikeouts": 0,
+            "hitRate": null,
+            "color": "#9D8B75",
+            "swingCount": 0,
+            "calledStrikeCount": 0,
+            "locatedCount": 1,
+            "zoneCount": 0,
+            "outZoneCount": 1,
+            "zoneSwingCount": 0,
+            "outZoneSwingCount": 0,
+            "outZoneContactCount": 0,
+            "whiffRate": null,
+            "csw": 0.0,
+            "zoneRate": 0.0,
+            "zSwing": null,
+            "oContact": null,
+            "chase": 0.0,
+            "chasePlus": 0.0,
+            "locationScore": 100.0,
+            "stuffScore": 99.0
+          }
+        ]
+      }
+    },
+    {
+      "id": "広島-2026-05-24-2021038905-遠藤淳志",
+      "team": "広島",
+      "league": "セ",
+      "date": "2026-05-24",
+      "prefix": "2021038905-遠藤淳志",
+      "gameId": "2021038905",
+      "order": 620100,
+      "title": "遠藤 淳志",
+      "player": "遠藤 淳志",
+      "pitcherId": "1700072",
+      "matchup": "中日ドラゴンズvs広島東洋カープ",
+      "dateLabel": "2026年5月24日",
+      "pages": [],
+      "statline": {
+        "era": "1.98",
+        "innings": "1",
+        "pitches": "21",
+        "batters": "5",
+        "hits": "2",
+        "hr": "0",
+        "k": "2",
+        "bb": "0",
+        "hbp": "0",
+        "balk": "0",
+        "er": "0",
+        "runs": "0"
+      },
+      "detailPath": "../generated/広島/2026-05-24/2021038905-遠藤淳志-dashboard-detail.json",
+      "dashboard": {
+        "pitchMix": [
+          {
+            "pitchType": "ストレート",
+            "count": 12,
+            "ratio": 57.1,
+            "avgSpeed": "146.4",
+            "maxSpeed": "149.0",
+            "speedTotal": 1757.0,
+            "speedCount": 12,
+            "whiffCount": 2,
+            "whiff": 16.7,
+            "atBats": 2,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 0,
+            "flyBalls": 1,
+            "strikeouts": 1,
+            "hitRate": 0.0,
+            "color": "#0F2340",
+            "swingCount": 5,
+            "calledStrikeCount": 4,
+            "locatedCount": 12,
+            "zoneCount": 6,
+            "outZoneCount": 6,
+            "zoneSwingCount": 2,
+            "outZoneSwingCount": 3,
+            "outZoneContactCount": 2,
+            "whiffRate": 40.0,
+            "csw": 50.0,
+            "zoneRate": 50.0,
+            "zSwing": 33.3,
+            "oContact": 66.7,
+            "chase": 50.0,
+            "chasePlus": 153.0,
+            "locationScore": 100.0,
+            "stuffScore": 110.0
+          },
+          {
+            "pitchType": "チェンジアップ",
+            "count": 7,
+            "ratio": 33.3,
+            "avgSpeed": "131.6",
+            "maxSpeed": "134.0",
+            "speedTotal": 921.0,
+            "speedCount": 7,
+            "whiffCount": 1,
+            "whiff": 14.3,
+            "atBats": 2,
+            "singles": 1,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 0,
+            "flyBalls": 0,
+            "strikeouts": 1,
+            "hitRate": 0.5,
+            "color": "#355C8C",
+            "swingCount": 4,
+            "calledStrikeCount": 2,
+            "locatedCount": 7,
+            "zoneCount": 5,
+            "outZoneCount": 2,
+            "zoneSwingCount": 2,
+            "outZoneSwingCount": 2,
+            "outZoneContactCount": 1,
+            "whiffRate": 25.0,
+            "csw": 42.9,
+            "zoneRate": 71.4,
+            "zSwing": 40.0,
+            "oContact": 50.0,
+            "chase": 100.0,
+            "chasePlus": 307.0,
+            "locationScore": 101.0,
+            "stuffScore": 102.0
+          },
+          {
+            "pitchType": "カーブ",
+            "count": 2,
+            "ratio": 9.5,
+            "avgSpeed": "119.5",
+            "maxSpeed": "122.0",
+            "speedTotal": 239.0,
+            "speedCount": 2,
+            "whiffCount": 0,
+            "whiff": 0.0,
+            "atBats": 1,
+            "singles": 1,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 0,
+            "flyBalls": 0,
+            "strikeouts": 0,
+            "hitRate": 1.0,
+            "color": "#6A89B4",
+            "swingCount": 1,
+            "calledStrikeCount": 0,
+            "locatedCount": 2,
+            "zoneCount": 0,
+            "outZoneCount": 2,
+            "zoneSwingCount": 0,
+            "outZoneSwingCount": 1,
+            "outZoneContactCount": 1,
+            "whiffRate": 0.0,
+            "csw": 0.0,
+            "zoneRate": 0.0,
+            "zSwing": null,
+            "oContact": 100.0,
+            "chase": 50.0,
+            "chasePlus": 153.0,
+            "locationScore": 99.0,
+            "stuffScore": 99.0
+          }
+        ]
+      }
+    },
+    {
+      "id": "広島-2026-05-24-2021038905-中﨑翔太",
+      "team": "広島",
+      "league": "セ",
+      "date": "2026-05-24",
+      "prefix": "2021038905-中﨑翔太",
+      "gameId": "2021038905",
+      "order": 720100,
+      "title": "中﨑 翔太",
+      "player": "中﨑 翔太",
+      "pitcherId": "1000116",
+      "matchup": "中日ドラゴンズvs広島東洋カープ",
+      "dateLabel": "2026年5月24日",
+      "pages": [],
+      "statline": {
+        "era": "3.38",
+        "innings": "1",
+        "pitches": "16",
+        "batters": "4",
+        "hits": "0",
+        "hr": "0",
+        "k": "1",
+        "bb": "1",
+        "hbp": "0",
+        "balk": "0",
+        "er": "0",
+        "runs": "0"
+      },
+      "detailPath": "../generated/広島/2026-05-24/2021038905-中﨑翔太-dashboard-detail.json",
+      "dashboard": {
+        "pitchMix": [
+          {
+            "pitchType": "フォーク",
+            "count": 7,
+            "ratio": 43.8,
+            "avgSpeed": "137.1",
+            "maxSpeed": "138.0",
+            "speedTotal": 960.0,
+            "speedCount": 7,
+            "whiffCount": 0,
+            "whiff": 0.0,
+            "atBats": 3,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 2,
+            "flyBalls": 0,
+            "strikeouts": 1,
+            "hitRate": 0.0,
+            "color": "#0F2340",
+            "swingCount": 4,
+            "calledStrikeCount": 1,
+            "locatedCount": 7,
+            "zoneCount": 3,
+            "outZoneCount": 4,
+            "zoneSwingCount": 2,
+            "outZoneSwingCount": 2,
+            "outZoneContactCount": 2,
+            "whiffRate": 0.0,
+            "csw": 14.3,
+            "zoneRate": 42.9,
+            "zSwing": 66.7,
+            "oContact": 100.0,
+            "chase": 50.0,
+            "chasePlus": 153.0,
+            "locationScore": 101.0,
+            "stuffScore": 96.0
+          },
+          {
+            "pitchType": "ストレート",
+            "count": 6,
+            "ratio": 37.5,
+            "avgSpeed": "146.4",
+            "maxSpeed": "148.0",
+            "speedTotal": 732.0,
+            "speedCount": 5,
+            "whiffCount": 0,
+            "whiff": 0.0,
+            "atBats": 0,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 0,
+            "flyBalls": 0,
+            "strikeouts": 0,
+            "hitRate": null,
+            "color": "#355C8C",
+            "swingCount": 3,
+            "calledStrikeCount": 1,
+            "locatedCount": 6,
+            "zoneCount": 4,
+            "outZoneCount": 2,
+            "zoneSwingCount": 3,
+            "outZoneSwingCount": 0,
+            "outZoneContactCount": 0,
+            "whiffRate": 0.0,
+            "csw": 16.7,
+            "zoneRate": 66.7,
+            "zSwing": 75.0,
+            "oContact": null,
+            "chase": 0.0,
+            "chasePlus": 0.0,
+            "locationScore": 101.0,
+            "stuffScore": 96.0
+          },
+          {
+            "pitchType": "スライダー",
+            "count": 2,
+            "ratio": 12.5,
+            "avgSpeed": "133.5",
+            "maxSpeed": "135.0",
+            "speedTotal": 267.0,
+            "speedCount": 2,
+            "whiffCount": 0,
+            "whiff": 0.0,
+            "atBats": 0,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 0,
+            "flyBalls": 0,
+            "strikeouts": 0,
+            "hitRate": null,
+            "color": "#6A89B4",
+            "swingCount": 0,
+            "calledStrikeCount": 0,
+            "locatedCount": 2,
+            "zoneCount": 0,
+            "outZoneCount": 2,
+            "zoneSwingCount": 0,
+            "outZoneSwingCount": 0,
+            "outZoneContactCount": 0,
+            "whiffRate": null,
+            "csw": 0.0,
+            "zoneRate": 0.0,
+            "zSwing": null,
+            "oContact": null,
+            "chase": 0.0,
+            "chasePlus": 0.0,
+            "locationScore": 99.0,
+            "stuffScore": 97.0
+          },
+          {
+            "pitchType": "ツーシーム",
+            "count": 1,
+            "ratio": 6.2,
+            "avgSpeed": "139.0",
+            "maxSpeed": "139.0",
+            "speedTotal": 139.0,
+            "speedCount": 1,
+            "whiffCount": 0,
+            "whiff": 0.0,
+            "atBats": 0,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 0,
+            "flyBalls": 0,
+            "strikeouts": 0,
+            "hitRate": null,
+            "color": "#C8A55A",
+            "swingCount": 0,
+            "calledStrikeCount": 0,
+            "locatedCount": 1,
+            "zoneCount": 0,
+            "outZoneCount": 1,
+            "zoneSwingCount": 0,
+            "outZoneSwingCount": 0,
+            "outZoneContactCount": 0,
+            "whiffRate": null,
+            "csw": 0.0,
+            "zoneRate": 0.0,
+            "zSwing": null,
+            "oContact": null,
+            "chase": 0.0,
+            "chasePlus": 0.0,
+            "locationScore": 98.0,
+            "stuffScore": 99.0
+          }
+        ]
+      }
+    },
+    {
+      "id": "広島-2026-05-24-2021038905-ハーン",
+      "team": "広島",
+      "league": "セ",
+      "date": "2026-05-24",
+      "prefix": "2021038905-ハーン",
+      "gameId": "2021038905",
+      "order": 820100,
+      "title": "ハーン",
+      "player": "ハーン",
+      "pitcherId": "1960397",
+      "matchup": "中日ドラゴンズvs広島東洋カープ",
+      "dateLabel": "2026年5月24日",
+      "pages": [],
+      "statline": {
+        "era": "0.50",
+        "innings": "1",
+        "pitches": "18",
+        "batters": "6",
+        "hits": "1",
+        "hr": "0",
+        "k": "1",
+        "bb": "1",
+        "hbp": "0",
+        "balk": "0",
+        "er": "0",
+        "runs": "0"
+      },
+      "detailPath": "../generated/広島/2026-05-24/2021038905-ハーン-dashboard-detail.json",
+      "dashboard": {
+        "pitchMix": [
+          {
+            "pitchType": "ストレート",
+            "count": 16,
+            "ratio": 88.9,
+            "avgSpeed": "153.2",
+            "maxSpeed": "157.0",
+            "speedTotal": 2452.0,
+            "speedCount": 16,
+            "whiffCount": 1,
+            "whiff": 6.2,
+            "atBats": 4,
+            "singles": 0,
+            "doubles": 1,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 1,
+            "flyBalls": 0,
+            "strikeouts": 1,
+            "hitRate": 0.25,
+            "color": "#0F2340",
+            "swingCount": 6,
+            "calledStrikeCount": 3,
+            "locatedCount": 16,
+            "zoneCount": 9,
+            "outZoneCount": 7,
+            "zoneSwingCount": 5,
+            "outZoneSwingCount": 1,
+            "outZoneContactCount": 0,
+            "whiffRate": 16.7,
+            "csw": 25.0,
+            "zoneRate": 56.2,
+            "zSwing": 55.6,
+            "oContact": 0.0,
+            "chase": 14.3,
+            "chasePlus": 44.0,
+            "locationScore": 96.0,
+            "stuffScore": 99.0
+          },
+          {
+            "pitchType": "スプリット",
+            "count": 1,
+            "ratio": 5.6,
+            "avgSpeed": "138.0",
+            "maxSpeed": "138.0",
+            "speedTotal": 138.0,
+            "speedCount": 1,
+            "whiffCount": 0,
+            "whiff": 0.0,
+            "atBats": 0,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 0,
+            "flyBalls": 0,
+            "strikeouts": 0,
+            "hitRate": null,
+            "color": "#355C8C",
+            "swingCount": 0,
+            "calledStrikeCount": 0,
+            "locatedCount": 1,
+            "zoneCount": 0,
+            "outZoneCount": 1,
+            "zoneSwingCount": 0,
+            "outZoneSwingCount": 0,
+            "outZoneContactCount": 0,
+            "whiffRate": null,
+            "csw": 0.0,
+            "zoneRate": 0.0,
+            "zSwing": null,
+            "oContact": null,
+            "chase": 0.0,
+            "chasePlus": 0.0,
+            "locationScore": 98.0,
+            "stuffScore": 99.0
+          },
+          {
+            "pitchType": "スライダー",
+            "count": 1,
+            "ratio": 5.6,
+            "avgSpeed": "-",
+            "maxSpeed": "-",
+            "speedTotal": 0,
+            "speedCount": 0,
+            "whiffCount": 0,
+            "whiff": 0.0,
+            "atBats": 1,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 0,
+            "flyBalls": 1,
+            "strikeouts": 0,
+            "hitRate": 0.0,
+            "color": "#6A89B4",
+            "swingCount": 1,
+            "calledStrikeCount": 0,
+            "locatedCount": 1,
+            "zoneCount": 1,
+            "outZoneCount": 0,
+            "zoneSwingCount": 1,
+            "outZoneSwingCount": 0,
+            "outZoneContactCount": 0,
+            "whiffRate": 0.0,
+            "csw": 0.0,
+            "zoneRate": 100.0,
+            "zSwing": 100.0,
+            "oContact": null,
+            "chase": null,
+            "chasePlus": null,
+            "locationScore": 100.0,
+            "stuffScore": 98.0
+          }
+        ]
+      }
+    },
+    {
+      "id": "広島-2026-05-24-2021038905-森浦大輔",
+      "team": "広島",
+      "league": "セ",
+      "date": "2026-05-24",
+      "prefix": "2021038905-森浦大輔",
+      "gameId": "2021038905",
+      "order": 920100,
+      "title": "森浦 大輔",
+      "player": "森浦 大輔",
+      "pitcherId": "2000061",
+      "matchup": "中日ドラゴンズvs広島東洋カープ",
+      "dateLabel": "2026年5月24日",
+      "pages": [],
+      "statline": {
+        "era": "3.00",
+        "innings": "1",
+        "pitches": "9",
+        "batters": "3",
+        "hits": "0",
+        "hr": "0",
+        "k": "1",
+        "bb": "0",
+        "hbp": "0",
+        "balk": "0",
+        "er": "0",
+        "runs": "0"
+      },
+      "detailPath": "../generated/広島/2026-05-24/2021038905-森浦大輔-dashboard-detail.json",
+      "dashboard": {
+        "pitchMix": [
+          {
+            "pitchType": "ストレート",
+            "count": 5,
+            "ratio": 55.6,
+            "avgSpeed": "149.4",
+            "maxSpeed": "151.0",
+            "speedTotal": 747.0,
+            "speedCount": 5,
+            "whiffCount": 1,
+            "whiff": 20.0,
+            "atBats": 1,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 1,
+            "flyBalls": 0,
+            "strikeouts": 0,
+            "hitRate": 0.0,
+            "color": "#0F2340",
+            "swingCount": 3,
+            "calledStrikeCount": 1,
+            "locatedCount": 5,
+            "zoneCount": 3,
+            "outZoneCount": 2,
+            "zoneSwingCount": 2,
+            "outZoneSwingCount": 1,
+            "outZoneContactCount": 1,
+            "whiffRate": 33.3,
+            "csw": 40.0,
+            "zoneRate": 60.0,
+            "zSwing": 66.7,
+            "oContact": 100.0,
+            "chase": 50.0,
+            "chasePlus": 153.0,
+            "locationScore": 100.0,
+            "stuffScore": 104.0
+          },
+          {
+            "pitchType": "カーブ",
+            "count": 2,
+            "ratio": 22.2,
+            "avgSpeed": "110.5",
+            "maxSpeed": "111.0",
+            "speedTotal": 221.0,
+            "speedCount": 2,
+            "whiffCount": 0,
+            "whiff": 0.0,
+            "atBats": 0,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 0,
+            "flyBalls": 0,
+            "strikeouts": 0,
+            "hitRate": null,
+            "color": "#355C8C",
+            "swingCount": 0,
+            "calledStrikeCount": 0,
+            "locatedCount": 1,
+            "zoneCount": 0,
+            "outZoneCount": 1,
+            "zoneSwingCount": 0,
+            "outZoneSwingCount": 0,
+            "outZoneContactCount": 0,
+            "whiffRate": null,
+            "csw": 0.0,
+            "zoneRate": 0.0,
+            "zSwing": null,
+            "oContact": null,
+            "chase": 0.0,
+            "chasePlus": 0.0,
+            "locationScore": 98.0,
+            "stuffScore": 98.0
+          },
+          {
+            "pitchType": "スライダー",
+            "count": 2,
+            "ratio": 22.2,
+            "avgSpeed": "132.0",
+            "maxSpeed": "132.0",
+            "speedTotal": 264.0,
+            "speedCount": 2,
+            "whiffCount": 0,
+            "whiff": 0.0,
+            "atBats": 2,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 1,
+            "flyBalls": 0,
+            "strikeouts": 1,
+            "hitRate": 0.0,
+            "color": "#6A89B4",
+            "swingCount": 1,
+            "calledStrikeCount": 1,
+            "locatedCount": 2,
+            "zoneCount": 2,
+            "outZoneCount": 0,
+            "zoneSwingCount": 1,
+            "outZoneSwingCount": 0,
+            "outZoneContactCount": 0,
+            "whiffRate": 0.0,
+            "csw": 50.0,
+            "zoneRate": 100.0,
+            "zSwing": 50.0,
+            "oContact": null,
+            "chase": null,
+            "chasePlus": null,
+            "locationScore": 100.0,
+            "stuffScore": 100.0
+          }
+        ]
+      }
+    },
+    {
+      "id": "ヤクルト-2026-05-24-2021038904-奥川恭伸",
+      "team": "ヤクルト",
+      "league": "セ",
+      "date": "2026-05-24",
+      "prefix": "2021038904-奥川恭伸",
+      "gameId": "2021038904",
+      "order": 120100,
+      "title": "奥川 恭伸",
+      "player": "奥川 恭伸",
+      "pitcherId": "1900024",
+      "matchup": "横浜DeNAベイスターズvs東京ヤクルトスワローズ",
+      "dateLabel": "2026年5月24日",
+      "pages": [],
+      "statline": {
+        "era": "3.18",
+        "innings": "8",
+        "pitches": "97",
+        "batters": "30",
+        "hits": "5",
+        "hr": "0",
+        "k": "6",
+        "bb": "1",
+        "hbp": "0",
+        "balk": "0",
+        "er": "1",
+        "runs": "1"
+      },
+      "detailPath": "../generated/ヤクルト/2026-05-24/2021038904-奥川恭伸-dashboard-detail.json",
+      "dashboard": {
+        "pitchMix": [
+          {
+            "pitchType": "スライダー",
+            "count": 41,
+            "ratio": 42.3,
+            "avgSpeed": "129.2",
+            "maxSpeed": "134.0",
+            "speedTotal": 5299.0,
+            "speedCount": 41,
+            "whiffCount": 4,
+            "whiff": 9.8,
+            "atBats": 9,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 3,
+            "flyBalls": 6,
+            "strikeouts": 1,
+            "hitRate": 0.0,
+            "color": "#0F2340",
+            "swingCount": 23,
+            "calledStrikeCount": 9,
+            "locatedCount": 41,
+            "zoneCount": 19,
+            "outZoneCount": 22,
+            "zoneSwingCount": 10,
+            "outZoneSwingCount": 13,
+            "outZoneContactCount": 9,
+            "whiffRate": 17.4,
+            "csw": 31.7,
+            "zoneRate": 46.3,
+            "zSwing": 52.6,
+            "oContact": 69.2,
+            "chase": 59.1,
+            "chasePlus": 181.0,
+            "locationScore": 102.0,
+            "stuffScore": 97.0
+          },
+          {
+            "pitchType": "ストレート",
+            "count": 32,
+            "ratio": 33.0,
+            "avgSpeed": "149.2",
+            "maxSpeed": "152.0",
+            "speedTotal": 4776.0,
+            "speedCount": 32,
+            "whiffCount": 2,
+            "whiff": 6.2,
+            "atBats": 8,
+            "singles": 2,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 2,
+            "flyBalls": 2,
+            "strikeouts": 2,
+            "hitRate": 0.25,
+            "color": "#355C8C",
+            "swingCount": 18,
+            "calledStrikeCount": 6,
+            "locatedCount": 32,
+            "zoneCount": 16,
+            "outZoneCount": 16,
+            "zoneSwingCount": 13,
+            "outZoneSwingCount": 5,
+            "outZoneContactCount": 3,
+            "whiffRate": 11.1,
+            "csw": 25.0,
+            "zoneRate": 50.0,
+            "zSwing": 81.2,
+            "oContact": 60.0,
+            "chase": 31.2,
+            "chasePlus": 96.0,
+            "locationScore": 100.0,
+            "stuffScore": 96.0
+          },
+          {
+            "pitchType": "フォーク",
+            "count": 20,
+            "ratio": 20.6,
+            "avgSpeed": "140.8",
+            "maxSpeed": "144.0",
+            "speedTotal": 2816.0,
+            "speedCount": 20,
+            "whiffCount": 5,
+            "whiff": 25.0,
+            "atBats": 10,
+            "singles": 1,
+            "doubles": 1,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 4,
+            "flyBalls": 1,
+            "strikeouts": 3,
+            "hitRate": 0.2,
+            "color": "#6A89B4",
+            "swingCount": 15,
+            "calledStrikeCount": 0,
+            "locatedCount": 20,
+            "zoneCount": 9,
+            "outZoneCount": 11,
+            "zoneSwingCount": 8,
+            "outZoneSwingCount": 7,
+            "outZoneContactCount": 3,
+            "whiffRate": 33.3,
+            "csw": 25.0,
+            "zoneRate": 45.0,
+            "zSwing": 88.9,
+            "oContact": 42.9,
+            "chase": 63.6,
+            "chasePlus": 195.0,
+            "locationScore": 100.0,
+            "stuffScore": 100.0
+          },
+          {
+            "pitchType": "カーブ",
+            "count": 4,
+            "ratio": 4.1,
+            "avgSpeed": "123.0",
+            "maxSpeed": "124.0",
+            "speedTotal": 492.0,
+            "speedCount": 4,
+            "whiffCount": 0,
+            "whiff": 0.0,
+            "atBats": 1,
+            "singles": 1,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 0,
+            "flyBalls": 0,
+            "strikeouts": 0,
+            "hitRate": 1.0,
+            "color": "#C8A55A",
+            "swingCount": 1,
+            "calledStrikeCount": 2,
+            "locatedCount": 4,
+            "zoneCount": 3,
+            "outZoneCount": 1,
+            "zoneSwingCount": 1,
+            "outZoneSwingCount": 0,
+            "outZoneContactCount": 0,
+            "whiffRate": 0.0,
+            "csw": 50.0,
+            "zoneRate": 75.0,
+            "zSwing": 33.3,
+            "oContact": null,
+            "chase": 0.0,
+            "chasePlus": 0.0,
+            "locationScore": 99.0,
+            "stuffScore": 100.0
+          }
+        ]
+      }
+    },
+    {
+      "id": "中日-2026-05-24-2021038905-髙橋宏斗",
+      "team": "中日",
+      "league": "セ",
+      "date": "2026-05-24",
+      "prefix": "2021038905-髙橋宏斗",
+      "gameId": "2021038905",
+      "order": 110100,
+      "title": "髙橋 宏斗",
+      "player": "髙橋 宏斗",
+      "pitcherId": "2000042",
+      "matchup": "中日ドラゴンズvs広島東洋カープ",
+      "dateLabel": "2026年5月24日",
+      "pages": [],
+      "statline": {
+        "era": "4.32",
+        "innings": "5.2",
+        "pitches": "103",
+        "batters": "25",
+        "hits": "6",
+        "hr": "1",
+        "k": "6",
+        "bb": "3",
+        "hbp": "0",
+        "balk": "0",
+        "er": "5",
+        "runs": "5"
+      },
+      "detailPath": "../generated/中日/2026-05-24/2021038905-髙橋宏斗-dashboard-detail.json",
+      "dashboard": {
+        "pitchMix": [
+          {
+            "pitchType": "ストレート",
+            "count": 46,
+            "ratio": 44.7,
+            "avgSpeed": "153.9",
+            "maxSpeed": "156.0",
+            "speedTotal": 6771.0,
+            "speedCount": 44,
+            "whiffCount": 5,
+            "whiff": 10.9,
+            "atBats": 10,
+            "singles": 1,
+            "doubles": 2,
+            "triples": 0,
+            "homeRuns": 1,
+            "grounders": 2,
+            "flyBalls": 3,
+            "strikeouts": 1,
+            "hitRate": 0.4,
+            "color": "#0F2340",
+            "swingCount": 21,
+            "calledStrikeCount": 12,
+            "locatedCount": 46,
+            "zoneCount": 32,
+            "outZoneCount": 14,
+            "zoneSwingCount": 18,
+            "outZoneSwingCount": 3,
+            "outZoneContactCount": 1,
+            "whiffRate": 23.8,
+            "csw": 37.0,
+            "zoneRate": 69.6,
+            "zSwing": 56.2,
+            "oContact": 33.3,
+            "chase": 21.4,
+            "chasePlus": 66.0,
+            "locationScore": 101.0,
+            "stuffScore": 109.0
+          },
+          {
+            "pitchType": "スプリット",
+            "count": 33,
+            "ratio": 32.0,
+            "avgSpeed": "145.1",
+            "maxSpeed": "147.0",
+            "speedTotal": 4352.0,
+            "speedCount": 30,
+            "whiffCount": 4,
+            "whiff": 12.1,
+            "atBats": 7,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 5,
+            "flyBalls": 0,
+            "strikeouts": 2,
+            "hitRate": 0.0,
+            "color": "#355C8C",
+            "swingCount": 15,
+            "calledStrikeCount": 5,
+            "locatedCount": 33,
+            "zoneCount": 16,
+            "outZoneCount": 17,
+            "zoneSwingCount": 10,
+            "outZoneSwingCount": 5,
+            "outZoneContactCount": 3,
+            "whiffRate": 26.7,
+            "csw": 27.3,
+            "zoneRate": 48.5,
+            "zSwing": 62.5,
+            "oContact": 60.0,
+            "chase": 29.4,
+            "chasePlus": 90.0,
+            "locationScore": 101.0,
+            "stuffScore": 97.0
+          },
+          {
+            "pitchType": "カットボール",
+            "count": 23,
+            "ratio": 22.3,
+            "avgSpeed": "140.7",
+            "maxSpeed": "143.0",
+            "speedTotal": 3095.0,
+            "speedCount": 22,
+            "whiffCount": 7,
+            "whiff": 30.4,
+            "atBats": 5,
+            "singles": 2,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 0,
+            "flyBalls": 0,
+            "strikeouts": 3,
+            "hitRate": 0.4,
+            "color": "#6A89B4",
+            "swingCount": 12,
+            "calledStrikeCount": 2,
+            "locatedCount": 23,
+            "zoneCount": 6,
+            "outZoneCount": 17,
+            "zoneSwingCount": 4,
+            "outZoneSwingCount": 8,
+            "outZoneContactCount": 2,
+            "whiffRate": 58.3,
+            "csw": 39.1,
+            "zoneRate": 26.1,
+            "zSwing": 66.7,
+            "oContact": 25.0,
+            "chase": 47.1,
+            "chasePlus": 144.0,
+            "locationScore": 99.0,
+            "stuffScore": 114.0
+          },
+          {
+            "pitchType": "カーブ",
+            "count": 1,
+            "ratio": 1.0,
+            "avgSpeed": "129.0",
+            "maxSpeed": "129.0",
+            "speedTotal": 129.0,
+            "speedCount": 1,
+            "whiffCount": 0,
+            "whiff": 0.0,
+            "atBats": 0,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 0,
+            "flyBalls": 0,
+            "strikeouts": 0,
+            "hitRate": null,
+            "color": "#C8A55A",
+            "swingCount": 0,
+            "calledStrikeCount": 0,
+            "locatedCount": 1,
+            "zoneCount": 0,
+            "outZoneCount": 1,
+            "zoneSwingCount": 0,
+            "outZoneSwingCount": 0,
+            "outZoneContactCount": 0,
+            "whiffRate": null,
+            "csw": 0.0,
+            "zoneRate": 0.0,
+            "zSwing": null,
+            "oContact": null,
+            "chase": 0.0,
+            "chasePlus": 0.0,
+            "locationScore": 98.0,
+            "stuffScore": 99.0
+          }
+        ]
+      }
+    },
+    {
+      "id": "中日-2026-05-24-2021038905-牧野憲伸",
+      "team": "中日",
+      "league": "セ",
+      "date": "2026-05-24",
+      "prefix": "2021038905-牧野憲伸",
+      "gameId": "2021038905",
+      "order": 610900,
+      "title": "牧野 憲伸",
+      "player": "牧野 憲伸",
+      "pitcherId": "2107086",
+      "matchup": "中日ドラゴンズvs広島東洋カープ",
+      "dateLabel": "2026年5月24日",
+      "pages": [],
+      "statline": {
+        "era": "2.57",
+        "innings": "0.1",
+        "pitches": "2",
+        "batters": "1",
+        "hits": "0",
+        "hr": "0",
+        "k": "0",
+        "bb": "0",
+        "hbp": "0",
+        "balk": "0",
+        "er": "0",
+        "runs": "0"
+      },
+      "detailPath": "../generated/中日/2026-05-24/2021038905-牧野憲伸-dashboard-detail.json",
+      "dashboard": {
+        "pitchMix": [
+          {
+            "pitchType": "チェンジアップ",
+            "count": 1,
+            "ratio": 50.0,
+            "avgSpeed": "115.0",
+            "maxSpeed": "115.0",
+            "speedTotal": 115.0,
+            "speedCount": 1,
+            "whiffCount": 0,
+            "whiff": 0.0,
+            "atBats": 0,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 0,
+            "flyBalls": 0,
+            "strikeouts": 0,
+            "hitRate": null,
+            "color": "#0F2340",
+            "swingCount": 0,
+            "calledStrikeCount": 1,
+            "locatedCount": 1,
+            "zoneCount": 1,
+            "outZoneCount": 0,
+            "zoneSwingCount": 0,
+            "outZoneSwingCount": 0,
+            "outZoneContactCount": 0,
+            "whiffRate": null,
+            "csw": 100.0,
+            "zoneRate": 100.0,
+            "zSwing": 0.0,
+            "oContact": null,
+            "chase": null,
+            "chasePlus": null,
+            "locationScore": 102.0,
+            "stuffScore": 103.0
+          },
+          {
+            "pitchType": "ストレート",
+            "count": 1,
+            "ratio": 50.0,
+            "avgSpeed": "143.0",
+            "maxSpeed": "143.0",
+            "speedTotal": 143.0,
+            "speedCount": 1,
+            "whiffCount": 0,
+            "whiff": 0.0,
+            "atBats": 1,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 1,
+            "flyBalls": 0,
+            "strikeouts": 0,
+            "hitRate": 0.0,
+            "color": "#355C8C",
+            "swingCount": 1,
+            "calledStrikeCount": 0,
+            "locatedCount": 1,
+            "zoneCount": 1,
+            "outZoneCount": 0,
+            "zoneSwingCount": 1,
+            "outZoneSwingCount": 0,
+            "outZoneContactCount": 0,
+            "whiffRate": 0.0,
+            "csw": 0.0,
+            "zoneRate": 100.0,
+            "zSwing": 100.0,
+            "oContact": null,
+            "chase": null,
+            "chasePlus": null,
+            "locationScore": 98.0,
+            "stuffScore": 98.0
+          }
+        ]
+      }
+    },
+    {
+      "id": "中日-2026-05-24-2021038905-メヒア",
+      "team": "中日",
+      "league": "セ",
+      "date": "2026-05-24",
+      "prefix": "2021038905-メヒア",
+      "gameId": "2021038905",
+      "order": 710100,
+      "title": "メヒア",
+      "player": "メヒア",
+      "pitcherId": "1660558",
+      "matchup": "中日ドラゴンズvs広島東洋カープ",
+      "dateLabel": "2026年5月24日",
+      "pages": [],
+      "statline": {
+        "era": "3.45",
+        "innings": "1",
+        "pitches": "24",
+        "batters": "5",
+        "hits": "1",
+        "hr": "0",
+        "k": "0",
+        "bb": "0",
+        "hbp": "1",
+        "balk": "0",
+        "er": "0",
+        "runs": "0"
+      },
+      "detailPath": "../generated/中日/2026-05-24/2021038905-メヒア-dashboard-detail.json",
+      "dashboard": {
+        "pitchMix": [
+          {
+            "pitchType": "ストレート",
+            "count": 12,
+            "ratio": 50.0,
+            "avgSpeed": "148.8",
+            "maxSpeed": "151.0",
+            "speedTotal": 1637.0,
+            "speedCount": 11,
+            "whiffCount": 1,
+            "whiff": 8.3,
+            "atBats": 3,
+            "singles": 1,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 0,
+            "flyBalls": 2,
+            "strikeouts": 0,
+            "hitRate": 0.333,
+            "color": "#0F2340",
+            "swingCount": 6,
+            "calledStrikeCount": 2,
+            "locatedCount": 12,
+            "zoneCount": 6,
+            "outZoneCount": 6,
+            "zoneSwingCount": 4,
+            "outZoneSwingCount": 2,
+            "outZoneContactCount": 2,
+            "whiffRate": 16.7,
+            "csw": 25.0,
+            "zoneRate": 50.0,
+            "zSwing": 66.7,
+            "oContact": 100.0,
+            "chase": 33.3,
+            "chasePlus": 102.0,
+            "locationScore": 100.0,
+            "stuffScore": 100.0
+          },
+          {
+            "pitchType": "カットボール",
+            "count": 9,
+            "ratio": 37.5,
+            "avgSpeed": "144.1",
+            "maxSpeed": "146.0",
+            "speedTotal": 1153.0,
+            "speedCount": 8,
+            "whiffCount": 1,
+            "whiff": 11.1,
+            "atBats": 0,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 0,
+            "flyBalls": 0,
+            "strikeouts": 0,
+            "hitRate": null,
+            "color": "#355C8C",
+            "swingCount": 4,
+            "calledStrikeCount": 1,
+            "locatedCount": 8,
+            "zoneCount": 2,
+            "outZoneCount": 6,
+            "zoneSwingCount": 2,
+            "outZoneSwingCount": 2,
+            "outZoneContactCount": 2,
+            "whiffRate": 25.0,
+            "csw": 22.2,
+            "zoneRate": 25.0,
+            "zSwing": 100.0,
+            "oContact": 100.0,
+            "chase": 33.3,
+            "chasePlus": 102.0,
+            "locationScore": 101.0,
+            "stuffScore": 99.0
+          },
+          {
+            "pitchType": "ナックルカーブ",
+            "count": 3,
+            "ratio": 12.5,
+            "avgSpeed": "126.5",
+            "maxSpeed": "128.0",
+            "speedTotal": 253.0,
+            "speedCount": 2,
+            "whiffCount": 0,
+            "whiff": 0.0,
+            "atBats": 1,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 0,
+            "flyBalls": 1,
+            "strikeouts": 0,
+            "hitRate": 0.0,
+            "color": "#6A89B4",
+            "swingCount": 1,
+            "calledStrikeCount": 0,
+            "locatedCount": 3,
+            "zoneCount": 1,
+            "outZoneCount": 2,
+            "zoneSwingCount": 1,
+            "outZoneSwingCount": 0,
+            "outZoneContactCount": 0,
+            "whiffRate": 0.0,
+            "csw": 0.0,
+            "zoneRate": 33.3,
+            "zSwing": 100.0,
+            "oContact": null,
+            "chase": 0.0,
+            "chasePlus": 0.0,
+            "locationScore": 99.0,
+            "stuffScore": 97.0
+          }
+        ]
+      }
+    },
+    {
+      "id": "中日-2026-05-24-2021038905-齋藤綱記",
+      "team": "中日",
+      "league": "セ",
+      "date": "2026-05-24",
+      "prefix": "2021038905-齋藤綱記",
+      "gameId": "2021038905",
+      "order": 810100,
+      "title": "齋藤 綱記",
+      "player": "齋藤 綱記",
+      "pitcherId": "1400199",
+      "matchup": "中日ドラゴンズvs広島東洋カープ",
+      "dateLabel": "2026年5月24日",
+      "pages": [],
+      "statline": {
+        "era": "1.93",
+        "innings": "1",
+        "pitches": "11",
+        "batters": "3",
+        "hits": "0",
+        "hr": "0",
+        "k": "1",
+        "bb": "0",
+        "hbp": "0",
+        "balk": "0",
+        "er": "0",
+        "runs": "0"
+      },
+      "detailPath": "../generated/中日/2026-05-24/2021038905-齋藤綱記-dashboard-detail.json",
+      "dashboard": {
+        "pitchMix": [
+          {
+            "pitchType": "ストレート",
+            "count": 6,
+            "ratio": 54.5,
+            "avgSpeed": "140.3",
+            "maxSpeed": "143.0",
+            "speedTotal": 842.0,
+            "speedCount": 6,
+            "whiffCount": 0,
+            "whiff": 0.0,
+            "atBats": 0,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 0,
+            "flyBalls": 0,
+            "strikeouts": 0,
+            "hitRate": null,
+            "color": "#0F2340",
+            "swingCount": 1,
+            "calledStrikeCount": 2,
+            "locatedCount": 6,
+            "zoneCount": 2,
+            "outZoneCount": 4,
+            "zoneSwingCount": 0,
+            "outZoneSwingCount": 1,
+            "outZoneContactCount": 1,
+            "whiffRate": 0.0,
+            "csw": 33.3,
+            "zoneRate": 33.3,
+            "zSwing": 0.0,
+            "oContact": 100.0,
+            "chase": 25.0,
+            "chasePlus": 77.0,
+            "locationScore": 98.0,
+            "stuffScore": 99.0
+          },
+          {
+            "pitchType": "スライダー",
+            "count": 4,
+            "ratio": 36.4,
+            "avgSpeed": "128.5",
+            "maxSpeed": "130.0",
+            "speedTotal": 514.0,
+            "speedCount": 4,
+            "whiffCount": 0,
+            "whiff": 0.0,
+            "atBats": 2,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 0,
+            "flyBalls": 1,
+            "strikeouts": 1,
+            "hitRate": 0.0,
+            "color": "#355C8C",
+            "swingCount": 1,
+            "calledStrikeCount": 2,
+            "locatedCount": 4,
+            "zoneCount": 3,
+            "outZoneCount": 1,
+            "zoneSwingCount": 1,
+            "outZoneSwingCount": 0,
+            "outZoneContactCount": 0,
+            "whiffRate": 0.0,
+            "csw": 50.0,
+            "zoneRate": 75.0,
+            "zSwing": 33.3,
+            "oContact": null,
+            "chase": 0.0,
+            "chasePlus": 0.0,
+            "locationScore": 100.0,
+            "stuffScore": 100.0
+          },
+          {
+            "pitchType": "フォーク",
+            "count": 1,
+            "ratio": 9.1,
+            "avgSpeed": "131.0",
+            "maxSpeed": "131.0",
+            "speedTotal": 131.0,
+            "speedCount": 1,
+            "whiffCount": 0,
+            "whiff": 0.0,
+            "atBats": 1,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 1,
+            "flyBalls": 0,
+            "strikeouts": 0,
+            "hitRate": 0.0,
+            "color": "#6A89B4",
+            "swingCount": 1,
+            "calledStrikeCount": 0,
+            "locatedCount": 1,
+            "zoneCount": 0,
+            "outZoneCount": 1,
+            "zoneSwingCount": 0,
+            "outZoneSwingCount": 1,
+            "outZoneContactCount": 1,
+            "whiffRate": 0.0,
+            "csw": 0.0,
+            "zoneRate": 0.0,
+            "zSwing": null,
+            "oContact": 100.0,
+            "chase": 100.0,
+            "chasePlus": 307.0,
+            "locationScore": 99.0,
+            "stuffScore": 99.0
+          }
+        ]
+      }
+    },
+    {
+      "id": "中日-2026-05-24-2021038905-藤嶋健人",
+      "team": "中日",
+      "league": "セ",
+      "date": "2026-05-24",
+      "prefix": "2021038905-藤嶋健人",
+      "gameId": "2021038905",
+      "order": 910100,
+      "title": "藤嶋 健人",
+      "player": "藤嶋 健人",
+      "pitcherId": "1600110",
+      "matchup": "中日ドラゴンズvs広島東洋カープ",
+      "dateLabel": "2026年5月24日",
+      "pages": [],
+      "statline": {
+        "era": "3.14",
+        "innings": "1",
+        "pitches": "21",
+        "batters": "4",
+        "hits": "0",
+        "hr": "0",
+        "k": "0",
+        "bb": "1",
+        "hbp": "0",
+        "balk": "0",
+        "er": "0",
+        "runs": "0"
+      },
+      "detailPath": "../generated/中日/2026-05-24/2021038905-藤嶋健人-dashboard-detail.json",
+      "dashboard": {
+        "pitchMix": [
+          {
+            "pitchType": "ストレート",
+            "count": 11,
+            "ratio": 52.4,
+            "avgSpeed": "141.2",
+            "maxSpeed": "143.0",
+            "speedTotal": 1553.0,
+            "speedCount": 11,
+            "whiffCount": 0,
+            "whiff": 0.0,
+            "atBats": 0,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 0,
+            "flyBalls": 0,
+            "strikeouts": 0,
+            "hitRate": null,
+            "color": "#0F2340",
+            "swingCount": 4,
+            "calledStrikeCount": 4,
+            "locatedCount": 11,
+            "zoneCount": 7,
+            "outZoneCount": 4,
+            "zoneSwingCount": 2,
+            "outZoneSwingCount": 2,
+            "outZoneContactCount": 2,
+            "whiffRate": 0.0,
+            "csw": 36.4,
+            "zoneRate": 63.6,
+            "zSwing": 28.6,
+            "oContact": 100.0,
+            "chase": 50.0,
+            "chasePlus": 153.0,
+            "locationScore": 101.0,
+            "stuffScore": 99.0
+          },
+          {
+            "pitchType": "スプリット",
+            "count": 4,
+            "ratio": 19.0,
+            "avgSpeed": "136.5",
+            "maxSpeed": "138.0",
+            "speedTotal": 546.0,
+            "speedCount": 4,
+            "whiffCount": 0,
+            "whiff": 0.0,
+            "atBats": 1,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 1,
+            "flyBalls": 0,
+            "strikeouts": 0,
+            "hitRate": 0.0,
+            "color": "#355C8C",
+            "swingCount": 2,
+            "calledStrikeCount": 0,
+            "locatedCount": 4,
+            "zoneCount": 1,
+            "outZoneCount": 3,
+            "zoneSwingCount": 1,
+            "outZoneSwingCount": 1,
+            "outZoneContactCount": 1,
+            "whiffRate": 0.0,
+            "csw": 0.0,
+            "zoneRate": 25.0,
+            "zSwing": 100.0,
+            "oContact": 100.0,
+            "chase": 33.3,
+            "chasePlus": 102.0,
+            "locationScore": 100.0,
+            "stuffScore": 97.0
+          },
+          {
+            "pitchType": "スライダー",
+            "count": 4,
+            "ratio": 19.0,
+            "avgSpeed": "128.5",
+            "maxSpeed": "130.0",
+            "speedTotal": 514.0,
+            "speedCount": 4,
+            "whiffCount": 0,
+            "whiff": 0.0,
+            "atBats": 1,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 0,
+            "flyBalls": 1,
+            "strikeouts": 0,
+            "hitRate": 0.0,
+            "color": "#6A89B4",
+            "swingCount": 1,
+            "calledStrikeCount": 0,
+            "locatedCount": 4,
+            "zoneCount": 1,
+            "outZoneCount": 3,
+            "zoneSwingCount": 1,
+            "outZoneSwingCount": 0,
+            "outZoneContactCount": 0,
+            "whiffRate": 0.0,
+            "csw": 0.0,
+            "zoneRate": 25.0,
+            "zSwing": 100.0,
+            "oContact": null,
+            "chase": 0.0,
+            "chasePlus": 0.0,
+            "locationScore": 97.0,
+            "stuffScore": 97.0
+          },
+          {
+            "pitchType": "チェンジアップ",
+            "count": 2,
+            "ratio": 9.5,
+            "avgSpeed": "122.5",
+            "maxSpeed": "123.0",
+            "speedTotal": 245.0,
+            "speedCount": 2,
+            "whiffCount": 0,
+            "whiff": 0.0,
+            "atBats": 1,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 0,
+            "flyBalls": 1,
+            "strikeouts": 0,
+            "hitRate": 0.0,
+            "color": "#C8A55A",
+            "swingCount": 1,
+            "calledStrikeCount": 0,
+            "locatedCount": 2,
+            "zoneCount": 1,
+            "outZoneCount": 1,
+            "zoneSwingCount": 1,
+            "outZoneSwingCount": 0,
+            "outZoneContactCount": 0,
+            "whiffRate": 0.0,
+            "csw": 0.0,
+            "zoneRate": 50.0,
+            "zSwing": 100.0,
+            "oContact": null,
+            "chase": 0.0,
+            "chasePlus": 0.0,
+            "locationScore": 98.0,
+            "stuffScore": 98.0
+          }
+        ]
+      }
+    },
+    {
+      "id": "ソフトバンク-2026-05-24-2021038908-前田悠伍",
+      "team": "ソフトバンク",
+      "league": "パ",
+      "date": "2026-05-24",
+      "prefix": "2021038908-前田悠伍",
+      "gameId": "2021038908",
+      "order": 110100,
+      "title": "前田 悠伍",
+      "player": "前田 悠伍",
+      "pitcherId": "2104078",
+      "matchup": "福岡ソフトバンクホークスvs北海道日本ハムファイターズ",
+      "dateLabel": "2026年5月24日",
+      "pages": [],
+      "statline": {
+        "era": "3.50",
+        "innings": "3.0",
+        "pitches": "77",
+        "batters": "17",
+        "hits": "4",
+        "hr": "1",
+        "k": "4",
+        "bb": "4",
+        "hbp": "0",
+        "balk": "0",
+        "er": "4",
+        "runs": "4"
+      },
+      "detailPath": "../generated/ソフトバンク/2026-05-24/2021038908-前田悠伍-dashboard-detail.json",
+      "dashboard": {
+        "pitchMix": [
+          {
+            "pitchType": "ストレート",
+            "count": 44,
+            "ratio": 57.1,
+            "avgSpeed": "143.7",
+            "maxSpeed": "147.0",
+            "speedTotal": 6178.0,
+            "speedCount": 43,
+            "whiffCount": 6,
+            "whiff": 13.6,
+            "atBats": 6,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 0,
+            "flyBalls": 2,
+            "strikeouts": 4,
+            "hitRate": 0.0,
+            "color": "#0F2340",
+            "swingCount": 22,
+            "calledStrikeCount": 10,
+            "locatedCount": 44,
+            "zoneCount": 20,
+            "outZoneCount": 24,
+            "zoneSwingCount": 13,
+            "outZoneSwingCount": 9,
+            "outZoneContactCount": 5,
+            "whiffRate": 27.3,
+            "csw": 36.4,
+            "zoneRate": 45.5,
+            "zSwing": 65.0,
+            "oContact": 55.6,
+            "chase": 37.5,
+            "chasePlus": 115.0,
+            "locationScore": 101.0,
+            "stuffScore": 115.0
+          },
+          {
+            "pitchType": "フォーク",
+            "count": 19,
+            "ratio": 24.7,
+            "avgSpeed": "132.7",
+            "maxSpeed": "137.0",
+            "speedTotal": 2389.0,
+            "speedCount": 18,
+            "whiffCount": 3,
+            "whiff": 15.8,
+            "atBats": 2,
+            "singles": 1,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 1,
+            "flyBalls": 0,
+            "strikeouts": 0,
+            "hitRate": 0.5,
+            "color": "#355C8C",
+            "swingCount": 6,
+            "calledStrikeCount": 1,
+            "locatedCount": 19,
+            "zoneCount": 2,
+            "outZoneCount": 17,
+            "zoneSwingCount": 1,
+            "outZoneSwingCount": 5,
+            "outZoneContactCount": 2,
+            "whiffRate": 50.0,
+            "csw": 21.1,
+            "zoneRate": 10.5,
+            "zSwing": 50.0,
+            "oContact": 40.0,
+            "chase": 29.4,
+            "chasePlus": 90.0,
+            "locationScore": 99.0,
+            "stuffScore": 99.0
+          },
+          {
+            "pitchType": "カーブ",
+            "count": 10,
+            "ratio": 13.0,
+            "avgSpeed": "119.9",
+            "maxSpeed": "123.0",
+            "speedTotal": 1079.0,
+            "speedCount": 9,
+            "whiffCount": 0,
+            "whiff": 0.0,
+            "atBats": 3,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 1,
+            "grounders": 2,
+            "flyBalls": 0,
+            "strikeouts": 0,
+            "hitRate": 0.333,
+            "color": "#6A89B4",
+            "swingCount": 4,
+            "calledStrikeCount": 2,
+            "locatedCount": 10,
+            "zoneCount": 5,
+            "outZoneCount": 5,
+            "zoneSwingCount": 3,
+            "outZoneSwingCount": 1,
+            "outZoneContactCount": 1,
+            "whiffRate": 0.0,
+            "csw": 20.0,
+            "zoneRate": 50.0,
+            "zSwing": 60.0,
+            "oContact": 100.0,
+            "chase": 20.0,
+            "chasePlus": 61.0,
+            "locationScore": 100.0,
+            "stuffScore": 95.0
+          },
+          {
+            "pitchType": "チェンジアップ",
+            "count": 3,
+            "ratio": 3.9,
+            "avgSpeed": "-",
+            "maxSpeed": "-",
+            "speedTotal": 0,
+            "speedCount": 0,
+            "whiffCount": 1,
+            "whiff": 33.3,
+            "atBats": 2,
+            "singles": 2,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 0,
+            "flyBalls": 0,
+            "strikeouts": 0,
+            "hitRate": 1.0,
+            "color": "#C8A55A",
+            "swingCount": 3,
+            "calledStrikeCount": 0,
+            "locatedCount": 3,
+            "zoneCount": 1,
+            "outZoneCount": 2,
+            "zoneSwingCount": 1,
+            "outZoneSwingCount": 2,
+            "outZoneContactCount": 1,
+            "whiffRate": 33.3,
+            "csw": 33.3,
+            "zoneRate": 33.3,
+            "zSwing": 100.0,
+            "oContact": 50.0,
+            "chase": 100.0,
+            "chasePlus": 307.0,
+            "locationScore": 100.0,
+            "stuffScore": 102.0
+          },
+          {
+            "pitchType": "スライダー",
+            "count": 1,
+            "ratio": 1.3,
+            "avgSpeed": "135.0",
+            "maxSpeed": "135.0",
+            "speedTotal": 135.0,
+            "speedCount": 1,
+            "whiffCount": 1,
+            "whiff": 100.0,
+            "atBats": 0,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 0,
+            "flyBalls": 0,
+            "strikeouts": 0,
+            "hitRate": null,
+            "color": "#D6C192",
+            "swingCount": 1,
+            "calledStrikeCount": 0,
+            "locatedCount": 1,
+            "zoneCount": 1,
+            "outZoneCount": 0,
+            "zoneSwingCount": 1,
+            "outZoneSwingCount": 0,
+            "outZoneContactCount": 0,
+            "whiffRate": 100.0,
+            "csw": 100.0,
+            "zoneRate": 100.0,
+            "zSwing": 100.0,
+            "oContact": null,
+            "chase": null,
+            "chasePlus": null,
+            "locationScore": 101.0,
+            "stuffScore": 103.0
+          }
+        ]
+      }
+    },
+    {
+      "id": "ソフトバンク-2026-05-24-2021038908-津森宥紀",
+      "team": "ソフトバンク",
+      "league": "パ",
+      "date": "2026-05-24",
+      "prefix": "2021038908-津森宥紀",
+      "gameId": "2021038908",
+      "order": 410300,
+      "title": "津森 宥紀",
+      "player": "津森 宥紀",
+      "pitcherId": "1900102",
+      "matchup": "福岡ソフトバンクホークスvs北海道日本ハムファイターズ",
+      "dateLabel": "2026年5月24日",
+      "pages": [],
+      "statline": {
+        "era": "2.25",
+        "innings": "1",
+        "pitches": "11",
+        "batters": "3",
+        "hits": "0",
+        "hr": "0",
+        "k": "1",
+        "bb": "0",
+        "hbp": "0",
+        "balk": "0",
+        "er": "0",
+        "runs": "0"
+      },
+      "detailPath": "../generated/ソフトバンク/2026-05-24/2021038908-津森宥紀-dashboard-detail.json",
+      "dashboard": {
+        "pitchMix": [
+          {
+            "pitchType": "ストレート",
+            "count": 10,
+            "ratio": 90.9,
+            "avgSpeed": "149.0",
+            "maxSpeed": "150.0",
+            "speedTotal": 1192.0,
+            "speedCount": 8,
+            "whiffCount": 3,
+            "whiff": 30.0,
+            "atBats": 3,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 1,
+            "flyBalls": 1,
+            "strikeouts": 1,
+            "hitRate": 0.0,
+            "color": "#0F2340",
+            "swingCount": 7,
+            "calledStrikeCount": 1,
+            "locatedCount": 10,
+            "zoneCount": 7,
+            "outZoneCount": 3,
+            "zoneSwingCount": 7,
+            "outZoneSwingCount": 0,
+            "outZoneContactCount": 0,
+            "whiffRate": 42.9,
+            "csw": 40.0,
+            "zoneRate": 70.0,
+            "zSwing": 100.0,
+            "oContact": null,
+            "chase": 0.0,
+            "chasePlus": 0.0,
+            "locationScore": 101.0,
+            "stuffScore": 110.0
+          },
+          {
+            "pitchType": "スライダー",
+            "count": 1,
+            "ratio": 9.1,
+            "avgSpeed": "127.0",
+            "maxSpeed": "127.0",
+            "speedTotal": 127.0,
+            "speedCount": 1,
+            "whiffCount": 0,
+            "whiff": 0.0,
+            "atBats": 0,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 0,
+            "flyBalls": 0,
+            "strikeouts": 0,
+            "hitRate": null,
+            "color": "#355C8C",
+            "swingCount": 0,
+            "calledStrikeCount": 0,
+            "locatedCount": 1,
+            "zoneCount": 0,
+            "outZoneCount": 1,
+            "zoneSwingCount": 0,
+            "outZoneSwingCount": 0,
+            "outZoneContactCount": 0,
+            "whiffRate": null,
+            "csw": 0.0,
+            "zoneRate": 0.0,
+            "zSwing": null,
+            "oContact": null,
+            "chase": 0.0,
+            "chasePlus": 0.0,
+            "locationScore": 98.0,
+            "stuffScore": 99.0
+          }
+        ]
+      }
+    },
+    {
+      "id": "ソフトバンク-2026-05-24-2021038908-上茶谷大河",
+      "team": "ソフトバンク",
+      "league": "パ",
+      "date": "2026-05-24",
+      "prefix": "2021038908-上茶谷大河",
+      "gameId": "2021038908",
+      "order": 510100,
+      "title": "上茶谷 大河",
+      "player": "上茶谷 大河",
+      "pitcherId": "1800043",
+      "matchup": "福岡ソフトバンクホークスvs北海道日本ハムファイターズ",
+      "dateLabel": "2026年5月24日",
+      "pages": [],
+      "statline": {
+        "era": "1.77",
+        "innings": "1",
+        "pitches": "18",
+        "batters": "4",
+        "hits": "1",
+        "hr": "1",
+        "k": "1",
+        "bb": "0",
+        "hbp": "0",
+        "balk": "0",
+        "er": "1",
+        "runs": "1"
+      },
+      "detailPath": "../generated/ソフトバンク/2026-05-24/2021038908-上茶谷大河-dashboard-detail.json",
+      "dashboard": {
+        "pitchMix": [
+          {
+            "pitchType": "ストレート",
+            "count": 6,
+            "ratio": 33.3,
+            "avgSpeed": "147.3",
+            "maxSpeed": "149.0",
+            "speedTotal": 884.0,
+            "speedCount": 6,
+            "whiffCount": 0,
+            "whiff": 0.0,
+            "atBats": 2,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 1,
+            "grounders": 0,
+            "flyBalls": 1,
+            "strikeouts": 0,
+            "hitRate": 0.5,
+            "color": "#0F2340",
+            "swingCount": 2,
+            "calledStrikeCount": 3,
+            "locatedCount": 6,
+            "zoneCount": 5,
+            "outZoneCount": 1,
+            "zoneSwingCount": 2,
+            "outZoneSwingCount": 0,
+            "outZoneContactCount": 0,
+            "whiffRate": 0.0,
+            "csw": 50.0,
+            "zoneRate": 83.3,
+            "zSwing": 40.0,
+            "oContact": null,
+            "chase": 0.0,
+            "chasePlus": 0.0,
+            "locationScore": 100.0,
+            "stuffScore": 101.0
+          },
+          {
+            "pitchType": "シュート",
+            "count": 5,
+            "ratio": 27.8,
+            "avgSpeed": "148.2",
+            "maxSpeed": "150.0",
+            "speedTotal": 593.0,
+            "speedCount": 4,
+            "whiffCount": 1,
+            "whiff": 20.0,
+            "atBats": 2,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 1,
+            "flyBalls": 0,
+            "strikeouts": 1,
+            "hitRate": 0.0,
+            "color": "#355C8C",
+            "swingCount": 3,
+            "calledStrikeCount": 1,
+            "locatedCount": 5,
+            "zoneCount": 4,
+            "outZoneCount": 1,
+            "zoneSwingCount": 2,
+            "outZoneSwingCount": 1,
+            "outZoneContactCount": 0,
+            "whiffRate": 33.3,
+            "csw": 40.0,
+            "zoneRate": 80.0,
+            "zSwing": 50.0,
+            "oContact": 0.0,
+            "chase": 100.0,
+            "chasePlus": 307.0,
+            "locationScore": 100.0,
+            "stuffScore": 105.0
+          },
+          {
+            "pitchType": "スライダー",
+            "count": 5,
+            "ratio": 27.8,
+            "avgSpeed": "124.0",
+            "maxSpeed": "125.0",
+            "speedTotal": 620.0,
+            "speedCount": 5,
+            "whiffCount": 0,
+            "whiff": 0.0,
+            "atBats": 0,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 0,
+            "flyBalls": 0,
+            "strikeouts": 0,
+            "hitRate": null,
+            "color": "#6A89B4",
+            "swingCount": 0,
+            "calledStrikeCount": 1,
+            "locatedCount": 5,
+            "zoneCount": 2,
+            "outZoneCount": 3,
+            "zoneSwingCount": 0,
+            "outZoneSwingCount": 0,
+            "outZoneContactCount": 0,
+            "whiffRate": null,
+            "csw": 20.0,
+            "zoneRate": 40.0,
+            "zSwing": 0.0,
+            "oContact": null,
+            "chase": 0.0,
+            "chasePlus": 0.0,
+            "locationScore": 100.0,
+            "stuffScore": 97.0
+          },
+          {
+            "pitchType": "フォーク",
+            "count": 1,
+            "ratio": 5.6,
+            "avgSpeed": "134.0",
+            "maxSpeed": "134.0",
+            "speedTotal": 134.0,
+            "speedCount": 1,
+            "whiffCount": 0,
+            "whiff": 0.0,
+            "atBats": 0,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 0,
+            "flyBalls": 0,
+            "strikeouts": 0,
+            "hitRate": null,
+            "color": "#C8A55A",
+            "swingCount": 0,
+            "calledStrikeCount": 0,
+            "locatedCount": 1,
+            "zoneCount": 0,
+            "outZoneCount": 1,
+            "zoneSwingCount": 0,
+            "outZoneSwingCount": 0,
+            "outZoneContactCount": 0,
+            "whiffRate": null,
+            "csw": 0.0,
+            "zoneRate": 0.0,
+            "zSwing": null,
+            "oContact": null,
+            "chase": 0.0,
+            "chasePlus": 0.0,
+            "locationScore": 98.0,
+            "stuffScore": 99.0
+          },
+          {
+            "pitchType": "カットボール",
+            "count": 1,
+            "ratio": 5.6,
+            "avgSpeed": "142.0",
+            "maxSpeed": "142.0",
+            "speedTotal": 142.0,
+            "speedCount": 1,
+            "whiffCount": 0,
+            "whiff": 0.0,
+            "atBats": 0,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 0,
+            "flyBalls": 0,
+            "strikeouts": 0,
+            "hitRate": null,
+            "color": "#D6C192",
+            "swingCount": 0,
+            "calledStrikeCount": 0,
+            "locatedCount": 1,
+            "zoneCount": 0,
+            "outZoneCount": 1,
+            "zoneSwingCount": 0,
+            "outZoneSwingCount": 0,
+            "outZoneContactCount": 0,
+            "whiffRate": null,
+            "csw": 0.0,
+            "zoneRate": 0.0,
+            "zSwing": null,
+            "oContact": null,
+            "chase": 0.0,
+            "chasePlus": 0.0,
+            "locationScore": 98.0,
+            "stuffScore": 99.0
+          }
+        ]
+      }
+    },
+    {
+      "id": "ソフトバンク-2026-05-24-2021038908-ヘルナンデス",
+      "team": "ソフトバンク",
+      "league": "パ",
+      "date": "2026-05-24",
+      "prefix": "2021038908-ヘルナンデス",
+      "gameId": "2021038908",
+      "order": 610100,
+      "title": "ヘルナンデス",
+      "player": "ヘルナンデス",
+      "pitcherId": "1961052",
+      "matchup": "福岡ソフトバンクホークスvs北海道日本ハムファイターズ",
+      "dateLabel": "2026年5月24日",
+      "pages": [],
+      "statline": {
+        "era": "1.59",
+        "innings": "1",
+        "pitches": "15",
+        "batters": "4",
+        "hits": "1",
+        "hr": "0",
+        "k": "2",
+        "bb": "0",
+        "hbp": "0",
+        "balk": "0",
+        "er": "0",
+        "runs": "0"
+      },
+      "detailPath": "../generated/ソフトバンク/2026-05-24/2021038908-ヘルナンデス-dashboard-detail.json",
+      "dashboard": {
+        "pitchMix": [
+          {
+            "pitchType": "ストレート",
+            "count": 8,
+            "ratio": 53.3,
+            "avgSpeed": "154.7",
+            "maxSpeed": "156.0",
+            "speedTotal": 1083.0,
+            "speedCount": 7,
+            "whiffCount": 1,
+            "whiff": 12.5,
+            "atBats": 3,
+            "singles": 1,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 0,
+            "flyBalls": 1,
+            "strikeouts": 1,
+            "hitRate": 0.333,
+            "color": "#0F2340",
+            "swingCount": 3,
+            "calledStrikeCount": 2,
+            "locatedCount": 8,
+            "zoneCount": 3,
+            "outZoneCount": 5,
+            "zoneSwingCount": 1,
+            "outZoneSwingCount": 2,
+            "outZoneContactCount": 1,
+            "whiffRate": 33.3,
+            "csw": 37.5,
+            "zoneRate": 37.5,
+            "zSwing": 33.3,
+            "oContact": 50.0,
+            "chase": 40.0,
+            "chasePlus": 123.0,
+            "locationScore": 100.0,
+            "stuffScore": 105.0
+          },
+          {
+            "pitchType": "スライダー",
+            "count": 7,
+            "ratio": 46.7,
+            "avgSpeed": "141.7",
+            "maxSpeed": "145.0",
+            "speedTotal": 850.0,
+            "speedCount": 6,
+            "whiffCount": 2,
+            "whiff": 28.6,
+            "atBats": 1,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 0,
+            "flyBalls": 0,
+            "strikeouts": 1,
+            "hitRate": 0.0,
+            "color": "#355C8C",
+            "swingCount": 3,
+            "calledStrikeCount": 2,
+            "locatedCount": 7,
+            "zoneCount": 3,
+            "outZoneCount": 4,
+            "zoneSwingCount": 1,
+            "outZoneSwingCount": 2,
+            "outZoneContactCount": 0,
+            "whiffRate": 66.7,
+            "csw": 57.1,
+            "zoneRate": 42.9,
+            "zSwing": 33.3,
+            "oContact": 0.0,
+            "chase": 50.0,
+            "chasePlus": 153.0,
+            "locationScore": 100.0,
+            "stuffScore": 106.0
+          }
+        ]
+      }
+    },
+    {
+      "id": "ソフトバンク-2026-05-24-2021038908-木村光",
+      "team": "ソフトバンク",
+      "league": "パ",
+      "date": "2026-05-24",
+      "prefix": "2021038908-木村光",
+      "gameId": "2021038908",
+      "order": 710100,
+      "title": "木村 光",
+      "player": "木村 光",
+      "pitcherId": "1851115",
+      "matchup": "福岡ソフトバンクホークスvs北海道日本ハムファイターズ",
+      "dateLabel": "2026年5月24日",
+      "pages": [],
+      "statline": {
+        "era": "1.65",
+        "innings": "1",
+        "pitches": "16",
+        "batters": "5",
+        "hits": "1",
+        "hr": "1",
+        "k": "1",
+        "bb": "1",
+        "hbp": "0",
+        "balk": "0",
+        "er": "1",
+        "runs": "1"
+      },
+      "detailPath": "../generated/ソフトバンク/2026-05-24/2021038908-木村光-dashboard-detail.json",
+      "dashboard": {
+        "pitchMix": [
+          {
+            "pitchType": "ストレート",
+            "count": 8,
+            "ratio": 50.0,
+            "avgSpeed": "147.2",
+            "maxSpeed": "149.0",
+            "speedTotal": 1178.0,
+            "speedCount": 8,
+            "whiffCount": 0,
+            "whiff": 0.0,
+            "atBats": 1,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 0,
+            "flyBalls": 1,
+            "strikeouts": 0,
+            "hitRate": 0.0,
+            "color": "#0F2340",
+            "swingCount": 3,
+            "calledStrikeCount": 0,
+            "locatedCount": 8,
+            "zoneCount": 3,
+            "outZoneCount": 5,
+            "zoneSwingCount": 3,
+            "outZoneSwingCount": 0,
+            "outZoneContactCount": 0,
+            "whiffRate": 0.0,
+            "csw": 0.0,
+            "zoneRate": 37.5,
+            "zSwing": 100.0,
+            "oContact": null,
+            "chase": 0.0,
+            "chasePlus": 0.0,
+            "locationScore": 99.0,
+            "stuffScore": 93.0
+          },
+          {
+            "pitchType": "スプリット",
+            "count": 5,
+            "ratio": 31.2,
+            "avgSpeed": "136.3",
+            "maxSpeed": "138.0",
+            "speedTotal": 409.0,
+            "speedCount": 3,
+            "whiffCount": 2,
+            "whiff": 40.0,
+            "atBats": 1,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 1,
+            "grounders": 0,
+            "flyBalls": 0,
+            "strikeouts": 0,
+            "hitRate": 1.0,
+            "color": "#355C8C",
+            "swingCount": 3,
+            "calledStrikeCount": 1,
+            "locatedCount": 5,
+            "zoneCount": 2,
+            "outZoneCount": 3,
+            "zoneSwingCount": 1,
+            "outZoneSwingCount": 2,
+            "outZoneContactCount": 0,
+            "whiffRate": 66.7,
+            "csw": 60.0,
+            "zoneRate": 40.0,
+            "zSwing": 50.0,
+            "oContact": 0.0,
+            "chase": 66.7,
+            "chasePlus": 204.0,
+            "locationScore": 100.0,
+            "stuffScore": 105.0
+          },
+          {
+            "pitchType": "ツーシーム",
+            "count": 3,
+            "ratio": 18.8,
+            "avgSpeed": "141.5",
+            "maxSpeed": "143.0",
+            "speedTotal": 283.0,
+            "speedCount": 2,
+            "whiffCount": 1,
+            "whiff": 33.3,
+            "atBats": 2,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 1,
+            "flyBalls": 0,
+            "strikeouts": 1,
+            "hitRate": 0.0,
+            "color": "#6A89B4",
+            "swingCount": 2,
+            "calledStrikeCount": 0,
+            "locatedCount": 3,
+            "zoneCount": 0,
+            "outZoneCount": 3,
+            "zoneSwingCount": 0,
+            "outZoneSwingCount": 2,
+            "outZoneContactCount": 1,
+            "whiffRate": 50.0,
+            "csw": 33.3,
+            "zoneRate": 0.0,
+            "zSwing": null,
+            "oContact": 50.0,
+            "chase": 66.7,
+            "chasePlus": 204.0,
+            "locationScore": 101.0,
+            "stuffScore": 105.0
+          }
+        ]
+      }
+    },
+    {
+      "id": "ソフトバンク-2026-05-24-2021038908-松本裕樹",
+      "team": "ソフトバンク",
+      "league": "パ",
+      "date": "2026-05-24",
+      "prefix": "2021038908-松本裕樹",
+      "gameId": "2021038908",
+      "order": 810100,
+      "title": "松本 裕樹",
+      "player": "松本 裕樹",
+      "pitcherId": "1400126",
+      "matchup": "福岡ソフトバンクホークスvs北海道日本ハムファイターズ",
+      "dateLabel": "2026年5月24日",
+      "pages": [],
+      "statline": {
+        "era": "3.29",
+        "innings": "1",
+        "pitches": "14",
+        "batters": "5",
+        "hits": "2",
+        "hr": "0",
+        "k": "1",
+        "bb": "0",
+        "hbp": "0",
+        "balk": "0",
+        "er": "0",
+        "runs": "0"
+      },
+      "detailPath": "../generated/ソフトバンク/2026-05-24/2021038908-松本裕樹-dashboard-detail.json",
+      "dashboard": {
+        "pitchMix": [
+          {
+            "pitchType": "ストレート",
+            "count": 12,
+            "ratio": 85.7,
+            "avgSpeed": "153.5",
+            "maxSpeed": "157.0",
+            "speedTotal": 1535.0,
+            "speedCount": 10,
+            "whiffCount": 2,
+            "whiff": 16.7,
+            "atBats": 4,
+            "singles": 0,
+            "doubles": 1,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 2,
+            "flyBalls": 0,
+            "strikeouts": 1,
+            "hitRate": 0.25,
+            "color": "#0F2340",
+            "swingCount": 6,
+            "calledStrikeCount": 3,
+            "locatedCount": 12,
+            "zoneCount": 8,
+            "outZoneCount": 4,
+            "zoneSwingCount": 5,
+            "outZoneSwingCount": 1,
+            "outZoneContactCount": 1,
+            "whiffRate": 33.3,
+            "csw": 41.7,
+            "zoneRate": 66.7,
+            "zSwing": 62.5,
+            "oContact": 100.0,
+            "chase": 25.0,
+            "chasePlus": 77.0,
+            "locationScore": 101.0,
+            "stuffScore": 108.0
+          },
+          {
+            "pitchType": "スライダー",
+            "count": 1,
+            "ratio": 7.1,
+            "avgSpeed": "135.0",
+            "maxSpeed": "135.0",
+            "speedTotal": 135.0,
+            "speedCount": 1,
+            "whiffCount": 1,
+            "whiff": 100.0,
+            "atBats": 0,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 0,
+            "flyBalls": 0,
+            "strikeouts": 0,
+            "hitRate": null,
+            "color": "#355C8C",
+            "swingCount": 1,
+            "calledStrikeCount": 0,
+            "locatedCount": 1,
+            "zoneCount": 0,
+            "outZoneCount": 1,
+            "zoneSwingCount": 0,
+            "outZoneSwingCount": 1,
+            "outZoneContactCount": 0,
+            "whiffRate": 100.0,
+            "csw": 100.0,
+            "zoneRate": 0.0,
+            "zSwing": null,
+            "oContact": 0.0,
+            "chase": 100.0,
+            "chasePlus": 307.0,
+            "locationScore": 101.0,
+            "stuffScore": 104.0
+          },
+          {
+            "pitchType": "フォーク",
+            "count": 1,
+            "ratio": 7.1,
+            "avgSpeed": "-",
+            "maxSpeed": "-",
+            "speedTotal": 0,
+            "speedCount": 0,
+            "whiffCount": 0,
+            "whiff": 0.0,
+            "atBats": 1,
+            "singles": 1,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 0,
+            "flyBalls": 0,
+            "strikeouts": 0,
+            "hitRate": 1.0,
+            "color": "#6A89B4",
+            "swingCount": 1,
+            "calledStrikeCount": 0,
+            "locatedCount": 1,
+            "zoneCount": 1,
+            "outZoneCount": 0,
+            "zoneSwingCount": 1,
+            "outZoneSwingCount": 0,
+            "outZoneContactCount": 0,
+            "whiffRate": 0.0,
+            "csw": 0.0,
+            "zoneRate": 100.0,
+            "zSwing": 100.0,
+            "oContact": null,
+            "chase": null,
+            "chasePlus": null,
+            "locationScore": 100.0,
+            "stuffScore": 98.0
+          }
+        ]
+      }
+    },
+    {
+      "id": "ソフトバンク-2026-05-24-2021038908-杉山一樹",
+      "team": "ソフトバンク",
+      "league": "パ",
+      "date": "2026-05-24",
+      "prefix": "2021038908-杉山一樹",
+      "gameId": "2021038908",
+      "order": 910100,
+      "title": "杉山 一樹",
+      "player": "杉山 一樹",
+      "pitcherId": "1800107",
+      "matchup": "福岡ソフトバンクホークスvs北海道日本ハムファイターズ",
+      "dateLabel": "2026年5月24日",
+      "pages": [],
+      "statline": {
+        "era": "5.40",
+        "innings": "1",
+        "pitches": "16",
+        "batters": "4",
+        "hits": "0",
+        "hr": "0",
+        "k": "2",
+        "bb": "1",
+        "hbp": "0",
+        "balk": "0",
+        "er": "0",
+        "runs": "0"
+      },
+      "detailPath": "../generated/ソフトバンク/2026-05-24/2021038908-杉山一樹-dashboard-detail.json",
+      "dashboard": {
+        "pitchMix": [
+          {
+            "pitchType": "フォーク",
+            "count": 8,
+            "ratio": 50.0,
+            "avgSpeed": "142.3",
+            "maxSpeed": "145.0",
+            "speedTotal": 996.0,
+            "speedCount": 7,
+            "whiffCount": 2,
+            "whiff": 25.0,
+            "atBats": 2,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 0,
+            "flyBalls": 1,
+            "strikeouts": 1,
+            "hitRate": 0.0,
+            "color": "#0F2340",
+            "swingCount": 4,
+            "calledStrikeCount": 2,
+            "locatedCount": 8,
+            "zoneCount": 4,
+            "outZoneCount": 4,
+            "zoneSwingCount": 3,
+            "outZoneSwingCount": 1,
+            "outZoneContactCount": 0,
+            "whiffRate": 50.0,
+            "csw": 50.0,
+            "zoneRate": 50.0,
+            "zSwing": 75.0,
+            "oContact": 0.0,
+            "chase": 25.0,
+            "chasePlus": 77.0,
+            "locationScore": 100.0,
+            "stuffScore": 103.0
+          },
+          {
+            "pitchType": "ストレート",
+            "count": 8,
+            "ratio": 50.0,
+            "avgSpeed": "153.5",
+            "maxSpeed": "155.0",
+            "speedTotal": 1228.0,
+            "speedCount": 8,
+            "whiffCount": 2,
+            "whiff": 25.0,
+            "atBats": 1,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 0,
+            "flyBalls": 0,
+            "strikeouts": 1,
+            "hitRate": 0.0,
+            "color": "#355C8C",
+            "swingCount": 2,
+            "calledStrikeCount": 1,
+            "locatedCount": 8,
+            "zoneCount": 3,
+            "outZoneCount": 5,
+            "zoneSwingCount": 2,
+            "outZoneSwingCount": 0,
+            "outZoneContactCount": 0,
+            "whiffRate": 100.0,
+            "csw": 37.5,
+            "zoneRate": 37.5,
+            "zSwing": 66.7,
+            "oContact": null,
+            "chase": 0.0,
+            "chasePlus": 0.0,
+            "locationScore": 100.0,
+            "stuffScore": 109.0
+          }
+        ]
+      }
+    },
+    {
+      "id": "日本ハム-2026-05-24-2021038908-北山亘基",
+      "team": "日本ハム",
+      "league": "パ",
+      "date": "2026-05-24",
+      "prefix": "2021038908-北山亘基",
+      "gameId": "2021038908",
+      "order": 120100,
+      "title": "北山 亘基",
+      "player": "北山 亘基",
+      "pitcherId": "1750903",
+      "matchup": "福岡ソフトバンクホークスvs北海道日本ハムファイターズ",
+      "dateLabel": "2026年5月24日",
+      "pages": [],
+      "statline": {
+        "era": "2.84",
+        "innings": "4",
+        "pitches": "95",
+        "batters": "23",
+        "hits": "8",
+        "hr": "1",
+        "k": "5",
+        "bb": "2",
+        "hbp": "0",
+        "balk": "0",
+        "er": "6",
+        "runs": "6"
+      },
+      "detailPath": "../generated/日本ハム/2026-05-24/2021038908-北山亘基-dashboard-detail.json",
+      "dashboard": {
+        "pitchMix": [
+          {
+            "pitchType": "ストレート",
+            "count": 39,
+            "ratio": 41.1,
+            "avgSpeed": "149.7",
+            "maxSpeed": "153.0",
+            "speedTotal": 5091.0,
+            "speedCount": 34,
+            "whiffCount": 4,
+            "whiff": 10.3,
+            "atBats": 9,
+            "singles": 1,
+            "doubles": 1,
+            "triples": 1,
+            "homeRuns": 0,
+            "grounders": 3,
+            "flyBalls": 1,
+            "strikeouts": 1,
+            "hitRate": 0.333,
+            "color": "#0F2340",
+            "swingCount": 21,
+            "calledStrikeCount": 2,
+            "locatedCount": 39,
+            "zoneCount": 18,
+            "outZoneCount": 21,
+            "zoneSwingCount": 16,
+            "outZoneSwingCount": 5,
+            "outZoneContactCount": 4,
+            "whiffRate": 19.0,
+            "csw": 15.4,
+            "zoneRate": 46.2,
+            "zSwing": 88.9,
+            "oContact": 80.0,
+            "chase": 23.8,
+            "chasePlus": 73.0,
+            "locationScore": 99.0,
+            "stuffScore": 97.0
+          },
+          {
+            "pitchType": "フォーク",
+            "count": 27,
+            "ratio": 28.4,
+            "avgSpeed": "139.2",
+            "maxSpeed": "143.0",
+            "speedTotal": 3062.0,
+            "speedCount": 22,
+            "whiffCount": 8,
+            "whiff": 29.6,
+            "atBats": 9,
+            "singles": 3,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 2,
+            "flyBalls": 1,
+            "strikeouts": 3,
+            "hitRate": 0.333,
+            "color": "#355C8C",
+            "swingCount": 18,
+            "calledStrikeCount": 2,
+            "locatedCount": 27,
+            "zoneCount": 9,
+            "outZoneCount": 18,
+            "zoneSwingCount": 8,
+            "outZoneSwingCount": 10,
+            "outZoneContactCount": 4,
+            "whiffRate": 44.4,
+            "csw": 37.0,
+            "zoneRate": 33.3,
+            "zSwing": 88.9,
+            "oContact": 40.0,
+            "chase": 55.6,
+            "chasePlus": 170.0,
+            "locationScore": 101.0,
+            "stuffScore": 106.0
+          },
+          {
+            "pitchType": "カットボール",
+            "count": 19,
+            "ratio": 20.0,
+            "avgSpeed": "138.7",
+            "maxSpeed": "143.0",
+            "speedTotal": 2635.0,
+            "speedCount": 19,
+            "whiffCount": 3,
+            "whiff": 15.8,
+            "atBats": 2,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 1,
+            "grounders": 0,
+            "flyBalls": 0,
+            "strikeouts": 1,
+            "hitRate": 0.5,
+            "color": "#6A89B4",
+            "swingCount": 7,
+            "calledStrikeCount": 6,
+            "locatedCount": 19,
+            "zoneCount": 10,
+            "outZoneCount": 9,
+            "zoneSwingCount": 5,
+            "outZoneSwingCount": 2,
+            "outZoneContactCount": 1,
+            "whiffRate": 42.9,
+            "csw": 47.4,
+            "zoneRate": 52.6,
+            "zSwing": 50.0,
+            "oContact": 50.0,
+            "chase": 22.2,
+            "chasePlus": 68.0,
+            "locationScore": 101.0,
+            "stuffScore": 107.0
+          },
+          {
+            "pitchType": "カーブ",
+            "count": 8,
+            "ratio": 8.4,
+            "avgSpeed": "122.7",
+            "maxSpeed": "125.0",
+            "speedTotal": 859.0,
+            "speedCount": 7,
+            "whiffCount": 0,
+            "whiff": 0.0,
+            "atBats": 0,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 0,
+            "flyBalls": 0,
+            "strikeouts": 0,
+            "hitRate": null,
+            "color": "#C8A55A",
+            "swingCount": 1,
+            "calledStrikeCount": 1,
+            "locatedCount": 8,
+            "zoneCount": 2,
+            "outZoneCount": 6,
+            "zoneSwingCount": 1,
+            "outZoneSwingCount": 0,
+            "outZoneContactCount": 0,
+            "whiffRate": 0.0,
+            "csw": 12.5,
+            "zoneRate": 25.0,
+            "zSwing": 50.0,
+            "oContact": null,
+            "chase": 0.0,
+            "chasePlus": 0.0,
+            "locationScore": 100.0,
+            "stuffScore": 96.0
+          },
+          {
+            "pitchType": "チェンジアップ",
+            "count": 2,
+            "ratio": 2.1,
+            "avgSpeed": "126.0",
+            "maxSpeed": "126.0",
+            "speedTotal": 126.0,
+            "speedCount": 1,
+            "whiffCount": 0,
+            "whiff": 0.0,
+            "atBats": 1,
+            "singles": 1,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 0,
+            "flyBalls": 0,
+            "strikeouts": 0,
+            "hitRate": 1.0,
+            "color": "#D6C192",
+            "swingCount": 1,
+            "calledStrikeCount": 0,
+            "locatedCount": 2,
+            "zoneCount": 0,
+            "outZoneCount": 2,
+            "zoneSwingCount": 0,
+            "outZoneSwingCount": 1,
+            "outZoneContactCount": 1,
+            "whiffRate": 0.0,
+            "csw": 0.0,
+            "zoneRate": 0.0,
+            "zSwing": null,
+            "oContact": 100.0,
+            "chase": 50.0,
+            "chasePlus": 153.0,
+            "locationScore": 99.0,
+            "stuffScore": 98.0
+          }
+        ]
+      }
+    },
+    {
+      "id": "日本ハム-2026-05-24-2021038908-河野竜生",
+      "team": "日本ハム",
+      "league": "パ",
+      "date": "2026-05-24",
+      "prefix": "2021038908-河野竜生",
+      "gameId": "2021038908",
+      "order": 520100,
+      "title": "河野 竜生",
+      "player": "河野 竜生",
+      "pitcherId": "1900070",
+      "matchup": "福岡ソフトバンクホークスvs北海道日本ハムファイターズ",
+      "dateLabel": "2026年5月24日",
+      "pages": [],
+      "statline": {
+        "era": "0.00",
+        "innings": "1",
+        "pitches": "22",
+        "batters": "5",
+        "hits": "1",
+        "hr": "0",
+        "k": "1",
+        "bb": "0",
+        "hbp": "1",
+        "balk": "0",
+        "er": "0",
+        "runs": "0"
+      },
+      "detailPath": "../generated/日本ハム/2026-05-24/2021038908-河野竜生-dashboard-detail.json",
+      "dashboard": {
+        "pitchMix": [
+          {
+            "pitchType": "カットボール",
+            "count": 15,
+            "ratio": 68.2,
+            "avgSpeed": "137.1",
+            "maxSpeed": "139.0",
+            "speedTotal": 1919.0,
+            "speedCount": 14,
+            "whiffCount": 4,
+            "whiff": 26.7,
+            "atBats": 3,
+            "singles": 1,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 0,
+            "flyBalls": 1,
+            "strikeouts": 1,
+            "hitRate": 0.333,
+            "color": "#0F2340",
+            "swingCount": 10,
+            "calledStrikeCount": 0,
+            "locatedCount": 15,
+            "zoneCount": 9,
+            "outZoneCount": 6,
+            "zoneSwingCount": 9,
+            "outZoneSwingCount": 1,
+            "outZoneContactCount": 0,
+            "whiffRate": 40.0,
+            "csw": 26.7,
+            "zoneRate": 60.0,
+            "zSwing": 100.0,
+            "oContact": 0.0,
+            "chase": 16.7,
+            "chasePlus": 51.0,
+            "locationScore": 100.0,
+            "stuffScore": 103.0
+          },
+          {
+            "pitchType": "ストレート",
+            "count": 5,
+            "ratio": 22.7,
+            "avgSpeed": "145.8",
+            "maxSpeed": "147.0",
+            "speedTotal": 729.0,
+            "speedCount": 5,
+            "whiffCount": 0,
+            "whiff": 0.0,
+            "atBats": 0,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 0,
+            "flyBalls": 0,
+            "strikeouts": 0,
+            "hitRate": null,
+            "color": "#355C8C",
+            "swingCount": 2,
+            "calledStrikeCount": 1,
+            "locatedCount": 5,
+            "zoneCount": 3,
+            "outZoneCount": 2,
+            "zoneSwingCount": 2,
+            "outZoneSwingCount": 0,
+            "outZoneContactCount": 0,
+            "whiffRate": 0.0,
+            "csw": 20.0,
+            "zoneRate": 60.0,
+            "zSwing": 66.7,
+            "oContact": null,
+            "chase": 0.0,
+            "chasePlus": 0.0,
+            "locationScore": 100.0,
+            "stuffScore": 97.0
+          },
+          {
+            "pitchType": "フォーク",
+            "count": 2,
+            "ratio": 9.1,
+            "avgSpeed": "134.0",
+            "maxSpeed": "134.0",
+            "speedTotal": 268.0,
+            "speedCount": 2,
+            "whiffCount": 0,
+            "whiff": 0.0,
+            "atBats": 0,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 0,
+            "flyBalls": 0,
+            "strikeouts": 0,
+            "hitRate": null,
+            "color": "#6A89B4",
+            "swingCount": 1,
+            "calledStrikeCount": 0,
+            "locatedCount": 2,
+            "zoneCount": 0,
+            "outZoneCount": 2,
+            "zoneSwingCount": 0,
+            "outZoneSwingCount": 1,
+            "outZoneContactCount": 1,
+            "whiffRate": 0.0,
+            "csw": 0.0,
+            "zoneRate": 0.0,
+            "zSwing": null,
+            "oContact": 100.0,
+            "chase": 50.0,
+            "chasePlus": 153.0,
+            "locationScore": 100.0,
+            "stuffScore": 98.0
+          }
+        ]
+      }
+    },
+    {
+      "id": "日本ハム-2026-05-24-2021038908-堀瑞輝",
+      "team": "日本ハム",
+      "league": "パ",
+      "date": "2026-05-24",
+      "prefix": "2021038908-堀瑞輝",
+      "gameId": "2021038908",
+      "order": 620100,
+      "title": "堀 瑞輝",
+      "player": "堀 瑞輝",
+      "pitcherId": "1600133",
+      "matchup": "福岡ソフトバンクホークスvs北海道日本ハムファイターズ",
+      "dateLabel": "2026年5月24日",
+      "pages": [],
+      "statline": {
+        "era": "3.18",
+        "innings": "1",
+        "pitches": "17",
+        "batters": "4",
+        "hits": "0",
+        "hr": "0",
+        "k": "1",
+        "bb": "1",
+        "hbp": "0",
+        "balk": "0",
+        "er": "0",
+        "runs": "0"
+      },
+      "detailPath": "../generated/日本ハム/2026-05-24/2021038908-堀瑞輝-dashboard-detail.json",
+      "dashboard": {
+        "pitchMix": [
+          {
+            "pitchType": "ストレート",
+            "count": 9,
+            "ratio": 52.9,
+            "avgSpeed": "148.6",
+            "maxSpeed": "150.0",
+            "speedTotal": 1337.0,
+            "speedCount": 9,
+            "whiffCount": 3,
+            "whiff": 33.3,
+            "atBats": 0,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 0,
+            "flyBalls": 0,
+            "strikeouts": 0,
+            "hitRate": null,
+            "color": "#0F2340",
+            "swingCount": 5,
+            "calledStrikeCount": 0,
+            "locatedCount": 9,
+            "zoneCount": 3,
+            "outZoneCount": 6,
+            "zoneSwingCount": 3,
+            "outZoneSwingCount": 2,
+            "outZoneContactCount": 1,
+            "whiffRate": 60.0,
+            "csw": 33.3,
+            "zoneRate": 33.3,
+            "zSwing": 100.0,
+            "oContact": 50.0,
+            "chase": 33.3,
+            "chasePlus": 102.0,
+            "locationScore": 101.0,
+            "stuffScore": 111.0
+          },
+          {
+            "pitchType": "スライダー",
+            "count": 4,
+            "ratio": 23.5,
+            "avgSpeed": "135.0",
+            "maxSpeed": "137.0",
+            "speedTotal": 540.0,
+            "speedCount": 4,
+            "whiffCount": 1,
+            "whiff": 25.0,
+            "atBats": 2,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 0,
+            "flyBalls": 1,
+            "strikeouts": 1,
+            "hitRate": 0.0,
+            "color": "#355C8C",
+            "swingCount": 3,
+            "calledStrikeCount": 1,
+            "locatedCount": 4,
+            "zoneCount": 3,
+            "outZoneCount": 1,
+            "zoneSwingCount": 2,
+            "outZoneSwingCount": 1,
+            "outZoneContactCount": 0,
+            "whiffRate": 33.3,
+            "csw": 50.0,
+            "zoneRate": 75.0,
+            "zSwing": 66.7,
+            "oContact": 0.0,
+            "chase": 100.0,
+            "chasePlus": 307.0,
+            "locationScore": 102.0,
+            "stuffScore": 102.0
+          },
+          {
+            "pitchType": "カットボール",
+            "count": 4,
+            "ratio": 23.5,
+            "avgSpeed": "142.0",
+            "maxSpeed": "143.0",
+            "speedTotal": 568.0,
+            "speedCount": 4,
+            "whiffCount": 0,
+            "whiff": 0.0,
+            "atBats": 1,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 0,
+            "flyBalls": 1,
+            "strikeouts": 0,
+            "hitRate": 0.0,
+            "color": "#6A89B4",
+            "swingCount": 1,
+            "calledStrikeCount": 1,
+            "locatedCount": 4,
+            "zoneCount": 2,
+            "outZoneCount": 2,
+            "zoneSwingCount": 1,
+            "outZoneSwingCount": 0,
+            "outZoneContactCount": 0,
+            "whiffRate": 0.0,
+            "csw": 25.0,
+            "zoneRate": 50.0,
+            "zSwing": 50.0,
+            "oContact": null,
+            "chase": 0.0,
+            "chasePlus": 0.0,
+            "locationScore": 99.0,
+            "stuffScore": 98.0
+          }
+        ]
+      }
+    },
+    {
+      "id": "日本ハム-2026-05-24-2021038908-島本浩也",
+      "team": "日本ハム",
+      "league": "パ",
+      "date": "2026-05-24",
+      "prefix": "2021038908-島本浩也",
+      "gameId": "2021038908",
+      "order": 720100,
+      "title": "島本 浩也",
+      "player": "島本 浩也",
+      "pitcherId": "1000164",
+      "matchup": "福岡ソフトバンクホークスvs北海道日本ハムファイターズ",
+      "dateLabel": "2026年5月24日",
+      "pages": [],
+      "statline": {
+        "era": "1.42",
+        "innings": "1",
+        "pitches": "19",
+        "batters": "5",
+        "hits": "1",
+        "hr": "0",
+        "k": "0",
+        "bb": "1",
+        "hbp": "0",
+        "balk": "0",
+        "er": "0",
+        "runs": "0"
+      },
+      "detailPath": "../generated/日本ハム/2026-05-24/2021038908-島本浩也-dashboard-detail.json",
+      "dashboard": {
+        "pitchMix": [
+          {
+            "pitchType": "シュート",
+            "count": 7,
+            "ratio": 36.8,
+            "avgSpeed": "144.7",
+            "maxSpeed": "145.0",
+            "speedTotal": 1013.0,
+            "speedCount": 7,
+            "whiffCount": 0,
+            "whiff": 0.0,
+            "atBats": 1,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 0,
+            "flyBalls": 1,
+            "strikeouts": 0,
+            "hitRate": 0.0,
+            "color": "#0F2340",
+            "swingCount": 1,
+            "calledStrikeCount": 1,
+            "locatedCount": 7,
+            "zoneCount": 2,
+            "outZoneCount": 5,
+            "zoneSwingCount": 1,
+            "outZoneSwingCount": 0,
+            "outZoneContactCount": 0,
+            "whiffRate": 0.0,
+            "csw": 14.3,
+            "zoneRate": 28.6,
+            "zSwing": 50.0,
+            "oContact": null,
+            "chase": 0.0,
+            "chasePlus": 0.0,
+            "locationScore": 99.0,
+            "stuffScore": 97.0
+          },
+          {
+            "pitchType": "ストレート",
+            "count": 5,
+            "ratio": 26.3,
+            "avgSpeed": "145.0",
+            "maxSpeed": "146.0",
+            "speedTotal": 725.0,
+            "speedCount": 5,
+            "whiffCount": 0,
+            "whiff": 0.0,
+            "atBats": 1,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 1,
+            "flyBalls": 0,
+            "strikeouts": 0,
+            "hitRate": 0.0,
+            "color": "#355C8C",
+            "swingCount": 2,
+            "calledStrikeCount": 0,
+            "locatedCount": 5,
+            "zoneCount": 2,
+            "outZoneCount": 3,
+            "zoneSwingCount": 2,
+            "outZoneSwingCount": 0,
+            "outZoneContactCount": 0,
+            "whiffRate": 0.0,
+            "csw": 0.0,
+            "zoneRate": 40.0,
+            "zSwing": 100.0,
+            "oContact": null,
+            "chase": 0.0,
+            "chasePlus": 0.0,
+            "locationScore": 97.0,
+            "stuffScore": 95.0
+          },
+          {
+            "pitchType": "スライダー",
+            "count": 4,
+            "ratio": 21.1,
+            "avgSpeed": "126.5",
+            "maxSpeed": "127.0",
+            "speedTotal": 506.0,
+            "speedCount": 4,
+            "whiffCount": 1,
+            "whiff": 25.0,
+            "atBats": 1,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 0,
+            "flyBalls": 1,
+            "strikeouts": 0,
+            "hitRate": 0.0,
+            "color": "#6A89B4",
+            "swingCount": 4,
+            "calledStrikeCount": 0,
+            "locatedCount": 4,
+            "zoneCount": 2,
+            "outZoneCount": 2,
+            "zoneSwingCount": 2,
+            "outZoneSwingCount": 2,
+            "outZoneContactCount": 1,
+            "whiffRate": 25.0,
+            "csw": 25.0,
+            "zoneRate": 50.0,
+            "zSwing": 100.0,
+            "oContact": 50.0,
+            "chase": 100.0,
+            "chasePlus": 307.0,
+            "locationScore": 101.0,
+            "stuffScore": 100.0
+          },
+          {
+            "pitchType": "フォーク",
+            "count": 3,
+            "ratio": 15.8,
+            "avgSpeed": "136.5",
+            "maxSpeed": "138.0",
+            "speedTotal": 273.0,
+            "speedCount": 2,
+            "whiffCount": 0,
+            "whiff": 0.0,
+            "atBats": 1,
+            "singles": 1,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 0,
+            "flyBalls": 0,
+            "strikeouts": 0,
+            "hitRate": 1.0,
+            "color": "#C8A55A",
+            "swingCount": 1,
+            "calledStrikeCount": 0,
+            "locatedCount": 3,
+            "zoneCount": 1,
+            "outZoneCount": 2,
+            "zoneSwingCount": 1,
+            "outZoneSwingCount": 0,
+            "outZoneContactCount": 0,
+            "whiffRate": 0.0,
+            "csw": 0.0,
+            "zoneRate": 33.3,
+            "zSwing": 100.0,
+            "oContact": null,
+            "chase": 0.0,
+            "chasePlus": 0.0,
+            "locationScore": 99.0,
+            "stuffScore": 97.0
+          }
+        ]
+      }
+    },
+    {
+      "id": "日本ハム-2026-05-24-2021038908-田中正義",
+      "team": "日本ハム",
+      "league": "パ",
+      "date": "2026-05-24",
+      "prefix": "2021038908-田中正義",
+      "gameId": "2021038908",
+      "order": 820100,
+      "title": "田中 正義",
+      "player": "田中 正義",
+      "pitcherId": "1600164",
+      "matchup": "福岡ソフトバンクホークスvs北海道日本ハムファイターズ",
+      "dateLabel": "2026年5月24日",
+      "pages": [],
+      "statline": {
+        "era": "3.00",
+        "innings": "1",
+        "pitches": "25",
+        "batters": "5",
+        "hits": "2",
+        "hr": "0",
+        "k": "1",
+        "bb": "1",
+        "hbp": "0",
+        "balk": "0",
+        "er": "1",
+        "runs": "1"
+      },
+      "detailPath": "../generated/日本ハム/2026-05-24/2021038908-田中正義-dashboard-detail.json",
+      "dashboard": {
+        "pitchMix": [
+          {
+            "pitchType": "ストレート",
+            "count": 15,
+            "ratio": 60.0,
+            "avgSpeed": "153.1",
+            "maxSpeed": "155.0",
+            "speedTotal": 1837.0,
+            "speedCount": 12,
+            "whiffCount": 2,
+            "whiff": 13.3,
+            "atBats": 3,
+            "singles": 2,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 0,
+            "flyBalls": 0,
+            "strikeouts": 1,
+            "hitRate": 0.667,
+            "color": "#0F2340",
+            "swingCount": 6,
+            "calledStrikeCount": 4,
+            "locatedCount": 15,
+            "zoneCount": 7,
+            "outZoneCount": 8,
+            "zoneSwingCount": 3,
+            "outZoneSwingCount": 3,
+            "outZoneContactCount": 2,
+            "whiffRate": 33.3,
+            "csw": 40.0,
+            "zoneRate": 46.7,
+            "zSwing": 42.9,
+            "oContact": 66.7,
+            "chase": 37.5,
+            "chasePlus": 115.0,
+            "locationScore": 101.0,
+            "stuffScore": 109.0
+          },
+          {
+            "pitchType": "フォーク",
+            "count": 8,
+            "ratio": 32.0,
+            "avgSpeed": "136.8",
+            "maxSpeed": "139.0",
+            "speedTotal": 1094.0,
+            "speedCount": 8,
+            "whiffCount": 2,
+            "whiff": 25.0,
+            "atBats": 0,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 0,
+            "flyBalls": 1,
+            "strikeouts": 0,
+            "hitRate": null,
+            "color": "#355C8C",
+            "swingCount": 4,
+            "calledStrikeCount": 0,
+            "locatedCount": 8,
+            "zoneCount": 1,
+            "outZoneCount": 7,
+            "zoneSwingCount": 1,
+            "outZoneSwingCount": 3,
+            "outZoneContactCount": 2,
+            "whiffRate": 50.0,
+            "csw": 25.0,
+            "zoneRate": 12.5,
+            "zSwing": 100.0,
+            "oContact": 66.7,
+            "chase": 42.9,
+            "chasePlus": 131.0,
+            "locationScore": 100.0,
+            "stuffScore": 101.0
+          },
+          {
+            "pitchType": "スライダー",
+            "count": 2,
+            "ratio": 8.0,
+            "avgSpeed": "134.0",
+            "maxSpeed": "134.0",
+            "speedTotal": 268.0,
+            "speedCount": 2,
+            "whiffCount": 0,
+            "whiff": 0.0,
+            "atBats": 0,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 0,
+            "flyBalls": 0,
+            "strikeouts": 0,
+            "hitRate": null,
+            "color": "#6A89B4",
+            "swingCount": 0,
+            "calledStrikeCount": 0,
+            "locatedCount": 2,
+            "zoneCount": 0,
+            "outZoneCount": 2,
+            "zoneSwingCount": 0,
+            "outZoneSwingCount": 0,
+            "outZoneContactCount": 0,
+            "whiffRate": null,
+            "csw": 0.0,
+            "zoneRate": 0.0,
+            "zSwing": null,
+            "oContact": null,
+            "chase": 0.0,
+            "chasePlus": 0.0,
+            "locationScore": 98.0,
+            "stuffScore": 97.0
+          }
+        ]
+      }
+    },
+    {
+      "id": "ロッテ-2026-05-24-2021038906-ロング",
+      "team": "ロッテ",
+      "league": "パ",
+      "date": "2026-05-24",
+      "prefix": "2021038906-ロング",
+      "gameId": "2021038906",
+      "order": 120100,
+      "title": "ロング",
+      "player": "ロング",
+      "pitcherId": "2101204",
+      "matchup": "東北楽天ゴールデンイーグルスvs千葉ロッテマリーンズ",
+      "dateLabel": "2026年5月24日",
+      "pages": [],
+      "statline": {
+        "era": "5.79",
+        "innings": "1",
+        "pitches": "37",
+        "batters": "11",
+        "hits": "8",
+        "hr": "1",
+        "k": "0",
+        "bb": "0",
+        "hbp": "0",
+        "balk": "0",
+        "er": "8",
+        "runs": "8"
+      },
+      "detailPath": "../generated/ロッテ/2026-05-24/2021038906-ロング-dashboard-detail.json",
+      "dashboard": {
+        "pitchMix": [
+          {
+            "pitchType": "ストレート",
+            "count": 13,
+            "ratio": 35.1,
+            "avgSpeed": "144.1",
+            "maxSpeed": "146.0",
+            "speedTotal": 1585.0,
+            "speedCount": 11,
+            "whiffCount": 1,
+            "whiff": 7.7,
+            "atBats": 6,
+            "singles": 4,
+            "doubles": 2,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 0,
+            "flyBalls": 0,
+            "strikeouts": 0,
+            "hitRate": 1.0,
+            "color": "#0F2340",
+            "swingCount": 9,
+            "calledStrikeCount": 0,
+            "locatedCount": 13,
+            "zoneCount": 5,
+            "outZoneCount": 8,
+            "zoneSwingCount": 5,
+            "outZoneSwingCount": 4,
+            "outZoneContactCount": 3,
+            "whiffRate": 11.1,
+            "csw": 7.7,
+            "zoneRate": 38.5,
+            "zSwing": 100.0,
+            "oContact": 75.0,
+            "chase": 50.0,
+            "chasePlus": 153.0,
+            "locationScore": 99.0,
+            "stuffScore": 96.0
+          },
+          {
+            "pitchType": "カーブ",
+            "count": 13,
+            "ratio": 35.1,
+            "avgSpeed": "119.7",
+            "maxSpeed": "123.0",
+            "speedTotal": 1556.0,
+            "speedCount": 13,
+            "whiffCount": 0,
+            "whiff": 0.0,
+            "atBats": 2,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 1,
+            "flyBalls": 1,
+            "strikeouts": 0,
+            "hitRate": 0.0,
+            "color": "#355C8C",
+            "swingCount": 5,
+            "calledStrikeCount": 5,
+            "locatedCount": 13,
+            "zoneCount": 7,
+            "outZoneCount": 6,
+            "zoneSwingCount": 2,
+            "outZoneSwingCount": 3,
+            "outZoneContactCount": 3,
+            "whiffRate": 0.0,
+            "csw": 38.5,
+            "zoneRate": 53.8,
+            "zSwing": 28.6,
+            "oContact": 100.0,
+            "chase": 50.0,
+            "chasePlus": 153.0,
+            "locationScore": 101.0,
+            "stuffScore": 99.0
+          },
+          {
+            "pitchType": "カットボール",
+            "count": 8,
+            "ratio": 21.6,
+            "avgSpeed": "133.9",
+            "maxSpeed": "138.0",
+            "speedTotal": 937.0,
+            "speedCount": 7,
+            "whiffCount": 1,
+            "whiff": 12.5,
+            "atBats": 1,
+            "singles": 1,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 0,
+            "flyBalls": 0,
+            "strikeouts": 0,
+            "hitRate": 1.0,
+            "color": "#6A89B4",
+            "swingCount": 4,
+            "calledStrikeCount": 0,
+            "locatedCount": 8,
+            "zoneCount": 3,
+            "outZoneCount": 5,
+            "zoneSwingCount": 3,
+            "outZoneSwingCount": 1,
+            "outZoneContactCount": 0,
+            "whiffRate": 25.0,
+            "csw": 12.5,
+            "zoneRate": 37.5,
+            "zSwing": 100.0,
+            "oContact": 0.0,
+            "chase": 20.0,
+            "chasePlus": 61.0,
+            "locationScore": 100.0,
+            "stuffScore": 98.0
+          },
+          {
+            "pitchType": "チェンジアップ",
+            "count": 3,
+            "ratio": 8.1,
+            "avgSpeed": "130.7",
+            "maxSpeed": "132.0",
+            "speedTotal": 392.0,
+            "speedCount": 3,
+            "whiffCount": 0,
+            "whiff": 0.0,
+            "atBats": 2,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 1,
+            "grounders": 1,
+            "flyBalls": 0,
+            "strikeouts": 0,
+            "hitRate": 0.5,
+            "color": "#C8A55A",
+            "swingCount": 2,
+            "calledStrikeCount": 1,
+            "locatedCount": 3,
+            "zoneCount": 2,
+            "outZoneCount": 1,
+            "zoneSwingCount": 2,
+            "outZoneSwingCount": 0,
+            "outZoneContactCount": 0,
+            "whiffRate": 0.0,
+            "csw": 33.3,
+            "zoneRate": 66.7,
+            "zSwing": 100.0,
+            "oContact": null,
+            "chase": 0.0,
+            "chasePlus": 0.0,
+            "locationScore": 100.0,
+            "stuffScore": 98.0
+          }
+        ]
+      }
+    },
+    {
+      "id": "ロッテ-2026-05-24-2021038906-坂本光士郎",
+      "team": "ロッテ",
+      "league": "パ",
+      "date": "2026-05-24",
+      "prefix": "2021038906-坂本光士郎",
+      "gameId": "2021038906",
+      "order": 220100,
+      "title": "坂本 光士郎",
+      "player": "坂本 光士郎",
+      "pitcherId": "1800037",
+      "matchup": "東北楽天ゴールデンイーグルスvs千葉ロッテマリーンズ",
+      "dateLabel": "2026年5月24日",
+      "pages": [],
+      "statline": {
+        "era": "0.00",
+        "innings": "2",
+        "pitches": "29",
+        "batters": "9",
+        "hits": "2",
+        "hr": "0",
+        "k": "1",
+        "bb": "1",
+        "hbp": "0",
+        "balk": "0",
+        "er": "0",
+        "runs": "0"
+      },
+      "detailPath": "../generated/ロッテ/2026-05-24/2021038906-坂本光士郎-dashboard-detail.json",
+      "dashboard": {
+        "pitchMix": [
+          {
+            "pitchType": "ストレート",
+            "count": 16,
+            "ratio": 55.2,
+            "avgSpeed": "145.1",
+            "maxSpeed": "147.0",
+            "speedTotal": 2321.0,
+            "speedCount": 16,
+            "whiffCount": 0,
+            "whiff": 0.0,
+            "atBats": 5,
+            "singles": 1,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 2,
+            "flyBalls": 1,
+            "strikeouts": 1,
+            "hitRate": 0.2,
+            "color": "#0F2340",
+            "swingCount": 9,
+            "calledStrikeCount": 4,
+            "locatedCount": 16,
+            "zoneCount": 11,
+            "outZoneCount": 5,
+            "zoneSwingCount": 7,
+            "outZoneSwingCount": 2,
+            "outZoneContactCount": 2,
+            "whiffRate": 0.0,
+            "csw": 25.0,
+            "zoneRate": 68.8,
+            "zSwing": 63.6,
+            "oContact": 100.0,
+            "chase": 40.0,
+            "chasePlus": 123.0,
+            "locationScore": 100.0,
+            "stuffScore": 94.0
+          },
+          {
+            "pitchType": "スライダー",
+            "count": 9,
+            "ratio": 31.0,
+            "avgSpeed": "126.0",
+            "maxSpeed": "129.0",
+            "speedTotal": 1134.0,
+            "speedCount": 9,
+            "whiffCount": 0,
+            "whiff": 0.0,
+            "atBats": 1,
+            "singles": 1,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 0,
+            "flyBalls": 0,
+            "strikeouts": 0,
+            "hitRate": 1.0,
+            "color": "#355C8C",
+            "swingCount": 2,
+            "calledStrikeCount": 1,
+            "locatedCount": 9,
+            "zoneCount": 3,
+            "outZoneCount": 6,
+            "zoneSwingCount": 2,
+            "outZoneSwingCount": 0,
+            "outZoneContactCount": 0,
+            "whiffRate": 0.0,
+            "csw": 11.1,
+            "zoneRate": 33.3,
+            "zSwing": 66.7,
+            "oContact": null,
+            "chase": 0.0,
+            "chasePlus": 0.0,
+            "locationScore": 98.0,
+            "stuffScore": 94.0
+          },
+          {
+            "pitchType": "フォーク",
+            "count": 4,
+            "ratio": 13.8,
+            "avgSpeed": "135.8",
+            "maxSpeed": "137.0",
+            "speedTotal": 543.0,
+            "speedCount": 4,
+            "whiffCount": 0,
+            "whiff": 0.0,
+            "atBats": 2,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 1,
+            "flyBalls": 1,
+            "strikeouts": 0,
+            "hitRate": 0.0,
+            "color": "#6A89B4",
+            "swingCount": 3,
+            "calledStrikeCount": 0,
+            "locatedCount": 4,
+            "zoneCount": 2,
+            "outZoneCount": 2,
+            "zoneSwingCount": 2,
+            "outZoneSwingCount": 1,
+            "outZoneContactCount": 1,
+            "whiffRate": 0.0,
+            "csw": 0.0,
+            "zoneRate": 50.0,
+            "zSwing": 100.0,
+            "oContact": 100.0,
+            "chase": 50.0,
+            "chasePlus": 153.0,
+            "locationScore": 101.0,
+            "stuffScore": 96.0
+          }
+        ]
+      }
+    },
+    {
+      "id": "ロッテ-2026-05-24-2021038906-高野脩汰",
+      "team": "ロッテ",
+      "league": "パ",
+      "date": "2026-05-24",
+      "prefix": "2021038906-高野脩汰",
+      "gameId": "2021038906",
+      "order": 420100,
+      "title": "高野 脩汰",
+      "player": "高野 脩汰",
+      "pitcherId": "2105534",
+      "matchup": "東北楽天ゴールデンイーグルスvs千葉ロッテマリーンズ",
+      "dateLabel": "2026年5月24日",
+      "pages": [],
+      "statline": {
+        "era": "5.02",
+        "innings": "2",
+        "pitches": "31",
+        "batters": "7",
+        "hits": "0",
+        "hr": "0",
+        "k": "1",
+        "bb": "2",
+        "hbp": "0",
+        "balk": "0",
+        "er": "0",
+        "runs": "0"
+      },
+      "detailPath": "../generated/ロッテ/2026-05-24/2021038906-高野脩汰-dashboard-detail.json",
+      "dashboard": {
+        "pitchMix": [
+          {
+            "pitchType": "フォーク",
+            "count": 14,
+            "ratio": 45.2,
+            "avgSpeed": "127.4",
+            "maxSpeed": "130.0",
+            "speedTotal": 1783.0,
+            "speedCount": 14,
+            "whiffCount": 2,
+            "whiff": 14.3,
+            "atBats": 4,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 1,
+            "flyBalls": 2,
+            "strikeouts": 1,
+            "hitRate": 0.0,
+            "color": "#0F2340",
+            "swingCount": 9,
+            "calledStrikeCount": 2,
+            "locatedCount": 14,
+            "zoneCount": 9,
+            "outZoneCount": 5,
+            "zoneSwingCount": 7,
+            "outZoneSwingCount": 2,
+            "outZoneContactCount": 1,
+            "whiffRate": 22.2,
+            "csw": 28.6,
+            "zoneRate": 64.3,
+            "zSwing": 77.8,
+            "oContact": 50.0,
+            "chase": 40.0,
+            "chasePlus": 123.0,
+            "locationScore": 102.0,
+            "stuffScore": 97.0
+          },
+          {
+            "pitchType": "ストレート",
+            "count": 11,
+            "ratio": 35.5,
+            "avgSpeed": "143.7",
+            "maxSpeed": "145.0",
+            "speedTotal": 1581.0,
+            "speedCount": 11,
+            "whiffCount": 1,
+            "whiff": 9.1,
+            "atBats": 0,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 0,
+            "flyBalls": 0,
+            "strikeouts": 0,
+            "hitRate": null,
+            "color": "#355C8C",
+            "swingCount": 3,
+            "calledStrikeCount": 2,
+            "locatedCount": 11,
+            "zoneCount": 4,
+            "outZoneCount": 7,
+            "zoneSwingCount": 2,
+            "outZoneSwingCount": 1,
+            "outZoneContactCount": 0,
+            "whiffRate": 33.3,
+            "csw": 27.3,
+            "zoneRate": 36.4,
+            "zSwing": 50.0,
+            "oContact": 0.0,
+            "chase": 14.3,
+            "chasePlus": 44.0,
+            "locationScore": 100.0,
+            "stuffScore": 102.0
+          },
+          {
+            "pitchType": "スライダー",
+            "count": 5,
+            "ratio": 16.1,
+            "avgSpeed": "126.2",
+            "maxSpeed": "128.0",
+            "speedTotal": 631.0,
+            "speedCount": 5,
+            "whiffCount": 0,
+            "whiff": 0.0,
+            "atBats": 1,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 1,
+            "flyBalls": 0,
+            "strikeouts": 0,
+            "hitRate": 0.0,
+            "color": "#6A89B4",
+            "swingCount": 1,
+            "calledStrikeCount": 1,
+            "locatedCount": 5,
+            "zoneCount": 2,
+            "outZoneCount": 3,
+            "zoneSwingCount": 1,
+            "outZoneSwingCount": 0,
+            "outZoneContactCount": 0,
+            "whiffRate": 0.0,
+            "csw": 20.0,
+            "zoneRate": 40.0,
+            "zSwing": 50.0,
+            "oContact": null,
+            "chase": 0.0,
+            "chasePlus": 0.0,
+            "locationScore": 98.0,
+            "stuffScore": 97.0
+          },
+          {
+            "pitchType": "ナックルカーブ",
+            "count": 1,
+            "ratio": 3.2,
+            "avgSpeed": "113.0",
+            "maxSpeed": "113.0",
+            "speedTotal": 113.0,
+            "speedCount": 1,
+            "whiffCount": 0,
+            "whiff": 0.0,
+            "atBats": 0,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 0,
+            "flyBalls": 0,
+            "strikeouts": 0,
+            "hitRate": null,
+            "color": "#C8A55A",
+            "swingCount": 1,
+            "calledStrikeCount": 0,
+            "locatedCount": 1,
+            "zoneCount": 1,
+            "outZoneCount": 0,
+            "zoneSwingCount": 1,
+            "outZoneSwingCount": 0,
+            "outZoneContactCount": 0,
+            "whiffRate": 0.0,
+            "csw": 0.0,
+            "zoneRate": 100.0,
+            "zSwing": 100.0,
+            "oContact": null,
+            "chase": null,
+            "chasePlus": null,
+            "locationScore": 101.0,
+            "stuffScore": 98.0
+          }
+        ]
+      }
+    },
+    {
+      "id": "ロッテ-2026-05-24-2021038906-八木彬",
+      "team": "ロッテ",
+      "league": "パ",
+      "date": "2026-05-24",
+      "prefix": "2021038906-八木彬",
+      "gameId": "2021038906",
+      "order": 620100,
+      "title": "八木 彬",
+      "player": "八木 彬",
+      "pitcherId": "1450608",
+      "matchup": "東北楽天ゴールデンイーグルスvs千葉ロッテマリーンズ",
+      "dateLabel": "2026年5月24日",
+      "pages": [],
+      "statline": {
+        "era": "0.95",
+        "innings": "2",
+        "pitches": "25",
+        "batters": "9",
+        "hits": "3",
+        "hr": "0",
+        "k": "2",
+        "bb": "0",
+        "hbp": "1",
+        "balk": "0",
+        "er": "0",
+        "runs": "0"
+      },
+      "detailPath": "../generated/ロッテ/2026-05-24/2021038906-八木彬-dashboard-detail.json",
+      "dashboard": {
+        "pitchMix": [
+          {
+            "pitchType": "フォーク",
+            "count": 8,
+            "ratio": 32.0,
+            "avgSpeed": "133.1",
+            "maxSpeed": "135.0",
+            "speedTotal": 932.0,
+            "speedCount": 7,
+            "whiffCount": 2,
+            "whiff": 25.0,
+            "atBats": 1,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 0,
+            "flyBalls": 0,
+            "strikeouts": 1,
+            "hitRate": 0.0,
+            "color": "#0F2340",
+            "swingCount": 3,
+            "calledStrikeCount": 2,
+            "locatedCount": 8,
+            "zoneCount": 3,
+            "outZoneCount": 5,
+            "zoneSwingCount": 1,
+            "outZoneSwingCount": 2,
+            "outZoneContactCount": 0,
+            "whiffRate": 66.7,
+            "csw": 50.0,
+            "zoneRate": 37.5,
+            "zSwing": 33.3,
+            "oContact": 0.0,
+            "chase": 40.0,
+            "chasePlus": 123.0,
+            "locationScore": 100.0,
+            "stuffScore": 104.0
+          },
+          {
+            "pitchType": "スライダー",
+            "count": 7,
+            "ratio": 28.0,
+            "avgSpeed": "133.3",
+            "maxSpeed": "139.0",
+            "speedTotal": 933.0,
+            "speedCount": 7,
+            "whiffCount": 1,
+            "whiff": 14.3,
+            "atBats": 2,
+            "singles": 1,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 0,
+            "flyBalls": 1,
+            "strikeouts": 0,
+            "hitRate": 0.5,
+            "color": "#355C8C",
+            "swingCount": 4,
+            "calledStrikeCount": 2,
+            "locatedCount": 7,
+            "zoneCount": 4,
+            "outZoneCount": 3,
+            "zoneSwingCount": 2,
+            "outZoneSwingCount": 2,
+            "outZoneContactCount": 1,
+            "whiffRate": 25.0,
+            "csw": 42.9,
+            "zoneRate": 57.1,
+            "zSwing": 50.0,
+            "oContact": 50.0,
+            "chase": 66.7,
+            "chasePlus": 204.0,
+            "locationScore": 100.0,
+            "stuffScore": 102.0
+          },
+          {
+            "pitchType": "ストレート",
+            "count": 7,
+            "ratio": 28.0,
+            "avgSpeed": "145.9",
+            "maxSpeed": "148.0",
+            "speedTotal": 1021.0,
+            "speedCount": 7,
+            "whiffCount": 0,
+            "whiff": 0.0,
+            "atBats": 5,
+            "singles": 2,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 0,
+            "flyBalls": 2,
+            "strikeouts": 1,
+            "hitRate": 0.4,
+            "color": "#6A89B4",
+            "swingCount": 4,
+            "calledStrikeCount": 1,
+            "locatedCount": 7,
+            "zoneCount": 5,
+            "outZoneCount": 2,
+            "zoneSwingCount": 4,
+            "outZoneSwingCount": 0,
+            "outZoneContactCount": 0,
+            "whiffRate": 0.0,
+            "csw": 14.3,
+            "zoneRate": 71.4,
+            "zSwing": 80.0,
+            "oContact": null,
+            "chase": 0.0,
+            "chasePlus": 0.0,
+            "locationScore": 99.0,
+            "stuffScore": 95.0
+          },
+          {
+            "pitchType": "ツーシーム",
+            "count": 2,
+            "ratio": 8.0,
+            "avgSpeed": "147.0",
+            "maxSpeed": "147.0",
+            "speedTotal": 294.0,
+            "speedCount": 2,
+            "whiffCount": 1,
+            "whiff": 50.0,
+            "atBats": 0,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 0,
+            "flyBalls": 0,
+            "strikeouts": 0,
+            "hitRate": null,
+            "color": "#C8A55A",
+            "swingCount": 1,
+            "calledStrikeCount": 0,
+            "locatedCount": 2,
+            "zoneCount": 1,
+            "outZoneCount": 1,
+            "zoneSwingCount": 1,
+            "outZoneSwingCount": 0,
+            "outZoneContactCount": 0,
+            "whiffRate": 100.0,
+            "csw": 50.0,
+            "zoneRate": 50.0,
+            "zSwing": 100.0,
+            "oContact": null,
+            "chase": 0.0,
+            "chasePlus": 0.0,
+            "locationScore": 101.0,
+            "stuffScore": 105.0
+          },
+          {
+            "pitchType": "カーブ",
+            "count": 1,
+            "ratio": 4.0,
+            "avgSpeed": "120.0",
+            "maxSpeed": "120.0",
+            "speedTotal": 120.0,
+            "speedCount": 1,
+            "whiffCount": 0,
+            "whiff": 0.0,
+            "atBats": 0,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 0,
+            "flyBalls": 0,
+            "strikeouts": 0,
+            "hitRate": null,
+            "color": "#D6C192",
+            "swingCount": 0,
+            "calledStrikeCount": 0,
+            "locatedCount": 1,
+            "zoneCount": 0,
+            "outZoneCount": 1,
+            "zoneSwingCount": 0,
+            "outZoneSwingCount": 0,
+            "outZoneContactCount": 0,
+            "whiffRate": null,
+            "csw": 0.0,
+            "zoneRate": 0.0,
+            "zSwing": null,
+            "oContact": null,
+            "chase": 0.0,
+            "chasePlus": 0.0,
+            "locationScore": 100.0,
+            "stuffScore": 99.0
+          }
+        ]
+      }
+    },
+    {
+      "id": "ロッテ-2026-05-24-2021038906-小野郁",
+      "team": "ロッテ",
+      "league": "パ",
+      "date": "2026-05-24",
+      "prefix": "2021038906-小野郁",
+      "gameId": "2021038906",
+      "order": 820100,
+      "title": "小野 郁",
+      "player": "小野 郁",
+      "pitcherId": "1400140",
+      "matchup": "東北楽天ゴールデンイーグルスvs千葉ロッテマリーンズ",
+      "dateLabel": "2026年5月24日",
+      "pages": [],
+      "statline": {
+        "era": "1.04",
+        "innings": "1",
+        "pitches": "8",
+        "batters": "3",
+        "hits": "1",
+        "hr": "0",
+        "k": "0",
+        "bb": "0",
+        "hbp": "0",
+        "balk": "0",
+        "er": "0",
+        "runs": "0"
+      },
+      "detailPath": "../generated/ロッテ/2026-05-24/2021038906-小野郁-dashboard-detail.json",
+      "dashboard": {
+        "pitchMix": [
+          {
+            "pitchType": "ストレート",
+            "count": 5,
+            "ratio": 62.5,
+            "avgSpeed": "149.0",
+            "maxSpeed": "151.0",
+            "speedTotal": 745.0,
+            "speedCount": 5,
+            "whiffCount": 0,
+            "whiff": 0.0,
+            "atBats": 1,
+            "singles": 1,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 0,
+            "flyBalls": 0,
+            "strikeouts": 0,
+            "hitRate": 1.0,
+            "color": "#0F2340",
+            "swingCount": 4,
+            "calledStrikeCount": 0,
+            "locatedCount": 5,
+            "zoneCount": 3,
+            "outZoneCount": 2,
+            "zoneSwingCount": 3,
+            "outZoneSwingCount": 1,
+            "outZoneContactCount": 1,
+            "whiffRate": 0.0,
+            "csw": 0.0,
+            "zoneRate": 60.0,
+            "zSwing": 100.0,
+            "oContact": 100.0,
+            "chase": 50.0,
+            "chasePlus": 153.0,
+            "locationScore": 100.0,
+            "stuffScore": 95.0
+          },
+          {
+            "pitchType": "スライダー",
+            "count": 2,
+            "ratio": 25.0,
+            "avgSpeed": "134.5",
+            "maxSpeed": "136.0",
+            "speedTotal": 269.0,
+            "speedCount": 2,
+            "whiffCount": 0,
+            "whiff": 0.0,
+            "atBats": 2,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 2,
+            "flyBalls": 0,
+            "strikeouts": 0,
+            "hitRate": 0.0,
+            "color": "#355C8C",
+            "swingCount": 2,
+            "calledStrikeCount": 0,
+            "locatedCount": 2,
+            "zoneCount": 2,
+            "outZoneCount": 0,
+            "zoneSwingCount": 2,
+            "outZoneSwingCount": 0,
+            "outZoneContactCount": 0,
+            "whiffRate": 0.0,
+            "csw": 0.0,
+            "zoneRate": 100.0,
+            "zSwing": 100.0,
+            "oContact": null,
+            "chase": null,
+            "chasePlus": null,
+            "locationScore": 99.0,
+            "stuffScore": 97.0
+          },
+          {
+            "pitchType": "チェンジアップ",
+            "count": 1,
+            "ratio": 12.5,
+            "avgSpeed": "137.0",
+            "maxSpeed": "137.0",
+            "speedTotal": 137.0,
+            "speedCount": 1,
+            "whiffCount": 0,
+            "whiff": 0.0,
+            "atBats": 0,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 0,
+            "flyBalls": 0,
+            "strikeouts": 0,
+            "hitRate": null,
+            "color": "#6A89B4",
+            "swingCount": 0,
+            "calledStrikeCount": 1,
+            "locatedCount": 1,
+            "zoneCount": 1,
+            "outZoneCount": 0,
+            "zoneSwingCount": 0,
+            "outZoneSwingCount": 0,
+            "outZoneContactCount": 0,
+            "whiffRate": null,
+            "csw": 100.0,
+            "zoneRate": 100.0,
+            "zSwing": 0.0,
+            "oContact": null,
+            "chase": null,
+            "chasePlus": null,
+            "locationScore": 102.0,
+            "stuffScore": 103.0
+          }
+        ]
+      }
+    },
+    {
+      "id": "オリックス-2026-05-24-2021038907-山岡泰輔",
+      "team": "オリックス",
+      "league": "パ",
+      "date": "2026-05-24",
+      "prefix": "2021038907-山岡泰輔",
+      "gameId": "2021038907",
+      "order": 120100,
+      "title": "山岡 泰輔",
+      "player": "山岡 泰輔",
+      "pitcherId": "1600150",
+      "matchup": "埼玉西武ライオンズvsオリックス・バファローズ",
+      "dateLabel": "2026年5月24日",
+      "pages": [],
+      "statline": {
+        "era": "27.00",
+        "innings": "0.2",
+        "pitches": "20",
+        "batters": "6",
+        "hits": "3",
+        "hr": "1",
+        "k": "0",
+        "bb": "1",
+        "hbp": "0",
+        "balk": "0",
+        "er": "2",
+        "runs": "2"
+      },
+      "detailPath": "../generated/オリックス/2026-05-24/2021038907-山岡泰輔-dashboard-detail.json",
+      "dashboard": {
+        "pitchMix": [
+          {
+            "pitchType": "縦スライダー",
+            "count": 9,
+            "ratio": 45.0,
+            "avgSpeed": "130.2",
+            "maxSpeed": "133.0",
+            "speedTotal": 1172.0,
+            "speedCount": 9,
+            "whiffCount": 0,
+            "whiff": 0.0,
+            "atBats": 1,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 0,
+            "flyBalls": 1,
+            "strikeouts": 0,
+            "hitRate": 0.0,
+            "color": "#0F2340",
+            "swingCount": 2,
+            "calledStrikeCount": 2,
+            "locatedCount": 9,
+            "zoneCount": 4,
+            "outZoneCount": 5,
+            "zoneSwingCount": 2,
+            "outZoneSwingCount": 0,
+            "outZoneContactCount": 0,
+            "whiffRate": 0.0,
+            "csw": 22.2,
+            "zoneRate": 44.4,
+            "zSwing": 50.0,
+            "oContact": null,
+            "chase": 0.0,
+            "chasePlus": 0.0,
+            "locationScore": 99.0,
+            "stuffScore": 96.0
+          },
+          {
+            "pitchType": "ストレート",
+            "count": 7,
+            "ratio": 35.0,
+            "avgSpeed": "144.3",
+            "maxSpeed": "145.0",
+            "speedTotal": 1010.0,
+            "speedCount": 7,
+            "whiffCount": 1,
+            "whiff": 14.3,
+            "atBats": 1,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 1,
+            "grounders": 0,
+            "flyBalls": 1,
+            "strikeouts": 0,
+            "hitRate": 1.0,
+            "color": "#355C8C",
+            "swingCount": 4,
+            "calledStrikeCount": 0,
+            "locatedCount": 7,
+            "zoneCount": 2,
+            "outZoneCount": 5,
+            "zoneSwingCount": 2,
+            "outZoneSwingCount": 2,
+            "outZoneContactCount": 2,
+            "whiffRate": 25.0,
+            "csw": 14.3,
+            "zoneRate": 28.6,
+            "zSwing": 100.0,
+            "oContact": 100.0,
+            "chase": 40.0,
+            "chasePlus": 123.0,
+            "locationScore": 100.0,
+            "stuffScore": 101.0
+          },
+          {
+            "pitchType": "カットボール",
+            "count": 3,
+            "ratio": 15.0,
+            "avgSpeed": "136.3",
+            "maxSpeed": "137.0",
+            "speedTotal": 409.0,
+            "speedCount": 3,
+            "whiffCount": 0,
+            "whiff": 0.0,
+            "atBats": 2,
+            "singles": 2,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 0,
+            "flyBalls": 0,
+            "strikeouts": 0,
+            "hitRate": 1.0,
+            "color": "#6A89B4",
+            "swingCount": 3,
+            "calledStrikeCount": 0,
+            "locatedCount": 3,
+            "zoneCount": 3,
+            "outZoneCount": 0,
+            "zoneSwingCount": 3,
+            "outZoneSwingCount": 0,
+            "outZoneContactCount": 0,
+            "whiffRate": 0.0,
+            "csw": 0.0,
+            "zoneRate": 100.0,
+            "zSwing": 100.0,
+            "oContact": null,
+            "chase": null,
+            "chasePlus": null,
+            "locationScore": 99.0,
+            "stuffScore": 96.0
+          },
+          {
+            "pitchType": "チェンジアップ",
+            "count": 1,
+            "ratio": 5.0,
+            "avgSpeed": "120.0",
+            "maxSpeed": "120.0",
+            "speedTotal": 120.0,
+            "speedCount": 1,
+            "whiffCount": 0,
+            "whiff": 0.0,
+            "atBats": 0,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 0,
+            "flyBalls": 0,
+            "strikeouts": 0,
+            "hitRate": null,
+            "color": "#C8A55A",
+            "swingCount": 0,
+            "calledStrikeCount": 0,
+            "locatedCount": 1,
+            "zoneCount": 0,
+            "outZoneCount": 1,
+            "zoneSwingCount": 0,
+            "outZoneSwingCount": 0,
+            "outZoneContactCount": 0,
+            "whiffRate": null,
+            "csw": 0.0,
+            "zoneRate": 0.0,
+            "zSwing": null,
+            "oContact": null,
+            "chase": 0.0,
+            "chasePlus": 0.0,
+            "locationScore": 98.0,
+            "stuffScore": 99.0
+          }
+        ]
+      }
+    },
+    {
+      "id": "オリックス-2026-05-24-2021038907-山﨑颯一郎",
+      "team": "オリックス",
+      "league": "パ",
+      "date": "2026-05-24",
+      "prefix": "2021038907-山﨑颯一郎",
+      "gameId": "2021038907",
+      "order": 120700,
+      "title": "山﨑 颯一郎",
+      "player": "山﨑 颯一郎",
+      "pitcherId": "1600155",
+      "matchup": "埼玉西武ライオンズvsオリックス・バファローズ",
+      "dateLabel": "2026年5月24日",
+      "pages": [],
+      "statline": {
+        "era": "3.72",
+        "innings": "2.1",
+        "pitches": "48",
+        "batters": "10",
+        "hits": "2",
+        "hr": "0",
+        "k": "4",
+        "bb": "1",
+        "hbp": "0",
+        "balk": "0",
+        "er": "0",
+        "runs": "0"
+      },
+      "detailPath": "../generated/オリックス/2026-05-24/2021038907-山﨑颯一郎-dashboard-detail.json",
+      "dashboard": {
+        "pitchMix": [
+          {
+            "pitchType": "ストレート",
+            "count": 24,
+            "ratio": 50.0,
+            "avgSpeed": "151.3",
+            "maxSpeed": "154.0",
+            "speedTotal": 3481.0,
+            "speedCount": 23,
+            "whiffCount": 5,
+            "whiff": 20.8,
+            "atBats": 3,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 1,
+            "flyBalls": 1,
+            "strikeouts": 1,
+            "hitRate": 0.0,
+            "color": "#0F2340",
+            "swingCount": 18,
+            "calledStrikeCount": 1,
+            "locatedCount": 24,
+            "zoneCount": 14,
+            "outZoneCount": 10,
+            "zoneSwingCount": 13,
+            "outZoneSwingCount": 5,
+            "outZoneContactCount": 4,
+            "whiffRate": 27.8,
+            "csw": 25.0,
+            "zoneRate": 58.3,
+            "zSwing": 92.9,
+            "oContact": 80.0,
+            "chase": 50.0,
+            "chasePlus": 153.0,
+            "locationScore": 101.0,
+            "stuffScore": 110.0
+          },
+          {
+            "pitchType": "スプリット",
+            "count": 20,
+            "ratio": 41.7,
+            "avgSpeed": "134.5",
+            "maxSpeed": "140.0",
+            "speedTotal": 2690.0,
+            "speedCount": 20,
+            "whiffCount": 4,
+            "whiff": 20.0,
+            "atBats": 6,
+            "singles": 2,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 0,
+            "flyBalls": 1,
+            "strikeouts": 3,
+            "hitRate": 0.333,
+            "color": "#355C8C",
+            "swingCount": 11,
+            "calledStrikeCount": 4,
+            "locatedCount": 20,
+            "zoneCount": 11,
+            "outZoneCount": 9,
+            "zoneSwingCount": 7,
+            "outZoneSwingCount": 4,
+            "outZoneContactCount": 1,
+            "whiffRate": 36.4,
+            "csw": 40.0,
+            "zoneRate": 55.0,
+            "zSwing": 63.6,
+            "oContact": 25.0,
+            "chase": 44.4,
+            "chasePlus": 136.0,
+            "locationScore": 100.0,
+            "stuffScore": 102.0
+          },
+          {
+            "pitchType": "カットボール",
+            "count": 2,
+            "ratio": 4.2,
+            "avgSpeed": "139.0",
+            "maxSpeed": "144.0",
+            "speedTotal": 278.0,
+            "speedCount": 2,
+            "whiffCount": 0,
+            "whiff": 0.0,
+            "atBats": 0,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 0,
+            "flyBalls": 0,
+            "strikeouts": 0,
+            "hitRate": null,
+            "color": "#6A89B4",
+            "swingCount": 0,
+            "calledStrikeCount": 0,
+            "locatedCount": 2,
+            "zoneCount": 0,
+            "outZoneCount": 2,
+            "zoneSwingCount": 0,
+            "outZoneSwingCount": 0,
+            "outZoneContactCount": 0,
+            "whiffRate": null,
+            "csw": 0.0,
+            "zoneRate": 0.0,
+            "zSwing": null,
+            "oContact": null,
+            "chase": 0.0,
+            "chasePlus": 0.0,
+            "locationScore": 98.0,
+            "stuffScore": 97.0
+          },
+          {
+            "pitchType": "ナックルカーブ",
+            "count": 1,
+            "ratio": 2.1,
+            "avgSpeed": "119.0",
+            "maxSpeed": "119.0",
+            "speedTotal": 119.0,
+            "speedCount": 1,
+            "whiffCount": 0,
+            "whiff": 0.0,
+            "atBats": 0,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 0,
+            "flyBalls": 0,
+            "strikeouts": 0,
+            "hitRate": null,
+            "color": "#C8A55A",
+            "swingCount": 0,
+            "calledStrikeCount": 1,
+            "locatedCount": 1,
+            "zoneCount": 1,
+            "outZoneCount": 0,
+            "zoneSwingCount": 0,
+            "outZoneSwingCount": 0,
+            "outZoneContactCount": 0,
+            "whiffRate": null,
+            "csw": 100.0,
+            "zoneRate": 100.0,
+            "zSwing": 0.0,
+            "oContact": null,
+            "chase": null,
+            "chasePlus": null,
+            "locationScore": 101.0,
+            "stuffScore": 102.0
+          },
+          {
+            "pitchType": "カーブ",
+            "count": 1,
+            "ratio": 2.1,
+            "avgSpeed": "120.0",
+            "maxSpeed": "120.0",
+            "speedTotal": 120.0,
+            "speedCount": 1,
+            "whiffCount": 0,
+            "whiff": 0.0,
+            "atBats": 0,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 0,
+            "flyBalls": 0,
+            "strikeouts": 0,
+            "hitRate": null,
+            "color": "#D6C192",
+            "swingCount": 0,
+            "calledStrikeCount": 0,
+            "locatedCount": 1,
+            "zoneCount": 0,
+            "outZoneCount": 1,
+            "zoneSwingCount": 0,
+            "outZoneSwingCount": 0,
+            "outZoneContactCount": 0,
+            "whiffRate": null,
+            "csw": 0.0,
+            "zoneRate": 0.0,
+            "zSwing": null,
+            "oContact": null,
+            "chase": 0.0,
+            "chasePlus": 0.0,
+            "locationScore": 98.0,
+            "stuffScore": 99.0
+          }
+        ]
+      }
+    },
+    {
+      "id": "オリックス-2026-05-24-2021038907-入山海斗",
+      "team": "オリックス",
+      "league": "パ",
+      "date": "2026-05-24",
+      "prefix": "2021038907-入山海斗",
+      "gameId": "2021038907",
+      "order": 420100,
+      "title": "入山 海斗",
+      "player": "入山 海斗",
+      "pitcherId": "2107693",
+      "matchup": "埼玉西武ライオンズvsオリックス・バファローズ",
+      "dateLabel": "2026年5月24日",
+      "pages": [],
+      "statline": {
+        "era": "2.70",
+        "innings": "1.2",
+        "pitches": "24",
+        "batters": "6",
+        "hits": "0",
+        "hr": "0",
+        "k": "2",
+        "bb": "1",
+        "hbp": "0",
+        "balk": "0",
+        "er": "0",
+        "runs": "0"
+      },
+      "detailPath": "../generated/オリックス/2026-05-24/2021038907-入山海斗-dashboard-detail.json",
+      "dashboard": {
+        "pitchMix": [
+          {
+            "pitchType": "ストレート",
+            "count": 16,
+            "ratio": 66.7,
+            "avgSpeed": "148.1",
+            "maxSpeed": "150.0",
+            "speedTotal": 2370.0,
+            "speedCount": 16,
+            "whiffCount": 2,
+            "whiff": 12.5,
+            "atBats": 3,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 1,
+            "flyBalls": 1,
+            "strikeouts": 1,
+            "hitRate": 0.0,
+            "color": "#0F2340",
+            "swingCount": 7,
+            "calledStrikeCount": 3,
+            "locatedCount": 16,
+            "zoneCount": 6,
+            "outZoneCount": 10,
+            "zoneSwingCount": 3,
+            "outZoneSwingCount": 4,
+            "outZoneContactCount": 2,
+            "whiffRate": 28.6,
+            "csw": 31.2,
+            "zoneRate": 37.5,
+            "zSwing": 50.0,
+            "oContact": 50.0,
+            "chase": 40.0,
+            "chasePlus": 123.0,
+            "locationScore": 100.0,
+            "stuffScore": 106.0
+          },
+          {
+            "pitchType": "カットボール",
+            "count": 4,
+            "ratio": 16.7,
+            "avgSpeed": "138.8",
+            "maxSpeed": "140.0",
+            "speedTotal": 555.0,
+            "speedCount": 4,
+            "whiffCount": 1,
+            "whiff": 25.0,
+            "atBats": 1,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 1,
+            "flyBalls": 0,
+            "strikeouts": 0,
+            "hitRate": 0.0,
+            "color": "#355C8C",
+            "swingCount": 2,
+            "calledStrikeCount": 0,
+            "locatedCount": 4,
+            "zoneCount": 2,
+            "outZoneCount": 2,
+            "zoneSwingCount": 2,
+            "outZoneSwingCount": 0,
+            "outZoneContactCount": 0,
+            "whiffRate": 50.0,
+            "csw": 25.0,
+            "zoneRate": 50.0,
+            "zSwing": 100.0,
+            "oContact": null,
+            "chase": 0.0,
+            "chasePlus": 0.0,
+            "locationScore": 99.0,
+            "stuffScore": 101.0
+          },
+          {
+            "pitchType": "フォーク",
+            "count": 2,
+            "ratio": 8.3,
+            "avgSpeed": "132.0",
+            "maxSpeed": "132.0",
+            "speedTotal": 264.0,
+            "speedCount": 2,
+            "whiffCount": 0,
+            "whiff": 0.0,
+            "atBats": 0,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 0,
+            "flyBalls": 0,
+            "strikeouts": 0,
+            "hitRate": null,
+            "color": "#6A89B4",
+            "swingCount": 0,
+            "calledStrikeCount": 0,
+            "locatedCount": 2,
+            "zoneCount": 0,
+            "outZoneCount": 2,
+            "zoneSwingCount": 0,
+            "outZoneSwingCount": 0,
+            "outZoneContactCount": 0,
+            "whiffRate": null,
+            "csw": 0.0,
+            "zoneRate": 0.0,
+            "zSwing": null,
+            "oContact": null,
+            "chase": 0.0,
+            "chasePlus": 0.0,
+            "locationScore": 99.0,
+            "stuffScore": 97.0
+          },
+          {
+            "pitchType": "カーブ",
+            "count": 2,
+            "ratio": 8.3,
+            "avgSpeed": "129.5",
+            "maxSpeed": "130.0",
+            "speedTotal": 259.0,
+            "speedCount": 2,
+            "whiffCount": 1,
+            "whiff": 50.0,
+            "atBats": 1,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 0,
+            "flyBalls": 0,
+            "strikeouts": 1,
+            "hitRate": 0.0,
+            "color": "#C8A55A",
+            "swingCount": 1,
+            "calledStrikeCount": 0,
+            "locatedCount": 2,
+            "zoneCount": 0,
+            "outZoneCount": 2,
+            "zoneSwingCount": 0,
+            "outZoneSwingCount": 1,
+            "outZoneContactCount": 0,
+            "whiffRate": 100.0,
+            "csw": 50.0,
+            "zoneRate": 0.0,
+            "zSwing": null,
+            "oContact": 0.0,
+            "chase": 50.0,
+            "chasePlus": 153.0,
+            "locationScore": 100.0,
+            "stuffScore": 104.0
+          }
+        ]
+      }
+    },
+    {
+      "id": "オリックス-2026-05-24-2021038907-吉田輝星",
+      "team": "オリックス",
+      "league": "パ",
+      "date": "2026-05-24",
+      "prefix": "2021038907-吉田輝星",
+      "gameId": "2021038907",
+      "order": 520400,
+      "title": "吉田 輝星",
+      "player": "吉田 輝星",
+      "pitcherId": "1800090",
+      "matchup": "埼玉西武ライオンズvsオリックス・バファローズ",
+      "dateLabel": "2026年5月24日",
+      "pages": [],
+      "statline": {
+        "era": "2.57",
+        "innings": "1.1",
+        "pitches": "23",
+        "batters": "7",
+        "hits": "2",
+        "hr": "1",
+        "k": "2",
+        "bb": "0",
+        "hbp": "1",
+        "balk": "0",
+        "er": "2",
+        "runs": "2"
+      },
+      "detailPath": "../generated/オリックス/2026-05-24/2021038907-吉田輝星-dashboard-detail.json",
+      "dashboard": {
+        "pitchMix": [
+          {
+            "pitchType": "ストレート",
+            "count": 7,
+            "ratio": 30.4,
+            "avgSpeed": "144.4",
+            "maxSpeed": "146.0",
+            "speedTotal": 1011.0,
+            "speedCount": 7,
+            "whiffCount": 0,
+            "whiff": 0.0,
+            "atBats": 1,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 0,
+            "flyBalls": 1,
+            "strikeouts": 0,
+            "hitRate": 0.0,
+            "color": "#0F2340",
+            "swingCount": 1,
+            "calledStrikeCount": 1,
+            "locatedCount": 7,
+            "zoneCount": 2,
+            "outZoneCount": 5,
+            "zoneSwingCount": 1,
+            "outZoneSwingCount": 0,
+            "outZoneContactCount": 0,
+            "whiffRate": 0.0,
+            "csw": 14.3,
+            "zoneRate": 28.6,
+            "zSwing": 50.0,
+            "oContact": null,
+            "chase": 0.0,
+            "chasePlus": 0.0,
+            "locationScore": 98.0,
+            "stuffScore": 96.0
+          },
+          {
+            "pitchType": "スライダー",
+            "count": 5,
+            "ratio": 21.7,
+            "avgSpeed": "126.4",
+            "maxSpeed": "129.0",
+            "speedTotal": 632.0,
+            "speedCount": 5,
+            "whiffCount": 1,
+            "whiff": 20.0,
+            "atBats": 2,
+            "singles": 1,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 1,
+            "flyBalls": 0,
+            "strikeouts": 0,
+            "hitRate": 0.5,
+            "color": "#355C8C",
+            "swingCount": 3,
+            "calledStrikeCount": 2,
+            "locatedCount": 5,
+            "zoneCount": 4,
+            "outZoneCount": 1,
+            "zoneSwingCount": 2,
+            "outZoneSwingCount": 1,
+            "outZoneContactCount": 1,
+            "whiffRate": 33.3,
+            "csw": 60.0,
+            "zoneRate": 80.0,
+            "zSwing": 50.0,
+            "oContact": 100.0,
+            "chase": 100.0,
+            "chasePlus": 307.0,
+            "locationScore": 101.0,
+            "stuffScore": 103.0
+          },
+          {
+            "pitchType": "チェンジアップ",
+            "count": 5,
+            "ratio": 21.7,
+            "avgSpeed": "122.4",
+            "maxSpeed": "124.0",
+            "speedTotal": 612.0,
+            "speedCount": 5,
+            "whiffCount": 2,
+            "whiff": 40.0,
+            "atBats": 3,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 1,
+            "grounders": 0,
+            "flyBalls": 0,
+            "strikeouts": 2,
+            "hitRate": 0.333,
+            "color": "#6A89B4",
+            "swingCount": 3,
+            "calledStrikeCount": 0,
+            "locatedCount": 5,
+            "zoneCount": 2,
+            "outZoneCount": 3,
+            "zoneSwingCount": 2,
+            "outZoneSwingCount": 1,
+            "outZoneContactCount": 0,
+            "whiffRate": 66.7,
+            "csw": 40.0,
+            "zoneRate": 40.0,
+            "zSwing": 100.0,
+            "oContact": 0.0,
+            "chase": 33.3,
+            "chasePlus": 102.0,
+            "locationScore": 100.0,
+            "stuffScore": 103.0
+          },
+          {
+            "pitchType": "カーブ",
+            "count": 5,
+            "ratio": 21.7,
+            "avgSpeed": "114.2",
+            "maxSpeed": "117.0",
+            "speedTotal": 571.0,
+            "speedCount": 5,
+            "whiffCount": 0,
+            "whiff": 0.0,
+            "atBats": 0,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 0,
+            "flyBalls": 0,
+            "strikeouts": 0,
+            "hitRate": null,
+            "color": "#C8A55A",
+            "swingCount": 1,
+            "calledStrikeCount": 2,
+            "locatedCount": 5,
+            "zoneCount": 3,
+            "outZoneCount": 2,
+            "zoneSwingCount": 1,
+            "outZoneSwingCount": 0,
+            "outZoneContactCount": 0,
+            "whiffRate": 0.0,
+            "csw": 40.0,
+            "zoneRate": 60.0,
+            "zSwing": 33.3,
+            "oContact": null,
+            "chase": 0.0,
+            "chasePlus": 0.0,
+            "locationScore": 100.0,
+            "stuffScore": 99.0
+          },
+          {
+            "pitchType": "シュート",
+            "count": 1,
+            "ratio": 4.3,
+            "avgSpeed": "143.0",
+            "maxSpeed": "143.0",
+            "speedTotal": 143.0,
+            "speedCount": 1,
+            "whiffCount": 0,
+            "whiff": 0.0,
+            "atBats": 0,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 0,
+            "flyBalls": 0,
+            "strikeouts": 0,
+            "hitRate": null,
+            "color": "#D6C192",
+            "swingCount": 0,
+            "calledStrikeCount": 0,
+            "locatedCount": 1,
+            "zoneCount": 0,
+            "outZoneCount": 1,
+            "zoneSwingCount": 0,
+            "outZoneSwingCount": 0,
+            "outZoneContactCount": 0,
+            "whiffRate": null,
+            "csw": 0.0,
+            "zoneRate": 0.0,
+            "zSwing": null,
+            "oContact": null,
+            "chase": 0.0,
+            "chasePlus": 0.0,
+            "locationScore": 99.0,
+            "stuffScore": 99.0
+          }
+        ]
+      }
+    },
+    {
+      "id": "オリックス-2026-05-24-2021038907-博志",
+      "team": "オリックス",
+      "league": "パ",
+      "date": "2026-05-24",
+      "prefix": "2021038907-博志",
+      "gameId": "2021038907",
+      "order": 720100,
+      "title": "博志",
+      "player": "博志",
+      "pitcherId": "1700101",
+      "matchup": "埼玉西武ライオンズvsオリックス・バファローズ",
+      "dateLabel": "2026年5月24日",
+      "pages": [],
+      "statline": {
+        "era": "0.00",
+        "innings": "2",
+        "pitches": "16",
+        "batters": "6",
+        "hits": "0",
+        "hr": "0",
+        "k": "0",
+        "bb": "0",
+        "hbp": "0",
+        "balk": "0",
+        "er": "0",
+        "runs": "0"
+      },
+      "detailPath": "../generated/オリックス/2026-05-24/2021038907-博志-dashboard-detail.json",
+      "dashboard": {
+        "pitchMix": [
+          {
+            "pitchType": "ツーシーム",
+            "count": 14,
+            "ratio": 87.5,
+            "avgSpeed": "147.9",
+            "maxSpeed": "150.0",
+            "speedTotal": 2070.0,
+            "speedCount": 14,
+            "whiffCount": 0,
+            "whiff": 0.0,
+            "atBats": 5,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 4,
+            "flyBalls": 1,
+            "strikeouts": 0,
+            "hitRate": 0.0,
+            "color": "#0F2340",
+            "swingCount": 8,
+            "calledStrikeCount": 2,
+            "locatedCount": 14,
+            "zoneCount": 10,
+            "outZoneCount": 4,
+            "zoneSwingCount": 8,
+            "outZoneSwingCount": 0,
+            "outZoneContactCount": 0,
+            "whiffRate": 0.0,
+            "csw": 14.3,
+            "zoneRate": 71.4,
+            "zSwing": 80.0,
+            "oContact": null,
+            "chase": 0.0,
+            "chasePlus": 0.0,
+            "locationScore": 98.0,
+            "stuffScore": 91.0
+          },
+          {
+            "pitchType": "カットボール",
+            "count": 2,
+            "ratio": 12.5,
+            "avgSpeed": "139.5",
+            "maxSpeed": "140.0",
+            "speedTotal": 279.0,
+            "speedCount": 2,
+            "whiffCount": 0,
+            "whiff": 0.0,
+            "atBats": 1,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 0,
+            "flyBalls": 1,
+            "strikeouts": 0,
+            "hitRate": 0.0,
+            "color": "#355C8C",
+            "swingCount": 1,
+            "calledStrikeCount": 0,
+            "locatedCount": 2,
+            "zoneCount": 0,
+            "outZoneCount": 2,
+            "zoneSwingCount": 0,
+            "outZoneSwingCount": 1,
+            "outZoneContactCount": 1,
+            "whiffRate": 0.0,
+            "csw": 0.0,
+            "zoneRate": 0.0,
+            "zSwing": null,
+            "oContact": 100.0,
+            "chase": 50.0,
+            "chasePlus": 153.0,
+            "locationScore": 99.0,
+            "stuffScore": 99.0
+          }
+        ]
+      }
+    },
+    {
+      "id": "西武-2026-05-24-2021038907-ワイナンス",
+      "team": "西武",
+      "league": "パ",
+      "date": "2026-05-24",
+      "prefix": "2021038907-ワイナンス",
+      "gameId": "2021038907",
+      "order": 110100,
+      "title": "ワイナンス",
+      "player": "ワイナンス",
+      "pitcherId": "2117319",
+      "matchup": "埼玉西武ライオンズvsオリックス・バファローズ",
+      "dateLabel": "2026年5月24日",
+      "pages": [],
+      "statline": {
+        "era": "2.45",
+        "innings": "5",
+        "pitches": "89",
+        "batters": "19",
+        "hits": "2",
+        "hr": "1",
+        "k": "3",
+        "bb": "2",
+        "hbp": "0",
+        "balk": "0",
+        "er": "1",
+        "runs": "1"
+      },
+      "detailPath": "../generated/西武/2026-05-24/2021038907-ワイナンス-dashboard-detail.json",
+      "dashboard": {
+        "pitchMix": [
+          {
+            "pitchType": "チェンジアップ",
+            "count": 32,
+            "ratio": 36.0,
+            "avgSpeed": "128.8",
+            "maxSpeed": "131.0",
+            "speedTotal": 3994.0,
+            "speedCount": 31,
+            "whiffCount": 6,
+            "whiff": 18.8,
+            "atBats": 5,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 3,
+            "flyBalls": 0,
+            "strikeouts": 2,
+            "hitRate": 0.0,
+            "color": "#0F2340",
+            "swingCount": 14,
+            "calledStrikeCount": 6,
+            "locatedCount": 32,
+            "zoneCount": 14,
+            "outZoneCount": 18,
+            "zoneSwingCount": 8,
+            "outZoneSwingCount": 6,
+            "outZoneContactCount": 2,
+            "whiffRate": 42.9,
+            "csw": 37.5,
+            "zoneRate": 43.8,
+            "zSwing": 57.1,
+            "oContact": 33.3,
+            "chase": 33.3,
+            "chasePlus": 102.0,
+            "locationScore": 101.0,
+            "stuffScore": 105.0
+          },
+          {
+            "pitchType": "スライダー",
+            "count": 26,
+            "ratio": 29.2,
+            "avgSpeed": "125.4",
+            "maxSpeed": "128.0",
+            "speedTotal": 3260.0,
+            "speedCount": 26,
+            "whiffCount": 3,
+            "whiff": 11.5,
+            "atBats": 3,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 0,
+            "flyBalls": 2,
+            "strikeouts": 1,
+            "hitRate": 0.0,
+            "color": "#355C8C",
+            "swingCount": 7,
+            "calledStrikeCount": 5,
+            "locatedCount": 26,
+            "zoneCount": 8,
+            "outZoneCount": 18,
+            "zoneSwingCount": 4,
+            "outZoneSwingCount": 3,
+            "outZoneContactCount": 1,
+            "whiffRate": 42.9,
+            "csw": 30.8,
+            "zoneRate": 30.8,
+            "zSwing": 50.0,
+            "oContact": 33.3,
+            "chase": 16.7,
+            "chasePlus": 51.0,
+            "locationScore": 98.0,
+            "stuffScore": 100.0
+          },
+          {
+            "pitchType": "ツーシーム",
+            "count": 21,
+            "ratio": 23.6,
+            "avgSpeed": "142.4",
+            "maxSpeed": "144.0",
+            "speedTotal": 2991.0,
+            "speedCount": 21,
+            "whiffCount": 0,
+            "whiff": 0.0,
+            "atBats": 7,
+            "singles": 0,
+            "doubles": 1,
+            "triples": 0,
+            "homeRuns": 1,
+            "grounders": 4,
+            "flyBalls": 1,
+            "strikeouts": 0,
+            "hitRate": 0.286,
+            "color": "#6A89B4",
+            "swingCount": 11,
+            "calledStrikeCount": 4,
+            "locatedCount": 21,
+            "zoneCount": 14,
+            "outZoneCount": 7,
+            "zoneSwingCount": 10,
+            "outZoneSwingCount": 1,
+            "outZoneContactCount": 1,
+            "whiffRate": 0.0,
+            "csw": 19.0,
+            "zoneRate": 66.7,
+            "zSwing": 71.4,
+            "oContact": 100.0,
+            "chase": 14.3,
+            "chasePlus": 44.0,
+            "locationScore": 100.0,
+            "stuffScore": 90.0
+          },
+          {
+            "pitchType": "ストレート",
+            "count": 7,
+            "ratio": 7.9,
+            "avgSpeed": "142.6",
+            "maxSpeed": "143.0",
+            "speedTotal": 998.0,
+            "speedCount": 7,
+            "whiffCount": 0,
+            "whiff": 0.0,
+            "atBats": 2,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 1,
+            "flyBalls": 1,
+            "strikeouts": 0,
+            "hitRate": 0.0,
+            "color": "#C8A55A",
+            "swingCount": 4,
+            "calledStrikeCount": 2,
+            "locatedCount": 7,
+            "zoneCount": 6,
+            "outZoneCount": 1,
+            "zoneSwingCount": 4,
+            "outZoneSwingCount": 0,
+            "outZoneContactCount": 0,
+            "whiffRate": 0.0,
+            "csw": 28.6,
+            "zoneRate": 85.7,
+            "zSwing": 66.7,
+            "oContact": null,
+            "chase": 0.0,
+            "chasePlus": 0.0,
+            "locationScore": 101.0,
+            "stuffScore": 97.0
+          },
+          {
+            "pitchType": "ナックルカーブ",
+            "count": 3,
+            "ratio": 3.4,
+            "avgSpeed": "119.3",
+            "maxSpeed": "121.0",
+            "speedTotal": 358.0,
+            "speedCount": 3,
+            "whiffCount": 0,
+            "whiff": 0.0,
+            "atBats": 0,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 0,
+            "flyBalls": 0,
+            "strikeouts": 0,
+            "hitRate": null,
+            "color": "#D6C192",
+            "swingCount": 0,
+            "calledStrikeCount": 1,
+            "locatedCount": 3,
+            "zoneCount": 1,
+            "outZoneCount": 2,
+            "zoneSwingCount": 0,
+            "outZoneSwingCount": 0,
+            "outZoneContactCount": 0,
+            "whiffRate": null,
+            "csw": 33.3,
+            "zoneRate": 33.3,
+            "zSwing": 0.0,
+            "oContact": null,
+            "chase": 0.0,
+            "chasePlus": 0.0,
+            "locationScore": 99.0,
+            "stuffScore": 99.0
+          }
+        ]
+      }
+    },
+    {
+      "id": "西武-2026-05-24-2021038907-佐藤隼輔",
+      "team": "西武",
+      "league": "パ",
+      "date": "2026-05-24",
+      "prefix": "2021038907-佐藤隼輔",
+      "gameId": "2021038907",
+      "order": 610100,
+      "title": "佐藤 隼輔",
+      "player": "佐藤 隼輔",
+      "pitcherId": "2103714",
+      "matchup": "埼玉西武ライオンズvsオリックス・バファローズ",
+      "dateLabel": "2026年5月24日",
+      "pages": [],
+      "statline": {
+        "era": "1.17",
+        "innings": "1",
+        "pitches": "12",
+        "batters": "6",
+        "hits": "2",
+        "hr": "0",
+        "k": "1",
+        "bb": "0",
+        "hbp": "1",
+        "balk": "0",
+        "er": "1",
+        "runs": "1"
+      },
+      "detailPath": "../generated/西武/2026-05-24/2021038907-佐藤隼輔-dashboard-detail.json",
+      "dashboard": {
+        "pitchMix": [
+          {
+            "pitchType": "ストレート",
+            "count": 6,
+            "ratio": 50.0,
+            "avgSpeed": "149.3",
+            "maxSpeed": "151.0",
+            "speedTotal": 896.0,
+            "speedCount": 6,
+            "whiffCount": 1,
+            "whiff": 16.7,
+            "atBats": 1,
+            "singles": 1,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 0,
+            "flyBalls": 0,
+            "strikeouts": 0,
+            "hitRate": 1.0,
+            "color": "#0F2340",
+            "swingCount": 2,
+            "calledStrikeCount": 0,
+            "locatedCount": 5,
+            "zoneCount": 2,
+            "outZoneCount": 3,
+            "zoneSwingCount": 2,
+            "outZoneSwingCount": 0,
+            "outZoneContactCount": 0,
+            "whiffRate": 50.0,
+            "csw": 16.7,
+            "zoneRate": 40.0,
+            "zSwing": 100.0,
+            "oContact": null,
+            "chase": 0.0,
+            "chasePlus": 0.0,
+            "locationScore": 99.0,
+            "stuffScore": 102.0
+          },
+          {
+            "pitchType": "チェンジアップ",
+            "count": 3,
+            "ratio": 25.0,
+            "avgSpeed": "132.3",
+            "maxSpeed": "134.0",
+            "speedTotal": 397.0,
+            "speedCount": 3,
+            "whiffCount": 0,
+            "whiff": 0.0,
+            "atBats": 0,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 0,
+            "flyBalls": 1,
+            "strikeouts": 0,
+            "hitRate": null,
+            "color": "#355C8C",
+            "swingCount": 2,
+            "calledStrikeCount": 1,
+            "locatedCount": 3,
+            "zoneCount": 3,
+            "outZoneCount": 0,
+            "zoneSwingCount": 2,
+            "outZoneSwingCount": 0,
+            "outZoneContactCount": 0,
+            "whiffRate": 0.0,
+            "csw": 33.3,
+            "zoneRate": 100.0,
+            "zSwing": 66.7,
+            "oContact": null,
+            "chase": null,
+            "chasePlus": null,
+            "locationScore": 100.0,
+            "stuffScore": 98.0
+          },
+          {
+            "pitchType": "ツーシーム",
+            "count": 2,
+            "ratio": 16.7,
+            "avgSpeed": "145.5",
+            "maxSpeed": "146.0",
+            "speedTotal": 291.0,
+            "speedCount": 2,
+            "whiffCount": 0,
+            "whiff": 0.0,
+            "atBats": 2,
+            "singles": 1,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 0,
+            "flyBalls": 1,
+            "strikeouts": 0,
+            "hitRate": 0.5,
+            "color": "#6A89B4",
+            "swingCount": 2,
+            "calledStrikeCount": 0,
+            "locatedCount": 2,
+            "zoneCount": 2,
+            "outZoneCount": 0,
+            "zoneSwingCount": 2,
+            "outZoneSwingCount": 0,
+            "outZoneContactCount": 0,
+            "whiffRate": 0.0,
+            "csw": 0.0,
+            "zoneRate": 100.0,
+            "zSwing": 100.0,
+            "oContact": null,
+            "chase": null,
+            "chasePlus": null,
+            "locationScore": 100.0,
+            "stuffScore": 97.0
+          },
+          {
+            "pitchType": "スライダー",
+            "count": 1,
+            "ratio": 8.3,
+            "avgSpeed": "134.0",
+            "maxSpeed": "134.0",
+            "speedTotal": 134.0,
+            "speedCount": 1,
+            "whiffCount": 1,
+            "whiff": 100.0,
+            "atBats": 1,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 0,
+            "flyBalls": 0,
+            "strikeouts": 1,
+            "hitRate": 0.0,
+            "color": "#C8A55A",
+            "swingCount": 1,
+            "calledStrikeCount": 0,
+            "locatedCount": 1,
+            "zoneCount": 0,
+            "outZoneCount": 1,
+            "zoneSwingCount": 0,
+            "outZoneSwingCount": 1,
+            "outZoneContactCount": 0,
+            "whiffRate": 100.0,
+            "csw": 100.0,
+            "zoneRate": 0.0,
+            "zSwing": null,
+            "oContact": 0.0,
+            "chase": 100.0,
+            "chasePlus": 307.0,
+            "locationScore": 100.0,
+            "stuffScore": 104.0
+          }
+        ]
+      }
+    },
+    {
+      "id": "西武-2026-05-24-2021038907-篠原響",
+      "team": "西武",
+      "league": "パ",
+      "date": "2026-05-24",
+      "prefix": "2021038907-篠原響",
+      "gameId": "2021038907",
+      "order": 710100,
+      "title": "篠原 響",
+      "player": "篠原 響",
+      "pitcherId": "2117734",
+      "matchup": "埼玉西武ライオンズvsオリックス・バファローズ",
+      "dateLabel": "2026年5月24日",
+      "pages": [],
+      "statline": {
+        "era": "0.59",
+        "innings": "1",
+        "pitches": "26",
+        "batters": "6",
+        "hits": "1",
+        "hr": "0",
+        "k": "1",
+        "bb": "2",
+        "hbp": "0",
+        "balk": "0",
+        "er": "0",
+        "runs": "0"
+      },
+      "detailPath": "../generated/西武/2026-05-24/2021038907-篠原響-dashboard-detail.json",
+      "dashboard": {
+        "pitchMix": [
+          {
+            "pitchType": "ストレート",
+            "count": 15,
+            "ratio": 57.7,
+            "avgSpeed": "154.7",
+            "maxSpeed": "157.0",
+            "speedTotal": 2321.0,
+            "speedCount": 15,
+            "whiffCount": 2,
+            "whiff": 13.3,
+            "atBats": 3,
+            "singles": 0,
+            "doubles": 1,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 1,
+            "flyBalls": 0,
+            "strikeouts": 1,
+            "hitRate": 0.333,
+            "color": "#0F2340",
+            "swingCount": 9,
+            "calledStrikeCount": 1,
+            "locatedCount": 15,
+            "zoneCount": 8,
+            "outZoneCount": 7,
+            "zoneSwingCount": 7,
+            "outZoneSwingCount": 2,
+            "outZoneContactCount": 0,
+            "whiffRate": 22.2,
+            "csw": 20.0,
+            "zoneRate": 53.3,
+            "zSwing": 87.5,
+            "oContact": 0.0,
+            "chase": 28.6,
+            "chasePlus": 88.0,
+            "locationScore": 98.0,
+            "stuffScore": 101.0
+          },
+          {
+            "pitchType": "スライダー",
+            "count": 5,
+            "ratio": 19.2,
+            "avgSpeed": "141.8",
+            "maxSpeed": "144.0",
+            "speedTotal": 567.0,
+            "speedCount": 4,
+            "whiffCount": 0,
+            "whiff": 0.0,
+            "atBats": 1,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 1,
+            "flyBalls": 0,
+            "strikeouts": 0,
+            "hitRate": 0.0,
+            "color": "#355C8C",
+            "swingCount": 2,
+            "calledStrikeCount": 1,
+            "locatedCount": 5,
+            "zoneCount": 2,
+            "outZoneCount": 3,
+            "zoneSwingCount": 1,
+            "outZoneSwingCount": 1,
+            "outZoneContactCount": 1,
+            "whiffRate": 0.0,
+            "csw": 20.0,
+            "zoneRate": 40.0,
+            "zSwing": 50.0,
+            "oContact": 100.0,
+            "chase": 33.3,
+            "chasePlus": 102.0,
+            "locationScore": 100.0,
+            "stuffScore": 98.0
+          },
+          {
+            "pitchType": "チェンジアップ",
+            "count": 5,
+            "ratio": 19.2,
+            "avgSpeed": "137.4",
+            "maxSpeed": "139.0",
+            "speedTotal": 687.0,
+            "speedCount": 5,
+            "whiffCount": 1,
+            "whiff": 20.0,
+            "atBats": 0,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 0,
+            "flyBalls": 0,
+            "strikeouts": 0,
+            "hitRate": null,
+            "color": "#6A89B4",
+            "swingCount": 1,
+            "calledStrikeCount": 2,
+            "locatedCount": 5,
+            "zoneCount": 2,
+            "outZoneCount": 3,
+            "zoneSwingCount": 0,
+            "outZoneSwingCount": 1,
+            "outZoneContactCount": 0,
+            "whiffRate": 100.0,
+            "csw": 60.0,
+            "zoneRate": 40.0,
+            "zSwing": 0.0,
+            "oContact": 0.0,
+            "chase": 33.3,
+            "chasePlus": 102.0,
+            "locationScore": 100.0,
+            "stuffScore": 104.0
+          },
+          {
+            "pitchType": "カットボール",
+            "count": 1,
+            "ratio": 3.8,
+            "avgSpeed": "146.0",
+            "maxSpeed": "146.0",
+            "speedTotal": 146.0,
+            "speedCount": 1,
+            "whiffCount": 0,
+            "whiff": 0.0,
+            "atBats": 0,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 0,
+            "flyBalls": 0,
+            "strikeouts": 0,
+            "hitRate": null,
+            "color": "#C8A55A",
+            "swingCount": 0,
+            "calledStrikeCount": 0,
+            "locatedCount": 1,
+            "zoneCount": 0,
+            "outZoneCount": 1,
+            "zoneSwingCount": 0,
+            "outZoneSwingCount": 0,
+            "outZoneContactCount": 0,
+            "whiffRate": null,
+            "csw": 0.0,
+            "zoneRate": 0.0,
+            "zSwing": null,
+            "oContact": null,
+            "chase": 0.0,
+            "chasePlus": 0.0,
+            "locationScore": 98.0,
+            "stuffScore": 99.0
+          }
+        ]
+      }
+    },
+    {
+      "id": "西武-2026-05-24-2021038907-甲斐野央",
+      "team": "西武",
+      "league": "パ",
+      "date": "2026-05-24",
+      "prefix": "2021038907-甲斐野央",
+      "gameId": "2021038907",
+      "order": 810100,
+      "title": "甲斐野 央",
+      "player": "甲斐野 央",
+      "pitcherId": "1800106",
+      "matchup": "埼玉西武ライオンズvsオリックス・バファローズ",
+      "dateLabel": "2026年5月24日",
+      "pages": [],
+      "statline": {
+        "era": "2.70",
+        "innings": "1",
+        "pitches": "14",
+        "batters": "3",
+        "hits": "0",
+        "hr": "0",
+        "k": "3",
+        "bb": "0",
+        "hbp": "0",
+        "balk": "0",
+        "er": "0",
+        "runs": "0"
+      },
+      "detailPath": "../generated/西武/2026-05-24/2021038907-甲斐野央-dashboard-detail.json",
+      "dashboard": {
+        "pitchMix": [
+          {
+            "pitchType": "フォーク",
+            "count": 9,
+            "ratio": 64.3,
+            "avgSpeed": "138.0",
+            "maxSpeed": "142.0",
+            "speedTotal": 1242.0,
+            "speedCount": 9,
+            "whiffCount": 4,
+            "whiff": 44.4,
+            "atBats": 2,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 0,
+            "flyBalls": 0,
+            "strikeouts": 2,
+            "hitRate": 0.0,
+            "color": "#0F2340",
+            "swingCount": 6,
+            "calledStrikeCount": 0,
+            "locatedCount": 9,
+            "zoneCount": 1,
+            "outZoneCount": 8,
+            "zoneSwingCount": 1,
+            "outZoneSwingCount": 5,
+            "outZoneContactCount": 1,
+            "whiffRate": 66.7,
+            "csw": 44.4,
+            "zoneRate": 11.1,
+            "zSwing": 100.0,
+            "oContact": 20.0,
+            "chase": 62.5,
+            "chasePlus": 192.0,
+            "locationScore": 100.0,
+            "stuffScore": 107.0
+          },
+          {
+            "pitchType": "ストレート",
+            "count": 4,
+            "ratio": 28.6,
+            "avgSpeed": "155.5",
+            "maxSpeed": "157.0",
+            "speedTotal": 622.0,
+            "speedCount": 4,
+            "whiffCount": 0,
+            "whiff": 0.0,
+            "atBats": 1,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 0,
+            "flyBalls": 0,
+            "strikeouts": 1,
+            "hitRate": 0.0,
+            "color": "#355C8C",
+            "swingCount": 2,
+            "calledStrikeCount": 2,
+            "locatedCount": 4,
+            "zoneCount": 2,
+            "outZoneCount": 2,
+            "zoneSwingCount": 1,
+            "outZoneSwingCount": 1,
+            "outZoneContactCount": 1,
+            "whiffRate": 0.0,
+            "csw": 50.0,
+            "zoneRate": 50.0,
+            "zSwing": 50.0,
+            "oContact": 100.0,
+            "chase": 50.0,
+            "chasePlus": 153.0,
+            "locationScore": 101.0,
+            "stuffScore": 101.0
+          },
+          {
+            "pitchType": "スイーパー",
+            "count": 1,
+            "ratio": 7.1,
+            "avgSpeed": "123.0",
+            "maxSpeed": "123.0",
+            "speedTotal": 123.0,
+            "speedCount": 1,
+            "whiffCount": 0,
+            "whiff": 0.0,
+            "atBats": 0,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 0,
+            "flyBalls": 0,
+            "strikeouts": 0,
+            "hitRate": null,
+            "color": "#6A89B4",
+            "swingCount": 0,
+            "calledStrikeCount": 0,
+            "locatedCount": 1,
+            "zoneCount": 0,
+            "outZoneCount": 1,
+            "zoneSwingCount": 0,
+            "outZoneSwingCount": 0,
+            "outZoneContactCount": 0,
+            "whiffRate": null,
+            "csw": 0.0,
+            "zoneRate": 0.0,
+            "zSwing": null,
+            "oContact": null,
+            "chase": 0.0,
+            "chasePlus": 0.0,
+            "locationScore": 99.0,
+            "stuffScore": 99.0
+          }
+        ]
+      }
+    },
+    {
+      "id": "西武-2026-05-24-2021038907-岩城颯空",
+      "team": "西武",
+      "league": "パ",
+      "date": "2026-05-24",
+      "prefix": "2021038907-岩城颯空",
+      "gameId": "2021038907",
+      "order": 910100,
+      "title": "岩城 颯空",
+      "player": "岩城 颯空",
+      "pitcherId": "2121154",
+      "matchup": "埼玉西武ライオンズvsオリックス・バファローズ",
+      "dateLabel": "2026年5月24日",
+      "pages": [],
+      "statline": {
+        "era": "2.84",
+        "innings": "1",
+        "pitches": "36",
+        "batters": "6",
+        "hits": "2",
+        "hr": "1",
+        "k": "1",
+        "bb": "1",
+        "hbp": "0",
+        "balk": "1",
+        "er": "1",
+        "runs": "1"
+      },
+      "detailPath": "../generated/西武/2026-05-24/2021038907-岩城颯空-dashboard-detail.json",
+      "dashboard": {
+        "pitchMix": [
+          {
+            "pitchType": "ストレート",
+            "count": 19,
+            "ratio": 52.8,
+            "avgSpeed": "147.3",
+            "maxSpeed": "151.0",
+            "speedTotal": 2798.0,
+            "speedCount": 19,
+            "whiffCount": 3,
+            "whiff": 15.8,
+            "atBats": 4,
+            "singles": 1,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 1,
+            "grounders": 0,
+            "flyBalls": 1,
+            "strikeouts": 1,
+            "hitRate": 0.5,
+            "color": "#0F2340",
+            "swingCount": 11,
+            "calledStrikeCount": 3,
+            "locatedCount": 19,
+            "zoneCount": 10,
+            "outZoneCount": 9,
+            "zoneSwingCount": 7,
+            "outZoneSwingCount": 4,
+            "outZoneContactCount": 2,
+            "whiffRate": 27.3,
+            "csw": 31.6,
+            "zoneRate": 52.6,
+            "zSwing": 70.0,
+            "oContact": 50.0,
+            "chase": 44.4,
+            "chasePlus": 136.0,
+            "locationScore": 100.0,
+            "stuffScore": 108.0
+          },
+          {
+            "pitchType": "スライダー",
+            "count": 12,
+            "ratio": 33.3,
+            "avgSpeed": "131.7",
+            "maxSpeed": "134.0",
+            "speedTotal": 1449.0,
+            "speedCount": 11,
+            "whiffCount": 2,
+            "whiff": 16.7,
+            "atBats": 1,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 1,
+            "flyBalls": 0,
+            "strikeouts": 0,
+            "hitRate": 0.0,
+            "color": "#355C8C",
+            "swingCount": 4,
+            "calledStrikeCount": 2,
+            "locatedCount": 12,
+            "zoneCount": 5,
+            "outZoneCount": 7,
+            "zoneSwingCount": 3,
+            "outZoneSwingCount": 1,
+            "outZoneContactCount": 0,
+            "whiffRate": 50.0,
+            "csw": 33.3,
+            "zoneRate": 41.7,
+            "zSwing": 60.0,
+            "oContact": 0.0,
+            "chase": 14.3,
+            "chasePlus": 44.0,
+            "locationScore": 98.0,
+            "stuffScore": 101.0
+          },
+          {
+            "pitchType": "フォーク",
+            "count": 3,
+            "ratio": 8.3,
+            "avgSpeed": "135.7",
+            "maxSpeed": "137.0",
+            "speedTotal": 407.0,
+            "speedCount": 3,
+            "whiffCount": 0,
+            "whiff": 0.0,
+            "atBats": 0,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 0,
+            "flyBalls": 0,
+            "strikeouts": 0,
+            "hitRate": null,
+            "color": "#6A89B4",
+            "swingCount": 1,
+            "calledStrikeCount": 0,
+            "locatedCount": 3,
+            "zoneCount": 1,
+            "outZoneCount": 2,
+            "zoneSwingCount": 1,
+            "outZoneSwingCount": 0,
+            "outZoneContactCount": 0,
+            "whiffRate": 0.0,
+            "csw": 0.0,
+            "zoneRate": 33.3,
+            "zSwing": 100.0,
+            "oContact": null,
+            "chase": 0.0,
+            "chasePlus": 0.0,
+            "locationScore": 99.0,
+            "stuffScore": 97.0
+          },
+          {
+            "pitchType": "カーブ",
+            "count": 2,
+            "ratio": 5.6,
+            "avgSpeed": "117.5",
+            "maxSpeed": "119.0",
+            "speedTotal": 235.0,
+            "speedCount": 2,
+            "whiffCount": 0,
+            "whiff": 0.0,
+            "atBats": 0,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 0,
+            "flyBalls": 0,
+            "strikeouts": 0,
+            "hitRate": null,
+            "color": "#C8A55A",
+            "swingCount": 0,
+            "calledStrikeCount": 0,
+            "locatedCount": 2,
+            "zoneCount": 0,
+            "outZoneCount": 2,
+            "zoneSwingCount": 0,
+            "outZoneSwingCount": 0,
+            "outZoneContactCount": 0,
+            "whiffRate": null,
+            "csw": 0.0,
+            "zoneRate": 0.0,
+            "zSwing": null,
+            "oContact": null,
+            "chase": 0.0,
+            "chasePlus": 0.0,
+            "locationScore": 98.0,
+            "stuffScore": 97.0
+          }
+        ]
+      }
+    },
+    {
+      "id": "東北楽天-2026-05-24-2021038906-藤井聖",
+      "team": "東北楽天",
+      "league": "パ",
+      "date": "2026-05-24",
+      "prefix": "2021038906-藤井聖",
+      "gameId": "2021038906",
+      "order": 110100,
+      "title": "藤井 聖",
+      "player": "藤井 聖",
+      "pitcherId": "2000123",
+      "matchup": "東北楽天ゴールデンイーグルスvs千葉ロッテマリーンズ",
+      "dateLabel": "2026年5月24日",
+      "pages": [],
+      "statline": {
+        "era": "2.95",
+        "innings": "6.1",
+        "pitches": "112",
+        "batters": "31",
+        "hits": "11",
+        "hr": "0",
+        "k": "6",
+        "bb": "0",
+        "hbp": "0",
+        "balk": "0",
+        "er": "2",
+        "runs": "3"
+      },
+      "detailPath": "../generated/東北楽天/2026-05-24/2021038906-藤井聖-dashboard-detail.json",
+      "dashboard": {
+        "pitchMix": [
+          {
+            "pitchType": "スライダー",
+            "count": 34,
+            "ratio": 30.4,
+            "avgSpeed": "125.6",
+            "maxSpeed": "128.0",
+            "speedTotal": 4146.0,
+            "speedCount": 33,
+            "whiffCount": 5,
+            "whiff": 14.7,
+            "atBats": 9,
+            "singles": 2,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 0,
+            "flyBalls": 4,
+            "strikeouts": 3,
+            "hitRate": 0.222,
+            "color": "#0F2340",
+            "swingCount": 16,
+            "calledStrikeCount": 7,
+            "locatedCount": 34,
+            "zoneCount": 14,
+            "outZoneCount": 20,
+            "zoneSwingCount": 8,
+            "outZoneSwingCount": 8,
+            "outZoneContactCount": 3,
+            "whiffRate": 31.2,
+            "csw": 35.3,
+            "zoneRate": 41.2,
+            "zSwing": 57.1,
+            "oContact": 37.5,
+            "chase": 40.0,
+            "chasePlus": 123.0,
+            "locationScore": 100.0,
+            "stuffScore": 103.0
+          },
+          {
+            "pitchType": "ストレート",
+            "count": 32,
+            "ratio": 28.6,
+            "avgSpeed": "138.7",
+            "maxSpeed": "142.0",
+            "speedTotal": 4299.0,
+            "speedCount": 31,
+            "whiffCount": 5,
+            "whiff": 15.6,
+            "atBats": 12,
+            "singles": 5,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 2,
+            "flyBalls": 2,
+            "strikeouts": 3,
+            "hitRate": 0.417,
+            "color": "#355C8C",
+            "swingCount": 19,
+            "calledStrikeCount": 4,
+            "locatedCount": 32,
+            "zoneCount": 20,
+            "outZoneCount": 12,
+            "zoneSwingCount": 14,
+            "outZoneSwingCount": 5,
+            "outZoneContactCount": 2,
+            "whiffRate": 26.3,
+            "csw": 28.1,
+            "zoneRate": 62.5,
+            "zSwing": 70.0,
+            "oContact": 40.0,
+            "chase": 41.7,
+            "chasePlus": 128.0,
+            "locationScore": 99.0,
+            "stuffScore": 109.0
+          },
+          {
+            "pitchType": "ツーシーム",
+            "count": 16,
+            "ratio": 14.3,
+            "avgSpeed": "132.4",
+            "maxSpeed": "135.0",
+            "speedTotal": 2119.0,
+            "speedCount": 16,
+            "whiffCount": 0,
+            "whiff": 0.0,
+            "atBats": 5,
+            "singles": 1,
+            "doubles": 1,
+            "triples": 1,
+            "homeRuns": 0,
+            "grounders": 1,
+            "flyBalls": 1,
+            "strikeouts": 0,
+            "hitRate": 0.6,
+            "color": "#6A89B4",
+            "swingCount": 7,
+            "calledStrikeCount": 2,
+            "locatedCount": 16,
+            "zoneCount": 8,
+            "outZoneCount": 8,
+            "zoneSwingCount": 7,
+            "outZoneSwingCount": 0,
+            "outZoneContactCount": 0,
+            "whiffRate": 0.0,
+            "csw": 12.5,
+            "zoneRate": 50.0,
+            "zSwing": 87.5,
+            "oContact": null,
+            "chase": 0.0,
+            "chasePlus": 0.0,
+            "locationScore": 98.0,
+            "stuffScore": 90.0
+          },
+          {
+            "pitchType": "カーブ",
+            "count": 14,
+            "ratio": 12.5,
+            "avgSpeed": "110.2",
+            "maxSpeed": "115.0",
+            "speedTotal": 1543.0,
+            "speedCount": 14,
+            "whiffCount": 1,
+            "whiff": 7.1,
+            "atBats": 1,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 1,
+            "flyBalls": 0,
+            "strikeouts": 0,
+            "hitRate": 0.0,
+            "color": "#C8A55A",
+            "swingCount": 4,
+            "calledStrikeCount": 5,
+            "locatedCount": 14,
+            "zoneCount": 7,
+            "outZoneCount": 7,
+            "zoneSwingCount": 2,
+            "outZoneSwingCount": 2,
+            "outZoneContactCount": 1,
+            "whiffRate": 25.0,
+            "csw": 42.9,
+            "zoneRate": 50.0,
+            "zSwing": 28.6,
+            "oContact": 50.0,
+            "chase": 28.6,
+            "chasePlus": 88.0,
+            "locationScore": 98.0,
+            "stuffScore": 102.0
+          },
+          {
+            "pitchType": "チェンジアップ",
+            "count": 10,
+            "ratio": 8.9,
+            "avgSpeed": "117.5",
+            "maxSpeed": "126.0",
+            "speedTotal": 1175.0,
+            "speedCount": 10,
+            "whiffCount": 0,
+            "whiff": 0.0,
+            "atBats": 3,
+            "singles": 1,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 1,
+            "flyBalls": 1,
+            "strikeouts": 0,
+            "hitRate": 0.333,
+            "color": "#D6C192",
+            "swingCount": 4,
+            "calledStrikeCount": 2,
+            "locatedCount": 10,
+            "zoneCount": 5,
+            "outZoneCount": 5,
+            "zoneSwingCount": 4,
+            "outZoneSwingCount": 0,
+            "outZoneContactCount": 0,
+            "whiffRate": 0.0,
+            "csw": 20.0,
+            "zoneRate": 50.0,
+            "zSwing": 80.0,
+            "oContact": null,
+            "chase": 0.0,
+            "chasePlus": 0.0,
+            "locationScore": 100.0,
+            "stuffScore": 94.0
+          },
+          {
+            "pitchType": "シュート",
+            "count": 6,
+            "ratio": 5.4,
+            "avgSpeed": "138.0",
+            "maxSpeed": "140.0",
+            "speedTotal": 828.0,
+            "speedCount": 6,
+            "whiffCount": 0,
+            "whiff": 0.0,
+            "atBats": 1,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 1,
+            "flyBalls": 0,
+            "strikeouts": 0,
+            "hitRate": 0.0,
+            "color": "#9D8B75",
+            "swingCount": 1,
+            "calledStrikeCount": 2,
+            "locatedCount": 6,
+            "zoneCount": 2,
+            "outZoneCount": 4,
+            "zoneSwingCount": 1,
+            "outZoneSwingCount": 0,
+            "outZoneContactCount": 0,
+            "whiffRate": 0.0,
+            "csw": 33.3,
+            "zoneRate": 33.3,
+            "zSwing": 50.0,
+            "oContact": null,
+            "chase": 0.0,
+            "chasePlus": 0.0,
+            "locationScore": 100.0,
+            "stuffScore": 99.0
+          }
+        ]
+      }
+    },
+    {
+      "id": "東北楽天-2026-05-24-2021038906-西垣雅矢",
+      "team": "東北楽天",
+      "league": "パ",
+      "date": "2026-05-24",
+      "prefix": "2021038906-西垣雅矢",
+      "gameId": "2021038906",
+      "order": 710600,
+      "title": "西垣 雅矢",
+      "player": "西垣 雅矢",
+      "pitcherId": "1750493",
+      "matchup": "東北楽天ゴールデンイーグルスvs千葉ロッテマリーンズ",
+      "dateLabel": "2026年5月24日",
+      "pages": [],
+      "statline": {
+        "era": "6.32",
+        "innings": "0.2",
+        "pitches": "8",
+        "batters": "2",
+        "hits": "0",
+        "hr": "0",
+        "k": "2",
+        "bb": "0",
+        "hbp": "0",
+        "balk": "0",
+        "er": "0",
+        "runs": "0"
+      },
+      "detailPath": "../generated/東北楽天/2026-05-24/2021038906-西垣雅矢-dashboard-detail.json",
+      "dashboard": {
+        "pitchMix": [
+          {
+            "pitchType": "フォーク",
+            "count": 6,
+            "ratio": 75.0,
+            "avgSpeed": "140.7",
+            "maxSpeed": "142.0",
+            "speedTotal": 844.0,
+            "speedCount": 6,
+            "whiffCount": 2,
+            "whiff": 33.3,
+            "atBats": 1,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 0,
+            "flyBalls": 0,
+            "strikeouts": 1,
+            "hitRate": 0.0,
+            "color": "#0F2340",
+            "swingCount": 4,
+            "calledStrikeCount": 0,
+            "locatedCount": 6,
+            "zoneCount": 2,
+            "outZoneCount": 4,
+            "zoneSwingCount": 2,
+            "outZoneSwingCount": 2,
+            "outZoneContactCount": 0,
+            "whiffRate": 50.0,
+            "csw": 33.3,
+            "zoneRate": 33.3,
+            "zSwing": 100.0,
+            "oContact": 0.0,
+            "chase": 50.0,
+            "chasePlus": 153.0,
+            "locationScore": 100.0,
+            "stuffScore": 102.0
+          },
+          {
+            "pitchType": "ストレート",
+            "count": 2,
+            "ratio": 25.0,
+            "avgSpeed": "152.5",
+            "maxSpeed": "153.0",
+            "speedTotal": 305.0,
+            "speedCount": 2,
+            "whiffCount": 1,
+            "whiff": 50.0,
+            "atBats": 1,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 0,
+            "flyBalls": 0,
+            "strikeouts": 1,
+            "hitRate": 0.0,
+            "color": "#355C8C",
+            "swingCount": 2,
+            "calledStrikeCount": 0,
+            "locatedCount": 2,
+            "zoneCount": 1,
+            "outZoneCount": 1,
+            "zoneSwingCount": 1,
+            "outZoneSwingCount": 1,
+            "outZoneContactCount": 0,
+            "whiffRate": 50.0,
+            "csw": 50.0,
+            "zoneRate": 50.0,
+            "zSwing": 100.0,
+            "oContact": 0.0,
+            "chase": 100.0,
+            "chasePlus": 307.0,
+            "locationScore": 101.0,
+            "stuffScore": 105.0
+          }
+        ]
+      }
+    },
+    {
+      "id": "東北楽天-2026-05-24-2021038906-加治屋蓮",
+      "team": "東北楽天",
+      "league": "パ",
+      "date": "2026-05-24",
+      "prefix": "2021038906-加治屋蓮",
+      "gameId": "2021038906",
+      "order": 810100,
+      "title": "加治屋 蓮",
+      "player": "加治屋 蓮",
+      "pitcherId": "1300076",
+      "matchup": "東北楽天ゴールデンイーグルスvs千葉ロッテマリーンズ",
+      "dateLabel": "2026年5月24日",
+      "pages": [],
+      "statline": {
+        "era": "1.86",
+        "innings": "1",
+        "pitches": "23",
+        "batters": "6",
+        "hits": "1",
+        "hr": "0",
+        "k": "1",
+        "bb": "1",
+        "hbp": "0",
+        "balk": "0",
+        "er": "0",
+        "runs": "1"
+      },
+      "detailPath": "../generated/東北楽天/2026-05-24/2021038906-加治屋蓮-dashboard-detail.json",
+      "dashboard": {
+        "pitchMix": [
+          {
+            "pitchType": "フォーク",
+            "count": 7,
+            "ratio": 30.4,
+            "avgSpeed": "141.0",
+            "maxSpeed": "142.0",
+            "speedTotal": 987.0,
+            "speedCount": 7,
+            "whiffCount": 1,
+            "whiff": 14.3,
+            "atBats": 1,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 0,
+            "flyBalls": 0,
+            "strikeouts": 1,
+            "hitRate": 0.0,
+            "color": "#0F2340",
+            "swingCount": 3,
+            "calledStrikeCount": 2,
+            "locatedCount": 7,
+            "zoneCount": 2,
+            "outZoneCount": 5,
+            "zoneSwingCount": 0,
+            "outZoneSwingCount": 3,
+            "outZoneContactCount": 2,
+            "whiffRate": 33.3,
+            "csw": 42.9,
+            "zoneRate": 28.6,
+            "zSwing": 0.0,
+            "oContact": 66.7,
+            "chase": 60.0,
+            "chasePlus": 184.0,
+            "locationScore": 101.0,
+            "stuffScore": 102.0
+          },
+          {
+            "pitchType": "カットボール",
+            "count": 7,
+            "ratio": 30.4,
+            "avgSpeed": "142.3",
+            "maxSpeed": "147.0",
+            "speedTotal": 996.0,
+            "speedCount": 7,
+            "whiffCount": 1,
+            "whiff": 14.3,
+            "atBats": 3,
+            "singles": 1,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 2,
+            "flyBalls": 0,
+            "strikeouts": 0,
+            "hitRate": 0.333,
+            "color": "#355C8C",
+            "swingCount": 5,
+            "calledStrikeCount": 1,
+            "locatedCount": 7,
+            "zoneCount": 4,
+            "outZoneCount": 3,
+            "zoneSwingCount": 3,
+            "outZoneSwingCount": 2,
+            "outZoneContactCount": 1,
+            "whiffRate": 20.0,
+            "csw": 28.6,
+            "zoneRate": 57.1,
+            "zSwing": 75.0,
+            "oContact": 50.0,
+            "chase": 66.7,
+            "chasePlus": 204.0,
+            "locationScore": 101.0,
+            "stuffScore": 100.0
+          },
+          {
+            "pitchType": "ストレート",
+            "count": 6,
+            "ratio": 26.1,
+            "avgSpeed": "145.2",
+            "maxSpeed": "146.0",
+            "speedTotal": 871.0,
+            "speedCount": 6,
+            "whiffCount": 0,
+            "whiff": 0.0,
+            "atBats": 1,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 0,
+            "flyBalls": 1,
+            "strikeouts": 0,
+            "hitRate": 0.0,
+            "color": "#6A89B4",
+            "swingCount": 2,
+            "calledStrikeCount": 1,
+            "locatedCount": 6,
+            "zoneCount": 1,
+            "outZoneCount": 5,
+            "zoneSwingCount": 0,
+            "outZoneSwingCount": 2,
+            "outZoneContactCount": 2,
+            "whiffRate": 0.0,
+            "csw": 16.7,
+            "zoneRate": 16.7,
+            "zSwing": 0.0,
+            "oContact": 100.0,
+            "chase": 40.0,
+            "chasePlus": 123.0,
+            "locationScore": 100.0,
+            "stuffScore": 98.0
+          },
+          {
+            "pitchType": "カーブ",
+            "count": 3,
+            "ratio": 13.0,
+            "avgSpeed": "127.0",
+            "maxSpeed": "128.0",
+            "speedTotal": 381.0,
+            "speedCount": 3,
+            "whiffCount": 0,
+            "whiff": 0.0,
+            "atBats": 0,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 0,
+            "flyBalls": 0,
+            "strikeouts": 0,
+            "hitRate": null,
+            "color": "#C8A55A",
+            "swingCount": 0,
+            "calledStrikeCount": 1,
+            "locatedCount": 3,
+            "zoneCount": 1,
+            "outZoneCount": 2,
+            "zoneSwingCount": 0,
+            "outZoneSwingCount": 0,
+            "outZoneContactCount": 0,
+            "whiffRate": null,
+            "csw": 33.3,
+            "zoneRate": 33.3,
+            "zSwing": 0.0,
+            "oContact": null,
+            "chase": 0.0,
+            "chasePlus": 0.0,
+            "locationScore": 100.0,
+            "stuffScore": 99.0
+          }
+        ]
+      }
+    },
+    {
+      "id": "東北楽天-2026-05-24-2021038906-藤平尚真",
+      "team": "東北楽天",
+      "league": "パ",
+      "date": "2026-05-24",
+      "prefix": "2021038906-藤平尚真",
+      "gameId": "2021038906",
+      "order": 910100,
+      "title": "藤平 尚真",
+      "player": "藤平 尚真",
+      "pitcherId": "1600092",
+      "matchup": "東北楽天ゴールデンイーグルスvs千葉ロッテマリーンズ",
+      "dateLabel": "2026年5月24日",
+      "pages": [],
+      "statline": {
+        "era": "3.63",
+        "innings": "1",
+        "pitches": "16",
+        "batters": "4",
+        "hits": "1",
+        "hr": "1",
+        "k": "2",
+        "bb": "0",
+        "hbp": "0",
+        "balk": "0",
+        "er": "1",
+        "runs": "1"
+      },
+      "detailPath": "../generated/東北楽天/2026-05-24/2021038906-藤平尚真-dashboard-detail.json",
+      "dashboard": {
+        "pitchMix": [
+          {
+            "pitchType": "フォーク",
+            "count": 8,
+            "ratio": 50.0,
+            "avgSpeed": "140.6",
+            "maxSpeed": "142.0",
+            "speedTotal": 1125.0,
+            "speedCount": 8,
+            "whiffCount": 5,
+            "whiff": 62.5,
+            "atBats": 2,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 0,
+            "flyBalls": 0,
+            "strikeouts": 2,
+            "hitRate": 0.0,
+            "color": "#0F2340",
+            "swingCount": 5,
+            "calledStrikeCount": 0,
+            "locatedCount": 8,
+            "zoneCount": 1,
+            "outZoneCount": 7,
+            "zoneSwingCount": 1,
+            "outZoneSwingCount": 4,
+            "outZoneContactCount": 0,
+            "whiffRate": 100.0,
+            "csw": 62.5,
+            "zoneRate": 12.5,
+            "zSwing": 100.0,
+            "oContact": 0.0,
+            "chase": 57.1,
+            "chasePlus": 175.0,
+            "locationScore": 101.0,
+            "stuffScore": 111.0
+          },
+          {
+            "pitchType": "ストレート",
+            "count": 7,
+            "ratio": 43.8,
+            "avgSpeed": "151.4",
+            "maxSpeed": "152.0",
+            "speedTotal": 1060.0,
+            "speedCount": 7,
+            "whiffCount": 0,
+            "whiff": 0.0,
+            "atBats": 2,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 1,
+            "grounders": 0,
+            "flyBalls": 1,
+            "strikeouts": 0,
+            "hitRate": 0.5,
+            "color": "#355C8C",
+            "swingCount": 4,
+            "calledStrikeCount": 1,
+            "locatedCount": 7,
+            "zoneCount": 4,
+            "outZoneCount": 3,
+            "zoneSwingCount": 4,
+            "outZoneSwingCount": 0,
+            "outZoneContactCount": 0,
+            "whiffRate": 0.0,
+            "csw": 14.3,
+            "zoneRate": 57.1,
+            "zSwing": 100.0,
+            "oContact": null,
+            "chase": 0.0,
+            "chasePlus": 0.0,
+            "locationScore": 100.0,
+            "stuffScore": 95.0
+          },
+          {
+            "pitchType": "スライダー",
+            "count": 1,
+            "ratio": 6.2,
+            "avgSpeed": "137.0",
+            "maxSpeed": "137.0",
+            "speedTotal": 137.0,
+            "speedCount": 1,
+            "whiffCount": 0,
+            "whiff": 0.0,
+            "atBats": 0,
+            "singles": 0,
+            "doubles": 0,
+            "triples": 0,
+            "homeRuns": 0,
+            "grounders": 0,
+            "flyBalls": 0,
+            "strikeouts": 0,
+            "hitRate": null,
+            "color": "#6A89B4",
+            "swingCount": 0,
+            "calledStrikeCount": 1,
+            "locatedCount": 1,
+            "zoneCount": 1,
+            "outZoneCount": 0,
+            "zoneSwingCount": 0,
+            "outZoneSwingCount": 0,
+            "outZoneContactCount": 0,
+            "whiffRate": null,
+            "csw": 100.0,
+            "zoneRate": 100.0,
+            "zSwing": 0.0,
+            "oContact": null,
+            "chase": null,
+            "chasePlus": null,
+            "locationScore": 102.0,
+            "stuffScore": 102.0
+          }
+        ]
+      }
+    },
     {
       "id": "巨人-2026-05-23-2021038897-ウィットリー",
       "team": "巨人",
@@ -1560,7 +10776,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 50.0,
             "chase": 20.0,
-            "chasePlus": 62.0,
+            "chasePlus": 61.0,
             "locationScore": 99.0,
             "stuffScore": 93.0
           },
@@ -1672,7 +10888,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 0.0,
             "chasePlus": 0.0,
             "locationScore": 101.0,
-            "stuffScore": 104.0
+            "stuffScore": 105.0
           },
           {
             "pitchType": "ストレート",
@@ -2038,7 +11254,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 0.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 104.0
           },
@@ -2301,7 +11517,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "oContact": null,
             "chase": null,
             "chasePlus": null,
-            "locationScore": 102.0,
+            "locationScore": 101.0,
             "stuffScore": 99.0
           }
         ]
@@ -2372,7 +11588,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 52.2,
             "oContact": 85.7,
             "chase": 35.0,
-            "chasePlus": 108.0,
+            "chasePlus": 107.0,
             "locationScore": 100.0,
             "stuffScore": 92.0
           },
@@ -2448,7 +11664,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 81.8,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 101.0,
             "stuffScore": 100.0
           },
@@ -2486,7 +11702,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 57.1,
             "oContact": 100.0,
             "chase": 42.9,
-            "chasePlus": 132.0,
+            "chasePlus": 131.0,
             "locationScore": 100.0,
             "stuffScore": 102.0
           },
@@ -2524,7 +11740,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 0.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 110.0
           },
@@ -2562,7 +11778,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 99.0,
             "stuffScore": 95.0
           }
@@ -2672,7 +11888,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 100.0,
             "chase": 20.0,
-            "chasePlus": 62.0,
+            "chasePlus": 61.0,
             "locationScore": 100.0,
             "stuffScore": 95.0
           },
@@ -2710,7 +11926,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 98.0
           },
@@ -2786,7 +12002,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 98.0,
             "stuffScore": 99.0
           },
@@ -2972,7 +12188,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 101.0,
             "stuffScore": 99.0
           }
@@ -3044,7 +12260,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 83.3,
             "oContact": 100.0,
             "chase": 42.9,
-            "chasePlus": 132.0,
+            "chasePlus": 131.0,
             "locationScore": 99.0,
             "stuffScore": 88.0
           },
@@ -3120,7 +12336,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 98.0
           },
@@ -3268,7 +12484,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 0.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 100.0,
             "stuffScore": 100.0
           }
@@ -3602,7 +12818,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 55.6,
             "oContact": 50.0,
             "chase": 20.0,
-            "chasePlus": 62.0,
+            "chasePlus": 61.0,
             "locationScore": 101.0,
             "stuffScore": 99.0
           },
@@ -3678,7 +12894,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 85.7,
             "oContact": 100.0,
             "chase": 66.7,
-            "chasePlus": 205.0,
+            "chasePlus": 204.0,
             "locationScore": 100.0,
             "stuffScore": 95.0
           },
@@ -3716,7 +12932,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 100.0,
             "chase": 66.7,
-            "chasePlus": 205.0,
+            "chasePlus": 204.0,
             "locationScore": 101.0,
             "stuffScore": 99.0
           },
@@ -3754,7 +12970,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 0.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 100.0,
             "stuffScore": 102.0
           }
@@ -4012,7 +13228,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 85.7,
             "oContact": 25.0,
             "chase": 57.1,
-            "chasePlus": 176.0,
+            "chasePlus": 175.0,
             "locationScore": 100.0,
             "stuffScore": 114.0
           },
@@ -4122,7 +13338,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 60.0,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 101.0,
             "stuffScore": 103.0
           },
@@ -4160,9 +13376,9 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 0.0,
             "chase": 66.7,
-            "chasePlus": 205.0,
-            "locationScore": 102.0,
-            "stuffScore": 106.0
+            "chasePlus": 204.0,
+            "locationScore": 101.0,
+            "stuffScore": 107.0
           },
           {
             "pitchType": "スライダー",
@@ -4346,7 +13562,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 25.0,
             "oContact": 100.0,
             "chase": 20.0,
-            "chasePlus": 62.0,
+            "chasePlus": 61.0,
             "locationScore": 99.0,
             "stuffScore": 96.0
           },
@@ -4532,7 +13748,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 0.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 99.0,
             "stuffScore": 102.0
           },
@@ -4680,7 +13896,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 75.0,
             "oContact": 100.0,
             "chase": 20.0,
-            "chasePlus": 62.0,
+            "chasePlus": 61.0,
             "locationScore": 99.0,
             "stuffScore": 94.0
           },
@@ -4718,7 +13934,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 0.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 102.0
           },
@@ -4756,7 +13972,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 99.0,
             "stuffScore": 100.0
           },
@@ -4980,7 +14196,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 101.0,
             "stuffScore": 100.0
           },
@@ -5314,7 +14530,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 20.0,
-            "chasePlus": 62.0,
+            "chasePlus": 61.0,
             "locationScore": 99.0,
             "stuffScore": 101.0
           },
@@ -5538,7 +14754,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 0.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 100.0,
             "stuffScore": 103.0
           },
@@ -6728,7 +15944,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 40.0,
             "chasePlus": 123.0,
             "locationScore": 102.0,
-            "stuffScore": 104.0
+            "stuffScore": 103.0
           },
           {
             "pitchType": "シンカー",
@@ -7213,7 +16429,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "oContact": null,
             "chase": 0.0,
             "chasePlus": 0.0,
-            "locationScore": 97.0,
+            "locationScore": 98.0,
             "stuffScore": 92.0
           },
           {
@@ -11186,7 +20402,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 64.7,
             "oContact": 100.0,
             "chase": 42.9,
-            "chasePlus": 132.0,
+            "chasePlus": 131.0,
             "locationScore": 99.0,
             "stuffScore": 96.0
           },
@@ -11262,7 +20478,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 100.0,
             "chase": 60.0,
-            "chasePlus": 185.0,
+            "chasePlus": 184.0,
             "locationScore": 100.0,
             "stuffScore": 97.0
           },
@@ -11300,7 +20516,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 66.7,
-            "chasePlus": 205.0,
+            "chasePlus": 204.0,
             "locationScore": 100.0,
             "stuffScore": 95.0
           },
@@ -11338,7 +20554,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 75.0,
             "oContact": 50.0,
             "chase": 66.7,
-            "chasePlus": 205.0,
+            "chasePlus": 204.0,
             "locationScore": 99.0,
             "stuffScore": 103.0
           },
@@ -11634,7 +20850,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 50.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 99.0,
             "stuffScore": 103.0
           },
@@ -11782,7 +20998,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 20.0,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 99.0
           },
@@ -11820,7 +21036,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 0.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 102.0,
             "stuffScore": 110.0
           },
@@ -11968,7 +21184,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 101.0,
             "stuffScore": 95.0
           },
@@ -12154,7 +21370,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 53.3,
             "oContact": 88.9,
             "chase": 42.9,
-            "chasePlus": 132.0,
+            "chasePlus": 131.0,
             "locationScore": 100.0,
             "stuffScore": 94.0
           },
@@ -12192,7 +21408,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 75.0,
             "chase": 75.0,
-            "chasePlus": 231.0,
+            "chasePlus": 230.0,
             "locationScore": 100.0,
             "stuffScore": 103.0
           },
@@ -12230,7 +21446,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 63.6,
             "oContact": 75.0,
             "chase": 66.7,
-            "chasePlus": 205.0,
+            "chasePlus": 204.0,
             "locationScore": 102.0,
             "stuffScore": 102.0
           },
@@ -12268,7 +21484,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 80.0,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 101.0,
             "stuffScore": 95.0
           },
@@ -12564,7 +21780,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 0.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 101.0,
             "stuffScore": 103.0
           }
@@ -12636,7 +21852,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 50.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 97.0,
             "stuffScore": 99.0
           },
@@ -12674,7 +21890,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 101.0,
             "stuffScore": 100.0
           },
@@ -12712,7 +21928,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 99.0
           }
@@ -12822,7 +22038,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 33.3,
             "chase": 60.0,
-            "chasePlus": 185.0,
+            "chasePlus": 184.0,
             "locationScore": 99.0,
             "stuffScore": 103.0
           },
@@ -13008,7 +22224,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 100.0,
             "stuffScore": 96.0
           },
@@ -13046,7 +22262,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 63.6,
             "oContact": 100.0,
             "chase": 20.0,
-            "chasePlus": 62.0,
+            "chasePlus": 61.0,
             "locationScore": 100.0,
             "stuffScore": 104.0
           },
@@ -13084,7 +22300,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 40.0,
             "oContact": 100.0,
             "chase": 20.0,
-            "chasePlus": 62.0,
+            "chasePlus": 61.0,
             "locationScore": 101.0,
             "stuffScore": 100.0
           },
@@ -13160,8 +22376,8 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
-            "locationScore": 99.0,
+            "chasePlus": 307.0,
+            "locationScore": 100.0,
             "stuffScore": 99.0
           }
         ]
@@ -13270,7 +22486,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 83.3,
             "oContact": 0.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 100.0
           },
@@ -13386,7 +22602,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": null,
             "chasePlus": null,
             "locationScore": 102.0,
-            "stuffScore": 103.0
+            "stuffScore": 102.0
           }
         ]
       }
@@ -13494,7 +22710,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 20.0,
             "oContact": 50.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 104.0
           },
@@ -13532,7 +22748,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 80.0,
             "oContact": 100.0,
             "chase": 20.0,
-            "chasePlus": 62.0,
+            "chasePlus": 61.0,
             "locationScore": 100.0,
             "stuffScore": 97.0
           },
@@ -13757,7 +22973,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "oContact": 75.0,
             "chase": 40.0,
             "chasePlus": 123.0,
-            "locationScore": 101.0,
+            "locationScore": 100.0,
             "stuffScore": 95.0
           },
           {
@@ -13794,7 +23010,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 0.0,
             "chase": 20.0,
-            "chasePlus": 62.0,
+            "chasePlus": 61.0,
             "locationScore": 99.0,
             "stuffScore": 105.0
           },
@@ -13832,7 +23048,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 100.0,
             "chase": 20.0,
-            "chasePlus": 62.0,
+            "chasePlus": 61.0,
             "locationScore": 102.0,
             "stuffScore": 102.0
           },
@@ -13942,7 +23158,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 50.0,
             "chase": 57.1,
-            "chasePlus": 176.0,
+            "chasePlus": 175.0,
             "locationScore": 100.0,
             "stuffScore": 101.0
           },
@@ -14018,7 +23234,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 100.0,
             "stuffScore": 97.0
           }
@@ -14090,7 +23306,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 100.0,
             "chase": 66.7,
-            "chasePlus": 205.0,
+            "chasePlus": 204.0,
             "locationScore": 99.0,
             "stuffScore": 103.0
           },
@@ -14276,7 +23492,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 0.0,
             "chase": 66.7,
-            "chasePlus": 205.0,
+            "chasePlus": 204.0,
             "locationScore": 103.0,
             "stuffScore": 105.0
           },
@@ -14314,7 +23530,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 0.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 100.0,
             "stuffScore": 101.0
           }
@@ -16434,7 +25650,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 40.0,
             "chasePlus": 123.0,
             "locationScore": 98.0,
-            "stuffScore": 99.0
+            "stuffScore": 98.0
           },
           {
             "pitchType": "チェンジアップ",
@@ -16988,7 +26204,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 42.9,
             "chasePlus": 131.0,
             "locationScore": 101.0,
-            "stuffScore": 124.0
+            "stuffScore": 123.0
           },
           {
             "pitchType": "カーブ",
@@ -17808,7 +27024,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 20.0,
             "chasePlus": 61.0,
             "locationScore": 99.0,
-            "stuffScore": 99.0
+            "stuffScore": 98.0
           },
           {
             "pitchType": "チェンジアップ",
@@ -17846,7 +27062,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 25.0,
             "chasePlus": 77.0,
             "locationScore": 101.0,
-            "stuffScore": 111.0
+            "stuffScore": 110.0
           },
           {
             "pitchType": "スライダー",
@@ -18442,7 +27658,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 100.0,
             "chasePlus": 307.0,
             "locationScore": 102.0,
-            "stuffScore": 105.0
+            "stuffScore": 104.0
           },
           {
             "pitchType": "フォーク",
@@ -18774,8 +27990,8 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 50.0,
             "chase": 57.1,
-            "chasePlus": 176.0,
-            "locationScore": 99.0,
+            "chasePlus": 175.0,
+            "locationScore": 98.0,
             "stuffScore": 99.0
           },
           {
@@ -18888,7 +28104,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 100.0,
             "stuffScore": 99.0
           },
@@ -18926,7 +28142,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 98.0
           }
@@ -19036,7 +28252,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 103.0,
             "stuffScore": 103.0
           },
@@ -19446,7 +28662,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 83.3,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 98.0,
             "stuffScore": 94.0
           },
@@ -19594,7 +28810,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 101.0,
             "stuffScore": 95.0
           },
@@ -19746,7 +28962,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 0.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 101.0,
             "stuffScore": 102.0
           },
@@ -19784,7 +29000,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 98.0
           },
@@ -19877,7 +29093,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 65.4,
             "oContact": 50.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 102.0,
             "stuffScore": 98.0
           },
@@ -20139,7 +29355,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 50.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 102.0
           },
@@ -20397,7 +29613,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 66.7,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 107.0
           },
@@ -20435,7 +29651,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 66.7,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 100.0
           },
@@ -20473,7 +29689,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 0.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 101.0,
             "stuffScore": 103.0
           }
@@ -20583,7 +29799,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 57.1,
             "chase": 53.8,
-            "chasePlus": 166.0,
+            "chasePlus": 165.0,
             "locationScore": 99.0,
             "stuffScore": 115.0
           },
@@ -20621,7 +29837,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 75.0,
             "oContact": 66.7,
             "chase": 60.0,
-            "chasePlus": 185.0,
+            "chasePlus": 184.0,
             "locationScore": 101.0,
             "stuffScore": 103.0
           },
@@ -20659,7 +29875,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 77.8,
             "chase": 75.0,
-            "chasePlus": 231.0,
+            "chasePlus": 230.0,
             "locationScore": 98.0,
             "stuffScore": 94.0
           },
@@ -20697,7 +29913,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 50.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 100.0,
             "stuffScore": 107.0
           },
@@ -20807,7 +30023,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 0.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 101.0
           },
@@ -20921,7 +30137,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 100.0,
             "stuffScore": 99.0
           }
@@ -21141,7 +30357,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 53.3,
             "oContact": 50.0,
             "chase": 20.0,
-            "chasePlus": 62.0,
+            "chasePlus": 61.0,
             "locationScore": 99.0,
             "stuffScore": 104.0
           },
@@ -21255,7 +30471,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 98.0,
             "stuffScore": 97.0
           },
@@ -21403,7 +30619,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 0.0,
             "chase": 20.0,
-            "chasePlus": 62.0,
+            "chasePlus": 61.0,
             "locationScore": 97.0,
             "stuffScore": 100.0
           },
@@ -21441,7 +30657,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 83.3,
             "oContact": 50.0,
             "chase": 20.0,
-            "chasePlus": 62.0,
+            "chasePlus": 61.0,
             "locationScore": 100.0,
             "stuffScore": 102.0
           },
@@ -21589,7 +30805,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 98.0
           },
@@ -21665,7 +30881,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 0.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 101.0,
             "stuffScore": 103.0
           },
@@ -21775,7 +30991,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 100.0,
             "chase": 20.0,
-            "chasePlus": 62.0,
+            "chasePlus": 61.0,
             "locationScore": 101.0,
             "stuffScore": 90.0
           },
@@ -21851,7 +31067,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 50.0,
             "chase": 66.7,
-            "chasePlus": 205.0,
+            "chasePlus": 204.0,
             "locationScore": 98.0,
             "stuffScore": 104.0
           },
@@ -21999,7 +31215,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 33.3,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 100.0
           },
@@ -22147,7 +31363,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 25.0,
             "chase": 57.1,
-            "chasePlus": 176.0,
+            "chasePlus": 175.0,
             "locationScore": 99.0,
             "stuffScore": 109.0
           },
@@ -22185,7 +31401,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 102.0,
             "stuffScore": 104.0
           },
@@ -22223,7 +31439,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 0.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 99.0,
             "stuffScore": 102.0
           }
@@ -22333,7 +31549,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 33.3,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 101.0,
             "stuffScore": 107.0
           },
@@ -22409,7 +31625,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 50.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 99.0,
             "stuffScore": 102.0
           },
@@ -22447,7 +31663,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 0.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 101.0,
             "stuffScore": 102.0
           },
@@ -22557,7 +31773,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 0.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 100.0,
             "stuffScore": 106.0
           },
@@ -22595,7 +31811,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 0.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 102.0,
             "stuffScore": 104.0
           },
@@ -22705,7 +31921,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 75.0,
             "oContact": 20.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 101.0,
             "stuffScore": 108.0
           },
@@ -22743,7 +31959,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 99.0,
             "stuffScore": 96.0
           },
@@ -22891,7 +32107,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 25.0,
             "oContact": 62.5,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 105.0
           },
@@ -22929,7 +32145,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 50.0,
             "chase": 66.7,
-            "chasePlus": 205.0,
+            "chasePlus": 204.0,
             "locationScore": 100.0,
             "stuffScore": 106.0
           }
@@ -23001,7 +32217,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 103.0
           },
@@ -23039,7 +32255,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 0.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 98.0,
             "stuffScore": 101.0
           }
@@ -23297,7 +32513,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 72.7,
             "oContact": 50.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 100.0,
             "stuffScore": 97.0
           },
@@ -23411,7 +32627,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 100.0,
             "chase": 20.0,
-            "chasePlus": 62.0,
+            "chasePlus": 61.0,
             "locationScore": 100.0,
             "stuffScore": 99.0
           },
@@ -23449,7 +32665,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 66.7,
             "chase": 60.0,
-            "chasePlus": 185.0,
+            "chasePlus": 184.0,
             "locationScore": 101.0,
             "stuffScore": 101.0
           },
@@ -23559,7 +32775,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 28.6,
             "oContact": 83.3,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 99.0,
             "stuffScore": 102.0
           },
@@ -23635,7 +32851,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 97.0
           },
@@ -23673,7 +32889,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 0.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 99.0,
             "stuffScore": 102.0
           }
@@ -23931,7 +33147,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 75.0,
             "oContact": 66.7,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 101.0,
             "stuffScore": 112.0
           },
@@ -23969,7 +33185,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 66.7,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 99.0,
             "stuffScore": 97.0
           },
@@ -24007,7 +33223,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 50.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 100.0
           }
@@ -24265,7 +33481,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 33.3,
             "oContact": 33.3,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 101.0,
             "stuffScore": 110.0
           },
@@ -24303,7 +33519,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 42.9,
             "oContact": 20.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 107.0
           },
@@ -24379,7 +33595,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 50.0,
             "chase": 66.7,
-            "chasePlus": 205.0,
+            "chasePlus": 204.0,
             "locationScore": 101.0,
             "stuffScore": 104.0
           },
@@ -24417,7 +33633,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 0.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 99.0,
             "stuffScore": 103.0
           },
@@ -24455,7 +33671,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 100.0,
             "stuffScore": 99.0
           }
@@ -24747,7 +33963,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 71.4,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 99.0,
             "stuffScore": 95.0
           },
@@ -24785,7 +34001,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 100.0,
             "stuffScore": 95.0
           },
@@ -24933,7 +34149,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 101.0,
             "stuffScore": 99.0
           }
@@ -25155,7 +34371,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 35.3,
             "chasePlus": 108.0,
             "locationScore": 100.0,
-            "stuffScore": 97.0
+            "stuffScore": 96.0
           },
           {
             "pitchType": "チェンジアップ",
@@ -29981,9 +39197,9 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 69.2,
             "oContact": 42.9,
             "chase": 38.9,
-            "chasePlus": 120.0,
+            "chasePlus": 119.0,
             "locationScore": 100.0,
-            "stuffScore": 102.0
+            "stuffScore": 101.0
           },
           {
             "pitchType": "スライダー",
@@ -30057,7 +39273,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 0.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 102.0,
             "stuffScore": 108.0
           }
@@ -30167,7 +39383,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 99.0,
             "stuffScore": 98.0
           },
@@ -30425,7 +39641,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 0.0,
             "chase": 66.7,
-            "chasePlus": 205.0,
+            "chasePlus": 204.0,
             "locationScore": 101.0,
             "stuffScore": 109.0
           }
@@ -30683,7 +39899,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 100.0,
             "chase": 20.0,
-            "chasePlus": 62.0,
+            "chasePlus": 61.0,
             "locationScore": 101.0,
             "stuffScore": 101.0
           },
@@ -30721,7 +39937,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 99.0,
             "stuffScore": 98.0
           },
@@ -31093,7 +40309,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 0.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 99.0,
             "stuffScore": 102.0
           },
@@ -31131,7 +40347,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 100.0,
             "stuffScore": 100.0
           }
@@ -31243,7 +40459,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 0.0,
             "chasePlus": 0.0,
             "locationScore": 99.0,
-            "stuffScore": 101.0
+            "stuffScore": 102.0
           },
           {
             "pitchType": "チェンジアップ",
@@ -31465,7 +40681,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 33.3,
             "chase": 60.0,
-            "chasePlus": 185.0,
+            "chasePlus": 184.0,
             "locationScore": 101.0,
             "stuffScore": 100.0
           },
@@ -31613,7 +40829,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 80.0,
             "oContact": 50.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 99.0
           },
@@ -31799,7 +41015,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 0.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 100.0,
             "stuffScore": 103.0
           },
@@ -31837,7 +41053,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 0.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 100.0,
             "stuffScore": 104.0
           }
@@ -31947,7 +41163,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 98.0
           },
@@ -31985,7 +41201,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 99.0,
             "stuffScore": 98.0
           },
@@ -32133,8 +41349,8 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 52.9,
             "oContact": 66.7,
             "chase": 33.3,
-            "chasePlus": 103.0,
-            "locationScore": 100.0,
+            "chasePlus": 102.0,
+            "locationScore": 99.0,
             "stuffScore": 95.0
           },
           {
@@ -32433,8 +41649,8 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
-            "locationScore": 98.0,
+            "chasePlus": 153.0,
+            "locationScore": 97.0,
             "stuffScore": 97.0
           },
           {
@@ -32581,7 +41797,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 33.3,
             "oContact": 0.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 101.0,
             "stuffScore": 106.0
           },
@@ -32619,7 +41835,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 98.0
           },
@@ -32657,7 +41873,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 99.0
           },
@@ -33029,7 +42245,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 101.0,
             "stuffScore": 97.0
           },
@@ -33139,7 +42355,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 0.0,
             "chase": 66.7,
-            "chasePlus": 205.0,
+            "chasePlus": 204.0,
             "locationScore": 101.0,
             "stuffScore": 111.0
           },
@@ -33177,7 +42393,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 50.0,
             "chase": 66.7,
-            "chasePlus": 205.0,
+            "chasePlus": 204.0,
             "locationScore": 100.0,
             "stuffScore": 103.0
           },
@@ -33215,7 +42431,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 0.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 103.0
           },
@@ -33253,7 +42469,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 0.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 102.0,
             "stuffScore": 104.0
           }
@@ -33325,7 +42541,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 33.3,
             "chase": 75.0,
-            "chasePlus": 231.0,
+            "chasePlus": 230.0,
             "locationScore": 99.0,
             "stuffScore": 102.0
           },
@@ -33659,7 +42875,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 99.0,
             "stuffScore": 101.0
           },
@@ -33883,7 +43099,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 53.3,
             "oContact": 77.8,
             "chase": 42.9,
-            "chasePlus": 132.0,
+            "chasePlus": 131.0,
             "locationScore": 99.0,
             "stuffScore": 98.0
           },
@@ -33922,7 +43138,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "oContact": 33.3,
             "chase": 25.0,
             "chasePlus": 77.0,
-            "locationScore": 99.0,
+            "locationScore": 100.0,
             "stuffScore": 91.0
           },
           {
@@ -34035,7 +43251,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 0.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 100.0,
             "stuffScore": 102.0
           }
@@ -34183,7 +43399,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 0.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 102.0
           },
@@ -34221,7 +43437,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 101.0,
             "stuffScore": 100.0
           }
@@ -34331,7 +43547,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 25.0,
             "chase": 57.1,
-            "chasePlus": 176.0,
+            "chasePlus": 175.0,
             "locationScore": 100.0,
             "stuffScore": 107.0
           },
@@ -34589,7 +43805,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 50.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 102.0
           },
@@ -35335,7 +44551,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 34.8,
             "chasePlus": 107.0,
             "locationScore": 101.0,
-            "stuffScore": 112.0
+            "stuffScore": 111.0
           },
           {
             "pitchType": "スライダー",
@@ -36713,7 +45929,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 35.3,
             "chasePlus": 108.0,
             "locationScore": 100.0,
-            "stuffScore": 97.0
+            "stuffScore": 96.0
           },
           {
             "pitchType": "シュート",
@@ -37237,7 +46453,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 50.0,
             "chasePlus": 153.0,
             "locationScore": 102.0,
-            "stuffScore": 117.0
+            "stuffScore": 116.0
           },
           {
             "pitchType": "フォーク",
@@ -37832,8 +47048,8 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "oContact": 65.0,
             "chase": 64.5,
             "chasePlus": 198.0,
-            "locationScore": 101.0,
-            "stuffScore": 130.0
+            "locationScore": 102.0,
+            "stuffScore": 131.0
           },
           {
             "pitchType": "カーブ",
@@ -38057,7 +47273,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 0.0,
             "chasePlus": 0.0,
             "locationScore": 101.0,
-            "stuffScore": 104.0
+            "stuffScore": 103.0
           },
           {
             "pitchType": "スライダー",
@@ -39025,7 +48241,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 0.0,
             "chasePlus": 0.0,
             "locationScore": 99.0,
-            "stuffScore": 102.0
+            "stuffScore": 101.0
           },
           {
             "pitchType": "チェンジアップ",
@@ -39433,7 +48649,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 77.8,
             "oContact": 50.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 97.0
           },
@@ -39543,7 +48759,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 83.3,
             "oContact": 0.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 108.0
           },
@@ -39839,7 +49055,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 57.1,
             "oContact": 66.7,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 102.0,
             "stuffScore": 105.0
           },
@@ -39915,7 +49131,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 102.0,
             "stuffScore": 99.0
           },
@@ -39954,7 +49170,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "oContact": null,
             "chase": 0.0,
             "chasePlus": 0.0,
-            "locationScore": 99.0,
+            "locationScore": 98.0,
             "stuffScore": 97.0
           }
         ]
@@ -40025,7 +49241,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 55.6,
             "oContact": 75.0,
             "chase": 52.2,
-            "chasePlus": 161.0,
+            "chasePlus": 160.0,
             "locationScore": 101.0,
             "stuffScore": 113.0
           },
@@ -40101,7 +49317,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 44.4,
             "chase": 47.4,
-            "chasePlus": 146.0,
+            "chasePlus": 145.0,
             "locationScore": 100.0,
             "stuffScore": 101.0
           },
@@ -40287,7 +49503,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 98.0
           },
@@ -40325,7 +49541,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 0.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 104.0
           },
@@ -40697,7 +49913,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 20.0,
-            "chasePlus": 62.0,
+            "chasePlus": 61.0,
             "locationScore": 100.0,
             "stuffScore": 98.0
           },
@@ -40845,7 +50061,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 0.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 99.0,
             "stuffScore": 101.0
           },
@@ -40993,7 +50209,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 0.0,
             "chase": 20.0,
-            "chasePlus": 62.0,
+            "chasePlus": 61.0,
             "locationScore": 100.0,
             "stuffScore": 102.0
           },
@@ -41141,7 +50357,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 59.1,
             "oContact": 75.0,
             "chase": 19.0,
-            "chasePlus": 59.0,
+            "chasePlus": 58.0,
             "locationScore": 98.0,
             "stuffScore": 95.0
           },
@@ -41218,7 +50434,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "oContact": 66.7,
             "chase": 30.0,
             "chasePlus": 92.0,
-            "locationScore": 99.0,
+            "locationScore": 100.0,
             "stuffScore": 98.0
           },
           {
@@ -41255,7 +50471,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 50.0,
             "chase": 20.0,
-            "chasePlus": 62.0,
+            "chasePlus": 61.0,
             "locationScore": 99.0,
             "stuffScore": 97.0
           },
@@ -41365,7 +50581,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 40.0,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 103.0,
             "stuffScore": 100.0
           },
@@ -41589,7 +50805,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 0.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 101.0,
             "stuffScore": 105.0
           },
@@ -41737,7 +50953,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 101.0,
             "stuffScore": 100.0
           },
@@ -41775,7 +50991,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 98.0
           },
@@ -42037,7 +51253,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 80.0,
             "oContact": 0.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 108.0
           },
@@ -42185,7 +51401,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 0.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 103.0
           },
@@ -42295,7 +51511,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 50.0,
             "chase": 80.0,
-            "chasePlus": 246.0,
+            "chasePlus": 245.0,
             "locationScore": 101.0,
             "stuffScore": 112.0
           },
@@ -42591,7 +51807,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 75.0,
             "chase": 66.7,
-            "chasePlus": 205.0,
+            "chasePlus": 204.0,
             "locationScore": 101.0,
             "stuffScore": 104.0
           },
@@ -42667,7 +51883,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 99.0
           }
@@ -42963,7 +52179,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 101.0
           }
@@ -43149,7 +52365,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 99.0
           }
@@ -44152,7 +53368,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "oContact": 66.7,
             "chase": 64.3,
             "chasePlus": 197.0,
-            "locationScore": 100.0,
+            "locationScore": 99.0,
             "stuffScore": 98.0
           },
           {
@@ -44301,7 +53517,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 37.5,
             "chasePlus": 115.0,
             "locationScore": 101.0,
-            "stuffScore": 101.0
+            "stuffScore": 100.0
           },
           {
             "pitchType": "フォーク",
@@ -48015,7 +57231,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 33.3,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 101.0,
             "stuffScore": 101.0
           },
@@ -48053,7 +57269,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 25.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 101.0,
             "stuffScore": 106.0
           }
@@ -48201,7 +57417,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 99.0,
             "stuffScore": 98.0
           },
@@ -48311,7 +57527,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 50.0,
             "chase": 66.7,
-            "chasePlus": 205.0,
+            "chasePlus": 204.0,
             "locationScore": 100.0,
             "stuffScore": 104.0
           },
@@ -48349,7 +57565,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 100.0
           },
@@ -48387,7 +57603,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 98.0
           },
@@ -48683,7 +57899,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 101.0,
             "stuffScore": 103.0
           },
@@ -48721,7 +57937,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 102.0,
             "stuffScore": 102.0
           },
@@ -48907,7 +58123,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 0.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 102.0
           },
@@ -49017,7 +58233,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 60.0,
             "oContact": 100.0,
             "chase": 38.9,
-            "chasePlus": 120.0,
+            "chasePlus": 119.0,
             "locationScore": 100.0,
             "stuffScore": 95.0
           },
@@ -49055,7 +58271,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 80.0,
             "oContact": 10.0,
             "chase": 52.6,
-            "chasePlus": 162.0,
+            "chasePlus": 161.0,
             "locationScore": 94.0,
             "stuffScore": 113.0
           },
@@ -49131,7 +58347,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 14.3,
             "oContact": 33.3,
             "chase": 60.0,
-            "chasePlus": 185.0,
+            "chasePlus": 184.0,
             "locationScore": 103.0,
             "stuffScore": 111.0
           },
@@ -49207,7 +58423,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 0.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 101.0,
             "stuffScore": 105.0
           }
@@ -49465,7 +58681,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 75.0,
             "oContact": 75.0,
             "chase": 44.4,
-            "chasePlus": 137.0,
+            "chasePlus": 136.0,
             "locationScore": 99.0,
             "stuffScore": 101.0
           },
@@ -49689,7 +58905,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 0.0,
             "chase": 66.7,
-            "chasePlus": 205.0,
+            "chasePlus": 204.0,
             "locationScore": 102.0,
             "stuffScore": 111.0
           }
@@ -49799,7 +59015,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 50.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 98.0,
             "stuffScore": 108.0
           }
@@ -49909,7 +59125,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 33.3,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 101.0,
             "stuffScore": 100.0
           },
@@ -50057,7 +59273,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 0.0,
             "chase": 54.5,
-            "chasePlus": 168.0,
+            "chasePlus": 167.0,
             "locationScore": 99.0,
             "stuffScore": 110.0
           },
@@ -50095,7 +59311,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 62.5,
             "oContact": 100.0,
             "chase": 20.0,
-            "chasePlus": 62.0,
+            "chasePlus": 61.0,
             "locationScore": 99.0,
             "stuffScore": 94.0
           },
@@ -50133,7 +59349,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 40.0,
             "chase": 55.6,
-            "chasePlus": 171.0,
+            "chasePlus": 170.0,
             "locationScore": 100.0,
             "stuffScore": 103.0
           },
@@ -50171,9 +59387,9 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 75.0,
             "oContact": 50.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
-            "stuffScore": 104.0
+            "stuffScore": 105.0
           },
           {
             "pitchType": "スライダー",
@@ -50281,7 +59497,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 25.0,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 100.0
           },
@@ -50319,7 +59535,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 99.0
           },
@@ -50429,7 +59645,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 33.3,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 101.0,
             "stuffScore": 101.0
           },
@@ -50467,7 +59683,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 0.0,
             "chase": 20.0,
-            "chasePlus": 62.0,
+            "chasePlus": 61.0,
             "locationScore": 99.0,
             "stuffScore": 100.0
           },
@@ -50653,7 +59869,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 98.0,
             "stuffScore": 98.0
           }
@@ -51063,7 +60279,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 0.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 105.0
           }
@@ -51173,7 +60389,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 66.7,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 100.0,
             "stuffScore": 99.0
           },
@@ -51361,7 +60577,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 28.6,
             "chasePlus": 88.0,
             "locationScore": 99.0,
-            "stuffScore": 104.0
+            "stuffScore": 103.0
           },
           {
             "pitchType": "カットボール",
@@ -51435,7 +60651,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 75.0,
             "oContact": 0.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 102.0,
             "stuffScore": 103.0
           },
@@ -51693,7 +60909,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 0.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 101.0,
             "stuffScore": 102.0
           },
@@ -52362,7 +61578,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "oContact": 0.0,
             "chase": 25.0,
             "chasePlus": 77.0,
-            "locationScore": 101.0,
+            "locationScore": 100.0,
             "stuffScore": 100.0
           },
           {
@@ -56597,9 +65813,9 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 70.6,
             "oContact": 0.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 101.0,
-            "stuffScore": 115.0
+            "stuffScore": 114.0
           },
           {
             "pitchType": "ツーシーム",
@@ -56711,7 +65927,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 60.0,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 97.0
           },
@@ -56821,7 +66037,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 83.3,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 101.0,
             "stuffScore": 92.0
           },
@@ -56969,7 +66185,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 60.0,
             "chase": 45.5,
-            "chasePlus": 140.0,
+            "chasePlus": 139.0,
             "locationScore": 101.0,
             "stuffScore": 102.0
           },
@@ -57009,7 +66225,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 0.0,
             "chasePlus": 0.0,
             "locationScore": 100.0,
-            "stuffScore": 92.0
+            "stuffScore": 91.0
           },
           {
             "pitchType": "カットボール",
@@ -57045,7 +66261,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 33.3,
             "oContact": 100.0,
             "chase": 66.7,
-            "chasePlus": 205.0,
+            "chasePlus": 204.0,
             "locationScore": 101.0,
             "stuffScore": 99.0
           },
@@ -57121,7 +66337,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 99.0,
             "stuffScore": 98.0
           },
@@ -57159,7 +66375,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 0.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 101.0,
             "stuffScore": 102.0
           },
@@ -57417,7 +66633,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 40.0,
             "oContact": 100.0,
             "chase": 66.7,
-            "chasePlus": 205.0,
+            "chasePlus": 204.0,
             "locationScore": 101.0,
             "stuffScore": 105.0
           },
@@ -57455,7 +66671,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 98.0,
             "stuffScore": 96.0
           },
@@ -57565,7 +66781,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 57.1,
             "oContact": 100.0,
             "chase": 66.7,
-            "chasePlus": 205.0,
+            "chasePlus": 204.0,
             "locationScore": 100.0,
             "stuffScore": 97.0
           },
@@ -57675,7 +66891,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 83.3,
             "oContact": 100.0,
             "chase": 35.3,
-            "chasePlus": 109.0,
+            "chasePlus": 108.0,
             "locationScore": 100.0,
             "stuffScore": 91.0
           },
@@ -57789,9 +67005,9 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 60.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 95.0,
-            "stuffScore": 100.0
+            "stuffScore": 99.0
           },
           {
             "pitchType": "シンカー",
@@ -57827,8 +67043,8 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 20.0,
-            "chasePlus": 62.0,
-            "locationScore": 97.0,
+            "chasePlus": 61.0,
+            "locationScore": 98.0,
             "stuffScore": 93.0
           },
           {
@@ -57937,7 +67153,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 101.0,
             "stuffScore": 93.0
           },
@@ -57975,7 +67191,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 71.4,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 101.0,
             "stuffScore": 100.0
           },
@@ -58013,9 +67229,9 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 60.0,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 100.0,
-            "stuffScore": 96.0
+            "stuffScore": 97.0
           }
         ]
       }
@@ -58085,7 +67301,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 0.0,
             "chase": 20.0,
-            "chasePlus": 62.0,
+            "chasePlus": 61.0,
             "locationScore": 99.0,
             "stuffScore": 106.0
           },
@@ -58309,7 +67525,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 53.3,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 100.0,
             "stuffScore": 92.0
           },
@@ -58385,7 +67601,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 101.0,
             "stuffScore": 97.0
           }
@@ -58495,7 +67711,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 40.0,
             "chase": 52.6,
-            "chasePlus": 162.0,
+            "chasePlus": 161.0,
             "locationScore": 101.0,
             "stuffScore": 107.0
           },
@@ -58573,7 +67789,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 28.6,
             "chasePlus": 88.0,
             "locationScore": 101.0,
-            "stuffScore": 96.0
+            "stuffScore": 97.0
           },
           {
             "pitchType": "チェンジアップ",
@@ -58609,7 +67825,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 99.0
           },
@@ -58795,7 +68011,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 0.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 99.0,
             "stuffScore": 104.0
           }
@@ -58867,7 +68083,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 96.0
           },
@@ -58905,7 +68121,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 100.0
           },
@@ -58943,7 +68159,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 0.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 103.0
           }
@@ -59015,7 +68231,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 20.0,
             "oContact": 33.3,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 100.0,
             "stuffScore": 110.0
           },
@@ -59163,7 +68379,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 87.5,
             "chase": 57.1,
-            "chasePlus": 176.0,
+            "chasePlus": 175.0,
             "locationScore": 98.0,
             "stuffScore": 91.0
           },
@@ -59239,7 +68455,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 57.1,
             "oContact": 66.7,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 101.0,
             "stuffScore": 97.0
           },
@@ -59315,7 +68531,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 50.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 99.0,
             "stuffScore": 97.0
           },
@@ -59463,7 +68679,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 0.0,
             "chase": 66.7,
-            "chasePlus": 205.0,
+            "chasePlus": 204.0,
             "locationScore": 101.0,
             "stuffScore": 107.0
           },
@@ -59501,7 +68717,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 98.0,
             "stuffScore": 99.0
           },
@@ -59611,7 +68827,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 60.0,
             "oContact": 66.7,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 100.0,
             "stuffScore": 101.0
           },
@@ -59687,7 +68903,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 50.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 98.0,
             "stuffScore": 100.0
           },
@@ -59725,7 +68941,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 100.0,
             "stuffScore": 100.0
           }
@@ -59797,7 +69013,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 0.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 106.0
           },
@@ -60093,7 +69309,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 0.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 100.0,
             "stuffScore": 100.0
           },
@@ -60131,7 +69347,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 0.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 101.0,
             "stuffScore": 107.0
           },
@@ -60318,7 +69534,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "oContact": 100.0,
             "chase": 27.3,
             "chasePlus": 84.0,
-            "locationScore": 99.0,
+            "locationScore": 98.0,
             "stuffScore": 95.0
           },
           {
@@ -63595,7 +72811,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 60.0,
             "chasePlus": 184.0,
             "locationScore": 100.0,
-            "stuffScore": 108.0
+            "stuffScore": 107.0
           },
           {
             "pitchType": "チェンジアップ",
@@ -64485,7 +73701,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 42.9,
             "oContact": 14.3,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 114.0
           },
@@ -64523,7 +73739,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 87.5,
             "oContact": 20.0,
             "chase": 55.6,
-            "chasePlus": 171.0,
+            "chasePlus": 170.0,
             "locationScore": 101.0,
             "stuffScore": 101.0
           },
@@ -64671,7 +73887,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 0.0,
             "chase": 66.7,
-            "chasePlus": 205.0,
+            "chasePlus": 204.0,
             "locationScore": 101.0,
             "stuffScore": 110.0
           }
@@ -64853,7 +74069,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 0.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 102.0,
             "stuffScore": 103.0
           }
@@ -64925,7 +74141,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 75.0,
             "oContact": 0.0,
             "chase": 20.0,
-            "chasePlus": 62.0,
+            "chasePlus": 61.0,
             "locationScore": 100.0,
             "stuffScore": 100.0
           },
@@ -64963,7 +74179,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 0.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 103.0,
             "stuffScore": 112.0
           },
@@ -65073,7 +74289,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 50.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 100.0,
             "stuffScore": 107.0
           },
@@ -65111,7 +74327,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 99.0,
             "stuffScore": 95.0
           },
@@ -65149,7 +74365,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 0.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 100.0,
             "stuffScore": 100.0
           }
@@ -65407,7 +74623,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 0.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 102.0,
             "stuffScore": 106.0
           },
@@ -65445,7 +74661,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 0.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 102.0,
             "stuffScore": 108.0
           },
@@ -65593,7 +74809,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 60.0,
             "oContact": 33.3,
             "chase": 60.0,
-            "chasePlus": 185.0,
+            "chasePlus": 184.0,
             "locationScore": 102.0,
             "stuffScore": 103.0
           },
@@ -65745,7 +74961,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 33.3,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 106.0
           }
@@ -65855,7 +75071,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 99.0,
             "stuffScore": 100.0
           },
@@ -65893,7 +75109,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 0.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 103.0
           }
@@ -66041,7 +75257,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 33.3,
             "chase": 75.0,
-            "chasePlus": 231.0,
+            "chasePlus": 230.0,
             "locationScore": 101.0,
             "stuffScore": 104.0
           },
@@ -66337,7 +75553,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 50.0,
             "chase": 66.7,
-            "chasePlus": 205.0,
+            "chasePlus": 204.0,
             "locationScore": 101.0,
             "stuffScore": 107.0
           },
@@ -66447,7 +75663,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 75.0,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 96.0
           },
@@ -66485,7 +75701,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 0.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 102.0,
             "stuffScore": 102.0
           }
@@ -66931,7 +76147,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 33.3,
             "chasePlus": 102.0,
             "locationScore": 99.0,
-            "stuffScore": 108.0
+            "stuffScore": 107.0
           },
           {
             "pitchType": "ツーシーム",
@@ -68194,7 +77410,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "oContact": null,
             "chase": 0.0,
             "chasePlus": 0.0,
-            "locationScore": 99.0,
+            "locationScore": 98.0,
             "stuffScore": 97.0
           },
           {
@@ -69009,9 +78225,9 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 80.0,
             "oContact": 50.0,
             "chase": 57.1,
-            "chasePlus": 176.0,
+            "chasePlus": 175.0,
             "locationScore": 102.0,
-            "stuffScore": 113.0
+            "stuffScore": 112.0
           },
           {
             "pitchType": "フォーク",
@@ -69047,7 +78263,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 57.1,
             "chase": 87.5,
-            "chasePlus": 269.0,
+            "chasePlus": 268.0,
             "locationScore": 101.0,
             "stuffScore": 103.0
           },
@@ -69085,7 +78301,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 33.3,
             "oContact": 0.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 101.0,
             "stuffScore": 103.0
           },
@@ -69233,7 +78449,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 0.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 101.0,
             "stuffScore": 104.0
           },
@@ -69343,7 +78559,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 0.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 102.0,
             "stuffScore": 111.0
           },
@@ -69381,7 +78597,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 0.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 105.0
           }
@@ -69491,9 +78707,9 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 50.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
-            "stuffScore": 104.0
+            "stuffScore": 103.0
           },
           {
             "pitchType": "フォーク",
@@ -70121,7 +79337,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 0.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 107.0
           }
@@ -70231,7 +79447,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 90.0,
             "oContact": 33.3,
             "chase": 66.7,
-            "chasePlus": 205.0,
+            "chasePlus": 204.0,
             "locationScore": 101.0,
             "stuffScore": 122.0
           },
@@ -70307,7 +79523,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 0.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 101.0,
             "stuffScore": 106.0
           }
@@ -70527,7 +79743,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 75.0,
             "oContact": 0.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 99.0,
             "stuffScore": 106.0
           },
@@ -70565,7 +79781,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 0.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 101.0,
             "stuffScore": 103.0
           },
@@ -70603,7 +79819,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 0.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 100.0,
             "stuffScore": 103.0
           },
@@ -70641,7 +79857,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 98.0
           }
@@ -70861,7 +80077,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 70.8,
             "oContact": 88.9,
             "chase": 47.4,
-            "chasePlus": 146.0,
+            "chasePlus": 145.0,
             "locationScore": 100.0,
             "stuffScore": 94.0
           },
@@ -70937,7 +80153,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 20.0,
             "oContact": 50.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 102.0,
             "stuffScore": 110.0
           },
@@ -70975,7 +80191,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 99.0,
             "stuffScore": 99.0
           },
@@ -71014,7 +80230,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "oContact": null,
             "chase": 0.0,
             "chasePlus": 0.0,
-            "locationScore": 101.0,
+            "locationScore": 100.0,
             "stuffScore": 101.0
           }
         ]
@@ -71085,7 +80301,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 101.0,
             "stuffScore": 104.0
           },
@@ -71123,7 +80339,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 101.0
           },
@@ -71161,7 +80377,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 0.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 102.0
           },
@@ -71381,7 +80597,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 0.0,
             "chase": 20.0,
-            "chasePlus": 62.0,
+            "chasePlus": 61.0,
             "locationScore": 100.0,
             "stuffScore": 102.0
           },
@@ -71457,7 +80673,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 0.0,
             "chase": 66.7,
-            "chasePlus": 205.0,
+            "chasePlus": 204.0,
             "locationScore": 101.0,
             "stuffScore": 104.0
           }
@@ -71605,7 +80821,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 40.0,
             "oContact": 66.7,
             "chase": 42.9,
-            "chasePlus": 132.0,
+            "chasePlus": 131.0,
             "locationScore": 100.0,
             "stuffScore": 101.0
           },
@@ -71643,7 +80859,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 101.0,
             "stuffScore": 101.0
           },
@@ -71791,9 +81007,9 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 0.0,
             "chase": 66.7,
-            "chasePlus": 205.0,
+            "chasePlus": 204.0,
             "locationScore": 100.0,
-            "stuffScore": 106.0
+            "stuffScore": 107.0
           },
           {
             "pitchType": "シュート",
@@ -71977,7 +81193,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 104.0
           },
@@ -72387,7 +81603,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 99.0
           }
@@ -72535,7 +81751,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 0.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 103.0
           },
@@ -72683,7 +81899,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 43.8,
             "oContact": 25.0,
             "chase": 30.8,
-            "chasePlus": 95.0,
+            "chasePlus": 94.0,
             "locationScore": 100.0,
             "stuffScore": 104.0
           },
@@ -72945,7 +82161,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 75.0,
             "oContact": 50.0,
             "chase": 66.7,
-            "chasePlus": 205.0,
+            "chasePlus": 204.0,
             "locationScore": 101.0,
             "stuffScore": 97.0
           }
@@ -73017,7 +82233,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 0.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 100.0,
             "stuffScore": 102.0
           },
@@ -73055,7 +82271,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 0.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 101.0,
             "stuffScore": 112.0
           },
@@ -73095,7 +82311,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": null,
             "chasePlus": null,
             "locationScore": 104.0,
-            "stuffScore": 104.0
+            "stuffScore": 105.0
           },
           {
             "pitchType": "スライダー",
@@ -73203,7 +82419,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 30.0,
             "oContact": 83.3,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 99.0
           },
@@ -73351,7 +82567,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 56.0,
             "oContact": 75.0,
             "chase": 30.8,
-            "chasePlus": 95.0,
+            "chasePlus": 94.0,
             "locationScore": 100.0,
             "stuffScore": 99.0
           },
@@ -73575,7 +82791,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 0.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 100.0,
             "stuffScore": 103.0
           },
@@ -73613,7 +82829,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 100.0,
             "stuffScore": 98.0
           },
@@ -73761,7 +82977,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 33.3,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 98.0
           },
@@ -73799,8 +83015,8 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
-            "locationScore": 100.0,
+            "chasePlus": 307.0,
+            "locationScore": 101.0,
             "stuffScore": 98.0
           }
         ]
@@ -73871,7 +83087,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 40.0,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 101.0,
             "stuffScore": 100.0
           },
@@ -74541,7 +83757,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 75.0,
             "chasePlus": 230.0,
             "locationScore": 100.0,
-            "stuffScore": 111.0
+            "stuffScore": 110.0
           },
           {
             "pitchType": "カットボール",
@@ -75547,7 +84763,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": null,
             "chasePlus": null,
             "locationScore": 101.0,
-            "stuffScore": 103.0
+            "stuffScore": 104.0
           }
         ]
       }
@@ -75843,7 +85059,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 27.8,
             "chasePlus": 85.0,
             "locationScore": 99.0,
-            "stuffScore": 108.0
+            "stuffScore": 107.0
           },
           {
             "pitchType": "スライダー",
@@ -76325,7 +85541,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 38.9,
             "chasePlus": 119.0,
             "locationScore": 101.0,
-            "stuffScore": 107.0
+            "stuffScore": 106.0
           },
           {
             "pitchType": "スイーパー",
@@ -76363,7 +85579,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 41.7,
             "chasePlus": 128.0,
             "locationScore": 101.0,
-            "stuffScore": 99.0
+            "stuffScore": 100.0
           },
           {
             "pitchType": "スライダー",
@@ -76623,7 +85839,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 33.3,
             "oContact": 66.7,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 100.0,
             "stuffScore": 101.0
           },
@@ -76661,7 +85877,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 25.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 101.0,
             "stuffScore": 105.0
           }
@@ -76733,7 +85949,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 100.0,
             "chase": 75.0,
-            "chasePlus": 231.0,
+            "chasePlus": 230.0,
             "locationScore": 100.0,
             "stuffScore": 99.0
           },
@@ -76771,7 +85987,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 50.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 101.0,
             "stuffScore": 99.0
           },
@@ -77029,7 +86245,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 60.0,
             "oContact": 0.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 101.0,
             "stuffScore": 102.0
           },
@@ -77067,7 +86283,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 25.0,
             "chase": 80.0,
-            "chasePlus": 246.0,
+            "chasePlus": 245.0,
             "locationScore": 101.0,
             "stuffScore": 107.0
           }
@@ -77139,7 +86355,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 60.0,
             "oContact": 66.7,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 101.0,
             "stuffScore": 107.0
           },
@@ -77177,7 +86393,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 0.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 100.0,
             "stuffScore": 103.0
           },
@@ -77287,9 +86503,9 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 62.5,
             "chase": 42.1,
-            "chasePlus": 130.0,
+            "chasePlus": 129.0,
             "locationScore": 99.0,
-            "stuffScore": 93.0
+            "stuffScore": 94.0
           },
           {
             "pitchType": "シュート",
@@ -77363,8 +86579,8 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 28.6,
             "oContact": 66.7,
             "chase": 42.9,
-            "chasePlus": 132.0,
-            "locationScore": 104.0,
+            "chasePlus": 131.0,
+            "locationScore": 103.0,
             "stuffScore": 106.0
           },
           {
@@ -77401,7 +86617,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 25.0,
             "chase": 57.1,
-            "chasePlus": 176.0,
+            "chasePlus": 175.0,
             "locationScore": 101.0,
             "stuffScore": 111.0
           }
@@ -77473,7 +86689,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 0.0,
             "chase": 60.0,
-            "chasePlus": 185.0,
+            "chasePlus": 184.0,
             "locationScore": 100.0,
             "stuffScore": 107.0
           },
@@ -77659,7 +86875,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 60.0,
             "oContact": 66.7,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 101.0,
             "stuffScore": 99.0
           },
@@ -77697,7 +86913,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 33.3,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 99.0,
             "stuffScore": 96.0
           },
@@ -77845,7 +87061,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 0.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 100.0,
             "stuffScore": 101.0
           },
@@ -77995,7 +87211,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 30.0,
             "chasePlus": 92.0,
             "locationScore": 101.0,
-            "stuffScore": 106.0
+            "stuffScore": 105.0
           },
           {
             "pitchType": "スライダー",
@@ -78031,7 +87247,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 101.0,
             "stuffScore": 91.0
           },
@@ -78217,7 +87433,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 25.0,
             "oContact": 66.7,
             "chase": 75.0,
-            "chasePlus": 231.0,
+            "chasePlus": 230.0,
             "locationScore": 101.0,
             "stuffScore": 108.0
           },
@@ -78255,7 +87471,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 103.0
           },
@@ -78365,7 +87581,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 33.3,
             "chase": 75.0,
-            "chasePlus": 231.0,
+            "chasePlus": 230.0,
             "locationScore": 101.0,
             "stuffScore": 112.0
           },
@@ -78475,7 +87691,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 85.7,
             "oContact": 50.0,
             "chase": 20.0,
-            "chasePlus": 62.0,
+            "chasePlus": 61.0,
             "locationScore": 101.0,
             "stuffScore": 92.0
           },
@@ -78623,7 +87839,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 50.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 101.0,
             "stuffScore": 97.0
           },
@@ -78775,7 +87991,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 96.0
           },
@@ -78813,7 +88029,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 99.0,
             "stuffScore": 98.0
           },
@@ -79033,7 +88249,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 80.0,
             "oContact": 0.0,
             "chase": 20.0,
-            "chasePlus": 62.0,
+            "chasePlus": 61.0,
             "locationScore": 100.0,
             "stuffScore": 105.0
           },
@@ -79071,7 +88287,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 75.0,
             "oContact": 50.0,
             "chase": 66.7,
-            "chasePlus": 205.0,
+            "chasePlus": 204.0,
             "locationScore": 101.0,
             "stuffScore": 100.0
           },
@@ -79181,7 +88397,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 99.0,
             "stuffScore": 97.0
           },
@@ -79219,7 +88435,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 100.0,
             "stuffScore": 100.0
           }
@@ -79405,7 +88621,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 99.0,
             "stuffScore": 99.0
           }
@@ -79515,7 +88731,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 28.6,
             "oContact": 0.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 101.0,
             "stuffScore": 105.0
           },
@@ -79591,7 +88807,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 0.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 104.0
           },
@@ -79887,8 +89103,8 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 0.0,
             "chase": 20.0,
-            "chasePlus": 62.0,
-            "locationScore": 99.0,
+            "chasePlus": 61.0,
+            "locationScore": 100.0,
             "stuffScore": 99.0
           },
           {
@@ -79925,7 +89141,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 101.0,
             "stuffScore": 102.0
           },
@@ -80035,7 +89251,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 85.7,
             "oContact": 0.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 99.0
           },
@@ -80073,7 +89289,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 0.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 104.0
           },
@@ -80111,7 +89327,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 0.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 103.0
           }
@@ -80183,7 +89399,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 85.7,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 101.0
           },
@@ -80221,7 +89437,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 83.3,
             "oContact": 25.0,
             "chase": 44.4,
-            "chasePlus": 137.0,
+            "chasePlus": 136.0,
             "locationScore": 98.0,
             "stuffScore": 99.0
           },
@@ -80259,7 +89475,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 97.0
           }
@@ -80331,7 +89547,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 33.3,
             "oContact": 50.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 100.0,
             "stuffScore": 103.0
           },
@@ -80517,8 +89733,8 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 78.6,
             "oContact": 62.5,
             "chase": 50.0,
-            "chasePlus": 154.0,
-            "locationScore": 100.0,
+            "chasePlus": 153.0,
+            "locationScore": 101.0,
             "stuffScore": 94.0
           },
           {
@@ -80779,7 +89995,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 99.0,
             "stuffScore": 97.0
           },
@@ -80889,7 +90105,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 0.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 101.0,
             "stuffScore": 110.0
           },
@@ -81003,7 +90219,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 100.0,
             "stuffScore": 97.0
           }
@@ -81151,7 +90367,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 66.7,
-            "chasePlus": 205.0,
+            "chasePlus": 204.0,
             "locationScore": 99.0,
             "stuffScore": 98.0
           },
@@ -81339,7 +90555,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 33.3,
             "chasePlus": 102.0,
             "locationScore": 102.0,
-            "stuffScore": 107.0
+            "stuffScore": 108.0
           },
           {
             "pitchType": "チェンジアップ",
@@ -84277,7 +93493,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 16.7,
             "chasePlus": 51.0,
             "locationScore": 101.0,
-            "stuffScore": 102.0
+            "stuffScore": 101.0
           },
           {
             "pitchType": "フォーク",
@@ -84649,7 +93865,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 55.6,
             "chasePlus": 170.0,
             "locationScore": 102.0,
-            "stuffScore": 111.0
+            "stuffScore": 110.0
           },
           {
             "pitchType": "カットボール",
@@ -85391,7 +94607,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 60.0,
             "chase": 58.8,
-            "chasePlus": 181.0,
+            "chasePlus": 180.0,
             "locationScore": 102.0,
             "stuffScore": 100.0
           },
@@ -85429,7 +94645,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 60.0,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 101.0,
             "stuffScore": 101.0
           },
@@ -85577,7 +94793,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 50.0,
             "chase": 66.7,
-            "chasePlus": 205.0,
+            "chasePlus": 204.0,
             "locationScore": 100.0,
             "stuffScore": 103.0
           },
@@ -85912,7 +95128,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "oContact": null,
             "chase": 0.0,
             "chasePlus": 0.0,
-            "locationScore": 101.0,
+            "locationScore": 102.0,
             "stuffScore": 98.0
           }
         ]
@@ -85984,7 +95200,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "oContact": null,
             "chase": 0.0,
             "chasePlus": 0.0,
-            "locationScore": 100.0,
+            "locationScore": 99.0,
             "stuffScore": 100.0
           },
           {
@@ -86131,7 +95347,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 40.0,
             "chase": 71.4,
-            "chasePlus": 220.0,
+            "chasePlus": 219.0,
             "locationScore": 101.0,
             "stuffScore": 105.0
           },
@@ -86169,7 +95385,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 99.0,
             "stuffScore": 99.0
           },
@@ -86207,7 +95423,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 0.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 100.0,
             "stuffScore": 103.0
           },
@@ -86355,7 +95571,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 69.2,
             "oContact": 20.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 105.0
           },
@@ -86433,7 +95649,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 10.0,
             "chasePlus": 31.0,
             "locationScore": 99.0,
-            "stuffScore": 97.0
+            "stuffScore": 98.0
           }
         ]
       }
@@ -86613,7 +95829,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 0.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 100.0,
             "stuffScore": 102.0
           },
@@ -86651,7 +95867,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 98.0,
             "stuffScore": 99.0
           },
@@ -86689,7 +95905,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 103.0
           },
@@ -87023,7 +96239,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 0.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 106.0
           },
@@ -87061,7 +96277,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 0.0,
             "chase": 66.7,
-            "chasePlus": 205.0,
+            "chasePlus": 204.0,
             "locationScore": 100.0,
             "stuffScore": 108.0
           }
@@ -87319,7 +96535,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 87.5,
             "oContact": 100.0,
             "chase": 20.0,
-            "chasePlus": 62.0,
+            "chasePlus": 61.0,
             "locationScore": 99.0,
             "stuffScore": 90.0
           },
@@ -87357,7 +96573,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 0.0,
             "chase": 75.0,
-            "chasePlus": 231.0,
+            "chasePlus": 230.0,
             "locationScore": 99.0,
             "stuffScore": 108.0
           },
@@ -87395,7 +96611,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 99.0,
             "stuffScore": 98.0
           },
@@ -87433,7 +96649,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 100.0,
             "stuffScore": 99.0
           }
@@ -87543,7 +96759,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 40.0,
             "oContact": 0.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 102.0,
             "stuffScore": 105.0
           },
@@ -87583,7 +96799,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 0.0,
             "chasePlus": 0.0,
             "locationScore": 101.0,
-            "stuffScore": 102.0
+            "stuffScore": 101.0
           },
           {
             "pitchType": "フォーク",
@@ -87691,7 +96907,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 60.0,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 103.0
           },
@@ -87767,7 +96983,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 0.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 99.0,
             "stuffScore": 104.0
           }
@@ -87953,7 +97169,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 97.0
           }
@@ -88025,7 +97241,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 100.0,
             "stuffScore": 97.0
           },
@@ -88063,7 +97279,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 99.0,
             "stuffScore": 98.0
           },
@@ -88283,7 +97499,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 101.0
           },
@@ -88545,7 +97761,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 94.0
           },
@@ -88655,7 +97871,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 100.0,
             "chase": 42.9,
-            "chasePlus": 132.0,
+            "chasePlus": 131.0,
             "locationScore": 101.0,
             "stuffScore": 107.0
           },
@@ -88803,7 +98019,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 0.0,
             "chase": 60.0,
-            "chasePlus": 185.0,
+            "chasePlus": 184.0,
             "locationScore": 99.0,
             "stuffScore": 106.0
           },
@@ -88879,9 +98095,9 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 0.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 100.0,
-            "stuffScore": 105.0
+            "stuffScore": 106.0
           }
         ]
       }
@@ -88989,7 +98205,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 101.0
           },
@@ -89027,7 +98243,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 0.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 102.0,
             "stuffScore": 105.0
           }
@@ -89099,7 +98315,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 33.3,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 98.0,
             "stuffScore": 99.0
           },
@@ -89547,7 +98763,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 53.8,
             "oContact": 14.3,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 101.0,
             "stuffScore": 115.0
           },
@@ -89585,7 +98801,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 85.7,
             "oContact": 50.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 100.0,
             "stuffScore": 97.0
           },
@@ -89809,7 +99025,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 75.0,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 99.0,
             "stuffScore": 96.0
           },
@@ -89919,7 +99135,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 66.7,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 99.0,
             "stuffScore": 100.0
           },
@@ -90033,7 +99249,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 99.0,
             "stuffScore": 100.0
           }
@@ -90181,7 +99397,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 100.0,
             "chase": 66.7,
-            "chasePlus": 205.0,
+            "chasePlus": 204.0,
             "locationScore": 101.0,
             "stuffScore": 98.0
           },
@@ -90219,7 +99435,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 50.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 100.0,
             "stuffScore": 103.0
           }
@@ -90964,7 +100180,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "oContact": null,
             "chase": null,
             "chasePlus": null,
-            "locationScore": 101.0,
+            "locationScore": 100.0,
             "stuffScore": 98.0
           },
           {
@@ -91409,7 +100625,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 61.5,
             "chasePlus": 189.0,
             "locationScore": 100.0,
-            "stuffScore": 106.0
+            "stuffScore": 105.0
           },
           {
             "pitchType": "カーブ",
@@ -92149,7 +101365,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 25.0,
             "chasePlus": 77.0,
             "locationScore": 101.0,
-            "stuffScore": 107.0
+            "stuffScore": 106.0
           },
           {
             "pitchType": "カットボール",
@@ -92521,7 +101737,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 29.7,
             "chasePlus": 91.0,
             "locationScore": 100.0,
-            "stuffScore": 92.0
+            "stuffScore": 93.0
           },
           {
             "pitchType": "ナックルカーブ",
@@ -95157,7 +104373,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 80.0,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 100.0,
             "stuffScore": 93.0
           },
@@ -95195,7 +104411,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 75.0,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 101.0,
             "stuffScore": 96.0
           },
@@ -95271,7 +104487,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 0.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 110.0
           }
@@ -95343,7 +104559,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 85.7,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 99.0,
             "stuffScore": 93.0
           },
@@ -95381,7 +104597,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 0.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 99.0,
             "stuffScore": 101.0
           },
@@ -95419,7 +104635,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 100.0,
             "stuffScore": 100.0
           },
@@ -95677,7 +104893,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 25.0,
             "oContact": 0.0,
             "chase": 20.0,
-            "chasePlus": 62.0,
+            "chasePlus": 61.0,
             "locationScore": 99.0,
             "stuffScore": 101.0
           },
@@ -95787,7 +105003,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 62.1,
             "oContact": 100.0,
             "chase": 42.9,
-            "chasePlus": 132.0,
+            "chasePlus": 131.0,
             "locationScore": 100.0,
             "stuffScore": 96.0
           },
@@ -96311,7 +105527,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 75.0,
             "oContact": 100.0,
             "chase": 20.0,
-            "chasePlus": 62.0,
+            "chasePlus": 61.0,
             "locationScore": 101.0,
             "stuffScore": 98.0
           },
@@ -96459,7 +105675,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 0.0,
             "chase": 20.0,
-            "chasePlus": 62.0,
+            "chasePlus": 61.0,
             "locationScore": 100.0,
             "stuffScore": 100.0
           },
@@ -96498,7 +105714,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "oContact": null,
             "chase": 0.0,
             "chasePlus": 0.0,
-            "locationScore": 102.0,
+            "locationScore": 101.0,
             "stuffScore": 108.0
           }
         ]
@@ -96755,7 +105971,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 0.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 100.0,
             "stuffScore": 103.0
           }
@@ -96865,7 +106081,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 90.0,
             "oContact": 57.1,
             "chase": 46.7,
-            "chasePlus": 144.0,
+            "chasePlus": 143.0,
             "locationScore": 100.0,
             "stuffScore": 102.0
           },
@@ -96903,7 +106119,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 33.3,
             "oContact": 100.0,
             "chase": 20.0,
-            "chasePlus": 62.0,
+            "chasePlus": 61.0,
             "locationScore": 102.0,
             "stuffScore": 98.0
           },
@@ -96941,7 +106157,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 0.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 106.0
           },
@@ -96979,7 +106195,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 20.0,
-            "chasePlus": 62.0,
+            "chasePlus": 61.0,
             "locationScore": 100.0,
             "stuffScore": 99.0
           },
@@ -97165,9 +106381,9 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 50.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
-            "stuffScore": 102.0
+            "stuffScore": 103.0
           }
         ]
       }
@@ -97237,7 +106453,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 50.0,
             "chase": 66.7,
-            "chasePlus": 205.0,
+            "chasePlus": 204.0,
             "locationScore": 99.0,
             "stuffScore": 102.0
           },
@@ -97423,7 +106639,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 60.0,
             "oContact": 33.3,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 101.0,
             "stuffScore": 107.0
           },
@@ -97461,7 +106677,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 75.0,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 100.0,
             "stuffScore": 95.0
           },
@@ -97537,7 +106753,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 0.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 102.0,
             "stuffScore": 104.0
           }
@@ -97761,7 +106977,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 20.0,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 100.0,
             "stuffScore": 101.0
           },
@@ -97799,7 +107015,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 60.0,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 98.0
           }
@@ -97871,7 +107087,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 25.0,
             "oContact": 50.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 101.0,
             "stuffScore": 106.0
           },
@@ -97909,7 +107125,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 0.0,
             "chase": 66.7,
-            "chasePlus": 205.0,
+            "chasePlus": 204.0,
             "locationScore": 101.0,
             "stuffScore": 109.0
           },
@@ -98057,7 +107273,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 76.5,
             "oContact": 60.0,
             "chase": 55.6,
-            "chasePlus": 171.0,
+            "chasePlus": 170.0,
             "locationScore": 101.0,
             "stuffScore": 96.0
           },
@@ -98095,7 +107311,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 37.5,
             "oContact": 80.0,
             "chase": 71.4,
-            "chasePlus": 220.0,
+            "chasePlus": 219.0,
             "locationScore": 102.0,
             "stuffScore": 108.0
           },
@@ -98133,7 +107349,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 60.0,
             "chase": 71.4,
-            "chasePlus": 220.0,
+            "chasePlus": 219.0,
             "locationScore": 100.0,
             "stuffScore": 100.0
           },
@@ -98281,7 +107497,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 83.3,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 111.0
           },
@@ -98319,7 +107535,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 99.0
           }
@@ -98429,7 +107645,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 102.0,
             "stuffScore": 99.0
           }
@@ -98579,7 +107795,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 71.4,
             "chasePlus": 219.0,
             "locationScore": 99.0,
-            "stuffScore": 98.0
+            "stuffScore": 97.0
           },
           {
             "pitchType": "スライダー",
@@ -99475,7 +108691,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 42.9,
             "chasePlus": 131.0,
             "locationScore": 104.0,
-            "stuffScore": 102.0
+            "stuffScore": 103.0
           },
           {
             "pitchType": "スライダー",
@@ -99813,7 +109029,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 50.0,
             "chasePlus": 153.0,
             "locationScore": 99.0,
-            "stuffScore": 104.0
+            "stuffScore": 103.0
           },
           {
             "pitchType": "フォーク",
@@ -103045,7 +112261,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 0.0,
             "chase": 66.7,
-            "chasePlus": 205.0,
+            "chasePlus": 204.0,
             "locationScore": 101.0,
             "stuffScore": 107.0
           }
@@ -103155,7 +112371,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 66.7,
-            "chasePlus": 205.0,
+            "chasePlus": 204.0,
             "locationScore": 100.0,
             "stuffScore": 98.0
           },
@@ -103193,7 +112409,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 98.0,
             "stuffScore": 97.0
           },
@@ -103489,7 +112705,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 66.7,
             "chase": 42.9,
-            "chasePlus": 132.0,
+            "chasePlus": 131.0,
             "locationScore": 101.0,
             "stuffScore": 101.0
           },
@@ -103675,7 +112891,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 85.7,
             "oContact": 72.7,
             "chase": 61.1,
-            "chasePlus": 188.0,
+            "chasePlus": 187.0,
             "locationScore": 101.0,
             "stuffScore": 108.0
           },
@@ -103899,7 +113115,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 20.0,
-            "chasePlus": 62.0,
+            "chasePlus": 61.0,
             "locationScore": 100.0,
             "stuffScore": 99.0
           },
@@ -103975,7 +113191,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 99.0,
             "stuffScore": 99.0
           }
@@ -104085,7 +113301,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 33.3,
             "oContact": 100.0,
             "chase": 66.7,
-            "chasePlus": 205.0,
+            "chasePlus": 204.0,
             "locationScore": 100.0,
             "stuffScore": 99.0
           },
@@ -104161,7 +113377,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 0.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 103.0
           }
@@ -104309,7 +113525,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 80.0,
-            "chasePlus": 246.0,
+            "chasePlus": 245.0,
             "locationScore": 101.0,
             "stuffScore": 96.0
           },
@@ -104347,7 +113563,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 99.0,
             "stuffScore": 98.0
           },
@@ -104385,7 +113601,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 100.0,
             "stuffScore": 100.0
           }
@@ -104573,7 +113789,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 25.0,
             "chasePlus": 77.0,
             "locationScore": 97.0,
-            "stuffScore": 97.0
+            "stuffScore": 96.0
           },
           {
             "pitchType": "フォーク",
@@ -104719,7 +113935,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 25.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 118.0
           },
@@ -104757,7 +113973,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 99.0
           }
@@ -104939,7 +114155,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 100.0,
             "stuffScore": 98.0
           },
@@ -104977,7 +114193,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 0.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 99.0,
             "stuffScore": 103.0
           }
@@ -105049,7 +114265,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 33.3,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 101.0,
             "stuffScore": 108.0
           },
@@ -105087,7 +114303,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 66.7,
             "chase": 60.0,
-            "chasePlus": 185.0,
+            "chasePlus": 184.0,
             "locationScore": 100.0,
             "stuffScore": 103.0
           },
@@ -105125,7 +114341,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 100.0,
             "chase": 66.7,
-            "chasePlus": 205.0,
+            "chasePlus": 204.0,
             "locationScore": 100.0,
             "stuffScore": 97.0
           }
@@ -105311,7 +114527,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 87.5,
             "oContact": 25.0,
             "chase": 80.0,
-            "chasePlus": 246.0,
+            "chasePlus": 245.0,
             "locationScore": 101.0,
             "stuffScore": 100.0
           },
@@ -105459,7 +114675,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 16.7,
             "oContact": 0.0,
             "chase": 20.0,
-            "chasePlus": 62.0,
+            "chasePlus": 61.0,
             "locationScore": 99.0,
             "stuffScore": 107.0
           }
@@ -105569,7 +114785,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 100.0,
             "stuffScore": 100.0
           },
@@ -105607,7 +114823,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 75.0,
             "oContact": 0.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 102.0
           },
@@ -105683,7 +114899,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 99.0,
             "stuffScore": 97.0
           }
@@ -105831,7 +115047,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 98.0
           },
@@ -105979,7 +115195,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 80.0,
             "oContact": 55.6,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 99.0,
             "stuffScore": 98.0
           },
@@ -106093,7 +115309,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 0.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 102.0,
             "stuffScore": 108.0
           },
@@ -106241,7 +115457,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 100.0,
             "stuffScore": 100.0
           },
@@ -106389,7 +115605,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 83.3,
             "oContact": 80.0,
             "chase": 45.5,
-            "chasePlus": 140.0,
+            "chasePlus": 139.0,
             "locationScore": 98.0,
             "stuffScore": 95.0
           },
@@ -106427,7 +115643,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 98.0
           },
@@ -106503,7 +115719,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 99.0,
             "stuffScore": 99.0
           }
@@ -106613,7 +115829,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 99.0,
             "stuffScore": 98.0
           }
@@ -106723,7 +115939,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 42.9,
             "oContact": 50.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 101.0,
             "stuffScore": 106.0
           },
@@ -106761,7 +115977,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 27.3,
             "chase": 68.8,
-            "chasePlus": 212.0,
+            "chasePlus": 211.0,
             "locationScore": 102.0,
             "stuffScore": 114.0
           },
@@ -106799,7 +116015,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 62.5,
             "oContact": 83.3,
             "chase": 60.0,
-            "chasePlus": 185.0,
+            "chasePlus": 184.0,
             "locationScore": 101.0,
             "stuffScore": 100.0
           },
@@ -106837,7 +116053,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 66.7,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 98.0
           },
@@ -106985,7 +116201,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 75.0,
             "oContact": 33.3,
             "chase": 75.0,
-            "chasePlus": 231.0,
+            "chasePlus": 230.0,
             "locationScore": 101.0,
             "stuffScore": 101.0
           },
@@ -107023,7 +116239,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 50.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 102.0,
             "stuffScore": 102.0
           },
@@ -107133,7 +116349,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 33.3,
             "oContact": 0.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 101.0,
             "stuffScore": 111.0
           },
@@ -107209,7 +116425,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 50.0,
             "chase": 66.7,
-            "chasePlus": 205.0,
+            "chasePlus": 204.0,
             "locationScore": 100.0,
             "stuffScore": 101.0
           }
@@ -107281,7 +116497,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 71.4,
             "oContact": 66.7,
             "chase": 60.0,
-            "chasePlus": 185.0,
+            "chasePlus": 184.0,
             "locationScore": 101.0,
             "stuffScore": 105.0
           },
@@ -109109,7 +118325,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 18.5,
             "chasePlus": 57.0,
             "locationScore": 101.0,
-            "stuffScore": 101.0
+            "stuffScore": 100.0
           },
           {
             "pitchType": "スプリット",
@@ -110820,7 +120036,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "oContact": null,
             "chase": 0.0,
             "chasePlus": 0.0,
-            "locationScore": 99.0,
+            "locationScore": 100.0,
             "stuffScore": 97.0
           },
           {
@@ -111859,7 +121075,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 75.0,
             "oContact": 40.0,
             "chase": 45.5,
-            "chasePlus": 140.0,
+            "chasePlus": 139.0,
             "locationScore": 101.0,
             "stuffScore": 106.0
           },
@@ -111935,7 +121151,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 0.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 102.0,
             "stuffScore": 105.0
           }
@@ -112117,7 +121333,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 60.0,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 100.0,
             "stuffScore": 97.0
           },
@@ -112265,7 +121481,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 50.0,
             "chase": 66.7,
-            "chasePlus": 205.0,
+            "chasePlus": 204.0,
             "locationScore": 99.0,
             "stuffScore": 101.0
           },
@@ -112451,8 +121667,8 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 39.3,
             "oContact": 85.7,
             "chase": 41.2,
-            "chasePlus": 127.0,
-            "locationScore": 102.0,
+            "chasePlus": 126.0,
+            "locationScore": 103.0,
             "stuffScore": 112.0
           },
           {
@@ -112527,7 +121743,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 70.6,
             "oContact": 60.0,
             "chase": 45.5,
-            "chasePlus": 140.0,
+            "chasePlus": 139.0,
             "locationScore": 101.0,
             "stuffScore": 95.0
           },
@@ -112675,7 +121891,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 30.0,
             "oContact": 83.3,
             "chase": 54.5,
-            "chasePlus": 168.0,
+            "chasePlus": 167.0,
             "locationScore": 101.0,
             "stuffScore": 100.0
           },
@@ -112751,7 +121967,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 42.9,
-            "chasePlus": 132.0,
+            "chasePlus": 131.0,
             "locationScore": 97.0,
             "stuffScore": 94.0
           },
@@ -112899,7 +122115,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 100.0,
             "stuffScore": 99.0
           },
@@ -113157,7 +122373,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 40.0,
             "oContact": 0.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 101.0,
             "stuffScore": 106.0
           },
@@ -113195,7 +122411,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 0.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 113.0
           },
@@ -113271,7 +122487,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 0.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 102.0
           }
@@ -113381,7 +122597,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 64.3,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 102.0,
             "stuffScore": 103.0
           },
@@ -113419,7 +122635,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 42.9,
             "oContact": 100.0,
             "chase": 55.6,
-            "chasePlus": 171.0,
+            "chasePlus": 170.0,
             "locationScore": 101.0,
             "stuffScore": 97.0
           },
@@ -113457,7 +122673,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 102.0,
             "stuffScore": 97.0
           },
@@ -113605,7 +122821,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 0.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 100.0,
             "stuffScore": 101.0
           },
@@ -113753,7 +122969,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 80.0,
             "oContact": 66.7,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 100.0
           },
@@ -114053,7 +123269,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 66.7,
             "chase": 42.9,
-            "chasePlus": 132.0,
+            "chasePlus": 131.0,
             "locationScore": 97.0,
             "stuffScore": 96.0
           },
@@ -114201,7 +123417,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 0.0,
             "chase": 20.0,
-            "chasePlus": 62.0,
+            "chasePlus": 61.0,
             "locationScore": 100.0,
             "stuffScore": 105.0
           },
@@ -114497,7 +123713,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 75.0,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 99.0,
             "stuffScore": 96.0
           },
@@ -114535,7 +123751,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 50.0,
             "chase": 66.7,
-            "chasePlus": 205.0,
+            "chasePlus": 204.0,
             "locationScore": 102.0,
             "stuffScore": 100.0
           },
@@ -114759,7 +123975,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 42.9,
             "chase": 35.0,
-            "chasePlus": 108.0,
+            "chasePlus": 107.0,
             "locationScore": 100.0,
             "stuffScore": 112.0
           },
@@ -114797,7 +124013,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 0.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 103.0,
             "stuffScore": 103.0
           }
@@ -114907,7 +124123,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 101.0,
             "stuffScore": 99.0
           },
@@ -114945,7 +124161,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 50.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 104.0,
             "stuffScore": 102.0
           }
@@ -115690,7 +124906,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "oContact": 80.0,
             "chase": 71.4,
             "chasePlus": 219.0,
-            "locationScore": 102.0,
+            "locationScore": 101.0,
             "stuffScore": 99.0
           },
           {
@@ -117999,7 +127215,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 60.0,
             "chasePlus": 184.0,
             "locationScore": 102.0,
-            "stuffScore": 106.0
+            "stuffScore": 107.0
           },
           {
             "pitchType": "スプリット",
@@ -119447,7 +128663,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 75.0,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 101.0,
             "stuffScore": 94.0
           },
@@ -119485,7 +128701,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 20.0,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 101.0,
             "stuffScore": 99.0
           },
@@ -119523,7 +128739,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 33.3,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 104.0,
             "stuffScore": 100.0
           },
@@ -119968,7 +129184,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "oContact": null,
             "chase": null,
             "chasePlus": null,
-            "locationScore": 102.0,
+            "locationScore": 101.0,
             "stuffScore": 99.0
           },
           {
@@ -120077,7 +129293,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 0.0,
             "chase": 75.0,
-            "chasePlus": 231.0,
+            "chasePlus": 230.0,
             "locationScore": 101.0,
             "stuffScore": 113.0
           },
@@ -120187,7 +129403,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 101.0,
             "stuffScore": 104.0
           },
@@ -120225,7 +129441,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 0.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 104.0
           },
@@ -120335,7 +129551,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 58.8,
             "oContact": 0.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 101.0,
             "stuffScore": 115.0
           },
@@ -120449,7 +129665,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 50.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 102.0,
             "stuffScore": 99.0
           }
@@ -120559,7 +129775,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 25.0,
             "oContact": 50.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 106.0
           },
@@ -120669,7 +129885,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 99.0,
             "stuffScore": 99.0
           },
@@ -120707,7 +129923,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 0.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 99.0,
             "stuffScore": 102.0
           },
@@ -120745,9 +129961,9 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 0.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 99.0,
-            "stuffScore": 101.0
+            "stuffScore": 102.0
           },
           {
             "pitchType": "カーブ",
@@ -120893,7 +130109,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 40.0,
             "oContact": 50.0,
             "chase": 66.7,
-            "chasePlus": 205.0,
+            "chasePlus": 204.0,
             "locationScore": 100.0,
             "stuffScore": 105.0
           },
@@ -120931,7 +130147,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 100.0,
             "chase": 20.0,
-            "chasePlus": 62.0,
+            "chasePlus": 61.0,
             "locationScore": 100.0,
             "stuffScore": 96.0
           },
@@ -121227,7 +130443,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 40.0,
             "chase": 55.6,
-            "chasePlus": 171.0,
+            "chasePlus": 170.0,
             "locationScore": 100.0,
             "stuffScore": 102.0
           },
@@ -121341,7 +130557,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 98.0
           }
@@ -121413,7 +130629,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 0.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 98.0
           },
@@ -121523,7 +130739,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 37.5,
             "oContact": 50.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 99.0,
             "stuffScore": 101.0
           },
@@ -121561,7 +130777,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 75.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 99.0,
             "stuffScore": 107.0
           },
@@ -121819,7 +131035,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 101.0
           },
@@ -122005,7 +131221,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 0.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 100.0,
             "stuffScore": 108.0
           }
@@ -122077,7 +131293,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 60.0,
             "oContact": 0.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 101.0,
             "stuffScore": 119.0
           },
@@ -122115,7 +131331,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 50.0,
             "chase": 66.7,
-            "chasePlus": 205.0,
+            "chasePlus": 204.0,
             "locationScore": 100.0,
             "stuffScore": 101.0
           },
@@ -122263,7 +131479,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 53.8,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 99.0,
             "stuffScore": 96.0
           },
@@ -122491,7 +131707,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 0.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 101.0,
             "stuffScore": 105.0
           }
@@ -122711,7 +131927,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 100.0,
             "stuffScore": 98.0
           },
@@ -122749,7 +131965,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 50.0,
             "chase": 66.7,
-            "chasePlus": 205.0,
+            "chasePlus": 204.0,
             "locationScore": 101.0,
             "stuffScore": 102.0
           },
@@ -122897,7 +132113,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 0.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 101.0,
             "stuffScore": 102.0
           },
@@ -123155,7 +132371,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 16.7,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 100.0,
             "stuffScore": 108.0
           },
@@ -123303,7 +132519,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 0.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 101.0,
             "stuffScore": 111.0
           },
@@ -123341,7 +132557,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 0.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 105.0
           },
@@ -123489,7 +132705,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 41.7,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 100.0,
             "stuffScore": 91.0
           },
@@ -123565,7 +132781,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 66.7,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 101.0,
             "stuffScore": 104.0
           },
@@ -123789,7 +133005,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 45.5,
             "oContact": 25.0,
             "chase": 30.8,
-            "chasePlus": 95.0,
+            "chasePlus": 94.0,
             "locationScore": 102.0,
             "stuffScore": 108.0
           },
@@ -123827,7 +133043,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 100.0,
             "stuffScore": 99.0
           },
@@ -124237,7 +133453,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 99.0
           }
@@ -124945,7 +134161,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 0.0,
             "chasePlus": 0.0,
             "locationScore": 101.0,
-            "stuffScore": 101.0
+            "stuffScore": 100.0
           }
         ]
       }
@@ -125536,7 +134752,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "oContact": 0.0,
             "chase": 36.4,
             "chasePlus": 112.0,
-            "locationScore": 104.0,
+            "locationScore": 103.0,
             "stuffScore": 100.0
           },
           {
@@ -126319,7 +135535,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 11.5,
             "chasePlus": 35.0,
             "locationScore": 103.0,
-            "stuffScore": 96.0
+            "stuffScore": 97.0
           },
           {
             "pitchType": "ストレート",
@@ -126728,7 +135944,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "oContact": 100.0,
             "chase": 100.0,
             "chasePlus": 307.0,
-            "locationScore": 101.0,
+            "locationScore": 100.0,
             "stuffScore": 99.0
           }
         ]
@@ -127321,7 +136537,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 100.0,
             "chasePlus": 307.0,
             "locationScore": 102.0,
-            "stuffScore": 106.0
+            "stuffScore": 107.0
           },
           {
             "pitchType": "スライダー",
@@ -127472,7 +136688,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "oContact": null,
             "chase": 0.0,
             "chasePlus": 0.0,
-            "locationScore": 99.0,
+            "locationScore": 100.0,
             "stuffScore": 99.0
           }
         ]
@@ -128103,7 +137319,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 50.0,
             "chasePlus": 153.0,
             "locationScore": 100.0,
-            "stuffScore": 104.0
+            "stuffScore": 103.0
           },
           {
             "pitchType": "カーブ",
@@ -128359,7 +137575,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 40.0,
             "oContact": 50.0,
             "chase": 30.8,
-            "chasePlus": 95.0,
+            "chasePlus": 94.0,
             "locationScore": 100.0,
             "stuffScore": 102.0
           },
@@ -128507,7 +137723,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 44.4,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 101.0,
             "stuffScore": 106.0
           },
@@ -128583,7 +137799,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 99.0,
             "stuffScore": 98.0
           },
@@ -128621,7 +137837,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 99.0,
             "stuffScore": 99.0
           }
@@ -128731,7 +137947,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 33.3,
             "oContact": 100.0,
             "chase": 66.7,
-            "chasePlus": 205.0,
+            "chasePlus": 204.0,
             "locationScore": 101.0,
             "stuffScore": 99.0
           },
@@ -128769,7 +137985,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 0.0,
             "chase": 66.7,
-            "chasePlus": 205.0,
+            "chasePlus": 204.0,
             "locationScore": 101.0,
             "stuffScore": 105.0
           }
@@ -128841,7 +138057,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 50.0,
             "chase": 80.0,
-            "chasePlus": 246.0,
+            "chasePlus": 245.0,
             "locationScore": 99.0,
             "stuffScore": 104.0
           },
@@ -128879,7 +138095,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 97.0
           },
@@ -128955,7 +138171,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 99.0
           }
@@ -129027,7 +138243,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 70.0,
             "oContact": 80.0,
             "chase": 47.6,
-            "chasePlus": 147.0,
+            "chasePlus": 146.0,
             "locationScore": 101.0,
             "stuffScore": 94.0
           },
@@ -129143,7 +138359,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 25.0,
             "chasePlus": 77.0,
             "locationScore": 100.0,
-            "stuffScore": 96.0
+            "stuffScore": 95.0
           },
           {
             "pitchType": "カーブ",
@@ -129255,7 +138471,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 0.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 102.0
           }
@@ -129327,7 +138543,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 20.0,
             "oContact": 40.0,
             "chase": 55.6,
-            "chasePlus": 171.0,
+            "chasePlus": 170.0,
             "locationScore": 100.0,
             "stuffScore": 108.0
           },
@@ -129513,7 +138729,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 75.0,
             "chase": 57.1,
-            "chasePlus": 176.0,
+            "chasePlus": 175.0,
             "locationScore": 101.0,
             "stuffScore": 96.0
           },
@@ -129551,7 +138767,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 50.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 101.0,
             "stuffScore": 99.0
           },
@@ -129775,7 +138991,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 100.0,
             "stuffScore": 98.0
           }
@@ -129847,7 +139063,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 33.3,
             "oContact": 0.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 101.0,
             "stuffScore": 104.0
           },
@@ -130071,7 +139287,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 0.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 100.0,
             "stuffScore": 104.0
           }
@@ -130219,7 +139435,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 100.0,
             "stuffScore": 98.0
           }
@@ -130291,7 +139507,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 101.0
           },
@@ -130329,7 +139545,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 101.0,
             "stuffScore": 100.0
           },
@@ -130439,8 +139655,8 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 80.0,
             "oContact": 100.0,
             "chase": 44.4,
-            "chasePlus": 137.0,
-            "locationScore": 98.0,
+            "chasePlus": 136.0,
+            "locationScore": 99.0,
             "stuffScore": 88.0
           },
           {
@@ -130515,7 +139731,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 60.0,
-            "chasePlus": 185.0,
+            "chasePlus": 184.0,
             "locationScore": 100.0,
             "stuffScore": 94.0
           },
@@ -130553,7 +139769,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 25.0,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 100.0,
             "stuffScore": 100.0
           },
@@ -130777,7 +139993,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 0.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 99.0,
             "stuffScore": 108.0
           },
@@ -130815,7 +140031,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 50.0,
             "chase": 66.7,
-            "chasePlus": 205.0,
+            "chasePlus": 204.0,
             "locationScore": 100.0,
             "stuffScore": 104.0
           },
@@ -130853,7 +140069,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 102.0,
             "stuffScore": 101.0
           },
@@ -130963,7 +140179,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 54.5,
             "oContact": 100.0,
             "chase": 20.0,
-            "chasePlus": 62.0,
+            "chasePlus": 61.0,
             "locationScore": 100.0,
             "stuffScore": 98.0
           },
@@ -131001,7 +140217,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 42.9,
             "oContact": 33.3,
             "chase": 42.9,
-            "chasePlus": 132.0,
+            "chasePlus": 131.0,
             "locationScore": 100.0,
             "stuffScore": 102.0
           },
@@ -131111,7 +140327,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 100.0,
             "chase": 20.0,
-            "chasePlus": 62.0,
+            "chasePlus": 61.0,
             "locationScore": 100.0,
             "stuffScore": 95.0
           },
@@ -131149,7 +140365,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 20.0,
-            "chasePlus": 62.0,
+            "chasePlus": 61.0,
             "locationScore": 98.0,
             "stuffScore": 96.0
           },
@@ -131187,7 +140403,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 0.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 100.0,
             "stuffScore": 105.0
           },
@@ -131411,7 +140627,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 99.0
           }
@@ -131483,7 +140699,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 67.9,
             "oContact": 62.5,
             "chase": 44.4,
-            "chasePlus": 137.0,
+            "chasePlus": 136.0,
             "locationScore": 100.0,
             "stuffScore": 105.0
           },
@@ -131521,8 +140737,8 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 58.8,
             "oContact": 66.7,
             "chase": 75.0,
-            "chasePlus": 231.0,
-            "locationScore": 101.0,
+            "chasePlus": 230.0,
+            "locationScore": 102.0,
             "stuffScore": 102.0
           },
           {
@@ -131597,7 +140813,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 33.3,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 100.0,
             "stuffScore": 99.0
           }
@@ -131745,7 +140961,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 100.0
           },
@@ -132041,7 +141257,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 0.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 102.0,
             "stuffScore": 104.0
           }
@@ -132189,7 +141405,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 0.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 108.0
           },
@@ -132227,7 +141443,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 0.0,
             "chase": 20.0,
-            "chasePlus": 62.0,
+            "chasePlus": 61.0,
             "locationScore": 101.0,
             "stuffScore": 105.0
           }
@@ -132375,7 +141591,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 0.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 100.0,
             "stuffScore": 102.0
           },
@@ -132413,7 +141629,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 99.0
           }
@@ -132485,7 +141701,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 50.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 101.0
           },
@@ -132523,7 +141739,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 101.0,
             "stuffScore": 98.0
           },
@@ -132673,7 +141889,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 27.8,
             "chasePlus": 85.0,
             "locationScore": 101.0,
-            "stuffScore": 91.0
+            "stuffScore": 90.0
           },
           {
             "pitchType": "チェンジアップ",
@@ -132748,7 +141964,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "oContact": 100.0,
             "chase": 16.7,
             "chasePlus": 51.0,
-            "locationScore": 99.0,
+            "locationScore": 100.0,
             "stuffScore": 96.0
           },
           {
@@ -135873,7 +145089,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 50.0,
             "chasePlus": 153.0,
             "locationScore": 101.0,
-            "stuffScore": 106.0
+            "stuffScore": 105.0
           },
           {
             "pitchType": "スライダー",
@@ -136019,7 +145235,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 27.3,
             "chase": 64.7,
-            "chasePlus": 199.0,
+            "chasePlus": 198.0,
             "locationScore": 101.0,
             "stuffScore": 113.0
           },
@@ -136095,7 +145311,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 66.7,
             "chase": 60.0,
-            "chasePlus": 185.0,
+            "chasePlus": 184.0,
             "locationScore": 100.0,
             "stuffScore": 105.0
           },
@@ -136133,7 +145349,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 104.0,
             "stuffScore": 104.0
           },
@@ -136357,7 +145573,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 0.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 98.0,
             "stuffScore": 102.0
           }
@@ -136429,7 +145645,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 75.0,
             "oContact": 55.6,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 99.0,
             "stuffScore": 97.0
           },
@@ -136467,7 +145683,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 11.1,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 101.0,
             "stuffScore": 112.0
           },
@@ -136543,7 +145759,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 50.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 102.0,
             "stuffScore": 111.0
           },
@@ -136691,7 +145907,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 60.0,
             "oContact": 44.4,
             "chase": 47.4,
-            "chasePlus": 146.0,
+            "chasePlus": 145.0,
             "locationScore": 99.0,
             "stuffScore": 101.0
           },
@@ -136729,7 +145945,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 42.9,
-            "chasePlus": 132.0,
+            "chasePlus": 131.0,
             "locationScore": 99.0,
             "stuffScore": 93.0
           },
@@ -136767,7 +145983,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 0.0,
             "chase": 20.0,
-            "chasePlus": 62.0,
+            "chasePlus": 61.0,
             "locationScore": 101.0,
             "stuffScore": 104.0
           },
@@ -137025,7 +146241,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 75.0,
             "oContact": 66.7,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 112.0
           },
@@ -137435,7 +146651,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 101.0,
             "stuffScore": 99.0
           },
@@ -137693,7 +146909,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 98.0
           },
@@ -137841,7 +147057,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 42.9,
-            "chasePlus": 132.0,
+            "chasePlus": 131.0,
             "locationScore": 99.0,
             "stuffScore": 94.0
           },
@@ -138027,7 +147243,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 84.6,
             "oContact": 66.7,
             "chase": 75.0,
-            "chasePlus": 231.0,
+            "chasePlus": 230.0,
             "locationScore": 100.0,
             "stuffScore": 100.0
           },
@@ -138439,7 +147655,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 66.7,
             "chasePlus": 204.0,
             "locationScore": 101.0,
-            "stuffScore": 107.0
+            "stuffScore": 106.0
           },
           {
             "pitchType": "カーブ",
@@ -139554,7 +148770,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "oContact": 100.0,
             "chase": 100.0,
             "chasePlus": 307.0,
-            "locationScore": 98.0,
+            "locationScore": 99.0,
             "stuffScore": 99.0
           }
         ]
@@ -139851,7 +149067,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 62.5,
             "chasePlus": 192.0,
             "locationScore": 101.0,
-            "stuffScore": 101.0
+            "stuffScore": 100.0
           },
           {
             "pitchType": "スライダー",
@@ -141153,7 +150369,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 31.2,
             "chasePlus": 96.0,
             "locationScore": 102.0,
-            "stuffScore": 117.0
+            "stuffScore": 116.0
           },
           {
             "pitchType": "カットボール",
@@ -141191,7 +150407,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 16.7,
             "chasePlus": 51.0,
             "locationScore": 101.0,
-            "stuffScore": 109.0
+            "stuffScore": 108.0
           },
           {
             "pitchType": "スライダー",
@@ -141785,7 +151001,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 100.0,
             "stuffScore": 98.0
           },
@@ -141971,7 +151187,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 100.0,
             "chase": 66.7,
-            "chasePlus": 205.0,
+            "chasePlus": 204.0,
             "locationScore": 101.0,
             "stuffScore": 95.0
           },
@@ -142047,7 +151263,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 0.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 102.0,
             "stuffScore": 101.0
           }
@@ -142157,7 +151373,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 100.0,
             "stuffScore": 97.0
           }
@@ -142229,7 +151445,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 46.7,
             "oContact": 60.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 109.0
           },
@@ -142305,7 +151521,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 72.7,
             "oContact": 50.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 102.0,
             "stuffScore": 103.0
           },
@@ -142343,7 +151559,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 57.1,
             "oContact": 100.0,
             "chase": 60.0,
-            "chasePlus": 185.0,
+            "chasePlus": 184.0,
             "locationScore": 101.0,
             "stuffScore": 101.0
           },
@@ -142419,7 +151635,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 99.0,
             "stuffScore": 97.0
           },
@@ -142529,7 +151745,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 96.0
           },
@@ -142567,7 +151783,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 100.0,
             "stuffScore": 100.0
           },
@@ -142715,7 +151931,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 75.0,
             "oContact": 100.0,
             "chase": 20.0,
-            "chasePlus": 62.0,
+            "chasePlus": 61.0,
             "locationScore": 100.0,
             "stuffScore": 94.0
           },
@@ -142753,7 +151969,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 99.0,
             "stuffScore": 99.0
           }
@@ -142863,7 +152079,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 0.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 104.0
           }
@@ -142935,7 +152151,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 56.2,
             "oContact": 80.0,
             "chase": 47.6,
-            "chasePlus": 147.0,
+            "chasePlus": 146.0,
             "locationScore": 100.0,
             "stuffScore": 105.0
           },
@@ -142973,7 +152189,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 45.5,
             "oContact": 36.4,
             "chase": 64.7,
-            "chasePlus": 199.0,
+            "chasePlus": 198.0,
             "locationScore": 101.0,
             "stuffScore": 120.0
           },
@@ -143087,7 +152303,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 100.0
           }
@@ -143159,7 +152375,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 98.0
           },
@@ -143307,7 +152523,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 60.0,
             "oContact": 33.3,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 110.0
           },
@@ -143345,7 +152561,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 0.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 100.0,
             "stuffScore": 100.0
           },
@@ -143455,7 +152671,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 33.3,
             "oContact": 20.0,
             "chase": 55.6,
-            "chasePlus": 171.0,
+            "chasePlus": 170.0,
             "locationScore": 100.0,
             "stuffScore": 108.0
           },
@@ -143493,7 +152709,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 20.0,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 100.0,
             "stuffScore": 100.0
           }
@@ -143603,7 +152819,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 60.0,
             "oContact": 0.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 99.0,
             "stuffScore": 109.0
           },
@@ -143751,7 +152967,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 97.0
           },
@@ -144013,7 +153229,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 33.3,
             "oContact": 0.0,
             "chase": 20.0,
-            "chasePlus": 62.0,
+            "chasePlus": 61.0,
             "locationScore": 100.0,
             "stuffScore": 101.0
           }
@@ -144161,7 +153377,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 0.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 102.0,
             "stuffScore": 106.0
           }
@@ -144233,7 +153449,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 60.0,
             "oContact": 0.0,
             "chase": 20.0,
-            "chasePlus": 62.0,
+            "chasePlus": 61.0,
             "locationScore": 100.0,
             "stuffScore": 103.0
           },
@@ -144271,7 +153487,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 0.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 99.0,
             "stuffScore": 104.0
           },
@@ -144571,7 +153787,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 99.0
           }
@@ -144719,7 +153935,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 0.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 102.0,
             "stuffScore": 105.0
           },
@@ -144829,7 +154045,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 33.3,
             "oContact": 100.0,
             "chase": 20.0,
-            "chasePlus": 62.0,
+            "chasePlus": 61.0,
             "locationScore": 100.0,
             "stuffScore": 97.0
           },
@@ -145053,7 +154269,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 60.0,
             "oContact": 50.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 101.0,
             "stuffScore": 95.0
           },
@@ -145091,7 +154307,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 75.0,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 94.0
           },
@@ -145129,7 +154345,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 33.3,
             "oContact": 50.0,
             "chase": 20.0,
-            "chasePlus": 62.0,
+            "chasePlus": 61.0,
             "locationScore": 97.0,
             "stuffScore": 98.0
           },
@@ -145205,7 +154421,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 66.7,
             "chase": 75.0,
-            "chasePlus": 231.0,
+            "chasePlus": 230.0,
             "locationScore": 100.0,
             "stuffScore": 103.0
           },
@@ -145315,7 +154531,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 99.0,
             "stuffScore": 97.0
           },
@@ -145353,7 +154569,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 99.0,
             "stuffScore": 99.0
           },
@@ -145615,7 +154831,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 0.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 99.0,
             "stuffScore": 103.0
           }
@@ -145687,7 +154903,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 100.0,
             "stuffScore": 100.0
           },
@@ -145801,7 +155017,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 99.0
           }
@@ -145911,7 +155127,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 97.0
           },
@@ -146021,7 +155237,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 52.6,
             "oContact": 50.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 108.0
           },
@@ -146059,7 +155275,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 99.0,
             "stuffScore": 97.0
           },
@@ -146283,7 +155499,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 98.0
           },
@@ -146617,7 +155833,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 0.0,
             "chase": 66.7,
-            "chasePlus": 205.0,
+            "chasePlus": 204.0,
             "locationScore": 101.0,
             "stuffScore": 108.0
           },
@@ -147553,7 +156769,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 100.0,
             "chasePlus": 307.0,
             "locationScore": 102.0,
-            "stuffScore": 110.0
+            "stuffScore": 111.0
           },
           {
             "pitchType": "スプリット",
@@ -148034,7 +157250,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "oContact": 100.0,
             "chase": 33.3,
             "chasePlus": 102.0,
-            "locationScore": 100.0,
+            "locationScore": 99.0,
             "stuffScore": 99.0
           },
           {
@@ -148665,7 +157881,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 51.7,
             "chasePlus": 159.0,
             "locationScore": 99.0,
-            "stuffScore": 95.0
+            "stuffScore": 94.0
           },
           {
             "pitchType": "フォーク",
@@ -150377,7 +159593,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 42.9,
             "chasePlus": 131.0,
             "locationScore": 101.0,
-            "stuffScore": 114.0
+            "stuffScore": 115.0
           },
           {
             "pitchType": "チェンジアップ",
@@ -150710,7 +159926,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "oContact": 100.0,
             "chase": 100.0,
             "chasePlus": 307.0,
-            "locationScore": 102.0,
+            "locationScore": 101.0,
             "stuffScore": 98.0
           },
           {
@@ -150897,7 +160113,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 50.0,
             "chasePlus": 153.0,
             "locationScore": 99.0,
-            "stuffScore": 103.0
+            "stuffScore": 102.0
           },
           {
             "pitchType": "フォーク",
@@ -151715,7 +160931,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 0.0,
             "chase": 30.8,
-            "chasePlus": 95.0,
+            "chasePlus": 94.0,
             "locationScore": 101.0,
             "stuffScore": 112.0
           },
@@ -151753,7 +160969,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 98.0,
             "stuffScore": 96.0
           },
@@ -151829,7 +161045,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 100.0,
             "stuffScore": 98.0
           },
@@ -151939,7 +161155,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 66.7,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 100.0,
             "stuffScore": 103.0
           },
@@ -152607,7 +161823,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 33.3,
             "oContact": 50.0,
             "chase": 66.7,
-            "chasePlus": 205.0,
+            "chasePlus": 204.0,
             "locationScore": 101.0,
             "stuffScore": 106.0
           },
@@ -152645,7 +161861,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 0.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 104.0
           },
@@ -152755,7 +161971,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 63.6,
             "oContact": 71.4,
             "chase": 30.4,
-            "chasePlus": 94.0,
+            "chasePlus": 93.0,
             "locationScore": 100.0,
             "stuffScore": 98.0
           },
@@ -152793,7 +162009,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 57.1,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 98.0,
             "stuffScore": 100.0
           },
@@ -152869,7 +162085,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 66.7,
             "chase": 42.9,
-            "chasePlus": 132.0,
+            "chasePlus": 131.0,
             "locationScore": 100.0,
             "stuffScore": 99.0
           },
@@ -152909,7 +162125,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 40.0,
             "chasePlus": 123.0,
             "locationScore": 101.0,
-            "stuffScore": 101.0
+            "stuffScore": 100.0
           },
           {
             "pitchType": "ツーシーム",
@@ -153017,9 +162233,9 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 33.3,
             "oContact": 50.0,
             "chase": 66.7,
-            "chasePlus": 205.0,
+            "chasePlus": 204.0,
             "locationScore": 101.0,
-            "stuffScore": 112.0
+            "stuffScore": 113.0
           },
           {
             "pitchType": "カットボール",
@@ -153127,7 +162343,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 103.0,
             "stuffScore": 101.0
           },
@@ -153275,7 +162491,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 101.0,
             "stuffScore": 104.0
           },
@@ -153461,7 +162677,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 95.0
           }
@@ -153609,7 +162825,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 0.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 100.0,
             "stuffScore": 101.0
           },
@@ -153795,7 +163011,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 37.5,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 101.0,
             "stuffScore": 98.0
           },
@@ -153871,7 +163087,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 98.0
           }
@@ -154019,7 +163235,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 50.0,
             "chase": 80.0,
-            "chasePlus": 246.0,
+            "chasePlus": 245.0,
             "locationScore": 98.0,
             "stuffScore": 103.0
           },
@@ -154057,7 +163273,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 99.0,
             "stuffScore": 99.0
           }
@@ -154167,7 +163383,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 71.4,
             "oContact": 50.0,
             "chase": 30.8,
-            "chasePlus": 95.0,
+            "chasePlus": 94.0,
             "locationScore": 100.0,
             "stuffScore": 95.0
           },
@@ -154349,7 +163565,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 68.8,
             "oContact": 90.0,
             "chase": 43.5,
-            "chasePlus": 134.0,
+            "chasePlus": 133.0,
             "locationScore": 100.0,
             "stuffScore": 94.0
           },
@@ -154425,7 +163641,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 0.0,
             "chase": 20.0,
-            "chasePlus": 62.0,
+            "chasePlus": 61.0,
             "locationScore": 98.0,
             "stuffScore": 101.0
           },
@@ -154463,7 +163679,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 40.0,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 101.0,
             "stuffScore": 99.0
           },
@@ -154501,7 +163717,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 99.0,
             "stuffScore": 99.0
           }
@@ -154573,7 +163789,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 101.0,
             "stuffScore": 101.0
           },
@@ -154721,7 +163937,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 0.0,
             "chase": 42.9,
-            "chasePlus": 132.0,
+            "chasePlus": 131.0,
             "locationScore": 100.0,
             "stuffScore": 105.0
           },
@@ -154797,7 +164013,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 50.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 101.0
           },
@@ -154907,7 +164123,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 70.0,
             "oContact": 33.3,
             "chase": 42.9,
-            "chasePlus": 132.0,
+            "chasePlus": 131.0,
             "locationScore": 100.0,
             "stuffScore": 108.0
           },
@@ -154945,7 +164161,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 0.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 99.0,
             "stuffScore": 101.0
           },
@@ -154984,7 +164200,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "oContact": null,
             "chase": 0.0,
             "chasePlus": 0.0,
-            "locationScore": 101.0,
+            "locationScore": 100.0,
             "stuffScore": 98.0
           },
           {
@@ -155131,7 +164347,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 60.0,
             "oContact": 100.0,
             "chase": 20.0,
-            "chasePlus": 62.0,
+            "chasePlus": 61.0,
             "locationScore": 100.0,
             "stuffScore": 101.0
           },
@@ -155279,7 +164495,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 73.1,
             "oContact": 80.0,
             "chase": 45.5,
-            "chasePlus": 140.0,
+            "chasePlus": 139.0,
             "locationScore": 102.0,
             "stuffScore": 105.0
           },
@@ -155317,7 +164533,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 10.0,
             "chase": 66.7,
-            "chasePlus": 205.0,
+            "chasePlus": 204.0,
             "locationScore": 104.0,
             "stuffScore": 116.0
           },
@@ -155355,7 +164571,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 85.7,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 101.0,
             "stuffScore": 92.0
           },
@@ -155393,7 +164609,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 66.7,
             "chase": 42.9,
-            "chasePlus": 132.0,
+            "chasePlus": 131.0,
             "locationScore": 102.0,
             "stuffScore": 103.0
           },
@@ -155469,7 +164685,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 66.7,
-            "chasePlus": 205.0,
+            "chasePlus": 204.0,
             "locationScore": 100.0,
             "stuffScore": 94.0
           }
@@ -155579,7 +164795,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 0.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 104.0
           },
@@ -155803,7 +165019,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 100.0
           }
@@ -155875,7 +165091,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 87.5,
             "oContact": 75.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 101.0,
             "stuffScore": 101.0
           },
@@ -155913,8 +165129,8 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 0.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
-            "locationScore": 99.0,
+            "chasePlus": 102.0,
+            "locationScore": 100.0,
             "stuffScore": 98.0
           },
           {
@@ -155989,7 +165205,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 50.0,
             "chase": 66.7,
-            "chasePlus": 205.0,
+            "chasePlus": 204.0,
             "locationScore": 100.0,
             "stuffScore": 102.0
           }
@@ -156137,7 +165353,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 14.3,
             "chase": 63.6,
-            "chasePlus": 196.0,
+            "chasePlus": 195.0,
             "locationScore": 103.0,
             "stuffScore": 110.0
           },
@@ -156175,7 +165391,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 14.3,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 99.0,
             "stuffScore": 98.0
           },
@@ -156251,7 +165467,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 0.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 105.0
           }
@@ -156361,7 +165577,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 0.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 99.0,
             "stuffScore": 99.0
           },
@@ -156475,7 +165691,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 0.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 103.0
           }
@@ -156547,9 +165763,9 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 90.9,
             "oContact": 100.0,
             "chase": 20.0,
-            "chasePlus": 62.0,
+            "chasePlus": 61.0,
             "locationScore": 99.0,
-            "stuffScore": 90.0
+            "stuffScore": 91.0
           },
           {
             "pitchType": "ストレート",
@@ -156695,7 +165911,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 99.0
           },
@@ -156881,7 +166097,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 33.3,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 100.0,
             "stuffScore": 100.0
           },
@@ -156957,7 +166173,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 99.0
           }
@@ -160454,7 +169670,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "oContact": 83.3,
             "chase": 46.2,
             "chasePlus": 142.0,
-            "locationScore": 100.0,
+            "locationScore": 101.0,
             "stuffScore": 97.0
           },
           {
@@ -160531,7 +169747,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 60.0,
             "chasePlus": 184.0,
             "locationScore": 99.0,
-            "stuffScore": 98.0
+            "stuffScore": 99.0
           },
           {
             "pitchType": "シュート",
@@ -161421,9 +170637,9 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 47.6,
             "oContact": 77.8,
             "chase": 34.6,
-            "chasePlus": 107.0,
+            "chasePlus": 106.0,
             "locationScore": 100.0,
-            "stuffScore": 106.0
+            "stuffScore": 107.0
           },
           {
             "pitchType": "ナックルカーブ",
@@ -161459,7 +170675,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 25.0,
             "oContact": 0.0,
             "chase": 43.8,
-            "chasePlus": 135.0,
+            "chasePlus": 134.0,
             "locationScore": 101.0,
             "stuffScore": 115.0
           },
@@ -161607,8 +170823,8 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 50.0,
             "chase": 66.7,
-            "chasePlus": 205.0,
-            "locationScore": 100.0,
+            "chasePlus": 204.0,
+            "locationScore": 99.0,
             "stuffScore": 100.0
           },
           {
@@ -161755,7 +170971,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 0.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 101.0,
             "stuffScore": 102.0
           },
@@ -162123,7 +171339,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 98.0,
             "stuffScore": 97.0
           },
@@ -162233,7 +171449,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 57.1,
             "oContact": 40.0,
             "chase": 45.5,
-            "chasePlus": 140.0,
+            "chasePlus": 139.0,
             "locationScore": 101.0,
             "stuffScore": 102.0
           },
@@ -162271,7 +171487,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 85.7,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 101.0,
             "stuffScore": 94.0
           },
@@ -162309,7 +171525,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 40.0,
             "oContact": 75.0,
             "chase": 80.0,
-            "chasePlus": 246.0,
+            "chasePlus": 245.0,
             "locationScore": 102.0,
             "stuffScore": 105.0
           },
@@ -162347,7 +171563,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 33.3,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 100.0,
             "stuffScore": 100.0
           },
@@ -162457,7 +171673,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 66.7,
             "chase": 42.9,
-            "chasePlus": 132.0,
+            "chasePlus": 131.0,
             "locationScore": 101.0,
             "stuffScore": 99.0
           },
@@ -162533,7 +171749,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 0.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 100.0,
             "stuffScore": 102.0
           },
@@ -162571,7 +171787,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 99.0,
             "stuffScore": 98.0
           }
@@ -162643,7 +171859,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 50.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 100.0,
             "stuffScore": 103.0
           },
@@ -162681,7 +171897,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 20.0,
-            "chasePlus": 62.0,
+            "chasePlus": 61.0,
             "locationScore": 99.0,
             "stuffScore": 94.0
           },
@@ -162791,7 +172007,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 100.0,
             "stuffScore": 97.0
           },
@@ -162829,7 +172045,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 98.0
           },
@@ -163015,7 +172231,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 62.5,
             "oContact": 71.4,
             "chase": 53.8,
-            "chasePlus": 166.0,
+            "chasePlus": 165.0,
             "locationScore": 101.0,
             "stuffScore": 122.0
           },
@@ -163053,7 +172269,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 102.0
           },
@@ -163163,7 +172379,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 72.2,
             "oContact": 81.8,
             "chase": 34.4,
-            "chasePlus": 106.0,
+            "chasePlus": 105.0,
             "locationScore": 99.0,
             "stuffScore": 100.0
           },
@@ -163201,7 +172417,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 50.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 101.0,
             "stuffScore": 101.0
           },
@@ -163241,7 +172457,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 0.0,
             "chasePlus": 0.0,
             "locationScore": 100.0,
-            "stuffScore": 97.0
+            "stuffScore": 98.0
           },
           {
             "pitchType": "フォーク",
@@ -163315,7 +172531,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 99.0
           }
@@ -163387,7 +172603,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 66.7,
             "chase": 60.0,
-            "chasePlus": 185.0,
+            "chasePlus": 184.0,
             "locationScore": 100.0,
             "stuffScore": 109.0
           },
@@ -163535,7 +172751,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 0.0,
             "chase": 44.4,
-            "chasePlus": 137.0,
+            "chasePlus": 136.0,
             "locationScore": 100.0,
             "stuffScore": 112.0
           },
@@ -163573,7 +172789,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 104.0
           },
@@ -163683,7 +172899,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 98.0
           },
@@ -163869,7 +173085,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 71.4,
             "oContact": 85.7,
             "chase": 63.6,
-            "chasePlus": 196.0,
+            "chasePlus": 195.0,
             "locationScore": 100.0,
             "stuffScore": 98.0
           },
@@ -163907,7 +173123,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 28.6,
             "oContact": 50.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 102.0
           },
@@ -163945,7 +173161,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 66.7,
-            "chasePlus": 205.0,
+            "chasePlus": 204.0,
             "locationScore": 100.0,
             "stuffScore": 97.0
           },
@@ -164055,7 +173271,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 0.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 101.0,
             "stuffScore": 109.0
           },
@@ -164131,7 +173347,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 100.0
           },
@@ -164427,7 +173643,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 80.0,
             "oContact": 0.0,
             "chase": 60.0,
-            "chasePlus": 185.0,
+            "chasePlus": 184.0,
             "locationScore": 101.0,
             "stuffScore": 123.0
           },
@@ -164537,7 +173753,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 66.7,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 101.0
           },
@@ -164575,7 +173791,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 100.0,
             "stuffScore": 99.0
           },
@@ -164723,7 +173939,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 75.0,
             "oContact": 85.7,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 92.0
           },
@@ -164761,7 +173977,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 50.0,
             "chase": 66.7,
-            "chasePlus": 205.0,
+            "chasePlus": 204.0,
             "locationScore": 102.0,
             "stuffScore": 103.0
           },
@@ -164837,7 +174053,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 0.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 102.0,
             "stuffScore": 101.0
           },
@@ -165023,7 +174239,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 66.7,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 99.0,
             "stuffScore": 97.0
           },
@@ -165061,7 +174277,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 100.0,
             "stuffScore": 98.0
           },
@@ -165209,7 +174425,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 96.0
           }
@@ -165319,7 +174535,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 0.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 100.0,
             "stuffScore": 105.0
           },
@@ -165581,9 +174797,9 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 0.0,
             "chase": 20.0,
-            "chasePlus": 62.0,
+            "chasePlus": 61.0,
             "locationScore": 100.0,
-            "stuffScore": 104.0
+            "stuffScore": 105.0
           },
           {
             "pitchType": "チェンジアップ",
@@ -165619,7 +174835,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 100.0,
             "stuffScore": 98.0
           },
@@ -165657,7 +174873,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 0.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 98.0,
             "stuffScore": 105.0
           }
@@ -165729,7 +174945,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 99.0,
             "stuffScore": 93.0
           },
@@ -165767,7 +174983,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 33.3,
             "chase": 60.0,
-            "chasePlus": 185.0,
+            "chasePlus": 184.0,
             "locationScore": 97.0,
             "stuffScore": 102.0
           },
@@ -165877,7 +175093,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 50.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 100.0,
             "stuffScore": 102.0
           },
@@ -165915,9 +175131,9 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 0.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
-            "stuffScore": 103.0
+            "stuffScore": 104.0
           },
           {
             "pitchType": "シュート",
@@ -166064,7 +175280,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "oContact": null,
             "chase": 0.0,
             "chasePlus": 0.0,
-            "locationScore": 98.0,
+            "locationScore": 97.0,
             "stuffScore": 94.0
           },
           {
@@ -166516,7 +175732,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "oContact": 100.0,
             "chase": 40.0,
             "chasePlus": 123.0,
-            "locationScore": 101.0,
+            "locationScore": 100.0,
             "stuffScore": 95.0
           },
           {
@@ -167257,7 +176473,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 41.7,
             "chasePlus": 128.0,
             "locationScore": 100.0,
-            "stuffScore": 103.0
+            "stuffScore": 102.0
           },
           {
             "pitchType": "ストレート",
@@ -168109,7 +177325,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 68.8,
             "oContact": 0.0,
             "chase": 20.0,
-            "chasePlus": 62.0,
+            "chasePlus": 61.0,
             "locationScore": 101.0,
             "stuffScore": 98.0
           },
@@ -168147,8 +177363,8 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 88.9,
             "oContact": 75.0,
             "chase": 44.4,
-            "chasePlus": 137.0,
-            "locationScore": 102.0,
+            "chasePlus": 136.0,
+            "locationScore": 101.0,
             "stuffScore": 94.0
           }
         ]
@@ -168221,7 +177437,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 0.0,
             "chasePlus": 0.0,
             "locationScore": 100.0,
-            "stuffScore": 100.0
+            "stuffScore": 101.0
           },
           {
             "pitchType": "フォーク",
@@ -168257,7 +177473,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 0.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 101.0,
             "stuffScore": 102.0
           },
@@ -168367,7 +177583,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 0.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 99.0,
             "stuffScore": 107.0
           },
@@ -168405,7 +177621,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 99.0
           }
@@ -168477,7 +177693,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 60.0,
             "oContact": 50.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 104.0
           },
@@ -168625,7 +177841,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 83.3,
             "oContact": 100.0,
             "chase": 20.0,
-            "chasePlus": 62.0,
+            "chasePlus": 61.0,
             "locationScore": 101.0,
             "stuffScore": 98.0
           },
@@ -168811,7 +178027,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 33.3,
             "chase": 35.3,
-            "chasePlus": 109.0,
+            "chasePlus": 108.0,
             "locationScore": 99.0,
             "stuffScore": 111.0
           },
@@ -168849,7 +178065,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 68.4,
             "oContact": 66.7,
             "chase": 60.0,
-            "chasePlus": 185.0,
+            "chasePlus": 184.0,
             "locationScore": 101.0,
             "stuffScore": 96.0
           },
@@ -169035,7 +178251,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 71.4,
             "oContact": 66.7,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 103.0
           },
@@ -169073,7 +178289,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 0.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 99.0,
             "stuffScore": 102.0
           },
@@ -169150,7 +178366,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "oContact": 100.0,
             "chase": 25.0,
             "chasePlus": 77.0,
-            "locationScore": 101.0,
+            "locationScore": 100.0,
             "stuffScore": 98.0
           },
           {
@@ -169187,7 +178403,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 0.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 100.0,
             "stuffScore": 101.0
           }
@@ -169259,7 +178475,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 0.0,
             "chase": 60.0,
-            "chasePlus": 185.0,
+            "chasePlus": 184.0,
             "locationScore": 100.0,
             "stuffScore": 106.0
           },
@@ -169555,7 +178771,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 33.3,
             "oContact": 0.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 99.0,
             "stuffScore": 103.0
           },
@@ -169631,7 +178847,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 0.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 102.0,
             "stuffScore": 106.0
           }
@@ -170003,7 +179219,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 0.0,
             "chase": 60.0,
-            "chasePlus": 185.0,
+            "chasePlus": 184.0,
             "locationScore": 102.0,
             "stuffScore": 103.0
           }
@@ -170075,7 +179291,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 81.8,
             "oContact": 66.7,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 102.0,
             "stuffScore": 113.0
           },
@@ -170151,7 +179367,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 100.0,
             "stuffScore": 99.0
           },
@@ -170299,7 +179515,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 0.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 101.0,
             "stuffScore": 113.0
           },
@@ -170485,7 +179701,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 83.3,
             "oContact": 50.0,
             "chase": 20.0,
-            "chasePlus": 62.0,
+            "chasePlus": 61.0,
             "locationScore": 102.0,
             "stuffScore": 113.0
           },
@@ -170595,7 +179811,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 45.5,
             "oContact": 25.0,
             "chase": 66.7,
-            "chasePlus": 205.0,
+            "chasePlus": 204.0,
             "locationScore": 103.0,
             "stuffScore": 119.0
           },
@@ -170709,7 +179925,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 33.3,
             "oContact": 0.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 101.0,
             "stuffScore": 107.0
           },
@@ -170785,7 +180001,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 100.0,
             "chase": 20.0,
-            "chasePlus": 62.0,
+            "chasePlus": 61.0,
             "locationScore": 99.0,
             "stuffScore": 100.0
           }
@@ -170967,7 +180183,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 55.6,
             "oContact": 0.0,
             "chase": 20.0,
-            "chasePlus": 62.0,
+            "chasePlus": 61.0,
             "locationScore": 100.0,
             "stuffScore": 107.0
           },
@@ -171005,7 +180221,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 98.0
           },
@@ -171153,7 +180369,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 50.0,
             "chase": 66.7,
-            "chasePlus": 205.0,
+            "chasePlus": 204.0,
             "locationScore": 100.0,
             "stuffScore": 100.0
           },
@@ -171191,7 +180407,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 0.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 102.0,
             "stuffScore": 103.0
           }
@@ -171301,7 +180517,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 99.0,
             "stuffScore": 99.0
           }
@@ -171411,7 +180627,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 46.7,
             "oContact": 28.6,
             "chase": 63.6,
-            "chasePlus": 196.0,
+            "chasePlus": 195.0,
             "locationScore": 102.0,
             "stuffScore": 115.0
           },
@@ -171449,7 +180665,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 60.0,
             "oContact": 42.9,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 108.0
           },
@@ -171487,7 +180703,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 50.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 100.0,
             "stuffScore": 100.0
           },
@@ -171597,7 +180813,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 33.3,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 100.0,
             "stuffScore": 97.0
           },
@@ -171783,7 +180999,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 50.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 101.0,
             "stuffScore": 110.0
           },
@@ -171821,7 +181037,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 101.0,
             "stuffScore": 100.0
           },
@@ -171969,8 +181185,8 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 42.9,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
-            "locationScore": 100.0,
+            "chasePlus": 102.0,
+            "locationScore": 101.0,
             "stuffScore": 103.0
           },
           {
@@ -173014,7 +182230,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "oContact": 62.5,
             "chase": 47.1,
             "chasePlus": 144.0,
-            "locationScore": 101.0,
+            "locationScore": 100.0,
             "stuffScore": 101.0
           },
           {
@@ -173242,7 +182458,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "oContact": null,
             "chase": 0.0,
             "chasePlus": 0.0,
-            "locationScore": 101.0,
+            "locationScore": 100.0,
             "stuffScore": 99.0
           }
         ]
@@ -173463,7 +182679,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 38.5,
             "chasePlus": 118.0,
             "locationScore": 101.0,
-            "stuffScore": 99.0
+            "stuffScore": 98.0
           },
           {
             "pitchType": "スライダー",
@@ -175539,7 +184755,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 50.0,
             "chasePlus": 153.0,
             "locationScore": 101.0,
-            "stuffScore": 101.0
+            "stuffScore": 100.0
           },
           {
             "pitchType": "スライダー",
@@ -175873,7 +185089,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 27.3,
             "chasePlus": 84.0,
             "locationScore": 100.0,
-            "stuffScore": 103.0
+            "stuffScore": 102.0
           },
           {
             "pitchType": "スプリット",
@@ -176687,7 +185903,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 57.1,
             "oContact": 100.0,
             "chase": 30.8,
-            "chasePlus": 95.0,
+            "chasePlus": 94.0,
             "locationScore": 101.0,
             "stuffScore": 93.0
           },
@@ -176763,7 +185979,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 75.0,
             "oContact": 100.0,
             "chase": 20.0,
-            "chasePlus": 62.0,
+            "chasePlus": 61.0,
             "locationScore": 100.0,
             "stuffScore": 96.0
           },
@@ -176801,7 +186017,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 60.0,
             "chase": 45.5,
-            "chasePlus": 140.0,
+            "chasePlus": 139.0,
             "locationScore": 100.0,
             "stuffScore": 97.0
           },
@@ -176987,7 +186203,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 25.0,
             "chase": 66.7,
-            "chasePlus": 205.0,
+            "chasePlus": 204.0,
             "locationScore": 101.0,
             "stuffScore": 107.0
           },
@@ -177063,7 +186279,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 99.0
           }
@@ -177545,7 +186761,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 20.0,
             "chase": 55.6,
-            "chasePlus": 171.0,
+            "chasePlus": 170.0,
             "locationScore": 99.0,
             "stuffScore": 108.0
           },
@@ -177693,7 +186909,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 80.0,
             "oContact": 50.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 101.0,
             "stuffScore": 101.0
           },
@@ -177731,7 +186947,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 100.0,
             "chase": 20.0,
-            "chasePlus": 62.0,
+            "chasePlus": 61.0,
             "locationScore": 101.0,
             "stuffScore": 101.0
           },
@@ -178213,7 +187429,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 78.6,
             "oContact": 33.3,
             "chase": 40.9,
-            "chasePlus": 126.0,
+            "chasePlus": 125.0,
             "locationScore": 101.0,
             "stuffScore": 97.0
           },
@@ -178327,7 +187543,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 33.3,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 101.0,
             "stuffScore": 99.0
           },
@@ -178365,7 +187581,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 0.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 102.0,
             "stuffScore": 111.0
           },
@@ -178475,7 +187691,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 97.0
           },
@@ -178513,7 +187729,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 75.0,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 97.0
           },
@@ -178661,7 +187877,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 0.0,
             "chase": 44.4,
-            "chasePlus": 137.0,
+            "chasePlus": 136.0,
             "locationScore": 98.0,
             "stuffScore": 108.0
           },
@@ -178699,7 +187915,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 75.0,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 100.0,
             "stuffScore": 102.0
           }
@@ -178847,7 +188063,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 80.0,
             "oContact": 57.1,
             "chase": 63.6,
-            "chasePlus": 196.0,
+            "chasePlus": 195.0,
             "locationScore": 101.0,
             "stuffScore": 99.0
           },
@@ -178885,7 +188101,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 44.4,
             "oContact": 40.0,
             "chase": 55.6,
-            "chasePlus": 171.0,
+            "chasePlus": 170.0,
             "locationScore": 102.0,
             "stuffScore": 107.0
           },
@@ -178923,7 +188139,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 100.0,
             "chase": 42.9,
-            "chasePlus": 132.0,
+            "chasePlus": 131.0,
             "locationScore": 99.0,
             "stuffScore": 96.0
           },
@@ -179071,7 +188287,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 62.5,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 101.0,
             "stuffScore": 101.0
           },
@@ -179333,7 +188549,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 62.5,
             "oContact": 25.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 100.0,
             "stuffScore": 104.0
           },
@@ -179371,7 +188587,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 99.0,
             "stuffScore": 95.0
           },
@@ -179411,7 +188627,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": null,
             "chasePlus": null,
             "locationScore": 102.0,
-            "stuffScore": 104.0
+            "stuffScore": 105.0
           },
           {
             "pitchType": "ツーシーム",
@@ -179557,7 +188773,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 0.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 100.0,
             "stuffScore": 102.0
           },
@@ -179667,7 +188883,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 37.5,
             "oContact": 33.3,
             "chase": 42.9,
-            "chasePlus": 132.0,
+            "chasePlus": 131.0,
             "locationScore": 102.0,
             "stuffScore": 108.0
           },
@@ -179743,7 +188959,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 100.0,
             "stuffScore": 98.0
           }
@@ -179815,7 +189031,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 100.0,
             "stuffScore": 98.0
           },
@@ -180001,7 +189217,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 60.0,
             "oContact": 33.3,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 109.0
           },
@@ -180077,7 +189293,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 99.0
           }
@@ -180187,7 +189403,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 83.3,
             "oContact": 16.7,
             "chase": 42.9,
-            "chasePlus": 132.0,
+            "chasePlus": 131.0,
             "locationScore": 100.0,
             "stuffScore": 108.0
           },
@@ -180411,7 +189627,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 40.0,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 99.0,
             "stuffScore": 99.0
           },
@@ -180449,7 +189665,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 20.0,
-            "chasePlus": 62.0,
+            "chasePlus": 61.0,
             "locationScore": 97.0,
             "stuffScore": 96.0
           },
@@ -180597,7 +189813,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 33.3,
             "oContact": 100.0,
             "chase": 20.0,
-            "chasePlus": 62.0,
+            "chasePlus": 61.0,
             "locationScore": 100.0,
             "stuffScore": 99.0
           }
@@ -182083,7 +191299,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 14.3,
             "chasePlus": 44.0,
             "locationScore": 101.0,
-            "stuffScore": 107.0
+            "stuffScore": 106.0
           },
           {
             "pitchType": "ナックルカーブ",
@@ -184200,7 +193416,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "oContact": 100.0,
             "chase": 50.0,
             "chasePlus": 153.0,
-            "locationScore": 100.0,
+            "locationScore": 101.0,
             "stuffScore": 97.0
           },
           {
@@ -184571,7 +193787,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 55.6,
             "oContact": 50.0,
             "chase": 20.0,
-            "chasePlus": 62.0,
+            "chasePlus": 61.0,
             "locationScore": 100.0,
             "stuffScore": 99.0
           },
@@ -184609,7 +193825,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 40.0,
             "oContact": 0.0,
             "chase": 60.0,
-            "chasePlus": 185.0,
+            "chasePlus": 184.0,
             "locationScore": 100.0,
             "stuffScore": 107.0
           },
@@ -184647,7 +193863,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 60.0,
             "chase": 76.9,
-            "chasePlus": 237.0,
+            "chasePlus": 236.0,
             "locationScore": 102.0,
             "stuffScore": 103.0
           },
@@ -184833,7 +194049,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 103.0,
             "stuffScore": 102.0
           },
@@ -184871,7 +194087,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 100.0,
             "stuffScore": 101.0
           },
@@ -185057,7 +194273,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 33.3,
             "oContact": 0.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 103.0
           },
@@ -185095,7 +194311,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 99.0
           }
@@ -185243,7 +194459,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 99.0
           }
@@ -185315,7 +194531,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 47.1,
             "oContact": 100.0,
             "chase": 20.0,
-            "chasePlus": 62.0,
+            "chasePlus": 61.0,
             "locationScore": 102.0,
             "stuffScore": 103.0
           },
@@ -185353,8 +194569,8 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 60.0,
             "oContact": 100.0,
             "chase": 66.7,
-            "chasePlus": 205.0,
-            "locationScore": 102.0,
+            "chasePlus": 204.0,
+            "locationScore": 101.0,
             "stuffScore": 92.0
           },
           {
@@ -185429,7 +194645,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 57.1,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 100.0,
             "stuffScore": 95.0
           },
@@ -185467,7 +194683,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 75.0,
             "oContact": 100.0,
             "chase": 80.0,
-            "chasePlus": 246.0,
+            "chasePlus": 245.0,
             "locationScore": 101.0,
             "stuffScore": 94.0
           },
@@ -185615,7 +194831,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 99.0,
             "stuffScore": 95.0
           },
@@ -185801,7 +195017,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 0.0,
             "chase": 20.0,
-            "chasePlus": 62.0,
+            "chasePlus": 61.0,
             "locationScore": 99.0,
             "stuffScore": 100.0
           }
@@ -185911,8 +195127,8 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 88.9,
             "oContact": 61.5,
             "chase": 68.4,
-            "chasePlus": 211.0,
-            "locationScore": 100.0,
+            "chasePlus": 210.0,
+            "locationScore": 101.0,
             "stuffScore": 99.0
           },
           {
@@ -185951,7 +195167,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 37.5,
             "chasePlus": 115.0,
             "locationScore": 101.0,
-            "stuffScore": 102.0
+            "stuffScore": 101.0
           },
           {
             "pitchType": "ツーシーム",
@@ -186431,7 +195647,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 98.0
           },
@@ -186617,7 +195833,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 40.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 102.0,
             "stuffScore": 97.0
           },
@@ -186655,7 +195871,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 28.6,
             "oContact": 100.0,
             "chase": 20.0,
-            "chasePlus": 62.0,
+            "chasePlus": 61.0,
             "locationScore": 101.0,
             "stuffScore": 98.0
           },
@@ -186917,7 +196133,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 0.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 102.0,
             "stuffScore": 103.0
           }
@@ -187103,7 +196319,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 61.5,
             "oContact": 0.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 102.0,
             "stuffScore": 101.0
           }
@@ -187289,7 +196505,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 98.0
           },
@@ -187399,7 +196615,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 20.0,
-            "chasePlus": 62.0,
+            "chasePlus": 61.0,
             "locationScore": 100.0,
             "stuffScore": 97.0
           },
@@ -187437,7 +196653,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 75.0,
             "oContact": 0.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 99.0,
             "stuffScore": 103.0
           },
@@ -187513,7 +196729,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 98.0
           }
@@ -187585,7 +196801,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 48.5,
             "oContact": 50.0,
             "chase": 6.7,
-            "chasePlus": 21.0,
+            "chasePlus": 20.0,
             "locationScore": 100.0,
             "stuffScore": 91.0
           },
@@ -187662,7 +196878,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "oContact": 50.0,
             "chase": 28.6,
             "chasePlus": 88.0,
-            "locationScore": 102.0,
+            "locationScore": 101.0,
             "stuffScore": 100.0
           },
           {
@@ -187699,7 +196915,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 50.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 101.0,
             "stuffScore": 102.0
           }
@@ -187771,7 +196987,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 33.3,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 100.0
           },
@@ -187810,7 +197026,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "oContact": null,
             "chase": 0.0,
             "chasePlus": 0.0,
-            "locationScore": 97.0,
+            "locationScore": 98.0,
             "stuffScore": 96.0
           },
           {
@@ -187847,7 +197063,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 99.0,
             "stuffScore": 97.0
           }
@@ -189527,7 +198743,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 16.7,
             "chasePlus": 51.0,
             "locationScore": 100.0,
-            "stuffScore": 99.0
+            "stuffScore": 98.0
           },
           {
             "pitchType": "スプリット",
@@ -190861,7 +200077,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 0.0,
             "chase": 20.0,
-            "chasePlus": 62.0,
+            "chasePlus": 61.0,
             "locationScore": 100.0,
             "stuffScore": 106.0
           },
@@ -190899,7 +200115,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 101.0,
             "stuffScore": 99.0
           }
@@ -191119,7 +200335,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 99.0,
             "stuffScore": 99.0
           },
@@ -191343,7 +200559,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 33.3,
             "oContact": 0.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 101.0,
             "stuffScore": 103.0
           },
@@ -191453,7 +200669,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 33.3,
             "chase": 75.0,
-            "chasePlus": 231.0,
+            "chasePlus": 230.0,
             "locationScore": 101.0,
             "stuffScore": 113.0
           },
@@ -191639,7 +200855,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 72.2,
             "oContact": 100.0,
             "chase": 20.0,
-            "chasePlus": 62.0,
+            "chasePlus": 61.0,
             "locationScore": 98.0,
             "stuffScore": 82.0
           },
@@ -191677,7 +200893,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 25.0,
             "chase": 52.2,
-            "chasePlus": 161.0,
+            "chasePlus": 160.0,
             "locationScore": 99.0,
             "stuffScore": 111.0
           },
@@ -191753,7 +200969,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 44.4,
             "oContact": 100.0,
             "chase": 42.9,
-            "chasePlus": 132.0,
+            "chasePlus": 131.0,
             "locationScore": 101.0,
             "stuffScore": 100.0
           },
@@ -191901,7 +201117,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 101.0,
             "stuffScore": 98.0
           },
@@ -191939,7 +201155,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 98.0
           },
@@ -192125,7 +201341,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 0.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 99.0,
             "stuffScore": 102.0
           },
@@ -192383,9 +201599,9 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 60.0,
             "oContact": 50.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 103.0,
-            "stuffScore": 108.0
+            "stuffScore": 109.0
           },
           {
             "pitchType": "ストレート",
@@ -192941,7 +202157,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 60.0,
             "oContact": 0.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 100.0,
             "stuffScore": 104.0
           }
@@ -193052,7 +202268,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "oContact": null,
             "chase": 0.0,
             "chasePlus": 0.0,
-            "locationScore": 101.0,
+            "locationScore": 102.0,
             "stuffScore": 100.0
           },
           {
@@ -193089,9 +202305,9 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
-            "stuffScore": 99.0
+            "stuffScore": 98.0
           }
         ]
       }
@@ -193161,7 +202377,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 85.7,
             "oContact": 50.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 102.0,
             "stuffScore": 98.0
           },
@@ -193237,7 +202453,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 101.0,
             "stuffScore": 100.0
           },
@@ -193275,7 +202491,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 0.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 103.0
           }
@@ -193347,7 +202563,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 101.0,
             "stuffScore": 98.0
           },
@@ -193423,7 +202639,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 100.0
           }
@@ -193496,7 +202712,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "oContact": 100.0,
             "chase": 31.6,
             "chasePlus": 97.0,
-            "locationScore": 103.0,
+            "locationScore": 102.0,
             "stuffScore": 112.0
           },
           {
@@ -193571,7 +202787,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 83.3,
             "oContact": 33.3,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 101.0,
             "stuffScore": 97.0
           },
@@ -193647,7 +202863,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 75.0,
             "oContact": 0.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 100.0,
             "stuffScore": 104.0
           }
@@ -193905,7 +203121,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 50.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 99.0,
             "stuffScore": 99.0
           },
@@ -194015,7 +203231,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 53.8,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 99.0,
             "stuffScore": 96.0
           },
@@ -194053,7 +203269,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 97.0
           },
@@ -194091,7 +203307,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 99.0
           }
@@ -194201,7 +203417,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 75.0,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 100.0,
             "stuffScore": 102.0
           },
@@ -194387,7 +203603,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 66.7,
-            "chasePlus": 205.0,
+            "chasePlus": 204.0,
             "locationScore": 100.0,
             "stuffScore": 97.0
           },
@@ -194501,7 +203717,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 0.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 100.0,
             "stuffScore": 103.0
           }
@@ -194649,7 +203865,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 57.1,
             "oContact": 80.0,
             "chase": 55.6,
-            "chasePlus": 171.0,
+            "chasePlus": 170.0,
             "locationScore": 100.0,
             "stuffScore": 97.0
           },
@@ -194725,7 +203941,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 97.0
           },
@@ -194873,7 +204089,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 50.0,
             "chase": 66.7,
-            "chasePlus": 205.0,
+            "chasePlus": 204.0,
             "locationScore": 97.0,
             "stuffScore": 104.0
           },
@@ -194983,7 +204199,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 100.0,
             "chase": 42.9,
-            "chasePlus": 132.0,
+            "chasePlus": 131.0,
             "locationScore": 101.0,
             "stuffScore": 101.0
           },
@@ -195207,7 +204423,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 71.4,
             "oContact": 50.0,
             "chase": 42.9,
-            "chasePlus": 132.0,
+            "chasePlus": 131.0,
             "locationScore": 100.0,
             "stuffScore": 97.0
           },
@@ -195355,7 +204571,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 99.0,
             "stuffScore": 93.0
           },
@@ -195393,7 +204609,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 100.0,
             "chase": 20.0,
-            "chasePlus": 62.0,
+            "chasePlus": 61.0,
             "locationScore": 98.0,
             "stuffScore": 97.0
           },
@@ -195651,7 +204867,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 66.7,
             "chase": 75.0,
-            "chasePlus": 231.0,
+            "chasePlus": 230.0,
             "locationScore": 100.0,
             "stuffScore": 109.0
           },
@@ -196062,7 +205278,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "oContact": 100.0,
             "chase": 28.6,
             "chasePlus": 88.0,
-            "locationScore": 100.0,
+            "locationScore": 101.0,
             "stuffScore": 94.0
           },
           {
@@ -198743,7 +207959,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 81.8,
             "chasePlus": 251.0,
             "locationScore": 101.0,
-            "stuffScore": 128.0
+            "stuffScore": 129.0
           },
           {
             "pitchType": "チェンジアップ",
@@ -199005,7 +208221,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 100.0,
             "chasePlus": 307.0,
             "locationScore": 101.0,
-            "stuffScore": 101.0
+            "stuffScore": 100.0
           },
           {
             "pitchType": "シンカー",
@@ -199744,7 +208960,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "oContact": 100.0,
             "chase": 20.0,
             "chasePlus": 61.0,
-            "locationScore": 101.0,
+            "locationScore": 100.0,
             "stuffScore": 96.0
           },
           {
@@ -200709,7 +209925,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 0.0,
             "chasePlus": 0.0,
             "locationScore": 100.0,
-            "stuffScore": 98.0
+            "stuffScore": 97.0
           },
           {
             "pitchType": "ストレート",
@@ -200933,7 +210149,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 0.0,
             "chasePlus": 0.0,
             "locationScore": 101.0,
-            "stuffScore": 102.0
+            "stuffScore": 103.0
           },
           {
             "pitchType": "カットボール",
@@ -201671,8 +210887,8 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 76.9,
             "oContact": 71.4,
             "chase": 53.8,
-            "chasePlus": 166.0,
-            "locationScore": 100.0,
+            "chasePlus": 165.0,
+            "locationScore": 99.0,
             "stuffScore": 91.0
           },
           {
@@ -201787,7 +211003,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 25.0,
             "chasePlus": 77.0,
             "locationScore": 99.0,
-            "stuffScore": 94.0
+            "stuffScore": 93.0
           },
           {
             "pitchType": "スライダー",
@@ -201823,7 +211039,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 42.9,
             "oContact": 33.3,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 102.0,
             "stuffScore": 104.0
           },
@@ -202043,7 +211259,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 80.0,
             "oContact": 0.0,
             "chase": 57.1,
-            "chasePlus": 176.0,
+            "chasePlus": 175.0,
             "locationScore": 101.0,
             "stuffScore": 104.0
           },
@@ -202081,7 +211297,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 100.0,
             "chase": 60.0,
-            "chasePlus": 185.0,
+            "chasePlus": 184.0,
             "locationScore": 99.0,
             "stuffScore": 97.0
           },
@@ -202267,7 +211483,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 99.0,
             "stuffScore": 98.0
           },
@@ -202305,7 +211521,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 102.0,
             "stuffScore": 102.0
           }
@@ -202453,7 +211669,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 99.0
           },
@@ -202711,7 +211927,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 60.0,
             "oContact": 25.0,
             "chase": 44.4,
-            "chasePlus": 137.0,
+            "chasePlus": 136.0,
             "locationScore": 101.0,
             "stuffScore": 104.0
           },
@@ -202787,7 +212003,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 87.5,
             "oContact": 75.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 96.0
           },
@@ -203045,7 +212261,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 99.0,
             "stuffScore": 97.0
           },
@@ -203083,7 +212299,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 98.0,
             "stuffScore": 98.0
           },
@@ -203341,7 +212557,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 20.0,
-            "chasePlus": 62.0,
+            "chasePlus": 61.0,
             "locationScore": 100.0,
             "stuffScore": 91.0
           }
@@ -203599,7 +212815,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 25.0,
             "chase": 57.1,
-            "chasePlus": 176.0,
+            "chasePlus": 175.0,
             "locationScore": 100.0,
             "stuffScore": 116.0
           },
@@ -203713,7 +212929,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 100.0,
             "chase": 20.0,
-            "chasePlus": 62.0,
+            "chasePlus": 61.0,
             "locationScore": 100.0,
             "stuffScore": 99.0
           },
@@ -203823,7 +213039,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 100.0,
             "chase": 42.9,
-            "chasePlus": 132.0,
+            "chasePlus": 131.0,
             "locationScore": 101.0,
             "stuffScore": 99.0
           },
@@ -203861,7 +213077,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 106.0
           },
@@ -203899,7 +213115,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 0.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 102.0
           },
@@ -203937,7 +213153,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 0.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 100.0,
             "stuffScore": 112.0
           }
@@ -204085,7 +213301,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 100.0,
             "stuffScore": 98.0
           },
@@ -204233,7 +213449,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 98.0
           },
@@ -204271,7 +213487,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 99.0,
             "stuffScore": 99.0
           },
@@ -204419,7 +213635,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 71.4,
             "oContact": 40.0,
             "chase": 45.5,
-            "chasePlus": 140.0,
+            "chasePlus": 139.0,
             "locationScore": 100.0,
             "stuffScore": 106.0
           },
@@ -204457,7 +213673,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 83.3,
             "oContact": 25.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 99.0,
             "stuffScore": 101.0
           },
@@ -204495,7 +213711,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 100.0,
             "chase": 42.9,
-            "chasePlus": 132.0,
+            "chasePlus": 131.0,
             "locationScore": 99.0,
             "stuffScore": 95.0
           },
@@ -204533,7 +213749,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 33.3,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 99.0,
             "stuffScore": 99.0
           },
@@ -204573,7 +213789,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 40.0,
             "chasePlus": 123.0,
             "locationScore": 103.0,
-            "stuffScore": 104.0
+            "stuffScore": 105.0
           },
           {
             "pitchType": "チェンジアップ",
@@ -204681,7 +213897,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 100.0,
             "stuffScore": 99.0
           },
@@ -204719,7 +213935,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 98.0,
             "stuffScore": 98.0
           },
@@ -204829,7 +214045,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 57.1,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 102.0,
             "stuffScore": 104.0
           },
@@ -204867,7 +214083,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 50.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 99.0,
             "stuffScore": 101.0
           },
@@ -204905,7 +214121,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 98.0
           },
@@ -205469,7 +214685,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 40.5,
             "chasePlus": 124.0,
             "locationScore": 102.0,
-            "stuffScore": 116.0
+            "stuffScore": 117.0
           },
           {
             "pitchType": "ナックルカーブ",
@@ -205507,7 +214723,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 38.9,
             "chasePlus": 119.0,
             "locationScore": 101.0,
-            "stuffScore": 101.0
+            "stuffScore": 102.0
           },
           {
             "pitchType": "スライダー",
@@ -206063,7 +215279,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 53.3,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 99.0,
             "stuffScore": 94.0
           },
@@ -206139,7 +215355,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 50.0,
             "chase": 20.0,
-            "chasePlus": 62.0,
+            "chasePlus": 61.0,
             "locationScore": 99.0,
             "stuffScore": 97.0
           },
@@ -206325,7 +215541,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 99.0,
             "stuffScore": 98.0
           },
@@ -206401,7 +215617,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 99.0,
             "stuffScore": 99.0
           },
@@ -206773,7 +215989,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 50.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 103.0
           },
@@ -206811,7 +216027,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 98.0
           },
@@ -207145,7 +216361,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 0.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 106.0
           }
@@ -207255,7 +216471,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 77.8,
             "oContact": 66.7,
             "chase": 42.9,
-            "chasePlus": 132.0,
+            "chasePlus": 131.0,
             "locationScore": 103.0,
             "stuffScore": 95.0
           },
@@ -207293,7 +216509,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 33.3,
             "oContact": 75.0,
             "chase": 57.1,
-            "chasePlus": 176.0,
+            "chasePlus": 175.0,
             "locationScore": 101.0,
             "stuffScore": 101.0
           },
@@ -207369,7 +216585,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 0.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 101.0,
             "stuffScore": 104.0
           },
@@ -207407,7 +216623,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 0.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 106.0
           }
@@ -207627,7 +216843,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 99.0,
             "stuffScore": 98.0
           },
@@ -207665,7 +216881,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 50.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 97.0,
             "stuffScore": 103.0
           },
@@ -207775,7 +216991,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 99.0,
             "stuffScore": 97.0
           },
@@ -207813,7 +217029,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 101.0,
             "stuffScore": 100.0
           }
@@ -211497,7 +220713,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": null,
             "chasePlus": null,
             "locationScore": 102.0,
-            "stuffScore": 104.0
+            "stuffScore": 103.0
           }
         ]
       }
@@ -211863,7 +221079,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 102.0,
             "stuffScore": 106.0
           },
@@ -211901,7 +221117,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 50.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 102.0,
             "stuffScore": 102.0
           }
@@ -212045,7 +221261,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 50.0,
             "chase": 66.7,
-            "chasePlus": 205.0,
+            "chasePlus": 204.0,
             "locationScore": 102.0,
             "stuffScore": 99.0
           },
@@ -212269,7 +221485,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 98.0
           },
@@ -212417,7 +221633,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 57.1,
             "oContact": 75.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 99.0,
             "stuffScore": 99.0
           },
@@ -212493,7 +221709,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 33.3,
             "chase": 60.0,
-            "chasePlus": 185.0,
+            "chasePlus": 184.0,
             "locationScore": 102.0,
             "stuffScore": 109.0
           },
@@ -212641,7 +221857,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 33.3,
             "chase": 60.0,
-            "chasePlus": 185.0,
+            "chasePlus": 184.0,
             "locationScore": 100.0,
             "stuffScore": 104.0
           }
@@ -212713,7 +221929,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 80.0,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 95.0
           },
@@ -212789,7 +222005,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 0.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 102.0
           },
@@ -212975,7 +222191,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 101.0,
             "stuffScore": 101.0
           }
@@ -213381,7 +222597,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 50.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 100.0,
             "stuffScore": 96.0
           },
@@ -213419,7 +222635,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 66.7,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 101.0,
             "stuffScore": 104.0
           }
@@ -213677,7 +222893,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 0.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 103.0,
             "stuffScore": 105.0
           }
@@ -213749,7 +222965,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 62.5,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 101.0,
             "stuffScore": 96.0
           },
@@ -213787,7 +223003,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 101.0,
             "stuffScore": 98.0
           },
@@ -213935,7 +223151,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 61.5,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 100.0,
             "stuffScore": 97.0
           },
@@ -213973,7 +223189,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 20.0,
-            "chasePlus": 62.0,
+            "chasePlus": 61.0,
             "locationScore": 100.0,
             "stuffScore": 89.0
           },
@@ -214383,7 +223599,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 0.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 106.0
           },
@@ -214459,7 +223675,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 99.0,
             "stuffScore": 100.0
           },
@@ -214569,7 +223785,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 75.0,
             "chase": 66.7,
-            "chasePlus": 205.0,
+            "chasePlus": 204.0,
             "locationScore": 100.0,
             "stuffScore": 107.0
           },
@@ -214645,7 +223861,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 0.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 102.0,
             "stuffScore": 103.0
           }
@@ -214717,7 +223933,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 99.0,
             "stuffScore": 95.0
           },
@@ -214755,7 +223971,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 104.0
           },
@@ -214941,7 +224157,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 98.0,
             "stuffScore": 96.0
           }
@@ -215013,7 +224229,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 52.9,
             "oContact": 83.3,
             "chase": 54.5,
-            "chasePlus": 168.0,
+            "chasePlus": 167.0,
             "locationScore": 102.0,
             "stuffScore": 98.0
           },
@@ -215051,9 +224267,9 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 53.8,
             "oContact": 0.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 100.0,
-            "stuffScore": 103.0
+            "stuffScore": 104.0
           },
           {
             "pitchType": "ワンシーム",
@@ -215089,7 +224305,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 99.0,
             "stuffScore": 90.0
           },
@@ -215203,7 +224419,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 100.0,
             "stuffScore": 97.0
           }
@@ -215313,7 +224529,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 75.0,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 96.0
           },
@@ -215461,7 +224677,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 0.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 103.0
           },
@@ -215499,7 +224715,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 0.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 102.0,
             "stuffScore": 105.0
           }
@@ -215609,9 +224825,9 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 0.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 99.0,
-            "stuffScore": 102.0
+            "stuffScore": 103.0
           }
         ]
       }
@@ -215795,7 +225011,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 0.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 104.0
           },
@@ -215905,7 +225121,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 87.5,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 101.0,
             "stuffScore": 98.0
           },
@@ -215943,7 +225159,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 33.3,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 103.0
           },
@@ -215981,9 +225197,9 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 99.0,
-            "stuffScore": 103.0
+            "stuffScore": 102.0
           },
           {
             "pitchType": "カーブ",
@@ -216019,7 +225235,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 0.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 106.0
           }
@@ -216091,7 +225307,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 75.0,
             "oContact": 50.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 100.0,
             "stuffScore": 103.0
           },
@@ -216129,7 +225345,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 0.0,
             "chase": 20.0,
-            "chasePlus": 62.0,
+            "chasePlus": 61.0,
             "locationScore": 98.0,
             "stuffScore": 98.0
           },
@@ -216277,7 +225493,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 100.0,
             "stuffScore": 97.0
           },
@@ -216316,7 +225532,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "oContact": null,
             "chase": 0.0,
             "chasePlus": 0.0,
-            "locationScore": 99.0,
+            "locationScore": 100.0,
             "stuffScore": 94.0
           },
           {
@@ -216463,7 +225679,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 80.0,
             "oContact": 0.0,
             "chase": 54.5,
-            "chasePlus": 168.0,
+            "chasePlus": 167.0,
             "locationScore": 99.0,
             "stuffScore": 116.0
           },
@@ -216539,7 +225755,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 99.0,
             "stuffScore": 99.0
           }
@@ -218879,7 +228095,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 39.4,
             "chasePlus": 121.0,
             "locationScore": 100.0,
-            "stuffScore": 106.0
+            "stuffScore": 105.0
           },
           {
             "pitchType": "スライダー",
@@ -219399,7 +228615,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 42.9,
             "chasePlus": 131.0,
             "locationScore": 99.0,
-            "stuffScore": 107.0
+            "stuffScore": 106.0
           },
           {
             "pitchType": "スイーパー",
@@ -219585,7 +228801,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 38.1,
             "chasePlus": 117.0,
             "locationScore": 101.0,
-            "stuffScore": 110.0
+            "stuffScore": 111.0
           },
           {
             "pitchType": "ストレート",
@@ -220509,7 +229725,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 62.5,
             "oContact": 80.0,
             "chase": 20.0,
-            "chasePlus": 62.0,
+            "chasePlus": 61.0,
             "locationScore": 99.0,
             "stuffScore": 97.0
           },
@@ -220661,7 +229877,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 97.0
           },
@@ -220809,7 +230025,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 0.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 103.0
           },
@@ -220847,7 +230063,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 99.0,
             "stuffScore": 99.0
           }
@@ -220919,7 +230135,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 0.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 105.0
           },
@@ -221177,7 +230393,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 100.0,
             "chase": 60.0,
-            "chasePlus": 185.0,
+            "chasePlus": 184.0,
             "locationScore": 101.0,
             "stuffScore": 101.0
           },
@@ -221325,7 +230541,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 60.0,
             "oContact": 94.4,
             "chase": 54.5,
-            "chasePlus": 168.0,
+            "chasePlus": 167.0,
             "locationScore": 100.0,
             "stuffScore": 90.0
           },
@@ -221511,7 +230727,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 0.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 102.0,
             "stuffScore": 110.0
           },
@@ -221807,7 +231023,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 83.3,
             "oContact": 100.0,
             "chase": 42.9,
-            "chasePlus": 132.0,
+            "chasePlus": 131.0,
             "locationScore": 100.0,
             "stuffScore": 92.0
           },
@@ -221845,7 +231061,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 75.0,
             "chase": 44.4,
-            "chasePlus": 137.0,
+            "chasePlus": 136.0,
             "locationScore": 99.0,
             "stuffScore": 104.0
           },
@@ -222065,7 +231281,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 83.3,
             "oContact": 25.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 105.0
           },
@@ -222141,7 +231357,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 50.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 101.0
           },
@@ -222251,7 +231467,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 31.2,
             "oContact": 75.0,
             "chase": 17.4,
-            "chasePlus": 54.0,
+            "chasePlus": 53.0,
             "locationScore": 99.0,
             "stuffScore": 102.0
           },
@@ -222365,7 +231581,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 100.0,
             "chase": 20.0,
-            "chasePlus": 62.0,
+            "chasePlus": 61.0,
             "locationScore": 99.0,
             "stuffScore": 98.0
           },
@@ -222513,7 +231729,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 75.0,
             "oContact": 33.3,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 100.0,
             "stuffScore": 98.0
           },
@@ -222661,7 +231877,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 0.0,
             "chase": 66.7,
-            "chasePlus": 205.0,
+            "chasePlus": 204.0,
             "locationScore": 101.0,
             "stuffScore": 105.0
           }
@@ -222809,7 +232025,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 103.0,
             "stuffScore": 101.0
           }
@@ -222919,7 +232135,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 0.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 101.0,
             "stuffScore": 100.0
           },
@@ -222957,7 +232173,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 50.0,
             "chase": 66.7,
-            "chasePlus": 205.0,
+            "chasePlus": 204.0,
             "locationScore": 100.0,
             "stuffScore": 98.0
           },
@@ -223067,7 +232283,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 50.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 102.0
           },
@@ -223105,7 +232321,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 33.3,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 101.0,
             "stuffScore": 99.0
           },
@@ -223143,7 +232359,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 0.0,
             "chase": 66.7,
-            "chasePlus": 205.0,
+            "chasePlus": 204.0,
             "locationScore": 99.0,
             "stuffScore": 105.0
           }
@@ -223215,7 +232431,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 70.8,
             "oContact": 80.0,
             "chase": 43.5,
-            "chasePlus": 134.0,
+            "chasePlus": 133.0,
             "locationScore": 102.0,
             "stuffScore": 95.0
           },
@@ -223253,7 +232469,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 40.0,
             "oContact": 83.3,
             "chase": 60.0,
-            "chasePlus": 185.0,
+            "chasePlus": 184.0,
             "locationScore": 101.0,
             "stuffScore": 99.0
           },
@@ -223367,7 +232583,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 66.7,
             "chase": 60.0,
-            "chasePlus": 185.0,
+            "chasePlus": 184.0,
             "locationScore": 101.0,
             "stuffScore": 100.0
           },
@@ -223405,7 +232621,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 99.0,
             "stuffScore": 96.0
           }
@@ -223515,7 +232731,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 0.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 105.0
           },
@@ -223553,7 +232769,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 0.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 103.0
           },
@@ -223663,7 +232879,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 40.0,
             "oContact": 0.0,
             "chase": 66.7,
-            "chasePlus": 205.0,
+            "chasePlus": 204.0,
             "locationScore": 101.0,
             "stuffScore": 116.0
           },
@@ -223849,7 +233065,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 27.3,
             "chase": 64.7,
-            "chasePlus": 199.0,
+            "chasePlus": 198.0,
             "locationScore": 101.0,
             "stuffScore": 113.0
           },
@@ -223887,9 +233103,9 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 40.0,
             "oContact": 75.0,
             "chase": 66.7,
-            "chasePlus": 205.0,
+            "chasePlus": 204.0,
             "locationScore": 101.0,
-            "stuffScore": 100.0
+            "stuffScore": 99.0
           },
           {
             "pitchType": "カーブ",
@@ -223925,7 +233141,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 33.3,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 101.0,
             "stuffScore": 99.0
           },
@@ -223963,7 +233179,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 25.0,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 100.0,
             "stuffScore": 100.0
           },
@@ -224073,7 +233289,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 33.3,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 101.0,
             "stuffScore": 99.0
           },
@@ -224111,8 +233327,8 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 0.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
-            "locationScore": 100.0,
+            "chasePlus": 307.0,
+            "locationScore": 101.0,
             "stuffScore": 101.0
           },
           {
@@ -224149,7 +233365,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 99.0
           },
@@ -224297,7 +233513,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 66.7,
             "chase": 75.0,
-            "chasePlus": 231.0,
+            "chasePlus": 230.0,
             "locationScore": 102.0,
             "stuffScore": 103.0
           },
@@ -224521,7 +233737,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 66.7,
             "chase": 60.0,
-            "chasePlus": 185.0,
+            "chasePlus": 184.0,
             "locationScore": 99.0,
             "stuffScore": 99.0
           },
@@ -224669,7 +233885,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 99.0,
             "stuffScore": 97.0
           },
@@ -224855,7 +234071,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 100.0,
             "chase": 20.0,
-            "chasePlus": 62.0,
+            "chasePlus": 61.0,
             "locationScore": 100.0,
             "stuffScore": 106.0
           },
@@ -224893,7 +234109,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 0.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 103.0
           },
@@ -224931,7 +234147,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 0.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 103.0
           }
@@ -226083,7 +235299,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 9.1,
             "chasePlus": 28.0,
             "locationScore": 99.0,
-            "stuffScore": 97.0
+            "stuffScore": 96.0
           },
           {
             "pitchType": "フォーク",
@@ -226311,7 +235527,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": null,
             "chasePlus": null,
             "locationScore": 102.0,
-            "stuffScore": 103.0
+            "stuffScore": 104.0
           }
         ]
       }
@@ -226679,7 +235895,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 30.0,
             "chasePlus": 92.0,
             "locationScore": 97.0,
-            "stuffScore": 102.0
+            "stuffScore": 101.0
           },
           {
             "pitchType": "カットボール",
@@ -227495,7 +236711,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 11.8,
             "chasePlus": 36.0,
             "locationScore": 100.0,
-            "stuffScore": 101.0
+            "stuffScore": 100.0
           },
           {
             "pitchType": "カットボール",
@@ -227570,7 +236786,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "oContact": 100.0,
             "chase": 33.3,
             "chasePlus": 102.0,
-            "locationScore": 98.0,
+            "locationScore": 99.0,
             "stuffScore": 95.0
           },
           {
@@ -228243,7 +237459,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 66.7,
             "chasePlus": 204.0,
             "locationScore": 98.0,
-            "stuffScore": 103.0
+            "stuffScore": 102.0
           }
         ]
       }
@@ -228687,7 +237903,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 33.3,
             "chasePlus": 102.0,
             "locationScore": 101.0,
-            "stuffScore": 113.0
+            "stuffScore": 112.0
           },
           {
             "pitchType": "スライダー",
@@ -228835,7 +238051,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 20.0,
             "chasePlus": 61.0,
             "locationScore": 100.0,
-            "stuffScore": 121.0
+            "stuffScore": 120.0
           },
           {
             "pitchType": "カットボール",
@@ -229283,7 +238499,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 62.5,
             "chasePlus": 192.0,
             "locationScore": 104.0,
-            "stuffScore": 106.0
+            "stuffScore": 105.0
           },
           {
             "pitchType": "スライダー",
@@ -229357,7 +238573,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 66.7,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 98.0
           },
@@ -229725,7 +238941,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 50.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 100.0,
             "stuffScore": 109.0
           },
@@ -229763,7 +238979,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 0.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 112.0
           }
@@ -229987,7 +239203,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 98.0,
             "stuffScore": 98.0
           },
@@ -230135,7 +239351,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 80.0,
             "chase": 55.6,
-            "chasePlus": 171.0,
+            "chasePlus": 170.0,
             "locationScore": 100.0,
             "stuffScore": 101.0
           },
@@ -230173,7 +239389,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 80.0,
             "oContact": 66.7,
             "chase": 60.0,
-            "chasePlus": 185.0,
+            "chasePlus": 184.0,
             "locationScore": 102.0,
             "stuffScore": 102.0
           },
@@ -230321,9 +239537,9 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 27.3,
             "oContact": 66.7,
             "chase": 75.0,
-            "chasePlus": 231.0,
+            "chasePlus": 230.0,
             "locationScore": 102.0,
-            "stuffScore": 110.0
+            "stuffScore": 109.0
           },
           {
             "pitchType": "ストレート",
@@ -230436,7 +239652,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "oContact": null,
             "chase": 0.0,
             "chasePlus": 0.0,
-            "locationScore": 99.0,
+            "locationScore": 100.0,
             "stuffScore": 97.0
           }
         ]
@@ -230507,7 +239723,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 0.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 101.0,
             "stuffScore": 101.0
           },
@@ -230803,7 +240019,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 100.0,
             "stuffScore": 100.0
           },
@@ -230841,7 +240057,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 99.0
           },
@@ -230879,7 +240095,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 99.0,
             "stuffScore": 98.0
           },
@@ -230989,7 +240205,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 0.0,
             "chase": 20.0,
-            "chasePlus": 62.0,
+            "chasePlus": 61.0,
             "locationScore": 100.0,
             "stuffScore": 105.0
           },
@@ -231027,7 +240243,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 50.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 102.0,
             "stuffScore": 103.0
           },
@@ -231065,7 +240281,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 0.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 106.0
           },
@@ -231213,7 +240429,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 77.8,
             "oContact": 40.0,
             "chase": 66.7,
-            "chasePlus": 205.0,
+            "chasePlus": 204.0,
             "locationScore": 101.0,
             "stuffScore": 106.0
           },
@@ -231399,7 +240615,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 33.3,
             "oContact": 100.0,
             "chase": 75.0,
-            "chasePlus": 231.0,
+            "chasePlus": 230.0,
             "locationScore": 101.0,
             "stuffScore": 98.0
           }
@@ -231509,7 +240725,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 20.0,
-            "chasePlus": 62.0,
+            "chasePlus": 61.0,
             "locationScore": 100.0,
             "stuffScore": 96.0
           },
@@ -231547,7 +240763,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 0.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 103.0
           }
@@ -231619,7 +240835,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 83.3,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 102.0,
             "stuffScore": 95.0
           },
@@ -231767,7 +240983,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 58.3,
             "oContact": 60.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 100.0,
             "stuffScore": 97.0
           },
@@ -231805,7 +241021,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 41.7,
             "oContact": 50.0,
             "chase": 44.4,
-            "chasePlus": 137.0,
+            "chasePlus": 136.0,
             "locationScore": 102.0,
             "stuffScore": 107.0
           },
@@ -231843,7 +241059,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 85.7,
             "chase": 53.8,
-            "chasePlus": 166.0,
+            "chasePlus": 165.0,
             "locationScore": 99.0,
             "stuffScore": 98.0
           },
@@ -232088,7 +241304,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 50.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 99.0,
             "stuffScore": 99.0
           },
@@ -232126,7 +241342,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 80.0,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 102.0,
             "stuffScore": 100.0
           },
@@ -232240,7 +241456,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 99.0,
             "stuffScore": 99.0
           }
@@ -232312,7 +241528,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 52.4,
             "oContact": 80.0,
             "chase": 45.5,
-            "chasePlus": 140.0,
+            "chasePlus": 139.0,
             "locationScore": 101.0,
             "stuffScore": 107.0
           },
@@ -232350,7 +241566,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 66.7,
             "chase": 42.9,
-            "chasePlus": 132.0,
+            "chasePlus": 131.0,
             "locationScore": 100.0,
             "stuffScore": 98.0
           },
@@ -232388,7 +241604,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 71.4,
             "chase": 87.5,
-            "chasePlus": 269.0,
+            "chasePlus": 268.0,
             "locationScore": 101.0,
             "stuffScore": 102.0
           },
@@ -232426,7 +241642,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 100.0,
             "chase": 20.0,
-            "chasePlus": 62.0,
+            "chasePlus": 61.0,
             "locationScore": 100.0,
             "stuffScore": 96.0
           },
@@ -232612,7 +241828,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 99.0
           },
@@ -232722,7 +241938,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 66.7,
             "chase": 75.0,
-            "chasePlus": 231.0,
+            "chasePlus": 230.0,
             "locationScore": 101.0,
             "stuffScore": 110.0
           },
@@ -232908,7 +242124,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 99.0
           }
@@ -233018,8 +242234,8 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 0.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
-            "locationScore": 101.0,
+            "chasePlus": 307.0,
+            "locationScore": 100.0,
             "stuffScore": 103.0
           },
           {
@@ -233166,7 +242382,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 84.6,
             "oContact": 40.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 100.0,
             "stuffScore": 98.0
           },
@@ -233242,7 +242458,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 0.0,
             "chase": 60.0,
-            "chasePlus": 185.0,
+            "chasePlus": 184.0,
             "locationScore": 100.0,
             "stuffScore": 110.0
           },
@@ -233352,7 +242568,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 66.7,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 100.0,
             "stuffScore": 100.0
           },
@@ -233466,7 +242682,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 99.0,
             "stuffScore": 100.0
           }
@@ -233576,7 +242792,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 99.0,
             "stuffScore": 98.0
           },
@@ -233686,7 +242902,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 50.0,
             "chase": 66.7,
-            "chasePlus": 205.0,
+            "chasePlus": 204.0,
             "locationScore": 101.0,
             "stuffScore": 98.0
           },
@@ -233762,7 +242978,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 0.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 100.0,
             "stuffScore": 104.0
           },
@@ -233800,7 +243016,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 0.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 101.0,
             "stuffScore": 104.0
           },
@@ -233948,7 +243164,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 100.0,
             "stuffScore": 99.0
           },
@@ -234174,7 +243390,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 20.0,
             "chasePlus": 61.0,
             "locationScore": 98.0,
-            "stuffScore": 101.0
+            "stuffScore": 102.0
           },
           {
             "pitchType": "カットボール",
@@ -234545,7 +243761,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "oContact": 33.3,
             "chase": 37.5,
             "chasePlus": 115.0,
-            "locationScore": 101.0,
+            "locationScore": 100.0,
             "stuffScore": 96.0
           },
           {
@@ -235066,7 +244282,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 25.0,
             "chasePlus": 77.0,
             "locationScore": 99.0,
-            "stuffScore": 100.0
+            "stuffScore": 99.0
           },
           {
             "pitchType": "フォーク",
@@ -235992,7 +245208,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 38.5,
             "chasePlus": 118.0,
             "locationScore": 101.0,
-            "stuffScore": 102.0
+            "stuffScore": 103.0
           },
           {
             "pitchType": "スライダー",
@@ -238147,7 +247363,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "oContact": 50.0,
             "chase": 50.0,
             "chasePlus": 153.0,
-            "locationScore": 100.0,
+            "locationScore": 99.0,
             "stuffScore": 101.0
           }
         ]
@@ -238406,7 +247622,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 57.1,
             "chasePlus": 175.0,
             "locationScore": 99.0,
-            "stuffScore": 106.0
+            "stuffScore": 105.0
           },
           {
             "pitchType": "ストレート",
@@ -238590,7 +247806,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 73.3,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 99.0,
             "stuffScore": 87.0
           },
@@ -238628,7 +247844,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 80.0,
             "oContact": 75.0,
             "chase": 44.4,
-            "chasePlus": 137.0,
+            "chasePlus": 136.0,
             "locationScore": 102.0,
             "stuffScore": 94.0
           },
@@ -238666,8 +247882,8 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 44.4,
             "oContact": 50.0,
             "chase": 44.4,
-            "chasePlus": 137.0,
-            "locationScore": 100.0,
+            "chasePlus": 136.0,
+            "locationScore": 101.0,
             "stuffScore": 104.0
           },
           {
@@ -238704,7 +247920,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 60.0,
             "chase": 55.6,
-            "chasePlus": 171.0,
+            "chasePlus": 170.0,
             "locationScore": 102.0,
             "stuffScore": 101.0
           },
@@ -238814,7 +248030,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 0.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 102.0,
             "stuffScore": 107.0
           },
@@ -238890,7 +248106,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 99.0,
             "stuffScore": 99.0
           },
@@ -238928,7 +248144,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 99.0,
             "stuffScore": 99.0
           }
@@ -239330,7 +248546,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 99.0,
             "stuffScore": 99.0
           },
@@ -239478,7 +248694,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 72.7,
             "oContact": 60.0,
             "chase": 55.6,
-            "chasePlus": 171.0,
+            "chasePlus": 170.0,
             "locationScore": 102.0,
             "stuffScore": 103.0
           },
@@ -239702,7 +248918,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 0.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 100.0,
             "stuffScore": 102.0
           },
@@ -239778,7 +248994,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 100.0,
             "stuffScore": 98.0
           },
@@ -239888,7 +249104,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 75.0,
             "oContact": 50.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 101.0
           },
@@ -239926,7 +249142,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 100.0,
             "stuffScore": 99.0
           },
@@ -239964,7 +249180,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 0.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 102.0
           },
@@ -240002,7 +249218,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 99.0,
             "stuffScore": 99.0
           }
@@ -240074,7 +249290,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 62.5,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 95.0
           },
@@ -240150,7 +249366,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 0.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 99.0,
             "stuffScore": 102.0
           }
@@ -240222,9 +249438,9 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 30.8,
             "chase": 59.1,
-            "chasePlus": 182.0,
+            "chasePlus": 181.0,
             "locationScore": 101.0,
-            "stuffScore": 120.0
+            "stuffScore": 121.0
           },
           {
             "pitchType": "ストレート",
@@ -240260,7 +249476,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 46.2,
             "oContact": 80.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 98.0,
             "stuffScore": 95.0
           },
@@ -240298,9 +249514,9 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 40.0,
             "oContact": 44.4,
             "chase": 69.2,
-            "chasePlus": 213.0,
+            "chasePlus": 212.0,
             "locationScore": 101.0,
-            "stuffScore": 108.0
+            "stuffScore": 109.0
           },
           {
             "pitchType": "ツーシーム",
@@ -240336,7 +249552,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 28.6,
             "oContact": 50.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 102.0,
             "stuffScore": 107.0
           },
@@ -240374,7 +249590,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 25.0,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 102.0,
             "stuffScore": 101.0
           }
@@ -240446,7 +249662,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 40.0,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 99.0,
             "stuffScore": 96.0
           },
@@ -240594,7 +249810,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 83.3,
             "chase": 75.0,
-            "chasePlus": 231.0,
+            "chasePlus": 230.0,
             "locationScore": 100.0,
             "stuffScore": 96.0
           },
@@ -240670,7 +249886,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 50.0,
             "chase": 66.7,
-            "chasePlus": 205.0,
+            "chasePlus": 204.0,
             "locationScore": 100.0,
             "stuffScore": 103.0
           }
@@ -240890,7 +250106,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 100.0,
             "chase": 20.0,
-            "chasePlus": 62.0,
+            "chasePlus": 61.0,
             "locationScore": 100.0,
             "stuffScore": 105.0
           },
@@ -240966,7 +250182,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 57.1,
             "oContact": 71.4,
             "chase": 43.8,
-            "chasePlus": 135.0,
+            "chasePlus": 134.0,
             "locationScore": 100.0,
             "stuffScore": 95.0
           },
@@ -241004,7 +250220,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 40.0,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 100.0,
             "stuffScore": 97.0
           },
@@ -241114,7 +250330,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 99.0,
             "stuffScore": 96.0
           },
@@ -241228,7 +250444,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 0.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 103.0
           }
@@ -241300,7 +250516,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 105.0
           },
@@ -241338,7 +250554,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 102.0
           },
@@ -241448,7 +250664,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 0.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 100.0,
             "stuffScore": 102.0
           },
@@ -241486,7 +250702,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 100.0
           },
@@ -241524,7 +250740,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 99.0
           },
@@ -241634,7 +250850,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 60.0,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 99.0,
             "stuffScore": 97.0
           },
@@ -241820,7 +251036,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 58.3,
             "chase": 66.7,
-            "chasePlus": 205.0,
+            "chasePlus": 204.0,
             "locationScore": 102.0,
             "stuffScore": 106.0
           },
@@ -241858,7 +251074,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 62.5,
             "oContact": 50.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 105.0
           },
@@ -241968,7 +251184,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 99.0
           },
@@ -242116,7 +251332,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 0.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 102.0,
             "stuffScore": 106.0
           }
@@ -242188,7 +251404,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 56.7,
             "oContact": 33.3,
             "chase": 44.4,
-            "chasePlus": 137.0,
+            "chasePlus": 136.0,
             "locationScore": 101.0,
             "stuffScore": 119.0
           },
@@ -242226,7 +251442,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 100.0,
             "chase": 20.0,
-            "chasePlus": 62.0,
+            "chasePlus": 61.0,
             "locationScore": 100.0,
             "stuffScore": 93.0
           },
@@ -242450,7 +251666,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 50.0,
             "chase": 66.7,
-            "chasePlus": 205.0,
+            "chasePlus": 204.0,
             "locationScore": 101.0,
             "stuffScore": 105.0
           },
@@ -242488,7 +251704,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 50.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 100.0,
             "stuffScore": 102.0
           },
@@ -242598,7 +251814,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 0.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 102.0
           },
@@ -242746,7 +251962,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 0.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 101.0,
             "stuffScore": 103.0
           },
@@ -242784,7 +252000,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 102.0,
             "stuffScore": 98.0
           },
@@ -243533,7 +252749,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "oContact": 66.7,
             "chase": 60.0,
             "chasePlus": 184.0,
-            "locationScore": 100.0,
+            "locationScore": 101.0,
             "stuffScore": 100.0
           },
           {
@@ -244054,7 +253270,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 50.0,
             "chasePlus": 153.0,
             "locationScore": 99.0,
-            "stuffScore": 98.0
+            "stuffScore": 99.0
           }
         ]
       }
@@ -247032,7 +256248,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 16.7,
             "chase": 60.0,
-            "chasePlus": 185.0,
+            "chasePlus": 184.0,
             "locationScore": 102.0,
             "stuffScore": 111.0
           },
@@ -247070,7 +256286,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 75.0,
             "oContact": 100.0,
             "chase": 20.0,
-            "chasePlus": 62.0,
+            "chasePlus": 61.0,
             "locationScore": 99.0,
             "stuffScore": 96.0
           },
@@ -247108,7 +256324,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 0.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 105.0
           }
@@ -247256,7 +256472,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 98.0
           },
@@ -247404,7 +256620,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 0.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 102.0
           },
@@ -247666,7 +256882,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 33.3,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 101.0,
             "stuffScore": 100.0
           },
@@ -247742,7 +256958,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 0.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 101.0,
             "stuffScore": 106.0
           },
@@ -247852,7 +257068,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 42.9,
             "oContact": 0.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 111.0
           },
@@ -247962,7 +257178,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 101.0,
             "stuffScore": 95.0
           },
@@ -248000,7 +257216,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 0.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 102.0,
             "stuffScore": 107.0
           }
@@ -248110,7 +257326,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 0.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 100.0,
             "stuffScore": 103.0
           },
@@ -248258,7 +257474,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 83.3,
             "oContact": 80.0,
             "chase": 71.4,
-            "chasePlus": 220.0,
+            "chasePlus": 219.0,
             "locationScore": 101.0,
             "stuffScore": 95.0
           },
@@ -248334,7 +257550,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 83.3,
             "oContact": 33.3,
             "chase": 42.9,
-            "chasePlus": 132.0,
+            "chasePlus": 131.0,
             "locationScore": 99.0,
             "stuffScore": 99.0
           },
@@ -248482,7 +257698,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 33.3,
             "oContact": 100.0,
             "chase": 42.9,
-            "chasePlus": 132.0,
+            "chasePlus": 131.0,
             "locationScore": 101.0,
             "stuffScore": 100.0
           },
@@ -248630,7 +257846,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 75.0,
             "oContact": 50.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 100.0,
             "stuffScore": 100.0
           },
@@ -248668,7 +257884,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 80.0,
             "oContact": 100.0,
             "chase": 20.0,
-            "chasePlus": 62.0,
+            "chasePlus": 61.0,
             "locationScore": 101.0,
             "stuffScore": 101.0
           }
@@ -248740,7 +257956,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 75.0,
             "oContact": 100.0,
             "chase": 20.0,
-            "chasePlus": 62.0,
+            "chasePlus": 61.0,
             "locationScore": 99.0,
             "stuffScore": 94.0
           },
@@ -248926,7 +258142,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 75.0,
             "oContact": 25.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 99.0,
             "stuffScore": 106.0
           },
@@ -248964,7 +258180,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 50.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 99.0,
             "stuffScore": 100.0
           },
@@ -249332,7 +258548,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 57.1,
             "oContact": 0.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 102.0,
             "stuffScore": 117.0
           },
@@ -249370,7 +258586,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 50.0,
             "chase": 66.7,
-            "chasePlus": 205.0,
+            "chasePlus": 204.0,
             "locationScore": 101.0,
             "stuffScore": 107.0
           },
@@ -249518,7 +258734,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 57.1,
             "oContact": 100.0,
             "chase": 20.0,
-            "chasePlus": 62.0,
+            "chasePlus": 61.0,
             "locationScore": 101.0,
             "stuffScore": 102.0
           },
@@ -249556,7 +258772,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 80.0,
             "chase": 55.6,
-            "chasePlus": 171.0,
+            "chasePlus": 170.0,
             "locationScore": 101.0,
             "stuffScore": 96.0
           },
@@ -249780,9 +258996,9 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 75.0,
             "oContact": 50.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 99.0,
-            "stuffScore": 104.0
+            "stuffScore": 103.0
           },
           {
             "pitchType": "カットボール",
@@ -249966,7 +259182,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 33.3,
             "oContact": 75.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 101.0,
             "stuffScore": 105.0
           },
@@ -250004,7 +259220,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 20.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 111.0
           },
@@ -250190,7 +259406,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 75.0,
             "oContact": 50.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 99.0,
             "stuffScore": 94.0
           },
@@ -250376,7 +259592,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 0.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 100.0,
             "stuffScore": 104.0
           },
@@ -250452,7 +259668,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 0.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 102.0
           },
@@ -250562,7 +259778,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 99.0,
             "stuffScore": 102.0
           },
@@ -250600,7 +259816,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 66.7,
             "chase": 75.0,
-            "chasePlus": 231.0,
+            "chasePlus": 230.0,
             "locationScore": 100.0,
             "stuffScore": 103.0
           },
@@ -250638,7 +259854,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 100.0,
             "stuffScore": 99.0
           }
@@ -250748,7 +259964,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 60.0,
             "oContact": 83.3,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 101.0,
             "stuffScore": 100.0
           },
@@ -251010,7 +260226,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 60.0,
             "chase": 71.4,
-            "chasePlus": 220.0,
+            "chasePlus": 219.0,
             "locationScore": 101.0,
             "stuffScore": 100.0
           },
@@ -251196,7 +260412,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 50.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 101.0,
             "stuffScore": 101.0
           },
@@ -251684,7 +260900,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 100.0,
             "chasePlus": 307.0,
             "locationScore": 102.0,
-            "stuffScore": 106.0
+            "stuffScore": 105.0
           },
           {
             "pitchType": "チェンジアップ",
@@ -251794,7 +261010,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 50.0,
             "chasePlus": 153.0,
             "locationScore": 101.0,
-            "stuffScore": 107.0
+            "stuffScore": 106.0
           },
           {
             "pitchType": "ストレート",
@@ -251832,7 +261048,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 54.5,
             "chasePlus": 167.0,
             "locationScore": 100.0,
-            "stuffScore": 111.0
+            "stuffScore": 110.0
           },
           {
             "pitchType": "フォーク",
@@ -252166,7 +261382,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 71.4,
             "chasePlus": 219.0,
             "locationScore": 100.0,
-            "stuffScore": 100.0
+            "stuffScore": 99.0
           },
           {
             "pitchType": "ストレート",
@@ -252986,7 +262202,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 50.0,
             "chasePlus": 153.0,
             "locationScore": 103.0,
-            "stuffScore": 108.0
+            "stuffScore": 107.0
           },
           {
             "pitchType": "フォーク",
@@ -254394,7 +263610,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 53.3,
             "chasePlus": 164.0,
             "locationScore": 101.0,
-            "stuffScore": 118.0
+            "stuffScore": 117.0
           },
           {
             "pitchType": "カーブ",
@@ -256100,7 +265316,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 81.8,
             "oContact": 50.0,
             "chase": 54.5,
-            "chasePlus": 168.0,
+            "chasePlus": 167.0,
             "locationScore": 103.0,
             "stuffScore": 100.0
           },
@@ -256176,7 +265392,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 33.3,
             "oContact": 50.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 101.0,
             "stuffScore": 101.0
           },
@@ -256472,7 +265688,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 0.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 102.0,
             "stuffScore": 103.0
           }
@@ -256694,7 +265910,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 37.5,
             "chasePlus": 115.0,
             "locationScore": 100.0,
-            "stuffScore": 103.0
+            "stuffScore": 102.0
           },
           {
             "pitchType": "カットボール",
@@ -256730,7 +265946,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 88.9,
             "oContact": 100.0,
             "chase": 57.1,
-            "chasePlus": 176.0,
+            "chasePlus": 175.0,
             "locationScore": 99.0,
             "stuffScore": 89.0
           },
@@ -256768,7 +265984,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 0.0,
             "chase": 20.0,
-            "chasePlus": 62.0,
+            "chasePlus": 61.0,
             "locationScore": 100.0,
             "stuffScore": 102.0
           }
@@ -256840,9 +266056,9 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 0.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 101.0,
-            "stuffScore": 98.0
+            "stuffScore": 97.0
           },
           {
             "pitchType": "ストレート",
@@ -256878,7 +266094,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 99.0,
             "stuffScore": 97.0
           }
@@ -256988,7 +266204,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 100.0,
             "stuffScore": 99.0
           },
@@ -257098,7 +266314,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 50.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 102.0,
             "stuffScore": 110.0
           },
@@ -257136,7 +266352,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 0.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 99.0,
             "stuffScore": 105.0
           },
@@ -257284,7 +266500,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 100.0,
             "chase": 20.0,
-            "chasePlus": 62.0,
+            "chasePlus": 61.0,
             "locationScore": 99.0,
             "stuffScore": 95.0
           }
@@ -257432,7 +266648,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 100.0,
             "chase": 57.1,
-            "chasePlus": 176.0,
+            "chasePlus": 175.0,
             "locationScore": 99.0,
             "stuffScore": 95.0
           },
@@ -257656,7 +266872,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 100.0,
             "stuffScore": 99.0
           }
@@ -257766,7 +266982,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 99.0
           },
@@ -257804,7 +267020,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 103.0
           }
@@ -257914,7 +267130,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 99.0,
             "stuffScore": 97.0
           },
@@ -257952,7 +267168,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 0.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 98.0,
             "stuffScore": 104.0
           }
@@ -258024,7 +267240,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 83.3,
             "oContact": 0.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 101.0,
             "stuffScore": 107.0
           },
@@ -258062,7 +267278,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 0.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 99.0,
             "stuffScore": 103.0
           },
@@ -258248,7 +267464,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 83.3,
             "oContact": 100.0,
             "chase": 20.0,
-            "chasePlus": 62.0,
+            "chasePlus": 61.0,
             "locationScore": 100.0,
             "stuffScore": 96.0
           },
@@ -258324,7 +267540,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 0.0,
             "chase": 20.0,
-            "chasePlus": 62.0,
+            "chasePlus": 61.0,
             "locationScore": 100.0,
             "stuffScore": 100.0
           },
@@ -258696,7 +267912,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 0.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 102.0,
             "stuffScore": 107.0
           }
@@ -259742,7 +268958,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 50.0,
             "chasePlus": 153.0,
             "locationScore": 98.0,
-            "stuffScore": 106.0
+            "stuffScore": 105.0
           }
         ]
       }
@@ -259852,7 +269068,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 50.0,
             "chasePlus": 153.0,
             "locationScore": 100.0,
-            "stuffScore": 103.0
+            "stuffScore": 102.0
           },
           {
             "pitchType": "スプリット",
@@ -263044,7 +272260,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 27.3,
             "chasePlus": 84.0,
             "locationScore": 101.0,
-            "stuffScore": 123.0
+            "stuffScore": 122.0
           },
           {
             "pitchType": "フォーク",
@@ -263266,7 +272482,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 62.5,
             "oContact": 37.5,
             "chase": 47.1,
-            "chasePlus": 145.0,
+            "chasePlus": 144.0,
             "locationScore": 101.0,
             "stuffScore": 105.0
           },
@@ -263342,7 +272558,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 60.0,
             "oContact": 66.7,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 102.0,
             "stuffScore": 100.0
           },
@@ -263418,7 +272634,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 50.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 101.0
           }
@@ -263490,7 +272706,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 75.0,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 101.0,
             "stuffScore": 96.0
           }
@@ -263562,7 +272778,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 60.0,
             "oContact": 0.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 102.0,
             "stuffScore": 110.0
           },
@@ -263710,7 +272926,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 99.0,
             "stuffScore": 94.0
           },
@@ -263786,7 +273002,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 0.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 103.0
           }
@@ -263858,7 +273074,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 70.0,
             "chase": 71.4,
-            "chasePlus": 220.0,
+            "chasePlus": 219.0,
             "locationScore": 103.0,
             "stuffScore": 113.0
           },
@@ -263896,7 +273112,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 57.1,
             "oContact": 33.3,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 102.0,
             "stuffScore": 104.0
           },
@@ -264048,7 +273264,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 97.0
           },
@@ -264158,7 +273374,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 100.0,
             "stuffScore": 99.0
           },
@@ -264196,7 +273412,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 98.0,
             "stuffScore": 98.0
           },
@@ -264458,7 +273674,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 0.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 99.0,
             "stuffScore": 102.0
           }
@@ -264606,7 +273822,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 66.7,
-            "chasePlus": 205.0,
+            "chasePlus": 204.0,
             "locationScore": 100.0,
             "stuffScore": 97.0
           },
@@ -264644,7 +273860,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 105.0
           }
@@ -264980,7 +274196,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 28.6,
             "chasePlus": 88.0,
             "locationScore": 102.0,
-            "stuffScore": 100.0
+            "stuffScore": 101.0
           },
           {
             "pitchType": "スライダー",
@@ -266243,7 +275459,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "oContact": 100.0,
             "chase": 66.7,
             "chasePlus": 204.0,
-            "locationScore": 101.0,
+            "locationScore": 100.0,
             "stuffScore": 97.0
           },
           {
@@ -267432,7 +276648,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 15.8,
             "chasePlus": 48.0,
             "locationScore": 102.0,
-            "stuffScore": 108.0
+            "stuffScore": 109.0
           },
           {
             "pitchType": "ナックルカーブ",
@@ -267693,7 +276909,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "oContact": null,
             "chase": 0.0,
             "chasePlus": 0.0,
-            "locationScore": 100.0,
+            "locationScore": 101.0,
             "stuffScore": 95.0
           },
           {
@@ -268662,7 +277878,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 23.1,
             "chasePlus": 71.0,
             "locationScore": 101.0,
-            "stuffScore": 100.0
+            "stuffScore": 99.0
           },
           {
             "pitchType": "ツーシーム",
@@ -268920,7 +278136,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 28.6,
             "chasePlus": 88.0,
             "locationScore": 101.0,
-            "stuffScore": 119.0
+            "stuffScore": 118.0
           },
           {
             "pitchType": "スライダー",
@@ -269362,7 +278578,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 75.0,
             "chase": 80.0,
-            "chasePlus": 246.0,
+            "chasePlus": 245.0,
             "locationScore": 102.0,
             "stuffScore": 95.0
           },
@@ -269400,7 +278616,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 50.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 97.0
           },
@@ -269510,7 +278726,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 99.0,
             "stuffScore": 98.0
           },
@@ -269548,7 +278764,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 50.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 99.0,
             "stuffScore": 104.0
           },
@@ -269734,9 +278950,9 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 0.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 99.0,
-            "stuffScore": 105.0
+            "stuffScore": 104.0
           },
           {
             "pitchType": "ストレート",
@@ -269844,7 +279060,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 60.0,
             "oContact": 100.0,
             "chase": 66.7,
-            "chasePlus": 205.0,
+            "chasePlus": 204.0,
             "locationScore": 101.0,
             "stuffScore": 109.0
           },
@@ -269882,7 +279098,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 50.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 101.0
           }
@@ -269954,7 +279170,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 101.0,
             "stuffScore": 97.0
           },
@@ -269992,7 +279208,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 0.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 100.0,
             "stuffScore": 102.0
           },
@@ -270140,7 +279356,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 69.0,
             "oContact": 80.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 100.0,
             "stuffScore": 102.0
           },
@@ -270254,7 +279470,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 50.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 104.0
           }
@@ -270328,7 +279544,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 40.0,
             "chasePlus": 123.0,
             "locationScore": 97.0,
-            "stuffScore": 101.0
+            "stuffScore": 100.0
           },
           {
             "pitchType": "フォーク",
@@ -270364,7 +279580,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 0.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 99.0,
             "stuffScore": 106.0
           },
@@ -270402,7 +279618,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 75.0,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 100.0,
             "stuffScore": 97.0
           }
@@ -270512,7 +279728,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 97.0,
             "stuffScore": 98.0
           }
@@ -270622,7 +279838,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 0.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 105.0
           },
@@ -270698,7 +279914,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 100.0,
             "stuffScore": 99.0
           }
@@ -270956,7 +280172,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 50.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 102.0
           },
@@ -271032,7 +280248,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 100.0
           }
@@ -271104,7 +280320,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 100.0,
             "chase": 20.0,
-            "chasePlus": 62.0,
+            "chasePlus": 61.0,
             "locationScore": 102.0,
             "stuffScore": 93.0
           },
@@ -271366,7 +280582,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 75.0,
             "oContact": 75.0,
             "chase": 57.1,
-            "chasePlus": 176.0,
+            "chasePlus": 175.0,
             "locationScore": 100.0,
             "stuffScore": 93.0
           },
@@ -271404,7 +280620,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 40.0,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 102.0,
             "stuffScore": 104.0
           }
@@ -271624,7 +280840,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 83.3,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 101.0,
             "stuffScore": 107.0
           },
@@ -271662,7 +280878,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 33.3,
             "oContact": 0.0,
             "chase": 60.0,
-            "chasePlus": 185.0,
+            "chasePlus": 184.0,
             "locationScore": 100.0,
             "stuffScore": 110.0
           },
@@ -272406,7 +281622,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 95.0
           },
@@ -272520,7 +281736,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 0.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 100.0,
             "stuffScore": 104.0
           }
@@ -272630,7 +281846,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 0.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 99.0,
             "stuffScore": 105.0
           },
@@ -272778,7 +281994,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 0.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 105.0
           }
@@ -273038,7 +282254,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 50.0,
             "chasePlus": 153.0,
             "locationScore": 100.0,
-            "stuffScore": 114.0
+            "stuffScore": 113.0
           },
           {
             "pitchType": "スプリット",
@@ -273972,7 +283188,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 33.3,
             "chasePlus": 102.0,
             "locationScore": 99.0,
-            "stuffScore": 100.0
+            "stuffScore": 99.0
           },
           {
             "pitchType": "チェンジアップ",
@@ -274120,7 +283336,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 30.0,
             "chasePlus": 92.0,
             "locationScore": 100.0,
-            "stuffScore": 120.0
+            "stuffScore": 119.0
           },
           {
             "pitchType": "フォーク",
@@ -274454,7 +283670,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 100.0,
             "chasePlus": 307.0,
             "locationScore": 101.0,
-            "stuffScore": 112.0
+            "stuffScore": 111.0
           },
           {
             "pitchType": "スライダー",
@@ -274715,7 +283931,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "oContact": 100.0,
             "chase": 100.0,
             "chasePlus": 307.0,
-            "locationScore": 100.0,
+            "locationScore": 101.0,
             "stuffScore": 99.0
           }
         ]
@@ -274825,7 +284041,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "oContact": 71.4,
             "chase": 43.8,
             "chasePlus": 134.0,
-            "locationScore": 99.0,
+            "locationScore": 100.0,
             "stuffScore": 94.0
           },
           {
@@ -274902,7 +284118,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 40.0,
             "chasePlus": 123.0,
             "locationScore": 100.0,
-            "stuffScore": 108.0
+            "stuffScore": 107.0
           }
         ]
       }
@@ -276792,7 +286008,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 0.0,
             "chasePlus": 0.0,
             "locationScore": 100.0,
-            "stuffScore": 101.0
+            "stuffScore": 100.0
           },
           {
             "pitchType": "ストレート",
@@ -276938,7 +286154,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 52.8,
             "oContact": 42.9,
             "chase": 43.8,
-            "chasePlus": 135.0,
+            "chasePlus": 134.0,
             "locationScore": 102.0,
             "stuffScore": 108.0
           },
@@ -276976,7 +286192,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 33.3,
             "oContact": 75.0,
             "chase": 44.4,
-            "chasePlus": 137.0,
+            "chasePlus": 136.0,
             "locationScore": 99.0,
             "stuffScore": 99.0
           },
@@ -277014,7 +286230,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 80.0,
             "oContact": 33.3,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 101.0,
             "stuffScore": 102.0
           },
@@ -277052,7 +286268,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 80.0,
             "oContact": 50.0,
             "chase": 44.4,
-            "chasePlus": 137.0,
+            "chasePlus": 136.0,
             "locationScore": 102.0,
             "stuffScore": 107.0
           },
@@ -277090,7 +286306,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 66.7,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 98.0,
             "stuffScore": 100.0
           },
@@ -277200,7 +286416,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 50.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 105.0
           },
@@ -277238,7 +286454,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 100.0,
             "chase": 20.0,
-            "chasePlus": 62.0,
+            "chasePlus": 61.0,
             "locationScore": 99.0,
             "stuffScore": 97.0
           },
@@ -277314,7 +286530,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 99.0
           }
@@ -277386,7 +286602,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 101.0,
             "stuffScore": 98.0
           },
@@ -277610,7 +286826,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 71.4,
-            "chasePlus": 220.0,
+            "chasePlus": 219.0,
             "locationScore": 100.0,
             "stuffScore": 93.0
           },
@@ -277648,7 +286864,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 101.0
           },
@@ -277758,7 +286974,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 63.6,
             "oContact": 70.0,
             "chase": 52.6,
-            "chasePlus": 162.0,
+            "chasePlus": 161.0,
             "locationScore": 102.0,
             "stuffScore": 109.0
           },
@@ -277796,7 +287012,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 68.4,
             "oContact": 30.0,
             "chase": 55.6,
-            "chasePlus": 171.0,
+            "chasePlus": 170.0,
             "locationScore": 101.0,
             "stuffScore": 122.0
           },
@@ -277872,7 +287088,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 75.0,
             "oContact": 33.3,
             "chase": 60.0,
-            "chasePlus": 185.0,
+            "chasePlus": 184.0,
             "locationScore": 101.0,
             "stuffScore": 104.0
           },
@@ -278058,7 +287274,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 57.1,
             "oContact": 84.6,
             "chase": 56.5,
-            "chasePlus": 174.0,
+            "chasePlus": 173.0,
             "locationScore": 99.0,
             "stuffScore": 90.0
           },
@@ -278096,9 +287312,9 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 60.0,
             "chase": 71.4,
-            "chasePlus": 220.0,
+            "chasePlus": 219.0,
             "locationScore": 100.0,
-            "stuffScore": 104.0
+            "stuffScore": 103.0
           },
           {
             "pitchType": "カーブ",
@@ -278282,7 +287498,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 57.1,
-            "chasePlus": 176.0,
+            "chasePlus": 175.0,
             "locationScore": 100.0,
             "stuffScore": 93.0
           },
@@ -278320,7 +287536,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 50.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 99.0,
             "stuffScore": 101.0
           },
@@ -278358,7 +287574,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 0.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 105.0
           }
@@ -278468,7 +287684,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 0.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 103.0,
             "stuffScore": 100.0
           },
@@ -278578,7 +287794,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 80.0,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 99.0,
             "stuffScore": 107.0
           },
@@ -278616,7 +287832,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 99.0,
             "stuffScore": 99.0
           },
@@ -278654,7 +287870,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 50.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 100.0,
             "stuffScore": 102.0
           }
@@ -278726,7 +287942,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 101.0,
             "stuffScore": 99.0
           },
@@ -278912,7 +288128,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 66.7,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 101.0,
             "stuffScore": 98.0
           },
@@ -278950,7 +288166,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 66.7,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 99.0
           },
@@ -278988,7 +288204,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 100.0,
             "chase": 66.7,
-            "chasePlus": 205.0,
+            "chasePlus": 204.0,
             "locationScore": 99.0,
             "stuffScore": 97.0
           },
@@ -279102,7 +288318,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 100.0,
             "stuffScore": 98.0
           },
@@ -279250,7 +288466,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 0.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 101.0
           },
@@ -279326,7 +288542,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 97.0,
             "stuffScore": 100.0
           }
@@ -279436,7 +288652,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 98.0
           },
@@ -279474,7 +288690,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 99.0,
             "stuffScore": 98.0
           },
@@ -279512,7 +288728,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 0.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 102.0,
             "stuffScore": 103.0
           }
@@ -279622,7 +288838,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 75.0,
             "oContact": 42.9,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 100.0
           },
@@ -279736,7 +288952,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 100.0
           },
@@ -279774,7 +288990,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 0.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 102.0,
             "stuffScore": 107.0
           },
@@ -279884,7 +289100,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 71.4,
             "oContact": 100.0,
             "chase": 20.0,
-            "chasePlus": 62.0,
+            "chasePlus": 61.0,
             "locationScore": 98.0,
             "stuffScore": 98.0
           },
@@ -279922,7 +289138,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 66.7,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 98.0
           },
@@ -280032,7 +289248,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 33.3,
             "oContact": 66.7,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 101.0,
             "stuffScore": 103.0
           }
@@ -280142,7 +289358,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 83.3,
             "oContact": 50.0,
             "chase": 42.9,
-            "chasePlus": 132.0,
+            "chasePlus": 131.0,
             "locationScore": 101.0,
             "stuffScore": 97.0
           },
@@ -280256,7 +289472,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 0.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 99.0,
             "stuffScore": 104.0
           },
@@ -280776,7 +289992,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 101.0,
             "stuffScore": 98.0
           },
@@ -280814,7 +290030,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 0.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 98.0,
             "stuffScore": 100.0
           }
@@ -280886,7 +290102,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 0.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 101.0,
             "stuffScore": 122.0
           },
@@ -280924,7 +290140,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 98.0
           },
@@ -281928,7 +291144,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": null,
             "chasePlus": null,
             "locationScore": 101.0,
-            "stuffScore": 103.0
+            "stuffScore": 102.0
           },
           {
             "pitchType": "スライダー",
@@ -282228,7 +291444,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 50.0,
             "chasePlus": 153.0,
             "locationScore": 97.0,
-            "stuffScore": 103.0
+            "stuffScore": 102.0
           },
           {
             "pitchType": "ストレート",
@@ -284849,7 +294065,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 0.0,
             "chasePlus": 0.0,
             "locationScore": 100.0,
-            "stuffScore": 103.0
+            "stuffScore": 104.0
           },
           {
             "pitchType": "スプリット",
@@ -286373,8 +295589,8 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 33.3,
             "chase": 60.0,
-            "chasePlus": 185.0,
-            "locationScore": 100.0,
+            "chasePlus": 184.0,
+            "locationScore": 99.0,
             "stuffScore": 107.0
           },
           {
@@ -286449,7 +295665,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 85.7,
             "oContact": 100.0,
             "chase": 66.7,
-            "chasePlus": 205.0,
+            "chasePlus": 204.0,
             "locationScore": 101.0,
             "stuffScore": 95.0
           }
@@ -286521,7 +295737,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 33.3,
             "oContact": 100.0,
             "chase": 66.7,
-            "chasePlus": 205.0,
+            "chasePlus": 204.0,
             "locationScore": 101.0,
             "stuffScore": 99.0
           },
@@ -286559,7 +295775,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 101.0
           },
@@ -286597,7 +295813,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 0.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 102.0,
             "stuffScore": 102.0
           },
@@ -286745,7 +295961,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 100.0,
             "chase": 20.0,
-            "chasePlus": 62.0,
+            "chasePlus": 61.0,
             "locationScore": 100.0,
             "stuffScore": 97.0
           },
@@ -286783,7 +295999,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 50.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 99.0,
             "stuffScore": 99.0
           },
@@ -286821,7 +296037,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 0.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 101.0
           },
@@ -286859,7 +296075,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 0.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 100.0,
             "stuffScore": 104.0
           }
@@ -286931,7 +296147,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 99.0,
             "stuffScore": 102.0
           },
@@ -286969,7 +296185,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 66.7,
-            "chasePlus": 205.0,
+            "chasePlus": 204.0,
             "locationScore": 103.0,
             "stuffScore": 95.0
           },
@@ -287193,7 +296409,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 98.0
           }
@@ -287303,8 +296519,8 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 80.0,
             "oContact": 33.3,
             "chase": 54.5,
-            "chasePlus": 168.0,
-            "locationScore": 105.0,
+            "chasePlus": 167.0,
+            "locationScore": 104.0,
             "stuffScore": 105.0
           },
           {
@@ -287379,7 +296595,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 40.0,
             "oContact": 50.0,
             "chase": 66.7,
-            "chasePlus": 205.0,
+            "chasePlus": 204.0,
             "locationScore": 100.0,
             "stuffScore": 102.0
           },
@@ -287455,7 +296671,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 101.0,
             "stuffScore": 98.0
           },
@@ -287641,7 +296857,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 0.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 107.0
           }
@@ -287713,7 +296929,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 57.1,
             "oContact": 0.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 101.0,
             "stuffScore": 103.0
           },
@@ -287789,7 +297005,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 0.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 101.0
           },
@@ -287937,7 +297153,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 33.3,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 101.0,
             "stuffScore": 105.0
           },
@@ -288123,7 +297339,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 61.5,
             "oContact": 66.7,
             "chase": 54.5,
-            "chasePlus": 168.0,
+            "chasePlus": 167.0,
             "locationScore": 101.0,
             "stuffScore": 101.0
           },
@@ -288161,7 +297377,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 71.4,
             "oContact": 100.0,
             "chase": 42.9,
-            "chasePlus": 132.0,
+            "chasePlus": 131.0,
             "locationScore": 100.0,
             "stuffScore": 88.0
           },
@@ -288347,7 +297563,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 33.3,
             "chase": 75.0,
-            "chasePlus": 231.0,
+            "chasePlus": 230.0,
             "locationScore": 101.0,
             "stuffScore": 109.0
           },
@@ -288457,7 +297673,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 99.0,
             "stuffScore": 96.0
           },
@@ -288719,7 +297935,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 75.0,
             "oContact": 0.0,
             "chase": 75.0,
-            "chasePlus": 231.0,
+            "chasePlus": 230.0,
             "locationScore": 102.0,
             "stuffScore": 109.0
           },
@@ -288829,7 +298045,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 41.7,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 101.0,
             "stuffScore": 105.0
           },
@@ -288867,7 +298083,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 80.0,
             "chase": 71.4,
-            "chasePlus": 220.0,
+            "chasePlus": 219.0,
             "locationScore": 100.0,
             "stuffScore": 98.0
           },
@@ -289201,7 +298417,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 33.3,
             "chase": 60.0,
-            "chasePlus": 185.0,
+            "chasePlus": 184.0,
             "locationScore": 101.0,
             "stuffScore": 102.0
           },
@@ -289351,7 +298567,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 40.0,
             "chasePlus": 123.0,
             "locationScore": 100.0,
-            "stuffScore": 106.0
+            "stuffScore": 107.0
           },
           {
             "pitchType": "スライダー",
@@ -289387,7 +298603,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 33.3,
             "oContact": 16.7,
             "chase": 54.5,
-            "chasePlus": 168.0,
+            "chasePlus": 167.0,
             "locationScore": 101.0,
             "stuffScore": 111.0
           },
@@ -289425,7 +298641,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 50.0,
             "chase": 60.0,
-            "chasePlus": 185.0,
+            "chasePlus": 184.0,
             "locationScore": 100.0,
             "stuffScore": 102.0
           },
@@ -289463,7 +298679,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 50.0,
             "chase": 66.7,
-            "chasePlus": 205.0,
+            "chasePlus": 204.0,
             "locationScore": 101.0,
             "stuffScore": 103.0
           },
@@ -289721,9 +298937,9 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 40.0,
             "oContact": 40.0,
             "chase": 55.6,
-            "chasePlus": 171.0,
+            "chasePlus": 170.0,
             "locationScore": 100.0,
-            "stuffScore": 113.0
+            "stuffScore": 114.0
           },
           {
             "pitchType": "スライダー",
@@ -289759,7 +298975,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 0.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 99.0,
             "stuffScore": 102.0
           },
@@ -290055,7 +299271,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 100.0,
             "chase": 20.0,
-            "chasePlus": 62.0,
+            "chasePlus": 61.0,
             "locationScore": 99.0,
             "stuffScore": 93.0
           },
@@ -290093,7 +299309,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 58.3,
             "oContact": 66.7,
             "chase": 60.0,
-            "chasePlus": 185.0,
+            "chasePlus": 184.0,
             "locationScore": 100.0,
             "stuffScore": 104.0
           },
@@ -291211,7 +300427,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 0.0,
             "chasePlus": 0.0,
             "locationScore": 99.0,
-            "stuffScore": 105.0
+            "stuffScore": 106.0
           },
           {
             "pitchType": "スライダー",
@@ -291883,7 +301099,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 33.3,
             "chasePlus": 102.0,
             "locationScore": 102.0,
-            "stuffScore": 101.0
+            "stuffScore": 100.0
           },
           {
             "pitchType": "スプリット",
@@ -292293,7 +301509,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 30.8,
             "chasePlus": 94.0,
             "locationScore": 94.0,
-            "stuffScore": 97.0
+            "stuffScore": 96.0
           },
           {
             "pitchType": "チェンジアップ",
@@ -293443,7 +302659,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 30.0,
             "chasePlus": 92.0,
             "locationScore": 99.0,
-            "stuffScore": 94.0
+            "stuffScore": 93.0
           },
           {
             "pitchType": "スライダー",
@@ -293963,7 +303179,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 9.1,
             "chasePlus": 28.0,
             "locationScore": 99.0,
-            "stuffScore": 96.0
+            "stuffScore": 95.0
           },
           {
             "pitchType": "カットボール",
@@ -294487,7 +303703,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": null,
             "chasePlus": null,
             "locationScore": 101.0,
-            "stuffScore": 101.0
+            "stuffScore": 100.0
           },
           {
             "pitchType": "カットボール",
@@ -294633,7 +303849,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 87.5,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 99.0,
             "stuffScore": 92.0
           },
@@ -294781,7 +303997,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 0.0,
             "chase": 75.0,
-            "chasePlus": 231.0,
+            "chasePlus": 230.0,
             "locationScore": 101.0,
             "stuffScore": 109.0
           },
@@ -294968,7 +304184,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "oContact": null,
             "chase": 0.0,
             "chasePlus": 0.0,
-            "locationScore": 98.0,
+            "locationScore": 99.0,
             "stuffScore": 97.0
           }
         ]
@@ -295111,7 +304327,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 0.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 101.0,
             "stuffScore": 109.0
           },
@@ -295335,7 +304551,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 100.0,
             "stuffScore": 93.0
           },
@@ -295449,7 +304665,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 99.0,
             "stuffScore": 96.0
           }
@@ -295521,7 +304737,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 60.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 99.0,
             "stuffScore": 106.0
           },
@@ -295707,7 +304923,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 100.0,
             "chase": 66.7,
-            "chasePlus": 205.0,
+            "chasePlus": 204.0,
             "locationScore": 101.0,
             "stuffScore": 101.0
           },
@@ -295745,7 +304961,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 33.3,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 100.0
           },
@@ -295893,7 +305109,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 60.0,
             "chase": 66.7,
-            "chasePlus": 205.0,
+            "chasePlus": 204.0,
             "locationScore": 100.0,
             "stuffScore": 102.0
           },
@@ -296155,7 +305371,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 100.0,
             "chase": 66.7,
-            "chasePlus": 205.0,
+            "chasePlus": 204.0,
             "locationScore": 99.0,
             "stuffScore": 99.0
           },
@@ -296193,7 +305409,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 50.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 100.0,
             "stuffScore": 103.0
           },
@@ -296231,7 +305447,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 99.0
           }
@@ -296303,7 +305519,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 58.8,
             "oContact": 75.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 101.0,
             "stuffScore": 101.0
           },
@@ -296455,7 +305671,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 100.0,
             "chase": 20.0,
-            "chasePlus": 62.0,
+            "chasePlus": 61.0,
             "locationScore": 100.0,
             "stuffScore": 98.0
           },
@@ -296565,7 +305781,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 0.0,
             "chase": 66.7,
-            "chasePlus": 205.0,
+            "chasePlus": 204.0,
             "locationScore": 101.0,
             "stuffScore": 108.0
           },
@@ -296641,7 +305857,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 102.0
           },
@@ -296751,7 +305967,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 100.0,
             "chase": 42.9,
-            "chasePlus": 132.0,
+            "chasePlus": 131.0,
             "locationScore": 100.0,
             "stuffScore": 96.0
           },
@@ -296789,7 +306005,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 75.0,
             "oContact": 66.7,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 102.0,
             "stuffScore": 99.0
           },
@@ -297162,7 +306378,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "oContact": null,
             "chase": 0.0,
             "chasePlus": 0.0,
-            "locationScore": 99.0,
+            "locationScore": 100.0,
             "stuffScore": 99.0
           },
           {
@@ -297683,7 +306899,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 28.6,
             "chasePlus": 88.0,
             "locationScore": 100.0,
-            "stuffScore": 116.0
+            "stuffScore": 115.0
           },
           {
             "pitchType": "スライダー",
@@ -298903,7 +308119,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 99.0,
             "stuffScore": 95.0
           },
@@ -298941,7 +308157,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 99.0,
             "stuffScore": 99.0
           },
@@ -299165,7 +308381,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 41.7,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 103.0,
             "stuffScore": 101.0
           },
@@ -299275,7 +308491,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 71.4,
             "oContact": 50.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 101.0,
             "stuffScore": 106.0
           },
@@ -299313,7 +308529,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 0.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 102.0,
             "stuffScore": 104.0
           },
@@ -301437,7 +310653,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 36.4,
             "chasePlus": 112.0,
             "locationScore": 99.0,
-            "stuffScore": 102.0
+            "stuffScore": 101.0
           },
           {
             "pitchType": "スプリット",
@@ -303255,7 +312471,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 33.3,
             "chasePlus": 102.0,
             "locationScore": 101.0,
-            "stuffScore": 97.0
+            "stuffScore": 98.0
           },
           {
             "pitchType": "カーブ",
@@ -303661,7 +312877,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 29.4,
             "chasePlus": 90.0,
             "locationScore": 98.0,
-            "stuffScore": 98.0
+            "stuffScore": 97.0
           },
           {
             "pitchType": "ツーシーム",
@@ -304257,7 +313473,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 0.0,
             "chasePlus": 0.0,
             "locationScore": 100.0,
-            "stuffScore": 104.0
+            "stuffScore": 103.0
           },
           {
             "pitchType": "ツーシーム",
@@ -304775,7 +313991,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 40.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 104.0
           },
@@ -304813,7 +314029,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 33.3,
             "chase": 42.9,
-            "chasePlus": 132.0,
+            "chasePlus": 131.0,
             "locationScore": 100.0,
             "stuffScore": 105.0
           },
@@ -304851,7 +314067,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 80.0,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 94.0
           },
@@ -304889,7 +314105,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 101.0,
             "stuffScore": 96.0
           },
@@ -304999,7 +314215,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 66.7,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 100.0,
             "stuffScore": 100.0
           },
@@ -305075,7 +314291,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 97.0,
             "stuffScore": 99.0
           },
@@ -305261,7 +314477,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 100.0,
             "stuffScore": 99.0
           }
@@ -305743,7 +314959,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 50.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 100.0,
             "stuffScore": 105.0
           },
@@ -305781,7 +314997,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 20.0,
-            "chasePlus": 62.0,
+            "chasePlus": 61.0,
             "locationScore": 100.0,
             "stuffScore": 97.0
           },
@@ -305819,7 +315035,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 0.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 101.0,
             "stuffScore": 105.0
           }
@@ -305891,7 +315107,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 75.0,
             "oContact": 33.3,
             "chase": 42.9,
-            "chasePlus": 132.0,
+            "chasePlus": 131.0,
             "locationScore": 100.0,
             "stuffScore": 100.0
           },
@@ -305929,7 +315145,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 0.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 97.0,
             "stuffScore": 105.0
           },
@@ -305967,7 +315183,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 99.0,
             "stuffScore": 99.0
           },
@@ -306077,7 +315293,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 33.3,
             "oContact": 50.0,
             "chase": 57.1,
-            "chasePlus": 176.0,
+            "chasePlus": 175.0,
             "locationScore": 100.0,
             "stuffScore": 107.0
           },
@@ -306225,7 +315441,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 61.5,
             "oContact": 100.0,
             "chase": 44.4,
-            "chasePlus": 137.0,
+            "chasePlus": 136.0,
             "locationScore": 100.0,
             "stuffScore": 92.0
           },
@@ -306339,7 +315555,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 66.7,
-            "chasePlus": 205.0,
+            "chasePlus": 204.0,
             "locationScore": 100.0,
             "stuffScore": 99.0
           },
@@ -306377,7 +315593,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 99.0,
             "stuffScore": 96.0
           }
@@ -306487,7 +315703,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 20.0,
-            "chasePlus": 62.0,
+            "chasePlus": 61.0,
             "locationScore": 99.0,
             "stuffScore": 98.0
           },
@@ -306783,7 +315999,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 20.0,
             "chase": 71.4,
-            "chasePlus": 220.0,
+            "chasePlus": 219.0,
             "locationScore": 100.0,
             "stuffScore": 108.0
           },
@@ -306821,7 +316037,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 50.0,
             "chase": 66.7,
-            "chasePlus": 205.0,
+            "chasePlus": 204.0,
             "locationScore": 101.0,
             "stuffScore": 111.0
           },
@@ -307117,7 +316333,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 100.0,
             "chase": 20.0,
-            "chasePlus": 62.0,
+            "chasePlus": 61.0,
             "locationScore": 100.0,
             "stuffScore": 106.0
           },
@@ -307155,7 +316371,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 102.0,
             "stuffScore": 100.0
           },
@@ -307265,7 +316481,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 66.7,
-            "chasePlus": 205.0,
+            "chasePlus": 204.0,
             "locationScore": 99.0,
             "stuffScore": 95.0
           },
@@ -307341,7 +316557,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 50.0,
             "chase": 66.7,
-            "chasePlus": 205.0,
+            "chasePlus": 204.0,
             "locationScore": 100.0,
             "stuffScore": 100.0
           }
@@ -307413,7 +316629,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 71.4,
             "oContact": 50.0,
             "chase": 42.9,
-            "chasePlus": 132.0,
+            "chasePlus": 131.0,
             "locationScore": 101.0,
             "stuffScore": 97.0
           },
@@ -307451,7 +316667,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 69.2,
             "oContact": 75.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 99.0,
             "stuffScore": 101.0
           },
@@ -307489,7 +316705,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 40.0,
             "chase": 71.4,
-            "chasePlus": 220.0,
+            "chasePlus": 219.0,
             "locationScore": 98.0,
             "stuffScore": 102.0
           },
@@ -307603,7 +316819,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 0.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 99.0,
             "stuffScore": 101.0
           },
@@ -307861,7 +317077,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 80.0,
             "oContact": 100.0,
             "chase": 66.7,
-            "chasePlus": 205.0,
+            "chasePlus": 204.0,
             "locationScore": 101.0,
             "stuffScore": 98.0
           },
@@ -308047,7 +317263,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 83.3,
             "oContact": 0.0,
             "chase": 44.4,
-            "chasePlus": 137.0,
+            "chasePlus": 136.0,
             "locationScore": 100.0,
             "stuffScore": 109.0
           },
@@ -308085,7 +317301,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 75.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 99.0,
             "stuffScore": 96.0
           },
@@ -308161,7 +317377,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 99.0,
             "stuffScore": 95.0
           },
@@ -308309,7 +317525,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 50.0,
             "chase": 66.7,
-            "chasePlus": 205.0,
+            "chasePlus": 204.0,
             "locationScore": 101.0,
             "stuffScore": 105.0
           },
@@ -308419,7 +317635,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 40.0,
             "oContact": 0.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 101.0,
             "stuffScore": 111.0
           },
@@ -308457,7 +317673,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 102.0,
             "stuffScore": 99.0
           }
@@ -308567,7 +317783,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 0.0,
             "chase": 66.7,
-            "chasePlus": 205.0,
+            "chasePlus": 204.0,
             "locationScore": 99.0,
             "stuffScore": 104.0
           },
@@ -309049,7 +318265,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 33.3,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 101.0,
             "stuffScore": 99.0
           }
@@ -309231,7 +318447,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 97.0
           },
@@ -309532,7 +318748,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "oContact": null,
             "chase": null,
             "chasePlus": null,
-            "locationScore": 100.0,
+            "locationScore": 99.0,
             "stuffScore": 97.0
           },
           {
@@ -309679,7 +318895,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 101.0,
             "stuffScore": 101.0
           },
@@ -309717,7 +318933,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 100.0,
             "stuffScore": 98.0
           },
@@ -309829,7 +319045,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 40.0,
             "chasePlus": 123.0,
             "locationScore": 100.0,
-            "stuffScore": 104.0
+            "stuffScore": 105.0
           },
           {
             "pitchType": "ストレート",
@@ -310408,7 +319624,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": null,
             "chasePlus": null,
             "locationScore": 101.0,
-            "stuffScore": 104.0
+            "stuffScore": 103.0
           }
         ]
       }
@@ -310890,7 +320106,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 25.0,
             "chasePlus": 77.0,
             "locationScore": 101.0,
-            "stuffScore": 112.0
+            "stuffScore": 111.0
           },
           {
             "pitchType": "フォーク",
@@ -310928,7 +320144,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 33.3,
             "chasePlus": 102.0,
             "locationScore": 99.0,
-            "stuffScore": 102.0
+            "stuffScore": 101.0
           }
         ]
       }
@@ -312731,7 +321947,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 75.0,
             "chase": 44.4,
-            "chasePlus": 137.0,
+            "chasePlus": 136.0,
             "locationScore": 98.0,
             "stuffScore": 99.0
           },
@@ -312917,7 +322133,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 66.7,
             "chase": 75.0,
-            "chasePlus": 231.0,
+            "chasePlus": 230.0,
             "locationScore": 100.0,
             "stuffScore": 97.0
           },
@@ -312955,7 +322171,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 99.0,
             "stuffScore": 97.0
           },
@@ -312993,7 +322209,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 0.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 106.0
           }
@@ -313065,9 +322281,9 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 50.0,
             "chase": 80.0,
-            "chasePlus": 246.0,
+            "chasePlus": 245.0,
             "locationScore": 102.0,
-            "stuffScore": 102.0
+            "stuffScore": 103.0
           },
           {
             "pitchType": "ストレート",
@@ -313103,7 +322319,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 95.0
           },
@@ -313141,7 +322357,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 101.0
           },
@@ -313251,7 +322467,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 75.8,
             "oContact": 77.8,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 100.0,
             "stuffScore": 119.0
           },
@@ -313289,9 +322505,9 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 55.6,
             "oContact": 11.1,
             "chase": 64.3,
-            "chasePlus": 198.0,
+            "chasePlus": 197.0,
             "locationScore": 102.0,
-            "stuffScore": 121.0
+            "stuffScore": 120.0
           },
           {
             "pitchType": "スライダー",
@@ -313365,7 +322581,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 100.0,
             "stuffScore": 99.0
           }
@@ -313475,7 +322691,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 0.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 100.0,
             "stuffScore": 103.0
           },
@@ -313513,7 +322729,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 0.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 101.0,
             "stuffScore": 112.0
           }
@@ -313661,7 +322877,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 28.6,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 119.0
           },
@@ -313737,7 +322953,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 99.0
           }
@@ -313919,7 +323135,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 101.0,
             "stuffScore": 104.0
           },
@@ -313957,7 +323173,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 0.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 99.0,
             "stuffScore": 100.0
           },
@@ -313995,7 +323211,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 0.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 103.0
           },
@@ -314181,7 +323397,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 0.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 103.0
           }
@@ -314363,7 +323579,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 33.3,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 101.0,
             "stuffScore": 98.0
           },
@@ -314401,7 +323617,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 50.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 101.0,
             "stuffScore": 105.0
           },
@@ -314439,7 +323655,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 0.0,
             "chase": 66.7,
-            "chasePlus": 205.0,
+            "chasePlus": 204.0,
             "locationScore": 100.0,
             "stuffScore": 103.0
           }
@@ -314511,7 +323727,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 61.3,
             "oContact": 0.0,
             "chase": 6.7,
-            "chasePlus": 21.0,
+            "chasePlus": 20.0,
             "locationScore": 101.0,
             "stuffScore": 102.0
           },
@@ -314551,7 +323767,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 36.4,
             "chasePlus": 112.0,
             "locationScore": 99.0,
-            "stuffScore": 100.0
+            "stuffScore": 99.0
           },
           {
             "pitchType": "チェンジアップ",
@@ -314845,7 +324061,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 98.0,
             "stuffScore": 97.0
           },
@@ -314955,7 +324171,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 25.0,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 102.0,
             "stuffScore": 108.0
           },
@@ -314993,7 +324209,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 99.0,
             "stuffScore": 98.0
           },
@@ -315179,7 +324395,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 83.3,
             "oContact": 50.0,
             "chase": 44.4,
-            "chasePlus": 137.0,
+            "chasePlus": 136.0,
             "locationScore": 100.0,
             "stuffScore": 97.0
           },
@@ -315217,7 +324433,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 28.6,
             "oContact": 0.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 102.0,
             "stuffScore": 108.0
           },
@@ -315255,7 +324471,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 101.0,
             "stuffScore": 98.0
           },
@@ -315479,7 +324695,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 80.0,
             "oContact": 50.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 105.0
           },
@@ -315813,7 +325029,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 99.0,
             "stuffScore": 97.0
           },
@@ -316299,7 +325515,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 102.0,
             "stuffScore": 102.0
           },
@@ -316595,7 +325811,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 50.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 99.0,
             "stuffScore": 101.0
           }
@@ -318326,7 +327542,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 11.1,
             "chasePlus": 34.0,
             "locationScore": 98.0,
-            "stuffScore": 98.0
+            "stuffScore": 97.0
           },
           {
             "pitchType": "カットボール",
@@ -319294,7 +328510,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 50.0,
             "chasePlus": 153.0,
             "locationScore": 100.0,
-            "stuffScore": 102.0
+            "stuffScore": 101.0
           },
           {
             "pitchType": "ストレート",
@@ -319848,7 +329064,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 20.8,
             "chasePlus": 64.0,
             "locationScore": 101.0,
-            "stuffScore": 99.0
+            "stuffScore": 98.0
           },
           {
             "pitchType": "カーブ",
@@ -320223,7 +329439,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "oContact": null,
             "chase": 0.0,
             "chasePlus": 0.0,
-            "locationScore": 99.0,
+            "locationScore": 100.0,
             "stuffScore": 97.0
           },
           {
@@ -320891,7 +330107,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "oContact": 20.0,
             "chase": 62.5,
             "chasePlus": 192.0,
-            "locationScore": 101.0,
+            "locationScore": 100.0,
             "stuffScore": 107.0
           },
           {
@@ -320967,7 +330183,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "oContact": null,
             "chase": 0.0,
             "chasePlus": 0.0,
-            "locationScore": 101.0,
+            "locationScore": 100.0,
             "stuffScore": 97.0
           },
           {
@@ -321630,7 +330846,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 28.6,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 101.0,
             "stuffScore": 101.0
           },
@@ -321668,7 +330884,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 0.0,
             "chase": 55.6,
-            "chasePlus": 171.0,
+            "chasePlus": 170.0,
             "locationScore": 101.0,
             "stuffScore": 122.0
           },
@@ -321744,7 +330960,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 96.0
           },
@@ -322002,7 +331218,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 60.0,
             "oContact": 50.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 103.0
           },
@@ -322040,7 +331256,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 0.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 105.0
           },
@@ -322150,7 +331366,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 61.1,
             "oContact": 71.4,
             "chase": 41.2,
-            "chasePlus": 127.0,
+            "chasePlus": 126.0,
             "locationScore": 100.0,
             "stuffScore": 96.0
           },
@@ -322188,7 +331404,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 90.0,
             "oContact": 33.3,
             "chase": 60.0,
-            "chasePlus": 185.0,
+            "chasePlus": 184.0,
             "locationScore": 101.0,
             "stuffScore": 116.0
           },
@@ -322226,7 +331442,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 57.1,
             "oContact": 75.0,
             "chase": 66.7,
-            "chasePlus": 205.0,
+            "chasePlus": 204.0,
             "locationScore": 101.0,
             "stuffScore": 101.0
           },
@@ -322264,7 +331480,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 60.0,
             "oContact": 50.0,
             "chase": 66.7,
-            "chasePlus": 205.0,
+            "chasePlus": 204.0,
             "locationScore": 100.0,
             "stuffScore": 106.0
           }
@@ -322374,7 +331590,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 0.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 102.0
           },
@@ -322450,7 +331666,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 99.0,
             "stuffScore": 98.0
           }
@@ -322560,9 +331776,9 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 0.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 101.0,
-            "stuffScore": 106.0
+            "stuffScore": 107.0
           }
         ]
       }
@@ -322708,7 +331924,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 0.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 100.0,
             "stuffScore": 103.0
           },
@@ -322746,7 +331962,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 0.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 102.0,
             "stuffScore": 105.0
           }
@@ -322818,7 +332034,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 62.5,
             "oContact": 75.0,
             "chase": 20.0,
-            "chasePlus": 62.0,
+            "chasePlus": 61.0,
             "locationScore": 99.0,
             "stuffScore": 94.0
           },
@@ -322856,7 +332072,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 80.0,
             "oContact": 55.6,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 101.0,
             "stuffScore": 99.0
           },
@@ -322894,7 +332110,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 80.0,
             "oContact": 100.0,
             "chase": 20.0,
-            "chasePlus": 62.0,
+            "chasePlus": 61.0,
             "locationScore": 98.0,
             "stuffScore": 88.0
           }
@@ -323152,7 +332368,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 0.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 107.0
           },
@@ -323228,8 +332444,8 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 0.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
-            "locationScore": 100.0,
+            "chasePlus": 307.0,
+            "locationScore": 101.0,
             "stuffScore": 103.0
           }
         ]
@@ -323300,7 +332516,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 47.4,
             "oContact": 20.0,
             "chase": 66.7,
-            "chasePlus": 205.0,
+            "chasePlus": 204.0,
             "locationScore": 101.0,
             "stuffScore": 112.0
           },
@@ -323376,7 +332592,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 66.7,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 101.0,
             "stuffScore": 101.0
           },
@@ -323452,7 +332668,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 50.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 101.0
           }
@@ -323524,7 +332740,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 60.0,
             "oContact": 100.0,
             "chase": 66.7,
-            "chasePlus": 205.0,
+            "chasePlus": 204.0,
             "locationScore": 102.0,
             "stuffScore": 96.0
           },
@@ -323710,7 +332926,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 63.6,
             "oContact": 70.0,
             "chase": 47.6,
-            "chasePlus": 147.0,
+            "chasePlus": 146.0,
             "locationScore": 99.0,
             "stuffScore": 108.0
           },
@@ -323824,7 +333040,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 40.0,
             "oContact": 50.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 103.0
           },
@@ -323862,7 +333078,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 101.0,
             "stuffScore": 98.0
           }
@@ -323972,7 +333188,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 99.0,
             "stuffScore": 97.0
           },
@@ -324120,7 +333336,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 99.0,
             "stuffScore": 98.0
           },
@@ -324268,7 +333484,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 85.7,
             "oContact": 75.0,
             "chase": 57.1,
-            "chasePlus": 176.0,
+            "chasePlus": 175.0,
             "locationScore": 100.0,
             "stuffScore": 108.0
           },
@@ -324344,7 +333560,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 100.0,
             "stuffScore": 99.0
           }
@@ -324526,7 +333742,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 75.0,
             "chase": 19.0,
-            "chasePlus": 59.0,
+            "chasePlus": 58.0,
             "locationScore": 99.0,
             "stuffScore": 90.0
           },
@@ -324784,7 +334000,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 100.0,
             "stuffScore": 98.0
           },
@@ -324860,7 +334076,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 98.0,
             "stuffScore": 98.0
           },
@@ -324898,7 +334114,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 102.0,
             "stuffScore": 101.0
           }
@@ -325902,7 +335118,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 0.0,
             "chasePlus": 0.0,
             "locationScore": 100.0,
-            "stuffScore": 108.0
+            "stuffScore": 107.0
           },
           {
             "pitchType": "スライダー",
@@ -326650,7 +335866,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 0.0,
             "chasePlus": 0.0,
             "locationScore": 99.0,
-            "stuffScore": 99.0
+            "stuffScore": 100.0
           },
           {
             "pitchType": "スライダー",
@@ -326984,7 +336200,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 11.1,
             "chasePlus": 34.0,
             "locationScore": 98.0,
-            "stuffScore": 94.0
+            "stuffScore": 93.0
           }
         ]
       }
@@ -327804,7 +337020,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": null,
             "chasePlus": null,
             "locationScore": 101.0,
-            "stuffScore": 108.0
+            "stuffScore": 109.0
           }
         ]
       }
@@ -327875,7 +337091,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "oContact": 66.7,
             "chase": 50.0,
             "chasePlus": 153.0,
-            "locationScore": 99.0,
+            "locationScore": 100.0,
             "stuffScore": 107.0
           },
           {
@@ -329617,7 +338833,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "oContact": null,
             "chase": 0.0,
             "chasePlus": 0.0,
-            "locationScore": 100.0,
+            "locationScore": 99.0,
             "stuffScore": 96.0
           },
           {
@@ -329840,7 +339056,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 0.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 100.0,
             "stuffScore": 106.0
           },
@@ -329878,8 +339094,8 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 80.0,
             "oContact": 0.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
-            "locationScore": 101.0,
+            "chasePlus": 153.0,
+            "locationScore": 102.0,
             "stuffScore": 99.0
           }
         ]
@@ -329950,7 +339166,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 100.0,
             "chase": 66.7,
-            "chasePlus": 205.0,
+            "chasePlus": 204.0,
             "locationScore": 101.0,
             "stuffScore": 97.0
           },
@@ -330136,7 +339352,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 75.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 99.0,
             "stuffScore": 99.0
           },
@@ -330326,7 +339542,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 99.0
           }
@@ -330584,7 +339800,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 100.0,
             "chase": 20.0,
-            "chasePlus": 62.0,
+            "chasePlus": 61.0,
             "locationScore": 99.0,
             "stuffScore": 96.0
           },
@@ -330622,7 +339838,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 99.0,
             "stuffScore": 96.0
           },
@@ -330880,7 +340096,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 0.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 102.0,
             "stuffScore": 112.0
           },
@@ -331066,7 +340282,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 75.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 90.0
           },
@@ -331104,7 +340320,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 40.0,
             "oContact": 50.0,
             "chase": 66.7,
-            "chasePlus": 205.0,
+            "chasePlus": 204.0,
             "locationScore": 102.0,
             "stuffScore": 104.0
           },
@@ -331142,7 +340358,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 99.0,
             "stuffScore": 96.0
           },
@@ -331328,7 +340544,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 33.3,
             "oContact": 50.0,
             "chase": 80.0,
-            "chasePlus": 246.0,
+            "chasePlus": 245.0,
             "locationScore": 101.0,
             "stuffScore": 103.0
           },
@@ -331514,7 +340730,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 75.0,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 100.0,
             "stuffScore": 99.0
           },
@@ -331552,7 +340768,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 0.0,
             "chase": 42.9,
-            "chasePlus": 132.0,
+            "chasePlus": 131.0,
             "locationScore": 99.0,
             "stuffScore": 105.0
           }
@@ -331624,7 +340840,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 101.0,
             "stuffScore": 97.0
           },
@@ -331700,7 +340916,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 0.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 105.0
           }
@@ -331996,7 +341212,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 66.7,
-            "chasePlus": 205.0,
+            "chasePlus": 204.0,
             "locationScore": 101.0,
             "stuffScore": 100.0
           },
@@ -332144,7 +341360,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 97.0
           },
@@ -332292,7 +341508,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 12.5,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 110.0
           },
@@ -332330,7 +341546,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 58.3,
             "oContact": 100.0,
             "chase": 20.0,
-            "chasePlus": 62.0,
+            "chasePlus": 61.0,
             "locationScore": 99.0,
             "stuffScore": 97.0
           },
@@ -332440,7 +341656,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 0.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 100.0,
             "stuffScore": 108.0
           },
@@ -332588,7 +341804,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 75.0,
             "chase": 66.7,
-            "chasePlus": 205.0,
+            "chasePlus": 204.0,
             "locationScore": 100.0,
             "stuffScore": 98.0
           },
@@ -332664,7 +341880,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 66.7,
             "chase": 60.0,
-            "chasePlus": 185.0,
+            "chasePlus": 184.0,
             "locationScore": 101.0,
             "stuffScore": 100.0
           }
@@ -332998,7 +342214,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 0.0,
             "chase": 20.0,
-            "chasePlus": 62.0,
+            "chasePlus": 61.0,
             "locationScore": 100.0,
             "stuffScore": 99.0
           },
@@ -333108,7 +342324,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 33.3,
             "oContact": 66.7,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 103.0
           },
@@ -333222,7 +342438,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 99.0,
             "stuffScore": 99.0
           }
@@ -333294,7 +342510,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 101.0,
             "stuffScore": 99.0
           },
@@ -333332,7 +342548,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 0.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 101.0,
             "stuffScore": 100.0
           },
@@ -333520,7 +342736,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 37.5,
             "chasePlus": 115.0,
             "locationScore": 99.0,
-            "stuffScore": 99.0
+            "stuffScore": 100.0
           },
           {
             "pitchType": "カーブ",
@@ -333704,7 +342920,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 100.0,
             "chase": 20.0,
-            "chasePlus": 62.0,
+            "chasePlus": 61.0,
             "locationScore": 98.0,
             "stuffScore": 99.0
           },
@@ -333742,7 +342958,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 0.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 99.0,
             "stuffScore": 102.0
           },
@@ -333780,7 +342996,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 0.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 101.0
           }
@@ -333852,7 +343068,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 100.0,
             "chase": 41.2,
-            "chasePlus": 127.0,
+            "chasePlus": 126.0,
             "locationScore": 100.0,
             "stuffScore": 105.0
           },
@@ -333890,7 +343106,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 53.8,
             "oContact": 33.3,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 101.0,
             "stuffScore": 110.0
           },
@@ -333928,7 +343144,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 42.9,
             "oContact": 50.0,
             "chase": 66.7,
-            "chasePlus": 205.0,
+            "chasePlus": 204.0,
             "locationScore": 101.0,
             "stuffScore": 108.0
           },
@@ -334006,7 +343222,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 36.4,
             "chasePlus": 112.0,
             "locationScore": 100.0,
-            "stuffScore": 103.0
+            "stuffScore": 102.0
           },
           {
             "pitchType": "カットボール",
@@ -334152,7 +343368,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 100.0,
             "chase": 20.0,
-            "chasePlus": 62.0,
+            "chasePlus": 61.0,
             "locationScore": 98.0,
             "stuffScore": 96.0
           },
@@ -334190,7 +343406,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 100.0
           },
@@ -334228,7 +343444,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 66.7,
-            "chasePlus": 205.0,
+            "chasePlus": 204.0,
             "locationScore": 97.0,
             "stuffScore": 97.0
           }
@@ -334300,7 +343516,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 40.0,
             "oContact": 33.3,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 102.0
           },
@@ -334338,7 +343554,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 33.3,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 100.0,
             "stuffScore": 105.0
           },
@@ -334376,7 +343592,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 100.0,
             "stuffScore": 99.0
           },
@@ -334524,7 +343740,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 0.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 99.0,
             "stuffScore": 102.0
           },
@@ -334748,7 +343964,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 100.0,
             "chase": 20.0,
-            "chasePlus": 62.0,
+            "chasePlus": 61.0,
             "locationScore": 99.0,
             "stuffScore": 100.0
           },
@@ -334788,7 +344004,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 25.0,
             "chasePlus": 77.0,
             "locationScore": 97.0,
-            "stuffScore": 97.0
+            "stuffScore": 98.0
           },
           {
             "pitchType": "スライダー",
@@ -334934,7 +344150,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 100.0,
             "chase": 20.0,
-            "chasePlus": 62.0,
+            "chasePlus": 61.0,
             "locationScore": 100.0,
             "stuffScore": 95.0
           },
@@ -335120,7 +344336,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 60.0,
             "oContact": 80.0,
             "chase": 55.6,
-            "chasePlus": 171.0,
+            "chasePlus": 170.0,
             "locationScore": 99.0,
             "stuffScore": 100.0
           },
@@ -335159,7 +344375,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "oContact": null,
             "chase": 0.0,
             "chasePlus": 0.0,
-            "locationScore": 97.0,
+            "locationScore": 98.0,
             "stuffScore": 99.0
           },
           {
@@ -335196,7 +344412,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 101.0,
             "stuffScore": 98.0
           }
@@ -335268,7 +344484,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 37.5,
             "oContact": 83.3,
             "chase": 42.9,
-            "chasePlus": 132.0,
+            "chasePlus": 131.0,
             "locationScore": 100.0,
             "stuffScore": 99.0
           },
@@ -335306,7 +344522,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 57.1,
             "oContact": 25.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 99.0,
             "stuffScore": 106.0
           }
@@ -335416,7 +344632,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 33.3,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 100.0,
             "stuffScore": 103.0
           },
@@ -335454,7 +344670,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 0.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 102.0
           }
@@ -336082,7 +345298,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 40.0,
             "chasePlus": 123.0,
             "locationScore": 101.0,
-            "stuffScore": 95.0
+            "stuffScore": 94.0
           },
           {
             "pitchType": "フォーク",
@@ -337088,7 +346304,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 37.0,
             "chasePlus": 114.0,
             "locationScore": 102.0,
-            "stuffScore": 118.0
+            "stuffScore": 117.0
           },
           {
             "pitchType": "フォーク",
@@ -337498,7 +346714,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 50.0,
             "chasePlus": 153.0,
             "locationScore": 100.0,
-            "stuffScore": 99.0
+            "stuffScore": 100.0
           },
           {
             "pitchType": "フォーク",
@@ -339877,7 +349093,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "oContact": 50.0,
             "chase": 21.1,
             "chasePlus": 65.0,
-            "locationScore": 98.0,
+            "locationScore": 97.0,
             "stuffScore": 99.0
           },
           {
@@ -339914,7 +349130,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 83.3,
             "oContact": 42.9,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 101.0,
             "stuffScore": 107.0
           },
@@ -340062,7 +349278,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 50.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 103.0
           },
@@ -340210,7 +349426,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 75.0,
             "oContact": 66.7,
             "chase": 35.3,
-            "chasePlus": 109.0,
+            "chasePlus": 108.0,
             "locationScore": 99.0,
             "stuffScore": 99.0
           },
@@ -340248,7 +349464,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 60.0,
             "oContact": 66.7,
             "chase": 42.9,
-            "chasePlus": 132.0,
+            "chasePlus": 131.0,
             "locationScore": 99.0,
             "stuffScore": 100.0
           },
@@ -340396,7 +349612,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 101.0,
             "stuffScore": 99.0
           },
@@ -340472,7 +349688,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 99.0,
             "stuffScore": 98.0
           }
@@ -340544,7 +349760,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 69.7,
             "oContact": 57.1,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 101.0,
             "stuffScore": 97.0
           },
@@ -340622,7 +349838,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 0.0,
             "chasePlus": 0.0,
             "locationScore": 100.0,
-            "stuffScore": 97.0
+            "stuffScore": 96.0
           },
           {
             "pitchType": "チェンジアップ",
@@ -340734,7 +349950,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 0.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 101.0,
             "stuffScore": 100.0
           }
@@ -340806,7 +350022,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 0.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 101.0,
             "stuffScore": 108.0
           },
@@ -340844,7 +350060,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 0.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 104.0
           },
@@ -340883,7 +350099,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "oContact": null,
             "chase": 0.0,
             "chasePlus": 0.0,
-            "locationScore": 99.0,
+            "locationScore": 98.0,
             "stuffScore": 98.0
           },
           {
@@ -341216,7 +350432,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 57.1,
             "oContact": 30.0,
             "chase": 76.9,
-            "chasePlus": 237.0,
+            "chasePlus": 236.0,
             "locationScore": 102.0,
             "stuffScore": 113.0
           },
@@ -341254,7 +350470,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 100.0,
             "chase": 20.0,
-            "chasePlus": 62.0,
+            "chasePlus": 61.0,
             "locationScore": 101.0,
             "stuffScore": 97.0
           },
@@ -341292,7 +350508,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 66.7,
             "chase": 60.0,
-            "chasePlus": 185.0,
+            "chasePlus": 184.0,
             "locationScore": 99.0,
             "stuffScore": 97.0
           },
@@ -341478,7 +350694,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 50.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 100.0,
             "stuffScore": 101.0
           },
@@ -341626,7 +350842,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 60.0,
             "oContact": 100.0,
             "chase": 66.7,
-            "chasePlus": 205.0,
+            "chasePlus": 204.0,
             "locationScore": 101.0,
             "stuffScore": 97.0
           },
@@ -341774,7 +350990,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 68.0,
             "oContact": 66.7,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 102.0,
             "stuffScore": 103.0
           },
@@ -341812,7 +351028,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 0.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 103.0,
             "stuffScore": 105.0
           },
@@ -341926,9 +351142,9 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 0.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 103.0,
-            "stuffScore": 108.0
+            "stuffScore": 109.0
           },
           {
             "pitchType": "カーブ",
@@ -342112,7 +351328,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 75.0,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 100.0,
             "stuffScore": 98.0
           },
@@ -342188,7 +351404,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 99.0,
             "stuffScore": 96.0
           },
@@ -342560,7 +351776,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 101.0,
             "stuffScore": 104.0
           },
@@ -342598,7 +351814,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 50.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 101.0,
             "stuffScore": 101.0
           },
@@ -342822,7 +352038,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 75.0,
             "oContact": 66.7,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 98.0,
             "stuffScore": 94.0
           },
@@ -342936,7 +352152,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 99.0,
             "stuffScore": 99.0
           }
@@ -343008,7 +352224,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 97.0
           },
@@ -343084,7 +352300,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 100.0,
             "stuffScore": 103.0
           },
@@ -343232,7 +352448,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 33.3,
             "oContact": 0.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 100.0,
             "stuffScore": 102.0
           },
@@ -343270,7 +352486,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 0.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 109.0
           },
@@ -343308,7 +352524,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 99.0,
             "stuffScore": 99.0
           }
@@ -343380,7 +352596,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 99.0,
             "stuffScore": 104.0
           },
@@ -343456,7 +352672,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 99.0
           }
@@ -343528,7 +352744,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 100.0,
             "stuffScore": 97.0
           },
@@ -343642,7 +352858,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 99.0
           }
@@ -343714,7 +352930,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 100.0,
             "stuffScore": 91.0
           },
@@ -343752,7 +352968,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 38.5,
             "oContact": 40.0,
             "chase": 45.5,
-            "chasePlus": 140.0,
+            "chasePlus": 139.0,
             "locationScore": 99.0,
             "stuffScore": 105.0
           },
@@ -343866,7 +353082,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 71.4,
             "oContact": 50.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 100.0,
             "stuffScore": 96.0
           },
@@ -344016,7 +353232,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 18.2,
             "chasePlus": 56.0,
             "locationScore": 99.0,
-            "stuffScore": 119.0
+            "stuffScore": 118.0
           },
           {
             "pitchType": "フォーク",
@@ -345546,7 +354762,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 50.0,
             "chasePlus": 153.0,
             "locationScore": 100.0,
-            "stuffScore": 107.0
+            "stuffScore": 106.0
           },
           {
             "pitchType": "カーブ",
@@ -345842,7 +355058,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 28.6,
             "chasePlus": 88.0,
             "locationScore": 99.0,
-            "stuffScore": 94.0
+            "stuffScore": 93.0
           },
           {
             "pitchType": "フォーク",
@@ -348076,7 +357292,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 83.3,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 99.0,
             "stuffScore": 93.0
           },
@@ -348262,7 +357478,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 50.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 103.0
           },
@@ -348486,7 +357702,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 66.7,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 99.0
           },
@@ -348562,7 +357778,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 97.0
           },
@@ -348672,7 +357888,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 60.0,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 100.0,
             "stuffScore": 101.0
           },
@@ -348748,7 +357964,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 99.0
           },
@@ -348858,7 +358074,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 0.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 98.0,
             "stuffScore": 100.0
           },
@@ -348896,7 +358112,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 99.0,
             "stuffScore": 96.0
           }
@@ -349044,7 +358260,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 99.0,
             "stuffScore": 93.0
           },
@@ -349154,7 +358370,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 80.0,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 100.0,
             "stuffScore": 94.0
           },
@@ -349450,7 +358666,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 40.0,
             "oContact": 50.0,
             "chase": 66.7,
-            "chasePlus": 205.0,
+            "chasePlus": 204.0,
             "locationScore": 102.0,
             "stuffScore": 110.0
           },
@@ -349598,7 +358814,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 83.3,
             "chase": 75.0,
-            "chasePlus": 231.0,
+            "chasePlus": 230.0,
             "locationScore": 99.0,
             "stuffScore": 102.0
           },
@@ -349860,7 +359076,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 100.0,
             "stuffScore": 99.0
           },
@@ -350046,7 +359262,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 88.9,
             "oContact": 50.0,
             "chase": 30.8,
-            "chasePlus": 95.0,
+            "chasePlus": 94.0,
             "locationScore": 99.0,
             "stuffScore": 98.0
           },
@@ -350122,7 +359338,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 50.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 101.0,
             "stuffScore": 98.0
           },
@@ -350232,7 +359448,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 40.0,
             "oContact": 66.7,
             "chase": 42.9,
-            "chasePlus": 132.0,
+            "chasePlus": 131.0,
             "locationScore": 100.0,
             "stuffScore": 109.0
           },
@@ -350308,7 +359524,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 0.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 103.0
           }
@@ -350380,7 +359596,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 83.3,
             "oContact": 33.3,
             "chase": 42.9,
-            "chasePlus": 132.0,
+            "chasePlus": 131.0,
             "locationScore": 100.0,
             "stuffScore": 104.0
           },
@@ -350566,9 +359782,9 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 46.7,
             "oContact": 75.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 101.0,
-            "stuffScore": 102.0
+            "stuffScore": 103.0
           },
           {
             "pitchType": "フォーク",
@@ -350752,7 +359968,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 20.0,
-            "chasePlus": 62.0,
+            "chasePlus": 61.0,
             "locationScore": 100.0,
             "stuffScore": 98.0
           },
@@ -350790,7 +360006,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 0.0,
             "chase": 20.0,
-            "chasePlus": 62.0,
+            "chasePlus": 61.0,
             "locationScore": 99.0,
             "stuffScore": 100.0
           },
@@ -350904,7 +360120,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 66.7,
-            "chasePlus": 205.0,
+            "chasePlus": 204.0,
             "locationScore": 97.0,
             "stuffScore": 98.0
           }
@@ -350976,7 +360192,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 73.1,
             "oContact": 100.0,
             "chase": 41.2,
-            "chasePlus": 127.0,
+            "chasePlus": 126.0,
             "locationScore": 100.0,
             "stuffScore": 89.0
           },
@@ -351725,7 +360941,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "oContact": null,
             "chase": 0.0,
             "chasePlus": 0.0,
-            "locationScore": 100.0,
+            "locationScore": 99.0,
             "stuffScore": 98.0
           }
         ]
@@ -352246,7 +361462,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 44.4,
             "chasePlus": 136.0,
             "locationScore": 100.0,
-            "stuffScore": 103.0
+            "stuffScore": 102.0
           },
           {
             "pitchType": "スライダー",
@@ -353586,7 +362802,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 40.0,
             "chasePlus": 123.0,
             "locationScore": 99.0,
-            "stuffScore": 108.0
+            "stuffScore": 107.0
           },
           {
             "pitchType": "チェンジアップ",
@@ -353771,7 +362987,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "oContact": 85.7,
             "chase": 38.9,
             "chasePlus": 119.0,
-            "locationScore": 99.0,
+            "locationScore": 98.0,
             "stuffScore": 92.0
           },
           {
@@ -354554,7 +363770,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 8.3,
             "chasePlus": 26.0,
             "locationScore": 102.0,
-            "stuffScore": 98.0
+            "stuffScore": 99.0
           },
           {
             "pitchType": "チェンジアップ",
@@ -355292,9 +364508,9 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 75.0,
             "oContact": 28.6,
             "chase": 41.2,
-            "chasePlus": 127.0,
+            "chasePlus": 126.0,
             "locationScore": 99.0,
-            "stuffScore": 104.0
+            "stuffScore": 105.0
           },
           {
             "pitchType": "スプリット",
@@ -355330,9 +364546,9 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 57.1,
             "oContact": 40.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
-            "stuffScore": 103.0
+            "stuffScore": 102.0
           },
           {
             "pitchType": "カットボール",
@@ -355368,7 +364584,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 25.0,
             "oContact": 100.0,
             "chase": 71.4,
-            "chasePlus": 220.0,
+            "chasePlus": 219.0,
             "locationScore": 103.0,
             "stuffScore": 99.0
           },
@@ -355444,7 +364660,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 99.0
           }
@@ -355664,7 +364880,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 44.4,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 100.0,
             "stuffScore": 97.0
           },
@@ -355702,7 +364918,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 100.0,
             "stuffScore": 101.0
           },
@@ -355740,7 +364956,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 98.0
           }
@@ -355812,7 +365028,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 33.3,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 101.0,
             "stuffScore": 99.0
           },
@@ -356032,7 +365248,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 71.4,
             "oContact": 50.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 102.0,
             "stuffScore": 112.0
           },
@@ -356070,7 +365286,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 0.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 101.0,
             "stuffScore": 102.0
           }
@@ -356180,9 +365396,9 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 75.0,
             "oContact": 57.1,
             "chase": 43.8,
-            "chasePlus": 135.0,
+            "chasePlus": 134.0,
             "locationScore": 102.0,
-            "stuffScore": 109.0
+            "stuffScore": 108.0
           },
           {
             "pitchType": "カットボール",
@@ -356514,7 +365730,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 0.0,
             "chase": 75.0,
-            "chasePlus": 231.0,
+            "chasePlus": 230.0,
             "locationScore": 101.0,
             "stuffScore": 112.0
           },
@@ -356590,7 +365806,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 0.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 102.0,
             "stuffScore": 103.0
           }
@@ -356810,7 +366026,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 75.0,
             "oContact": 66.7,
             "chase": 60.0,
-            "chasePlus": 185.0,
+            "chasePlus": 184.0,
             "locationScore": 101.0,
             "stuffScore": 101.0
           }
@@ -356996,7 +366212,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 0.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 101.0,
             "stuffScore": 114.0
           },
@@ -357072,7 +366288,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 0.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 99.0,
             "stuffScore": 103.0
           }
@@ -357144,7 +366360,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 62.5,
             "oContact": 50.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 101.0,
             "stuffScore": 98.0
           },
@@ -357182,7 +366398,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 50.0,
             "chase": 66.7,
-            "chasePlus": 205.0,
+            "chasePlus": 204.0,
             "locationScore": 101.0,
             "stuffScore": 105.0
           },
@@ -357292,7 +366508,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 57.1,
             "oContact": 0.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 102.0,
             "stuffScore": 116.0
           },
@@ -357440,7 +366656,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 83.3,
             "oContact": 0.0,
             "chase": 20.0,
-            "chasePlus": 62.0,
+            "chasePlus": 61.0,
             "locationScore": 98.0,
             "stuffScore": 98.0
           },
@@ -357516,7 +366732,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 97.0
           }
@@ -357628,7 +366844,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 9.1,
             "chasePlus": 28.0,
             "locationScore": 101.0,
-            "stuffScore": 98.0
+            "stuffScore": 97.0
           },
           {
             "pitchType": "スライダー",
@@ -357702,7 +366918,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 85.7,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 102.0,
             "stuffScore": 97.0
           }
@@ -357884,7 +367100,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 33.3,
             "oContact": 100.0,
             "chase": 42.9,
-            "chasePlus": 132.0,
+            "chasePlus": 131.0,
             "locationScore": 100.0,
             "stuffScore": 97.0
           },
@@ -357960,9 +367176,9 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 0.0,
             "chase": 66.7,
-            "chasePlus": 205.0,
+            "chasePlus": 204.0,
             "locationScore": 100.0,
-            "stuffScore": 106.0
+            "stuffScore": 107.0
           },
           {
             "pitchType": "フォーク",
@@ -358108,7 +367324,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 99.0,
             "stuffScore": 98.0
           }
@@ -358180,7 +367396,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 57.1,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 102.0,
             "stuffScore": 105.0
           },
@@ -358218,7 +367434,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 0.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 97.0,
             "stuffScore": 103.0
           },
@@ -358330,7 +367546,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 31.8,
             "chasePlus": 98.0,
             "locationScore": 101.0,
-            "stuffScore": 101.0
+            "stuffScore": 100.0
           },
           {
             "pitchType": "チェンジアップ",
@@ -359032,7 +368248,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 53.8,
             "chasePlus": 165.0,
             "locationScore": 102.0,
-            "stuffScore": 96.0
+            "stuffScore": 95.0
           },
           {
             "pitchType": "カーブ",
@@ -359996,7 +369212,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 47.1,
             "chasePlus": 144.0,
             "locationScore": 101.0,
-            "stuffScore": 107.0
+            "stuffScore": 106.0
           },
           {
             "pitchType": "チェンジアップ",
@@ -360220,7 +369436,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 0.0,
             "chasePlus": 0.0,
             "locationScore": 101.0,
-            "stuffScore": 107.0
+            "stuffScore": 106.0
           }
         ]
       }
@@ -361784,7 +371000,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 62.5,
             "chasePlus": 192.0,
             "locationScore": 101.0,
-            "stuffScore": 108.0
+            "stuffScore": 109.0
           },
           {
             "pitchType": "ツーシーム",
@@ -362640,7 +371856,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 70.0,
             "oContact": 0.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 101.0,
             "stuffScore": 107.0
           },
@@ -362678,7 +371894,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 33.3,
             "oContact": 33.3,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 100.0,
             "stuffScore": 102.0
           },
@@ -362936,7 +372152,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 50.0,
             "chase": 57.1,
-            "chasePlus": 176.0,
+            "chasePlus": 175.0,
             "locationScore": 99.0,
             "stuffScore": 99.0
           },
@@ -363270,7 +372486,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 60.0,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 97.0
           },
@@ -363642,7 +372858,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 0.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 99.0,
             "stuffScore": 102.0
           },
@@ -363718,7 +372934,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 66.7,
-            "chasePlus": 205.0,
+            "chasePlus": 204.0,
             "locationScore": 100.0,
             "stuffScore": 96.0
           }
@@ -363828,7 +373044,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 33.3,
             "chase": 75.0,
-            "chasePlus": 231.0,
+            "chasePlus": 230.0,
             "locationScore": 101.0,
             "stuffScore": 103.0
           },
@@ -363866,7 +373082,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 103.0
           }
@@ -363976,7 +373192,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 60.0,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 101.0,
             "stuffScore": 104.0
           },
@@ -364014,7 +373230,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 102.0
           },
@@ -364124,7 +373340,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 52.9,
             "oContact": 66.7,
             "chase": 32.4,
-            "chasePlus": 100.0,
+            "chasePlus": 99.0,
             "locationScore": 100.0,
             "stuffScore": 105.0
           },
@@ -364162,7 +373378,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 50.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 98.0,
             "stuffScore": 100.0
           },
@@ -364348,7 +373564,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 75.0,
             "oContact": 100.0,
             "chase": 20.0,
-            "chasePlus": 62.0,
+            "chasePlus": 61.0,
             "locationScore": 100.0,
             "stuffScore": 94.0
           },
@@ -364386,7 +373602,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 101.0,
             "stuffScore": 102.0
           },
@@ -364424,7 +373640,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 0.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 101.0
           }
@@ -364496,7 +373712,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 80.0,
             "oContact": 100.0,
             "chase": 75.0,
-            "chasePlus": 231.0,
+            "chasePlus": 230.0,
             "locationScore": 100.0,
             "stuffScore": 95.0
           },
@@ -364534,7 +373750,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 0.0,
             "chase": 20.0,
-            "chasePlus": 62.0,
+            "chasePlus": 61.0,
             "locationScore": 99.0,
             "stuffScore": 101.0
           },
@@ -364830,7 +374046,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 61.9,
             "oContact": 83.3,
             "chase": 35.3,
-            "chasePlus": 109.0,
+            "chasePlus": 108.0,
             "locationScore": 101.0,
             "stuffScore": 108.0
           },
@@ -364868,7 +374084,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 75.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 96.0
           },
@@ -365054,7 +374270,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 75.0,
             "oContact": 50.0,
             "chase": 80.0,
-            "chasePlus": 246.0,
+            "chasePlus": 245.0,
             "locationScore": 101.0,
             "stuffScore": 101.0
           },
@@ -365130,7 +374346,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 33.3,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 100.0,
             "stuffScore": 99.0
           }
@@ -365350,7 +374566,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 66.7,
             "chase": 60.0,
-            "chasePlus": 185.0,
+            "chasePlus": 184.0,
             "locationScore": 100.0,
             "stuffScore": 101.0
           },
@@ -365388,7 +374604,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 0.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 102.0,
             "stuffScore": 102.0
           }
@@ -365536,7 +374752,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 0.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 101.0,
             "stuffScore": 108.0
           }
@@ -366056,7 +375272,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 75.0,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 99.0,
             "stuffScore": 103.0
           }
@@ -366128,7 +375344,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 101.0,
             "stuffScore": 101.0
           },
@@ -366166,7 +375382,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 98.0,
             "stuffScore": 98.0
           }
@@ -366314,7 +375530,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 0.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 100.0,
             "stuffScore": 108.0
           },
@@ -366462,7 +375678,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 0.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 102.0,
             "stuffScore": 104.0
           },
@@ -366686,7 +375902,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 60.0,
             "chase": 45.5,
-            "chasePlus": 140.0,
+            "chasePlus": 139.0,
             "locationScore": 100.0,
             "stuffScore": 101.0
           },
@@ -366872,7 +376088,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 75.0,
             "oContact": 0.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 101.0,
             "stuffScore": 100.0
           },
@@ -366910,7 +376126,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 0.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 107.0
           }
@@ -367020,7 +376236,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 100.0
           },
@@ -367244,7 +376460,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 99.0
           }
@@ -367431,7 +376647,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "oContact": 0.0,
             "chase": 25.0,
             "chasePlus": 77.0,
-            "locationScore": 101.0,
+            "locationScore": 100.0,
             "stuffScore": 99.0
           }
         ]
@@ -367504,7 +376720,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 37.5,
             "chasePlus": 115.0,
             "locationScore": 100.0,
-            "stuffScore": 116.0
+            "stuffScore": 115.0
           },
           {
             "pitchType": "スライダー",
@@ -367652,7 +376868,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 33.3,
             "chasePlus": 102.0,
             "locationScore": 100.0,
-            "stuffScore": 109.0
+            "stuffScore": 108.0
           },
           {
             "pitchType": "フォーク",
@@ -368062,7 +377278,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 76.9,
             "chasePlus": 236.0,
             "locationScore": 103.0,
-            "stuffScore": 106.0
+            "stuffScore": 105.0
           },
           {
             "pitchType": "ツーシーム",
@@ -368248,7 +377464,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 42.9,
             "chasePlus": 131.0,
             "locationScore": 101.0,
-            "stuffScore": 102.0
+            "stuffScore": 101.0
           },
           {
             "pitchType": "カーブ",
@@ -368286,7 +377502,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 14.3,
             "chasePlus": 44.0,
             "locationScore": 99.0,
-            "stuffScore": 98.0
+            "stuffScore": 99.0
           },
           {
             "pitchType": "チェンジアップ",
@@ -369736,7 +378952,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 26.7,
             "chasePlus": 82.0,
             "locationScore": 99.0,
-            "stuffScore": 92.0
+            "stuffScore": 91.0
           },
           {
             "pitchType": "カーブ",
@@ -371071,7 +380287,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "oContact": null,
             "chase": 0.0,
             "chasePlus": 0.0,
-            "locationScore": 101.0,
+            "locationScore": 100.0,
             "stuffScore": 98.0
           },
           {
@@ -371744,7 +380960,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 28.6,
             "chasePlus": 88.0,
             "locationScore": 98.0,
-            "stuffScore": 108.0
+            "stuffScore": 107.0
           },
           {
             "pitchType": "スライダー",
@@ -371818,7 +381034,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 0.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 102.0,
             "stuffScore": 105.0
           }
@@ -371966,7 +381182,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 0.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 101.0,
             "stuffScore": 103.0
           },
@@ -372004,7 +381220,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 96.0
           }
@@ -372076,7 +381292,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 100.0,
             "stuffScore": 93.0
           },
@@ -372224,7 +381440,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 80.0,
             "oContact": 0.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 101.0
           },
@@ -372338,7 +381554,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 98.0
           }
@@ -372448,7 +381664,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 100.0,
             "stuffScore": 98.0
           },
@@ -372672,7 +381888,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 99.0,
             "stuffScore": 98.0
           }
@@ -372820,7 +382036,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 100.0,
             "stuffScore": 98.0
           },
@@ -373416,7 +382632,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 87.5,
             "oContact": 66.7,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 101.0,
             "stuffScore": 105.0
           },
@@ -373492,9 +382708,9 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 50.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
-            "stuffScore": 99.0
+            "stuffScore": 100.0
           },
           {
             "pitchType": "スライダー",
@@ -373640,7 +382856,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 50.0,
             "chase": 66.7,
-            "chasePlus": 205.0,
+            "chasePlus": 204.0,
             "locationScore": 99.0,
             "stuffScore": 101.0
           },
@@ -373750,7 +382966,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 102.0,
             "stuffScore": 97.0
           },
@@ -373826,7 +383042,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 99.0,
             "stuffScore": 97.0
           }
@@ -373936,7 +383152,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 0.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 102.0
           },
@@ -374194,7 +383410,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 66.7,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 101.0
           },
@@ -374232,7 +383448,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 99.0,
             "stuffScore": 97.0
           },
@@ -374270,7 +383486,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 0.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 100.0,
             "stuffScore": 106.0
           },
@@ -374418,7 +383634,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 81.8,
             "oContact": 28.6,
             "chase": 53.8,
-            "chasePlus": 166.0,
+            "chasePlus": 165.0,
             "locationScore": 101.0,
             "stuffScore": 109.0
           },
@@ -374458,7 +383674,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 10.0,
             "chasePlus": 31.0,
             "locationScore": 100.0,
-            "stuffScore": 98.0
+            "stuffScore": 97.0
           },
           {
             "pitchType": "カーブ",
@@ -374566,7 +383782,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 66.7,
             "chase": 42.9,
-            "chasePlus": 132.0,
+            "chasePlus": 131.0,
             "locationScore": 100.0,
             "stuffScore": 98.0
           },
@@ -374714,7 +383930,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 50.0,
             "chase": 66.7,
-            "chasePlus": 205.0,
+            "chasePlus": 204.0,
             "locationScore": 101.0,
             "stuffScore": 102.0
           },
@@ -374824,7 +384040,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 88.9,
             "chase": 36.0,
-            "chasePlus": 111.0,
+            "chasePlus": 110.0,
             "locationScore": 98.0,
             "stuffScore": 97.0
           },
@@ -374862,7 +384078,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 53.3,
             "oContact": 63.6,
             "chase": 68.8,
-            "chasePlus": 212.0,
+            "chasePlus": 211.0,
             "locationScore": 102.0,
             "stuffScore": 107.0
           },
@@ -375086,7 +384302,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 33.3,
             "chase": 42.9,
-            "chasePlus": 132.0,
+            "chasePlus": 131.0,
             "locationScore": 98.0,
             "stuffScore": 99.0
           },
@@ -375162,7 +384378,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 75.0,
             "oContact": 60.0,
             "chase": 71.4,
-            "chasePlus": 220.0,
+            "chasePlus": 219.0,
             "locationScore": 101.0,
             "stuffScore": 100.0
           },
@@ -375348,7 +384564,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 33.3,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 101.0,
             "stuffScore": 99.0
           },
@@ -375572,7 +384788,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 0.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 99.0,
             "stuffScore": 105.0
           },
@@ -375682,7 +384898,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 75.0,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 99.0,
             "stuffScore": 96.0
           },
@@ -375720,7 +384936,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 0.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 101.0,
             "stuffScore": 103.0
           },
@@ -375758,7 +384974,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 96.0
           },
@@ -375868,7 +385084,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 83.3,
             "chase": 44.4,
-            "chasePlus": 137.0,
+            "chasePlus": 136.0,
             "locationScore": 101.0,
             "stuffScore": 101.0
           },
@@ -375906,8 +385122,8 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 60.0,
             "oContact": 66.7,
             "chase": 36.0,
-            "chasePlus": 111.0,
-            "locationScore": 98.0,
+            "chasePlus": 110.0,
+            "locationScore": 97.0,
             "stuffScore": 96.0
           },
           {
@@ -375982,7 +385198,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 50.0,
             "chase": 66.7,
-            "chasePlus": 205.0,
+            "chasePlus": 204.0,
             "locationScore": 99.0,
             "stuffScore": 105.0
           }
@@ -376672,7 +385888,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "oContact": 80.0,
             "chase": 29.4,
             "chasePlus": 90.0,
-            "locationScore": 101.0,
+            "locationScore": 102.0,
             "stuffScore": 103.0
           },
           {
@@ -377273,7 +386489,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 100.0,
             "chasePlus": 307.0,
             "locationScore": 101.0,
-            "stuffScore": 98.0
+            "stuffScore": 99.0
           }
         ]
       }
@@ -377345,7 +386561,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 33.3,
             "chasePlus": 102.0,
             "locationScore": 98.0,
-            "stuffScore": 108.0
+            "stuffScore": 107.0
           },
           {
             "pitchType": "フォーク",
@@ -377382,7 +386598,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "oContact": 50.0,
             "chase": 26.7,
             "chasePlus": 82.0,
-            "locationScore": 98.0,
+            "locationScore": 99.0,
             "stuffScore": 94.0
           },
           {
@@ -377569,7 +386785,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 33.3,
             "chasePlus": 102.0,
             "locationScore": 100.0,
-            "stuffScore": 93.0
+            "stuffScore": 94.0
           },
           {
             "pitchType": "カーブ",
@@ -379387,7 +388603,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 66.7,
             "chasePlus": 204.0,
             "locationScore": 100.0,
-            "stuffScore": 115.0
+            "stuffScore": 114.0
           },
           {
             "pitchType": "フォーク",
@@ -381097,7 +390313,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 75.0,
             "oContact": 33.3,
             "chase": 20.0,
-            "chasePlus": 62.0,
+            "chasePlus": 61.0,
             "locationScore": 100.0,
             "stuffScore": 106.0
           },
@@ -381283,7 +390499,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 66.7,
             "chase": 75.0,
-            "chasePlus": 231.0,
+            "chasePlus": 230.0,
             "locationScore": 102.0,
             "stuffScore": 101.0
           },
@@ -381393,7 +390609,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 80.0,
             "oContact": 0.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 101.0,
             "stuffScore": 103.0
           },
@@ -381507,7 +390723,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 0.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 103.0
           }
@@ -381693,7 +390909,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 0.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 100.0,
             "stuffScore": 103.0
           }
@@ -381803,7 +391019,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 83.3,
             "oContact": 66.7,
             "chase": 69.2,
-            "chasePlus": 213.0,
+            "chasePlus": 212.0,
             "locationScore": 102.0,
             "stuffScore": 112.0
           },
@@ -381841,7 +391057,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 70.0,
             "oContact": 66.7,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 101.0,
             "stuffScore": 99.0
           },
@@ -381989,7 +391205,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 63.0,
             "oContact": 100.0,
             "chase": 20.0,
-            "chasePlus": 62.0,
+            "chasePlus": 61.0,
             "locationScore": 99.0,
             "stuffScore": 104.0
           },
@@ -382065,7 +391281,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 0.0,
             "chase": 6.7,
-            "chasePlus": 21.0,
+            "chasePlus": 20.0,
             "locationScore": 98.0,
             "stuffScore": 95.0
           },
@@ -382103,7 +391319,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 57.1,
             "oContact": 75.0,
             "chase": 80.0,
-            "chasePlus": 246.0,
+            "chasePlus": 245.0,
             "locationScore": 101.0,
             "stuffScore": 102.0
           }
@@ -382175,7 +391391,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 40.0,
             "oContact": 0.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 101.0,
             "stuffScore": 106.0
           },
@@ -382213,7 +391429,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 99.0,
             "stuffScore": 98.0
           },
@@ -382251,7 +391467,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 0.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 97.0,
             "stuffScore": 102.0
           }
@@ -382323,7 +391539,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 62.5,
             "oContact": 33.3,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 100.0,
             "stuffScore": 118.0
           },
@@ -382400,7 +391616,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "oContact": null,
             "chase": 0.0,
             "chasePlus": 0.0,
-            "locationScore": 100.0,
+            "locationScore": 101.0,
             "stuffScore": 101.0
           },
           {
@@ -382547,7 +391763,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 0.0,
             "chase": 66.7,
-            "chasePlus": 205.0,
+            "chasePlus": 204.0,
             "locationScore": 101.0,
             "stuffScore": 108.0
           },
@@ -382695,7 +391911,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 100.0,
             "chase": 20.0,
-            "chasePlus": 62.0,
+            "chasePlus": 61.0,
             "locationScore": 99.0,
             "stuffScore": 96.0
           },
@@ -382995,7 +392211,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 20.0,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 101.0,
             "stuffScore": 101.0
           },
@@ -383143,7 +392359,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 0.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 102.0,
             "stuffScore": 107.0
           }
@@ -383215,7 +392431,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 100.0,
             "stuffScore": 98.0
           },
@@ -383363,7 +392579,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 75.0,
-            "chasePlus": 231.0,
+            "chasePlus": 230.0,
             "locationScore": 101.0,
             "stuffScore": 99.0
           },
@@ -383473,7 +392689,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 52.9,
             "oContact": 60.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 99.0,
             "stuffScore": 106.0
           },
@@ -383511,7 +392727,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 100.0,
             "chase": 44.4,
-            "chasePlus": 137.0,
+            "chasePlus": 136.0,
             "locationScore": 101.0,
             "stuffScore": 91.0
           },
@@ -383549,7 +392765,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 71.4,
             "oContact": 25.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 99.0,
             "stuffScore": 109.0
           },
@@ -383735,7 +392951,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 66.7,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 102.0
           },
@@ -384069,7 +393285,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 100.0,
             "chase": 20.0,
-            "chasePlus": 62.0,
+            "chasePlus": 61.0,
             "locationScore": 100.0,
             "stuffScore": 90.0
           },
@@ -384107,7 +393323,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 62.5,
             "oContact": 50.0,
             "chase": 58.8,
-            "chasePlus": 181.0,
+            "chasePlus": 180.0,
             "locationScore": 104.0,
             "stuffScore": 105.0
           },
@@ -384145,8 +393361,8 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 70.0,
             "oContact": 33.3,
             "chase": 42.9,
-            "chasePlus": 132.0,
-            "locationScore": 100.0,
+            "chasePlus": 131.0,
+            "locationScore": 101.0,
             "stuffScore": 103.0
           },
           {
@@ -384221,7 +393437,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 0.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 104.0
           },
@@ -384259,7 +393475,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 0.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 103.0
           }
@@ -384407,7 +393623,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 95.0
           }
@@ -384815,7 +394031,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 40.0,
             "chasePlus": 123.0,
             "locationScore": 98.0,
-            "stuffScore": 107.0
+            "stuffScore": 106.0
           },
           {
             "pitchType": "スライダー",
@@ -385073,7 +394289,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 42.9,
             "chasePlus": 131.0,
             "locationScore": 98.0,
-            "stuffScore": 103.0
+            "stuffScore": 102.0
           },
           {
             "pitchType": "スイーパー",
@@ -386062,7 +395278,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 47.4,
             "chasePlus": 145.0,
             "locationScore": 100.0,
-            "stuffScore": 102.0
+            "stuffScore": 101.0
           },
           {
             "pitchType": "フォーク",
@@ -386175,7 +395391,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "oContact": null,
             "chase": 0.0,
             "chasePlus": 0.0,
-            "locationScore": 103.0,
+            "locationScore": 102.0,
             "stuffScore": 94.0
           },
           {
@@ -386286,7 +395502,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 50.0,
             "chasePlus": 153.0,
             "locationScore": 101.0,
-            "stuffScore": 106.0
+            "stuffScore": 105.0
           },
           {
             "pitchType": "スライダー",
@@ -389374,7 +398590,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 60.0,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 100.0,
             "stuffScore": 96.0
           },
@@ -389856,7 +399072,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 25.0,
             "chase": 19.0,
-            "chasePlus": 59.0,
+            "chasePlus": 58.0,
             "locationScore": 100.0,
             "stuffScore": 109.0
           },
@@ -389894,7 +399110,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 80.0,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 101.0,
             "stuffScore": 90.0
           },
@@ -389932,7 +399148,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 50.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 109.0
           },
@@ -389970,7 +399186,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 20.0,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 101.0,
             "stuffScore": 99.0
           },
@@ -390008,7 +399224,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 25.0,
             "chase": 44.4,
-            "chasePlus": 137.0,
+            "chasePlus": 136.0,
             "locationScore": 100.0,
             "stuffScore": 103.0
           },
@@ -390046,7 +399262,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 0.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 101.0,
             "stuffScore": 104.0
           }
@@ -390342,7 +399558,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 99.0,
             "stuffScore": 98.0
           }
@@ -390452,7 +399668,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 25.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 103.0,
             "stuffScore": 106.0
           },
@@ -390606,7 +399822,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "chase": 0.0,
             "chasePlus": 0.0,
             "locationScore": 99.0,
-            "stuffScore": 96.0
+            "stuffScore": 97.0
           }
         ]
       }
@@ -390676,7 +399892,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 0.0,
             "chase": 20.0,
-            "chasePlus": 62.0,
+            "chasePlus": 61.0,
             "locationScore": 100.0,
             "stuffScore": 100.0
           },
@@ -390714,7 +399930,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 96.0
           },
@@ -390752,7 +399968,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 103.0,
             "stuffScore": 99.0
           }
@@ -391010,7 +400226,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 75.0,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 103.0
           },
@@ -391048,7 +400264,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 50.0,
             "chase": 66.7,
-            "chasePlus": 205.0,
+            "chasePlus": 204.0,
             "locationScore": 100.0,
             "stuffScore": 104.0
           }
@@ -391120,7 +400336,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 61.1,
             "oContact": 85.7,
             "chase": 46.7,
-            "chasePlus": 144.0,
+            "chasePlus": 143.0,
             "locationScore": 98.0,
             "stuffScore": 93.0
           },
@@ -391234,7 +400450,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 66.7,
             "chase": 75.0,
-            "chasePlus": 231.0,
+            "chasePlus": 230.0,
             "locationScore": 101.0,
             "stuffScore": 103.0
           },
@@ -391272,7 +400488,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 75.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 99.0,
             "stuffScore": 97.0
           },
@@ -391310,7 +400526,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 99.0,
             "stuffScore": 97.0
           },
@@ -391348,7 +400564,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 0.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 102.0
           }
@@ -391644,7 +400860,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 102.0,
             "stuffScore": 102.0
           },
@@ -391682,7 +400898,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 0.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 100.0,
             "stuffScore": 100.0
           }
@@ -391754,7 +400970,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 80.0,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 108.0
           },
@@ -391978,7 +401194,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 0.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 100.0,
             "stuffScore": 100.0
           },
@@ -392164,7 +401380,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 0.0,
             "oContact": 0.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 101.0,
             "stuffScore": 103.0
           },
@@ -392274,7 +401490,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 66.7,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 100.0,
             "stuffScore": 98.0
           },
@@ -392312,7 +401528,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 99.0,
             "stuffScore": 98.0
           }
@@ -392384,7 +401600,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 69.6,
             "oContact": 100.0,
             "chase": 30.8,
-            "chasePlus": 95.0,
+            "chasePlus": 94.0,
             "locationScore": 102.0,
             "stuffScore": 103.0
           },
@@ -392422,7 +401638,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 61.5,
             "oContact": 100.0,
             "chase": 44.4,
-            "chasePlus": 137.0,
+            "chasePlus": 136.0,
             "locationScore": 101.0,
             "stuffScore": 98.0
           },
@@ -392460,7 +401676,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 20.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 99.0,
             "stuffScore": 102.0
           },
@@ -392794,7 +402010,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 0.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 101.0,
             "stuffScore": 104.0
           },
@@ -393162,7 +402378,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 37.5,
             "oContact": 50.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 101.0,
             "stuffScore": 105.0
           },
@@ -393238,7 +402454,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 50.0,
             "chase": 57.1,
-            "chasePlus": 176.0,
+            "chasePlus": 175.0,
             "locationScore": 102.0,
             "stuffScore": 99.0
           },
@@ -393276,7 +402492,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 50.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 100.0,
             "stuffScore": 104.0
           },
@@ -393424,7 +402640,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 80.0,
             "oContact": 33.3,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 103.0,
             "stuffScore": 105.0
           },
@@ -393648,7 +402864,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 100.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 99.0
           }
@@ -393834,7 +403050,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 100.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 98.0,
             "stuffScore": 99.0
           }
@@ -393906,7 +403122,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 33.3,
-            "chasePlus": 103.0,
+            "chasePlus": 102.0,
             "locationScore": 99.0,
             "stuffScore": 97.0
           },
@@ -393944,7 +403160,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 50.0,
             "oContact": 0.0,
             "chase": 100.0,
-            "chasePlus": 308.0,
+            "chasePlus": 307.0,
             "locationScore": 101.0,
             "stuffScore": 103.0
           },
@@ -394092,7 +403308,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": 100.0,
             "oContact": 100.0,
             "chase": 20.0,
-            "chasePlus": 62.0,
+            "chasePlus": 61.0,
             "locationScore": 99.0,
             "stuffScore": 97.0
           },
@@ -394130,7 +403346,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "zSwing": null,
             "oContact": 50.0,
             "chase": 50.0,
-            "chasePlus": 154.0,
+            "chasePlus": 153.0,
             "locationScore": 99.0,
             "stuffScore": 101.0
           },
@@ -394279,8 +403495,8 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "oContact": 85.7,
             "chase": 38.9,
             "chasePlus": 119.0,
-            "locationScore": 99.0,
-            "stuffScore": 102.0
+            "locationScore": 100.0,
+            "stuffScore": 101.0
           },
           {
             "pitchType": "フォーク",
@@ -396363,7 +405579,7 @@ window.PITCH_DASHBOARD_MANIFEST = {
             "oContact": 100.0,
             "chase": 100.0,
             "chasePlus": 307.0,
-            "locationScore": 100.0,
+            "locationScore": 101.0,
             "stuffScore": 99.0
           }
         ]
