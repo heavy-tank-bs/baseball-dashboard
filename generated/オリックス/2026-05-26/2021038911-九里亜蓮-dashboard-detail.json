@@ -37,7 +37,7 @@
         "zSwing": 52.9,
         "oContact": 25.0,
         "chase": 30.8,
-        "chasePlus": 94.0,
+        "chasePlus": 95.0,
         "locationScore": 100.0,
         "stuffScore": 99.0
       },
@@ -75,7 +75,7 @@
         "zSwing": 72.7,
         "oContact": 50.0,
         "chase": 57.1,
-        "chasePlus": 175.0,
+        "chasePlus": 176.0,
         "locationScore": 102.0,
         "stuffScore": 100.0
       },
@@ -5051,7 +5051,7 @@
       "カットボール": "#7D97B5"
     },
     "metricBaselines": {
-      "chase": 32.6,
+      "chase": 32.5,
       "chaseScope": "league"
     }
   }
