@@ -1,4 +1,10 @@
 (() => {
+  try {
+    if (window.self !== window.top || new URLSearchParams(location.search).get("embed") === "1") return;
+  } catch {
+    return;
+  }
+
   const STORAGE_KEY = "npb-dashboard-chat-history";
   const OPEN_KEY = "npb-dashboard-chat-open";
   const MAX_HISTORY = 10;
@@ -10,10 +16,15 @@
     window.DASHBOARD_CHAT_ENDPOINT ||
     document.querySelector('meta[name="dashboard-chat-endpoint"]')?.content ||
     (localHosts.has(window.location.hostname) ? "/api/chat" : AWS_CHAT_ENDPOINT);
+  const EXAMPLE_QUESTIONS = [
+    "2026-05-23のオリックスで良かった投手は？",
+    "2026年のオリックス野手でOPSが高い選手を教えて",
+    "この画面に表示されている選手の特徴を要約して",
+  ];
 
   const initialMessage = {
     role: "assistant",
-    content: "全データ検索と表示中の画面内容を使って回答します。選手名、チーム、日付、指標を指定して聞いてください。",
+    content: "全データ検索と表示中の画面内容を使って回答します。\n\n入力例から選ぶか、選手名・チーム・日付・指標を指定して聞いてください。",
   };
 
   const state = {
@@ -22,14 +33,22 @@
     messages: loadHistory(),
   };
 
-  if (!state.messages.length || isOldInitialMessage(state.messages[0])) {
-    state.messages = [initialMessage, ...state.messages.filter((message) => message.role !== "assistant").slice(-MAX_HISTORY + 1)];
+  if (!state.messages.length) {
+    state.messages = [initialMessage];
+    saveHistory();
+  } else if (isOldInitialMessage(state.messages[0])) {
+    state.messages = [initialMessage, ...state.messages.slice(1)].slice(-MAX_HISTORY);
+    saveHistory();
+  } else if (state.messages[0]?.role !== "assistant") {
+    state.messages = [initialMessage, ...state.messages.slice(-MAX_HISTORY + 1)];
     saveHistory();
   }
 
   function isOldInitialMessage(message) {
     if (message?.role !== "assistant" || typeof message.content !== "string") return false;
-    return /[\u7e1d\u7e5d\u9666]/.test(message.content);
+    return /[\u7e1d\u7e5d\u9666]/.test(message.content) || (
+      message.content.includes("全データ検索と表示中の画面内容") && !message.content.includes("入力例")
+    );
   }
 
   function loadHistory() {
@@ -226,6 +245,13 @@
     root.append(launcher, panel);
     document.body.appendChild(root);
 
+    messages.addEventListener("click", (event) => {
+      const button = event.target.closest("[data-chat-example]");
+      if (!button) return;
+      textarea.value = button.dataset.chatExample || "";
+      textarea.focus();
+      textarea.setSelectionRange(textarea.value.length, textarea.value.length);
+    });
     launcher.addEventListener("click", () => setOpen(!state.open));
     closeButton.addEventListener("click", () => setOpen(false));
     clearButton.addEventListener("click", () => {
@@ -273,6 +299,20 @@
       item.textContent = message.content;
       container.appendChild(item);
     });
+    if (!state.messages.some((message) => message.role === "user")) {
+      const examples = createNode("div", "ai-chatbot-examples");
+      examples.append(createNode("p", "ai-chatbot-examples-title", { text: "入力例" }));
+      EXAMPLE_QUESTIONS.forEach((question) => {
+        examples.append(
+          createNode("button", "ai-chatbot-example-button", {
+            type: "button",
+            "data-chat-example": question,
+            text: question,
+          })
+        );
+      });
+      container.appendChild(examples);
+    }
     container.scrollTop = container.scrollHeight;
   }
 

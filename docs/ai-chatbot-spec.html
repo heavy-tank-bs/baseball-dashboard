@@ -1,0 +1,670 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AIチャットボット仕様書</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f6f8fb;
+      --paper: #ffffff;
+      --ink: #1f2937;
+      --muted: #64748b;
+      --line: #d8e0ec;
+      --blue: #1d4ed8;
+      --blue-soft: #eaf1ff;
+      --green: #047857;
+      --green-soft: #e8f7ef;
+      --gold: #b7791f;
+      --gold-soft: #fff7df;
+      --code: #111827;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: "Yu Gothic", "Meiryo", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.75;
+    }
+
+    .page {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 32px 20px 56px;
+    }
+
+    .hero {
+      padding: 28px 32px;
+      background: linear-gradient(135deg, #123766 0%, #1d4ed8 58%, #0f766e 100%);
+      color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 18px 42px rgba(15, 23, 42, 0.18);
+    }
+
+    .hero p {
+      max-width: 860px;
+      margin: 12px 0 0;
+      color: rgba(255, 255, 255, 0.88);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(28px, 4vw, 42px);
+      line-height: 1.25;
+      letter-spacing: 0;
+    }
+
+    h2 {
+      margin: 42px 0 14px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--line);
+      font-size: 24px;
+      line-height: 1.35;
+      letter-spacing: 0;
+    }
+
+    h3 {
+      margin: 28px 0 10px;
+      font-size: 18px;
+      letter-spacing: 0;
+    }
+
+    p {
+      margin: 10px 0;
+    }
+
+    a {
+      color: var(--blue);
+    }
+
+    .paper {
+      margin-top: 24px;
+      padding: 30px 32px 36px;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      box-shadow: 0 14px 34px rgba(15, 23, 42, 0.08);
+    }
+
+    .toc {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 10px;
+      margin: 18px 0 26px;
+      padding: 16px;
+      background: #f8fafc;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+    }
+
+    .toc a {
+      display: block;
+      padding: 8px 10px;
+      color: var(--ink);
+      text-decoration: none;
+      border-radius: 6px;
+    }
+
+    .toc a:hover {
+      background: var(--blue-soft);
+      color: var(--blue);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 14px 0 24px;
+      font-size: 14px;
+    }
+
+    th,
+    td {
+      padding: 10px 12px;
+      border: 1px solid var(--line);
+      vertical-align: top;
+      text-align: left;
+    }
+
+    th {
+      background: #eef3fb;
+      font-weight: 700;
+    }
+
+    code {
+      padding: 2px 5px;
+      color: #0f172a;
+      background: #eef2f7;
+      border-radius: 4px;
+      font-family: "Cascadia Mono", "Consolas", monospace;
+      font-size: 0.92em;
+    }
+
+    pre {
+      overflow-x: auto;
+      margin: 14px 0 24px;
+      padding: 16px;
+      color: #e5e7eb;
+      background: var(--code);
+      border-radius: 8px;
+      line-height: 1.55;
+    }
+
+    pre code {
+      padding: 0;
+      color: inherit;
+      background: transparent;
+      border-radius: 0;
+    }
+
+    ul,
+    ol {
+      padding-left: 1.4rem;
+    }
+
+    li {
+      margin: 4px 0;
+    }
+
+    .note {
+      margin: 16px 0 24px;
+      padding: 14px 16px;
+      background: var(--gold-soft);
+      border: 1px solid #f1d28a;
+      border-left: 5px solid var(--gold);
+      border-radius: 6px;
+    }
+
+    .ok {
+      margin: 16px 0 24px;
+      padding: 14px 16px;
+      background: var(--green-soft);
+      border: 1px solid #a7e3c3;
+      border-left: 5px solid var(--green);
+      border-radius: 6px;
+    }
+
+    .flow {
+      display: grid;
+      grid-template-columns: repeat(7, minmax(110px, 1fr));
+      gap: 10px;
+      align-items: stretch;
+      margin: 18px 0 28px;
+    }
+
+    .flow-step {
+      position: relative;
+      min-height: 84px;
+      padding: 12px;
+      background: var(--blue-soft);
+      border: 1px solid #bfd3ff;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 700;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .flow-step:not(:last-child)::after {
+      content: "→";
+      position: absolute;
+      right: -13px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--muted);
+      font-weight: 700;
+      z-index: 1;
+    }
+
+    .badge {
+      display: inline-block;
+      margin-left: 8px;
+      padding: 2px 8px;
+      color: #0f766e;
+      background: #ccfbf1;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    @media (max-width: 900px) {
+      .page {
+        padding: 20px 12px 40px;
+      }
+
+      .paper,
+      .hero {
+        padding: 22px 18px;
+      }
+
+      .flow {
+        grid-template-columns: 1fr;
+      }
+
+      .flow-step:not(:last-child)::after {
+        content: "↓";
+        right: 50%;
+        top: auto;
+        bottom: -20px;
+        transform: translateX(50%);
+      }
+
+      table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header class="hero">
+      <h1>AIチャットボット仕様書</h1>
+      <p>野球ダッシュボードに追加したAIチャットボットの構成、API、S3データ参照、OpenAI連携、運用手順をまとめたHTML版仕様書です。</p>
+    </header>
+
+    <article class="paper">
+      <nav class="toc" aria-label="目次">
+        <a href="#overview">概要</a>
+        <a href="#production">本番構成</a>
+        <a href="#architecture">全体アーキテクチャ</a>
+        <a href="#files">関連ファイル</a>
+        <a href="#frontend">フロントエンド仕様</a>
+        <a href="#api">API仕様</a>
+        <a href="#lambda">Lambda仕様</a>
+        <a href="#data">参照データ</a>
+        <a href="#search">全データ検索仕様</a>
+        <a href="#openai">OpenAI呼び出し仕様</a>
+        <a href="#s3">S3同期仕様</a>
+        <a href="#local">ローカル開発</a>
+        <a href="#security">セキュリティ</a>
+        <a href="#ops">運用チェックリスト</a>
+      </nav>
+
+      <section id="overview">
+        <h2>概要</h2>
+        <p>このチャットボットは、GitHub Pages上の静的ダッシュボードに表示されるフローティングUIです。ブラウザ側にはOpenAI APIキーを置かず、質問内容と画面情報をAWS Lambda Function URLへ送信します。</p>
+        <p>LambdaはS3上のダッシュボードJSONを検索し、検索結果と表示中画面の情報をOpenAI Responses APIへ渡して、日本語の回答を生成します。</p>
+      </section>
+
+      <section id="production">
+        <h2>本番構成</h2>
+        <table>
+          <tr><th>項目</th><th>値</th></tr>
+          <tr><td>フロントエンド配信</td><td>GitHub Pages</td></tr>
+          <tr><td>公開ダッシュボードURL</td><td><code>https://heavy-tank-bs.github.io/baseball-dashboard/summary/index.html</code></td></tr>
+          <tr><td>チャットAPI</td><td>AWS Lambda Function URL</td></tr>
+          <tr><td>Function URL</td><td><code>https://2igxpnxlbz74ipsd46zkdo6dre0qykyq.lambda-url.ap-northeast-1.on.aws/</code></td></tr>
+          <tr><td>Lambda関数名</td><td><code>baseball-dashboard-chat-api</code></td></tr>
+          <tr><td>S3バケット</td><td><code>baseball-dashboard-data-778685277894</code></td></tr>
+          <tr><td>S3プレフィックス</td><td><code>prod/</code></td></tr>
+          <tr><td>AWSリージョン</td><td><code>ap-northeast-1</code></td></tr>
+          <tr><td>AWS CLIプロファイル</td><td><code>baseball-dashboard</code></td></tr>
+          <tr><td>既定LLMモデル</td><td><code>gpt-5-mini</code></td></tr>
+          <tr><td>既定最大出力トークン</td><td><code>2500</code></td></tr>
+        </table>
+      </section>
+
+      <section id="architecture">
+        <h2>全体アーキテクチャ</h2>
+        <div class="flow" aria-label="アーキテクチャ図">
+          <div class="flow-step">ユーザーの<br>ブラウザ</div>
+          <div class="flow-step">GitHub Pages<br>ダッシュボード</div>
+          <div class="flow-step">summary<br>chatbot.js</div>
+          <div class="flow-step">Lambda<br>Function URL</div>
+          <div class="flow-step">Lambda<br>検索API</div>
+          <div class="flow-step">S3<br>JSONデータ</div>
+          <div class="flow-step">OpenAI<br>Responses API</div>
+        </div>
+        <ol>
+          <li>ユーザーがダッシュボード上のAIチャットに質問する。</li>
+          <li><code>summary/chatbot.js</code> が質問、会話履歴、現在表示中の画面情報を集める。</li>
+          <li>ブラウザがLambda Function URLへPOSTする。</li>
+          <li>LambdaがS3上の <code>summary</code> / <code>generated</code> JSONを検索する。</li>
+          <li>Lambdaが画面情報、全データ検索結果、会話履歴、質問をOpenAIへ渡す。</li>
+          <li>OpenAIの回答をLambdaがJSONで返す。</li>
+          <li>ブラウザ側のチャットUIに回答を表示する。</li>
+        </ol>
+      </section>
+
+      <section id="files">
+        <h2>関連ファイル</h2>
+        <table>
+          <tr><th>ファイル</th><th>役割</th></tr>
+          <tr><td><code>summary/chatbot.js</code></td><td>ブラウザ側のチャットUI。画面情報を収集し、チャットAPIへ送信する。</td></tr>
+          <tr><td><code>summary/styles.css</code></td><td><code>.ai-chatbot*</code> 系セレクタでチャットUIを装飾する。</td></tr>
+          <tr><td><code>summary/index.html</code></td><td>投手の試合別ページ。<code>chatbot.js</code> を読み込む。</td></tr>
+          <tr><td><code>summary/batter.html</code></td><td>野手の試合別ページ。<code>chatbot.js</code> を読み込む。</td></tr>
+          <tr><td><code>summary/annual.html</code></td><td>投手の年間ページ。<code>chatbot.js</code> を読み込む。</td></tr>
+          <tr><td><code>summary/annual-batter.html</code></td><td>野手の年間ページ。<code>chatbot.js</code> を読み込む。</td></tr>
+          <tr><td><code>summary/compare.html</code></td><td>比較ページ。<code>chatbot.js</code> を読み込む。</td></tr>
+          <tr><td><code>scripts/dashboard_chat_lambda.py</code></td><td>AWS Lambda用のチャットAPI本体。S3検索とOpenAI呼び出しを行う。</td></tr>
+          <tr><td><code>scripts/dashboard_chat_server.py</code></td><td>ローカル開発用サーバー。ローカルファイルと <code>.env</code> を使う。</td></tr>
+          <tr><td><code>scripts/build_github_pages.py</code></td><td>GitHub Pages用の <code>site/</code> を生成する。</td></tr>
+          <tr><td><code>.github/workflows/deploy-pages.yml</code></td><td>GitHub Pagesへの自動デプロイワークフロー。</td></tr>
+          <tr><td><code>.env</code></td><td>ローカル専用の環境変数ファイル。Git管理しない。</td></tr>
+        </table>
+      </section>
+
+      <section id="frontend">
+        <h2>フロントエンド仕様</h2>
+        <h3>読み込み方法</h3>
+        <pre><code>&lt;script defer src="./chatbot.js?v=20260523-lambda"&gt;&lt;/script&gt;</code></pre>
+        <p><code>chatbot.js</code> はページ読み込み後に <code>document.body</code> へチャットUIを追加します。</p>
+
+        <h3>APIエンドポイントの決定順</h3>
+        <ol>
+          <li><code>window.DASHBOARD_CHAT_ENDPOINT</code></li>
+          <li><code>&lt;meta name="dashboard-chat-endpoint" content="..."&gt;</code></li>
+          <li><code>localhost</code> / <code>127.0.0.1</code> の場合は <code>/api/chat</code></li>
+          <li>それ以外はAWS Lambda Function URL</li>
+        </ol>
+
+        <h3>ブラウザ側の保存情報</h3>
+        <table>
+          <tr><th>キー</th><th>内容</th></tr>
+          <tr><td><code>npb-dashboard-chat-history</code></td><td>直近のチャット履歴</td></tr>
+          <tr><td><code>npb-dashboard-chat-open</code></td><td>チャットパネルの開閉状態</td></tr>
+        </table>
+        <table>
+          <tr><th>項目</th><th>上限</th></tr>
+          <tr><td>保存する会話履歴</td><td><code>10</code> メッセージ</td></tr>
+          <tr><td>APIへ送る会話履歴</td><td>直近 <code>8</code> メッセージ</td></tr>
+          <tr><td>画面コンテキスト</td><td><code>6500</code> 文字</td></tr>
+          <tr><td>ユーザー入力</td><td><code>600</code> 文字</td></tr>
+          <tr><td>回答表示用テキスト</td><td><code>8000</code> 文字</td></tr>
+        </table>
+
+        <h3>画面情報の収集</h3>
+        <ul>
+          <li>ページタイトル、現在のパス</li>
+          <li>選択中のタブ、アクティブなナビゲーション</li>
+          <li>入力欄、セレクトボックス、フィルターの値</li>
+          <li>選択中の結果カード</li>
+          <li>表示中iframeの選手成績テキスト</li>
+          <li>メイン画面、年間テーブル、比較パネルなどの可視テキスト</li>
+        </ul>
+        <div class="note">画面情報は回答材料の一部です。現在表示されていないデータについては、Lambda側がS3上の全データ検索結果を追加で渡します。</div>
+      </section>
+
+      <section id="api">
+        <h2>API仕様</h2>
+        <h3>チャット送信</h3>
+        <p>本番環境では <code>POST /</code> を使用します。ローカル開発サーバーでは <code>POST /api/chat</code> を使用できます。</p>
+        <pre><code>{
+  "message": "2026-05-23のオリックス野手で良かった選手を教えて",
+  "history": [
+    { "role": "user", "content": "..." },
+    { "role": "assistant", "content": "..." }
+  ],
+  "context": "画面上から収集したダッシュボード情報",
+  "page": {
+    "title": "Dashboard title",
+    "path": "/baseball-dashboard/summary/index.html"
+  }
+}</code></pre>
+
+        <h3>レスポンス</h3>
+        <pre><code>{
+  "reply": "回答本文"
+}</code></pre>
+
+        <h3>エラーレスポンス</h3>
+        <pre><code>{
+  "error": "error message"
+}</code></pre>
+
+        <h3>検索ヘルスチェック</h3>
+        <p><code>GET /api/search-health</code></p>
+        <pre><code>{
+  "pitcherEntries": 2213,
+  "batterEntries": 6034,
+  "pitcherTotals": 649,
+  "batterTotals": 609,
+  "loadedSeconds": 3.239
+}</code></pre>
+        <table>
+          <tr><th>項目</th><th>意味</th></tr>
+          <tr><td><code>pitcherEntries</code></td><td>試合別投手データ件数</td></tr>
+          <tr><td><code>batterEntries</code></td><td>試合別野手データ件数</td></tr>
+          <tr><td><code>pitcherTotals</code></td><td>年間投手成績件数</td></tr>
+          <tr><td><code>batterTotals</code></td><td>年間野手成績件数</td></tr>
+          <tr><td><code>loadedSeconds</code></td><td>検索インデックス読み込み秒数</td></tr>
+        </table>
+      </section>
+
+      <section id="lambda">
+        <h2>Lambda仕様</h2>
+        <h3>役割</h3>
+        <ol>
+          <li>Lambda Function URLからのHTTPリクエストを解析する。</li>
+          <li>S3からダッシュボードJSONを読み込む。</li>
+          <li>Lambda内メモリに検索インデックスを作成する。</li>
+          <li>ユーザー質問に関連する投手・野手・チーム・日付・年を抽出する。</li>
+          <li>関連する試合別データ、年間データを検索する。</li>
+          <li>画面情報、検索結果、会話履歴、質問をまとめる。</li>
+          <li>OpenAI Responses APIへ問い合わせる。</li>
+          <li>回答をJSONで返す。</li>
+        </ol>
+
+        <h3>環境変数</h3>
+        <table>
+          <tr><th>変数名</th><th>必須</th><th>既定値</th><th>用途</th></tr>
+          <tr><td><code>OPENAI_API_KEY</code></td><td>必須</td><td>なし</td><td>OpenAI API呼び出し用のAPIキー</td></tr>
+          <tr><td><code>OPENAI_MODEL</code></td><td>任意</td><td><code>gpt-5-mini</code></td><td>使用するLLMモデル</td></tr>
+          <tr><td><code>OPENAI_MAX_OUTPUT_TOKENS</code></td><td>任意</td><td><code>2500</code></td><td>最大出力トークン数</td></tr>
+          <tr><td><code>DATA_BUCKET</code></td><td>必須</td><td>なし</td><td>ダッシュボードデータを格納したS3バケット</td></tr>
+          <tr><td><code>DATA_PREFIX</code></td><td>任意</td><td><code>prod/</code></td><td>S3キーのプレフィックス</td></tr>
+          <tr><td><code>ALLOWED_ORIGIN</code></td><td>任意</td><td>Function URL CORS側で管理</td><td>想定するGitHub PagesのOrigin</td></tr>
+          <tr><td><code>DATA_CACHE_VERSION</code></td><td>任意</td><td>なし</td><td>Lambdaの検索キャッシュ更新用のダミー値</td></tr>
+        </table>
+
+        <h3>リクエスト制限</h3>
+        <table>
+          <tr><th>定数</th><th>値</th><th>用途</th></tr>
+          <tr><td><code>MAX_REQUEST_BYTES</code></td><td><code>1_000_000</code></td><td>APIリクエスト本文の最大サイズ</td></tr>
+          <tr><td><code>MAX_SCREEN_CONTEXT_CHARS</code></td><td><code>6500</code></td><td>画面情報としてモデルへ渡す最大文字数</td></tr>
+          <tr><td><code>MAX_SEARCH_CONTEXT_CHARS</code></td><td><code>16000</code></td><td>全データ検索結果としてモデルへ渡す最大文字数</td></tr>
+        </table>
+
+        <h3>Lambda内キャッシュ</h3>
+        <p>Lambdaは <code>SEARCH_INDEX</code> をグローバル変数として保持します。ウォーム状態のLambdaではS3を毎回読み直さず高速に回答できます。</p>
+        <div class="note">S3に新しいデータを同期しただけでは、既存のウォームLambdaが古い検索インデックスを使う可能性があります。S3同期後は <code>DATA_CACHE_VERSION</code> を更新してLambda設定を再反映します。</div>
+      </section>
+
+      <section id="data">
+        <h2>参照データ</h2>
+        <table>
+          <tr><th>S3キー</th><th>種別</th><th>用途</th></tr>
+          <tr><td><code>prod/summary/manifest.js</code></td><td>JS代入形式のJSON</td><td>試合別投手データ</td></tr>
+          <tr><td><code>prod/summary/batter_manifest.js</code></td><td>JS代入形式のJSON</td><td>試合別野手データ</td></tr>
+          <tr><td><code>prod/summary/player_totals.json</code></td><td>JSON</td><td>年間投手成績</td></tr>
+          <tr><td><code>prod/summary/batter_totals.json</code></td><td>JSON</td><td>年間野手成績</td></tr>
+          <tr><td><code>prod/generated/**/*.json</code></td><td>JSON</td><td>投手ダッシュボード詳細データ</td></tr>
+        </table>
+        <pre><code>window.DASHBOARD_MANIFEST = { ... };</code></pre>
+        <p><code>manifest.js</code> と <code>batter_manifest.js</code> はJavaScript代入形式のため、Lambda側で代入部分を除去してJSONとして読み込みます。</p>
+      </section>
+
+      <section id="search">
+        <h2>全データ検索仕様</h2>
+        <h3>正規化</h3>
+        <ul>
+          <li>Unicode <code>NFKC</code> 正規化</li>
+          <li><code>casefold()</code> による小文字化</li>
+          <li>空白、句読点、記号の除去</li>
+          <li>選手名・チーム名の部分一致</li>
+        </ul>
+
+        <h3>質問から抽出する要素</h3>
+        <ul>
+          <li>年: <code>2026</code></li>
+          <li>日付: <code>2026-05-23</code></li>
+          <li>投手名、野手名、チーム名</li>
+          <li>投手系の質問か、野手系の質問か</li>
+        </ul>
+        <p>投手・野手のどちらを聞いているか明確でない場合は、両方を検索します。</p>
+
+        <h3>投手検索</h3>
+        <table>
+          <tr><th>質問意図</th><th>指標</th><th>並び順</th></tr>
+          <tr><td>FIP</td><td><code>fip</code></td><td>低い順</td></tr>
+          <tr><td>WHIP</td><td><code>whip</code></td><td>低い順</td></tr>
+          <tr><td>ERA / 防御率</td><td><code>era</code></td><td>低い順</td></tr>
+          <tr><td>K/9 / 奪三振</td><td><code>kPer9</code></td><td>高い順</td></tr>
+          <tr><td>BB/9 / 四球</td><td><code>bbPer9</code></td><td>低い順</td></tr>
+          <tr><td>被打率</td><td><code>battingAverageAllowed</code></td><td>低い順</td></tr>
+          <tr><td>指標指定なし</td><td><code>inningsOuts</code></td><td>高い順</td></tr>
+        </table>
+
+        <h3>野手検索</h3>
+        <table>
+          <tr><th>質問意図</th><th>指標</th><th>並び順</th></tr>
+          <tr><td>得点圏</td><td><code>scoringPositionBattingAverage</code></td><td>高い順</td></tr>
+          <tr><td>wRC+</td><td><code>wrcPlus</code></td><td>高い順</td></tr>
+          <tr><td>OPS</td><td><code>ops</code></td><td>高い順</td></tr>
+          <tr><td>HR / 本塁打</td><td><code>homeRuns</code></td><td>高い順</td></tr>
+          <tr><td>出塁率</td><td><code>onBasePercentage</code></td><td>高い順</td></tr>
+          <tr><td>長打率</td><td><code>sluggingPercentage</code></td><td>高い順</td></tr>
+          <tr><td>打率 / 安打</td><td><code>battingAverage</code></td><td>高い順</td></tr>
+          <tr><td>指標指定なし</td><td><code>plateAppearances</code></td><td>高い順</td></tr>
+        </table>
+      </section>
+
+      <section id="openai">
+        <h2>OpenAI呼び出し仕様</h2>
+        <p>LambdaはOpenAI Responses APIを呼び出します。</p>
+        <pre><code>POST https://api.openai.com/v1/responses</code></pre>
+        <pre><code>{
+  "model": "gpt-5-mini",
+  "instructions": "...",
+  "input": "...",
+  "max_output_tokens": 2500,
+  "store": false
+}</code></pre>
+        <p><code>input</code> は以下の順番で構成します。</p>
+        <ol>
+          <li>画面情報</li>
+          <li>S3全データ検索結果</li>
+          <li>直近の会話履歴</li>
+          <li>今回の質問</li>
+        </ol>
+        <ul>
+          <li>日本語で回答する。</li>
+          <li>画面情報と全データ検索結果の両方を使う。</li>
+          <li>画面に表示されていなくても、全データ検索に関連行があればそれを使う。</li>
+          <li>根拠のない選手成績、日付、チーム、球種、順位、結論を作らない。</li>
+          <li>データが不足している場合は、何が不足しているかを伝える。</li>
+        </ul>
+      </section>
+
+      <section id="s3">
+        <h2>S3同期仕様</h2>
+        <p>チャットボットが全データ検索で参照できるのは、S3へ同期済みのJSONです。新しい試合データを作成した後は、以下をS3へ同期します。</p>
+        <ul>
+          <li><code>summary/*.json</code></li>
+          <li><code>summary/manifest.js</code></li>
+          <li><code>summary/batter_manifest.js</code></li>
+          <li><code>generated/**/*.json</code></li>
+        </ul>
+        <pre><code>$env:Path = [Environment]::GetEnvironmentVariable('Path','Machine') + ';' + [Environment]::GetEnvironmentVariable('Path','User')
+$bucket = 'baseball-dashboard-data-778685277894'
+
+aws s3 sync .\summary "s3://$bucket/prod/summary" `
+  --exclude "*" `
+  --include "*.json" `
+  --include "manifest.js" `
+  --include "batter_manifest.js" `
+  --cache-control "no-cache" `
+  --profile baseball-dashboard `
+  --region ap-northeast-1
+
+aws s3 sync .\generated "s3://$bucket/prod/generated" `
+  --exclude "*" `
+  --include "*.json" `
+  --cache-control "no-cache" `
+  --profile baseball-dashboard `
+  --region ap-northeast-1</code></pre>
+
+        <h3>対象日の確認</h3>
+        <pre><code>$targetDate = '2026-05-23'
+$counts = aws s3api list-objects-v2 `
+  --bucket $bucket `
+  --prefix 'prod/generated/' `
+  --query "length(Contents[?contains(Key, '$targetDate')])" `
+  --output text `
+  --profile baseball-dashboard `
+  --region ap-northeast-1
+($counts | Measure-Object -Sum).Sum</code></pre>
+
+        <h3>Lambdaキャッシュ確認</h3>
+        <pre><code>Invoke-RestMethod -Uri 'https://2igxpnxlbz74ipsd46zkdo6dre0qykyq.lambda-url.ap-northeast-1.on.aws/api/search-health' -Method Get | ConvertTo-Json -Depth 5</code></pre>
+      </section>
+
+      <section id="local">
+        <h2>ローカル開発仕様</h2>
+        <p>ローカルでは <code>.env</code> と <code>scripts/dashboard_chat_server.py</code> を使います。</p>
+        <pre><code>OPENAI_API_KEY=sk-...
+OPENAI_MODEL=gpt-5-mini
+OPENAI_MAX_OUTPUT_TOKENS=2500
+PORT=8787</code></pre>
+        <pre><code>python scripts/dashboard_chat_server.py</code></pre>
+        <p>ブラウザで開くURL:</p>
+        <pre><code>http://localhost:8787/</code></pre>
+        <p>ヘルスチェック:</p>
+        <pre><code>http://localhost:8787/api/search-health</code></pre>
+        <div class="ok">ローカルサーバーはS3ではなく、ローカルの <code>summary/</code> と <code>generated/</code> を直接読み込みます。</div>
+      </section>
+
+      <section id="security">
+        <h2>セキュリティ仕様</h2>
+        <ul>
+          <li>OpenAI APIキーはブラウザ側コードに含めない。</li>
+          <li><code>.env</code> はローカル専用でGit管理しない。</li>
+          <li>Lambdaでは <code>OPENAI_API_KEY</code> を環境変数から読む。</li>
+          <li>S3にはダッシュボード用JSONのみを置き、秘密情報は置かない。</li>
+          <li>OpenAI API呼び出しでは <code>store: false</code> を指定する。</li>
+          <li>CORSはLambda Function URL側の設定で管理する。</li>
+          <li>Lambda設定更新時に環境変数全体を出力しない。</li>
+          <li>コマンド出力やログにAPIキーを表示しない。</li>
+        </ul>
+      </section>
+
+      <section id="limitations">
+        <h2>既知の制約</h2>
+        <ul>
+          <li>検索はキーワード・構造化データベース検索であり、ベクトル検索ではない。</li>
+          <li>短い選手名や似た名前では候補が曖昧になる可能性がある。</li>
+          <li>S3へ同期しただけでは、ウォーム状態のLambdaが古い検索キャッシュを使う場合がある。</li>
+          <li>回答はストリーミングではなく、生成完了後にまとめて返す。</li>
+          <li>GitHub Pages単体ではAIチャットボットを完結できない。</li>
+          <li>全データ検索の対象は、生成済みかつS3同期済みのデータのみ。</li>
+        </ul>
+      </section>
+
+      <section id="ops">
+        <h2>運用チェックリスト</h2>
+        <ol>
+          <li>投手ダッシュボードを生成する。</li>
+          <li>野手ダッシュボードを生成する。</li>
+          <li><code>summary/build_manifest.py</code> を再実行して集計ファイルを更新する。</li>
+          <li>ローカルのダッシュボード表示を確認する。</li>
+          <li><code>summary</code> のJSON・manifestと <code>generated</code> のJSONをS3へ同期する。</li>
+          <li><code>DATA_CACHE_VERSION</code> を更新してLambdaの検索キャッシュを更新する。</li>
+          <li><code>/api/search-health</code> で件数を確認する。</li>
+          <li>チャットボットに日付・チーム・選手を指定した質問を投げて確認する。</li>
+          <li>静的サイト側の変更がある場合はGitHubへpushする。</li>
+        </ol>
+      </section>
+    </article>
+  </main>
+</body>
+</html>
