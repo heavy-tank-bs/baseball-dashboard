@@ -16,20 +16,15 @@
     window.DASHBOARD_CHAT_ENDPOINT ||
     document.querySelector('meta[name="dashboard-chat-endpoint"]')?.content ||
     (localHosts.has(window.location.hostname) ? "/api/chat" : AWS_CHAT_ENDPOINT);
-  const EXAMPLE_QUESTIONS = [
-    "2026-05-23のオリックスで良かった投手は？",
-    "2026年のオリックス野手でOPSが高い選手を教えて",
-    "この画面に表示されている選手の特徴を要約して",
-  ];
   const SELECTOR_SOURCES = [
     {
       kind: "投手",
-      src: "./manifest.js?v=20260528-chat-genre",
+      src: "./manifest.js?v=20260529-chat-step",
       globalName: "PITCH_DASHBOARD_MANIFEST",
     },
     {
       kind: "野手",
-      src: "./batter_manifest.js?v=20260528-chat-genre",
+      src: "./batter_manifest.js?v=20260529-chat-step",
       globalName: "BATTER_GAME_MANIFEST",
     },
   ];
@@ -67,6 +62,7 @@
     messages: loadHistory(),
     selector: {
       activeType: "",
+      completed: false,
       loaded: false,
       loading: false,
       entries: [],
@@ -300,6 +296,10 @@
     return ["game", "personal", "traits"].includes(state.selector.activeType);
   }
 
+  function selectorRequiresPlayer() {
+    return ["personal", "traits"].includes(state.selector.activeType);
+  }
+
   function optionNode(value, label, attrs = {}) {
     return createNode("option", "", { value, text: label, ...attrs });
   }
@@ -360,11 +360,8 @@
     elements.teamSelect.hidden = !showTeamPlayer;
     elements.playerLabel.hidden = !showTeamPlayer;
     elements.playerSelect.hidden = !showTeamPlayer;
-    elements.insertButton.hidden = !type || type.type === "free";
+    elements.startButton.hidden = !type || type.type === "free";
     elements.textarea.placeholder = type?.type === "free" ? "自由に質問を入力" : "このダッシュボードについて質問";
-    if (type?.type === "free") {
-      elements.textarea.focus();
-    }
   }
 
   function renderSelectorOptions(elements) {
@@ -392,6 +389,16 @@
     renderPlayerOptions(elements.dateInput, elements.teamSelect, elements.playerSelect);
     const dateText = dates.length ? `${dates[dates.length - 1]} - ${dates[0]}` : "データなし";
     elements.note.textContent = usesDateFilter() ? `${type.note} 対象日: ${dateText}` : type.note;
+  }
+
+  function selectorValidationMessage(dateInput, teamSelect, playerSelect) {
+    const type = activeQuestionType();
+    if (!type) return "質問ジャンルを選択してください。";
+    if (type.type === "free") return "";
+    if (type.type === "game" && !dateInput.value) return "日付を選択してください。";
+    if (usesTeamPlayerFilters() && !teamSelect.value) return "チームを選択してください。";
+    if (selectorRequiresPlayer() && !playerSelect.value) return "選手を選択してください。";
+    return "";
   }
 
   function buildSelectorQuestion(dateInput, teamSelect, playerSelect) {
@@ -426,31 +433,64 @@
     return "";
   }
 
+  function setChatStep(elements, step) {
+    state.selector.completed = step === "chat";
+    elements.root.dataset.step = step;
+    elements.backButton.hidden = step !== "chat";
+    const focusTarget = step === "chat" ? elements.textarea : elements.typeButtons[0];
+    setTimeout(() => focusTarget?.focus(), 80);
+  }
+
+  function completeSelector(elements, question = "") {
+    if (question) {
+      elements.textarea.value = question.slice(0, MAX_MESSAGE_LENGTH);
+      elements.textarea.setSelectionRange(elements.textarea.value.length, elements.textarea.value.length);
+    } else {
+      elements.textarea.value = "";
+    }
+    setChatStep(elements, "chat");
+  }
+
+  function resetSelectorFlow(elements) {
+    state.selector.activeType = "";
+    elements.dateInput.value = "";
+    elements.teamSelect.value = "";
+    elements.playerSelect.value = "";
+    elements.textarea.value = "";
+    renderSelectorOptions(elements);
+    setChatStep(elements, "select");
+  }
+
   function bindSelectorControls(elements) {
     const refresh = () => renderSelectorOptions(elements);
     elements.typeButtons.forEach((button) => {
       button.addEventListener("click", () => {
         state.selector.activeType = button.dataset.chatQuestionType || "";
         refresh();
+        if (state.selector.activeType === "free") completeSelector(elements);
       });
     });
     elements.dateInput.addEventListener("change", refresh);
     elements.teamSelect.addEventListener("change", () => {
       renderPlayerOptions(elements.dateInput, elements.teamSelect, elements.playerSelect);
     });
-    elements.insertButton.addEventListener("click", () => {
+    elements.startButton.addEventListener("click", () => {
+      const validationMessage = selectorValidationMessage(elements.dateInput, elements.teamSelect, elements.playerSelect);
+      if (validationMessage) {
+        elements.note.textContent = validationMessage;
+        return;
+      }
       const question = buildSelectorQuestion(elements.dateInput, elements.teamSelect, elements.playerSelect);
-      if (!question) return;
-      elements.textarea.value = question.slice(0, MAX_MESSAGE_LENGTH);
-      elements.textarea.focus();
-      elements.textarea.setSelectionRange(elements.textarea.value.length, elements.textarea.value.length);
+      completeSelector(elements, question);
     });
+    elements.backButton.addEventListener("click", () => setChatStep(elements, "select"));
     refresh();
     loadSelectorData()
       .then(refresh)
       .catch(() => {
         elements.note.textContent = "条件データを読み込めませんでした。直接入力してください。";
       });
+    return { reset: () => resetSelectorFlow(elements) };
   }
 
   function buildWidget() {
@@ -477,6 +517,13 @@
       title: "履歴を削除",
       text: "削除",
     });
+    const backButton = createNode("button", "ai-chatbot-icon-button", {
+      type: "button",
+      "aria-label": "質問ジャンルを変更",
+      title: "質問ジャンルを変更",
+      text: "変更",
+    });
+    backButton.hidden = true;
     const closeButton = createNode("button", "ai-chatbot-icon-button", {
       type: "button",
       "aria-label": "閉じる",
@@ -484,7 +531,7 @@
       text: "閉じる",
     });
     const actions = createNode("div", "ai-chatbot-header-actions");
-    actions.append(clearButton, closeButton);
+    actions.append(backButton, clearButton, closeButton);
     header.append(titleWrap, actions);
 
     const messages = createNode("div", "ai-chatbot-messages", {
@@ -516,9 +563,9 @@
     });
     teamSelect.append(optionNode("", "読み込み中..."));
     playerSelect.append(optionNode("", "選手を選択"));
-    const insertButton = createNode("button", "ai-chatbot-selector-button", {
+    const startButton = createNode("button", "ai-chatbot-selector-button", {
       type: "button",
-      text: "質問に入れる",
+      text: "チャットへ進む",
     });
     const selectorNote = createNode("p", "ai-chatbot-selector-note", { text: "条件データを読み込み中..." });
     const dateLabel = createNode("label", "ai-chatbot-filter-field", { text: "日付" });
@@ -531,7 +578,7 @@
       teamSelect,
       playerLabel,
       playerSelect,
-      insertButton,
+      startButton,
       selectorNote
     );
     const form = createNode("form", "ai-chatbot-form");
@@ -548,8 +595,12 @@
     form.append(textarea, sendButton);
     panel.append(header, messages, selectorPanel, form);
     root.append(launcher, panel);
+    state.selector.completed = state.messages.some((message) => message.role === "user");
+    root.dataset.step = state.selector.completed ? "chat" : "select";
+    backButton.hidden = !state.selector.completed;
     document.body.appendChild(root);
-    bindSelectorControls({
+    const selectorControls = bindSelectorControls({
+      root,
       typeButtons,
       dateLabel,
       dateInput,
@@ -557,17 +608,10 @@
       teamSelect,
       playerLabel,
       playerSelect,
-      insertButton,
+      startButton,
       note: selectorNote,
       textarea,
-    });
-
-    messages.addEventListener("click", (event) => {
-      const button = event.target.closest("[data-chat-example]");
-      if (!button) return;
-      textarea.value = button.dataset.chatExample || "";
-      textarea.focus();
-      textarea.setSelectionRange(textarea.value.length, textarea.value.length);
+      backButton,
     });
     launcher.addEventListener("click", () => setOpen(!state.open));
     closeButton.addEventListener("click", () => setOpen(false));
@@ -575,7 +619,7 @@
       state.messages = [initialMessage];
       saveHistory();
       renderMessages(messages);
-      textarea.focus();
+      selectorControls.reset();
     });
     textarea.addEventListener("keydown", (event) => {
       if (event.key === "Enter" && !event.shiftKey) {
@@ -605,7 +649,8 @@
     launcher.setAttribute("aria-label", open ? "AIチャットを閉じる" : "AIチャットを開く");
     if (persist) localStorage.setItem(OPEN_KEY, open ? "1" : "0");
     if (open) {
-      setTimeout(() => document.querySelector(".ai-chatbot-input")?.focus(), 80);
+      const focusSelector = root.dataset.step === "chat" ? ".ai-chatbot-input" : ".ai-chatbot-type-button";
+      setTimeout(() => document.querySelector(focusSelector)?.focus(), 80);
     }
   }
 
@@ -616,20 +661,6 @@
       item.textContent = message.content;
       container.appendChild(item);
     });
-    if (!state.messages.some((message) => message.role === "user")) {
-      const examples = createNode("div", "ai-chatbot-examples");
-      examples.append(createNode("p", "ai-chatbot-examples-title", { text: "入力例" }));
-      EXAMPLE_QUESTIONS.forEach((question) => {
-        examples.append(
-          createNode("button", "ai-chatbot-example-button", {
-            type: "button",
-            "data-chat-example": question,
-            text: question,
-          })
-        );
-      });
-      container.appendChild(examples);
-    }
     container.scrollTop = container.scrollHeight;
   }
 
