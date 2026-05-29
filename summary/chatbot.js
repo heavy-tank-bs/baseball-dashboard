@@ -21,16 +21,57 @@
     "2026年のオリックス野手でOPSが高い選手を教えて",
     "この画面に表示されている選手の特徴を要約して",
   ];
+  const SELECTOR_SOURCES = [
+    {
+      kind: "投手",
+      src: "./manifest.js?v=20260528-chat-genre",
+      globalName: "PITCH_DASHBOARD_MANIFEST",
+    },
+    {
+      kind: "野手",
+      src: "./batter_manifest.js?v=20260528-chat-genre",
+      globalName: "BATTER_GAME_MANIFEST",
+    },
+  ];
+  const QUESTION_TYPES = [
+    {
+      type: "game",
+      label: "試合詳細",
+      note: "日付・チームを選んで試合内容を質問します。選手は未選択でも使えます。",
+    },
+    {
+      type: "personal",
+      label: "個人成績",
+      note: "チーム・選手を選んで年度成績や指標を質問します。",
+    },
+    {
+      type: "traits",
+      label: "選手の特徴",
+      note: "チーム・選手を選んで球種傾向、打撃傾向、強みを質問します。",
+    },
+    {
+      type: "free",
+      label: "その他",
+      note: "下の入力欄に自由に質問を書いてください。",
+    },
+  ];
 
   const initialMessage = {
     role: "assistant",
-    content: "全データ検索と表示中の画面内容を使って回答します。\n\n入力例から選ぶか、選手名・チーム・日付・指標を指定して聞いてください。",
+    content: "全データ検索と表示中の画面内容を使って回答します。\n\nまず質問ジャンルを選んでください。試合詳細は日付・チーム・選手、個人成績と選手の特徴はチーム・選手から指定できます。",
   };
 
   const state = {
     open: localStorage.getItem(OPEN_KEY) === "1",
     busy: false,
     messages: loadHistory(),
+    selector: {
+      activeType: "",
+      loaded: false,
+      loading: false,
+      entries: [],
+      dates: [],
+    },
   };
 
   if (!state.messages.length) {
@@ -47,7 +88,7 @@
   function isOldInitialMessage(message) {
     if (message?.role !== "assistant" || typeof message.content !== "string") return false;
     return /[\u7e1d\u7e5d\u9666]/.test(message.content) || (
-      message.content.includes("全データ検索と表示中の画面内容") && !message.content.includes("入力例")
+      message.content.includes("全データ検索と表示中の画面内容") && !message.content.includes("質問ジャンル")
     );
   }
 
@@ -192,6 +233,226 @@
     return node;
   }
 
+  function uniqueSorted(values, sorter = (a, b) => `${a}`.localeCompare(`${b}`, "ja")) {
+    return [...new Set(values.filter(Boolean))].sort(sorter);
+  }
+
+  function loadScriptOnce(source) {
+    if (window[source.globalName]) return Promise.resolve(window[source.globalName]);
+    const existing = document.querySelector(`script[data-chat-manifest="${source.globalName}"]`);
+    if (existing) {
+      return new Promise((resolve, reject) => {
+        existing.addEventListener("load", () => resolve(window[source.globalName]), { once: true });
+        existing.addEventListener("error", reject, { once: true });
+      });
+    }
+    return new Promise((resolve, reject) => {
+      const script = document.createElement("script");
+      script.src = source.src;
+      script.dataset.chatManifest = source.globalName;
+      script.onload = () => resolve(window[source.globalName]);
+      script.onerror = reject;
+      document.head.appendChild(script);
+    });
+  }
+
+  async function loadSelectorData() {
+    if (state.selector.loaded || state.selector.loading) return;
+    state.selector.loading = true;
+    const manifests = await Promise.all(
+      SELECTOR_SOURCES.map(async (source) => ({
+        source,
+        manifest: await loadScriptOnce(source),
+      }))
+    );
+    const entries = manifests.flatMap(({ source, manifest }) => {
+      const rows = Array.isArray(manifest?.entries) ? manifest.entries : [];
+      return rows
+        .map((entry) => ({
+          kind: source.kind,
+          date: normalizeText(entry.date, 20),
+          team: normalizeText(entry.team || entry.teams?.[0], 80),
+          player: normalizeText(entry.player, 120),
+        }))
+        .filter((entry) => entry.date && entry.team && entry.player);
+    });
+    state.selector.entries = entries;
+    state.selector.dates = uniqueSorted(entries.map((entry) => entry.date), (a, b) => b.localeCompare(a));
+    state.selector.loaded = true;
+    state.selector.loading = false;
+  }
+
+  function selectorMatches(entry, filters) {
+    if (filters.date && entry.date !== filters.date) return false;
+    if (filters.team && entry.team !== filters.team) return false;
+    return true;
+  }
+
+  function activeQuestionType() {
+    return QUESTION_TYPES.find((item) => item.type === state.selector.activeType) || null;
+  }
+
+  function usesDateFilter() {
+    return state.selector.activeType === "game";
+  }
+
+  function usesTeamPlayerFilters() {
+    return ["game", "personal", "traits"].includes(state.selector.activeType);
+  }
+
+  function optionNode(value, label, attrs = {}) {
+    return createNode("option", "", { value, text: label, ...attrs });
+  }
+
+  function selectedFilters(dateInput, teamSelect) {
+    return {
+      date: usesDateFilter() ? dateInput.value || "" : "",
+      team: usesTeamPlayerFilters() ? teamSelect.value || "" : "",
+    };
+  }
+
+  function renderTeamOptions(dateInput, teamSelect) {
+    const current = teamSelect.value;
+    const date = usesDateFilter() ? dateInput.value || "" : "";
+    const teams = uniqueSorted(
+      state.selector.entries
+        .filter((entry) => !date || entry.date === date)
+        .map((entry) => entry.team)
+    );
+    teamSelect.replaceChildren(optionNode("", "チームを選択"), ...teams.map((team) => optionNode(team, team)));
+    if (teams.includes(current)) teamSelect.value = current;
+  }
+
+  function renderPlayerOptions(dateInput, teamSelect, playerSelect) {
+    const current = playerSelect.value;
+    const filters = selectedFilters(dateInput, teamSelect);
+    const players = state.selector.entries
+      .filter((entry) => selectorMatches(entry, filters))
+      .sort((a, b) => a.team.localeCompare(b.team, "ja") || a.player.localeCompare(b.player, "ja") || a.kind.localeCompare(b.kind, "ja"));
+    const seen = new Set();
+    const options = players
+      .map((entry) => {
+        const value = `${entry.kind}::${entry.player}`;
+        const key = `${entry.team}::${value}`;
+        if (seen.has(key)) return null;
+        seen.add(key);
+        const label = filters.team ? `${entry.player}（${entry.kind}）` : `${entry.team} ${entry.player}（${entry.kind}）`;
+        return optionNode(value, label, {
+          "data-player": entry.player,
+          "data-kind": entry.kind,
+        });
+      })
+      .filter(Boolean);
+    playerSelect.replaceChildren(optionNode("", "選手を選択"), ...options);
+    if ([...playerSelect.options].some((option) => option.value === current)) playerSelect.value = current;
+  }
+
+  function syncSelectorVisibility(elements) {
+    const type = activeQuestionType();
+    elements.typeButtons.forEach((button) => {
+      button.classList.toggle("active", button.dataset.chatQuestionType === state.selector.activeType);
+    });
+    const showDate = usesDateFilter();
+    const showTeamPlayer = usesTeamPlayerFilters();
+    elements.dateLabel.hidden = !showDate;
+    elements.dateInput.hidden = !showDate;
+    elements.teamLabel.hidden = !showTeamPlayer;
+    elements.teamSelect.hidden = !showTeamPlayer;
+    elements.playerLabel.hidden = !showTeamPlayer;
+    elements.playerSelect.hidden = !showTeamPlayer;
+    elements.insertButton.hidden = !type || type.type === "free";
+    elements.textarea.placeholder = type?.type === "free" ? "自由に質問を入力" : "このダッシュボードについて質問";
+    if (type?.type === "free") {
+      elements.textarea.focus();
+    }
+  }
+
+  function renderSelectorOptions(elements) {
+    syncSelectorVisibility(elements);
+    const type = activeQuestionType();
+    if (!type) {
+      elements.note.textContent = "最初に質問ジャンルを選択してください。";
+      return;
+    }
+    if (type.type === "free") {
+      elements.note.textContent = type.note;
+      return;
+    }
+    if (!state.selector.loaded) {
+      elements.note.textContent = "条件データを読み込み中...";
+      return;
+    }
+    const dates = state.selector.dates;
+    if (usesDateFilter() && dates.length) {
+      elements.dateInput.min = dates[dates.length - 1];
+      elements.dateInput.max = dates[0];
+      if (!elements.dateInput.value) elements.dateInput.value = dates[0];
+    }
+    renderTeamOptions(elements.dateInput, elements.teamSelect);
+    renderPlayerOptions(elements.dateInput, elements.teamSelect, elements.playerSelect);
+    const dateText = dates.length ? `${dates[dates.length - 1]} - ${dates[0]}` : "データなし";
+    elements.note.textContent = usesDateFilter() ? `${type.note} 対象日: ${dateText}` : type.note;
+  }
+
+  function buildSelectorQuestion(dateInput, teamSelect, playerSelect) {
+    const type = activeQuestionType();
+    if (!type || type.type === "free") return "";
+    const date = dateInput.value || "";
+    const team = teamSelect.value || "";
+    const option = playerSelect.selectedOptions[0];
+    const player = option?.dataset.player || "";
+    const kind = option?.dataset.kind || "";
+    if (type.type === "game" && player) {
+      return `${date ? `${date}の` : ""}${team ? `${team}の` : ""}${player}（${kind}）について、試合内容と注目ポイントを教えて`;
+    }
+    if (type.type === "game" && team) {
+      return `${date ? `${date}の` : ""}${team}について、投手・野手の注目ポイントを教えて`;
+    }
+    if (type.type === "game" && date) {
+      return `${date}の注目選手と試合内容を教えて`;
+    }
+    if (type.type === "personal" && player) {
+      return `${team ? `${team}の` : ""}${player}（${kind}）の個人成績を教えて`;
+    }
+    if (type.type === "personal" && team) {
+      return `${team}の個人成績で注目すべき選手を教えて`;
+    }
+    if (type.type === "traits" && player) {
+      return `${team ? `${team}の` : ""}${player}（${kind}）の選手としての特徴を教えて`;
+    }
+    if (type.type === "traits" && team) {
+      return `${team}の選手の特徴と注目選手を教えて`;
+    }
+    return "";
+  }
+
+  function bindSelectorControls(elements) {
+    const refresh = () => renderSelectorOptions(elements);
+    elements.typeButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        state.selector.activeType = button.dataset.chatQuestionType || "";
+        refresh();
+      });
+    });
+    elements.dateInput.addEventListener("change", refresh);
+    elements.teamSelect.addEventListener("change", () => {
+      renderPlayerOptions(elements.dateInput, elements.teamSelect, elements.playerSelect);
+    });
+    elements.insertButton.addEventListener("click", () => {
+      const question = buildSelectorQuestion(elements.dateInput, elements.teamSelect, elements.playerSelect);
+      if (!question) return;
+      elements.textarea.value = question.slice(0, MAX_MESSAGE_LENGTH);
+      elements.textarea.focus();
+      elements.textarea.setSelectionRange(elements.textarea.value.length, elements.textarea.value.length);
+    });
+    refresh();
+    loadSelectorData()
+      .then(refresh)
+      .catch(() => {
+        elements.note.textContent = "条件データを読み込めませんでした。直接入力してください。";
+      });
+  }
+
   function buildWidget() {
     const root = createNode("div", "ai-chatbot");
     const launcher = createNode("button", "ai-chatbot-launch", {
@@ -229,6 +490,50 @@
     const messages = createNode("div", "ai-chatbot-messages", {
       "aria-live": "polite",
     });
+    const selectorPanel = createNode("div", "ai-chatbot-selector");
+    const typeGroup = createNode("div", "ai-chatbot-type-group", {
+      "aria-label": "質問ジャンル",
+      role: "group",
+    });
+    const typeButtons = QUESTION_TYPES.map((item) =>
+      createNode("button", "ai-chatbot-type-button", {
+        type: "button",
+        "data-chat-question-type": item.type,
+        text: item.label,
+      })
+    );
+    typeGroup.append(...typeButtons);
+    selectorPanel.append(createNode("p", "ai-chatbot-selector-title", { text: "質問ジャンル" }), typeGroup);
+    const dateInput = createNode("input", "ai-chatbot-filter-control", {
+      type: "date",
+      "aria-label": "日付",
+    });
+    const teamSelect = createNode("select", "ai-chatbot-filter-control", {
+      "aria-label": "チーム",
+    });
+    const playerSelect = createNode("select", "ai-chatbot-filter-control", {
+      "aria-label": "選手",
+    });
+    teamSelect.append(optionNode("", "読み込み中..."));
+    playerSelect.append(optionNode("", "選手を選択"));
+    const insertButton = createNode("button", "ai-chatbot-selector-button", {
+      type: "button",
+      text: "質問に入れる",
+    });
+    const selectorNote = createNode("p", "ai-chatbot-selector-note", { text: "条件データを読み込み中..." });
+    const dateLabel = createNode("label", "ai-chatbot-filter-field", { text: "日付" });
+    const teamLabel = createNode("label", "ai-chatbot-filter-field", { text: "チーム" });
+    const playerLabel = createNode("label", "ai-chatbot-filter-field", { text: "選手" });
+    selectorPanel.append(
+      dateLabel,
+      dateInput,
+      teamLabel,
+      teamSelect,
+      playerLabel,
+      playerSelect,
+      insertButton,
+      selectorNote
+    );
     const form = createNode("form", "ai-chatbot-form");
     const textarea = createNode("textarea", "ai-chatbot-input", {
       rows: "2",
@@ -241,9 +546,21 @@
       text: "送信",
     });
     form.append(textarea, sendButton);
-    panel.append(header, messages, form);
+    panel.append(header, messages, selectorPanel, form);
     root.append(launcher, panel);
     document.body.appendChild(root);
+    bindSelectorControls({
+      typeButtons,
+      dateLabel,
+      dateInput,
+      teamLabel,
+      teamSelect,
+      playerLabel,
+      playerSelect,
+      insertButton,
+      note: selectorNote,
+      textarea,
+    });
 
     messages.addEventListener("click", (event) => {
       const button = event.target.closest("[data-chat-example]");
