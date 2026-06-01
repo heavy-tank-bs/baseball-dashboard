@@ -434,16 +434,16 @@ class DashboardSearchIndex:
 
     def _format_pitcher_totals(self, rows: list[dict[str, Any]]) -> str:
         if not rows:
-            return "## Pitcher season stats\n- No matching pitcher season rows."
-        lines = ["## Pitcher season stats"]
+            return "## 投手 年度成績候補\n- 該当する年度成績は見つかりません。"
+        lines = ["## 投手 年度成績候補"]
         for row in rows:
             lines.append(
                 "- "
                 f"{row.get('year')} {row.get('team')} {row.get('player')}: "
-                f"games {fmt(row.get('games'))}, IP {fmt(row.get('innings'))}, "
+                f"{fmt(row.get('games'))}試合, 投球回 {fmt(row.get('innings'))}, "
                 f"ERA {fmt(row.get('era'))}, WHIP {fmt(row.get('whip'))}, FIP {fmt(row.get('fip'))}, "
-                f"K/9 {fmt(row.get('kPer9'))}, BB/9 {fmt(row.get('bbPer9'))}, "
-                f"K {fmt(row.get('strikeouts'))}, BB {fmt(row.get('walks'))}"
+                f"奪三振率 {fmt(row.get('kPer9'))}, 与四球率 {fmt(row.get('bbPer9'))}, "
+                f"奪三振 {fmt(row.get('strikeouts'))}, 与四球 {fmt(row.get('walks'))}"
             )
         return "\n".join(lines)
 
@@ -466,8 +466,8 @@ class DashboardSearchIndex:
 
     def _format_pitcher_games(self, entries: list[dict[str, Any]]) -> str:
         if not entries:
-            return "## Pitcher game logs\n- No matching pitcher game rows."
-        lines = ["## Pitcher game logs"]
+            return "## 投手 試合別候補\n- 該当する登板データは見つかりません。"
+        lines = ["## 投手 試合別候補"]
         for entry in entries:
             detail = self._load_pitcher_detail(entry)
             dashboard = {**(entry.get("dashboard") or {}), **detail}
@@ -475,12 +475,12 @@ class DashboardSearchIndex:
             lines.append(
                 "- "
                 f"{entry.get('date')} {entry.get('team')} {entry.get('player')} / {entry.get('matchup')}: "
-                f"IP {fmt(statline.get('innings'))}, pitches {fmt(statline.get('pitches'))}, "
-                f"H {fmt(statline.get('hits'))}, K {fmt(statline.get('k'))}, "
-                f"BB {fmt(statline.get('bb'))}, R {fmt(statline.get('runs'))}, ER {fmt(statline.get('er'))}. "
-                f"Pitch mix: {self._format_pitch_mix(dashboard.get('pitchMix', []), pitcher=True)} "
-                f"Finish: {self._format_finish(dashboard.get('finish'))} "
-                f"Outcomes: {self._format_outcomes(dashboard.get('outcomes'))}"
+                f"投球回 {fmt(statline.get('innings'))}, {fmt(statline.get('pitches'))}球, "
+                f"{fmt(statline.get('hits'))}安打, {fmt(statline.get('k'))}奪三振, "
+                f"{fmt(statline.get('bb'))}与四球, {fmt(statline.get('runs'))}失点, {fmt(statline.get('er'))}自責。 "
+                f"球種: {self._format_pitch_mix(dashboard.get('pitchMix', []), pitcher=True)} "
+                f"決め球: {self._format_finish(dashboard.get('finish'))} "
+                f"結果: {self._format_outcomes(dashboard.get('outcomes'))}"
             )
         return "\n".join(lines)
 
@@ -614,11 +614,13 @@ def call_openai(payload: dict[str, Any], search_context: str) -> str:
         [
             "You are an AI assistant embedded in a Japanese NPB dashboard.",
             "Answer in Japanese.",
+            "For metric or stat explanations, organize the key values and comparisons mainly as Markdown tables, then explain the interpretation in prose.",
+            "Localize metric labels in final answers: write IP as 投球回, BB/9 as 与四球率, and K/9 or KK/9 as 奪三振率.",
             "Use both the visible screen context and the full-data search context as sources of truth.",
             "When the full-data search context has relevant rows, use it even if the current screen does not show those rows.",
             "Do not invent player stats, dates, teams, pitch types, rankings, or conclusions that are not supported by the context.",
             "If the search results are insufficient, say what was missing and suggest a more specific player, team, year, or metric.",
-            "Keep answers practical and readable. Prefer 4 to 10 short bullets for comparisons.",
+            "Keep answers practical and readable. For comparisons, prefer compact tables plus short explanatory paragraphs.",
         ]
     )
     request_payload = {
