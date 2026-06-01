@@ -50,6 +50,7 @@
       note: "下の入力欄に自由に質問を書いてください。",
     },
   ];
+  const PLAYER_KINDS = ["投手", "野手"];
 
   const initialMessage = {
     role: "assistant",
@@ -65,6 +66,7 @@
       completed: false,
       loaded: false,
       loading: false,
+      activeKind: "",
       entries: [],
       dates: [],
     },
@@ -279,6 +281,7 @@
   }
 
   function selectorMatches(entry, filters) {
+    if (filters.kind && entry.kind !== filters.kind) return false;
     if (filters.date && entry.date !== filters.date) return false;
     if (filters.team && entry.team !== filters.team) return false;
     return true;
@@ -296,6 +299,10 @@
     return ["game", "personal", "traits"].includes(state.selector.activeType);
   }
 
+  function usesKindFilter() {
+    return usesTeamPlayerFilters();
+  }
+
   function selectorRequiresPlayer() {
     return ["personal", "traits"].includes(state.selector.activeType);
   }
@@ -306,6 +313,7 @@
 
   function selectedFilters(dateInput, teamSelect) {
     return {
+      kind: usesKindFilter() ? state.selector.activeKind : "",
       date: usesDateFilter() ? dateInput.value || "" : "",
       team: usesTeamPlayerFilters() ? teamSelect.value || "" : "",
     };
@@ -314,9 +322,10 @@
   function renderTeamOptions(dateInput, teamSelect) {
     const current = teamSelect.value;
     const date = usesDateFilter() ? dateInput.value || "" : "";
+    const kind = usesKindFilter() ? state.selector.activeKind : "";
     const teams = uniqueSorted(
       state.selector.entries
-        .filter((entry) => !date || entry.date === date)
+        .filter((entry) => (!kind || entry.kind === kind) && (!date || entry.date === date))
         .map((entry) => entry.team)
     );
     teamSelect.replaceChildren(optionNode("", "チームを選択"), ...teams.map((team) => optionNode(team, team)));
@@ -358,10 +367,16 @@
       button.classList.toggle("active", button.dataset.chatQuestionType === state.selector.activeType);
     });
     const showDate = usesDateFilter();
-    const showTeam = usesTeamPlayerFilters();
+    const showKind = usesKindFilter();
+    const showTeam = usesTeamPlayerFilters() && Boolean(state.selector.activeKind);
     const showPlayer = showTeam && Boolean(elements.teamSelect.value);
-    elements.dateLabel.hidden = !showDate;
-    elements.dateInput.hidden = !showDate;
+    elements.kindTitle.hidden = !showKind;
+    elements.kindGroup.hidden = !showKind;
+    elements.kindButtons.forEach((button) => {
+      button.classList.toggle("active", button.dataset.chatPlayerKind === state.selector.activeKind);
+    });
+    elements.dateLabel.hidden = !(showDate && state.selector.activeKind);
+    elements.dateInput.hidden = !(showDate && state.selector.activeKind);
     elements.teamLabel.hidden = !showTeam;
     elements.teamSelect.hidden = !showTeam;
     elements.playerLabel.hidden = !showPlayer;
@@ -379,6 +394,10 @@
     }
     if (type.type === "free") {
       elements.note.textContent = type.note;
+      return;
+    }
+    if (usesKindFilter() && !state.selector.activeKind) {
+      elements.note.textContent = "投手か野手を選択してください。";
       return;
     }
     if (!state.selector.loaded) {
@@ -401,6 +420,7 @@
     const type = activeQuestionType();
     if (!type) return "質問ジャンルを選択してください。";
     if (type.type === "free") return "";
+    if (usesKindFilter() && !state.selector.activeKind) return "投手か野手を選択してください。";
     if (type.type === "game" && !dateInput.value) return "日付を選択してください。";
     if (usesTeamPlayerFilters() && !teamSelect.value) return "チームを選択してください。";
     if (type.type === "game" && !playerSelect.value) return "選手を選択するか、「選手を指定しない」を選んでください。";
@@ -416,13 +436,13 @@
     const option = playerSelect.selectedOptions[0];
     const selectedNoPlayer = option?.value === "__none__";
     const player = option?.dataset.player || "";
-    const kind = option?.dataset.kind || "";
+    const kind = option?.dataset.kind || state.selector.activeKind || "";
     const kindLabel = kind ? `（${kind}）` : "";
     if (type.type === "game" && player && !selectedNoPlayer) {
       return `${date ? `${date}の` : ""}${team ? `${team}の` : ""}${player}${kindLabel}について、試合内容と注目ポイントを教えて`;
     }
     if (type.type === "game" && team) {
-      return `${date ? `${date}の` : ""}${team}について、投手・野手の試合内容と注目ポイントを教えて`;
+      return `${date ? `${date}の` : ""}${team}の${kind}について、試合内容と注目ポイントを教えて`;
     }
     if (type.type === "game" && date) {
       return `${date}の注目選手と試合内容を教えて`;
@@ -431,13 +451,13 @@
       return `${team ? `${team}の` : ""}${player}${kindLabel}の個人成績を教えて`;
     }
     if (type.type === "personal" && team) {
-      return `${team}の個人成績で注目すべき選手を教えて`;
+      return `${team}の${kind}の個人成績で注目すべき選手を教えて`;
     }
     if (type.type === "traits" && player) {
       return `${team ? `${team}の` : ""}${player}${kindLabel}の選手としての特徴を教えて`;
     }
     if (type.type === "traits" && team) {
-      return `${team}の選手の特徴と注目選手を教えて`;
+      return `${team}の${kind}の特徴と注目選手を教えて`;
     }
     return "";
   }
@@ -478,6 +498,7 @@
 
   function resetSelectorFlow(elements) {
     state.selector.activeType = "";
+    state.selector.activeKind = "";
     elements.dateInput.value = "";
     elements.teamSelect.value = "";
     elements.playerSelect.value = "";
@@ -491,15 +512,25 @@
     elements.typeButtons.forEach((button) => {
       button.addEventListener("click", () => {
         state.selector.activeType = button.dataset.chatQuestionType || "";
+        state.selector.activeKind = "";
         elements.teamSelect.value = "";
         elements.playerSelect.value = "";
         refresh();
         if (state.selector.activeType === "free") completeSelector(elements);
       });
     });
+    elements.kindButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        state.selector.activeKind = button.dataset.chatPlayerKind || "";
+        elements.teamSelect.value = "";
+        elements.playerSelect.value = "";
+        refresh();
+      });
+    });
     elements.dateInput.addEventListener("change", () => {
+      elements.teamSelect.value = "";
+      elements.playerSelect.value = "";
       refresh();
-      maybeAutoSend(elements);
     });
     elements.teamSelect.addEventListener("change", () => {
       renderPlayerOptions(elements.dateInput, elements.teamSelect, elements.playerSelect);
@@ -584,7 +615,20 @@
       })
     );
     typeGroup.append(...typeButtons);
-    selectorPanel.append(createNode("p", "ai-chatbot-selector-title", { text: "質問ジャンル" }), typeGroup);
+    const kindTitle = createNode("p", "ai-chatbot-selector-subtitle", { text: "選手区分" });
+    const kindGroup = createNode("div", "ai-chatbot-kind-group", {
+      "aria-label": "選手区分",
+      role: "group",
+    });
+    const kindButtons = PLAYER_KINDS.map((kind) =>
+      createNode("button", "ai-chatbot-kind-button", {
+        type: "button",
+        "data-chat-player-kind": kind,
+        text: kind,
+      })
+    );
+    kindGroup.append(...kindButtons);
+    selectorPanel.append(createNode("p", "ai-chatbot-selector-title", { text: "質問ジャンル" }), typeGroup, kindTitle, kindGroup);
     const dateInput = createNode("input", "ai-chatbot-filter-control", {
       type: "date",
       "aria-label": "日付",
@@ -636,6 +680,9 @@
     const selectorControls = bindSelectorControls({
       root,
       typeButtons,
+      kindTitle,
+      kindGroup,
+      kindButtons,
       dateLabel,
       dateInput,
       teamLabel,
