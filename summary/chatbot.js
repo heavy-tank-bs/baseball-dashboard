@@ -325,6 +325,39 @@
     appendSimpleTable(parent, ["項目", "値"], rows);
   }
 
+  function hasRenderableMarkdown(lines) {
+    return lines.some((line, index) => (
+      line.trim().includes("|") && isMarkdownTableSeparator(lines[index + 1] || "")
+    ) || Boolean(parseStatBulletLine(line)));
+  }
+
+  function normalizeAssistantMarkdown(content) {
+    const lines = `${content || ""}`.replace(/\r\n/g, "\n").split("\n");
+    const normalized = [];
+    for (let index = 0; index < lines.length; index += 1) {
+      const fence = lines[index].trim().match(/^```([a-zA-Z0-9_-]*)\s*$/);
+      if (!fence) {
+        normalized.push(lines[index]);
+        continue;
+      }
+
+      const body = [];
+      index += 1;
+      while (index < lines.length && !lines[index].trim().startsWith("```")) {
+        body.push(lines[index]);
+        index += 1;
+      }
+
+      const language = fence[1].toLowerCase();
+      if (["", "md", "markdown", "text"].includes(language) || hasRenderableMarkdown(body)) {
+        normalized.push(...body);
+      } else {
+        normalized.push(...body.map((line) => `    ${line}`));
+      }
+    }
+    return normalized;
+  }
+
   function appendTextBlock(parent, lines) {
     if (!lines.length) return;
     const text = lines.join("\n").trim();
@@ -335,7 +368,7 @@
   }
 
   function renderAssistantContent(parent, content) {
-    const lines = `${content || ""}`.replace(/\r\n/g, "\n").split("\n");
+    const lines = normalizeAssistantMarkdown(content);
     let textBuffer = [];
     for (let index = 0; index < lines.length; index += 1) {
       const line = lines[index];

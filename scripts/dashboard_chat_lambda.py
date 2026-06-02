@@ -617,6 +617,7 @@ def call_openai(payload: dict[str, Any], search_context: str) -> str:
             "For game summaries, player stats, player traits, rankings, metric explanations, or comparisons, put factual values in Markdown tables.",
             "Do not present stat blocks as plain hyphen bullets when the answer contains multiple values. Use compact Markdown tables with columns such as 項目, 値, 補足, 選手, 指標.",
             "Start with a one-sentence conclusion only when useful, then use one or more Markdown tables, then add a short interpretation in prose.",
+            "Do not wrap Markdown tables or final answers in fenced code blocks such as ```markdown.",
             "Localize metric labels in final answers: write IP as 投球回, BB/9 as 与四球率, and K/9 or KK/9 as 奪三振率.",
             "Use both the visible screen context and the full-data search context as sources of truth.",
             "When the full-data search context has relevant rows, use it even if the current screen does not show those rows.",
