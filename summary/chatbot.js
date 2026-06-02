@@ -231,6 +231,163 @@
     return node;
   }
 
+  function appendInlineText(parent, text) {
+    const source = `${text || ""}`;
+    const boldPattern = /(\*\*|__)(.+?)\1/g;
+    let lastIndex = 0;
+    let match = boldPattern.exec(source);
+    while (match) {
+      if (match.index > lastIndex) parent.appendChild(document.createTextNode(source.slice(lastIndex, match.index)));
+      const strong = createNode("strong", "");
+      strong.textContent = match[2];
+      parent.appendChild(strong);
+      lastIndex = match.index + match[0].length;
+      match = boldPattern.exec(source);
+    }
+    if (lastIndex < source.length) parent.appendChild(document.createTextNode(source.slice(lastIndex)));
+  }
+
+  function parseMarkdownTableRow(line) {
+    const trimmed = `${line || ""}`.trim();
+    if (!trimmed.includes("|")) return [];
+    return trimmed
+      .replace(/^\|/, "")
+      .replace(/\|$/, "")
+      .split("|")
+      .map((cell) => cell.trim());
+  }
+
+  function isMarkdownTableSeparator(line) {
+    const cells = parseMarkdownTableRow(line);
+    return cells.length > 1 && cells.every((cell) => /^:?-{3,}:?$/.test(cell));
+  }
+
+  function appendMarkdownTable(parent, lines) {
+    const headers = parseMarkdownTableRow(lines[0]);
+    const rows = lines.slice(2).map(parseMarkdownTableRow).filter((row) => row.length > 1);
+    if (headers.length < 2 || !rows.length) return false;
+    appendSimpleTable(parent, headers, rows);
+    return true;
+  }
+
+  function appendSimpleTable(parent, headers, rows) {
+    if (headers.length < 2 || !rows.length) return;
+    const wrap = createNode("div", "ai-chatbot-table-wrap");
+    const table = createNode("table", "ai-chatbot-table");
+    const thead = createNode("thead", "");
+    const headerRow = createNode("tr", "");
+    headers.forEach((header) => {
+      const cell = createNode("th", "");
+      appendInlineText(cell, header);
+      headerRow.appendChild(cell);
+    });
+    thead.appendChild(headerRow);
+
+    const tbody = createNode("tbody", "");
+    rows.forEach((row) => {
+      const tr = createNode("tr", "");
+      headers.forEach((_, index) => {
+        const cell = createNode("td", "");
+        appendInlineText(cell, row[index] || "");
+        tr.appendChild(cell);
+      });
+      tbody.appendChild(tr);
+    });
+
+    table.append(thead, tbody);
+    wrap.appendChild(table);
+    parent.appendChild(wrap);
+  }
+
+  function parseStatBulletLine(line) {
+    const match = `${line || ""}`.trim().match(/^[-*]\s+(.+)$/);
+    if (!match || !/[：:]/.test(match[1])) return null;
+    const rows = [];
+    let fallbackLabel = "";
+    match[1]
+      .split(/、\s*/)
+      .map((part) => part.trim())
+      .filter(Boolean)
+      .forEach((part) => {
+        const pair = part.match(/^(.+?)[：:]\s*(.+)$/);
+        if (pair) {
+          fallbackLabel = pair[1].trim();
+          rows.push([fallbackLabel, pair[2].trim()]);
+          return;
+        }
+        if (fallbackLabel) rows.push([fallbackLabel, part]);
+      });
+    return rows.length ? rows : null;
+  }
+
+  function appendStatBulletTable(parent, lines) {
+    const rows = lines.flatMap((line) => parseStatBulletLine(line) || []);
+    appendSimpleTable(parent, ["項目", "値"], rows);
+  }
+
+  function appendTextBlock(parent, lines) {
+    if (!lines.length) return;
+    const text = lines.join("\n").trim();
+    if (!text) return;
+    const block = createNode("p", "ai-chatbot-text-block");
+    appendInlineText(block, text);
+    parent.appendChild(block);
+  }
+
+  function renderAssistantContent(parent, content) {
+    const lines = `${content || ""}`.replace(/\r\n/g, "\n").split("\n");
+    let textBuffer = [];
+    for (let index = 0; index < lines.length; index += 1) {
+      const line = lines[index];
+      const nextLine = lines[index + 1] || "";
+      if (line.trim().includes("|") && isMarkdownTableSeparator(nextLine)) {
+        appendTextBlock(parent, textBuffer);
+        textBuffer = [];
+        const tableLines = [line, nextLine];
+        index += 2;
+        while (index < lines.length && lines[index].trim().includes("|")) {
+          tableLines.push(lines[index]);
+          index += 1;
+        }
+        index -= 1;
+        if (!appendMarkdownTable(parent, tableLines)) textBuffer.push(...tableLines);
+        continue;
+      }
+
+      if (parseStatBulletLine(line)) {
+        appendTextBlock(parent, textBuffer);
+        textBuffer = [];
+        const statLines = [];
+        while (index < lines.length && parseStatBulletLine(lines[index])) {
+          statLines.push(lines[index]);
+          index += 1;
+        }
+        index -= 1;
+        appendStatBulletTable(parent, statLines);
+        continue;
+      }
+
+      const heading = line.match(/^\s{0,3}#{1,4}\s+(.+)$/);
+      if (heading) {
+        appendTextBlock(parent, textBuffer);
+        textBuffer = [];
+        const headingNode = createNode("p", "ai-chatbot-section-title");
+        appendInlineText(headingNode, heading[1]);
+        parent.appendChild(headingNode);
+        continue;
+      }
+
+      if (!line.trim()) {
+        appendTextBlock(parent, textBuffer);
+        textBuffer = [];
+        continue;
+      }
+      textBuffer.push(line);
+    }
+    appendTextBlock(parent, textBuffer);
+    if (!parent.childElementCount) parent.textContent = content;
+  }
+
   function uniqueSorted(values, sorter = (a, b) => `${a}`.localeCompare(`${b}`, "ja")) {
     return [...new Set(values.filter(Boolean))].sort(sorter);
   }
@@ -741,7 +898,11 @@
     container.innerHTML = "";
     state.messages.forEach((message) => {
       const item = createNode("div", `ai-chatbot-message ${message.role}`);
-      item.textContent = message.content;
+      if (message.role === "assistant") {
+        renderAssistantContent(item, message.content);
+      } else {
+        item.textContent = message.content;
+      }
       container.appendChild(item);
     });
     container.scrollTop = container.scrollHeight;
