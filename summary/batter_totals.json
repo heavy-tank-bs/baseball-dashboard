@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-01T22:30:19",
+  "updatedAt": "2026-06-02T23:41:44",
   "source": "Sports Navi game batting tables and intentional-walk context for games present under generated/*/*/*-dashboard.json + 元データ/*_打撃成績.csv",
   "notes": {
     "uBB": "Unintentional walks are derived from Sports Navi intentional-walk context when available.",

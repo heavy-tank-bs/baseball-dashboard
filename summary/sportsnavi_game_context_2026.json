@@ -1,7 +1,7 @@
 {
-  "updatedAt": "2026-06-01T22:27:18+09:00",
+  "updatedAt": "2026-06-02T23:26:24+09:00",
   "season": 2026,
-  "throughDate": "2026-05-31",
+  "throughDate": "2026-06-01",
   "source": {
     "schedule": "https://baseball.yahoo.co.jp/npb/schedule/?date=YYYY-MM-DD",
     "stats": "https://baseball.yahoo.co.jp/npb/game/{gameId}/stats",

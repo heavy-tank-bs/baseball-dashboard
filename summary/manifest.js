@@ -1,5 +1,5 @@
 window.PITCH_DASHBOARD_MANIFEST = {
-  "updatedAt": "2026-06-01T22:29:23",
+  "updatedAt": "2026-06-02T23:39:16",
   "generatedRoot": "../generated",
   "entryCount": 2557,
   "teamCount": 12,
