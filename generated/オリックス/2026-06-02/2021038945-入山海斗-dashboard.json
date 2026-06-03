@@ -1,0 +1,88 @@
+{
+  "game_id": "2021038945",
+  "metadata": {
+    "date_jp": "2026年6月2日",
+    "matchup": "読売ジャイアンツvsオリックス・バファローズ"
+  },
+  "statline": {
+    "player": "入山 海斗",
+    "era": "2.40",
+    "innings": "0.1",
+    "pitches": "4",
+    "batters": "1",
+    "hits": "0",
+    "hr": "0",
+    "k": "0",
+    "bb": "0",
+    "hbp": "0",
+    "balk": "0",
+    "runs": "0",
+    "er": "0"
+  },
+  "pitches": [
+    {
+      "pa_index": "0620500",
+      "pitcher": "入山 海斗",
+      "pitcher_id": "2107693",
+      "pitcher_hand": "右",
+      "batter": "浦田 俊輔",
+      "batter_id": "1951153",
+      "batter_hand": "左",
+      "seq": "1",
+      "pitchNo": "1",
+      "pitchType": "ストレート",
+      "speed": "-",
+      "result": "ボール",
+      "top": 4.68,
+      "left": 43.559999999999995
+    },
+    {
+      "pa_index": "0620500",
+      "pitcher": "入山 海斗",
+      "pitcher_id": "2107693",
+      "pitcher_hand": "右",
+      "batter": "浦田 俊輔",
+      "batter_id": "1951153",
+      "batter_hand": "左",
+      "seq": "2",
+      "pitchNo": "2",
+      "pitchType": "ストレート",
+      "speed": "148km/h",
+      "result": "見逃し",
+      "top": 27.36,
+      "left": 19.8
+    },
+    {
+      "pa_index": "0620500",
+      "pitcher": "入山 海斗",
+      "pitcher_id": "2107693",
+      "pitcher_hand": "右",
+      "batter": "浦田 俊輔",
+      "batter_id": "1951153",
+      "batter_hand": "左",
+      "seq": "3",
+      "pitchNo": "3",
+      "pitchType": "ストレート",
+      "speed": "150km/h",
+      "result": "ボール",
+      "top": 24.119999999999997,
+      "left": 4.32
+    },
+    {
+      "pa_index": "0620500",
+      "pitcher": "入山 海斗",
+      "pitcher_id": "2107693",
+      "pitcher_hand": "右",
+      "batter": "浦田 俊輔",
+      "batter_id": "1951153",
+      "batter_hand": "左",
+      "seq": "4",
+      "pitchNo": "4",
+      "pitchType": "ストレート",
+      "speed": "150km/h",
+      "result": "右飛",
+      "top": 21.599999999999998,
+      "left": 14.399999999999999
+    }
+  ]
+}
