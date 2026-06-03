@@ -270,13 +270,40 @@
     return true;
   }
 
+  function shouldTransposeTable(headers, rows) {
+    if (headers.length < 3 || !rows.length) return false;
+    if (headers.length === 3 && rows.length > 1) return false;
+    return headers.length >= 4 || rows.length === 1;
+  }
+
+  function transposeTable(headers, rows) {
+    if (rows.length === 1) {
+      return {
+        headers: ["項目", "値"],
+        rows: headers.map((header, index) => [header, rows[0][index] || ""]),
+      };
+    }
+
+    const labels = rows.map((row, index) => row[0] || `値${index + 1}`);
+    return {
+      headers: ["項目", ...labels],
+      rows: headers.slice(1).map((header, index) => [
+        header,
+        ...rows.map((row) => row[index + 1] || ""),
+      ]),
+    };
+  }
+
   function appendSimpleTable(parent, headers, rows) {
     if (headers.length < 2 || !rows.length) return;
+    const tableData = shouldTransposeTable(headers, rows) ? transposeTable(headers, rows) : { headers, rows };
     const wrap = createNode("div", "ai-chatbot-table-wrap");
     const table = createNode("table", "ai-chatbot-table");
+    if (tableData.headers.length <= 3) table.classList.add("compact");
+    if (tableData.headers[0] === "項目") table.classList.add("transposed");
     const thead = createNode("thead", "");
     const headerRow = createNode("tr", "");
-    headers.forEach((header) => {
+    tableData.headers.forEach((header) => {
       const cell = createNode("th", "");
       appendInlineText(cell, header);
       headerRow.appendChild(cell);
@@ -284,9 +311,9 @@
     thead.appendChild(headerRow);
 
     const tbody = createNode("tbody", "");
-    rows.forEach((row) => {
+    tableData.rows.forEach((row) => {
       const tr = createNode("tr", "");
-      headers.forEach((_, index) => {
+      tableData.headers.forEach((_, index) => {
         const cell = createNode("td", "");
         appendInlineText(cell, row[index] || "");
         tr.appendChild(cell);

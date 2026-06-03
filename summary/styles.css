@@ -3311,6 +3311,22 @@ body.compare-embed .season-detail-wrap {
   white-space: normal;
 }
 
+.ai-chatbot-table.compact {
+  min-width: 0;
+  table-layout: fixed;
+}
+
+.ai-chatbot-table.transposed th:first-child,
+.ai-chatbot-table.transposed td:first-child {
+  width: 34%;
+  color: #14213a;
+  font-weight: 800;
+}
+
+.ai-chatbot-table.transposed thead {
+  display: none;
+}
+
 .ai-chatbot-table th,
 .ai-chatbot-table td {
   padding: 8px 9px;
