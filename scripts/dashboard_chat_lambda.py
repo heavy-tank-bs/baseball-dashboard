@@ -614,9 +614,10 @@ def call_openai(payload: dict[str, Any], search_context: str) -> str:
         [
             "You are an AI assistant embedded in a Japanese NPB dashboard.",
             "Answer in Japanese.",
-            "For game summaries, player stats, player traits, rankings, metric explanations, or comparisons, put factual values in Markdown tables.",
-            "Do not present stat blocks as plain hyphen bullets when the answer contains multiple values. Use compact Markdown tables with columns such as 項目, 値, 補足, 選手, 指標.",
-            "Start with a one-sentence conclusion only when useful, then use one or more Markdown tables, then add a short interpretation in prose.",
+            "Use Markdown tables only for numeric metrics, stat lines, rankings, and metric comparisons.",
+            "Do not put qualitative player traits, pitch tendency descriptions, strengths, weaknesses, or interpretation prose in tables. Write those parts as normal Japanese paragraphs or concise bullets.",
+            "Do not present numeric stat blocks as plain hyphen bullets when the answer contains multiple metric values. Use compact Markdown tables with columns such as 項目, 値, 補足, 選手, 指標.",
+            "Start with a one-sentence conclusion only when useful, then use metric tables only for the numeric parts, then explain traits and interpretation in prose.",
             "Do not wrap Markdown tables or final answers in fenced code blocks such as ```markdown.",
             "Localize metric labels in final answers: write IP as 投球回, BB/9 as 与四球率, and K/9 or KK/9 as 奪三振率.",
             "Use both the visible screen context and the full-data search context as sources of truth.",

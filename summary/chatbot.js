@@ -266,8 +266,54 @@
     const headers = parseMarkdownTableRow(lines[0]);
     const rows = lines.slice(2).map(parseMarkdownTableRow).filter((row) => row.length > 1);
     if (headers.length < 2 || !rows.length) return false;
+    if (!isMetricTable(headers, rows)) {
+      appendPlainTableText(parent, headers, rows);
+      return true;
+    }
     appendSimpleTable(parent, headers, rows);
     return true;
+  }
+
+  function containsNumber(value) {
+    return /[0-9０-９]/.test(`${value || ""}`);
+  }
+
+  function isMetricLabel(value) {
+    return /(指標|成績|投球回|投球数|球数|球速|被安打|奪三振|三振|四球|死球|失点|自責|打者|打数|打席|安打|本塁打|打点|得点|盗塁|打率|出塁率|長打率|防御率|与四球率|奪三振率|OPS|wOBA|WHIP|ERA|FIP|K\/9|BB\/9|K-BB|率|割合|平均|順位|ゴロ|フライ|ライナー|空振|見三振|ゾーン|スイング|コンタクト|球種割合|使用率|Run Value|Location Score|球威|回転数|リリース|角度|距離|速度|勝率|勝|敗|ホールド|セーブ|登板|試合数|イニング|アウト)/i.test(`${value || ""}`);
+  }
+
+  function metricEvidence(headers, rows) {
+    const labelText = [
+      ...headers,
+      ...rows.map((row) => row[0] || ""),
+      ...rows.flatMap((row) => row.filter((_, index) => index === 0 || headers[index] === "項目" || headers[index] === "指標")),
+    ].join(" ");
+    const numericCells = rows.flat().filter(containsNumber).length;
+    return {
+      hasMetricLabel: isMetricLabel(labelText),
+      numericCells,
+    };
+  }
+
+  function isMetricTable(headers, rows) {
+    const evidence = metricEvidence(headers, rows);
+    return evidence.hasMetricLabel && evidence.numericCells > 0;
+  }
+
+  function appendPlainTableText(parent, headers, rows) {
+    const lines = rows.map((row) => {
+      if (headers.length === 2) {
+        return [row[0], row[1]].filter(Boolean).join(": ");
+      }
+      return headers
+        .map((header, index) => {
+          const value = row[index] || "";
+          return value ? `${header || `項目${index + 1}`}: ${value}` : "";
+        })
+        .filter(Boolean)
+        .join("、");
+    });
+    appendTextBlock(parent, lines);
   }
 
   function shouldTransposeTable(headers, rows) {
@@ -344,7 +390,7 @@
         }
         if (fallbackLabel) rows.push([fallbackLabel, part]);
       });
-    return rows.length ? rows : null;
+    return rows.length && isMetricTable(["項目", "値"], rows) ? rows : null;
   }
 
   function appendStatBulletTable(parent, lines) {
