@@ -37,9 +37,7 @@
         "zSwing": 66.7,
         "oContact": 100.0,
         "chase": 10.0,
-        "chasePlus": 31.0,
-        "locationScore": 101.0,
-        "stuffScore": 93.0
+        "chasePlus": 31.0
       },
       {
         "pitchType": "チェンジアップ",
@@ -75,9 +73,7 @@
         "zSwing": 88.2,
         "oContact": 100.0,
         "chase": 44.4,
-        "chasePlus": 136.0,
-        "locationScore": 101.0,
-        "stuffScore": 90.0
+        "chasePlus": 136.0
       },
       {
         "pitchType": "フォーク",
@@ -113,9 +109,7 @@
         "zSwing": 80.0,
         "oContact": 0.0,
         "chase": 11.1,
-        "chasePlus": 34.0,
-        "locationScore": 99.0,
-        "stuffScore": 101.0
+        "chasePlus": 34.0
       },
       {
         "pitchType": "カットボール",
@@ -151,9 +145,7 @@
         "zSwing": 50.0,
         "oContact": 100.0,
         "chase": 25.0,
-        "chasePlus": 76.0,
-        "locationScore": 101.0,
-        "stuffScore": 101.0
+        "chasePlus": 76.0
       },
       {
         "pitchType": "スライダー",
@@ -189,9 +181,7 @@
         "zSwing": 87.5,
         "oContact": null,
         "chase": 0.0,
-        "chasePlus": 0.0,
-        "locationScore": 101.0,
-        "stuffScore": 96.0
+        "chasePlus": 0.0
       },
       {
         "pitchType": "シュート",
@@ -227,9 +217,7 @@
         "zSwing": 66.7,
         "oContact": null,
         "chase": 0.0,
-        "chasePlus": 0.0,
-        "locationScore": 101.0,
-        "stuffScore": 96.0
+        "chasePlus": 0.0
       },
       {
         "pitchType": "ワンシーム",
@@ -265,9 +253,7 @@
         "zSwing": null,
         "oContact": 100.0,
         "chase": 33.3,
-        "chasePlus": 102.0,
-        "locationScore": 100.0,
-        "stuffScore": 100.0
+        "chasePlus": 102.0
       },
       {
         "pitchType": "カーブ",
@@ -303,9 +289,7 @@
         "zSwing": 100.0,
         "oContact": null,
         "chase": 0.0,
-        "chasePlus": 0.0,
-        "locationScore": 99.0,
-        "stuffScore": 98.0
+        "chasePlus": 0.0
       }
     ],
     "inningRows": [

@@ -74,8 +74,6 @@ const TYPE_CONFIG = {
       { key: "zoneRate", label: "zone%", field: "zoneRate", kind: "percent", source: "pitch" },
       { key: "chase", label: "chase%", field: "chase", kind: "percent", source: "pitch" },
       { key: "chasePlus", label: "chase+", field: "chasePlus", kind: "plus", source: "pitch" },
-      { key: "locationScore", label: "Location Score", field: "locationScore", kind: "plus", source: "pitch" },
-      { key: "stuffScore", label: "Stuff Score β", field: "stuffScore", kind: "plus", source: "pitch" },
     ],
   },
   batter: {

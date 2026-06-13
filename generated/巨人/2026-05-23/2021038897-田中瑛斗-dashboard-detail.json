@@ -37,9 +37,7 @@
         "zSwing": 25.0,
         "oContact": null,
         "chase": 0.0,
-        "chasePlus": 0.0,
-        "locationScore": 101.0,
-        "stuffScore": 101.0
+        "chasePlus": 0.0
       },
       {
         "pitchType": "スイーパー",
@@ -75,9 +73,7 @@
         "zSwing": 50.0,
         "oContact": null,
         "chase": 0.0,
-        "chasePlus": 0.0,
-        "locationScore": 103.0,
-        "stuffScore": 101.0
+        "chasePlus": 0.0
       },
       {
         "pitchType": "フォーク",
@@ -113,9 +109,7 @@
         "zSwing": 100.0,
         "oContact": null,
         "chase": null,
-        "chasePlus": null,
-        "locationScore": 102.0,
-        "stuffScore": 99.0
+        "chasePlus": null
       }
     ],
     "inningRows": [
@@ -1802,7 +1796,7 @@
       "フォーク": "#6A89B4"
     },
     "metricBaselines": {
-      "chase": 32.5,
+      "chase": 32.6,
       "chaseScope": "league"
     }
   }

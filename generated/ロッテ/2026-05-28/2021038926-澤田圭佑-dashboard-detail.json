@@ -37,9 +37,7 @@
         "zSwing": 100.0,
         "oContact": null,
         "chase": null,
-        "chasePlus": null,
-        "locationScore": 100.0,
-        "stuffScore": 98.0
+        "chasePlus": null
       },
       {
         "pitchType": "ストレート",
@@ -75,9 +73,7 @@
         "zSwing": 100.0,
         "oContact": null,
         "chase": null,
-        "chasePlus": null,
-        "locationScore": 100.0,
-        "stuffScore": 98.0
+        "chasePlus": null
       }
     ],
     "inningRows": [
@@ -1272,7 +1268,7 @@
       "ストレート": "#355C8C"
     },
     "metricBaselines": {
-      "chase": 32.5,
+      "chase": 32.7,
       "chaseScope": "league"
     }
   }

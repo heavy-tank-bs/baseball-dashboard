@@ -37,9 +37,7 @@
         "zSwing": 75.0,
         "oContact": 100.0,
         "chase": 33.3,
-        "chasePlus": 102.0,
-        "locationScore": 100.0,
-        "stuffScore": 96.0
+        "chasePlus": 102.0
       }
     ],
     "inningRows": [

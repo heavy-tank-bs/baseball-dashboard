@@ -37,9 +37,7 @@
         "zSwing": 100.0,
         "oContact": null,
         "chase": 0.0,
-        "chasePlus": 0.0,
-        "locationScore": 100.0,
-        "stuffScore": 97.0
+        "chasePlus": 0.0
       }
     ],
     "inningRows": [

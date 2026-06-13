@@ -37,9 +37,7 @@
         "zSwing": 72.2,
         "oContact": 60.0,
         "chase": 29.4,
-        "chasePlus": 90.0,
-        "locationScore": 99.0,
-        "stuffScore": 110.0
+        "chasePlus": 90.0
       },
       {
         "pitchType": "フォーク",
@@ -75,9 +73,7 @@
         "zSwing": 100.0,
         "oContact": 0.0,
         "chase": 26.7,
-        "chasePlus": 82.0,
-        "locationScore": 101.0,
-        "stuffScore": 98.0
+        "chasePlus": 82.0
       },
       {
         "pitchType": "カーブ",
@@ -113,9 +109,7 @@
         "zSwing": 50.0,
         "oContact": null,
         "chase": 0.0,
-        "chasePlus": 0.0,
-        "locationScore": 102.0,
-        "stuffScore": 97.0
+        "chasePlus": 0.0
       },
       {
         "pitchType": "チェンジアップ",
@@ -151,9 +145,7 @@
         "zSwing": 75.0,
         "oContact": 50.0,
         "chase": 40.0,
-        "chasePlus": 123.0,
-        "locationScore": 101.0,
-        "stuffScore": 98.0
+        "chasePlus": 122.0
       },
       {
         "pitchType": "カットボール",
@@ -189,9 +181,7 @@
         "zSwing": 50.0,
         "oContact": 100.0,
         "chase": 50.0,
-        "chasePlus": 153.0,
-        "locationScore": 102.0,
-        "stuffScore": 103.0
+        "chasePlus": 153.0
       },
       {
         "pitchType": "スライダー",
@@ -227,9 +217,7 @@
         "zSwing": 75.0,
         "oContact": 50.0,
         "chase": 66.7,
-        "chasePlus": 204.0,
-        "locationScore": 99.0,
-        "stuffScore": 99.0
+        "chasePlus": 204.0
       },
       {
         "pitchType": "ツーシーム",
@@ -265,9 +253,7 @@
         "zSwing": 100.0,
         "oContact": 100.0,
         "chase": 50.0,
-        "chasePlus": 153.0,
-        "locationScore": 101.0,
-        "stuffScore": 95.0
+        "chasePlus": 153.0
       },
       {
         "pitchType": "スイーパー",
@@ -303,9 +289,7 @@
         "zSwing": 100.0,
         "oContact": 50.0,
         "chase": 50.0,
-        "chasePlus": 153.0,
-        "locationScore": 99.0,
-        "stuffScore": 100.0
+        "chasePlus": 153.0
       }
     ],
     "inningRows": [
@@ -5056,7 +5040,7 @@
       "スイーパー": "#0F2340"
     },
     "metricBaselines": {
-      "chase": 32.6,
+      "chase": 32.7,
       "chaseScope": "league"
     }
   }

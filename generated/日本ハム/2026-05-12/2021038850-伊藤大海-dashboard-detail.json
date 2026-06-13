@@ -37,9 +37,7 @@
         "zSwing": 66.7,
         "oContact": 100.0,
         "chase": 23.1,
-        "chasePlus": 70.0,
-        "locationScore": 101.0,
-        "stuffScore": 102.0
+        "chasePlus": 71.0
       },
       {
         "pitchType": "スライダー",
@@ -75,9 +73,7 @@
         "zSwing": 100.0,
         "oContact": 20.0,
         "chase": 41.7,
-        "chasePlus": 127.0,
-        "locationScore": 100.0,
-        "stuffScore": 105.0
+        "chasePlus": 127.0
       },
       {
         "pitchType": "スプリット",
@@ -113,9 +109,7 @@
         "zSwing": 85.7,
         "oContact": null,
         "chase": 0.0,
-        "chasePlus": 0.0,
-        "locationScore": 100.0,
-        "stuffScore": 91.0
+        "chasePlus": 0.0
       },
       {
         "pitchType": "スイーパー",
@@ -151,9 +145,7 @@
         "zSwing": 50.0,
         "oContact": 75.0,
         "chase": 57.1,
-        "chasePlus": 174.0,
-        "locationScore": 100.0,
-        "stuffScore": 98.0
+        "chasePlus": 175.0
       },
       {
         "pitchType": "ツーシーム",
@@ -189,9 +181,7 @@
         "zSwing": 40.0,
         "oContact": 100.0,
         "chase": 33.3,
-        "chasePlus": 102.0,
-        "locationScore": 101.0,
-        "stuffScore": 106.0
+        "chasePlus": 102.0
       },
       {
         "pitchType": "チェンジアップ",
@@ -227,9 +217,7 @@
         "zSwing": 100.0,
         "oContact": null,
         "chase": 0.0,
-        "chasePlus": 0.0,
-        "locationScore": 99.0,
-        "stuffScore": 97.0
+        "chasePlus": 0.0
       },
       {
         "pitchType": "カーブ",
@@ -265,9 +253,7 @@
         "zSwing": 100.0,
         "oContact": null,
         "chase": 0.0,
-        "chasePlus": 0.0,
-        "locationScore": 99.0,
-        "stuffScore": 100.0
+        "chasePlus": 0.0
       },
       {
         "pitchType": "カットボール",
@@ -303,9 +289,7 @@
         "zSwing": 100.0,
         "oContact": 100.0,
         "chase": 100.0,
-        "chasePlus": 305.0,
-        "locationScore": 98.0,
-        "stuffScore": 98.0
+        "chasePlus": 306.0
       }
     ],
     "inningRows": [
@@ -4987,7 +4971,7 @@
       "カットボール": "#0F2340"
     },
     "metricBaselines": {
-      "chase": 32.8,
+      "chase": 32.7,
       "chaseScope": "league"
     }
   }

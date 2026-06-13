@@ -37,9 +37,7 @@
         "zSwing": 80.0,
         "oContact": 77.8,
         "chase": 30.0,
-        "chasePlus": 92.0,
-        "locationScore": 100.0,
-        "stuffScore": 101.0
+        "chasePlus": 92.0
       },
       {
         "pitchType": "スライダー",
@@ -75,9 +73,7 @@
         "zSwing": 50.0,
         "oContact": 42.9,
         "chase": 70.0,
-        "chasePlus": 215.0,
-        "locationScore": 101.0,
-        "stuffScore": 113.0
+        "chasePlus": 214.0
       },
       {
         "pitchType": "チェンジアップ",
@@ -113,9 +109,7 @@
         "zSwing": 100.0,
         "oContact": 20.0,
         "chase": 55.6,
-        "chasePlus": 170.0,
-        "locationScore": 101.0,
-        "stuffScore": 106.0
+        "chasePlus": 170.0
       },
       {
         "pitchType": "カーブ",
@@ -151,9 +145,7 @@
         "zSwing": 0.0,
         "oContact": null,
         "chase": 0.0,
-        "chasePlus": 0.0,
-        "locationScore": 100.0,
-        "stuffScore": 97.0
+        "chasePlus": 0.0
       }
     ],
     "inningRows": [
@@ -3489,7 +3481,7 @@
       "カーブ": "#C8A55A"
     },
     "metricBaselines": {
-      "chase": 32.6,
+      "chase": 32.7,
       "chaseScope": "league"
     }
   }

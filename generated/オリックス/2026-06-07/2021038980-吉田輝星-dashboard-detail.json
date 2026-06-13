@@ -37,9 +37,7 @@
         "zSwing": 100.0,
         "oContact": 100.0,
         "chase": 33.3,
-        "chasePlus": 102.0,
-        "locationScore": 99.0,
-        "stuffScore": 97.0
+        "chasePlus": 102.0
       },
       {
         "pitchType": "チェンジアップ",
@@ -75,9 +73,7 @@
         "zSwing": 100.0,
         "oContact": 0.0,
         "chase": 100.0,
-        "chasePlus": 306.0,
-        "locationScore": 100.0,
-        "stuffScore": 102.0
+        "chasePlus": 306.0
       }
     ],
     "inningRows": [

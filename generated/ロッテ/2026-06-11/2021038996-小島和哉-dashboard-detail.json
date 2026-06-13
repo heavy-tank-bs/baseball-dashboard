@@ -37,9 +37,7 @@
         "zSwing": 88.9,
         "oContact": 50.0,
         "chase": 15.4,
-        "chasePlus": 47.0,
-        "locationScore": 100.0,
-        "stuffScore": 85.0
+        "chasePlus": 47.0
       },
       {
         "pitchType": "カットボール",
@@ -75,9 +73,7 @@
         "zSwing": 70.0,
         "oContact": 25.0,
         "chase": 44.4,
-        "chasePlus": 136.0,
-        "locationScore": 100.0,
-        "stuffScore": 108.0
+        "chasePlus": 136.0
       },
       {
         "pitchType": "スライダー",
@@ -113,9 +109,7 @@
         "zSwing": 33.3,
         "oContact": 66.7,
         "chase": 50.0,
-        "chasePlus": 153.0,
-        "locationScore": 101.0,
-        "stuffScore": 102.0
+        "chasePlus": 153.0
       },
       {
         "pitchType": "チェンジアップ",
@@ -151,9 +145,7 @@
         "zSwing": 50.0,
         "oContact": 0.0,
         "chase": 16.7,
-        "chasePlus": 51.0,
-        "locationScore": 100.0,
-        "stuffScore": 104.0
+        "chasePlus": 51.0
       },
       {
         "pitchType": "フォーク",
@@ -189,9 +181,7 @@
         "zSwing": 50.0,
         "oContact": 50.0,
         "chase": 66.7,
-        "chasePlus": 204.0,
-        "locationScore": 101.0,
-        "stuffScore": 103.0
+        "chasePlus": 204.0
       }
     ],
     "inningRows": [

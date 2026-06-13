@@ -37,9 +37,7 @@
         "zSwing": 71.4,
         "oContact": 66.7,
         "chase": 100.0,
-        "chasePlus": 308.0,
-        "locationScore": 102.0,
-        "stuffScore": 125.0
+        "chasePlus": 306.0
       },
       {
         "pitchType": "フォーク",
@@ -75,9 +73,7 @@
         "zSwing": null,
         "oContact": 0.0,
         "chase": 25.0,
-        "chasePlus": 77.0,
-        "locationScore": 99.0,
-        "stuffScore": 101.0
+        "chasePlus": 76.0
       }
     ],
     "inningRows": [
@@ -1528,7 +1524,7 @@
       "フォーク": "#355C8C"
     },
     "metricBaselines": {
-      "chase": 32.5,
+      "chase": 32.7,
       "chaseScope": "league"
     }
   }

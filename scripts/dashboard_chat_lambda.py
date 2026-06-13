@@ -516,8 +516,6 @@ class DashboardSearchIndex:
                     extras.append(f"whiff {pct(row.get('whiffRate'))}")
                 if row.get("csw") not in (None, "", "-"):
                     extras.append(f"CSW {pct(row.get('csw'))}")
-                if row.get("stuffScore") not in (None, "", "-"):
-                    extras.append(f"Stuff {row.get('stuffScore')}")
                 if extras:
                     base += " [" + ", ".join(extras) + "]"
             parts.append(base)

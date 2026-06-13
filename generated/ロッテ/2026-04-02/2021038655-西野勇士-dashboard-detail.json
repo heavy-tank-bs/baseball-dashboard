@@ -37,7 +37,7 @@
         "zSwing": 82.4,
         "oContact": 88.9,
         "chase": 30.0,
-        "chasePlus": 91.0
+        "chasePlus": 92.0
       },
       {
         "pitchType": "スライダー",
@@ -73,7 +73,7 @@
         "zSwing": 66.7,
         "oContact": 33.3,
         "chase": 30.0,
-        "chasePlus": 91.0
+        "chasePlus": 92.0
       },
       {
         "pitchType": "カーブ",
@@ -109,7 +109,7 @@
         "zSwing": 50.0,
         "oContact": 66.7,
         "chase": 50.0,
-        "chasePlus": 152.0
+        "chasePlus": 153.0
       },
       {
         "pitchType": "ツーシーム",
@@ -145,7 +145,7 @@
         "zSwing": 77.8,
         "oContact": 100.0,
         "chase": 50.0,
-        "chasePlus": 152.0
+        "chasePlus": 153.0
       },
       {
         "pitchType": "フォーク",
@@ -4305,7 +4305,7 @@
       "フォーク": "#D6C192"
     },
     "metricBaselines": {
-      "chase": 32.8,
+      "chase": 32.7,
       "chaseScope": "league"
     }
   }

@@ -279,7 +279,7 @@
   }
 
   function isMetricLabel(value) {
-    return /(指標|成績|投球回|投球数|球数|球速|被安打|奪三振|三振|四球|死球|失点|自責|打者|打数|打席|安打|本塁打|打点|得点|盗塁|打率|出塁率|長打率|防御率|与四球率|奪三振率|OPS|wOBA|WHIP|ERA|FIP|K\/9|BB\/9|K-BB|率|割合|平均|順位|ゴロ|フライ|ライナー|空振|見三振|ゾーン|スイング|コンタクト|球種割合|使用率|Run Value|Location Score|球威|回転数|リリース|角度|距離|速度|勝率|勝|敗|ホールド|セーブ|登板|試合数|イニング|アウト)/i.test(`${value || ""}`);
+    return /(指標|成績|投球回|投球数|球数|球速|被安打|奪三振|三振|四球|死球|失点|自責|打者|打数|打席|安打|本塁打|打点|得点|盗塁|打率|出塁率|長打率|防御率|与四球率|奪三振率|OPS|wOBA|WHIP|ERA|FIP|K\/9|BB\/9|K-BB|率|割合|平均|順位|ゴロ|フライ|ライナー|空振|見三振|ゾーン|スイング|コンタクト|球種割合|使用率|Run Value|球威|回転数|リリース|角度|距離|速度|勝率|勝|敗|ホールド|セーブ|登板|試合数|イニング|アウト)/i.test(`${value || ""}`);
   }
 
   function metricEvidence(headers, rows) {
@@ -327,6 +327,7 @@
       return {
         headers: ["項目", "値"],
         rows: headers.map((header, index) => [header, rows[0][index] || ""]),
+        hideHeader: true,
       };
     }
 
@@ -337,16 +338,20 @@
         header,
         ...rows.map((row) => row[index + 1] || ""),
       ]),
+      hideHeader: false,
     };
   }
 
   function appendSimpleTable(parent, headers, rows) {
     if (headers.length < 2 || !rows.length) return;
-    const tableData = shouldTransposeTable(headers, rows) ? transposeTable(headers, rows) : { headers, rows };
+    const tableData = shouldTransposeTable(headers, rows)
+      ? transposeTable(headers, rows)
+      : { headers, rows, hideHeader: false };
     const wrap = createNode("div", "ai-chatbot-table-wrap");
     const table = createNode("table", "ai-chatbot-table");
     if (tableData.headers.length <= 3) table.classList.add("compact");
     if (tableData.headers[0] === "項目") table.classList.add("transposed");
+    if (tableData.hideHeader) table.classList.add("headless");
     const thead = createNode("thead", "");
     const headerRow = createNode("tr", "");
     tableData.headers.forEach((header) => {

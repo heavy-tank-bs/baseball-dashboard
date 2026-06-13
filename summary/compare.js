@@ -890,8 +890,6 @@ function renderMetricDescriptions() {
     ["o-contact%", "ゾーン外を振らせた時にバットへ当てられた割合", "ゾーン外コンタクト数 ÷ ゾーン外スイング数"],
     ["chase%", "ゾーン外の球を打者に振らせた割合", "ゾーン外スイング数 ÷ ゾーン外投球数"],
     ["chase+", "リーグ平均を100としてゾーン外を振らせる力を示す指数", "球種別chase% ÷ 同リーグ平均chase% × 100"],
-    ["Location Score", "投球位置の良さを同リーグ・同球種・投手左右・打者左右・カウント状況平均との差で示す独自指標", "位置価値を同条件基準で100平均に変換"],
-    ["Stuff Score β", "球速・空振り・CSW・Chaseを同リーグ・同球種平均との差で示す独自指標", "各要素のplus値を重み付け平均"],
   ];
   return `
     <dl class="metric-description-list">
@@ -927,7 +925,7 @@ function renderSeasonPitchMetricSummary(dashboard) {
       <div class="card-head"><h3>球種別サマリ（各種指標）</h3></div>
       ${renderResponsiveDataTable({
         tableClass: "season-pitch-metric-summary-table",
-        headers: ["球種", "whiff%", "csw%", "zone%", "z-swing%", "o-contact%", "chase%", "chase+", "Location Score", "Stuff Score β"],
+        headers: ["球種", "whiff%", "csw%", "zone%", "z-swing%", "o-contact%", "chase%", "chase+"],
         rows: rows.map((row) => ({
           heading: `<span class="pitch-name-cell"><span class="legend-swatch" style="background:${escapeHtml(row.color || "#0F2340")}"></span>${escapeHtml(row.pitchType)}</span>`,
           values: [
@@ -938,8 +936,6 @@ function renderSeasonPitchMetricSummary(dashboard) {
             formatPercentValue(row.oContact),
             formatPercentValue(row.chase),
             formatPlusValue(row.chasePlus),
-            formatPlusValue(row.locationScore),
-            formatPlusValue(row.stuffScore),
           ],
         })),
       })}

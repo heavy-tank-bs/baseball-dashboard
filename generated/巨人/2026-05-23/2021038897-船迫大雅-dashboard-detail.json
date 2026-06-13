@@ -37,9 +37,7 @@
         "zSwing": 100.0,
         "oContact": null,
         "chase": null,
-        "chasePlus": null,
-        "locationScore": 100.0,
-        "stuffScore": 97.0
+        "chasePlus": null
       }
     ],
     "inningRows": [
@@ -978,7 +976,7 @@
       "シュート": "#0F2340"
     },
     "metricBaselines": {
-      "chase": 32.5,
+      "chase": 32.6,
       "chaseScope": "league"
     }
   }

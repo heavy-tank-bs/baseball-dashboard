@@ -3323,7 +3323,7 @@ body.compare-embed .season-detail-wrap {
   font-weight: 800;
 }
 
-.ai-chatbot-table.transposed thead {
+.ai-chatbot-table.transposed.headless thead {
   display: none;
 }
 

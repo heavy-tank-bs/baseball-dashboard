@@ -37,9 +37,7 @@
         "zSwing": 53.3,
         "oContact": 40.0,
         "chase": 35.7,
-        "chasePlus": 110.0,
-        "locationScore": 101.0,
-        "stuffScore": 106.0
+        "chasePlus": 110.0
       },
       {
         "pitchType": "カットボール",
@@ -75,9 +73,7 @@
         "zSwing": 50.0,
         "oContact": 50.0,
         "chase": 33.3,
-        "chasePlus": 103.0,
-        "locationScore": 101.0,
-        "stuffScore": 97.0
+        "chasePlus": 102.0
       },
       {
         "pitchType": "スライダー",
@@ -113,9 +109,7 @@
         "zSwing": 72.7,
         "oContact": 66.7,
         "chase": 37.5,
-        "chasePlus": 115.0,
-        "locationScore": 101.0,
-        "stuffScore": 99.0
+        "chasePlus": 115.0
       },
       {
         "pitchType": "ツーシーム",
@@ -151,9 +145,7 @@
         "zSwing": 75.0,
         "oContact": 100.0,
         "chase": 22.2,
-        "chasePlus": 68.0,
-        "locationScore": 100.0,
-        "stuffScore": 91.0
+        "chasePlus": 68.0
       },
       {
         "pitchType": "カーブ",
@@ -189,9 +181,7 @@
         "zSwing": 66.7,
         "oContact": null,
         "chase": 0.0,
-        "chasePlus": 0.0,
-        "locationScore": 100.0,
-        "stuffScore": 98.0
+        "chasePlus": 0.0
       },
       {
         "pitchType": "チェンジアップ",
@@ -227,9 +217,7 @@
         "zSwing": 100.0,
         "oContact": 100.0,
         "chase": 50.0,
-        "chasePlus": 154.0,
-        "locationScore": 100.0,
-        "stuffScore": 96.0
+        "chasePlus": 153.0
       },
       {
         "pitchType": "パーム",
@@ -265,9 +253,7 @@
         "zSwing": null,
         "oContact": 100.0,
         "chase": 33.3,
-        "chasePlus": 103.0,
-        "locationScore": 99.0,
-        "stuffScore": 98.0
+        "chasePlus": 102.0
       },
       {
         "pitchType": "ナックルカーブ",
@@ -303,9 +289,7 @@
         "zSwing": 0.0,
         "oContact": null,
         "chase": null,
-        "chasePlus": null,
-        "locationScore": 102.0,
-        "stuffScore": 102.0
+        "chasePlus": null
       }
     ],
     "inningRows": [
@@ -5090,7 +5074,7 @@
       "ナックルカーブ": "#0F2340"
     },
     "metricBaselines": {
-      "chase": 32.5,
+      "chase": 32.6,
       "chaseScope": "league"
     }
   }
