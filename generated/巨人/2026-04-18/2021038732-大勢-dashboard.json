@@ -1,0 +1,88 @@
+{
+  "game_id": "2021038732",
+  "metadata": {
+    "date_jp": "2026年4月18日",
+    "matchup": "東京ヤクルトスワローズvs読売ジャイアンツ"
+  },
+  "statline": {
+    "player": "大勢",
+    "era": "1.23",
+    "innings": "1",
+    "pitches": "4",
+    "batters": "3",
+    "hits": "0",
+    "hr": "0",
+    "k": "0",
+    "bb": "0",
+    "hbp": "0",
+    "balk": "0",
+    "runs": "0",
+    "er": "0"
+  },
+  "pitches": [
+    {
+      "pa_index": "0820300",
+      "pitcher": "大勢",
+      "pitcher_id": "2103697",
+      "pitcher_hand": "右",
+      "batter": "橋本 星哉",
+      "batter_id": "2105063",
+      "batter_hand": "左",
+      "seq": "1",
+      "pitchNo": "4",
+      "pitchType": "ストレート",
+      "speed": "-",
+      "result": "二ゴロ",
+      "top": 50.04,
+      "left": 13.32
+    },
+    {
+      "pa_index": "0820200",
+      "pitcher": "大勢",
+      "pitcher_id": "2103697",
+      "pitcher_hand": "右",
+      "batter": "岩田 幸宏",
+      "batter_id": "2103917",
+      "batter_hand": "左",
+      "seq": "1",
+      "pitchNo": "2",
+      "pitchType": "ストレート",
+      "speed": "151km/h",
+      "result": "ボール",
+      "top": 18.36,
+      "left": 45.36
+    },
+    {
+      "pa_index": "0820200",
+      "pitcher": "大勢",
+      "pitcher_id": "2103697",
+      "pitcher_hand": "右",
+      "batter": "岩田 幸宏",
+      "batter_id": "2103917",
+      "batter_hand": "左",
+      "seq": "2",
+      "pitchNo": "3",
+      "pitchType": "ストレート",
+      "speed": "-",
+      "result": "遊ゴロ",
+      "top": 30.24,
+      "left": 37.44
+    },
+    {
+      "pa_index": "0820100",
+      "pitcher": "大勢",
+      "pitcher_id": "2103697",
+      "pitcher_hand": "右",
+      "batter": "オスナ",
+      "batter_id": "2000133",
+      "batter_hand": "右",
+      "seq": "1",
+      "pitchNo": "1",
+      "pitchType": "ストレート",
+      "speed": "-",
+      "result": "左飛 [ダイビングキャッチ、好プレイ]",
+      "top": 36.72,
+      "left": 24.48
+    }
+  ]
+}

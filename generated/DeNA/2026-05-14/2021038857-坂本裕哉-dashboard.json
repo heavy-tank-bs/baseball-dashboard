@@ -1,0 +1,72 @@
+{
+  "game_id": "2021038857",
+  "metadata": {
+    "date_jp": "2026年5月14日",
+    "matchup": "横浜DeNAベイスターズvs中日ドラゴンズ"
+  },
+  "statline": {
+    "player": "坂本 裕哉",
+    "era": "1.98",
+    "innings": "0.1",
+    "pitches": "3",
+    "batters": "1",
+    "hits": "0",
+    "hr": "0",
+    "k": "0",
+    "bb": "0",
+    "hbp": "0",
+    "balk": "0",
+    "runs": "0",
+    "er": "0"
+  },
+  "pitches": [
+    {
+      "pa_index": "0710400",
+      "pitcher": "坂本 裕哉",
+      "pitcher_id": "1900031",
+      "pitcher_hand": "左",
+      "batter": "加藤 匠馬",
+      "batter_id": "1400160",
+      "batter_hand": "右",
+      "seq": "1",
+      "pitchNo": "1",
+      "pitchType": "ストレート",
+      "speed": "145km/h",
+      "result": "ファウル",
+      "top": 24.84,
+      "left": 13.68
+    },
+    {
+      "pa_index": "0710400",
+      "pitcher": "坂本 裕哉",
+      "pitcher_id": "1900031",
+      "pitcher_hand": "左",
+      "batter": "加藤 匠馬",
+      "batter_id": "1400160",
+      "batter_hand": "右",
+      "seq": "2",
+      "pitchNo": "2",
+      "pitchType": "ストレート",
+      "speed": "146km/h",
+      "result": "ボール",
+      "top": 8.28,
+      "left": 3.96
+    },
+    {
+      "pa_index": "0710400",
+      "pitcher": "坂本 裕哉",
+      "pitcher_id": "1900031",
+      "pitcher_hand": "左",
+      "batter": "加藤 匠馬",
+      "batter_id": "1400160",
+      "batter_hand": "右",
+      "seq": "3",
+      "pitchNo": "3",
+      "pitchType": "ストレート",
+      "speed": "145km/h",
+      "result": "遊ゴロ [投手のグラブを弾く、好リリーフ]",
+      "top": 25.2,
+      "left": 16.2
+    }
+  ]
+}

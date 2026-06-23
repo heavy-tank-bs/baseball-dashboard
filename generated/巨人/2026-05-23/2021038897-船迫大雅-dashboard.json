@@ -1,0 +1,56 @@
+{
+  "game_id": "2021038897",
+  "metadata": {
+    "date_jp": "2026年5月23日",
+    "matchup": "読売ジャイアンツvs阪神タイガース"
+  },
+  "statline": {
+    "player": "船迫 大雅",
+    "era": "2.92",
+    "innings": "0.1",
+    "pitches": "2",
+    "batters": "1",
+    "hits": "0",
+    "hr": "0",
+    "k": "0",
+    "bb": "0",
+    "hbp": "0",
+    "balk": "0",
+    "runs": "0",
+    "er": "0"
+  },
+  "pitches": [
+    {
+      "pa_index": "0610700",
+      "pitcher": "船迫 大雅",
+      "pitcher_id": "1450689",
+      "pitcher_hand": "右",
+      "batter": "立石 正広",
+      "batter_id": "2103242",
+      "batter_hand": "右",
+      "seq": "1",
+      "pitchNo": "1",
+      "pitchType": "シュート",
+      "speed": "144km/h",
+      "result": "ファウル [止めたバットに当たる]",
+      "top": 23.04,
+      "left": 38.879999999999995
+    },
+    {
+      "pa_index": "0610700",
+      "pitcher": "船迫 大雅",
+      "pitcher_id": "1450689",
+      "pitcher_hand": "右",
+      "batter": "立石 正広",
+      "batter_id": "2103242",
+      "batter_hand": "右",
+      "seq": "2",
+      "pitchNo": "2",
+      "pitchType": "シュート",
+      "speed": "144km/h",
+      "result": "投ゴロ [投手直撃]",
+      "top": 38.879999999999995,
+      "left": 36.72
+    }
+  ]
+}

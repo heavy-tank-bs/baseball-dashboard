@@ -1,0 +1,40 @@
+{
+  "game_id": "2021038821",
+  "metadata": {
+    "date_jp": "2026年5月5日",
+    "matchup": "オリックス・バファローズvs千葉ロッテマリーンズ"
+  },
+  "statline": {
+    "player": "吉田 輝星",
+    "era": "0.00",
+    "innings": "0.2",
+    "pitches": "1",
+    "batters": "1",
+    "hits": "0",
+    "hr": "0",
+    "k": "0",
+    "bb": "0",
+    "hbp": "0",
+    "balk": "0",
+    "runs": "0",
+    "er": "0"
+  },
+  "pitches": [
+    {
+      "pa_index": "0910400",
+      "pitcher": "吉田 輝星",
+      "pitcher_id": "1800090",
+      "pitcher_hand": "右",
+      "batter": "池田 来翔",
+      "batter_id": "2103693",
+      "batter_hand": "右",
+      "seq": "1",
+      "pitchNo": "1",
+      "pitchType": "カーブ",
+      "speed": "-",
+      "result": "投併打",
+      "top": 21.24,
+      "left": 27.0
+    }
+  ]
+}

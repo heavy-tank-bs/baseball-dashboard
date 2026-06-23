@@ -1,0 +1,72 @@
+{
+  "game_id": "2021038870",
+  "metadata": {
+    "date_jp": "2026年5月16日",
+    "matchup": "東北楽天ゴールデンイーグルスvs福岡ソフトバンクホークス"
+  },
+  "statline": {
+    "player": "柴田 大地",
+    "era": "0.00",
+    "innings": "0.1",
+    "pitches": "3",
+    "batters": "1",
+    "hits": "0",
+    "hr": "0",
+    "k": "0",
+    "bb": "0",
+    "hbp": "0",
+    "balk": "0",
+    "runs": "0",
+    "er": "0"
+  },
+  "pitches": [
+    {
+      "pa_index": "0910700",
+      "pitcher": "柴田 大地",
+      "pitcher_id": "2103765",
+      "pitcher_hand": "右",
+      "batter": "近藤 健介",
+      "batter_id": "1100097",
+      "batter_hand": "左",
+      "seq": "1",
+      "pitchNo": "1",
+      "pitchType": "ストレート",
+      "speed": "151km/h",
+      "result": "見逃し",
+      "top": 32.76,
+      "left": 40.32
+    },
+    {
+      "pa_index": "0910700",
+      "pitcher": "柴田 大地",
+      "pitcher_id": "2103765",
+      "pitcher_hand": "右",
+      "batter": "近藤 健介",
+      "batter_id": "1100097",
+      "batter_hand": "左",
+      "seq": "2",
+      "pitchNo": "2",
+      "pitchType": "ストレート",
+      "speed": "150km/h",
+      "result": "ボール",
+      "top": 7.92,
+      "left": 27.72
+    },
+    {
+      "pa_index": "0910700",
+      "pitcher": "柴田 大地",
+      "pitcher_id": "2103765",
+      "pitcher_hand": "右",
+      "batter": "近藤 健介",
+      "batter_id": "1100097",
+      "batter_hand": "左",
+      "seq": "3",
+      "pitchNo": "3",
+      "pitchType": "スプリット",
+      "speed": "144km/h",
+      "result": "一ゴロ [好リリーフ、投手ガッツポーズ]",
+      "top": 42.48,
+      "left": 30.24
+    }
+  ]
+}

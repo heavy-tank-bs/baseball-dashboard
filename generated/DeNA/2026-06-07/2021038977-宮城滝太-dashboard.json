@@ -1,0 +1,40 @@
+{
+  "game_id": "2021038977",
+  "metadata": {
+    "date_jp": "2026年6月7日",
+    "matchup": "横浜DeNAベイスターズvs福岡ソフトバンクホークス"
+  },
+  "statline": {
+    "player": "宮城 滝太",
+    "era": "2.25",
+    "innings": "0.1",
+    "pitches": "1",
+    "batters": "1",
+    "hits": "0",
+    "hr": "0",
+    "k": "0",
+    "bb": "0",
+    "hbp": "0",
+    "balk": "0",
+    "runs": "0",
+    "er": "0"
+  },
+  "pitches": [
+    {
+      "pa_index": "0710700",
+      "pitcher": "宮城 滝太",
+      "pitcher_id": "1800049",
+      "pitcher_hand": "右",
+      "batter": "栗原 陵矢",
+      "batter_id": "1400127",
+      "batter_hand": "左",
+      "seq": "1",
+      "pitchNo": "1",
+      "pitchType": "ストレート",
+      "speed": "148km/h",
+      "result": "二ゴロ [痛烈な当たり]",
+      "top": 18.36,
+      "left": 33.839999999999996
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "game_id": "2021038768",
+  "metadata": {
+    "date_jp": "2026年4月25日",
+    "matchup": "オリックス・バファローズvs北海道日本ハムファイターズ"
+  },
+  "statline": {
+    "player": "吉田 輝星",
+    "era": "0.00",
+    "innings": "0.1",
+    "pitches": "1",
+    "batters": "1",
+    "hits": "0",
+    "hr": "0",
+    "k": "0",
+    "bb": "0",
+    "hbp": "0",
+    "balk": "0",
+    "runs": "0",
+    "er": "0"
+  },
+  "pitches": [
+    {
+      "pa_index": "0710700",
+      "pitcher": "吉田 輝星",
+      "pitcher_id": "1800090",
+      "pitcher_hand": "右",
+      "batter": "レイエス",
+      "batter_id": "1860140",
+      "batter_hand": "右",
+      "seq": "1",
+      "pitchNo": "1",
+      "pitchType": "ストレート",
+      "speed": "142km/h",
+      "result": "一邪飛 [好リリーフ]",
+      "top": 19.439999999999998,
+      "left": 44.64
+    }
+  ]
+}

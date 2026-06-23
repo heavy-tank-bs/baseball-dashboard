@@ -1,0 +1,88 @@
+{
+  "game_id": "2021038902",
+  "metadata": {
+    "date_jp": "2026年5月23日",
+    "matchup": "福岡ソフトバンクホークスvs北海道日本ハムファイターズ"
+  },
+  "statline": {
+    "player": "上茶谷 大河",
+    "era": "1.40",
+    "innings": "1",
+    "pitches": "4",
+    "batters": "3",
+    "hits": "1",
+    "hr": "0",
+    "k": "0",
+    "bb": "0",
+    "hbp": "0",
+    "balk": "0",
+    "runs": "0",
+    "er": "0"
+  },
+  "pitches": [
+    {
+      "pa_index": "0610300",
+      "pitcher": "上茶谷 大河",
+      "pitcher_id": "1800043",
+      "pitcher_hand": "右",
+      "batter": "清宮 幸太郎",
+      "batter_id": "1700025",
+      "batter_hand": "左",
+      "seq": "1",
+      "pitchNo": "4",
+      "pitchType": "ストレート",
+      "speed": "-",
+      "result": "一併打",
+      "top": 42.48,
+      "left": 36.72
+    },
+    {
+      "pa_index": "0610200",
+      "pitcher": "上茶谷 大河",
+      "pitcher_id": "1800043",
+      "pitcher_hand": "右",
+      "batter": "野村 佑希",
+      "batter_id": "1800091",
+      "batter_hand": "右",
+      "seq": "1",
+      "pitchNo": "2",
+      "pitchType": "カットボール",
+      "speed": "143km/h",
+      "result": "見逃し",
+      "top": 32.04,
+      "left": 17.64
+    },
+    {
+      "pa_index": "0610200",
+      "pitcher": "上茶谷 大河",
+      "pitcher_id": "1800043",
+      "pitcher_hand": "右",
+      "batter": "野村 佑希",
+      "batter_id": "1800091",
+      "batter_hand": "右",
+      "seq": "2",
+      "pitchNo": "3",
+      "pitchType": "スライダー",
+      "speed": "131km/h",
+      "result": "遊ゴロ [併殺崩れ]",
+      "top": 48.239999999999995,
+      "left": 17.28
+    },
+    {
+      "pa_index": "0610100",
+      "pitcher": "上茶谷 大河",
+      "pitcher_id": "1800043",
+      "pitcher_hand": "右",
+      "batter": "レイエス",
+      "batter_id": "1860140",
+      "batter_hand": "右",
+      "seq": "1",
+      "pitchNo": "1",
+      "pitchType": "ストレート",
+      "speed": "-",
+      "result": "左安",
+      "top": 33.48,
+      "left": 37.44
+    }
+  ]
+}

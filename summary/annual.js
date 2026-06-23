@@ -1,0 +1,557 @@
+const TEAM_ORDER = [
+  "巨人",
+  "阪神",
+  "DeNA",
+  "広島",
+  "ヤクルト",
+  "中日",
+  "ソフトバンク",
+  "日本ハム",
+  "ロッテ",
+  "オリックス",
+  "西武",
+  "楽天",
+];
+
+const FULL_SEASON_GAMES = 143;
+
+const state = {
+  data: null,
+  teamGamesByYear: new Map(),
+  year: "",
+  league: "all",
+  team: "all",
+  player: "all",
+  inningsMinOuts: 0,
+  thresholdCustomized: false,
+  sortKey: "",
+  sortDirection: "",
+};
+
+const els = {
+  yearSelect: document.getElementById("yearSelect"),
+  leagueButtons: [...document.querySelectorAll("[data-league]")],
+  teamSelect: document.getElementById("teamSelect"),
+  playerSelect: document.getElementById("playerSelect"),
+  inningsRange: document.getElementById("inningsRange"),
+  inningsInput: document.getElementById("inningsInput"),
+  inningsMaxLabel: document.getElementById("inningsMaxLabel"),
+  annualResultCount: document.getElementById("annualResultCount"),
+  annualNote: document.getElementById("annualNote"),
+  annualTableWrap: document.getElementById("annualTableWrap"),
+};
+
+function escapeHtml(value) {
+  return `${value ?? ""}`
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#39;");
+}
+
+function formatDecimal(value, digits = 2) {
+  if (value === null || value === undefined || value === "") return "-";
+  const number = Number(value);
+  return Number.isFinite(number) ? number.toFixed(digits) : `${value}`;
+}
+
+function formatAverage(value) {
+  if (value === null || value === undefined || value === "") return "-";
+  const number = Number(value);
+  return Number.isFinite(number) ? number.toFixed(3) : `${value}`;
+}
+
+function formatPercent(value, digits = 1) {
+  if (value === null || value === undefined || value === "") return "-";
+  const number = Number(value);
+  return Number.isFinite(number) ? `${number.toFixed(digits)}%` : `${value}`;
+}
+
+function formatInningsFromOuts(outs) {
+  const safeOuts = Math.max(0, Number(outs) || 0);
+  const whole = Math.floor(safeOuts / 3);
+  const remainder = safeOuts % 3;
+  return remainder === 0 ? `${whole}` : `${whole}.${remainder}`;
+}
+
+function parseInningsToOuts(value) {
+  const normalized = `${value ?? ""}`.trim().normalize("NFKC");
+  if (!normalized) return 0;
+  const sign = normalized.startsWith("-") ? -1 : 1;
+  const unsigned = sign < 0 ? normalized.slice(1) : normalized;
+  const [wholePart, fractionPart = ""] = unsigned.split(".", 2);
+  const whole = Number.parseInt(wholePart || "0", 10);
+  if (!Number.isFinite(whole)) return 0;
+  const digit = fractionPart.match(/\d/)?.[0];
+  const remainder = digit ? Math.min(Number.parseInt(digit, 10), 2) : 0;
+  return Math.max(0, sign * ((whole * 3) + remainder));
+}
+
+function teamSortKey(team) {
+  const primary = `${team || ""}`.split(" / ")[0];
+  const index = TEAM_ORDER.indexOf(primary);
+  return [index === -1 ? TEAM_ORDER.length : index, primary];
+}
+
+function compareTeam(a, b) {
+  const [aIndex, aName] = teamSortKey(a);
+  const [bIndex, bName] = teamSortKey(b);
+  if (aIndex !== bIndex) return aIndex - bIndex;
+  return aName.localeCompare(bName, "ja");
+}
+
+function hasScore(value) {
+  return value !== null && value !== undefined && value !== "" && Number.isFinite(Number(value));
+}
+
+function isCompletedGame(game) {
+  return hasScore(game?.homeScore) && hasScore(game?.awayScore);
+}
+
+function rebuildTeamGames(context) {
+  const gamesByYear = new Map();
+  const games = Array.isArray(context?.games) ? context.games : [];
+  for (const game of games) {
+    if (!isCompletedGame(game)) continue;
+    const year = `${game.date || context?.season || ""}`.slice(0, 4);
+    if (!year) continue;
+    if (!gamesByYear.has(year)) {
+      gamesByYear.set(year, new Map());
+    }
+    const counts = gamesByYear.get(year);
+    for (const team of [game.homeTeam, game.awayTeam]) {
+      if (!team) continue;
+      counts.set(team, (counts.get(team) || 0) + 1);
+    }
+  }
+  state.teamGamesByYear = gamesByYear;
+}
+
+function minimumTeamGamesForYear(year) {
+  if (year === "2025") return FULL_SEASON_GAMES;
+  const counts = state.teamGamesByYear.get(year);
+  if (!counts) return 0;
+  const games = [...counts.values()].filter((value) => Number.isFinite(value) && value > 0);
+  return games.length ? Math.min(...games) : 0;
+}
+
+function qualifiedInningsOuts() {
+  const games = minimumTeamGamesForYear(state.year);
+  return games > 0 ? games * 3 : 0;
+}
+
+const SORT_COLUMNS = [
+  { key: "team", label: "球団", type: "team", value: (row) => row.team },
+  { key: "player", label: "投手", type: "string", value: (row) => row.player },
+  { key: "games", label: "登板", type: "number", value: (row) => row.games },
+  { key: "wins", label: "勝利", type: "number", value: (row) => row.wins },
+  { key: "losses", label: "敗戦", type: "number", value: (row) => row.losses },
+  { key: "saves", label: "セーブ", type: "number", value: (row) => row.saves },
+  { key: "holds", label: "ホールド", type: "number", value: (row) => row.holds },
+  { key: "inningsOuts", label: "投球回", type: "number", value: (row) => row.inningsOuts },
+  { key: "era", label: "防御率", type: "number", value: (row) => row.era },
+  { key: "fip", label: "FIP", type: "number", value: (row) => row.fip },
+  { key: "hits", label: "被安打", type: "number", value: (row) => row.hits },
+  { key: "whip", label: "WHIP", type: "number", value: (row) => row.whip },
+  { key: "battingAverageAllowed", label: "被打率", type: "number", value: (row) => row.battingAverageAllowed },
+  { key: "babipAllowed", label: "被BABIP", type: "number", value: (row) => row.babipAllowed },
+  { key: "strikeouts", label: "奪三振", type: "number", value: (row) => row.strikeouts },
+  { key: "kPer9", label: "K/9", type: "number", value: (row) => row.kPer9 },
+  { key: "walks", label: "与四球", type: "number", value: (row) => row.walks },
+  { key: "bbPer9", label: "BB/9", type: "number", value: (row) => row.bbPer9 },
+  { key: "kBb", label: "K/BB", type: "number", value: (row) => row.kBb },
+  { key: "homeRuns", label: "被本塁打", type: "number", value: (row) => row.homeRuns },
+  { key: "hrPer9", label: "HR/9", type: "number", value: (row) => row.hrPer9 },
+  { key: "groundOutRate", label: "ゴロアウト率", type: "number", value: (row) => row.groundOutRate },
+  { key: "flyOutRate", label: "フライアウト率", type: "number", value: (row) => row.flyOutRate },
+  { key: "pitches", label: "球数", type: "number", value: (row) => row.pitches },
+];
+
+const playerColumnIndex = SORT_COLUMNS.findIndex((column) => column.key === "player");
+if (playerColumnIndex > 0) {
+  const [playerColumn] = SORT_COLUMNS.splice(playerColumnIndex, 1);
+  SORT_COLUMNS.unshift(playerColumn);
+}
+
+const SORT_COLUMN_MAP = Object.fromEntries(SORT_COLUMNS.map((column) => [column.key, column]));
+
+function playerValue(row) {
+  return row.pitcherId || `${row.team}::${row.player}`;
+}
+
+function playerPersonalHref(row) {
+  const params = new URLSearchParams({
+    type: "pitcher",
+    year: row.year || "",
+    player: row.player || "",
+    team: row.team || "",
+  });
+  if (row.pitcherId) {
+    params.set("playerId", row.pitcherId);
+  }
+  return `./player.html?${params.toString()}`;
+}
+
+function compareDefault(a, b) {
+  if (b.inningsOuts !== a.inningsOuts) return b.inningsOuts - a.inningsOuts;
+  if ((b.games || 0) !== (a.games || 0)) return (b.games || 0) - (a.games || 0);
+  const teamCompare = compareTeam(a.team, b.team);
+  if (teamCompare !== 0) return teamCompare;
+  return a.player.localeCompare(b.player, "ja");
+}
+
+function isMissingSortValue(value) {
+  return value === null || value === undefined || value === "";
+}
+
+function compareSorted(a, b) {
+  const column = SORT_COLUMN_MAP[state.sortKey];
+  if (!column || !state.sortDirection) {
+    return compareDefault(a, b);
+  }
+
+  const aValue = column.value(a);
+  const bValue = column.value(b);
+  const aMissing = isMissingSortValue(aValue);
+  const bMissing = isMissingSortValue(bValue);
+
+  if (aMissing && bMissing) return compareDefault(a, b);
+  if (aMissing) return 1;
+  if (bMissing) return -1;
+
+  let result = 0;
+  if (column.type === "team") {
+    result = compareTeam(aValue, bValue);
+  } else if (column.type === "string") {
+    result = `${aValue}`.localeCompare(`${bValue}`, "ja");
+  } else {
+    result = Number(aValue) - Number(bValue);
+  }
+
+  if (result === 0) return compareDefault(a, b);
+  return state.sortDirection === "asc" ? result : -result;
+}
+
+function sortIndicator(key) {
+  if (state.sortKey !== key || !state.sortDirection) return "↕";
+  return state.sortDirection === "asc" ? "▲" : "▼";
+}
+
+function renderSortHeader(column) {
+  const active = state.sortKey === column.key && state.sortDirection;
+  return `
+    <th>
+      <button
+        type="button"
+        class="sort-header${active ? " active" : ""}"
+        data-sort-key="${column.key}"
+        aria-label="${column.label}で並び替え"
+      >
+        <span>${column.label}</span>
+        <span class="sort-indicator" aria-hidden="true">${sortIndicator(column.key)}</span>
+      </button>
+    </th>
+  `;
+}
+
+function toggleSort(sortKey) {
+  if (state.sortKey !== sortKey) {
+    state.sortKey = sortKey;
+    state.sortDirection = "desc";
+  } else if (state.sortDirection === "desc") {
+    state.sortDirection = "asc";
+  } else {
+    state.sortKey = "";
+    state.sortDirection = "";
+  }
+  render();
+}
+
+function availableTeams() {
+  const rows = (state.data?.players || []).filter((row) => {
+    if (state.year && row.year !== state.year) return false;
+    if (state.league !== "all" && row.league !== state.league) return false;
+    return true;
+  });
+  return [...new Set(rows.map((row) => row.team))].sort(compareTeam);
+}
+
+function availablePlayers() {
+  const rows = (state.data?.players || [])
+    .filter((row) => {
+      if (state.year && row.year !== state.year) return false;
+      if (state.league !== "all" && row.league !== state.league) return false;
+      if (state.team !== "all" && row.team !== state.team) return false;
+      return true;
+    })
+    .sort((a, b) => {
+      const teamCompare = compareTeam(a.team, b.team);
+      if (teamCompare !== 0) return teamCompare;
+      return a.player.localeCompare(b.player, "ja");
+    });
+
+  const nameCounts = rows.reduce((map, row) => {
+    map.set(row.player, (map.get(row.player) || 0) + 1);
+    return map;
+  }, new Map());
+
+  return rows.map((row) => ({
+    value: playerValue(row),
+    label: nameCounts.get(row.player) > 1 ? `${row.player} (${row.team})` : row.player,
+  }));
+}
+
+function filteredPlayersBase() {
+  return (state.data?.players || []).filter((row) => {
+    if (state.year && row.year !== state.year) return false;
+    if (state.league !== "all" && row.league !== state.league) return false;
+    if (state.team !== "all" && row.team !== state.team) return false;
+    if (state.player !== "all" && playerValue(row) !== state.player) return false;
+    return true;
+  });
+}
+
+function filteredPlayers() {
+  return filteredPlayersBase()
+    .filter((row) => (row.inningsOuts || 0) >= state.inningsMinOuts)
+    .sort(compareSorted);
+}
+
+function activeColumns(rows) {
+  const hasPitchCount = rows.some((row) => row.hasPitchCount);
+  return SORT_COLUMNS.filter((column) => column.key !== "pitches" || hasPitchCount);
+}
+
+function renderYearOptions() {
+  const years = [...(state.data?.years || [])].sort().reverse();
+  if (!state.year && years.length) {
+    state.year = years[0];
+  }
+  els.yearSelect.innerHTML = years
+    .map((year) => `<option value="${escapeHtml(year)}" ${year === state.year ? "selected" : ""}>${year}年度</option>`)
+    .join("");
+}
+
+function renderLeagueOptions() {
+  els.leagueButtons.forEach((button) => {
+    button.classList.toggle("active", button.dataset.league === state.league);
+  });
+}
+
+function renderTeamOptions() {
+  const teams = availableTeams();
+  if (state.team !== "all" && !teams.includes(state.team)) {
+    state.team = "all";
+  }
+  const options = [
+    '<option value="all">すべての球団</option>',
+    ...teams.map(
+      (team) => `<option value="${escapeHtml(team)}" ${team === state.team ? "selected" : ""}>${escapeHtml(team)}</option>`
+    ),
+  ];
+  els.teamSelect.innerHTML = options.join("");
+}
+
+function renderPlayerOptions() {
+  const players = availablePlayers();
+  if (state.player !== "all" && !players.some((row) => row.value === state.player)) {
+    state.player = "all";
+  }
+  const options = [
+    '<option value="all">すべての選手</option>',
+    ...players.map(
+      (row) => `<option value="${escapeHtml(row.value)}" ${row.value === state.player ? "selected" : ""}>${escapeHtml(row.label)}</option>`
+    ),
+  ];
+  els.playerSelect.innerHTML = options.join("");
+}
+
+function renderNote() {
+  els.annualNote.textContent = "";
+}
+
+function renderInningsFilter() {
+  const qualifiedOuts = qualifiedInningsOuts();
+  const rowMaxOuts = filteredPlayersBase().reduce((max, row) => Math.max(max, row.inningsOuts || 0), 0);
+  const maxOuts = Math.max(rowMaxOuts, qualifiedOuts);
+  if (!state.thresholdCustomized) {
+    state.inningsMinOuts = qualifiedOuts;
+  }
+  if (state.inningsMinOuts > maxOuts) {
+    state.inningsMinOuts = maxOuts;
+  }
+  els.inningsRange.max = `${maxOuts}`;
+  els.inningsRange.value = `${state.inningsMinOuts}`;
+  els.inningsInput.value = formatInningsFromOuts(state.inningsMinOuts);
+  els.inningsMaxLabel.textContent = formatInningsFromOuts(maxOuts);
+}
+
+function applyInningsInput(rawValue) {
+  const maxOuts = Number(els.inningsRange.max) || 0;
+  state.thresholdCustomized = true;
+  state.inningsMinOuts = Math.min(parseInningsToOuts(rawValue), maxOuts);
+  render();
+}
+
+function captureTableScroll() {
+  const scroller = els.annualTableWrap.querySelector(".table-scroll");
+  return {
+    left: scroller?.scrollLeft ?? 0,
+    top: scroller?.scrollTop ?? 0,
+    pageX: window.scrollX,
+    pageY: window.scrollY,
+  };
+}
+
+function restoreTableScroll(scrollState) {
+  window.scrollTo(scrollState.pageX, scrollState.pageY);
+  const scroller = els.annualTableWrap.querySelector(".table-scroll");
+  if (!scroller) return;
+  scroller.scrollLeft = scrollState.left;
+  scroller.scrollTop = scrollState.top;
+}
+
+function renderTable() {
+  const scrollState = captureTableScroll();
+  const rows = filteredPlayers();
+  const columns = activeColumns(rows);
+  if (state.sortKey && !columns.some((column) => column.key === state.sortKey)) {
+    state.sortKey = "";
+    state.sortDirection = "";
+  }
+  els.annualResultCount.textContent = `${rows.length}件`;
+
+  if (!rows.length) {
+    els.annualTableWrap.innerHTML = '<div class="section-empty">条件に合う年度別成績がありません。</div>';
+    requestAnimationFrame(() => restoreTableScroll(scrollState));
+    return;
+  }
+
+  const body = rows
+    .map(
+      (row) => `
+        <tr>
+          <td><a class="annual-player-link" href="${playerPersonalHref(row)}">${escapeHtml(row.player)}</a></td>
+          <td>${escapeHtml(row.team)}</td>
+          <td>${row.games}</td>
+          <td>${row.wins ?? 0}</td>
+          <td>${row.losses ?? 0}</td>
+          <td>${row.saves ?? 0}</td>
+          <td>${row.holds ?? 0}</td>
+          <td>${row.innings}</td>
+          <td>${formatDecimal(row.era, 2)}</td>
+          <td>${formatDecimal(row.fip, 2)}</td>
+          <td>${row.hits}</td>
+          <td>${formatDecimal(row.whip, 2)}</td>
+          <td>${formatAverage(row.battingAverageAllowed)}</td>
+          <td>${formatAverage(row.babipAllowed)}</td>
+          <td>${row.strikeouts}</td>
+          <td>${formatDecimal(row.kPer9, 2)}</td>
+          <td>${row.walks}</td>
+          <td>${formatDecimal(row.bbPer9, 2)}</td>
+          <td>${formatDecimal(row.kBb, 2)}</td>
+          <td>${row.homeRuns}</td>
+          <td>${formatDecimal(row.hrPer9, 2)}</td>
+          <td>${formatPercent(row.groundOutRate, 1)}</td>
+          <td>${formatPercent(row.flyOutRate, 1)}</td>
+          ${row.hasPitchCount ? `<td>${row.pitches}</td>` : ""}
+        </tr>
+      `
+    )
+    .join("");
+
+  els.annualTableWrap.innerHTML = `
+    <div class="table-scroll annual-table-scroll">
+      <table class="data-table annual-table">
+        <thead>
+          <tr>${columns.map((column) => renderSortHeader(column)).join("")}</tr>
+        </thead>
+        <tbody>${body}</tbody>
+      </table>
+    </div>
+  `;
+  requestAnimationFrame(() => restoreTableScroll(scrollState));
+}
+
+function render() {
+  renderYearOptions();
+  renderLeagueOptions();
+  renderTeamOptions();
+  renderPlayerOptions();
+  renderInningsFilter();
+  renderNote();
+  renderTable();
+}
+
+function bindEvents() {
+  els.yearSelect.addEventListener("change", (event) => {
+    state.year = event.target.value;
+    state.team = "all";
+    state.player = "all";
+    state.thresholdCustomized = false;
+    render();
+  });
+
+  els.leagueButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      state.league = button.dataset.league || "all";
+      state.team = "all";
+      state.player = "all";
+      render();
+    });
+  });
+
+  els.teamSelect.addEventListener("change", (event) => {
+    state.team = event.target.value;
+    state.player = "all";
+    render();
+  });
+
+  els.playerSelect.addEventListener("change", (event) => {
+    state.player = event.target.value;
+    render();
+  });
+
+  els.inningsRange.addEventListener("input", (event) => {
+    state.thresholdCustomized = true;
+    state.inningsMinOuts = Number(event.target.value) || 0;
+    render();
+  });
+
+  els.inningsInput.addEventListener("change", (event) => {
+    applyInningsInput(event.target.value);
+  });
+
+  els.inningsInput.addEventListener("keydown", (event) => {
+    if (event.key !== "Enter") return;
+    event.preventDefault();
+    applyInningsInput(event.target.value);
+  });
+
+  els.annualTableWrap.addEventListener("click", (event) => {
+    const button = event.target.closest(".sort-header");
+    if (!button) return;
+    toggleSort(button.dataset.sortKey || "");
+  });
+}
+
+async function init() {
+  try {
+    const [response, contextResponse] = await Promise.all([
+      fetch("./player_totals.json?v=20260511-count", { cache: "no-store" }),
+      fetch("./sportsnavi_game_context_2026.json?v=20260429-1", { cache: "no-store" }).catch(() => null),
+    ]);
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    state.data = await response.json();
+    if (contextResponse?.ok) {
+      rebuildTeamGames(await contextResponse.json());
+    }
+    bindEvents();
+    render();
+  } catch (error) {
+    els.annualTableWrap.innerHTML = `<div class="section-empty">年度別成績データを読み込めませんでした。${escapeHtml(error.message)}</div>`;
+  }
+}
+
+init();

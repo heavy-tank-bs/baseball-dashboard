@@ -1,0 +1,56 @@
+{
+  "game_id": "2021038650",
+  "metadata": {
+    "date_jp": "2026年4月1日",
+    "matchup": "東北楽天ゴールデンイーグルスvs福岡ソフトバンクホークス"
+  },
+  "statline": {
+    "player": "上茶谷 大河",
+    "era": "2.70",
+    "innings": "0.1",
+    "pitches": "2",
+    "batters": "1",
+    "hits": "0",
+    "hr": "0",
+    "k": "0",
+    "bb": "0",
+    "hbp": "0",
+    "balk": "0",
+    "runs": "0",
+    "er": "0"
+  },
+  "pitches": [
+    {
+      "pa_index": "0920500",
+      "pitcher": "上茶谷 大河",
+      "pitcher_id": "1800043",
+      "pitcher_hand": "右",
+      "batter": "浅村 栄斗",
+      "batter_id": "900056",
+      "batter_hand": "右",
+      "seq": "1",
+      "pitchNo": "1",
+      "pitchType": "ストレート",
+      "speed": "147km/h",
+      "result": "ファウル",
+      "top": 26.64,
+      "left": 22.32
+    },
+    {
+      "pa_index": "0920500",
+      "pitcher": "上茶谷 大河",
+      "pitcher_id": "1800043",
+      "pitcher_hand": "右",
+      "batter": "浅村 栄斗",
+      "batter_id": "900056",
+      "batter_hand": "右",
+      "seq": "2",
+      "pitchNo": "2",
+      "pitchType": "ストレート",
+      "speed": "-",
+      "result": "二ゴロ",
+      "top": 38.16,
+      "left": 10.44
+    }
+  ]
+}

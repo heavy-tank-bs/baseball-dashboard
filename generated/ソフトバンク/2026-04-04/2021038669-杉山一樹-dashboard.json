@@ -1,0 +1,56 @@
+{
+  "game_id": "2021038669",
+  "metadata": {
+    "date_jp": "2026年4月4日",
+    "matchup": "千葉ロッテマリーンズvs福岡ソフトバンクホークス"
+  },
+  "statline": {
+    "player": "杉山 一樹",
+    "era": "11.25",
+    "innings": "0.1",
+    "pitches": "2",
+    "batters": "1",
+    "hits": "0",
+    "hr": "0",
+    "k": "0",
+    "bb": "0",
+    "hbp": "0",
+    "balk": "0",
+    "runs": "0",
+    "er": "0"
+  },
+  "pitches": [
+    {
+      "pa_index": "0920600",
+      "pitcher": "杉山 一樹",
+      "pitcher_id": "1800107",
+      "pitcher_hand": "右",
+      "batter": "山口 航輝",
+      "batter_id": "1800053",
+      "batter_hand": "右",
+      "seq": "1",
+      "pitchNo": "1",
+      "pitchType": "ストレート",
+      "speed": "148km/h",
+      "result": "ボール",
+      "top": 53.64,
+      "left": 16.919999999999998
+    },
+    {
+      "pa_index": "0920600",
+      "pitcher": "杉山 一樹",
+      "pitcher_id": "1800107",
+      "pitcher_hand": "右",
+      "batter": "山口 航輝",
+      "batter_id": "1800053",
+      "batter_hand": "右",
+      "seq": "2",
+      "pitchNo": "2",
+      "pitchType": "ストレート",
+      "speed": "148km/h",
+      "result": "中飛",
+      "top": 33.12,
+      "left": 14.399999999999999
+    }
+  ]
+}

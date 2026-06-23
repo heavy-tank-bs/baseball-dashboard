@@ -1,0 +1,88 @@
+{
+  "game_id": "2021038901",
+  "metadata": {
+    "date_jp": "2026年5月23日",
+    "matchup": "埼玉西武ライオンズvsオリックス・バファローズ"
+  },
+  "statline": {
+    "player": "博志",
+    "era": "0.00",
+    "innings": "0.1",
+    "pitches": "4",
+    "batters": "1",
+    "hits": "0",
+    "hr": "0",
+    "k": "0",
+    "bb": "0",
+    "hbp": "0",
+    "balk": "0",
+    "runs": "0",
+    "er": "0"
+  },
+  "pitches": [
+    {
+      "pa_index": "0420600",
+      "pitcher": "博志",
+      "pitcher_id": "1700101",
+      "pitcher_hand": "右",
+      "batter": "ネビン",
+      "batter_id": "2101047",
+      "batter_hand": "右",
+      "seq": "1",
+      "pitchNo": "1",
+      "pitchType": "カットボール",
+      "speed": "141km/h",
+      "result": "空振り",
+      "top": 56.16,
+      "left": 5.3999999999999995
+    },
+    {
+      "pa_index": "0420600",
+      "pitcher": "博志",
+      "pitcher_id": "1700101",
+      "pitcher_hand": "右",
+      "batter": "ネビン",
+      "batter_id": "2101047",
+      "batter_hand": "右",
+      "seq": "2",
+      "pitchNo": "2",
+      "pitchType": "ツーシーム",
+      "speed": "150km/h",
+      "result": "ボール",
+      "top": 48.96,
+      "left": 3.96
+    },
+    {
+      "pa_index": "0420600",
+      "pitcher": "博志",
+      "pitcher_id": "1700101",
+      "pitcher_hand": "右",
+      "batter": "ネビン",
+      "batter_id": "2101047",
+      "batter_hand": "右",
+      "seq": "3",
+      "pitchNo": "3",
+      "pitchType": "ツーシーム",
+      "speed": "151km/h",
+      "result": "ファウル",
+      "top": 20.88,
+      "left": 4.68
+    },
+    {
+      "pa_index": "0420600",
+      "pitcher": "博志",
+      "pitcher_id": "1700101",
+      "pitcher_hand": "右",
+      "batter": "ネビン",
+      "batter_id": "2101047",
+      "batter_hand": "右",
+      "seq": "4",
+      "pitchNo": "4",
+      "pitchType": "ツーシーム",
+      "speed": "150km/h",
+      "result": "中飛",
+      "top": 12.959999999999999,
+      "left": 15.12
+    }
+  ]
+}

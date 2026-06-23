@@ -1,0 +1,40 @@
+{
+  "game_id": "2021038886",
+  "metadata": {
+    "date_jp": "2026年5月20日",
+    "matchup": "北海道日本ハムファイターズvs東北楽天ゴールデンイーグルス"
+  },
+  "statline": {
+    "player": "堀 瑞輝",
+    "era": "3.86",
+    "innings": "0.2",
+    "pitches": "1",
+    "batters": "1",
+    "hits": "0",
+    "hr": "0",
+    "k": "0",
+    "bb": "0",
+    "hbp": "0",
+    "balk": "0",
+    "runs": "0",
+    "er": "0"
+  },
+  "pitches": [
+    {
+      "pa_index": "0610600",
+      "pitcher": "堀 瑞輝",
+      "pitcher_id": "1600133",
+      "pitcher_hand": "左",
+      "batter": "入江 大樹",
+      "batter_id": "2000125",
+      "batter_hand": "右",
+      "seq": "1",
+      "pitchNo": "1",
+      "pitchType": "ストレート",
+      "speed": "151km/h",
+      "result": "右飛 [好返球]",
+      "top": 17.64,
+      "left": 33.12
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "game_id": "2021039033",
+  "metadata": {
+    "date_jp": "2026年6月21日",
+    "matchup": "千葉ロッテマリーンズvs東北楽天ゴールデンイーグルス"
+  },
+  "statline": {
+    "player": "八木 彬",
+    "era": "1.50",
+    "innings": "0.1",
+    "pitches": "2",
+    "batters": "1",
+    "hits": "0",
+    "hr": "0",
+    "k": "0",
+    "bb": "0",
+    "hbp": "0",
+    "balk": "0",
+    "runs": "0",
+    "er": "0"
+  },
+  "pitches": [
+    {
+      "pa_index": "0810800",
+      "pitcher": "八木 彬",
+      "pitcher_id": "1450608",
+      "pitcher_hand": "右",
+      "batter": "鈴木 大地",
+      "batter_id": "1100103",
+      "batter_hand": "左",
+      "seq": "1",
+      "pitchNo": "1",
+      "pitchType": "ツーシーム",
+      "speed": "-",
+      "result": "ボール",
+      "top": 20.16,
+      "left": 45.0
+    },
+    {
+      "pa_index": "0810800",
+      "pitcher": "八木 彬",
+      "pitcher_id": "1450608",
+      "pitcher_hand": "右",
+      "batter": "鈴木 大地",
+      "batter_id": "1100103",
+      "batter_hand": "左",
+      "seq": "2",
+      "pitchNo": "2",
+      "pitchType": "ツーシーム",
+      "speed": "148km/h",
+      "result": "遊ゴロ [好リリーフ]",
+      "top": 38.519999999999996,
+      "left": 36.0
+    }
+  ]
+}

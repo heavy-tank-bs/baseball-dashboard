@@ -1,0 +1,88 @@
+{
+  "game_id": "2021038926",
+  "metadata": {
+    "date_jp": "2026年5月28日",
+    "matchup": "広島東洋カープvs千葉ロッテマリーンズ"
+  },
+  "statline": {
+    "player": "赤木 晴哉",
+    "era": "6.75",
+    "innings": "0.1",
+    "pitches": "4",
+    "batters": "2",
+    "hits": "1",
+    "hr": "0",
+    "k": "0",
+    "bb": "0",
+    "hbp": "0",
+    "balk": "0",
+    "runs": "0",
+    "er": "0"
+  },
+  "pitches": [
+    {
+      "pa_index": "0910700",
+      "pitcher": "赤木 晴哉",
+      "pitcher_id": "2114641",
+      "pitcher_hand": "右",
+      "batter": "西川 史礁",
+      "batter_id": "1950286",
+      "batter_hand": "右",
+      "seq": "1",
+      "pitchNo": "2",
+      "pitchType": "ストレート",
+      "speed": "145km/h",
+      "result": "ファウル [フルスイング]",
+      "top": 21.96,
+      "left": 37.8
+    },
+    {
+      "pa_index": "0910700",
+      "pitcher": "赤木 晴哉",
+      "pitcher_id": "2114641",
+      "pitcher_hand": "右",
+      "batter": "西川 史礁",
+      "batter_id": "1950286",
+      "batter_hand": "右",
+      "seq": "2",
+      "pitchNo": "3",
+      "pitchType": "フォーク",
+      "speed": "135km/h",
+      "result": "見逃し",
+      "top": 45.0,
+      "left": 14.399999999999999
+    },
+    {
+      "pa_index": "0910700",
+      "pitcher": "赤木 晴哉",
+      "pitcher_id": "2114641",
+      "pitcher_hand": "右",
+      "batter": "西川 史礁",
+      "batter_id": "1950286",
+      "batter_hand": "右",
+      "seq": "3",
+      "pitchNo": "4",
+      "pitchType": "ストレート",
+      "speed": "148km/h",
+      "result": "遊ゴロ [詰り、バット折れる]",
+      "top": 13.68,
+      "left": 37.08
+    },
+    {
+      "pa_index": "0910600",
+      "pitcher": "赤木 晴哉",
+      "pitcher_id": "2114641",
+      "pitcher_hand": "右",
+      "batter": "友杉 篤輝",
+      "batter_id": "2106798",
+      "batter_hand": "右",
+      "seq": "1",
+      "pitchNo": "1",
+      "pitchType": "ストレート",
+      "speed": "147km/h",
+      "result": "左安",
+      "top": 19.08,
+      "left": 33.12
+    }
+  ]
+}

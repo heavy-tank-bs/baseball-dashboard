@@ -1,0 +1,40 @@
+{
+  "game_id": "2021038720",
+  "metadata": {
+    "date_jp": "2026年4月15日",
+    "matchup": "福岡ソフトバンクホークスvs東北楽天ゴールデンイーグルス"
+  },
+  "statline": {
+    "player": "宋 家豪",
+    "era": "1.42",
+    "innings": "0.2",
+    "pitches": "1",
+    "batters": "1",
+    "hits": "0",
+    "hr": "0",
+    "k": "0",
+    "bb": "0",
+    "hbp": "0",
+    "balk": "0",
+    "runs": "0",
+    "er": "0"
+  },
+  "pitches": [
+    {
+      "pa_index": "0720500",
+      "pitcher": "宋 家豪",
+      "pitcher_id": "1600012",
+      "pitcher_hand": "右",
+      "batter": "今宮 健太",
+      "batter_id": "1000035",
+      "batter_hand": "右",
+      "seq": "1",
+      "pitchNo": "1",
+      "pitchType": "ストレート",
+      "speed": "145km/h",
+      "result": "中飛 [タッチアップ、好返球]",
+      "top": 37.44,
+      "left": 25.919999999999998
+    }
+  ]
+}

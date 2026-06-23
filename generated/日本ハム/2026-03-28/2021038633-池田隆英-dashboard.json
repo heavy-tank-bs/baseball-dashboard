@@ -1,0 +1,40 @@
+{
+  "game_id": "2021038633",
+  "metadata": {
+    "date_jp": "2026年3月28日",
+    "matchup": "福岡ソフトバンクホークスvs北海道日本ハムファイターズ"
+  },
+  "statline": {
+    "player": "池田 隆英",
+    "era": "0.00",
+    "innings": "0.1",
+    "pitches": "1",
+    "batters": "1",
+    "hits": "0",
+    "hr": "0",
+    "k": "0",
+    "bb": "0",
+    "hbp": "0",
+    "balk": "0",
+    "runs": "0",
+    "er": "0"
+  },
+  "pitches": [
+    {
+      "pa_index": "0521000",
+      "pitcher": "池田 隆英",
+      "pitcher_id": "1600093",
+      "pitcher_hand": "右",
+      "batter": "今宮 健太",
+      "batter_id": "1000035",
+      "batter_hand": "右",
+      "seq": "1",
+      "pitchNo": "1",
+      "pitchType": "ストレート",
+      "speed": "144km/h",
+      "result": "捕邪飛",
+      "top": 14.76,
+      "left": 23.04
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "game_id": "2021038732",
+  "metadata": {
+    "date_jp": "2026年4月18日",
+    "matchup": "東京ヤクルトスワローズvs読売ジャイアンツ"
+  },
+  "statline": {
+    "player": "中川 皓太",
+    "era": "1.93",
+    "innings": "0.1",
+    "pitches": "1",
+    "batters": "1",
+    "hits": "0",
+    "hr": "0",
+    "k": "0",
+    "bb": "0",
+    "hbp": "0",
+    "balk": "0",
+    "runs": "0",
+    "er": "0"
+  },
+  "pitches": [
+    {
+      "pa_index": "0720500",
+      "pitcher": "中川 皓太",
+      "pitcher_id": "1500052",
+      "pitcher_hand": "左",
+      "batter": "長岡 秀樹",
+      "batter_id": "1900028",
+      "batter_hand": "左",
+      "seq": "1",
+      "pitchNo": "1",
+      "pitchType": "シュート",
+      "speed": "-",
+      "result": "一ゴロ [併殺崩れ]",
+      "top": 26.279999999999998,
+      "left": 12.6
+    }
+  ]
+}

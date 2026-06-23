@@ -1,0 +1,88 @@
+{
+  "game_id": "2021038843",
+  "metadata": {
+    "date_jp": "2026年5月10日",
+    "matchup": "埼玉西武ライオンズvs東北楽天ゴールデンイーグルス"
+  },
+  "statline": {
+    "player": "津留﨑 大成",
+    "era": "2.89",
+    "innings": "0.1",
+    "pitches": "4",
+    "batters": "1",
+    "hits": "0",
+    "hr": "0",
+    "k": "0",
+    "bb": "0",
+    "hbp": "0",
+    "balk": "0",
+    "runs": "0",
+    "er": "0"
+  },
+  "pitches": [
+    {
+      "pa_index": "0220601",
+      "pitcher": "津留﨑 大成",
+      "pitcher_id": "1900114",
+      "pitcher_hand": "右",
+      "batter": "渡部 聖弥",
+      "batter_id": "1950417",
+      "batter_hand": "右",
+      "seq": "1",
+      "pitchNo": "1",
+      "pitchType": "スライダー",
+      "speed": "133km/h",
+      "result": "ボール [ワンバウンド]",
+      "top": 60.48,
+      "left": null
+    },
+    {
+      "pa_index": "0220601",
+      "pitcher": "津留﨑 大成",
+      "pitcher_id": "1900114",
+      "pitcher_hand": "右",
+      "batter": "渡部 聖弥",
+      "batter_id": "1950417",
+      "batter_hand": "右",
+      "seq": "2",
+      "pitchNo": "2",
+      "pitchType": "カットボール",
+      "speed": "143km/h",
+      "result": "空振り",
+      "top": 54.72,
+      "left": 5.76
+    },
+    {
+      "pa_index": "0220601",
+      "pitcher": "津留﨑 大成",
+      "pitcher_id": "1900114",
+      "pitcher_hand": "右",
+      "batter": "渡部 聖弥",
+      "batter_id": "1950417",
+      "batter_hand": "右",
+      "seq": "3",
+      "pitchNo": "3",
+      "pitchType": "ストレート",
+      "speed": "151km/h",
+      "result": "ボール",
+      "top": 41.76,
+      "left": 2.88
+    },
+    {
+      "pa_index": "0220601",
+      "pitcher": "津留﨑 大成",
+      "pitcher_id": "1900114",
+      "pitcher_hand": "右",
+      "batter": "渡部 聖弥",
+      "batter_id": "1950417",
+      "batter_hand": "右",
+      "seq": "4",
+      "pitchNo": "4",
+      "pitchType": "カットボール",
+      "speed": "141km/h",
+      "result": "右飛 [好リリーフ]",
+      "top": 38.519999999999996,
+      "left": 33.48
+    }
+  ]
+}

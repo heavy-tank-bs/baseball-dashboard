@@ -1,0 +1,88 @@
+{
+  "game_id": "2021038779",
+  "metadata": {
+    "date_jp": "2026年4月28日",
+    "matchup": "埼玉西武ライオンズvs北海道日本ハムファイターズ"
+  },
+  "statline": {
+    "player": "玉井 大翔",
+    "era": "1.42",
+    "innings": "0.1",
+    "pitches": "4",
+    "batters": "1",
+    "hits": "0",
+    "hr": "0",
+    "k": "0",
+    "bb": "0",
+    "hbp": "0",
+    "balk": "0",
+    "runs": "0",
+    "er": "0"
+  },
+  "pitches": [
+    {
+      "pa_index": "0820600",
+      "pitcher": "玉井 大翔",
+      "pitcher_id": "1600139",
+      "pitcher_hand": "右",
+      "batter": "長谷川 信哉",
+      "batter_id": "2000075",
+      "batter_hand": "右",
+      "seq": "1",
+      "pitchNo": "1",
+      "pitchType": "カットボール",
+      "speed": "136km/h",
+      "result": "ボール",
+      "top": 8.64,
+      "left": 4.68
+    },
+    {
+      "pa_index": "0820600",
+      "pitcher": "玉井 大翔",
+      "pitcher_id": "1600139",
+      "pitcher_hand": "右",
+      "batter": "長谷川 信哉",
+      "batter_id": "2000075",
+      "batter_hand": "右",
+      "seq": "2",
+      "pitchNo": "2",
+      "pitchType": "シュート",
+      "speed": "145km/h",
+      "result": "ファウル [フルスイング、転倒]",
+      "top": 20.88,
+      "left": 34.56
+    },
+    {
+      "pa_index": "0820600",
+      "pitcher": "玉井 大翔",
+      "pitcher_id": "1600139",
+      "pitcher_hand": "右",
+      "batter": "長谷川 信哉",
+      "batter_id": "2000075",
+      "batter_hand": "右",
+      "seq": "3",
+      "pitchNo": "3",
+      "pitchType": "ストレート",
+      "speed": "146km/h",
+      "result": "ボール",
+      "top": 14.399999999999999,
+      "left": 0.72
+    },
+    {
+      "pa_index": "0820600",
+      "pitcher": "玉井 大翔",
+      "pitcher_id": "1600139",
+      "pitcher_hand": "右",
+      "batter": "長谷川 信哉",
+      "batter_id": "2000075",
+      "batter_hand": "右",
+      "seq": "4",
+      "pitchNo": "4",
+      "pitchType": "シュート",
+      "speed": "144km/h",
+      "result": "左飛 [好リリーフ]",
+      "top": 25.2,
+      "left": 41.04
+    }
+  ]
+}

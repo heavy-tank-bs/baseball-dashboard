@@ -1,0 +1,40 @@
+{
+  "game_id": "2021039009",
+  "metadata": {
+    "date_jp": "2026年6月13日",
+    "matchup": "オリックス・バファローズvs阪神タイガース"
+  },
+  "statline": {
+    "player": "片山 楽生",
+    "era": "1.42",
+    "innings": "0.1",
+    "pitches": "1",
+    "batters": "1",
+    "hits": "0",
+    "hr": "0",
+    "k": "0",
+    "bb": "0",
+    "hbp": "0",
+    "balk": "0",
+    "runs": "0",
+    "er": "0"
+  },
+  "pitches": [
+    {
+      "pa_index": "0910600",
+      "pitcher": "片山 楽生",
+      "pitcher_id": "2050019",
+      "pitcher_hand": "右",
+      "batter": "森下 翔太",
+      "batter_id": "1850183",
+      "batter_hand": "右",
+      "seq": "1",
+      "pitchNo": "1",
+      "pitchType": "スライダー",
+      "speed": "-",
+      "result": "左飛 [バットの先]",
+      "top": 38.16,
+      "left": 6.84
+    }
+  ]
+}

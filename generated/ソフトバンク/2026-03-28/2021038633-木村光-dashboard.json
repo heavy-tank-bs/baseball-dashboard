@@ -1,0 +1,88 @@
+{
+  "game_id": "2021038633",
+  "metadata": {
+    "date_jp": "2026年3月28日",
+    "matchup": "福岡ソフトバンクホークスvs北海道日本ハムファイターズ"
+  },
+  "statline": {
+    "player": "木村 光",
+    "era": "0.00",
+    "innings": "1",
+    "pitches": "4",
+    "batters": "3",
+    "hits": "0",
+    "hr": "0",
+    "k": "0",
+    "bb": "0",
+    "hbp": "0",
+    "balk": "0",
+    "runs": "0",
+    "er": "0"
+  },
+  "pitches": [
+    {
+      "pa_index": "0710300",
+      "pitcher": "木村 光",
+      "pitcher_id": "1851115",
+      "pitcher_hand": "右",
+      "batter": "清宮 幸太郎",
+      "batter_id": "1700025",
+      "batter_hand": "左",
+      "seq": "1",
+      "pitchNo": "3",
+      "pitchType": "スプリット",
+      "speed": "137km/h",
+      "result": "ボール",
+      "top": 6.4799999999999995,
+      "left": 40.32
+    },
+    {
+      "pa_index": "0710300",
+      "pitcher": "木村 光",
+      "pitcher_id": "1851115",
+      "pitcher_hand": "右",
+      "batter": "清宮 幸太郎",
+      "batter_id": "1700025",
+      "batter_hand": "左",
+      "seq": "2",
+      "pitchNo": "4",
+      "pitchType": "ストレート",
+      "speed": "-",
+      "result": "一ゴロ [痛烈な当たり、好プレイ]",
+      "top": 18.36,
+      "left": 28.799999999999997
+    },
+    {
+      "pa_index": "0710200",
+      "pitcher": "木村 光",
+      "pitcher_id": "1851115",
+      "pitcher_hand": "右",
+      "batter": "水谷 瞬",
+      "batter_id": "1800110",
+      "batter_hand": "右",
+      "seq": "1",
+      "pitchNo": "2",
+      "pitchType": "ストレート",
+      "speed": "149km/h",
+      "result": "中飛",
+      "top": 21.24,
+      "left": 14.04
+    },
+    {
+      "pa_index": "0710100",
+      "pitcher": "木村 光",
+      "pitcher_id": "1851115",
+      "pitcher_hand": "右",
+      "batter": "水野 達稀",
+      "batter_id": "1851204",
+      "batter_hand": "左",
+      "seq": "1",
+      "pitchNo": "1",
+      "pitchType": "ストレート",
+      "speed": "149km/h",
+      "result": "中飛",
+      "top": 28.799999999999997,
+      "left": 35.28
+    }
+  ]
+}

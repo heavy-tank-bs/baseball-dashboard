@@ -1,0 +1,88 @@
+{
+  "game_id": "2021038958",
+  "metadata": {
+    "date_jp": "2026年6月4日",
+    "matchup": "東京ヤクルトスワローズvs千葉ロッテマリーンズ"
+  },
+  "statline": {
+    "player": "横山 陸人",
+    "era": "1.80",
+    "innings": "1",
+    "pitches": "4",
+    "batters": "3",
+    "hits": "0",
+    "hr": "0",
+    "k": "0",
+    "bb": "0",
+    "hbp": "0",
+    "balk": "0",
+    "runs": "0",
+    "er": "0"
+  },
+  "pitches": [
+    {
+      "pa_index": "0920300",
+      "pitcher": "横山 陸人",
+      "pitcher_id": "1900083",
+      "pitcher_hand": "右",
+      "batter": "モンテル",
+      "batter_id": "2107178",
+      "batter_hand": "右",
+      "seq": "1",
+      "pitchNo": "3",
+      "pitchType": "ストレート",
+      "speed": "152km/h",
+      "result": "見逃し",
+      "top": 32.76,
+      "left": 14.04
+    },
+    {
+      "pa_index": "0920300",
+      "pitcher": "横山 陸人",
+      "pitcher_id": "1900083",
+      "pitcher_hand": "右",
+      "batter": "モンテル",
+      "batter_id": "2107178",
+      "batter_hand": "右",
+      "seq": "2",
+      "pitchNo": "4",
+      "pitchType": "スライダー",
+      "speed": "-",
+      "result": "遊ゴロ [当てただけ]",
+      "top": 55.8,
+      "left": 15.479999999999999
+    },
+    {
+      "pa_index": "0920200",
+      "pitcher": "横山 陸人",
+      "pitcher_id": "1900083",
+      "pitcher_hand": "右",
+      "batter": "武岡 龍世",
+      "batter_id": "1900029",
+      "batter_hand": "左",
+      "seq": "1",
+      "pitchNo": "2",
+      "pitchType": "ストレート",
+      "speed": "-",
+      "result": "一ゴロ",
+      "top": 32.76,
+      "left": 24.48
+    },
+    {
+      "pa_index": "0920100",
+      "pitcher": "横山 陸人",
+      "pitcher_id": "1900083",
+      "pitcher_hand": "右",
+      "batter": "長岡 秀樹",
+      "batter_id": "1900028",
+      "batter_hand": "左",
+      "seq": "1",
+      "pitchNo": "1",
+      "pitchType": "ストレート",
+      "speed": "-",
+      "result": "二ゴロ [痛烈な当たり、逆シングル、グラブ弾く、リプレー検証後判定変わらず]",
+      "top": 24.119999999999997,
+      "left": 37.08
+    }
+  ]
+}

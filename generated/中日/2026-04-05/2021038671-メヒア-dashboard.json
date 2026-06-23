@@ -1,0 +1,88 @@
+{
+  "game_id": "2021038671",
+  "metadata": {
+    "date_jp": "2026年4月5日",
+    "matchup": "東京ヤクルトスワローズvs中日ドラゴンズ"
+  },
+  "statline": {
+    "player": "メヒア",
+    "era": "0.00",
+    "innings": "1",
+    "pitches": "4",
+    "batters": "3",
+    "hits": "0",
+    "hr": "0",
+    "k": "0",
+    "bb": "0",
+    "hbp": "0",
+    "balk": "0",
+    "runs": "0",
+    "er": "0"
+  },
+  "pitches": [
+    {
+      "pa_index": "0820300",
+      "pitcher": "メヒア",
+      "pitcher_id": "1660558",
+      "pitcher_hand": "右",
+      "batter": "武岡 龍世",
+      "batter_id": "1900029",
+      "batter_hand": "左",
+      "seq": "1",
+      "pitchNo": "4",
+      "pitchType": "ストレート",
+      "speed": "149km/h",
+      "result": "一直 [野手の正面をつく]",
+      "top": 37.44,
+      "left": 19.08
+    },
+    {
+      "pa_index": "0820200",
+      "pitcher": "メヒア",
+      "pitcher_id": "1660558",
+      "pitcher_hand": "右",
+      "batter": "鈴木 叶",
+      "batter_id": "2109495",
+      "batter_hand": "右",
+      "seq": "1",
+      "pitchNo": "2",
+      "pitchType": "カットボール",
+      "speed": "142km/h",
+      "result": "ボール",
+      "top": 5.3999999999999995,
+      "left": 19.439999999999998
+    },
+    {
+      "pa_index": "0820200",
+      "pitcher": "メヒア",
+      "pitcher_id": "1660558",
+      "pitcher_hand": "右",
+      "batter": "鈴木 叶",
+      "batter_id": "2109495",
+      "batter_hand": "右",
+      "seq": "2",
+      "pitchNo": "3",
+      "pitchType": "カットボール",
+      "speed": "143km/h",
+      "result": "右飛",
+      "top": 18.36,
+      "left": 20.88
+    },
+    {
+      "pa_index": "0820100",
+      "pitcher": "メヒア",
+      "pitcher_id": "1660558",
+      "pitcher_hand": "右",
+      "batter": "伊藤 琉偉",
+      "batter_id": "2112175",
+      "batter_hand": "右",
+      "seq": "1",
+      "pitchNo": "1",
+      "pitchType": "ストレート",
+      "speed": "148km/h",
+      "result": "右飛",
+      "top": 45.72,
+      "left": 23.4
+    }
+  ]
+}
