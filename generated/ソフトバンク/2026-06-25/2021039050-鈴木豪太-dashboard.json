@@ -1,0 +1,40 @@
+{
+  "game_id": "2021039050",
+  "metadata": {
+    "date_jp": "2026年6月25日",
+    "matchup": "福岡ソフトバンクホークスvsオリックス・バファローズ"
+  },
+  "statline": {
+    "player": "鈴木 豪太",
+    "era": "2.42",
+    "innings": "0.2",
+    "pitches": "1",
+    "batters": "1",
+    "hits": "0",
+    "hr": "0",
+    "k": "0",
+    "bb": "0",
+    "hbp": "0",
+    "balk": "0",
+    "runs": "0",
+    "er": "0"
+  },
+  "pitches": [
+    {
+      "pa_index": "0610500",
+      "pitcher": "鈴木 豪太",
+      "pitcher_id": "2102969",
+      "pitcher_hand": "右",
+      "batter": "若月 健矢",
+      "batter_id": "1300109",
+      "batter_hand": "右",
+      "seq": "1",
+      "pitchNo": "1",
+      "pitchType": "カットボール",
+      "speed": "-",
+      "result": "二併打 [好リリーフ]",
+      "top": 26.279999999999998,
+      "left": 31.32
+    }
+  ]
+}

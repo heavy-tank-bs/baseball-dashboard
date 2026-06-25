@@ -1,22 +1,22 @@
 {
-  "updatedAt": "2026-06-23T22:15:06+09:00",
+  "updatedAt": "2026-06-25T23:54:55+09:00",
   "season": 2026,
-  "throughDate": "2026-06-23",
+  "throughDate": "2026-06-25",
   "source": {
     "schedule": "https://baseball.yahoo.co.jp/npb/schedule/?date=YYYY-MM-DD",
     "stats": "https://baseball.yahoo.co.jp/npb/game/{gameId}/stats",
     "intentionalWalkDetection": "Counts batting detail cells containing one of: 申告敬遠, 敬遠, 故意四球."
   },
   "summary": {
-    "scheduledGames": 424,
-    "completedGames": 408,
-    "canceledGames": 15,
+    "scheduledGames": 433,
+    "completedGames": 414,
+    "canceledGames": 18,
     "otherStatusGames": 1,
     "gamesWithIntentionalWalks": 90,
     "intentionalWalkPlateAppearances": 102,
     "statusCounts": {
-      "試合終了": 408,
-      "試合中止": 15,
+      "試合終了": 414,
+      "試合中止": 18,
       "ノーゲーム": 1
     },
     "fetchErrors": 0
@@ -55296,6 +55296,786 @@
           ]
         }
       }
+    },
+    {
+      "date": "2026-06-24",
+      "gameId": "2021039042",
+      "status": "試合終了",
+      "stadium": "バンテリンドーム",
+      "homeTeam": "中日ドラゴンズ",
+      "awayTeam": "横浜DeNAベイスターズ",
+      "homeScore": 4,
+      "awayScore": 6,
+      "totalRuns": 10,
+      "scheduleUrl": "https://baseball.yahoo.co.jp/npb/schedule/?date=2026-06-24",
+      "statsUrl": "https://baseball.yahoo.co.jp/npb/game/2021039042/stats",
+      "intentionalWalks": {
+        "total": 0,
+        "teams": {
+          "横浜DeNAベイスターズ": {
+            "team": "横浜DeNAベイスターズ",
+            "intentionalWalks": 0,
+            "players": []
+          },
+          "中日ドラゴンズ": {
+            "team": "中日ドラゴンズ",
+            "intentionalWalks": 0,
+            "players": []
+          }
+        }
+      },
+      "inningScores": {
+        "home": {
+          "team": "中日ドラゴンズ",
+          "innings": [
+            {
+              "inning": 1,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 2,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 3,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 4,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 5,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 6,
+              "runs": 2,
+              "raw": "2"
+            },
+            {
+              "inning": 7,
+              "runs": 1,
+              "raw": "1"
+            },
+            {
+              "inning": 8,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 9,
+              "runs": 1,
+              "raw": "1"
+            }
+          ]
+        },
+        "away": {
+          "team": "横浜DeNAベイスターズ",
+          "innings": [
+            {
+              "inning": 1,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 2,
+              "runs": 1,
+              "raw": "1"
+            },
+            {
+              "inning": 3,
+              "runs": 1,
+              "raw": "1"
+            },
+            {
+              "inning": 4,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 5,
+              "runs": 3,
+              "raw": "3"
+            },
+            {
+              "inning": 6,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 7,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 8,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 9,
+              "runs": 1,
+              "raw": "1"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "date": "2026-06-24",
+      "gameId": "2021039045",
+      "status": "試合終了",
+      "stadium": "エスコンF",
+      "homeTeam": "北海道日本ハムファイターズ",
+      "awayTeam": "千葉ロッテマリーンズ",
+      "homeScore": 7,
+      "awayScore": 4,
+      "totalRuns": 11,
+      "scheduleUrl": "https://baseball.yahoo.co.jp/npb/schedule/?date=2026-06-24",
+      "statsUrl": "https://baseball.yahoo.co.jp/npb/game/2021039045/stats",
+      "intentionalWalks": {
+        "total": 0,
+        "teams": {
+          "千葉ロッテマリーンズ": {
+            "team": "千葉ロッテマリーンズ",
+            "intentionalWalks": 0,
+            "players": []
+          },
+          "北海道日本ハムファイターズ": {
+            "team": "北海道日本ハムファイターズ",
+            "intentionalWalks": 0,
+            "players": []
+          }
+        }
+      },
+      "inningScores": {
+        "home": {
+          "team": "北海道日本ハムファイターズ",
+          "innings": [
+            {
+              "inning": 1,
+              "runs": 1,
+              "raw": "1"
+            },
+            {
+              "inning": 2,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 3,
+              "runs": 2,
+              "raw": "2"
+            },
+            {
+              "inning": 4,
+              "runs": 2,
+              "raw": "2"
+            },
+            {
+              "inning": 5,
+              "runs": 1,
+              "raw": "1"
+            },
+            {
+              "inning": 6,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 7,
+              "runs": 1,
+              "raw": "1"
+            },
+            {
+              "inning": 8,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 9,
+              "runs": null,
+              "raw": "X"
+            }
+          ]
+        },
+        "away": {
+          "team": "千葉ロッテマリーンズ",
+          "innings": [
+            {
+              "inning": 1,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 2,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 3,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 4,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 5,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 6,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 7,
+              "runs": 2,
+              "raw": "2"
+            },
+            {
+              "inning": 8,
+              "runs": 2,
+              "raw": "2"
+            },
+            {
+              "inning": 9,
+              "runs": 0,
+              "raw": "0"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "date": "2026-06-24",
+      "gameId": "2021039046",
+      "status": "試合終了",
+      "stadium": "みずほPayPay",
+      "homeTeam": "福岡ソフトバンクホークス",
+      "awayTeam": "オリックス・バファローズ",
+      "homeScore": 8,
+      "awayScore": 5,
+      "totalRuns": 13,
+      "scheduleUrl": "https://baseball.yahoo.co.jp/npb/schedule/?date=2026-06-24",
+      "statsUrl": "https://baseball.yahoo.co.jp/npb/game/2021039046/stats",
+      "intentionalWalks": {
+        "total": 0,
+        "teams": {
+          "オリックス・バファローズ": {
+            "team": "オリックス・バファローズ",
+            "intentionalWalks": 0,
+            "players": []
+          },
+          "福岡ソフトバンクホークス": {
+            "team": "福岡ソフトバンクホークス",
+            "intentionalWalks": 0,
+            "players": []
+          }
+        }
+      },
+      "inningScores": {
+        "home": {
+          "team": "福岡ソフトバンクホークス",
+          "innings": [
+            {
+              "inning": 1,
+              "runs": 1,
+              "raw": "1"
+            },
+            {
+              "inning": 2,
+              "runs": 5,
+              "raw": "5"
+            },
+            {
+              "inning": 3,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 4,
+              "runs": 1,
+              "raw": "1"
+            },
+            {
+              "inning": 5,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 6,
+              "runs": 1,
+              "raw": "1"
+            },
+            {
+              "inning": 7,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 8,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 9,
+              "runs": null,
+              "raw": "X"
+            }
+          ]
+        },
+        "away": {
+          "team": "オリックス・バファローズ",
+          "innings": [
+            {
+              "inning": 1,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 2,
+              "runs": 3,
+              "raw": "3"
+            },
+            {
+              "inning": 3,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 4,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 5,
+              "runs": 1,
+              "raw": "1"
+            },
+            {
+              "inning": 6,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 7,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 8,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 9,
+              "runs": 1,
+              "raw": "1"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "date": "2026-06-25",
+      "gameId": "2021039047",
+      "status": "試合終了",
+      "stadium": "バンテリンドーム",
+      "homeTeam": "中日ドラゴンズ",
+      "awayTeam": "横浜DeNAベイスターズ",
+      "homeScore": 3,
+      "awayScore": 1,
+      "totalRuns": 4,
+      "scheduleUrl": "https://baseball.yahoo.co.jp/npb/schedule/?date=2026-06-25",
+      "statsUrl": "https://baseball.yahoo.co.jp/npb/game/2021039047/stats",
+      "intentionalWalks": {
+        "total": 0,
+        "teams": {
+          "横浜DeNAベイスターズ": {
+            "team": "横浜DeNAベイスターズ",
+            "intentionalWalks": 0,
+            "players": []
+          },
+          "中日ドラゴンズ": {
+            "team": "中日ドラゴンズ",
+            "intentionalWalks": 0,
+            "players": []
+          }
+        }
+      },
+      "inningScores": {
+        "home": {
+          "team": "中日ドラゴンズ",
+          "innings": [
+            {
+              "inning": 1,
+              "runs": 1,
+              "raw": "1"
+            },
+            {
+              "inning": 2,
+              "runs": 2,
+              "raw": "2"
+            },
+            {
+              "inning": 3,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 4,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 5,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 6,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 7,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 8,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 9,
+              "runs": null,
+              "raw": "X"
+            }
+          ]
+        },
+        "away": {
+          "team": "横浜DeNAベイスターズ",
+          "innings": [
+            {
+              "inning": 1,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 2,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 3,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 4,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 5,
+              "runs": 1,
+              "raw": "1"
+            },
+            {
+              "inning": 6,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 7,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 8,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 9,
+              "runs": 0,
+              "raw": "0"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "date": "2026-06-25",
+      "gameId": "2021039049",
+      "status": "試合終了",
+      "stadium": "楽天モバイル",
+      "homeTeam": "東北楽天ゴールデンイーグルス",
+      "awayTeam": "埼玉西武ライオンズ",
+      "homeScore": 2,
+      "awayScore": 0,
+      "totalRuns": 2,
+      "scheduleUrl": "https://baseball.yahoo.co.jp/npb/schedule/?date=2026-06-25",
+      "statsUrl": "https://baseball.yahoo.co.jp/npb/game/2021039049/stats",
+      "intentionalWalks": {
+        "total": 0,
+        "teams": {
+          "埼玉西武ライオンズ": {
+            "team": "埼玉西武ライオンズ",
+            "intentionalWalks": 0,
+            "players": []
+          },
+          "東北楽天ゴールデンイーグルス": {
+            "team": "東北楽天ゴールデンイーグルス",
+            "intentionalWalks": 0,
+            "players": []
+          }
+        }
+      },
+      "inningScores": {
+        "home": {
+          "team": "東北楽天ゴールデンイーグルス",
+          "innings": [
+            {
+              "inning": 1,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 2,
+              "runs": 2,
+              "raw": "2"
+            },
+            {
+              "inning": 3,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 4,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 5,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 6,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 7,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 8,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 9,
+              "runs": null,
+              "raw": "X"
+            }
+          ]
+        },
+        "away": {
+          "team": "埼玉西武ライオンズ",
+          "innings": [
+            {
+              "inning": 1,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 2,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 3,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 4,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 5,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 6,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 7,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 8,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 9,
+              "runs": 0,
+              "raw": "0"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "date": "2026-06-25",
+      "gameId": "2021039050",
+      "status": "試合終了",
+      "stadium": "みずほPayPay",
+      "homeTeam": "福岡ソフトバンクホークス",
+      "awayTeam": "オリックス・バファローズ",
+      "homeScore": 5,
+      "awayScore": 2,
+      "totalRuns": 7,
+      "scheduleUrl": "https://baseball.yahoo.co.jp/npb/schedule/?date=2026-06-25",
+      "statsUrl": "https://baseball.yahoo.co.jp/npb/game/2021039050/stats",
+      "intentionalWalks": {
+        "total": 0,
+        "teams": {
+          "オリックス・バファローズ": {
+            "team": "オリックス・バファローズ",
+            "intentionalWalks": 0,
+            "players": []
+          },
+          "福岡ソフトバンクホークス": {
+            "team": "福岡ソフトバンクホークス",
+            "intentionalWalks": 0,
+            "players": []
+          }
+        }
+      },
+      "inningScores": {
+        "home": {
+          "team": "福岡ソフトバンクホークス",
+          "innings": [
+            {
+              "inning": 1,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 2,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 3,
+              "runs": 1,
+              "raw": "1"
+            },
+            {
+              "inning": 4,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 5,
+              "runs": 1,
+              "raw": "1"
+            },
+            {
+              "inning": 6,
+              "runs": 3,
+              "raw": "3"
+            },
+            {
+              "inning": 7,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 8,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 9,
+              "runs": null,
+              "raw": "X"
+            }
+          ]
+        },
+        "away": {
+          "team": "オリックス・バファローズ",
+          "innings": [
+            {
+              "inning": 1,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 2,
+              "runs": 1,
+              "raw": "1"
+            },
+            {
+              "inning": 3,
+              "runs": 1,
+              "raw": "1"
+            },
+            {
+              "inning": 4,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 5,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 6,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 7,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 8,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 9,
+              "runs": 0,
+              "raw": "0"
+            }
+          ]
+        }
+      }
     }
   ],
   "canceledGames": [
@@ -55492,6 +56272,45 @@
       "awayScore": null,
       "scheduleUrl": "https://baseball.yahoo.co.jp/npb/schedule/?date=2026-06-20",
       "statsUrl": "https://baseball.yahoo.co.jp/npb/game/2021039027/stats",
+      "totalRuns": null
+    },
+    {
+      "date": "2026-06-24",
+      "gameId": "2021039043",
+      "status": "試合中止",
+      "stadium": "甲子園",
+      "homeTeam": "阪神タイガース",
+      "awayTeam": "東京ヤクルトスワローズ",
+      "homeScore": null,
+      "awayScore": null,
+      "scheduleUrl": "https://baseball.yahoo.co.jp/npb/schedule/?date=2026-06-24",
+      "statsUrl": "https://baseball.yahoo.co.jp/npb/game/2021039043/stats",
+      "totalRuns": null
+    },
+    {
+      "date": "2026-06-24",
+      "gameId": "2021039044",
+      "status": "試合中止",
+      "stadium": "マツダスタジアム",
+      "homeTeam": "広島東洋カープ",
+      "awayTeam": "読売ジャイアンツ",
+      "homeScore": null,
+      "awayScore": null,
+      "scheduleUrl": "https://baseball.yahoo.co.jp/npb/schedule/?date=2026-06-24",
+      "statsUrl": "https://baseball.yahoo.co.jp/npb/game/2021039044/stats",
+      "totalRuns": null
+    },
+    {
+      "date": "2026-06-25",
+      "gameId": "2021039048",
+      "status": "試合中止",
+      "stadium": "甲子園",
+      "homeTeam": "阪神タイガース",
+      "awayTeam": "東京ヤクルトスワローズ",
+      "homeScore": null,
+      "awayScore": null,
+      "scheduleUrl": "https://baseball.yahoo.co.jp/npb/schedule/?date=2026-06-25",
+      "statsUrl": "https://baseball.yahoo.co.jp/npb/game/2021039048/stats",
       "totalRuns": null
     }
   ],
