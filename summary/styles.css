@@ -3303,17 +3303,17 @@ body.compare-embed .season-detail-wrap {
 }
 
 .ai-chatbot-table {
-  width: 100%;
-  min-width: 320px;
+  width: max-content;
+  min-width: 100%;
   border-collapse: collapse;
   font-size: 12px;
   line-height: 1.45;
-  white-space: normal;
 }
 
 .ai-chatbot-table.compact {
+  width: 100%;
   min-width: 0;
-  table-layout: fixed;
+  table-layout: auto;
 }
 
 .ai-chatbot-table.transposed th:first-child,
@@ -3333,6 +3333,9 @@ body.compare-embed .season-detail-wrap {
   text-align: left;
   vertical-align: top;
   border-bottom: 1px solid rgba(15, 35, 64, 0.1);
+  white-space: nowrap;
+  overflow-wrap: normal;
+  word-break: keep-all;
 }
 
 .ai-chatbot-table th {
@@ -3348,6 +3351,76 @@ body.compare-embed .season-detail-wrap {
 
 .ai-chatbot-table tbody tr:last-child td {
   border-bottom: 0;
+}
+
+.ai-chatbot-metric-card-list {
+  display: grid;
+  gap: 8px;
+  margin: 8px 0;
+}
+
+.ai-chatbot-metric-card {
+  overflow: hidden;
+  border: 1px solid rgba(15, 35, 64, 0.14);
+  border-radius: 8px;
+  background: #fff;
+}
+
+.ai-chatbot-metric-card-title {
+  margin: 0;
+  padding: 8px 10px;
+  border-bottom: 1px solid rgba(15, 35, 64, 0.1);
+  background: #f5efe3;
+  color: #14213a;
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 1.3;
+}
+
+.ai-chatbot-metric-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  margin: 0;
+}
+
+.ai-chatbot-metric-item {
+  display: grid;
+  grid-template-columns: minmax(72px, 0.9fr) minmax(0, 1fr);
+  gap: 6px;
+  padding: 7px 9px;
+  border-bottom: 1px solid rgba(15, 35, 64, 0.08);
+}
+
+.ai-chatbot-metric-item:last-child {
+  border-bottom: 0;
+}
+
+.ai-chatbot-metric-item dt {
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 800;
+  line-height: 1.3;
+}
+
+.ai-chatbot-metric-item dd {
+  margin: 0;
+  color: #14213a;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.3;
+  text-align: right;
+  overflow-wrap: normal;
+  word-break: keep-all;
+}
+
+@media (min-width: 620px) {
+  .ai-chatbot-metric-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .ai-chatbot-metric-item:nth-last-child(2):nth-child(odd) {
+    border-bottom: 0;
+  }
 }
 
 .ai-chatbot-selector {

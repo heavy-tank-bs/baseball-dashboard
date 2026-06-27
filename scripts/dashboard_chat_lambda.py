@@ -615,6 +615,8 @@ def call_openai(payload: dict[str, Any], search_context: str) -> str:
             "Use Markdown tables only for numeric metrics, stat lines, rankings, and metric comparisons.",
             "Do not put qualitative player traits, pitch tendency descriptions, strengths, weaknesses, or interpretation prose in tables. Write those parts as normal Japanese paragraphs or concise bullets.",
             "Do not present numeric stat blocks as plain hyphen bullets when the answer contains multiple metric values. Use compact Markdown tables with columns such as 項目, 値, 補足, 選手, 指標.",
+            "For mobile readability, avoid very wide stat tables where columns are many metrics and rows are years or single records; prefer compact item/value tables or short split sections.",
+            "When comparing pitch types, players, teams, or dates as columns, keep the entity names in the Markdown table header so the UI can preserve column labels.",
             "Start with a one-sentence conclusion only when useful, then use metric tables only for the numeric parts, then explain traits and interpretation in prose.",
             "Do not wrap Markdown tables or final answers in fenced code blocks such as ```markdown.",
             "Localize metric labels in final answers: write IP as 投球回, BB/9 as 与四球率, and K/9 or KK/9 as 奪三振率.",

@@ -316,9 +316,78 @@
     appendTextBlock(parent, lines);
   }
 
+  function isEntityHeader(value) {
+    return /(球種|選手|投手|打者|チーム|相手|対戦|Pitch|Player|Team)/i.test(`${value || ""}`);
+  }
+
+  function isYearOrDateLabel(value) {
+    const text = `${value || ""}`.trim();
+    return /^(19|20)\d{2}(年)?$/.test(text)
+      || /^(19|20)\d{2}[-/.]\d{1,2}([-/.]\d{1,2})?$/.test(text)
+      || /^(19|20)\d{2}年\d{1,2}月(\d{1,2}日)?$/.test(text);
+  }
+
+  function isPitchTypeLabel(value) {
+    return /(ストレート|直球|フォーク|スライダー|カーブ|カット|チェンジ|シンカー|シュート|ツーシーム|スプリット|ナックル|スイーパー|スライダー|Fork|Slider|Curve|Fastball|Changeup|Sinker|Cutter|Splitter|Two-seam)/i.test(`${value || ""}`);
+  }
+
+  function shouldRenderMetricCards(headers, rows) {
+    if (headers.length < 5 || !rows.length) return false;
+    if (isEntityHeader(headers[0])) return false;
+    const metricHeaders = headers.slice(1).filter(isMetricLabel).length;
+    if (metricHeaders < 3 || metricHeaders / (headers.length - 1) < 0.5) return false;
+    const labels = rows.map((row) => `${row[0] || ""}`.trim()).filter(Boolean);
+    if (!labels.length) return false;
+    if (labels.filter(isPitchTypeLabel).length / labels.length >= 0.5) return false;
+    const yearLikeLabels = labels.filter(isYearOrDateLabel).length;
+    return yearLikeLabels > 0 || /^(項目|年度|年|シーズン|Season)$/i.test(`${headers[0] || ""}`.trim());
+  }
+
+  function shouldPreserveColumnHeaders(headers) {
+    if (headers.length < 4) return false;
+    const firstHeader = `${headers[0] || ""}`.trim();
+    if (!/^(項目|指標|Metric)$/i.test(firstHeader)) return false;
+    const valueHeaders = headers.slice(1).map((header) => `${header || ""}`.trim()).filter(Boolean);
+    if (!valueHeaders.length) return false;
+    const metricHeaders = valueHeaders.filter(isMetricLabel).length;
+    const pitchTypeHeaders = valueHeaders.filter(isPitchTypeLabel).length;
+    const dateHeaders = valueHeaders.filter(isYearOrDateLabel).length;
+    return metricHeaders / valueHeaders.length < 0.5
+      || pitchTypeHeaders / valueHeaders.length >= 0.5
+      || dateHeaders / valueHeaders.length >= 0.5;
+  }
+
+  function appendMetricCards(parent, headers, rows) {
+    const list = createNode("div", "ai-chatbot-metric-card-list");
+    rows.forEach((row, rowIndex) => {
+      const card = createNode("article", "ai-chatbot-metric-card");
+      const title = createNode("h4", "ai-chatbot-metric-card-title");
+      const label = row[0] || `${headers[0] || "項目"} ${rowIndex + 1}`;
+      appendInlineText(title, label);
+
+      const metrics = createNode("dl", "ai-chatbot-metric-grid");
+      headers.slice(1).forEach((header, index) => {
+        const value = row[index + 1];
+        if (value === undefined || value === null || `${value}`.trim() === "") return;
+        const item = createNode("div", "ai-chatbot-metric-item");
+        const term = createNode("dt", "");
+        const desc = createNode("dd", "");
+        appendInlineText(term, header || `項目${index + 1}`);
+        appendInlineText(desc, value);
+        item.append(term, desc);
+        metrics.appendChild(item);
+      });
+
+      card.append(title, metrics);
+      list.appendChild(card);
+    });
+    parent.appendChild(list);
+  }
+
   function shouldTransposeTable(headers, rows) {
     if (headers.length < 3 || !rows.length) return false;
     if (headers.length === 3 && rows.length > 1) return false;
+    if (shouldPreserveColumnHeaders(headers)) return false;
     return headers.length >= 4 || rows.length === 1;
   }
 
@@ -344,6 +413,10 @@
 
   function appendSimpleTable(parent, headers, rows) {
     if (headers.length < 2 || !rows.length) return;
+    if (shouldRenderMetricCards(headers, rows)) {
+      appendMetricCards(parent, headers, rows);
+      return;
+    }
     const tableData = shouldTransposeTable(headers, rows)
       ? transposeTable(headers, rows)
       : { headers, rows, hideHeader: false };
