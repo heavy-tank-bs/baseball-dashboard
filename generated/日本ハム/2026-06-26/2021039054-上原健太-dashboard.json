@@ -1,0 +1,72 @@
+{
+  "game_id": "2021039054",
+  "metadata": {
+    "date_jp": "2026年6月26日",
+    "matchup": "埼玉西武ライオンズvs北海道日本ハムファイターズ"
+  },
+  "statline": {
+    "player": "上原 健太",
+    "era": "4.86",
+    "innings": "0.0",
+    "pitches": "3",
+    "batters": "1",
+    "hits": "1",
+    "hr": "1",
+    "k": "0",
+    "bb": "0",
+    "hbp": "0",
+    "balk": "0",
+    "runs": "1",
+    "er": "1"
+  },
+  "pitches": [
+    {
+      "pa_index": "0920100",
+      "pitcher": "上原 健太",
+      "pitcher_id": "1500109",
+      "pitcher_hand": "左",
+      "batter": "カナリオ",
+      "batter_id": "2117028",
+      "batter_hand": "右",
+      "seq": "1",
+      "pitchNo": "1",
+      "pitchType": "カットボール",
+      "speed": "141km/h",
+      "result": "ボール",
+      "top": 8.64,
+      "left": 24.119999999999997
+    },
+    {
+      "pa_index": "0920100",
+      "pitcher": "上原 健太",
+      "pitcher_id": "1500109",
+      "pitcher_hand": "左",
+      "batter": "カナリオ",
+      "batter_id": "2117028",
+      "batter_hand": "右",
+      "seq": "2",
+      "pitchNo": "2",
+      "pitchType": "カットボール",
+      "speed": "140km/h",
+      "result": "ファウル",
+      "top": 29.52,
+      "left": 44.64
+    },
+    {
+      "pa_index": "0920100",
+      "pitcher": "上原 健太",
+      "pitcher_id": "1500109",
+      "pitcher_hand": "左",
+      "batter": "カナリオ",
+      "batter_id": "2117028",
+      "batter_hand": "右",
+      "seq": "3",
+      "pitchNo": "3",
+      "pitchType": "ストレート",
+      "speed": "150km/h",
+      "result": "左本 [サヨナラホームラン、打者ガッツポーズ、観客大歓声、チームメイトから手荒い祝福を受ける]",
+      "top": 21.599999999999998,
+      "left": 20.88
+    }
+  ]
+}
