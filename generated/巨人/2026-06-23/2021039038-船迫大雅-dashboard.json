@@ -1,0 +1,88 @@
+{
+  "game_id": "2021039038",
+  "metadata": {
+    "date_jp": "2026年6月23日",
+    "matchup": "広島東洋カープvs読売ジャイアンツ"
+  },
+  "statline": {
+    "player": "船迫 大雅",
+    "era": "2.40",
+    "innings": "0.1",
+    "pitches": "4",
+    "batters": "1",
+    "hits": "0",
+    "hr": "0",
+    "k": "1",
+    "bb": "0",
+    "hbp": "0",
+    "balk": "0",
+    "runs": "0",
+    "er": "0"
+  },
+  "pitches": [
+    {
+      "pa_index": "0720800",
+      "pitcher": "船迫 大雅",
+      "pitcher_id": "1450689",
+      "pitcher_hand": "右",
+      "batter": "石原 貴規",
+      "batter_id": "1900056",
+      "batter_hand": "右",
+      "seq": "1",
+      "pitchNo": "1",
+      "pitchType": "スライダー",
+      "speed": "131km/h",
+      "result": "見逃し",
+      "top": 17.28,
+      "left": 13.32
+    },
+    {
+      "pa_index": "0720800",
+      "pitcher": "船迫 大雅",
+      "pitcher_id": "1450689",
+      "pitcher_hand": "右",
+      "batter": "石原 貴規",
+      "batter_id": "1900056",
+      "batter_hand": "右",
+      "seq": "2",
+      "pitchNo": "2",
+      "pitchType": "シュート",
+      "speed": "141km/h",
+      "result": "ボール",
+      "top": 53.64,
+      "left": 36.72
+    },
+    {
+      "pa_index": "0720800",
+      "pitcher": "船迫 大雅",
+      "pitcher_id": "1450689",
+      "pitcher_hand": "右",
+      "batter": "石原 貴規",
+      "batter_id": "1900056",
+      "batter_hand": "右",
+      "seq": "3",
+      "pitchNo": "3",
+      "pitchType": "スライダー",
+      "speed": "131km/h",
+      "result": "空振り",
+      "top": 36.36,
+      "left": 11.879999999999999
+    },
+    {
+      "pa_index": "0720800",
+      "pitcher": "船迫 大雅",
+      "pitcher_id": "1450689",
+      "pitcher_hand": "右",
+      "batter": "石原 貴規",
+      "batter_id": "1900056",
+      "batter_hand": "右",
+      "seq": "4",
+      "pitchNo": "4",
+      "pitchType": "スライダー",
+      "speed": "131km/h",
+      "result": "空三振 [投手ガッツポーズ、好リリーフ]",
+      "top": 55.44,
+      "left": 6.4799999999999995
+    }
+  ]
+}
