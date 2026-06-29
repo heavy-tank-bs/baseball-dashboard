@@ -108,7 +108,9 @@ function uniformNumberSortValue(value) {
 
 function formatUniformNumber(value) {
   const digits = `${value || ""}`.trim().normalize("NFKC").replace(/[^\d]/g, "");
-  return digits ? `#${digits.padStart(2, "0")}` : "";
+  if (!digits) return "";
+  const number = Number.parseInt(digits, 10);
+  return Number.isFinite(number) ? `#${number}` : `#${digits}`;
 }
 
 function playerOptionLabel(player, uniformNumber) {
