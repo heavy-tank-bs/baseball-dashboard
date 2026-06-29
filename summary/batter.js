@@ -94,6 +94,27 @@ function compareTeam(a, b) {
   return `${aName}`.localeCompare(`${bName}`, "ja");
 }
 
+function uniformNumberSortValue(value) {
+  const number = Number.parseInt(`${value || ""}`.trim().normalize("NFKC").replace(/[^\d]/g, ""), 10);
+  return Number.isFinite(number) ? number : Number.POSITIVE_INFINITY;
+}
+
+function formatUniformNumber(value) {
+  const digits = `${value || ""}`.trim().normalize("NFKC").replace(/[^\d]/g, "");
+  return digits ? `#${digits.padStart(2, "0")}` : "";
+}
+
+function playerOptionLabel(player, uniformNumber) {
+  const numberLabel = formatUniformNumber(uniformNumber);
+  return numberLabel ? `${numberLabel} ${player}` : player;
+}
+
+function comparePlayerOption(a, b) {
+  const numberCompare = uniformNumberSortValue(a.uniformNumber) - uniformNumberSortValue(b.uniformNumber);
+  if (numberCompare !== 0) return numberCompare;
+  return `${a.player || ""}`.localeCompare(`${b.player || ""}`, "ja");
+}
+
 function hasScopedSelection() {
   return state.team !== "all";
 }
@@ -239,22 +260,25 @@ function renderDateOptions() {
 
 function renderPlayerOptions() {
   const current = state.player;
-  const counts = new Map();
+  const playersByName = new Map();
   entriesForPlayerOptions().forEach((entry) => {
-    counts.set(entry.player, (counts.get(entry.player) || 0) + 1);
+    const row = playersByName.get(entry.player) || { player: entry.player, uniformNumber: entry.uniformNumber, count: 0 };
+    row.count += 1;
+    if (!row.uniformNumber && entry.uniformNumber) row.uniformNumber = entry.uniformNumber;
+    playersByName.set(entry.player, row);
   });
 
-  const names = [...counts.keys()].sort((a, b) => a.localeCompare(b, "ja"));
-  if (current !== "all" && !counts.has(current)) {
+  const players = [...playersByName.values()].sort(comparePlayerOption);
+  if (current !== "all" && !playersByName.has(current)) {
     state.player = "all";
   }
 
   els.playerSelect.innerHTML = '<option value="all">すべての選手</option>';
-  names.forEach((name) => {
+  players.forEach((row) => {
     const option = document.createElement("option");
-    option.value = name;
-    option.textContent = `${name} (${counts.get(name)})`;
-    if (name === state.player) option.selected = true;
+    option.value = row.player;
+    option.textContent = `${playerOptionLabel(row.player, row.uniformNumber)} (${row.count})`;
+    if (row.player === state.player) option.selected = true;
     els.playerSelect.appendChild(option);
   });
 }
@@ -323,26 +347,26 @@ function renderDateOptions() {
 }
 
 function renderPlayerOptions() {
-  const names = [];
-  const seen = new Set();
+  const playersByName = new Map();
   entriesForPlayerOptions().forEach((entry) => {
-    if (seen.has(entry.player)) return;
-    seen.add(entry.player);
-    names.push(entry.player);
+    const row = playersByName.get(entry.player) || { player: entry.player, uniformNumber: entry.uniformNumber };
+    if (!row.uniformNumber && entry.uniformNumber) row.uniformNumber = entry.uniformNumber;
+    playersByName.set(entry.player, row);
   });
+  const players = [...playersByName.values()].sort(comparePlayerOption);
 
-  if (state.player !== "all" && !seen.has(state.player)) {
+  if (state.player !== "all" && !playersByName.has(state.player)) {
     state.player = "all";
     state.selectedId = null;
   }
 
-  els.playerSelect.disabled = state.team === "all" || !names.length;
+  els.playerSelect.disabled = state.team === "all" || !players.length;
   els.playerSelect.innerHTML = '<option value="all">選手を選択</option>';
-  names.forEach((name) => {
+  players.forEach((row) => {
     const option = document.createElement("option");
-    option.value = name;
-    option.textContent = name;
-    if (name === state.player) option.selected = true;
+    option.value = row.player;
+    option.textContent = playerOptionLabel(row.player, row.uniformNumber);
+    if (row.player === state.player) option.selected = true;
     els.playerSelect.appendChild(option);
   });
 }

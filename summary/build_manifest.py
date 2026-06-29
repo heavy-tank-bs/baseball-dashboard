@@ -204,6 +204,12 @@ def safe_load_json(path: Path) -> dict | None:
         return None
 
 
+def write_text_atomic(path: Path, content: str) -> None:
+    temp_path = path.with_name(f"{path.name}.tmp")
+    temp_path.write_text(content, encoding="utf-8")
+    temp_path.replace(path)
+
+
 def team_league(team: str) -> str:
     return TEAM_LEAGUES.get(normalize_team_name(team), "")
 
@@ -285,6 +291,26 @@ def normalize_source_team_name(team: str) -> str:
         return ""
     mapped = SOURCE_TEAM_NAME_MAP.get(normalized.lower(), normalized)
     return normalize_team_name(mapped)
+
+
+def player_lookup_name(value: str) -> str:
+    return re.sub(r"\s+", "", str(value or "").strip())
+
+
+def uniform_number_key(season: str, team: str, player_name: str) -> tuple[str, str, str]:
+    return str(season or ""), normalize_source_team_name(team), player_lookup_name(player_name)
+
+
+def lookup_uniform_number(
+    index: dict[tuple[str, str, str], str],
+    season: str,
+    team: str,
+    player_name: str,
+) -> str:
+    if not index:
+        return ""
+    key = uniform_number_key(season, team, player_name)
+    return index.get(key) or index.get(("", key[1], key[2]), "")
 
 
 def load_csv_rows(path: Path) -> list[dict[str, str]]:
@@ -379,6 +405,19 @@ def load_raw_batter_stat_rows(excluded_years: set[str]) -> list[tuple[str, dict[
                 deduped[key] = row
         rows.extend((season, row) for row in deduped.values())
     return rows
+
+
+def load_uniform_number_index(kind: str) -> dict[tuple[str, str, str], str]:
+    raw_rows = load_raw_pitcher_stat_rows(set()) if kind == "pitcher" else load_raw_batter_stat_rows(set())
+    index: dict[tuple[str, str, str], str] = {}
+    for season, row in raw_rows:
+        player_name = str(row.get("選手名") or "").strip()
+        uniform_number = str(row.get("背番号") or "").strip()
+        team = row.get("チーム名") or row.get("チームコード") or row.get("team") or ""
+        if not player_name or not uniform_number:
+            continue
+        index[uniform_number_key(season, team, player_name)] = uniform_number
+    return index
 
 
 def load_raw_out_rate_index(excluded_years: set[str]) -> dict[str, dict[tuple[str, str, str], dict[str, float | None]]]:
@@ -3287,6 +3326,7 @@ def build_player_totals(entries: list[dict], game_decisions: dict[str, dict], ga
                 "_bucketKey": pitcher_id,
                 "pitcherId": entry.get("pitcherId") or "",
                 "player": entry.get("player", ""),
+                "uniformNumber": entry.get("uniformNumber") or "",
                 "league": league,
                 "teams": [],
                 "games": 0,
@@ -3330,6 +3370,8 @@ def build_player_totals(entries: list[dict], game_decisions: dict[str, dict], ga
         game_context = game_context_index.get(str(entry.get("gameId") or "")) or {}
         if entry.get("team") and entry["team"] not in player_bucket["teams"]:
             player_bucket["teams"].append(entry["team"])
+        if not player_bucket.get("uniformNumber") and entry.get("uniformNumber"):
+            player_bucket["uniformNumber"] = entry["uniformNumber"]
         add_season_dashboard_entry(player_bucket, entry, decision_row, game_context)
 
         player_bucket["games"] += 1
@@ -3372,6 +3414,7 @@ def build_player_totals(entries: list[dict], game_decisions: dict[str, dict], ga
         if not player_name or not team:
             continue
         league = team_league(team)
+        uniform_number = str(row.get("背番号") or "").strip()
         outs = parse_int(row.get("投球回_アウト数")) or innings_to_outs(row.get("投球回"))
         walks = parse_int(row.get("与四球"))
         intentional_walks = parse_int(row.get("敬遠"))
@@ -3397,6 +3440,7 @@ def build_player_totals(entries: list[dict], game_decisions: dict[str, dict], ga
                 "_bucketKey": bucket_key[1],
                 "pitcherId": "",
                 "player": player_name,
+                "uniformNumber": uniform_number,
                 "league": league,
                 "teams": [],
                 "games": 0,
@@ -3437,6 +3481,8 @@ def build_player_totals(entries: list[dict], game_decisions: dict[str, dict], ga
         )
         if team not in player_bucket["teams"]:
             player_bucket["teams"].append(team)
+        if not player_bucket.get("uniformNumber") and uniform_number:
+            player_bucket["uniformNumber"] = uniform_number
 
         player_bucket["games"] += parse_int(row.get("試合"))
         player_bucket["wins"] += parse_int(row.get("勝利"))
@@ -3552,6 +3598,7 @@ def build_player_totals(entries: list[dict], game_decisions: dict[str, dict], ga
             "year": player["year"],
             "pitcherId": player["pitcherId"],
             "player": player["player"],
+            "uniformNumber": player.get("uniformNumber") or "",
             "team": teams[0] if len(teams) == 1 else " / ".join(teams),
             "teams": teams,
             "league": player["league"],
@@ -3640,6 +3687,7 @@ def build_batter_totals(
     intentional_walks_by_player: dict[tuple[str, str], int] = defaultdict(int)
     scoring_position_by_player: dict[tuple[str, str], dict[str, int]] = defaultdict(lambda: {"atBats": 0, "hits": 0})
     plate_discipline_by_player: dict[tuple[str, str], dict] = defaultdict(build_plate_discipline_bucket)
+    uniform_numbers_by_player: dict[tuple[str, str], str] = {}
     context_game_ids = context_intentional_walk_game_ids(game_contexts)
 
     for entry in entries:
@@ -3656,6 +3704,8 @@ def build_batter_totals(
         batter_id = entry.get("batterId") or ""
         player_name = entry.get("player") or ""
         bucket_key = (year, batter_id or f"{team}::{player_name}")
+        if entry.get("uniformNumber"):
+            uniform_numbers_by_player.setdefault(bucket_key, entry["uniformNumber"])
         plate_rows = ((entry.get("dashboard") or {}).get("plateAppearances") or [])
         discipline_bucket = plate_discipline_by_player[bucket_key]
         for plate in plate_rows:
@@ -3699,6 +3749,7 @@ def build_batter_totals(
                         "year": year,
                         "batterId": batter_id,
                         "player": player_name,
+                        "uniformNumber": uniform_numbers_by_player.get(bucket_key, ""),
                         "_bucketKey": bucket_key,
                         "teams": set(),
                         "league": league,
@@ -3725,6 +3776,10 @@ def build_batter_totals(
                         "_plateAppearancesByTeam": {},
                     },
                 )
+                if not bucket.get("uniformNumber"):
+                    uniform_number = uniform_numbers_by_player.get(bucket_key, "")
+                    if uniform_number:
+                        bucket["uniformNumber"] = uniform_number
                 bucket["teams"].add(team)
                 bucket["games"] += 1
                 bucket["plateAppearances"] += parse_int(stats.get("plateAppearances"))
@@ -3753,6 +3808,7 @@ def build_batter_totals(
         league = team_league(team)
         batter_id = ""
         bucket_key = (year, batter_id or f"{team}::{player_name}")
+        uniform_number = str(row.get("背番号") or "").strip()
         hits = parse_int(row.get("安打"))
         doubles = parse_int(row.get("二塁打"))
         triples = parse_int(row.get("三塁打"))
@@ -3767,6 +3823,7 @@ def build_batter_totals(
                 "year": year,
                 "batterId": batter_id,
                 "player": player_name,
+                "uniformNumber": uniform_number,
                 "_bucketKey": bucket_key,
                 "teams": set(),
                 "league": league,
@@ -3793,6 +3850,8 @@ def build_batter_totals(
                 "_plateAppearancesByTeam": {},
             },
         )
+        if not bucket.get("uniformNumber") and uniform_number:
+            bucket["uniformNumber"] = uniform_number
         bucket["teams"].add(team)
         bucket["games"] += parse_int(row.get("試合"))
         bucket["plateAppearances"] += plate_appearances
@@ -3947,6 +4006,7 @@ def build_batter_totals(
             "year": player["year"],
             "batterId": player["batterId"],
             "player": player["player"],
+            "uniformNumber": player.get("uniformNumber") or "",
             "team": teams[0] if len(teams) == 1 else " / ".join(teams),
             "teams": teams,
             "league": player["league"],
@@ -4031,7 +4091,10 @@ def build_batter_totals(
     }
 
 
-def collect_batter_entries(batting_stats_by_game: dict[str, dict[str, dict]]) -> list[dict]:
+def collect_batter_entries(
+    batting_stats_by_game: dict[str, dict[str, dict]],
+    uniform_numbers: dict[tuple[str, str, str], str] | None = None,
+) -> list[dict]:
     build_plate_appearances = getattr(DASHBOARD, "build_plate_appearances")
     normalize_result = getattr(DASHBOARD, "normalize_result", lambda value: (value or "").split("[", 1)[0].strip())
     parse_inning = getattr(DASHBOARD, "parse_inning", lambda value: None)
@@ -4145,6 +4208,7 @@ def collect_batter_entries(batting_stats_by_game: dict[str, dict[str, dict]]) ->
                 "walks": official.get("walks", fallback_statline["walks"]),
                 "strikeouts": official.get("strikeouts", fallback_statline["strikeouts"]),
             }
+            player_name = official.get("player") or batter_name
 
             entries.append(
                 {
@@ -4154,9 +4218,10 @@ def collect_batter_entries(batting_stats_by_game: dict[str, dict[str, dict]]) ->
                     "date": date,
                     "prefix": f"{game_id}-{batter_id or key}",
                     "gameId": game_id,
-                    "title": official.get("player") or batter_name,
-                    "player": official.get("player") or batter_name,
+                    "title": player_name,
+                    "player": player_name,
                     "batterId": batter_id,
+                    "uniformNumber": lookup_uniform_number(uniform_numbers or {}, date[:4], team, player_name),
                     "batterHand": batter_hand,
                     "matchup": game["matchup"],
                     "dateLabel": game["dateLabel"],
@@ -4179,7 +4244,7 @@ def collect_batter_entries(batting_stats_by_game: dict[str, dict[str, dict]]) ->
     return entries
 
 
-def collect_entries() -> list[dict]:
+def collect_entries(uniform_numbers: dict[tuple[str, str, str], str] | None = None) -> list[dict]:
     grouped: dict[tuple[str, str, str], dict] = {}
 
     if not GENERATED_DIR.exists():
@@ -4241,6 +4306,7 @@ def collect_entries() -> list[dict]:
         page_items = [{"page": page_no, "path": path} for page_no, path in sorted(entry["pages"].items())]
         title, matchup = infer_title(prefix, date, payload)
         statline = payload.get("statline", {})
+        player_name = statline.get("player", "") or title
         metadata = payload.get("metadata", {})
         pitcher_id = extract_pitcher_id(payload)
         league = team_league(team)
@@ -4256,8 +4322,9 @@ def collect_entries() -> list[dict]:
                 "gameId": extract_game_id(prefix),
                 "order": pitcher_appearance_order(payload),
                 "title": title,
-                "player": statline.get("player", "") or title,
+                "player": player_name,
                 "pitcherId": pitcher_id,
+                "uniformNumber": lookup_uniform_number(uniform_numbers or {}, date[:4], team, player_name),
                 "matchup": metadata.get("matchup") or matchup,
                 "dateLabel": metadata.get("date_jp") or date,
                 "pages": page_items,
@@ -4304,7 +4371,8 @@ def pitcher_manifest_entry(entry: dict) -> dict:
 def write_pitcher_manifest_details(entries: list[dict]) -> None:
     for entry in entries:
         detail_path = pitcher_manifest_detail_path(entry)
-        detail_path.write_text(
+        write_text_atomic(
+            detail_path,
             json.dumps(
                 {
                     "id": entry["id"],
@@ -4314,7 +4382,6 @@ def write_pitcher_manifest_details(entries: list[dict]) -> None:
                 indent=2,
             )
             + "\n",
-            encoding="utf-8",
         )
 
 
@@ -4350,40 +4417,42 @@ def build_manifest(entries: list[dict], entry_serializer=None) -> dict:
 
 
 def main() -> None:
-    entries = collect_entries()
+    pitcher_uniform_numbers = load_uniform_number_index("pitcher")
+    batter_uniform_numbers = load_uniform_number_index("batter")
+    entries = collect_entries(pitcher_uniform_numbers)
     manifest = build_manifest(entries, pitcher_manifest_entry)
     write_pitcher_manifest_details(entries)
     game_decisions = load_or_update_game_decisions(entries)
     batting_stats_by_game = load_or_update_game_batting_stats(entries)
     game_contexts = load_game_contexts()
     park_factors = build_park_factors(game_contexts)
-    batter_entries = collect_batter_entries(batting_stats_by_game)
+    batter_entries = collect_batter_entries(batting_stats_by_game, batter_uniform_numbers)
     batter_manifest = build_manifest(batter_entries)
     player_totals = build_player_totals(entries, game_decisions, game_contexts)
     batter_totals = build_batter_totals(entries, batting_stats_by_game, batter_entries, park_factors, game_contexts)
-    MANIFEST_PATH.write_text(
+    write_text_atomic(
+        MANIFEST_PATH,
         "window.PITCH_DASHBOARD_MANIFEST = "
         + json.dumps(manifest, ensure_ascii=False, indent=2)
         + ";\n",
-        encoding="utf-8",
     )
-    BATTER_MANIFEST_PATH.write_text(
+    write_text_atomic(
+        BATTER_MANIFEST_PATH,
         "window.BATTER_GAME_MANIFEST = "
         + json.dumps(batter_manifest, ensure_ascii=False, indent=2)
         + ";\n",
-        encoding="utf-8",
     )
-    PLAYER_TOTALS_PATH.write_text(
+    write_text_atomic(
+        PLAYER_TOTALS_PATH,
         json.dumps(player_totals, ensure_ascii=False, indent=2) + "\n",
-        encoding="utf-8",
     )
-    BATTER_TOTALS_PATH.write_text(
+    write_text_atomic(
+        BATTER_TOTALS_PATH,
         json.dumps(batter_totals, ensure_ascii=False, indent=2) + "\n",
-        encoding="utf-8",
     )
-    PARK_FACTORS_PATH.write_text(
+    write_text_atomic(
+        PARK_FACTORS_PATH,
         json.dumps(park_factors, ensure_ascii=False, indent=2) + "\n",
-        encoding="utf-8",
     )
     print(f"manifest: {MANIFEST_PATH}")
     print(f"batter manifest: {BATTER_MANIFEST_PATH}")

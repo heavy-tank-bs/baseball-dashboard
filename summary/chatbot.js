@@ -19,12 +19,12 @@
   const SELECTOR_SOURCES = [
     {
       kind: "投手",
-      src: "./manifest.js?v=20260601-output-ja",
+      src: "./manifest.js?v=20260627-uniform-number",
       globalName: "PITCH_DASHBOARD_MANIFEST",
     },
     {
       kind: "野手",
-      src: "./batter_manifest.js?v=20260601-output-ja",
+      src: "./batter_manifest.js?v=20260627-uniform-number",
       globalName: "BATTER_GAME_MANIFEST",
     },
   ];
@@ -120,6 +120,21 @@
       .replace(/\n{3,}/g, "\n\n")
       .trim()
       .slice(0, limit);
+  }
+
+  function uniformNumberSortValue(value) {
+    const number = Number.parseInt(`${value || ""}`.replace(/[^\d]/g, ""), 10);
+    return Number.isFinite(number) ? number : Number.POSITIVE_INFINITY;
+  }
+
+  function formatUniformNumber(value) {
+    const digits = `${value || ""}`.trim().normalize("NFKC").replace(/[^\d]/g, "");
+    return digits ? `#${digits.padStart(2, "0")}` : "";
+  }
+
+  function playerOptionLabel(player, uniformNumber) {
+    const numberLabel = formatUniformNumber(uniformNumber);
+    return numberLabel ? `${numberLabel} ${player}` : player;
   }
 
   function visibleText(selector, limit = 1000) {
@@ -612,6 +627,7 @@
           date: normalizeText(entry.date, 20),
           team: normalizeText(entry.team || entry.teams?.[0], 80),
           player: normalizeText(entry.player, 120),
+          uniformNumber: normalizeText(entry.uniformNumber, 12),
         }))
         .filter((entry) => entry.date && entry.team && entry.player);
     });
@@ -678,7 +694,12 @@
     const filters = selectedFilters(dateInput, teamSelect);
     const players = state.selector.entries
       .filter((entry) => selectorMatches(entry, filters))
-      .sort((a, b) => a.team.localeCompare(b.team, "ja") || a.player.localeCompare(b.player, "ja") || a.kind.localeCompare(b.kind, "ja"));
+      .sort((a, b) => (
+        a.team.localeCompare(b.team, "ja")
+        || uniformNumberSortValue(a.uniformNumber) - uniformNumberSortValue(b.uniformNumber)
+        || a.player.localeCompare(b.player, "ja")
+        || a.kind.localeCompare(b.kind, "ja")
+      ));
     const seen = new Set();
     const options = players
       .map((entry) => {
@@ -686,7 +707,8 @@
         const key = `${entry.team}::${value}`;
         if (seen.has(key)) return null;
         seen.add(key);
-        const label = filters.team ? `${entry.player}（${entry.kind}）` : `${entry.team} ${entry.player}（${entry.kind}）`;
+        const playerLabel = playerOptionLabel(entry.player, entry.uniformNumber);
+        const label = filters.team ? `${playerLabel}（${entry.kind}）` : `${entry.team} ${playerLabel}（${entry.kind}）`;
         return optionNode(value, label, {
           "data-player": entry.player,
           "data-kind": entry.kind,

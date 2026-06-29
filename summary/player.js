@@ -83,6 +83,29 @@ function compareTeam(a, b) {
   return aName.localeCompare(bName, "ja");
 }
 
+function uniformNumberSortValue(value) {
+  const number = Number.parseInt(`${value || ""}`.trim().normalize("NFKC").replace(/[^\d]/g, ""), 10);
+  return Number.isFinite(number) ? number : Number.POSITIVE_INFINITY;
+}
+
+function formatUniformNumber(value) {
+  const digits = `${value || ""}`.trim().normalize("NFKC").replace(/[^\d]/g, "");
+  return digits ? `#${digits.padStart(2, "0")}` : "";
+}
+
+function playerOptionLabel(player, uniformNumber) {
+  const numberLabel = formatUniformNumber(uniformNumber);
+  return numberLabel ? `${numberLabel} ${player}` : player;
+}
+
+function comparePlayerOptionRows(a, b) {
+  const teamCompare = compareTeam(a.team, b.team);
+  if (teamCompare !== 0) return teamCompare;
+  const numberCompare = uniformNumberSortValue(a.uniformNumber) - uniformNumberSortValue(b.uniformNumber);
+  if (numberCompare !== 0) return numberCompare;
+  return `${a.player || ""}`.localeCompare(`${b.player || ""}`, "ja");
+}
+
 function config() {
   return TYPE_CONFIG[state.type] || TYPE_CONFIG.pitcher;
 }
@@ -122,11 +145,7 @@ function availableTeams() {
 }
 
 function availablePlayers() {
-  const candidates = filteredRowsBase().sort((a, b) => {
-    const teamCompare = compareTeam(a.team, b.team);
-    if (teamCompare !== 0) return teamCompare;
-    return `${a.player || ""}`.localeCompare(`${b.player || ""}`, "ja");
-  });
+  const candidates = filteredRowsBase().sort(comparePlayerOptionRows);
   const nameCounts = candidates.reduce((map, row) => {
     map.set(row.player, (map.get(row.player) || 0) + 1);
     return map;
@@ -134,7 +153,10 @@ function availablePlayers() {
   return candidates.map((row) => ({
     row,
     value: playerValue(row),
-    label: nameCounts.get(row.player) > 1 ? `${row.player} (${row.team})` : row.player,
+    label:
+      nameCounts.get(row.player) > 1
+        ? `${playerOptionLabel(row.player, row.uniformNumber)} (${row.team})`
+        : playerOptionLabel(row.player, row.uniformNumber),
   }));
 }
 
@@ -234,7 +256,7 @@ function renderSelectedPlayer() {
     return;
   }
   els.playerSelectionLabel.textContent = `${row.year}年度 ${row.team} ${config().label}`;
-  els.playerSelectionTitle.textContent = row.player;
+  els.playerSelectionTitle.textContent = playerOptionLabel(row.player, row.uniformNumber);
   const nextSrc = embeddedPlayerHref(row);
   if (els.playerStatsFrame.getAttribute("src") !== nextSrc) {
     els.playerStatsFrame.style.height = "640px";

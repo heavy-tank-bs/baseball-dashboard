@@ -82,6 +82,29 @@ function compareTeam(a, b) {
   return aName.localeCompare(bName, "ja");
 }
 
+function uniformNumberSortValue(value) {
+  const number = Number.parseInt(`${value || ""}`.trim().normalize("NFKC").replace(/[^\d]/g, ""), 10);
+  return Number.isFinite(number) ? number : Number.POSITIVE_INFINITY;
+}
+
+function formatUniformNumber(value) {
+  const digits = `${value || ""}`.trim().normalize("NFKC").replace(/[^\d]/g, "");
+  return digits ? `#${digits.padStart(2, "0")}` : "";
+}
+
+function playerOptionLabel(player, uniformNumber) {
+  const numberLabel = formatUniformNumber(uniformNumber);
+  return numberLabel ? `${numberLabel} ${player}` : player;
+}
+
+function comparePlayerOptionRows(a, b) {
+  const teamCompare = compareTeam(a.team, b.team);
+  if (teamCompare !== 0) return teamCompare;
+  const numberCompare = uniformNumberSortValue(a.uniformNumber) - uniformNumberSortValue(b.uniformNumber);
+  if (numberCompare !== 0) return numberCompare;
+  return `${a.player || ""}`.localeCompare(`${b.player || ""}`, "ja");
+}
+
 function hasScore(value) {
   return value !== null && value !== undefined && value !== "" && Number.isFinite(Number(value));
 }
@@ -274,11 +297,7 @@ function availablePlayers() {
       if (state.team !== "all" && row.team !== state.team) return false;
       return true;
     })
-    .sort((a, b) => {
-      const teamCompare = compareTeam(a.team, b.team);
-      if (teamCompare !== 0) return teamCompare;
-      return a.player.localeCompare(b.player, "ja");
-    });
+    .sort(comparePlayerOptionRows);
 
   const nameCounts = rows.reduce((map, row) => {
     map.set(row.player, (map.get(row.player) || 0) + 1);
@@ -287,7 +306,10 @@ function availablePlayers() {
 
   return rows.map((row) => ({
     value: playerValue(row),
-    label: nameCounts.get(row.player) > 1 ? `${row.player} (${row.team})` : row.player,
+    label:
+      nameCounts.get(row.player) > 1
+        ? `${playerOptionLabel(row.player, row.uniformNumber)} (${row.team})`
+        : playerOptionLabel(row.player, row.uniformNumber),
   }));
 }
 

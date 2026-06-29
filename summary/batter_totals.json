@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-27T22:35:05",
+  "updatedAt": "2026-06-29T23:10:43",
   "source": "Sports Navi game batting tables and intentional-walk context for games present under generated/*/*/*-dashboard.json + 元データ/*_打撃成績.csv",
   "notes": {
     "uBB": "Unintentional walks are derived from Sports Navi intentional-walk context when available.",
@@ -114,6 +114,7 @@
       "year": "2025",
       "batterId": "",
       "player": "オコエ瑠偉",
+      "uniformNumber": "50",
       "team": "巨人",
       "teams": [
         "巨人"
@@ -160,6 +161,7 @@
       "year": "2025",
       "batterId": "",
       "player": "キャベッジ",
+      "uniformNumber": "13",
       "team": "巨人",
       "teams": [
         "巨人"
@@ -206,6 +208,7 @@
       "year": "2025",
       "batterId": "",
       "player": "ヘルナンデス",
+      "uniformNumber": "42",
       "team": "巨人",
       "teams": [
         "巨人"
@@ -252,6 +255,7 @@
       "year": "2025",
       "batterId": "",
       "player": "リチャード",
+      "uniformNumber": "52",
       "team": "巨人",
       "teams": [
         "巨人"
@@ -298,6 +302,7 @@
       "year": "2025",
       "batterId": "",
       "player": "中山礼都",
+      "uniformNumber": "40",
       "team": "巨人",
       "teams": [
         "巨人"
@@ -344,6 +349,7 @@
       "year": "2025",
       "batterId": "",
       "player": "丸佳浩",
+      "uniformNumber": "8",
       "team": "巨人",
       "teams": [
         "巨人"
@@ -390,6 +396,7 @@
       "year": "2025",
       "batterId": "",
       "player": "佐々木俊輔",
+      "uniformNumber": "44",
       "team": "巨人",
       "teams": [
         "巨人"
@@ -436,6 +443,7 @@
       "year": "2025",
       "batterId": "",
       "player": "吉川尚輝",
+      "uniformNumber": "2",
       "team": "巨人",
       "teams": [
         "巨人"
@@ -482,6 +490,7 @@
       "year": "2025",
       "batterId": "",
       "player": "坂本勇人",
+      "uniformNumber": "6",
       "team": "巨人",
       "teams": [
         "巨人"
@@ -528,6 +537,7 @@
       "year": "2025",
       "batterId": "",
       "player": "増田陸",
+      "uniformNumber": "61",
       "team": "巨人",
       "teams": [
         "巨人"
@@ -574,6 +584,7 @@
       "year": "2025",
       "batterId": "",
       "player": "岡本和真",
+      "uniformNumber": "25",
       "team": "巨人",
       "teams": [
         "巨人"
@@ -620,6 +631,7 @@
       "year": "2025",
       "batterId": "",
       "player": "岸田行倫",
+      "uniformNumber": "27",
       "team": "巨人",
       "teams": [
         "巨人"
@@ -666,6 +678,7 @@
       "year": "2025",
       "batterId": "",
       "player": "泉口友汰",
+      "uniformNumber": "35",
       "team": "巨人",
       "teams": [
         "巨人"
@@ -712,6 +725,7 @@
       "year": "2025",
       "batterId": "",
       "player": "甲斐拓也",
+      "uniformNumber": "10",
       "team": "巨人",
       "teams": [
         "巨人"
@@ -758,6 +772,7 @@
       "year": "2025",
       "batterId": "",
       "player": "若林楽人",
+      "uniformNumber": "59",
       "team": "巨人",
       "teams": [
         "巨人"
@@ -804,6 +819,7 @@
       "year": "2025",
       "batterId": "",
       "player": "門脇誠",
+      "uniformNumber": "5",
       "team": "巨人",
       "teams": [
         "巨人"
@@ -850,6 +866,7 @@
       "year": "2025",
       "batterId": "",
       "player": "中野拓夢",
+      "uniformNumber": "51",
       "team": "阪神",
       "teams": [
         "阪神"
@@ -896,6 +913,7 @@
       "year": "2025",
       "batterId": "",
       "player": "佐藤輝明",
+      "uniformNumber": "8",
       "team": "阪神",
       "teams": [
         "阪神"
@@ -942,6 +960,7 @@
       "year": "2025",
       "batterId": "",
       "player": "前川右京",
+      "uniformNumber": "58",
       "team": "阪神",
       "teams": [
         "阪神"
@@ -988,6 +1007,7 @@
       "year": "2025",
       "batterId": "",
       "player": "坂本誠志郎",
+      "uniformNumber": "12",
       "team": "阪神",
       "teams": [
         "阪神"
@@ -1034,6 +1054,7 @@
       "year": "2025",
       "batterId": "",
       "player": "大山悠輔",
+      "uniformNumber": "3",
       "team": "阪神",
       "teams": [
         "阪神"
@@ -1080,6 +1101,7 @@
       "year": "2025",
       "batterId": "",
       "player": "小幡竜平",
+      "uniformNumber": "38",
       "team": "阪神",
       "teams": [
         "阪神"
@@ -1126,6 +1148,7 @@
       "year": "2025",
       "batterId": "",
       "player": "木浪聖也",
+      "uniformNumber": "0",
       "team": "阪神",
       "teams": [
         "阪神"
@@ -1172,6 +1195,7 @@
       "year": "2025",
       "batterId": "",
       "player": "梅野隆太郎",
+      "uniformNumber": "2",
       "team": "阪神",
       "teams": [
         "阪神"
@@ -1218,6 +1242,7 @@
       "year": "2025",
       "batterId": "",
       "player": "森下翔太",
+      "uniformNumber": "1",
       "team": "阪神",
       "teams": [
         "阪神"
@@ -1264,6 +1289,7 @@
       "year": "2025",
       "batterId": "",
       "player": "熊谷敬宥",
+      "uniformNumber": "4",
       "team": "阪神",
       "teams": [
         "阪神"
@@ -1310,6 +1336,7 @@
       "year": "2025",
       "batterId": "",
       "player": "近本光司",
+      "uniformNumber": "5",
       "team": "阪神",
       "teams": [
         "阪神"
@@ -1356,6 +1383,7 @@
       "year": "2025",
       "batterId": "",
       "player": "髙寺望夢",
+      "uniformNumber": "67",
       "team": "阪神",
       "teams": [
         "阪神"
@@ -1402,6 +1430,7 @@
       "year": "2025",
       "batterId": "",
       "player": "オースティン",
+      "uniformNumber": "3",
       "team": "DeNA",
       "teams": [
         "DeNA"
@@ -1448,6 +1477,7 @@
       "year": "2025",
       "batterId": "",
       "player": "三森大貴",
+      "uniformNumber": "26",
       "team": "DeNA",
       "teams": [
         "DeNA"
@@ -1494,6 +1524,7 @@
       "year": "2025",
       "batterId": "",
       "player": "京田陽太",
+      "uniformNumber": "9",
       "team": "DeNA",
       "teams": [
         "DeNA"
@@ -1540,6 +1571,7 @@
       "year": "2025",
       "batterId": "",
       "player": "佐野恵太",
+      "uniformNumber": "7",
       "team": "DeNA",
       "teams": [
         "DeNA"
@@ -1586,6 +1618,7 @@
       "year": "2025",
       "batterId": "",
       "player": "宮﨑敏郎",
+      "uniformNumber": "51",
       "team": "DeNA",
       "teams": [
         "DeNA"
@@ -1632,6 +1665,7 @@
       "year": "2025",
       "batterId": "",
       "player": "山本祐大",
+      "uniformNumber": "50",
       "team": "DeNA",
       "teams": [
         "DeNA"
@@ -1678,6 +1712,7 @@
       "year": "2025",
       "batterId": "",
       "player": "度会隆輝",
+      "uniformNumber": "4",
       "team": "DeNA",
       "teams": [
         "DeNA"
@@ -1724,6 +1759,7 @@
       "year": "2025",
       "batterId": "",
       "player": "松尾汐恩",
+      "uniformNumber": "5",
       "team": "DeNA",
       "teams": [
         "DeNA"
@@ -1770,6 +1806,7 @@
       "year": "2025",
       "batterId": "",
       "player": "林琢真",
+      "uniformNumber": "0",
       "team": "DeNA",
       "teams": [
         "DeNA"
@@ -1816,6 +1853,7 @@
       "year": "2025",
       "batterId": "",
       "player": "桑原将志",
+      "uniformNumber": "1",
       "team": "DeNA",
       "teams": [
         "DeNA"
@@ -1862,6 +1900,7 @@
       "year": "2025",
       "batterId": "",
       "player": "梶原昂希",
+      "uniformNumber": "58",
       "team": "DeNA",
       "teams": [
         "DeNA"
@@ -1908,6 +1947,7 @@
       "year": "2025",
       "batterId": "",
       "player": "牧秀悟",
+      "uniformNumber": "2",
       "team": "DeNA",
       "teams": [
         "DeNA"
@@ -1954,6 +1994,7 @@
       "year": "2025",
       "batterId": "",
       "player": "石上泰輝",
+      "uniformNumber": "44",
       "team": "DeNA",
       "teams": [
         "DeNA"
@@ -2000,6 +2041,7 @@
       "year": "2025",
       "batterId": "",
       "player": "筒香嘉智",
+      "uniformNumber": "25",
       "team": "DeNA",
       "teams": [
         "DeNA"
@@ -2046,6 +2088,7 @@
       "year": "2025",
       "batterId": "",
       "player": "蝦名達夫",
+      "uniformNumber": "61",
       "team": "DeNA",
       "teams": [
         "DeNA"
@@ -2092,6 +2135,7 @@
       "year": "2025",
       "batterId": "",
       "player": "ファビアン",
+      "uniformNumber": "61",
       "team": "広島",
       "teams": [
         "広島"
@@ -2138,6 +2182,7 @@
       "year": "2025",
       "batterId": "",
       "player": "モンテロ",
+      "uniformNumber": "95",
       "team": "広島",
       "teams": [
         "広島"
@@ -2184,6 +2229,7 @@
       "year": "2025",
       "batterId": "",
       "player": "中村奨成",
+      "uniformNumber": "96",
       "team": "広島",
       "teams": [
         "広島"
@@ -2230,6 +2276,7 @@
       "year": "2025",
       "batterId": "",
       "player": "二俣翔一",
+      "uniformNumber": "99",
       "team": "広島",
       "teams": [
         "広島"
@@ -2276,6 +2323,7 @@
       "year": "2025",
       "batterId": "",
       "player": "佐々木泰",
+      "uniformNumber": "10",
       "team": "広島",
       "teams": [
         "広島"
@@ -2322,6 +2370,7 @@
       "year": "2025",
       "batterId": "",
       "player": "坂倉将吾",
+      "uniformNumber": "31",
       "team": "広島",
       "teams": [
         "広島"
@@ -2368,6 +2417,7 @@
       "year": "2025",
       "batterId": "",
       "player": "大盛穂",
+      "uniformNumber": "59",
       "team": "広島",
       "teams": [
         "広島"
@@ -2414,6 +2464,7 @@
       "year": "2025",
       "batterId": "",
       "player": "小園海斗",
+      "uniformNumber": "5",
       "team": "広島",
       "teams": [
         "広島"
@@ -2460,6 +2511,7 @@
       "year": "2025",
       "batterId": "",
       "player": "末包昇大",
+      "uniformNumber": "52",
       "team": "広島",
       "teams": [
         "広島"
@@ -2506,6 +2558,7 @@
       "year": "2025",
       "batterId": "",
       "player": "矢野雅哉",
+      "uniformNumber": "4",
       "team": "広島",
       "teams": [
         "広島"
@@ -2552,6 +2605,7 @@
       "year": "2025",
       "batterId": "",
       "player": "石原貴規",
+      "uniformNumber": "32",
       "team": "広島",
       "teams": [
         "広島"
@@ -2598,6 +2652,7 @@
       "year": "2025",
       "batterId": "",
       "player": "秋山翔吾",
+      "uniformNumber": "9",
       "team": "広島",
       "teams": [
         "広島"
@@ -2644,6 +2699,7 @@
       "year": "2025",
       "batterId": "",
       "player": "羽月隆太郎",
+      "uniformNumber": "0",
       "team": "広島",
       "teams": [
         "広島"
@@ -2690,6 +2746,7 @@
       "year": "2025",
       "batterId": "",
       "player": "菊池涼介",
+      "uniformNumber": "33",
       "team": "広島",
       "teams": [
         "広島"
@@ -2736,6 +2793,7 @@
       "year": "2025",
       "batterId": "",
       "player": "野間峻祥",
+      "uniformNumber": "37",
       "team": "広島",
       "teams": [
         "広島"
@@ -2782,6 +2840,7 @@
       "year": "2025",
       "batterId": "",
       "player": "オスナ",
+      "uniformNumber": "13",
       "team": "ヤクルト",
       "teams": [
         "ヤクルト"
@@ -2828,6 +2887,7 @@
       "year": "2025",
       "batterId": "",
       "player": "サンタナ",
+      "uniformNumber": "25",
       "team": "ヤクルト",
       "teams": [
         "ヤクルト"
@@ -2874,6 +2934,7 @@
       "year": "2025",
       "batterId": "",
       "player": "並木秀尊",
+      "uniformNumber": "0",
       "team": "ヤクルト",
       "teams": [
         "ヤクルト"
@@ -2920,6 +2981,7 @@
       "year": "2025",
       "batterId": "",
       "player": "中村悠平",
+      "uniformNumber": "27",
       "team": "ヤクルト",
       "teams": [
         "ヤクルト"
@@ -2966,6 +3028,7 @@
       "year": "2025",
       "batterId": "",
       "player": "伊藤琉偉",
+      "uniformNumber": "67",
       "team": "ヤクルト",
       "teams": [
         "ヤクルト"
@@ -3012,6 +3075,7 @@
       "year": "2025",
       "batterId": "",
       "player": "内山壮真",
+      "uniformNumber": "33",
       "team": "ヤクルト",
       "teams": [
         "ヤクルト"
@@ -3058,6 +3122,7 @@
       "year": "2025",
       "batterId": "",
       "player": "北村恵吾",
+      "uniformNumber": "50",
       "team": "ヤクルト",
       "teams": [
         "ヤクルト"
@@ -3104,6 +3169,7 @@
       "year": "2025",
       "batterId": "",
       "player": "北村拓己",
+      "uniformNumber": "38",
       "team": "ヤクルト",
       "teams": [
         "ヤクルト"
@@ -3150,6 +3216,7 @@
       "year": "2025",
       "batterId": "",
       "player": "古賀優大",
+      "uniformNumber": "2",
       "team": "ヤクルト",
       "teams": [
         "ヤクルト"
@@ -3196,6 +3263,7 @@
       "year": "2025",
       "batterId": "",
       "player": "増田珠",
+      "uniformNumber": "63",
       "team": "ヤクルト",
       "teams": [
         "ヤクルト"
@@ -3242,6 +3310,7 @@
       "year": "2025",
       "batterId": "",
       "player": "太田賢吾",
+      "uniformNumber": "46",
       "team": "ヤクルト",
       "teams": [
         "ヤクルト"
@@ -3288,6 +3357,7 @@
       "year": "2025",
       "batterId": "",
       "player": "山田哲人",
+      "uniformNumber": "1",
       "team": "ヤクルト",
       "teams": [
         "ヤクルト"
@@ -3334,6 +3404,7 @@
       "year": "2025",
       "batterId": "",
       "player": "岩田幸宏",
+      "uniformNumber": "64",
       "team": "ヤクルト",
       "teams": [
         "ヤクルト"
@@ -3380,6 +3451,7 @@
       "year": "2025",
       "batterId": "",
       "player": "村上宗隆",
+      "uniformNumber": "55",
       "team": "ヤクルト",
       "teams": [
         "ヤクルト"
@@ -3426,6 +3498,7 @@
       "year": "2025",
       "batterId": "",
       "player": "武岡龍世",
+      "uniformNumber": "60",
       "team": "ヤクルト",
       "teams": [
         "ヤクルト"
@@ -3472,6 +3545,7 @@
       "year": "2025",
       "batterId": "",
       "player": "茂木栄五郎",
+      "uniformNumber": "8",
       "team": "ヤクルト",
       "teams": [
         "ヤクルト"
@@ -3518,6 +3592,7 @@
       "year": "2025",
       "batterId": "",
       "player": "西川遥輝",
+      "uniformNumber": "3",
       "team": "ヤクルト",
       "teams": [
         "ヤクルト"
@@ -3564,6 +3639,7 @@
       "year": "2025",
       "batterId": "",
       "player": "赤羽由紘",
+      "uniformNumber": "0",
       "team": "ヤクルト",
       "teams": [
         "ヤクルト"
@@ -3610,6 +3686,7 @@
       "year": "2025",
       "batterId": "",
       "player": "長岡秀樹",
+      "uniformNumber": "7",
       "team": "ヤクルト",
       "teams": [
         "ヤクルト"
@@ -3656,6 +3733,7 @@
       "year": "2025",
       "batterId": "",
       "player": "カリステ",
+      "uniformNumber": "4",
       "team": "中日",
       "teams": [
         "中日"
@@ -3702,6 +3780,7 @@
       "year": "2025",
       "batterId": "",
       "player": "チェイビス",
+      "uniformNumber": "23",
       "team": "中日",
       "teams": [
         "中日"
@@ -3748,6 +3827,7 @@
       "year": "2025",
       "batterId": "",
       "player": "ブライト健太",
+      "uniformNumber": "42",
       "team": "中日",
       "teams": [
         "中日"
@@ -3794,6 +3874,7 @@
       "year": "2025",
       "batterId": "",
       "player": "ボスラー",
+      "uniformNumber": "24",
       "team": "中日",
       "teams": [
         "中日"
@@ -3840,6 +3921,7 @@
       "year": "2025",
       "batterId": "",
       "player": "上林誠知",
+      "uniformNumber": "51",
       "team": "中日",
       "teams": [
         "中日"
@@ -3886,6 +3968,7 @@
       "year": "2025",
       "batterId": "",
       "player": "山本泰寛",
+      "uniformNumber": "60",
       "team": "中日",
       "teams": [
         "中日"
@@ -3932,6 +4015,7 @@
       "year": "2025",
       "batterId": "",
       "player": "岡林勇希",
+      "uniformNumber": "1",
       "team": "中日",
       "teams": [
         "中日"
@@ -3978,6 +4062,7 @@
       "year": "2025",
       "batterId": "",
       "player": "木下拓哉",
+      "uniformNumber": "35",
       "team": "中日",
       "teams": [
         "中日"
@@ -4024,6 +4109,7 @@
       "year": "2025",
       "batterId": "",
       "player": "村松開人",
+      "uniformNumber": "5",
       "team": "中日",
       "teams": [
         "中日"
@@ -4070,6 +4156,7 @@
       "year": "2025",
       "batterId": "",
       "player": "板山祐太郎",
+      "uniformNumber": "63",
       "team": "中日",
       "teams": [
         "中日"
@@ -4116,6 +4203,7 @@
       "year": "2025",
       "batterId": "",
       "player": "田中幹也",
+      "uniformNumber": "2",
       "team": "中日",
       "teams": [
         "中日"
@@ -4162,6 +4250,7 @@
       "year": "2025",
       "batterId": "",
       "player": "石伊雄太",
+      "uniformNumber": "9",
       "team": "中日",
       "teams": [
         "中日"
@@ -4208,6 +4297,7 @@
       "year": "2025",
       "batterId": "",
       "player": "細川成也",
+      "uniformNumber": "55",
       "team": "中日",
       "teams": [
         "中日"
@@ -4254,6 +4344,7 @@
       "year": "2025",
       "batterId": "",
       "player": "ダウンズ",
+      "uniformNumber": "4",
       "team": "ソフトバンク",
       "teams": [
         "ソフトバンク"
@@ -4300,6 +4391,7 @@
       "year": "2025",
       "batterId": "",
       "player": "中村晃",
+      "uniformNumber": "7",
       "team": "ソフトバンク",
       "teams": [
         "ソフトバンク"
@@ -4346,6 +4438,7 @@
       "year": "2025",
       "batterId": "",
       "player": "今宮健太",
+      "uniformNumber": "6",
       "team": "ソフトバンク",
       "teams": [
         "ソフトバンク"
@@ -4392,6 +4485,7 @@
       "year": "2025",
       "batterId": "",
       "player": "佐藤直樹",
+      "uniformNumber": "30",
       "team": "ソフトバンク",
       "teams": [
         "ソフトバンク"
@@ -4438,6 +4532,7 @@
       "year": "2025",
       "batterId": "",
       "player": "周東佑京",
+      "uniformNumber": "23",
       "team": "ソフトバンク",
       "teams": [
         "ソフトバンク"
@@ -4484,6 +4579,7 @@
       "year": "2025",
       "batterId": "",
       "player": "山川穂高",
+      "uniformNumber": "5",
       "team": "ソフトバンク",
       "teams": [
         "ソフトバンク"
@@ -4530,6 +4626,7 @@
       "year": "2025",
       "batterId": "",
       "player": "嶺井博希",
+      "uniformNumber": "12",
       "team": "ソフトバンク",
       "teams": [
         "ソフトバンク"
@@ -4576,6 +4673,7 @@
       "year": "2025",
       "batterId": "",
       "player": "川瀬晃",
+      "uniformNumber": "0",
       "team": "ソフトバンク",
       "teams": [
         "ソフトバンク"
@@ -4622,6 +4720,7 @@
       "year": "2025",
       "batterId": "",
       "player": "柳町達",
+      "uniformNumber": "32",
       "team": "ソフトバンク",
       "teams": [
         "ソフトバンク"
@@ -4668,6 +4767,7 @@
       "year": "2025",
       "batterId": "",
       "player": "栗原陵矢",
+      "uniformNumber": "24",
       "team": "ソフトバンク",
       "teams": [
         "ソフトバンク"
@@ -4714,6 +4814,7 @@
       "year": "2025",
       "batterId": "",
       "player": "海野隆司",
+      "uniformNumber": "62",
       "team": "ソフトバンク",
       "teams": [
         "ソフトバンク"
@@ -4760,6 +4861,7 @@
       "year": "2025",
       "batterId": "",
       "player": "牧原大成",
+      "uniformNumber": "8",
       "team": "ソフトバンク",
       "teams": [
         "ソフトバンク"
@@ -4806,6 +4908,7 @@
       "year": "2025",
       "batterId": "",
       "player": "近藤健介",
+      "uniformNumber": "3",
       "team": "ソフトバンク",
       "teams": [
         "ソフトバンク"
@@ -4852,6 +4955,7 @@
       "year": "2025",
       "batterId": "",
       "player": "野村勇",
+      "uniformNumber": "99",
       "team": "ソフトバンク",
       "teams": [
         "ソフトバンク"
@@ -4898,6 +5002,7 @@
       "year": "2025",
       "batterId": "",
       "player": "レイエス",
+      "uniformNumber": "99",
       "team": "日本ハム",
       "teams": [
         "日本ハム"
@@ -4944,6 +5049,7 @@
       "year": "2025",
       "batterId": "",
       "player": "万波中正",
+      "uniformNumber": "66",
       "team": "日本ハム",
       "teams": [
         "日本ハム"
@@ -4990,6 +5096,7 @@
       "year": "2025",
       "batterId": "",
       "player": "五十幡亮汰",
+      "uniformNumber": "50",
       "team": "日本ハム",
       "teams": [
         "日本ハム"
@@ -5036,6 +5143,7 @@
       "year": "2025",
       "batterId": "",
       "player": "伏見寅威",
+      "uniformNumber": "23",
       "team": "日本ハム",
       "teams": [
         "日本ハム"
@@ -5082,6 +5190,7 @@
       "year": "2025",
       "batterId": "",
       "player": "吉田賢吾",
+      "uniformNumber": "60",
       "team": "日本ハム",
       "teams": [
         "日本ハム"
@@ -5128,6 +5237,7 @@
       "year": "2025",
       "batterId": "",
       "player": "山縣秀",
+      "uniformNumber": "54",
       "team": "日本ハム",
       "teams": [
         "日本ハム"
@@ -5174,6 +5284,7 @@
       "year": "2025",
       "batterId": "",
       "player": "松本剛",
+      "uniformNumber": "7",
       "team": "日本ハム",
       "teams": [
         "日本ハム"
@@ -5220,6 +5331,7 @@
       "year": "2025",
       "batterId": "",
       "player": "水谷瞬",
+      "uniformNumber": "53",
       "team": "日本ハム",
       "teams": [
         "日本ハム"
@@ -5266,6 +5378,7 @@
       "year": "2025",
       "batterId": "",
       "player": "水野達稀",
+      "uniformNumber": "43",
       "team": "日本ハム",
       "teams": [
         "日本ハム"
@@ -5312,6 +5425,7 @@
       "year": "2025",
       "batterId": "",
       "player": "清宮幸太郎",
+      "uniformNumber": "21",
       "team": "日本ハム",
       "teams": [
         "日本ハム"
@@ -5358,6 +5472,7 @@
       "year": "2025",
       "batterId": "",
       "player": "田宮裕涼",
+      "uniformNumber": "64",
       "team": "日本ハム",
       "teams": [
         "日本ハム"
@@ -5404,6 +5519,7 @@
       "year": "2025",
       "batterId": "",
       "player": "矢澤宏太",
+      "uniformNumber": "12",
       "team": "日本ハム",
       "teams": [
         "日本ハム"
@@ -5450,6 +5566,7 @@
       "year": "2025",
       "batterId": "",
       "player": "石井一成",
+      "uniformNumber": "38",
       "team": "日本ハム",
       "teams": [
         "日本ハム"
@@ -5496,6 +5613,7 @@
       "year": "2025",
       "batterId": "",
       "player": "郡司裕也",
+      "uniformNumber": "30",
       "team": "日本ハム",
       "teams": [
         "日本ハム"
@@ -5542,6 +5660,7 @@
       "year": "2025",
       "batterId": "",
       "player": "野村佑希",
+      "uniformNumber": "5",
       "team": "日本ハム",
       "teams": [
         "日本ハム"
@@ -5588,6 +5707,7 @@
       "year": "2025",
       "batterId": "",
       "player": "ソト",
+      "uniformNumber": "99",
       "team": "ロッテ",
       "teams": [
         "ロッテ"
@@ -5634,6 +5754,7 @@
       "year": "2025",
       "batterId": "",
       "player": "ポランコ",
+      "uniformNumber": "22",
       "team": "ロッテ",
       "teams": [
         "ロッテ"
@@ -5680,6 +5801,7 @@
       "year": "2025",
       "batterId": "",
       "player": "上田希由翔",
+      "uniformNumber": "10",
       "team": "ロッテ",
       "teams": [
         "ロッテ"
@@ -5726,6 +5848,7 @@
       "year": "2025",
       "batterId": "",
       "player": "佐藤都志也",
+      "uniformNumber": "32",
       "team": "ロッテ",
       "teams": [
         "ロッテ"
@@ -5772,6 +5895,7 @@
       "year": "2025",
       "batterId": "",
       "player": "友杉篤輝",
+      "uniformNumber": "4",
       "team": "ロッテ",
       "teams": [
         "ロッテ"
@@ -5818,6 +5942,7 @@
       "year": "2025",
       "batterId": "",
       "player": "安田尚憲",
+      "uniformNumber": "5",
       "team": "ロッテ",
       "teams": [
         "ロッテ"
@@ -5864,6 +5989,7 @@
       "year": "2025",
       "batterId": "",
       "player": "寺地隆成",
+      "uniformNumber": "65",
       "team": "ロッテ",
       "teams": [
         "ロッテ"
@@ -5910,6 +6036,7 @@
       "year": "2025",
       "batterId": "",
       "player": "小川龍成",
+      "uniformNumber": "57",
       "team": "ロッテ",
       "teams": [
         "ロッテ"
@@ -5956,6 +6083,7 @@
       "year": "2025",
       "batterId": "",
       "player": "山口航輝",
+      "uniformNumber": "51",
       "team": "ロッテ",
       "teams": [
         "ロッテ"
@@ -6002,6 +6130,7 @@
       "year": "2025",
       "batterId": "",
       "player": "山本大斗",
+      "uniformNumber": "61",
       "team": "ロッテ",
       "teams": [
         "ロッテ"
@@ -6048,6 +6177,7 @@
       "year": "2025",
       "batterId": "",
       "player": "岡大海",
+      "uniformNumber": "25",
       "team": "ロッテ",
       "teams": [
         "ロッテ"
@@ -6094,6 +6224,7 @@
       "year": "2025",
       "batterId": "",
       "player": "池田来翔",
+      "uniformNumber": "0",
       "team": "ロッテ",
       "teams": [
         "ロッテ"
@@ -6140,6 +6271,7 @@
       "year": "2025",
       "batterId": "",
       "player": "藤原恭大",
+      "uniformNumber": "1",
       "team": "ロッテ",
       "teams": [
         "ロッテ"
@@ -6186,6 +6318,7 @@
       "year": "2025",
       "batterId": "",
       "player": "藤岡裕大",
+      "uniformNumber": "7",
       "team": "ロッテ",
       "teams": [
         "ロッテ"
@@ -6232,6 +6365,7 @@
       "year": "2025",
       "batterId": "",
       "player": "西川史礁",
+      "uniformNumber": "6",
       "team": "ロッテ",
       "teams": [
         "ロッテ"
@@ -6278,6 +6412,7 @@
       "year": "2025",
       "batterId": "",
       "player": "髙部瑛斗",
+      "uniformNumber": "38",
       "team": "ロッテ",
       "teams": [
         "ロッテ"
@@ -6324,6 +6459,7 @@
       "year": "2025",
       "batterId": "",
       "player": "ディアス",
+      "uniformNumber": "54",
       "team": "オリックス",
       "teams": [
         "オリックス"
@@ -6370,6 +6506,7 @@
       "year": "2025",
       "batterId": "",
       "player": "中川圭太",
+      "uniformNumber": "67",
       "team": "オリックス",
       "teams": [
         "オリックス"
@@ -6416,6 +6553,7 @@
       "year": "2025",
       "batterId": "",
       "player": "太田椋",
+      "uniformNumber": "31",
       "team": "オリックス",
       "teams": [
         "オリックス"
@@ -6462,6 +6600,7 @@
       "year": "2025",
       "batterId": "",
       "player": "宗佑磨",
+      "uniformNumber": "6",
       "team": "オリックス",
       "teams": [
         "オリックス"
@@ -6508,6 +6647,7 @@
       "year": "2025",
       "batterId": "",
       "player": "廣岡大志",
+      "uniformNumber": "30",
       "team": "オリックス",
       "teams": [
         "オリックス"
@@ -6554,6 +6694,7 @@
       "year": "2025",
       "batterId": "",
       "player": "杉本裕太郎",
+      "uniformNumber": "99",
       "team": "オリックス",
       "teams": [
         "オリックス"
@@ -6600,6 +6741,7 @@
       "year": "2025",
       "batterId": "",
       "player": "来田涼斗",
+      "uniformNumber": "38",
       "team": "オリックス",
       "teams": [
         "オリックス"
@@ -6646,6 +6788,7 @@
       "year": "2025",
       "batterId": "",
       "player": "森友哉",
+      "uniformNumber": "4",
       "team": "オリックス",
       "teams": [
         "オリックス"
@@ -6692,6 +6835,7 @@
       "year": "2025",
       "batterId": "",
       "player": "紅林弘太郎",
+      "uniformNumber": "24",
       "team": "オリックス",
       "teams": [
         "オリックス"
@@ -6738,6 +6882,7 @@
       "year": "2025",
       "batterId": "",
       "player": "若月健矢",
+      "uniformNumber": "2",
       "team": "オリックス",
       "teams": [
         "オリックス"
@@ -6784,6 +6929,7 @@
       "year": "2025",
       "batterId": "",
       "player": "西川龍馬",
+      "uniformNumber": "7",
       "team": "オリックス",
       "teams": [
         "オリックス"
@@ -6830,6 +6976,7 @@
       "year": "2025",
       "batterId": "",
       "player": "西野真弘",
+      "uniformNumber": "5",
       "team": "オリックス",
       "teams": [
         "オリックス"
@@ -6876,6 +7023,7 @@
       "year": "2025",
       "batterId": "",
       "player": "頓宮裕真",
+      "uniformNumber": "44",
       "team": "オリックス",
       "teams": [
         "オリックス"
@@ -6922,6 +7070,7 @@
       "year": "2025",
       "batterId": "",
       "player": "麦谷祐介",
+      "uniformNumber": "8",
       "team": "オリックス",
       "teams": [
         "オリックス"
@@ -6968,6 +7117,7 @@
       "year": "2025",
       "batterId": "",
       "player": "セデーニョ",
+      "uniformNumber": "40",
       "team": "西武",
       "teams": [
         "西武"
@@ -7014,6 +7164,7 @@
       "year": "2025",
       "batterId": "",
       "player": "デービス",
+      "uniformNumber": "10",
       "team": "西武",
       "teams": [
         "西武"
@@ -7060,6 +7211,7 @@
       "year": "2025",
       "batterId": "",
       "player": "ネビン",
+      "uniformNumber": "26",
       "team": "西武",
       "teams": [
         "西武"
@@ -7106,6 +7258,7 @@
       "year": "2025",
       "batterId": "",
       "player": "古賀悠斗",
+      "uniformNumber": "22",
       "team": "西武",
       "teams": [
         "西武"
@@ -7152,6 +7305,7 @@
       "year": "2025",
       "batterId": "",
       "player": "外崎修汰",
+      "uniformNumber": "5",
       "team": "西武",
       "teams": [
         "西武"
@@ -7198,6 +7352,7 @@
       "year": "2025",
       "batterId": "",
       "player": "山村崇嘉",
+      "uniformNumber": "32",
       "team": "西武",
       "teams": [
         "西武"
@@ -7244,6 +7399,7 @@
       "year": "2025",
       "batterId": "",
       "player": "平沼翔太",
+      "uniformNumber": "31",
       "team": "西武",
       "teams": [
         "西武"
@@ -7290,6 +7446,7 @@
       "year": "2025",
       "batterId": "",
       "player": "渡部聖弥",
+      "uniformNumber": "8",
       "team": "西武",
       "teams": [
         "西武"
@@ -7336,6 +7493,7 @@
       "year": "2025",
       "batterId": "",
       "player": "源田壮亮",
+      "uniformNumber": "6",
       "team": "西武",
       "teams": [
         "西武"
@@ -7382,6 +7540,7 @@
       "year": "2025",
       "batterId": "",
       "player": "滝澤夏央",
+      "uniformNumber": "62",
       "team": "西武",
       "teams": [
         "西武"
@@ -7428,6 +7587,7 @@
       "year": "2025",
       "batterId": "",
       "player": "西川愛也",
+      "uniformNumber": "51",
       "team": "西武",
       "teams": [
         "西武"
@@ -7474,6 +7634,7 @@
       "year": "2025",
       "batterId": "",
       "player": "長谷川信哉",
+      "uniformNumber": "63",
       "team": "西武",
       "teams": [
         "西武"
@@ -7520,6 +7681,7 @@
       "year": "2025",
       "batterId": "",
       "player": "ゴンザレス",
+      "uniformNumber": "12",
       "team": "東北楽天",
       "teams": [
         "東北楽天"
@@ -7566,6 +7728,7 @@
       "year": "2025",
       "batterId": "",
       "player": "フランコ",
+      "uniformNumber": "23",
       "team": "東北楽天",
       "teams": [
         "東北楽天"
@@ -7612,6 +7775,7 @@
       "year": "2025",
       "batterId": "",
       "player": "ボイト",
+      "uniformNumber": "9",
       "team": "東北楽天",
       "teams": [
         "東北楽天"
@@ -7658,6 +7822,7 @@
       "year": "2025",
       "batterId": "",
       "player": "中島大輔",
+      "uniformNumber": "32",
       "team": "東北楽天",
       "teams": [
         "東北楽天"
@@ -7704,6 +7869,7 @@
       "year": "2025",
       "batterId": "",
       "player": "伊藤裕季也",
+      "uniformNumber": "39",
       "team": "東北楽天",
       "teams": [
         "東北楽天"
@@ -7750,6 +7916,7 @@
       "year": "2025",
       "batterId": "",
       "player": "堀内謙伍",
+      "uniformNumber": "65",
       "team": "東北楽天",
       "teams": [
         "東北楽天"
@@ -7796,6 +7963,7 @@
       "year": "2025",
       "batterId": "",
       "player": "太田光",
+      "uniformNumber": "2",
       "team": "東北楽天",
       "teams": [
         "東北楽天"
@@ -7842,6 +8010,7 @@
       "year": "2025",
       "batterId": "",
       "player": "宗山塁",
+      "uniformNumber": "1",
       "team": "東北楽天",
       "teams": [
         "東北楽天"
@@ -7888,6 +8057,7 @@
       "year": "2025",
       "batterId": "",
       "player": "小深田大翔",
+      "uniformNumber": "0",
       "team": "東北楽天",
       "teams": [
         "東北楽天"
@@ -7934,6 +8104,7 @@
       "year": "2025",
       "batterId": "",
       "player": "小郷裕哉",
+      "uniformNumber": "51",
       "team": "東北楽天",
       "teams": [
         "東北楽天"
@@ -7980,6 +8151,7 @@
       "year": "2025",
       "batterId": "",
       "player": "村林一輝",
+      "uniformNumber": "6",
       "team": "東北楽天",
       "teams": [
         "東北楽天"
@@ -8026,6 +8198,7 @@
       "year": "2025",
       "batterId": "",
       "player": "武藤敦貴",
+      "uniformNumber": "50",
       "team": "東北楽天",
       "teams": [
         "東北楽天"
@@ -8072,6 +8245,7 @@
       "year": "2025",
       "batterId": "",
       "player": "浅村栄斗",
+      "uniformNumber": "3",
       "team": "東北楽天",
       "teams": [
         "東北楽天"
@@ -8118,6 +8292,7 @@
       "year": "2025",
       "batterId": "",
       "player": "渡邊佳明",
+      "uniformNumber": "48",
       "team": "東北楽天",
       "teams": [
         "東北楽天"
@@ -8164,6 +8339,7 @@
       "year": "2025",
       "batterId": "",
       "player": "辰己涼介",
+      "uniformNumber": "8",
       "team": "東北楽天",
       "teams": [
         "東北楽天"
@@ -8210,6 +8386,7 @@
       "year": "2025",
       "batterId": "",
       "player": "鈴木大地",
+      "uniformNumber": "7",
       "team": "東北楽天",
       "teams": [
         "東北楽天"
@@ -8256,6 +8433,7 @@
       "year": "2025",
       "batterId": "",
       "player": "阿部寿樹",
+      "uniformNumber": "4",
       "team": "東北楽天",
       "teams": [
         "東北楽天"
@@ -8302,6 +8480,7 @@
       "year": "2025",
       "batterId": "",
       "player": "黒川史陽",
+      "uniformNumber": "24",
       "team": "東北楽天",
       "teams": [
         "東北楽天"
@@ -8348,6 +8527,7 @@
       "year": "2026",
       "batterId": "2117509",
       "player": "ウィットリー",
+      "uniformNumber": "",
       "team": "巨人",
       "teams": [
         "巨人"
@@ -9201,6 +9381,7 @@
       "year": "2026",
       "batterId": "2118420",
       "player": "キャベッジ",
+      "uniformNumber": "13",
       "team": "巨人",
       "teams": [
         "巨人"
@@ -10700,6 +10881,7 @@
       "year": "2026",
       "batterId": "1561820",
       "player": "ダルベック",
+      "uniformNumber": "29",
       "team": "巨人",
       "teams": [
         "巨人"
@@ -12180,6 +12362,7 @@
       "year": "2026",
       "batterId": "2100531",
       "player": "ティマ",
+      "uniformNumber": "",
       "team": "巨人",
       "teams": [
         "巨人"
@@ -13002,6 +13185,7 @@
       "year": "2026",
       "batterId": "1961886",
       "player": "ハワード",
+      "uniformNumber": "",
       "team": "巨人",
       "teams": [
         "巨人"
@@ -13380,6 +13564,7 @@
       "year": "2026",
       "batterId": "2122496",
       "player": "マタ",
+      "uniformNumber": "",
       "team": "巨人",
       "teams": [
         "巨人"
@@ -13863,6 +14048,7 @@
       "year": "2026",
       "batterId": "1700010",
       "player": "マルティネス",
+      "uniformNumber": "",
       "team": "巨人",
       "teams": [
         "巨人"
@@ -14042,6 +14228,7 @@
       "year": "2026",
       "batterId": "1700136",
       "player": "リチャード",
+      "uniformNumber": "52",
       "team": "巨人",
       "teams": [
         "巨人"
@@ -14582,6 +14769,7 @@
       "year": "2026",
       "batterId": "1960444",
       "player": "ルシアーノ",
+      "uniformNumber": "",
       "team": "巨人",
       "teams": [
         "巨人"
@@ -14761,6 +14949,7 @@
       "year": "2026",
       "batterId": "2000007",
       "player": "中山 礼都",
+      "uniformNumber": "40",
       "team": "巨人",
       "teams": [
         "巨人"
@@ -16013,6 +16202,7 @@
       "year": "2026",
       "batterId": "1500052",
       "player": "中川 皓太",
+      "uniformNumber": "",
       "team": "巨人",
       "teams": [
         "巨人"
@@ -16236,6 +16426,7 @@
       "year": "2026",
       "batterId": "800043",
       "player": "丸 佳浩",
+      "uniformNumber": "8",
       "team": "巨人",
       "teams": [
         "巨人"
@@ -17450,6 +17641,7 @@
       "year": "2026",
       "batterId": "1900019",
       "player": "井上 温大",
+      "uniformNumber": "",
       "team": "巨人",
       "teams": [
         "巨人"
@@ -18259,6 +18451,7 @@
       "year": "2026",
       "batterId": "2106178",
       "player": "佐々木 俊輔",
+      "uniformNumber": "44",
       "team": "巨人",
       "teams": [
         "巨人"
@@ -19720,6 +19913,7 @@
       "year": "2026",
       "batterId": "1200117",
       "player": "則本 昂大",
+      "uniformNumber": "",
       "team": "巨人",
       "teams": [
         "巨人"
@@ -20491,6 +20685,7 @@
       "year": "2026",
       "batterId": "1700029",
       "player": "北浦 竜次",
+      "uniformNumber": "",
       "team": "巨人",
       "teams": [
         "巨人"
@@ -20626,6 +20821,7 @@
       "year": "2026",
       "batterId": "2108022",
       "player": "又木 鉄平",
+      "uniformNumber": "",
       "team": "巨人",
       "teams": [
         "巨人"
@@ -21042,6 +21238,7 @@
       "year": "2026",
       "batterId": "1600059",
       "player": "吉川 尚輝",
+      "uniformNumber": "2",
       "team": "巨人",
       "teams": [
         "巨人"
@@ -22326,6 +22523,7 @@
       "year": "2026",
       "batterId": "700003",
       "player": "坂本 勇人",
+      "uniformNumber": "6",
       "team": "巨人",
       "teams": [
         "巨人"
@@ -23711,6 +23909,7 @@
       "year": "2026",
       "batterId": "1900016",
       "player": "堀田 賢慎",
+      "uniformNumber": "",
       "team": "巨人",
       "teams": [
         "巨人"
@@ -23846,6 +24045,7 @@
       "year": "2026",
       "batterId": "1500054",
       "player": "増田 大輝",
+      "uniformNumber": "0",
       "team": "巨人",
       "teams": [
         "巨人"
@@ -24446,6 +24646,7 @@
       "year": "2026",
       "batterId": "1800024",
       "player": "増田 陸",
+      "uniformNumber": "61",
       "team": "巨人",
       "teams": [
         "巨人"
@@ -25616,6 +25817,7 @@
       "year": "2026",
       "batterId": "2103697",
       "player": "大勢",
+      "uniformNumber": "",
       "team": "巨人",
       "teams": [
         "巨人"
@@ -25839,6 +26041,7 @@
       "year": "2026",
       "batterId": "1700044",
       "player": "大城 卓三",
+      "uniformNumber": "24",
       "team": "巨人",
       "teams": [
         "巨人"
@@ -27218,6 +27421,7 @@
       "year": "2026",
       "batterId": "2107764",
       "player": "宇都宮 葵星",
+      "uniformNumber": "68",
       "team": "巨人",
       "teams": [
         "巨人"
@@ -27628,6 +27832,7 @@
       "year": "2026",
       "batterId": "2117397",
       "player": "宮原 駿介",
+      "uniformNumber": "",
       "team": "巨人",
       "teams": [
         "巨人"
@@ -27719,6 +27924,7 @@
       "year": "2026",
       "batterId": "1300027",
       "player": "小林 誠司",
+      "uniformNumber": "22",
       "team": "巨人",
       "teams": [
         "巨人"
@@ -28420,6 +28626,7 @@
       "year": "2026",
       "batterId": "2110991",
       "player": "小濱 佑斗",
+      "uniformNumber": "33",
       "team": "巨人",
       "teams": [
         "巨人"
@@ -29457,6 +29664,7 @@
       "year": "2026",
       "batterId": "2119000",
       "player": "山城 京平",
+      "uniformNumber": "",
       "team": "巨人",
       "teams": [
         "巨人"
@@ -29548,6 +29756,7 @@
       "year": "2026",
       "batterId": "1900020",
       "player": "山瀬 慎之助",
+      "uniformNumber": "67",
       "team": "巨人",
       "teams": [
         "巨人"
@@ -30202,6 +30411,7 @@
       "year": "2026",
       "batterId": "1700043",
       "player": "岸田 行倫",
+      "uniformNumber": "27",
       "team": "巨人",
       "teams": [
         "巨人"
@@ -31568,6 +31778,7 @@
       "year": "2026",
       "batterId": "2112330",
       "player": "平山 功太",
+      "uniformNumber": "69",
       "team": "巨人",
       "teams": [
         "巨人"
@@ -32713,6 +32924,7 @@
       "year": "2026",
       "batterId": "1800028",
       "player": "戸郷 翔征",
+      "uniformNumber": "",
       "team": "巨人",
       "teams": [
         "巨人"
@@ -33386,6 +33598,7 @@
       "year": "2026",
       "batterId": "1100095",
       "player": "松本 剛",
+      "uniformNumber": "9",
       "team": "巨人",
       "teams": [
         "巨人"
@@ -34733,6 +34946,7 @@
       "year": "2026",
       "batterId": "1450977",
       "player": "森田 駿哉",
+      "uniformNumber": "",
       "team": "巨人",
       "teams": [
         "巨人"
@@ -35168,6 +35382,7 @@
       "year": "2026",
       "batterId": "1800111",
       "player": "泉 圭輔",
+      "uniformNumber": "",
       "team": "巨人",
       "teams": [
         "巨人"
@@ -35303,6 +35518,7 @@
       "year": "2026",
       "batterId": "1750321",
       "player": "泉口 友汰",
+      "uniformNumber": "35",
       "team": "巨人",
       "teams": [
         "巨人"
@@ -36726,6 +36942,7 @@
       "year": "2026",
       "batterId": "2102410",
       "player": "浅野 翔吾",
+      "uniformNumber": "51",
       "team": "巨人",
       "teams": [
         "巨人"
@@ -37491,6 +37708,7 @@
       "year": "2026",
       "batterId": "1951153",
       "player": "浦田 俊輔",
+      "uniformNumber": "32",
       "team": "巨人",
       "teams": [
         "巨人"
@@ -38914,6 +39132,7 @@
       "year": "2026",
       "batterId": "700069",
       "player": "田中 将大",
+      "uniformNumber": "",
       "team": "巨人",
       "teams": [
         "巨人"
@@ -39818,6 +40037,7 @@
       "year": "2026",
       "batterId": "1700027",
       "player": "田中 瑛斗",
+      "uniformNumber": "",
       "team": "巨人",
       "teams": [
         "巨人"
@@ -40041,6 +40261,7 @@
       "year": "2026",
       "batterId": "2118291",
       "player": "田和 廉",
+      "uniformNumber": "",
       "team": "巨人",
       "teams": [
         "巨人"
@@ -40264,6 +40485,7 @@
       "year": "2026",
       "batterId": "1000176",
       "player": "甲斐 拓也",
+      "uniformNumber": "",
       "team": "巨人",
       "teams": [
         "巨人"
@@ -40355,6 +40577,7 @@
       "year": "2026",
       "batterId": "2102672",
       "player": "皆川 岳飛",
+      "uniformNumber": "39",
       "team": "巨人",
       "teams": [
         "巨人"
@@ -41076,6 +41299,7 @@
       "year": "2026",
       "batterId": "2116069",
       "player": "石塚 裕惺",
+      "uniformNumber": "23",
       "team": "巨人",
       "teams": [
         "巨人"
@@ -41711,6 +41935,7 @@
       "year": "2026",
       "batterId": "2000040",
       "player": "石川 達也",
+      "uniformNumber": "",
       "team": "巨人",
       "teams": [
         "巨人"
@@ -41890,6 +42115,7 @@
       "year": "2026",
       "batterId": "2118993",
       "player": "竹丸 和幸",
+      "uniformNumber": "",
       "team": "巨人",
       "teams": [
         "巨人"
@@ -42648,6 +42874,7 @@
       "year": "2026",
       "batterId": "1450689",
       "player": "船迫 大雅",
+      "uniformNumber": "",
       "team": "巨人",
       "teams": [
         "巨人"
@@ -42871,6 +43098,7 @@
       "year": "2026",
       "batterId": "2000070",
       "player": "若林 楽人",
+      "uniformNumber": "59",
       "team": "巨人",
       "teams": [
         "巨人"
@@ -43832,6 +44060,7 @@
       "year": "2026",
       "batterId": "2105013",
       "player": "萩尾 匡也",
+      "uniformNumber": "12",
       "team": "巨人",
       "teams": [
         "巨人"
@@ -44182,6 +44411,7 @@
       "year": "2026",
       "batterId": "1850035",
       "player": "西舘 勇陽",
+      "uniformNumber": "",
       "team": "巨人",
       "teams": [
         "巨人"
@@ -44481,6 +44711,7 @@
       "year": "2026",
       "batterId": "2103689",
       "player": "赤星 優志",
+      "uniformNumber": "",
       "team": "巨人",
       "teams": [
         "巨人"
@@ -44947,6 +45178,7 @@
       "year": "2026",
       "batterId": "2107874",
       "player": "門脇 誠",
+      "uniformNumber": "5",
       "team": "巨人",
       "teams": [
         "巨人"
@@ -46009,6 +46241,7 @@
       "year": "2026",
       "batterId": "1600100",
       "player": "高梨 雄平",
+      "uniformNumber": "",
       "team": "巨人",
       "teams": [
         "巨人"
@@ -46144,6 +46377,7 @@
       "year": "2026",
       "batterId": "2117293",
       "player": "ディベイニー",
+      "uniformNumber": "24",
       "team": "阪神",
       "teams": [
         "阪神"
@@ -46779,6 +47013,7 @@
       "year": "2026",
       "batterId": "1600033",
       "player": "ドリス",
+      "uniformNumber": "",
       "team": "阪神",
       "teams": [
         "阪神"
@@ -47002,6 +47237,7 @@
       "year": "2026",
       "batterId": "2108105",
       "player": "モレッタ",
+      "uniformNumber": "",
       "team": "阪神",
       "teams": [
         "阪神"
@@ -47181,6 +47417,7 @@
       "year": "2026",
       "batterId": "2117268",
       "player": "ルーカス",
+      "uniformNumber": "",
       "team": "阪神",
       "teams": [
         "阪神"
@@ -47645,6 +47882,7 @@
       "year": "2026",
       "batterId": "2100253",
       "player": "中川 勇斗",
+      "uniformNumber": "68",
       "team": "阪神",
       "teams": [
         "阪神"
@@ -48505,6 +48743,7 @@
       "year": "2026",
       "batterId": "2000056",
       "player": "中野 拓夢",
+      "uniformNumber": "7",
       "team": "阪神",
       "teams": [
         "阪神"
@@ -49890,6 +50129,7 @@
       "year": "2026",
       "batterId": "2104697",
       "player": "井坪 陽生",
+      "uniformNumber": "40",
       "team": "阪神",
       "teams": [
         "阪神"
@@ -50262,6 +50502,7 @@
       "year": "2026",
       "batterId": "1850363",
       "player": "伊原 陵人",
+      "uniformNumber": "",
       "team": "阪神",
       "teams": [
         "阪神"
@@ -50691,6 +50932,7 @@
       "year": "2026",
       "batterId": "2000052",
       "player": "伊藤 将司",
+      "uniformNumber": "",
       "team": "阪神",
       "teams": [
         "阪神"
@@ -50971,6 +51213,7 @@
       "year": "2026",
       "batterId": "1200100",
       "player": "伏見 寅威",
+      "uniformNumber": "17",
       "team": "阪神",
       "teams": [
         "阪神"
@@ -52223,6 +52466,7 @@
       "year": "2026",
       "batterId": "2000051",
       "player": "佐藤 輝明",
+      "uniformNumber": "8",
       "team": "阪神",
       "teams": [
         "阪神"
@@ -53551,6 +53795,7 @@
       "year": "2026",
       "batterId": "2000027",
       "player": "元山 飛優",
+      "uniformNumber": "0",
       "team": "阪神",
       "teams": [
         "阪神"
@@ -54129,6 +54374,7 @@
       "year": "2026",
       "batterId": "1950996",
       "player": "前川 右京",
+      "uniformNumber": "58",
       "team": "阪神",
       "teams": [
         "阪神"
@@ -55280,6 +55526,7 @@
       "year": "2026",
       "batterId": "1900046",
       "player": "及川 雅貴",
+      "uniformNumber": "",
       "team": "阪神",
       "teams": [
         "阪神"
@@ -55503,6 +55750,7 @@
       "year": "2026",
       "batterId": "1500087",
       "player": "坂本 誠志郎",
+      "uniformNumber": "12",
       "team": "阪神",
       "teams": [
         "阪神"
@@ -56774,6 +57022,7 @@
       "year": "2026",
       "batterId": "1600113",
       "player": "大山 悠輔",
+      "uniformNumber": "3",
       "team": "阪神",
       "teams": [
         "阪神"
@@ -58102,6 +58351,7 @@
       "year": "2026",
       "batterId": "1700137",
       "player": "大竹 耕太郎",
+      "uniformNumber": "",
       "team": "阪神",
       "teams": [
         "阪神"
@@ -58892,6 +59142,7 @@
       "year": "2026",
       "batterId": "2106172",
       "player": "富田 蓮",
+      "uniformNumber": "",
       "team": "阪神",
       "teams": [
         "阪神"
@@ -58983,6 +59234,7 @@
       "year": "2026",
       "batterId": "1800066",
       "player": "小幡 竜平",
+      "uniformNumber": "38",
       "team": "阪神",
       "teams": [
         "阪神"
@@ -60140,6 +60392,7 @@
       "year": "2026",
       "batterId": "1900050",
       "player": "小野寺 暖",
+      "uniformNumber": "60",
       "team": "阪神",
       "teams": [
         "阪神"
@@ -61044,6 +61297,7 @@
       "year": "2026",
       "batterId": "2118997",
       "player": "岡城 快生",
+      "uniformNumber": "34",
       "team": "阪神",
       "teams": [
         "阪神"
@@ -61967,6 +62221,7 @@
       "year": "2026",
       "batterId": "1300075",
       "player": "岩崎 優",
+      "uniformNumber": "",
       "team": "阪神",
       "teams": [
         "阪神"
@@ -62190,6 +62445,7 @@
       "year": "2026",
       "batterId": "1300070",
       "player": "岩貞 祐太",
+      "uniformNumber": "",
       "team": "阪神",
       "teams": [
         "阪神"
@@ -62281,6 +62537,7 @@
       "year": "2026",
       "batterId": "1700080",
       "player": "島田 海吏",
+      "uniformNumber": "53",
       "team": "阪神",
       "teams": [
         "阪神"
@@ -62751,6 +63008,7 @@
       "year": "2026",
       "batterId": "2109980",
       "player": "嶋村 麟士朗",
+      "uniformNumber": "85",
       "team": "阪神",
       "teams": [
         "阪神"
@@ -63940,6 +64198,7 @@
       "year": "2026",
       "batterId": "2112146",
       "player": "工藤 泰成",
+      "uniformNumber": "",
       "team": "阪神",
       "teams": [
         "阪神"
@@ -64119,6 +64378,7 @@
       "year": "2026",
       "batterId": "1600115",
       "player": "才木 浩人",
+      "uniformNumber": "",
       "team": "阪神",
       "teams": [
         "阪神"
@@ -64991,6 +65251,7 @@
       "year": "2026",
       "batterId": "2112127",
       "player": "早川 太貴",
+      "uniformNumber": "",
       "team": "阪神",
       "teams": [
         "阪神"
@@ -65451,6 +65712,7 @@
       "year": "2026",
       "batterId": "2112444",
       "player": "木下 里都",
+      "uniformNumber": "",
       "team": "阪神",
       "teams": [
         "阪神"
@@ -65819,6 +66081,7 @@
       "year": "2026",
       "batterId": "1800067",
       "player": "木浪 聖也",
+      "uniformNumber": "0",
       "team": "阪神",
       "teams": [
         "阪神"
@@ -67052,6 +67315,7 @@
       "year": "2026",
       "batterId": "2000055",
       "player": "村上 頌樹",
+      "uniformNumber": "",
       "team": "阪神",
       "teams": [
         "阪神"
@@ -68000,6 +68264,7 @@
       "year": "2026",
       "batterId": "2103707",
       "player": "桐敷 拓馬",
+      "uniformNumber": "",
       "team": "阪神",
       "teams": [
         "阪神"
@@ -68179,6 +68444,7 @@
       "year": "2026",
       "batterId": "1300073",
       "player": "梅野 隆太郎",
+      "uniformNumber": "2",
       "team": "阪神",
       "teams": [
         "阪神"
@@ -69121,6 +69387,7 @@
       "year": "2026",
       "batterId": "1850183",
       "player": "森下 翔太",
+      "uniformNumber": "1",
       "team": "阪神",
       "teams": [
         "阪神"
@@ -70506,6 +70773,7 @@
       "year": "2026",
       "batterId": "1400172",
       "player": "植田 海",
+      "uniformNumber": "62",
       "team": "阪神",
       "teams": [
         "阪神"
@@ -70931,6 +71199,7 @@
       "year": "2026",
       "batterId": "2105582",
       "player": "椎葉 剛",
+      "uniformNumber": "",
       "team": "阪神",
       "teams": [
         "阪神"
@@ -71211,6 +71480,7 @@
       "year": "2026",
       "batterId": "2000054",
       "player": "榮枝 裕貴",
+      "uniformNumber": "",
       "team": "阪神",
       "teams": [
         "阪神"
@@ -71302,6 +71572,7 @@
       "year": "2026",
       "batterId": "2112141",
       "player": "津田 淳哉",
+      "uniformNumber": "",
       "team": "阪神",
       "teams": [
         "阪神"
@@ -71393,6 +71664,7 @@
       "year": "2026",
       "batterId": "1800070",
       "player": "湯浅 京己",
+      "uniformNumber": "",
       "team": "阪神",
       "teams": [
         "阪神"
@@ -71616,6 +71888,7 @@
       "year": "2026",
       "batterId": "1800036",
       "player": "濱田 太貴",
+      "uniformNumber": "32",
       "team": "阪神",
       "teams": [
         "阪神"
@@ -72387,6 +72660,7 @@
       "year": "2026",
       "batterId": "1700079",
       "player": "熊谷 敬宥",
+      "uniformNumber": "4",
       "team": "阪神",
       "teams": [
         "阪神"
@@ -73677,6 +73951,7 @@
       "year": "2026",
       "batterId": "1600060",
       "player": "畠 世周",
+      "uniformNumber": "",
       "team": "阪神",
       "teams": [
         "阪神"
@@ -73812,6 +74087,7 @@
       "year": "2026",
       "batterId": "2106233",
       "player": "石黒 佑弥",
+      "uniformNumber": "",
       "team": "阪神",
       "teams": [
         "阪神"
@@ -74180,6 +74456,7 @@
       "year": "2026",
       "batterId": "2110225",
       "player": "福島 圭音",
+      "uniformNumber": "92",
       "team": "阪神",
       "teams": [
         "阪神"
@@ -75407,6 +75684,7 @@
       "year": "2026",
       "batterId": "2103242",
       "player": "立石 正広",
+      "uniformNumber": "9",
       "team": "阪神",
       "teams": [
         "阪神"
@@ -76514,6 +76792,7 @@
       "year": "2026",
       "batterId": "1600117",
       "player": "糸原 健斗",
+      "uniformNumber": "33",
       "team": "阪神",
       "teams": [
         "阪神"
@@ -77266,6 +77545,7 @@
       "year": "2026",
       "batterId": "2107862",
       "player": "茨木 秀俊",
+      "uniformNumber": "",
       "team": "阪神",
       "teams": [
         "阪神"
@@ -77701,6 +77981,7 @@
       "year": "2026",
       "batterId": "900062",
       "player": "西 勇輝",
+      "uniformNumber": "",
       "team": "阪神",
       "teams": [
         "阪神"
@@ -78380,6 +78661,7 @@
       "year": "2026",
       "batterId": "1800065",
       "player": "近本 光司",
+      "uniformNumber": "5",
       "team": "阪神",
       "teams": [
         "阪神"
@@ -79297,6 +79579,7 @@
       "year": "2026",
       "batterId": "2104016",
       "player": "門別 啓人",
+      "uniformNumber": "",
       "team": "阪神",
       "teams": [
         "阪神"
@@ -79678,6 +79961,7 @@
       "year": "2026",
       "batterId": "2000057",
       "player": "髙寺 望夢",
+      "uniformNumber": "67",
       "team": "阪神",
       "teams": [
         "阪神"
@@ -81044,6 +81328,7 @@
       "year": "2026",
       "batterId": "1700078",
       "player": "髙橋 遥人",
+      "uniformNumber": "",
       "team": "阪神",
       "teams": [
         "阪神"
@@ -81935,6 +82220,7 @@
       "year": "2026",
       "batterId": "2117281",
       "player": "コックス",
+      "uniformNumber": "",
       "team": "DeNA",
       "teams": [
         "DeNA"
@@ -82364,6 +82650,7 @@
       "year": "2026",
       "batterId": "1960901",
       "player": "デュプランティエ",
+      "uniformNumber": "",
       "team": "DeNA",
       "teams": [
         "DeNA"
@@ -82818,6 +83105,7 @@
       "year": "2026",
       "batterId": "2101034",
       "player": "ヒュンメル",
+      "uniformNumber": "99",
       "team": "DeNA",
       "teams": [
         "DeNA"
@@ -84222,6 +84510,7 @@
       "year": "2026",
       "batterId": "1600021",
       "player": "ビシエド",
+      "uniformNumber": "66",
       "team": "DeNA",
       "teams": [
         "DeNA"
@@ -85259,6 +85548,7 @@
       "year": "2026",
       "batterId": "",
       "player": "ビシエド",
+      "uniformNumber": "",
       "team": "DeNA",
       "teams": [
         "DeNA"
@@ -85350,6 +85640,7 @@
       "year": "2026",
       "batterId": "2105891",
       "player": "マルセリーノ",
+      "uniformNumber": "",
       "team": "DeNA",
       "teams": [
         "DeNA"
@@ -85573,6 +85864,7 @@
       "year": "2026",
       "batterId": "1860235",
       "player": "ルイーズ",
+      "uniformNumber": "",
       "team": "DeNA",
       "teams": [
         "DeNA"
@@ -85796,6 +86088,7 @@
       "year": "2026",
       "batterId": "2117433",
       "player": "レイノルズ",
+      "uniformNumber": "",
       "team": "DeNA",
       "teams": [
         "DeNA"
@@ -86019,6 +86312,7 @@
       "year": "2026",
       "batterId": "1600167",
       "player": "三森 大貴",
+      "uniformNumber": "26",
       "team": "DeNA",
       "teams": [
         "DeNA"
@@ -87271,6 +87565,7 @@
       "year": "2026",
       "batterId": "1700067",
       "player": "中川 虎大",
+      "uniformNumber": "",
       "team": "DeNA",
       "teams": [
         "DeNA"
@@ -87450,6 +87745,7 @@
       "year": "2026",
       "batterId": "2000099",
       "player": "中川 颯",
+      "uniformNumber": "",
       "team": "DeNA",
       "teams": [
         "DeNA"
@@ -87986,6 +88282,7 @@
       "year": "2026",
       "batterId": "1600166",
       "player": "九鬼 隆平",
+      "uniformNumber": "95",
       "team": "DeNA",
       "teams": [
         "DeNA"
@@ -88681,6 +88978,7 @@
       "year": "2026",
       "batterId": "2000108",
       "player": "井上 朋也",
+      "uniformNumber": "",
       "team": "DeNA",
       "teams": [
         "DeNA"
@@ -89376,6 +89674,7 @@
       "year": "2026",
       "batterId": "1600107",
       "player": "京田 陽太",
+      "uniformNumber": "9",
       "team": "DeNA",
       "teams": [
         "DeNA"
@@ -90685,6 +90984,7 @@
       "year": "2026",
       "batterId": "1900032",
       "player": "伊勢 大夢",
+      "uniformNumber": "",
       "team": "DeNA",
       "teams": [
         "DeNA"
@@ -90908,6 +91208,7 @@
       "year": "2026",
       "batterId": "1600089",
       "player": "佐野 恵太",
+      "uniformNumber": "7",
       "team": "DeNA",
       "teams": [
         "DeNA"
@@ -92331,6 +92632,7 @@
       "year": "2026",
       "batterId": "2000034",
       "player": "入江 大生",
+      "uniformNumber": "",
       "team": "DeNA",
       "teams": [
         "DeNA"
@@ -93035,6 +93337,7 @@
       "year": "2026",
       "batterId": "1950827",
       "player": "加藤 響",
+      "uniformNumber": "37",
       "team": "DeNA",
       "teams": [
         "DeNA"
@@ -93315,6 +93618,7 @@
       "year": "2026",
       "batterId": "1800046",
       "player": "勝又 温史",
+      "uniformNumber": "28",
       "team": "DeNA",
       "teams": [
         "DeNA"
@@ -94599,6 +94903,7 @@
       "year": "2026",
       "batterId": "2103949",
       "player": "古市 尊",
+      "uniformNumber": "60",
       "team": "DeNA",
       "teams": [
         "DeNA"
@@ -95101,6 +95406,7 @@
       "year": "2026",
       "batterId": "2105707",
       "player": "吉野 光樹",
+      "uniformNumber": "",
       "team": "DeNA",
       "teams": [
         "DeNA"
@@ -95280,6 +95586,7 @@
       "year": "2026",
       "batterId": "1900031",
       "player": "坂本 裕哉",
+      "uniformNumber": "",
       "team": "DeNA",
       "teams": [
         "DeNA"
@@ -95503,6 +95810,7 @@
       "year": "2026",
       "batterId": "1600072",
       "player": "堀岡 隼人",
+      "uniformNumber": "",
       "team": "DeNA",
       "teams": [
         "DeNA"
@@ -95682,6 +95990,7 @@
       "year": "2026",
       "batterId": "2100014",
       "player": "宮下 朝陽",
+      "uniformNumber": "34",
       "team": "DeNA",
       "teams": [
         "DeNA"
@@ -96681,6 +96990,7 @@
       "year": "2026",
       "batterId": "1800049",
       "player": "宮城 滝太",
+      "uniformNumber": "",
       "team": "DeNA",
       "teams": [
         "DeNA"
@@ -96904,6 +97214,7 @@
       "year": "2026",
       "batterId": "1200053",
       "player": "宮﨑 敏郎",
+      "uniformNumber": "51",
       "team": "DeNA",
       "teams": [
         "DeNA"
@@ -98270,6 +98581,7 @@
       "year": "2026",
       "batterId": "1950913",
       "player": "小田 康一郎",
+      "uniformNumber": "3",
       "team": "DeNA",
       "teams": [
         "DeNA"
@@ -98867,6 +99179,7 @@
       "year": "2026",
       "batterId": "1700134",
       "player": "尾形 崇斗",
+      "uniformNumber": "",
       "team": "DeNA",
       "teams": [
         "DeNA"
@@ -99258,6 +99571,7 @@
       "year": "2026",
       "batterId": "1700066",
       "player": "山本 祐大",
+      "uniformNumber": "50",
       "team": "DeNA / ソフトバンク",
       "teams": [
         "DeNA",
@@ -100569,6 +100883,7 @@
       "year": "2026",
       "batterId": "1400109",
       "player": "山﨑 康晃",
+      "uniformNumber": "",
       "team": "DeNA",
       "teams": [
         "DeNA"
@@ -100748,6 +101063,7 @@
       "year": "2026",
       "batterId": "2000059",
       "player": "岩田 将貴",
+      "uniformNumber": "",
       "team": "DeNA",
       "teams": [
         "DeNA"
@@ -100883,6 +101199,7 @@
       "year": "2026",
       "batterId": "2101494",
       "player": "島田 舜也",
+      "uniformNumber": "",
       "team": "DeNA",
       "teams": [
         "DeNA"
@@ -101372,6 +101689,7 @@
       "year": "2026",
       "batterId": "1300031",
       "player": "平良 拳太郎",
+      "uniformNumber": "",
       "team": "DeNA",
       "teams": [
         "DeNA"
@@ -102181,6 +102499,7 @@
       "year": "2026",
       "batterId": "2112149",
       "player": "庄司 陽斗",
+      "uniformNumber": "",
       "team": "DeNA",
       "teams": [
         "DeNA"
@@ -102461,6 +102780,7 @@
       "year": "2026",
       "batterId": "1850873",
       "player": "度会 隆輝",
+      "uniformNumber": "4",
       "team": "DeNA",
       "teams": [
         "DeNA"
@@ -103884,6 +104204,7 @@
       "year": "2026",
       "batterId": "2115069",
       "player": "成瀬 脩人",
+      "uniformNumber": "48",
       "team": "DeNA",
       "teams": [
         "DeNA"
@@ -104934,6 +105255,7 @@
       "year": "2026",
       "batterId": "1500064",
       "player": "戸柱 恭孝",
+      "uniformNumber": "10",
       "team": "DeNA",
       "teams": [
         "DeNA"
@@ -106028,6 +106350,7 @@
       "year": "2026",
       "batterId": "1700058",
       "player": "東 克樹",
+      "uniformNumber": "",
       "team": "DeNA",
       "teams": [
         "DeNA"
@@ -106938,6 +107261,7 @@
       "year": "2026",
       "batterId": "2100277",
       "player": "松尾 汐恩",
+      "uniformNumber": "5",
       "team": "DeNA",
       "teams": [
         "DeNA"
@@ -108304,6 +108628,7 @@
       "year": "2026",
       "batterId": "1850208",
       "player": "林 琢真",
+      "uniformNumber": "0",
       "team": "DeNA",
       "teams": [
         "DeNA"
@@ -109303,6 +109628,7 @@
       "year": "2026",
       "batterId": "1500063",
       "player": "柴田 竜拓",
+      "uniformNumber": "31",
       "team": "DeNA",
       "teams": [
         "DeNA"
@@ -110131,6 +110457,7 @@
       "year": "2026",
       "batterId": "2103703",
       "player": "梶原 昂希",
+      "uniformNumber": "58",
       "team": "DeNA",
       "teams": [
         "DeNA"
@@ -110940,6 +111267,7 @@
       "year": "2026",
       "batterId": "2105007",
       "player": "橋本 達弥",
+      "uniformNumber": "",
       "team": "DeNA",
       "teams": [
         "DeNA"
@@ -111075,6 +111403,7 @@
       "year": "2026",
       "batterId": "2100109",
       "player": "深沢 鳳介",
+      "uniformNumber": "",
       "team": "DeNA",
       "teams": [
         "DeNA"
@@ -111564,6 +111893,7 @@
       "year": "2026",
       "batterId": "2105232",
       "player": "片山 皓心",
+      "uniformNumber": "",
       "team": "DeNA",
       "teams": [
         "DeNA"
@@ -111655,6 +111985,7 @@
       "year": "2026",
       "batterId": "2000035",
       "player": "牧 秀悟",
+      "uniformNumber": "2",
       "team": "DeNA",
       "teams": [
         "DeNA"
@@ -112844,6 +113175,7 @@
       "year": "2026",
       "batterId": "2112189",
       "player": "石上 泰輝",
+      "uniformNumber": "44",
       "team": "DeNA",
       "teams": [
         "DeNA"
@@ -113963,6 +114295,7 @@
       "year": "2026",
       "batterId": "1400110",
       "player": "石田 健大",
+      "uniformNumber": "",
       "team": "DeNA",
       "teams": [
         "DeNA"
@@ -114054,6 +114387,7 @@
       "year": "2026",
       "batterId": "2112182",
       "player": "石田 裕太郎",
+      "uniformNumber": "",
       "team": "DeNA",
       "teams": [
         "DeNA"
@@ -114945,6 +115279,7 @@
       "year": "2026",
       "batterId": "1700059",
       "player": "神里 和毅",
+      "uniformNumber": "8",
       "team": "DeNA",
       "teams": [
         "DeNA"
@@ -115906,6 +116241,7 @@
       "year": "2026",
       "batterId": "1650915",
       "player": "竹田 祐",
+      "uniformNumber": "",
       "team": "DeNA",
       "teams": [
         "DeNA"
@@ -116598,6 +116934,7 @@
       "year": "2026",
       "batterId": "1000002",
       "player": "筒香 嘉智",
+      "uniformNumber": "25",
       "team": "DeNA",
       "teams": [
         "DeNA"
@@ -117888,6 +118225,7 @@
       "year": "2026",
       "batterId": "1850838",
       "player": "篠木 健太郎",
+      "uniformNumber": "",
       "team": "DeNA",
       "teams": [
         "DeNA"
@@ -118624,6 +118962,7 @@
       "year": "2026",
       "batterId": "2107753",
       "player": "若松 尚輝",
+      "uniformNumber": "",
       "team": "DeNA",
       "teams": [
         "DeNA"
@@ -118948,6 +119287,7 @@
       "year": "2026",
       "batterId": "1900035",
       "player": "蝦名 達夫",
+      "uniformNumber": "61",
       "team": "DeNA",
       "teams": [
         "DeNA"
@@ -120371,6 +120711,7 @@
       "year": "2026",
       "batterId": "2108238",
       "player": "ターノック",
+      "uniformNumber": "",
       "team": "広島",
       "teams": [
         "広島"
@@ -121129,6 +121470,7 @@
       "year": "2026",
       "batterId": "1960397",
       "player": "ハーン",
+      "uniformNumber": "",
       "team": "広島",
       "teams": [
         "広島"
@@ -121352,6 +121694,7 @@
       "year": "2026",
       "batterId": "2114882",
       "player": "ファビアン",
+      "uniformNumber": "61",
       "team": "広島",
       "teams": [
         "広島"
@@ -122604,6 +122947,7 @@
       "year": "2026",
       "batterId": "1961927",
       "player": "モンテロ",
+      "uniformNumber": "95",
       "team": "広島",
       "teams": [
         "広島"
@@ -124008,6 +124352,7 @@
       "year": "2026",
       "batterId": "1700068",
       "player": "中村 奨成",
+      "uniformNumber": "96",
       "team": "広島",
       "teams": [
         "広島"
@@ -125184,6 +125529,7 @@
       "year": "2026",
       "batterId": "1000116",
       "player": "中﨑 翔太",
+      "uniformNumber": "",
       "team": "広島",
       "teams": [
         "広島"
@@ -125407,6 +125753,7 @@
       "year": "2026",
       "batterId": "2000066",
       "player": "二俣 翔一",
+      "uniformNumber": "99",
       "team": "広島",
       "teams": [
         "広島"
@@ -126526,6 +126873,7 @@
       "year": "2026",
       "batterId": "2050203",
       "player": "佐々木 泰",
+      "uniformNumber": "10",
       "team": "広島",
       "teams": [
         "広島"
@@ -127873,6 +128221,7 @@
       "year": "2026",
       "batterId": "2112143",
       "player": "佐藤 啓介",
+      "uniformNumber": "94",
       "team": "広島",
       "teams": [
         "広島"
@@ -128802,6 +129151,7 @@
       "year": "2026",
       "batterId": "1950955",
       "player": "前川 誠太",
+      "uniformNumber": "93",
       "team": "広島",
       "teams": [
         "広島"
@@ -129763,6 +130113,7 @@
       "year": "2026",
       "batterId": "2110422",
       "player": "勝田 成",
+      "uniformNumber": "0",
       "team": "広島",
       "teams": [
         "広島"
@@ -131015,6 +131366,7 @@
       "year": "2026",
       "batterId": "1850405",
       "player": "名原 典彦",
+      "uniformNumber": "",
       "team": "広島",
       "teams": [
         "広島"
@@ -132122,6 +132474,7 @@
       "year": "2026",
       "batterId": "1600124",
       "player": "坂倉 将吾",
+      "uniformNumber": "31",
       "team": "広島",
       "teams": [
         "広島"
@@ -133507,6 +133860,7 @@
       "year": "2026",
       "batterId": "1400175",
       "player": "塹江 敦哉",
+      "uniformNumber": "",
       "team": "広島",
       "teams": [
         "広島"
@@ -133686,6 +134040,7 @@
       "year": "2026",
       "batterId": "1300057",
       "player": "大瀬良 大地",
+      "uniformNumber": "",
       "team": "広島",
       "teams": [
         "広島"
@@ -134083,6 +134438,7 @@
       "year": "2026",
       "batterId": "1800079",
       "player": "大盛 穂",
+      "uniformNumber": "59",
       "team": "広島",
       "teams": [
         "広島"
@@ -135449,6 +135805,7 @@
       "year": "2026",
       "batterId": "1800072",
       "player": "小園 海斗",
+      "uniformNumber": "5",
       "team": "広島",
       "teams": [
         "広島"
@@ -136853,6 +137210,7 @@
       "year": "2026",
       "batterId": "2114807",
       "player": "岡本 駿",
+      "uniformNumber": "",
       "team": "広島",
       "teams": [
         "広島"
@@ -137624,6 +137982,7 @@
       "year": "2026",
       "batterId": "1800073",
       "player": "島内 颯太郎",
+      "uniformNumber": "",
       "team": "広島",
       "teams": [
         "広島"
@@ -137759,6 +138118,7 @@
       "year": "2026",
       "batterId": "2110267",
       "player": "常廣 羽也斗",
+      "uniformNumber": "",
       "team": "広島",
       "teams": [
         "広島"
@@ -137938,6 +138298,7 @@
       "year": "2026",
       "batterId": "2110164",
       "player": "平川 蓮",
+      "uniformNumber": "51",
       "team": "広島",
       "teams": [
         "広島"
@@ -139190,6 +139551,7 @@
       "year": "2026",
       "batterId": "1600123",
       "player": "床田 寛樹",
+      "uniformNumber": "",
       "team": "広島",
       "teams": [
         "広島"
@@ -140100,6 +140462,7 @@
       "year": "2026",
       "batterId": "1900058",
       "player": "持丸 泰輝",
+      "uniformNumber": "57",
       "team": "広島",
       "teams": [
         "広島"
@@ -141346,6 +141709,7 @@
       "year": "2026",
       "batterId": "2107847",
       "player": "斉藤 優汰",
+      "uniformNumber": "",
       "team": "広島",
       "teams": [
         "広島"
@@ -141626,6 +141990,7 @@
       "year": "2026",
       "batterId": "1800074",
       "player": "林 晃汰",
+      "uniformNumber": "44",
       "team": "広島",
       "teams": [
         "広島"
@@ -142391,6 +142756,7 @@
       "year": "2026",
       "batterId": "2000060",
       "player": "栗林 良吏",
+      "uniformNumber": "",
       "team": "広島",
       "teams": [
         "広島"
@@ -143143,6 +143509,7 @@
       "year": "2026",
       "batterId": "2103788",
       "player": "森 翔平",
+      "uniformNumber": "",
       "team": "広島",
       "teams": [
         "広島"
@@ -143749,6 +144116,7 @@
       "year": "2026",
       "batterId": "1900052",
       "player": "森下 暢仁",
+      "uniformNumber": "",
       "team": "広島",
       "teams": [
         "広島"
@@ -144640,6 +145008,7 @@
       "year": "2026",
       "batterId": "2000061",
       "player": "森浦 大輔",
+      "uniformNumber": "",
       "team": "広島",
       "teams": [
         "広島"
@@ -144863,6 +145232,7 @@
       "year": "2026",
       "batterId": "2110148",
       "player": "渡邉 悠斗",
+      "uniformNumber": "49",
       "team": "広島",
       "teams": [
         "広島"
@@ -145463,6 +145833,7 @@
       "year": "2026",
       "batterId": "1900057",
       "player": "玉村 昇悟",
+      "uniformNumber": "",
       "team": "広島",
       "teams": [
         "広島"
@@ -146104,6 +146475,7 @@
       "year": "2026",
       "batterId": "2103358",
       "player": "田村 俊介",
+      "uniformNumber": "60",
       "team": "広島",
       "teams": [
         "広島"
@@ -146736,6 +147108,7 @@
       "year": "2026",
       "batterId": "2105565",
       "player": "益田 武尚",
+      "uniformNumber": "",
       "team": "広島",
       "teams": [
         "広島"
@@ -146915,6 +147288,7 @@
       "year": "2026",
       "batterId": "2000065",
       "player": "矢野 雅哉",
+      "uniformNumber": "4",
       "team": "広島",
       "teams": [
         "広島"
@@ -148047,6 +148421,7 @@
       "year": "2026",
       "batterId": "1900056",
       "player": "石原 貴規",
+      "uniformNumber": "32",
       "team": "広島",
       "teams": [
         "広島"
@@ -149027,6 +149402,7 @@
       "year": "2026",
       "batterId": "1000150",
       "player": "秋山 翔吾",
+      "uniformNumber": "9",
       "team": "広島",
       "teams": [
         "広島"
@@ -150026,6 +150402,7 @@
       "year": "2026",
       "batterId": "1100082",
       "player": "菊池 涼介",
+      "uniformNumber": "33",
       "team": "広島",
       "teams": [
         "広島"
@@ -151430,6 +151807,7 @@
       "year": "2026",
       "batterId": "2114641",
       "player": "赤木 晴哉",
+      "uniformNumber": "",
       "team": "広島",
       "teams": [
         "広島"
@@ -151609,6 +151987,7 @@
       "year": "2026",
       "batterId": "2107887",
       "player": "辰見 鴻之介",
+      "uniformNumber": "69",
       "team": "広島",
       "teams": [
         "広島"
@@ -152494,6 +152873,7 @@
       "year": "2026",
       "batterId": "2106037",
       "player": "辻 大雅",
+      "uniformNumber": "",
       "team": "広島",
       "teams": [
         "広島"
@@ -152717,6 +153097,7 @@
       "year": "2026",
       "batterId": "1700072",
       "player": "遠藤 淳志",
+      "uniformNumber": "",
       "team": "広島",
       "teams": [
         "広島"
@@ -152896,6 +153277,7 @@
       "year": "2026",
       "batterId": "1400173",
       "player": "野間 峻祥",
+      "uniformNumber": "37",
       "team": "広島",
       "teams": [
         "広島"
@@ -154110,6 +154492,7 @@
       "year": "2026",
       "batterId": "1900073",
       "player": "鈴木 健矢",
+      "uniformNumber": "",
       "team": "広島",
       "teams": [
         "広島"
@@ -154614,6 +154997,7 @@
       "year": "2026",
       "batterId": "1950429",
       "player": "髙 太一",
+      "uniformNumber": "",
       "team": "広島",
       "teams": [
         "広島"
@@ -154793,6 +155177,7 @@
       "year": "2026",
       "batterId": "1750941",
       "player": "黒原 拓未",
+      "uniformNumber": "",
       "team": "広島",
       "teams": [
         "広島"
@@ -154884,6 +155269,7 @@
       "year": "2026",
       "batterId": "2119338",
       "player": "齊藤 汰直",
+      "uniformNumber": "",
       "team": "広島",
       "teams": [
         "広島"
@@ -155063,6 +155449,7 @@
       "year": "2026",
       "batterId": "2108291",
       "player": "ウォルターズ",
+      "uniformNumber": "",
       "team": "ヤクルト",
       "teams": [
         "ヤクルト"
@@ -155479,6 +155866,7 @@
       "year": "2026",
       "batterId": "2000133",
       "player": "オスナ",
+      "uniformNumber": "",
       "team": "ヤクルト",
       "teams": [
         "ヤクルト"
@@ -156883,6 +157271,7 @@
       "year": "2026",
       "batterId": "1961046",
       "player": "キハダ",
+      "uniformNumber": "",
       "team": "ヤクルト",
       "teams": [
         "ヤクルト"
@@ -157106,6 +157495,7 @@
       "year": "2026",
       "batterId": "2000135",
       "player": "サンタナ",
+      "uniformNumber": "",
       "team": "ヤクルト",
       "teams": [
         "ヤクルト"
@@ -158434,6 +158824,7 @@
       "year": "2026",
       "batterId": "2112585",
       "player": "モイセエフ ニキータ",
+      "uniformNumber": "",
       "team": "ヤクルト",
       "teams": [
         "ヤクルト"
@@ -158996,6 +159387,7 @@
       "year": "2026",
       "batterId": "2107178",
       "player": "モンテル",
+      "uniformNumber": "",
       "team": "ヤクルト",
       "teams": [
         "ヤクルト"
@@ -159970,6 +160362,7 @@
       "year": "2026",
       "batterId": "2122334",
       "player": "リランソ",
+      "uniformNumber": "",
       "team": "ヤクルト",
       "teams": [
         "ヤクルト"
@@ -160149,6 +160542,7 @@
       "year": "2026",
       "batterId": "2000028",
       "player": "並木 秀尊",
+      "uniformNumber": "",
       "team": "ヤクルト",
       "teams": [
         "ヤクルト"
@@ -161047,6 +161441,7 @@
       "year": "2026",
       "batterId": "900044",
       "player": "中村 悠平",
+      "uniformNumber": "",
       "team": "ヤクルト",
       "teams": [
         "ヤクルト"
@@ -162103,6 +162498,7 @@
       "year": "2026",
       "batterId": "1650522",
       "player": "丸山 和郁",
+      "uniformNumber": "",
       "team": "ヤクルト",
       "teams": [
         "ヤクルト"
@@ -163235,6 +163631,7 @@
       "year": "2026",
       "batterId": "2000033",
       "player": "丸山 翔大",
+      "uniformNumber": "",
       "team": "ヤクルト",
       "teams": [
         "ヤクルト"
@@ -163414,6 +163811,7 @@
       "year": "2026",
       "batterId": "2112175",
       "player": "伊藤 琉偉",
+      "uniformNumber": "",
       "team": "ヤクルト",
       "teams": [
         "ヤクルト"
@@ -164666,6 +165064,7 @@
       "year": "2026",
       "batterId": "2000026",
       "player": "内山 壮真",
+      "uniformNumber": "",
       "team": "ヤクルト",
       "teams": [
         "ヤクルト"
@@ -166007,6 +166406,7 @@
       "year": "2026",
       "batterId": "1650165",
       "player": "北村 恵吾",
+      "uniformNumber": "",
       "team": "ヤクルト",
       "teams": [
         "ヤクルト"
@@ -166734,6 +167134,7 @@
       "year": "2026",
       "batterId": "1600078",
       "player": "古賀 優大",
+      "uniformNumber": "",
       "team": "ヤクルト",
       "teams": [
         "ヤクルト"
@@ -168100,6 +168501,7 @@
       "year": "2026",
       "batterId": "2103794",
       "player": "吉村 貢司郎",
+      "uniformNumber": "",
       "team": "ヤクルト",
       "teams": [
         "ヤクルト"
@@ -168915,6 +169317,7 @@
       "year": "2026",
       "batterId": "1700087",
       "player": "塩見 泰隆",
+      "uniformNumber": "",
       "team": "ヤクルト",
       "teams": [
         "ヤクルト"
@@ -169851,6 +170254,7 @@
       "year": "2026",
       "batterId": "1750894",
       "player": "増居 翔太",
+      "uniformNumber": "",
       "team": "ヤクルト",
       "teams": [
         "ヤクルト"
@@ -170131,6 +170535,7 @@
       "year": "2026",
       "batterId": "1700131",
       "player": "増田 珠",
+      "uniformNumber": "",
       "team": "ヤクルト",
       "teams": [
         "ヤクルト"
@@ -171554,6 +171959,7 @@
       "year": "2026",
       "batterId": "1900027",
       "player": "大西 広樹",
+      "uniformNumber": "",
       "team": "ヤクルト",
       "teams": [
         "ヤクルト"
@@ -171689,6 +172095,7 @@
       "year": "2026",
       "batterId": "2000062",
       "player": "大道 温貴",
+      "uniformNumber": "",
       "team": "ヤクルト",
       "teams": [
         "ヤクルト"
@@ -171780,6 +172187,7 @@
       "year": "2026",
       "batterId": "1900024",
       "player": "奥川 恭伸",
+      "uniformNumber": "",
       "team": "ヤクルト",
       "teams": [
         "ヤクルト"
@@ -172589,6 +172997,7 @@
       "year": "2026",
       "batterId": "1700089",
       "player": "宮本 丈",
+      "uniformNumber": "",
       "team": "ヤクルト",
       "teams": [
         "ヤクルト"
@@ -173474,6 +173883,7 @@
       "year": "2026",
       "batterId": "1200076",
       "player": "小川 泰弘",
+      "uniformNumber": "",
       "team": "ヤクルト",
       "teams": [
         "ヤクルト"
@@ -174308,6 +174718,7 @@
       "year": "2026",
       "batterId": "1500139",
       "player": "小澤 怜史",
+      "uniformNumber": "",
       "team": "ヤクルト",
       "teams": [
         "ヤクルト"
@@ -174632,6 +175043,7 @@
       "year": "2026",
       "batterId": "2000025",
       "player": "山野 太一",
+      "uniformNumber": "",
       "team": "ヤクルト",
       "teams": [
         "ヤクルト"
@@ -175485,6 +175897,7 @@
       "year": "2026",
       "batterId": "1800082",
       "player": "山野辺 翔",
+      "uniformNumber": "",
       "team": "ヤクルト",
       "teams": [
         "ヤクルト"
@@ -175576,6 +175989,7 @@
       "year": "2026",
       "batterId": "2103917",
       "player": "岩田 幸宏",
+      "uniformNumber": "",
       "team": "ヤクルト",
       "teams": [
         "ヤクルト"
@@ -176980,6 +177394,7 @@
       "year": "2026",
       "batterId": "2105626",
       "player": "廣澤 優",
+      "uniformNumber": "",
       "team": "ヤクルト",
       "teams": [
         "ヤクルト"
@@ -177203,6 +177618,7 @@
       "year": "2026",
       "batterId": "1600121",
       "player": "拓也",
+      "uniformNumber": "",
       "team": "ヤクルト",
       "teams": [
         "ヤクルト"
@@ -177338,6 +177754,7 @@
       "year": "2026",
       "batterId": "1600075",
       "player": "星 知弥",
+      "uniformNumber": "",
       "team": "ヤクルト",
       "teams": [
         "ヤクルト"
@@ -177561,6 +177978,7 @@
       "year": "2026",
       "batterId": "2000024",
       "player": "木澤 尚文",
+      "uniformNumber": "",
       "team": "ヤクルト",
       "teams": [
         "ヤクルト"
@@ -177740,6 +178158,7 @@
       "year": "2026",
       "batterId": "2116854",
       "player": "松下 歩叶",
+      "uniformNumber": "",
       "team": "ヤクルト",
       "teams": [
         "ヤクルト"
@@ -178695,6 +179114,7 @@
       "year": "2026",
       "batterId": "1750696",
       "player": "松本 健吾",
+      "uniformNumber": "",
       "team": "ヤクルト",
       "teams": [
         "ヤクルト"
@@ -179485,6 +179905,7 @@
       "year": "2026",
       "batterId": "1700090",
       "player": "松本 直樹",
+      "uniformNumber": "",
       "team": "ヤクルト",
       "teams": [
         "ヤクルト"
@@ -179765,6 +180186,7 @@
       "year": "2026",
       "batterId": "2105063",
       "player": "橋本 星哉",
+      "uniformNumber": "",
       "team": "ヤクルト",
       "teams": [
         "ヤクルト"
@@ -180663,6 +181085,7 @@
       "year": "2026",
       "batterId": "1900029",
       "player": "武岡 龍世",
+      "uniformNumber": "",
       "team": "ヤクルト",
       "teams": [
         "ヤクルト"
@@ -182029,6 +182452,7 @@
       "year": "2026",
       "batterId": "1800033",
       "player": "清水 昇",
+      "uniformNumber": "",
       "team": "ヤクルト",
       "teams": [
         "ヤクルト"
@@ -182252,6 +182676,7 @@
       "year": "2026",
       "batterId": "1750800",
       "player": "澤井 廉",
+      "uniformNumber": "",
       "team": "ヤクルト",
       "teams": [
         "ヤクルト"
@@ -183163,6 +183588,7 @@
       "year": "2026",
       "batterId": "2113365",
       "player": "田中 陽翔",
+      "uniformNumber": "",
       "team": "ヤクルト",
       "teams": [
         "ヤクルト"
@@ -184162,6 +184588,7 @@
       "year": "2026",
       "batterId": "1300029",
       "player": "田口 麗斗",
+      "uniformNumber": "",
       "team": "ヤクルト",
       "teams": [
         "ヤクルト"
@@ -184297,6 +184724,7 @@
       "year": "2026",
       "batterId": "1850772",
       "player": "石井 巧",
+      "uniformNumber": "",
       "team": "ヤクルト",
       "teams": [
         "ヤクルト"
@@ -185075,6 +185503,7 @@
       "year": "2026",
       "batterId": "1851155",
       "player": "石原 勇輝",
+      "uniformNumber": "",
       "team": "ヤクルト",
       "teams": [
         "ヤクルト"
@@ -185355,6 +185784,7 @@
       "year": "2026",
       "batterId": "1600003",
       "player": "茂木 栄五郎",
+      "uniformNumber": "",
       "team": "ヤクルト",
       "teams": [
         "ヤクルト"
@@ -186468,6 +186898,7 @@
       "year": "2026",
       "batterId": "2117400",
       "player": "荘司 宏太",
+      "uniformNumber": "",
       "team": "ヤクルト",
       "teams": [
         "ヤクルト"
@@ -186691,6 +187122,7 @@
       "year": "2026",
       "batterId": "2000031",
       "player": "赤羽 由紘",
+      "uniformNumber": "",
       "team": "ヤクルト",
       "teams": [
         "ヤクルト"
@@ -187943,6 +188375,7 @@
       "year": "2026",
       "batterId": "2109495",
       "player": "鈴木 叶",
+      "uniformNumber": "",
       "team": "ヤクルト",
       "teams": [
         "ヤクルト"
@@ -189119,6 +189552,7 @@
       "year": "2026",
       "batterId": "1900028",
       "player": "長岡 秀樹",
+      "uniformNumber": "",
       "team": "ヤクルト",
       "teams": [
         "ヤクルト"
@@ -190466,6 +190900,7 @@
       "year": "2026",
       "batterId": "1700060",
       "player": "阪口 皓亮",
+      "uniformNumber": "",
       "team": "ヤクルト",
       "teams": [
         "ヤクルト"
@@ -190601,6 +191036,7 @@
       "year": "2026",
       "batterId": "2103692",
       "player": "飯田 琉斗",
+      "uniformNumber": "",
       "team": "ヤクルト",
       "teams": [
         "ヤクルト"
@@ -190692,6 +191128,7 @@
       "year": "2026",
       "batterId": "1300045",
       "player": "高梨 裕稔",
+      "uniformNumber": "",
       "team": "ヤクルト",
       "teams": [
         "ヤクルト"
@@ -191621,6 +192058,7 @@
       "year": "2026",
       "batterId": "1500042",
       "player": "高橋 奎二",
+      "uniformNumber": "",
       "team": "ヤクルト",
       "teams": [
         "ヤクルト"
@@ -192221,6 +192659,7 @@
       "year": "2026",
       "batterId": "2060049",
       "player": "アブレウ",
+      "uniformNumber": "",
       "team": "中日",
       "teams": [
         "中日"
@@ -192356,6 +192795,7 @@
       "year": "2026",
       "batterId": "1560639",
       "player": "カリステ",
+      "uniformNumber": "4",
       "team": "中日",
       "teams": [
         "中日"
@@ -193374,6 +193814,7 @@
       "year": "2026",
       "batterId": "1561854",
       "player": "サノー",
+      "uniformNumber": "23",
       "team": "中日",
       "teams": [
         "中日"
@@ -194582,6 +195023,7 @@
       "year": "2026",
       "batterId": "2103840",
       "player": "ブライト 健太",
+      "uniformNumber": "42",
       "team": "中日",
       "teams": [
         "中日"
@@ -195249,6 +195691,7 @@
       "year": "2026",
       "batterId": "1961300",
       "player": "ボスラー",
+      "uniformNumber": "24",
       "team": "中日",
       "teams": [
         "中日"
@@ -196495,6 +196938,7 @@
       "year": "2026",
       "batterId": "2100961",
       "player": "マラー",
+      "uniformNumber": "",
       "team": "中日",
       "teams": [
         "中日"
@@ -197266,6 +197710,7 @@
       "year": "2026",
       "batterId": "1660558",
       "player": "メヒア",
+      "uniformNumber": "",
       "team": "中日",
       "teams": [
         "中日"
@@ -197445,6 +197890,7 @@
       "year": "2026",
       "batterId": "2112338",
       "player": "ロドリゲス",
+      "uniformNumber": "95",
       "team": "中日",
       "teams": [
         "中日"
@@ -197744,6 +198190,7 @@
       "year": "2026",
       "batterId": "1951008",
       "player": "中西 聖輝",
+      "uniformNumber": "",
       "team": "中日",
       "teams": [
         "中日"
@@ -198366,6 +198813,7 @@
       "year": "2026",
       "batterId": "2107860",
       "player": "仲地 礼亜",
+      "uniformNumber": "",
       "team": "中日",
       "teams": [
         "中日"
@@ -198501,6 +198949,7 @@
       "year": "2026",
       "batterId": "2105038",
       "player": "伊藤 茉央",
+      "uniformNumber": "",
       "team": "中日",
       "teams": [
         "中日"
@@ -198636,6 +199085,7 @@
       "year": "2026",
       "batterId": "1400160",
       "player": "加藤 匠馬",
+      "uniformNumber": "49",
       "team": "中日",
       "teams": [
         "中日"
@@ -199711,6 +200161,7 @@
       "year": "2026",
       "batterId": "1800061",
       "player": "勝野 昌慶",
+      "uniformNumber": "",
       "team": "中日",
       "teams": [
         "中日"
@@ -199890,6 +200341,7 @@
       "year": "2026",
       "batterId": "2105295",
       "player": "吉田 聖弥",
+      "uniformNumber": "",
       "team": "中日",
       "teams": [
         "中日"
@@ -200069,6 +200521,7 @@
       "year": "2026",
       "batterId": "2103633",
       "player": "味谷 大誠",
+      "uniformNumber": "43",
       "team": "中日",
       "teams": [
         "中日"
@@ -200615,6 +201068,7 @@
       "year": "2026",
       "batterId": "2000044",
       "player": "土田 龍空",
+      "uniformNumber": "45",
       "team": "中日",
       "teams": [
         "中日"
@@ -201652,6 +202106,7 @@
       "year": "2026",
       "batterId": "900410",
       "player": "大島 洋平",
+      "uniformNumber": "8",
       "team": "中日",
       "teams": [
         "中日"
@@ -202588,6 +203043,7 @@
       "year": "2026",
       "batterId": "1000138",
       "player": "大野 雄大",
+      "uniformNumber": "",
       "team": "中日",
       "teams": [
         "中日"
@@ -203359,6 +203815,7 @@
       "year": "2026",
       "batterId": "2107645",
       "player": "尾田 剛樹",
+      "uniformNumber": "0",
       "team": "中日",
       "teams": [
         "中日"
@@ -204212,6 +204669,7 @@
       "year": "2026",
       "batterId": "1500050",
       "player": "山本 泰寛",
+      "uniformNumber": "60",
       "team": "中日",
       "teams": [
         "中日"
@@ -205382,6 +205840,7 @@
       "year": "2026",
       "batterId": "1900041",
       "player": "岡林 勇希",
+      "uniformNumber": "1",
       "team": "中日",
       "teams": [
         "中日"
@@ -206438,6 +206897,7 @@
       "year": "2026",
       "batterId": "1500100",
       "player": "川越 誠司",
+      "uniformNumber": "44",
       "team": "中日",
       "teams": [
         "中日"
@@ -206956,6 +207416,7 @@
       "year": "2026",
       "batterId": "1500076",
       "player": "木下 拓哉",
+      "uniformNumber": "35",
       "team": "中日",
       "teams": [
         "中日"
@@ -207955,6 +208416,7 @@
       "year": "2026",
       "batterId": "1300094",
       "player": "杉浦 稔大",
+      "uniformNumber": "",
       "team": "中日",
       "teams": [
         "中日"
@@ -208090,6 +208552,7 @@
       "year": "2026",
       "batterId": "1750223",
       "player": "村松 開人",
+      "uniformNumber": "5",
       "team": "中日",
       "teams": [
         "中日"
@@ -209532,6 +209995,7 @@
       "year": "2026",
       "batterId": "2107869",
       "player": "松山 晋也",
+      "uniformNumber": "",
       "team": "中日",
       "teams": [
         "中日"
@@ -209711,6 +210175,7 @@
       "year": "2026",
       "batterId": "1500091",
       "player": "板山 祐太郎",
+      "uniformNumber": "63",
       "team": "中日",
       "teams": [
         "中日"
@@ -211077,6 +211542,7 @@
       "year": "2026",
       "batterId": "1600106",
       "player": "柳 裕也",
+      "uniformNumber": "",
       "team": "中日",
       "teams": [
         "中日"
@@ -211949,6 +212415,7 @@
       "year": "2026",
       "batterId": "1800059",
       "player": "根尾 昂",
+      "uniformNumber": "",
       "team": "中日",
       "teams": [
         "中日"
@@ -212084,6 +212551,7 @@
       "year": "2026",
       "batterId": "1600076",
       "player": "梅野 雄吾",
+      "uniformNumber": "",
       "team": "中日",
       "teams": [
         "中日"
@@ -212175,6 +212643,7 @@
       "year": "2026",
       "batterId": "2103947",
       "player": "樋口 正修",
+      "uniformNumber": "97",
       "team": "中日",
       "teams": [
         "中日"
@@ -212648,6 +213117,7 @@
       "year": "2026",
       "batterId": "1900038",
       "player": "橋本 侑樹",
+      "uniformNumber": "",
       "team": "中日",
       "teams": [
         "中日"
@@ -212871,6 +213341,7 @@
       "year": "2026",
       "batterId": "2100410",
       "player": "櫻井 頼之介",
+      "uniformNumber": "",
       "team": "中日",
       "teams": [
         "中日"
@@ -213705,6 +214176,7 @@
       "year": "2026",
       "batterId": "500014",
       "player": "涌井 秀章",
+      "uniformNumber": "",
       "team": "中日",
       "teams": [
         "中日"
@@ -213985,6 +214457,7 @@
       "year": "2026",
       "batterId": "1700104",
       "player": "清水 達也",
+      "uniformNumber": "",
       "team": "中日",
       "teams": [
         "中日"
@@ -214076,6 +214549,7 @@
       "year": "2026",
       "batterId": "2107086",
       "player": "牧野 憲伸",
+      "uniformNumber": "",
       "team": "中日",
       "teams": [
         "中日"
@@ -214255,6 +214729,7 @@
       "year": "2026",
       "batterId": "1750701",
       "player": "田中 幹也",
+      "uniformNumber": "2",
       "team": "中日",
       "teams": [
         "中日"
@@ -215659,6 +216134,7 @@
       "year": "2026",
       "batterId": "1800048",
       "player": "知野 直人",
+      "uniformNumber": "65",
       "team": "中日",
       "teams": [
         "中日"
@@ -216167,6 +216643,7 @@
       "year": "2026",
       "batterId": "2105102",
       "player": "石伊 雄太",
+      "uniformNumber": "9",
       "team": "中日",
       "teams": [
         "中日"
@@ -217571,6 +218048,7 @@
       "year": "2026",
       "batterId": "1900037",
       "player": "石川 昂弥",
+      "uniformNumber": "25",
       "team": "中日",
       "teams": [
         "中日"
@@ -218836,6 +219314,7 @@
       "year": "2026",
       "batterId": "1500077",
       "player": "福 敬登",
+      "uniformNumber": "",
       "team": "中日",
       "teams": [
         "中日"
@@ -218927,6 +219406,7 @@
       "year": "2026",
       "batterId": "2103780",
       "player": "福永 裕基",
+      "uniformNumber": "7",
       "team": "中日",
       "teams": [
         "中日"
@@ -220312,6 +220792,7 @@
       "year": "2026",
       "batterId": "1600085",
       "player": "細川 成也",
+      "uniformNumber": "55",
       "team": "中日",
       "teams": [
         "中日"
@@ -221735,6 +222216,7 @@
       "year": "2026",
       "batterId": "2100275",
       "player": "花田 旭",
+      "uniformNumber": "57",
       "team": "中日",
       "teams": [
         "中日"
@@ -222829,6 +223311,7 @@
       "year": "2026",
       "batterId": "1851138",
       "player": "草加 勝",
+      "uniformNumber": "",
       "team": "中日",
       "teams": [
         "中日"
@@ -222920,6 +223403,7 @@
       "year": "2026",
       "batterId": "1600110",
       "player": "藤嶋 健人",
+      "uniformNumber": "",
       "team": "中日",
       "teams": [
         "中日"
@@ -223143,6 +223627,7 @@
       "year": "2026",
       "batterId": "2105174",
       "player": "辻本 倫太郎",
+      "uniformNumber": "0",
       "team": "中日",
       "teams": [
         "中日"
@@ -223889,6 +224374,7 @@
       "year": "2026",
       "batterId": "2000048",
       "player": "近藤 廉",
+      "uniformNumber": "",
       "team": "中日",
       "teams": [
         "中日"
@@ -223980,6 +224466,7 @@
       "year": "2026",
       "batterId": "2108462",
       "player": "金丸 夢斗",
+      "uniformNumber": "",
       "team": "中日",
       "teams": [
         "中日"
@@ -224890,6 +225377,7 @@
       "year": "2026",
       "batterId": "1500078",
       "player": "阿部 寿樹",
+      "uniformNumber": "48",
       "team": "中日",
       "teams": [
         "中日"
@@ -226218,6 +226706,7 @@
       "year": "2026",
       "batterId": "1100069",
       "player": "高橋 周平",
+      "uniformNumber": "3",
       "team": "中日",
       "teams": [
         "中日"
@@ -227521,6 +228010,7 @@
       "year": "2026",
       "batterId": "2000042",
       "player": "髙橋 宏斗",
+      "uniformNumber": "",
       "team": "中日",
       "teams": [
         "中日"
@@ -228292,6 +228782,7 @@
       "year": "2026",
       "batterId": "2103845",
       "player": "鵜飼 航丞",
+      "uniformNumber": "66",
       "team": "中日",
       "teams": [
         "中日"
@@ -229652,6 +230143,7 @@
       "year": "2026",
       "batterId": "1400199",
       "player": "齋藤 綱記",
+      "uniformNumber": "",
       "team": "中日",
       "teams": [
         "中日"
@@ -229831,6 +230323,7 @@
       "year": "2026",
       "batterId": "2105885",
       "player": "アルメンタ",
+      "uniformNumber": "",
       "team": "ソフトバンク",
       "teams": [
         "ソフトバンク"
@@ -230111,6 +230604,7 @@
       "year": "2026",
       "batterId": "2107851",
       "player": "イヒネ イツア",
+      "uniformNumber": "36",
       "team": "ソフトバンク",
       "teams": [
         "ソフトバンク"
@@ -230546,6 +231040,7 @@
       "year": "2026",
       "batterId": "1560184",
       "player": "オスナ",
+      "uniformNumber": "",
       "team": "ソフトバンク",
       "teams": [
         "ソフトバンク"
@@ -230681,6 +231176,7 @@
       "year": "2026",
       "batterId": "1900010",
       "player": "スチュワート・ジュニア",
+      "uniformNumber": "",
       "team": "ソフトバンク",
       "teams": [
         "ソフトバンク"
@@ -231154,6 +231650,7 @@
       "year": "2026",
       "batterId": "1961052",
       "player": "ヘルナンデス",
+      "uniformNumber": "",
       "team": "ソフトバンク",
       "teams": [
         "ソフトバンク"
@@ -231289,6 +231786,7 @@
       "year": "2026",
       "batterId": "1800043",
       "player": "上茶谷 大河",
+      "uniformNumber": "",
       "team": "ソフトバンク",
       "teams": [
         "ソフトバンク"
@@ -231424,6 +231922,7 @@
       "year": "2026",
       "batterId": "800081",
       "player": "中村 晃",
+      "uniformNumber": "7",
       "team": "ソフトバンク",
       "teams": [
         "ソフトバンク"
@@ -232499,6 +232998,7 @@
       "year": "2026",
       "batterId": "1000035",
       "player": "今宮 健太",
+      "uniformNumber": "6",
       "team": "ソフトバンク",
       "teams": [
         "ソフトバンク"
@@ -233770,6 +234270,7 @@
       "year": "2026",
       "batterId": "2000008",
       "player": "伊藤 優輔",
+      "uniformNumber": "",
       "team": "ソフトバンク",
       "teams": [
         "ソフトバンク"
@@ -233861,6 +234362,7 @@
       "year": "2026",
       "batterId": "2104078",
       "player": "前田 悠伍",
+      "uniformNumber": "",
       "team": "ソフトバンク",
       "teams": [
         "ソフトバンク"
@@ -234198,6 +234700,7 @@
       "year": "2026",
       "batterId": "1700135",
       "player": "周東 佑京",
+      "uniformNumber": "23",
       "team": "ソフトバンク",
       "teams": [
         "ソフトバンク"
@@ -235545,6 +236048,7 @@
       "year": "2026",
       "batterId": "2110167",
       "player": "大山 凌",
+      "uniformNumber": "",
       "team": "ソフトバンク",
       "teams": [
         "ソフトバンク"
@@ -235636,6 +236140,7 @@
       "year": "2026",
       "batterId": "1550517",
       "player": "大津 亮介",
+      "uniformNumber": "",
       "team": "ソフトバンク",
       "teams": [
         "ソフトバンク"
@@ -236147,6 +236652,7 @@
       "year": "2026",
       "batterId": "1900106",
       "player": "大関 友久",
+      "uniformNumber": "",
       "team": "ソフトバンク",
       "teams": [
         "ソフトバンク"
@@ -236465,6 +236971,7 @@
       "year": "2026",
       "batterId": "1300101",
       "player": "山川 穂高",
+      "uniformNumber": "5",
       "team": "ソフトバンク",
       "teams": [
         "ソフトバンク"
@@ -237616,6 +238123,7 @@
       "year": "2026",
       "batterId": "2103876",
       "player": "山本 恵大",
+      "uniformNumber": "77",
       "team": "ソフトバンク",
       "teams": [
         "ソフトバンク"
@@ -238489,6 +238997,7 @@
       "year": "2026",
       "batterId": "1650813",
       "player": "川村 友斗",
+      "uniformNumber": "61",
       "team": "ソフトバンク",
       "teams": [
         "ソフトバンク"
@@ -239494,6 +240003,7 @@
       "year": "2026",
       "batterId": "1500143",
       "player": "川瀬 晃",
+      "uniformNumber": "0",
       "team": "ソフトバンク",
       "teams": [
         "ソフトバンク"
@@ -240613,6 +241123,7 @@
       "year": "2026",
       "batterId": "1950149",
       "player": "庄子 雄大",
+      "uniformNumber": "25",
       "team": "ソフトバンク",
       "teams": [
         "ソフトバンク"
@@ -241865,6 +242376,7 @@
       "year": "2026",
       "batterId": "1850172",
       "player": "廣瀨 隆太",
+      "uniformNumber": "33",
       "team": "ソフトバンク",
       "teams": [
         "ソフトバンク"
@@ -242826,6 +243338,7 @@
       "year": "2026",
       "batterId": "2100596",
       "player": "徐 若熙",
+      "uniformNumber": "",
       "team": "ソフトバンク",
       "teams": [
         "ソフトバンク"
@@ -243125,6 +243638,7 @@
       "year": "2026",
       "batterId": "1851115",
       "player": "木村 光",
+      "uniformNumber": "",
       "team": "ソフトバンク",
       "teams": [
         "ソフトバンク"
@@ -243260,6 +243774,7 @@
       "year": "2026",
       "batterId": "1800107",
       "player": "杉山 一樹",
+      "uniformNumber": "",
       "team": "ソフトバンク",
       "teams": [
         "ソフトバンク"
@@ -243395,6 +243910,7 @@
       "year": "2026",
       "batterId": "2107909",
       "player": "松本 晴",
+      "uniformNumber": "",
       "team": "ソフトバンク",
       "teams": [
         "ソフトバンク"
@@ -243713,6 +244229,7 @@
       "year": "2026",
       "batterId": "1400126",
       "player": "松本 裕樹",
+      "uniformNumber": "",
       "team": "ソフトバンク",
       "teams": [
         "ソフトバンク"
@@ -243848,6 +244365,7 @@
       "year": "2026",
       "batterId": "1000128",
       "player": "柳田 悠岐",
+      "uniformNumber": "9",
       "team": "ソフトバンク",
       "teams": [
         "ソフトバンク"
@@ -245233,6 +245751,7 @@
       "year": "2026",
       "batterId": "1900104",
       "player": "柳町 達",
+      "uniformNumber": "32",
       "team": "ソフトバンク",
       "teams": [
         "ソフトバンク"
@@ -246466,6 +246985,7 @@
       "year": "2026",
       "batterId": "1400127",
       "player": "栗原 陵矢",
+      "uniformNumber": "24",
       "team": "ソフトバンク",
       "teams": [
         "ソフトバンク"
@@ -247870,6 +248390,7 @@
       "year": "2026",
       "batterId": "2103735",
       "player": "正木 智也",
+      "uniformNumber": "31",
       "team": "ソフトバンク",
       "teams": [
         "ソフトバンク"
@@ -248901,6 +249422,7 @@
       "year": "2026",
       "batterId": "1900102",
       "player": "津森 宥紀",
+      "uniformNumber": "",
       "team": "ソフトバンク",
       "teams": [
         "ソフトバンク"
@@ -249036,6 +249558,7 @@
       "year": "2026",
       "batterId": "1900101",
       "player": "海野 隆司",
+      "uniformNumber": "62",
       "team": "ソフトバンク",
       "teams": [
         "ソフトバンク"
@@ -250288,6 +250811,7 @@
       "year": "2026",
       "batterId": "1800113",
       "player": "渡邉 陸",
+      "uniformNumber": "0",
       "team": "ソフトバンク",
       "teams": [
         "ソフトバンク"
@@ -251154,6 +251678,7 @@
       "year": "2026",
       "batterId": "1000175",
       "player": "牧原 大成",
+      "uniformNumber": "8",
       "team": "ソフトバンク",
       "teams": [
         "ソフトバンク"
@@ -252539,6 +253064,7 @@
       "year": "2026",
       "batterId": "1900105",
       "player": "石塚 綜一郎",
+      "uniformNumber": "55",
       "team": "ソフトバンク",
       "teams": [
         "ソフトバンク"
@@ -253076,6 +253602,7 @@
       "year": "2026",
       "batterId": "2000109",
       "player": "笹川 吉康",
+      "uniformNumber": "44",
       "team": "ソフトバンク",
       "teams": [
         "ソフトバンク"
@@ -253841,6 +254368,7 @@
       "year": "2026",
       "batterId": "1500140",
       "player": "谷川原 健太",
+      "uniformNumber": "45",
       "team": "ソフトバンク",
       "teams": [
         "ソフトバンク"
@@ -254922,6 +255450,7 @@
       "year": "2026",
       "batterId": "1100097",
       "player": "近藤 健介",
+      "uniformNumber": "3",
       "team": "ソフトバンク",
       "teams": [
         "ソフトバンク"
@@ -256250,6 +256779,7 @@
       "year": "2026",
       "batterId": "2104035",
       "player": "野村 勇",
+      "uniformNumber": "99",
       "team": "ソフトバンク",
       "teams": [
         "ソフトバンク"
@@ -257502,6 +258032,7 @@
       "year": "2026",
       "batterId": "2102969",
       "player": "鈴木 豪太",
+      "uniformNumber": "",
       "team": "ソフトバンク",
       "teams": [
         "ソフトバンク"
@@ -257637,6 +258168,7 @@
       "year": "2026",
       "batterId": "2112183",
       "player": "髙橋 隆慶",
+      "uniformNumber": "56",
       "team": "ソフトバンク",
       "teams": [
         "ソフトバンク"
@@ -258202,6 +258734,7 @@
       "year": "2026",
       "batterId": "2101983",
       "player": "エドポロ ケイン",
+      "uniformNumber": "42",
       "team": "日本ハム",
       "teams": [
         "日本ハム"
@@ -258758,6 +259291,7 @@
       "year": "2026",
       "batterId": "2108090",
       "player": "カストロ",
+      "uniformNumber": "6",
       "team": "日本ハム",
       "teams": [
         "日本ハム"
@@ -260124,6 +260658,7 @@
       "year": "2026",
       "batterId": "1800008",
       "player": "マルティネス",
+      "uniformNumber": "2",
       "team": "日本ハム",
       "teams": [
         "日本ハム"
@@ -261224,6 +261759,7 @@
       "year": "2026",
       "batterId": "1860140",
       "player": "レイエス",
+      "uniformNumber": "99",
       "team": "日本ハム",
       "teams": [
         "日本ハム"
@@ -262533,6 +263069,7 @@
       "year": "2026",
       "batterId": "1800093",
       "player": "万波 中正",
+      "uniformNumber": "66",
       "team": "日本ハム",
       "teams": [
         "日本ハム"
@@ -263956,6 +264493,7 @@
       "year": "2026",
       "batterId": "1251037",
       "player": "上川畑 大悟",
+      "uniformNumber": "4",
       "team": "日本ハム",
       "teams": [
         "日本ハム"
@@ -264734,6 +265272,7 @@
       "year": "2026",
       "batterId": "2000080",
       "player": "五十幡 亮汰",
+      "uniformNumber": "50",
       "team": "日本ハム",
       "teams": [
         "日本ハム"
@@ -266005,6 +266544,7 @@
       "year": "2026",
       "batterId": "2000079",
       "player": "伊藤 大海",
+      "uniformNumber": "",
       "team": "日本ハム",
       "teams": [
         "日本ハム"
@@ -266573,6 +267113,7 @@
       "year": "2026",
       "batterId": "1500110",
       "player": "加藤 貴之",
+      "uniformNumber": "",
       "team": "日本ハム",
       "teams": [
         "日本ハム"
@@ -266954,6 +267495,7 @@
       "year": "2026",
       "batterId": "1750903",
       "player": "北山 亘基",
+      "uniformNumber": "",
       "team": "日本ハム",
       "teams": [
         "日本ハム"
@@ -267402,6 +267944,7 @@
       "year": "2026",
       "batterId": "2107900",
       "player": "吉田 賢吾",
+      "uniformNumber": "60",
       "team": "日本ハム",
       "teams": [
         "日本ハム"
@@ -268401,6 +268944,7 @@
       "year": "2026",
       "batterId": "1600133",
       "player": "堀 瑞輝",
+      "uniformNumber": "",
       "team": "日本ハム",
       "teams": [
         "日本ハム"
@@ -268536,6 +269080,7 @@
       "year": "2026",
       "batterId": "2050143",
       "player": "大塚 瑠晏",
+      "uniformNumber": "49",
       "team": "日本ハム",
       "teams": [
         "日本ハム"
@@ -269687,6 +270232,7 @@
       "year": "2026",
       "batterId": "1850932",
       "player": "奈良間 大己",
+      "uniformNumber": "58",
       "team": "日本ハム",
       "teams": [
         "日本ハム"
@@ -270996,6 +271542,7 @@
       "year": "2026",
       "batterId": "1700106",
       "player": "山本 拓実",
+      "uniformNumber": "",
       "team": "日本ハム",
       "teams": [
         "日本ハム"
@@ -271087,6 +271634,7 @@
       "year": "2026",
       "batterId": "2114529",
       "player": "山縣 秀",
+      "uniformNumber": "54",
       "team": "日本ハム",
       "teams": [
         "日本ハム"
@@ -272244,6 +272792,7 @@
       "year": "2026",
       "batterId": "1400195",
       "player": "山﨑 福也",
+      "uniformNumber": "",
       "team": "日本ハム",
       "teams": [
         "日本ハム"
@@ -272600,6 +273149,7 @@
       "year": "2026",
       "batterId": "1000164",
       "player": "島本 浩也",
+      "uniformNumber": "",
       "team": "日本ハム",
       "teams": [
         "日本ハム"
@@ -272735,6 +273285,7 @@
       "year": "2026",
       "batterId": "2103635",
       "player": "柳川 大晟",
+      "uniformNumber": "",
       "team": "日本ハム",
       "teams": [
         "日本ハム"
@@ -272870,6 +273421,7 @@
       "year": "2026",
       "batterId": "2117696",
       "player": "柴田 獅子",
+      "uniformNumber": "",
       "team": "日本ハム",
       "teams": [
         "日本ハム"
@@ -273207,6 +273759,7 @@
       "year": "2026",
       "batterId": "1900075",
       "player": "梅林 優貴",
+      "uniformNumber": "98",
       "team": "日本ハム",
       "teams": [
         "日本ハム"
@@ -273699,6 +274252,7 @@
       "year": "2026",
       "batterId": "1800110",
       "player": "水谷 瞬",
+      "uniformNumber": "53",
       "team": "日本ハム",
       "teams": [
         "日本ハム"
@@ -274850,6 +275404,7 @@
       "year": "2026",
       "batterId": "1851204",
       "player": "水野 達稀",
+      "uniformNumber": "43",
       "team": "日本ハム",
       "teams": [
         "日本ハム"
@@ -276178,6 +276733,7 @@
       "year": "2026",
       "batterId": "1900070",
       "player": "河野 竜生",
+      "uniformNumber": "",
       "team": "日本ハム",
       "teams": [
         "日本ハム"
@@ -276269,6 +276825,7 @@
       "year": "2026",
       "batterId": "1400119",
       "player": "淺間 大基",
+      "uniformNumber": "8",
       "team": "日本ハム",
       "teams": [
         "日本ハム"
@@ -277344,6 +277901,7 @@
       "year": "2026",
       "batterId": "1700025",
       "player": "清宮 幸太郎",
+      "uniformNumber": "21",
       "team": "日本ハム",
       "teams": [
         "日本ハム"
@@ -278729,6 +279287,7 @@
       "year": "2026",
       "batterId": "1400118",
       "player": "清水 優心",
+      "uniformNumber": "10",
       "team": "日本ハム",
       "teams": [
         "日本ハム"
@@ -279652,6 +280211,7 @@
       "year": "2026",
       "batterId": "1600164",
       "player": "田中 正義",
+      "uniformNumber": "",
       "team": "日本ハム",
       "teams": [
         "日本ハム"
@@ -279787,6 +280347,7 @@
       "year": "2026",
       "batterId": "1800095",
       "player": "田宮 裕涼",
+      "uniformNumber": "64",
       "team": "日本ハム",
       "teams": [
         "日本ハム"
@@ -281077,6 +281638,7 @@
       "year": "2026",
       "batterId": "2050199",
       "player": "畔柳 亨丞",
+      "uniformNumber": "",
       "team": "日本ハム",
       "teams": [
         "日本ハム"
@@ -281168,6 +281730,7 @@
       "year": "2026",
       "batterId": "2106284",
       "player": "矢澤 宏太",
+      "uniformNumber": "12",
       "team": "日本ハム",
       "teams": [
         "日本ハム"
@@ -282477,6 +283040,7 @@
       "year": "2026",
       "batterId": "2100027",
       "player": "福島 蓮",
+      "uniformNumber": "",
       "team": "日本ハム",
       "teams": [
         "日本ハム"
@@ -283007,6 +283571,7 @@
       "year": "2026",
       "batterId": "1200055",
       "player": "福谷 浩司",
+      "uniformNumber": "",
       "team": "日本ハム",
       "teams": [
         "日本ハム"
@@ -283098,6 +283663,7 @@
       "year": "2026",
       "batterId": "2000082",
       "player": "細川 凌平",
+      "uniformNumber": "56",
       "team": "日本ハム",
       "teams": [
         "日本ハム"
@@ -284243,6 +284809,7 @@
       "year": "2026",
       "batterId": "2103705",
       "player": "菊地 大稀",
+      "uniformNumber": "",
       "team": "日本ハム",
       "teams": [
         "日本ハム"
@@ -284334,6 +284901,7 @@
       "year": "2026",
       "batterId": "1000100",
       "player": "西川 遥輝",
+      "uniformNumber": "7",
       "team": "日本ハム",
       "teams": [
         "日本ハム"
@@ -285346,6 +285914,7 @@
       "year": "2026",
       "batterId": "1950486",
       "player": "進藤 勇也",
+      "uniformNumber": "33",
       "team": "日本ハム",
       "teams": [
         "日本ハム"
@@ -286478,6 +287047,7 @@
       "year": "2026",
       "batterId": "2050307",
       "player": "達 孝太",
+      "uniformNumber": "",
       "team": "日本ハム",
       "teams": [
         "日本ハム"
@@ -286569,6 +287139,7 @@
       "year": "2026",
       "batterId": "1900040",
       "player": "郡司 裕也",
+      "uniformNumber": "3",
       "team": "日本ハム",
       "teams": [
         "日本ハム"
@@ -287897,6 +288468,7 @@
       "year": "2026",
       "batterId": "1800091",
       "player": "野村 佑希",
+      "uniformNumber": "5",
       "team": "日本ハム",
       "teams": [
         "日本ハム"
@@ -289301,6 +289873,7 @@
       "year": "2026",
       "batterId": "2103904",
       "player": "ジャクソン",
+      "uniformNumber": "",
       "team": "ロッテ",
       "teams": [
         "ロッテ"
@@ -289812,6 +290385,7 @@
       "year": "2026",
       "batterId": "1700020",
       "player": "ソト",
+      "uniformNumber": "99",
       "team": "ロッテ",
       "teams": [
         "ロッテ"
@@ -291197,6 +291771,7 @@
       "year": "2026",
       "batterId": "1460080",
       "player": "ポランコ",
+      "uniformNumber": "22",
       "team": "ロッテ",
       "teams": [
         "ロッテ"
@@ -292468,6 +293043,7 @@
       "year": "2026",
       "batterId": "2101204",
       "player": "ロング",
+      "uniformNumber": "",
       "team": "ロッテ",
       "teams": [
         "ロッテ"
@@ -292786,6 +293362,7 @@
       "year": "2026",
       "batterId": "1850947",
       "player": "上田 希由翔",
+      "uniformNumber": "10",
       "team": "ロッテ",
       "teams": [
         "ロッテ"
@@ -293880,6 +294457,7 @@
       "year": "2026",
       "batterId": "2000088",
       "player": "中森 俊介",
+      "uniformNumber": "",
       "team": "ロッテ",
       "teams": [
         "ロッテ"
@@ -294015,6 +294593,7 @@
       "year": "2026",
       "batterId": "1900045",
       "player": "井上 広大",
+      "uniformNumber": "39",
       "team": "ロッテ",
       "teams": [
         "ロッテ"
@@ -295261,6 +295840,7 @@
       "year": "2026",
       "batterId": "1900081",
       "player": "佐藤 都志也",
+      "uniformNumber": "32",
       "team": "ロッテ",
       "teams": [
         "ロッテ"
@@ -296646,6 +297226,7 @@
       "year": "2026",
       "batterId": "1450608",
       "player": "八木 彬",
+      "uniformNumber": "",
       "team": "ロッテ",
       "teams": [
         "ロッテ"
@@ -296781,6 +297362,7 @@
       "year": "2026",
       "batterId": "2106798",
       "player": "友杉 篤輝",
+      "uniformNumber": "4",
       "team": "ロッテ",
       "teams": [
         "ロッテ"
@@ -298166,6 +298748,7 @@
       "year": "2026",
       "batterId": "1700098",
       "player": "和田 康士朗",
+      "uniformNumber": "63",
       "team": "ロッテ",
       "teams": [
         "ロッテ"
@@ -299127,6 +299710,7 @@
       "year": "2026",
       "batterId": "1800037",
       "player": "坂本 光士郎",
+      "uniformNumber": "",
       "team": "ロッテ",
       "teams": [
         "ロッテ"
@@ -299262,6 +299846,7 @@
       "year": "2026",
       "batterId": "1700092",
       "player": "安田 尚憲",
+      "uniformNumber": "5",
       "team": "ロッテ",
       "teams": [
         "ロッテ"
@@ -300198,6 +300783,7 @@
       "year": "2026",
       "batterId": "2117855",
       "player": "宮崎 竜成",
+      "uniformNumber": "44",
       "team": "ロッテ",
       "teams": [
         "ロッテ"
@@ -301146,6 +301732,7 @@
       "year": "2026",
       "batterId": "2102926",
       "player": "寺地 隆成",
+      "uniformNumber": "65",
       "team": "ロッテ",
       "teams": [
         "ロッテ"
@@ -302493,6 +303080,7 @@
       "year": "2026",
       "batterId": "1800052",
       "player": "小島 和哉",
+      "uniformNumber": "",
       "team": "ロッテ",
       "teams": [
         "ロッテ"
@@ -302830,6 +303418,7 @@
       "year": "2026",
       "batterId": "2000089",
       "player": "小川 龍成",
+      "uniformNumber": "57",
       "team": "ロッテ",
       "teams": [
         "ロッテ"
@@ -304158,6 +304747,7 @@
       "year": "2026",
       "batterId": "1400140",
       "player": "小野 郁",
+      "uniformNumber": "",
       "team": "ロッテ",
       "teams": [
         "ロッテ"
@@ -304249,6 +304839,7 @@
       "year": "2026",
       "batterId": "1800053",
       "player": "山口 航輝",
+      "uniformNumber": "51",
       "team": "ロッテ",
       "teams": [
         "ロッテ"
@@ -305596,6 +306187,7 @@
       "year": "2026",
       "batterId": "2000094",
       "player": "山本 大斗",
+      "uniformNumber": "61",
       "team": "ロッテ",
       "teams": [
         "ロッテ"
@@ -306867,6 +307459,7 @@
       "year": "2026",
       "batterId": "1700034",
       "player": "山﨑 剛",
+      "uniformNumber": "",
       "team": "ロッテ",
       "teams": [
         "ロッテ"
@@ -307477,6 +308070,7 @@
       "year": "2026",
       "batterId": "1300044",
       "player": "岡 大海",
+      "uniformNumber": "25",
       "team": "ロッテ",
       "teams": [
         "ロッテ"
@@ -308571,6 +309165,7 @@
       "year": "2026",
       "batterId": "2114737",
       "player": "廣池 康志郎",
+      "uniformNumber": "",
       "team": "ロッテ",
       "teams": [
         "ロッテ"
@@ -309063,6 +309658,7 @@
       "year": "2026",
       "batterId": "1500102",
       "player": "愛斗",
+      "uniformNumber": "50",
       "team": "ロッテ",
       "teams": [
         "ロッテ"
@@ -309948,6 +310544,7 @@
       "year": "2026",
       "batterId": "2100346",
       "player": "松川 虎生",
+      "uniformNumber": "2",
       "team": "ロッテ",
       "teams": [
         "ロッテ"
@@ -311010,6 +311607,7 @@
       "year": "2026",
       "batterId": "1900083",
       "player": "横山 陸人",
+      "uniformNumber": "",
       "team": "ロッテ",
       "teams": [
         "ロッテ"
@@ -311145,6 +311743,7 @@
       "year": "2026",
       "batterId": "2121158",
       "player": "櫻井 ユウヤ",
+      "uniformNumber": "55",
       "team": "ロッテ",
       "teams": [
         "ロッテ"
@@ -311561,6 +312160,7 @@
       "year": "2026",
       "batterId": "2100442",
       "player": "毛利 海大",
+      "uniformNumber": "",
       "team": "ロッテ",
       "teams": [
         "ロッテ"
@@ -311939,6 +312539,7 @@
       "year": "2026",
       "batterId": "2103693",
       "player": "池田 来翔",
+      "uniformNumber": "0",
       "team": "ロッテ",
       "teams": [
         "ロッテ"
@@ -313229,6 +313830,7 @@
       "year": "2026",
       "batterId": "1600157",
       "player": "澤田 圭佑",
+      "uniformNumber": "",
       "team": "ロッテ",
       "teams": [
         "ロッテ"
@@ -313364,6 +313966,7 @@
       "year": "2026",
       "batterId": "2102758",
       "player": "田中 晴也",
+      "uniformNumber": "",
       "team": "ロッテ",
       "teams": [
         "ロッテ"
@@ -313682,6 +314285,7 @@
       "year": "2026",
       "batterId": "1200096",
       "player": "田村 龍弘",
+      "uniformNumber": "27",
       "team": "ロッテ",
       "teams": [
         "ロッテ"
@@ -314117,6 +314721,7 @@
       "year": "2026",
       "batterId": "1100104",
       "player": "益田 直也",
+      "uniformNumber": "",
       "team": "ロッテ",
       "teams": [
         "ロッテ"
@@ -314208,6 +314813,7 @@
       "year": "2026",
       "batterId": "1600108",
       "player": "石垣 勝海",
+      "uniformNumber": "43",
       "team": "ロッテ",
       "teams": [
         "ロッテ"
@@ -314602,6 +315208,7 @@
       "year": "2026",
       "batterId": "1100096",
       "player": "石川 慎吾",
+      "uniformNumber": "23",
       "team": "ロッテ",
       "teams": [
         "ロッテ"
@@ -315443,6 +316050,7 @@
       "year": "2026",
       "batterId": "1800050",
       "player": "藤原 恭大",
+      "uniformNumber": "1",
       "team": "ロッテ",
       "teams": [
         "ロッテ"
@@ -316461,6 +317069,7 @@
       "year": "2026",
       "batterId": "1700093",
       "player": "藤岡 裕大",
+      "uniformNumber": "7",
       "team": "ロッテ",
       "teams": [
         "ロッテ"
@@ -317296,6 +317905,7 @@
       "year": "2026",
       "batterId": "1950286",
       "player": "西川 史礁",
+      "uniformNumber": "6",
       "team": "ロッテ",
       "teams": [
         "ロッテ"
@@ -318643,6 +319253,7 @@
       "year": "2026",
       "batterId": "2000087",
       "player": "鈴木 昭汰",
+      "uniformNumber": "",
       "team": "ロッテ",
       "teams": [
         "ロッテ"
@@ -318778,6 +319389,7 @@
       "year": "2026",
       "batterId": "2105534",
       "player": "高野 脩汰",
+      "uniformNumber": "",
       "team": "ロッテ",
       "teams": [
         "ロッテ"
@@ -318913,6 +319525,7 @@
       "year": "2026",
       "batterId": "1900082",
       "player": "髙部 瑛斗",
+      "uniformNumber": "0",
       "team": "ロッテ",
       "teams": [
         "ロッテ"
@@ -320165,6 +320778,7 @@
       "year": "2026",
       "batterId": "2108177",
       "player": "エスピノーザ",
+      "uniformNumber": "",
       "team": "オリックス",
       "teams": [
         "オリックス"
@@ -320657,6 +321271,7 @@
       "year": "2026",
       "batterId": "2117200",
       "player": "シーモア",
+      "uniformNumber": "45",
       "team": "オリックス",
       "teams": [
         "オリックス"
@@ -321789,6 +322404,7 @@
       "year": "2026",
       "batterId": "2108148",
       "player": "ジェリー",
+      "uniformNumber": "",
       "team": "オリックス",
       "teams": [
         "オリックス"
@@ -322069,6 +322685,7 @@
       "year": "2026",
       "batterId": "1961416",
       "player": "マチャド",
+      "uniformNumber": "",
       "team": "オリックス",
       "teams": [
         "オリックス"
@@ -322204,6 +322821,7 @@
       "year": "2026",
       "batterId": "1800104",
       "player": "中川 圭太",
+      "uniformNumber": "67",
       "team": "オリックス",
       "teams": [
         "オリックス"
@@ -323608,6 +324226,7 @@
       "year": "2026",
       "batterId": "1300058",
       "player": "九里 亜蓮",
+      "uniformNumber": "",
       "team": "オリックス",
       "teams": [
         "オリックス"
@@ -324138,6 +324757,7 @@
       "year": "2026",
       "batterId": "2107693",
       "player": "入山 海斗",
+      "uniformNumber": "",
       "team": "オリックス",
       "teams": [
         "オリックス"
@@ -324273,6 +324893,7 @@
       "year": "2026",
       "batterId": "2107850",
       "player": "内藤 鵬",
+      "uniformNumber": "25",
       "team": "オリックス",
       "teams": [
         "オリックス"
@@ -324667,6 +325288,7 @@
       "year": "2026",
       "batterId": "1700101",
       "player": "博志",
+      "uniformNumber": "",
       "team": "オリックス",
       "teams": [
         "オリックス"
@@ -324802,6 +325424,7 @@
       "year": "2026",
       "batterId": "1800090",
       "player": "吉田 輝星",
+      "uniformNumber": "",
       "team": "オリックス",
       "teams": [
         "オリックス"
@@ -324937,6 +325560,7 @@
       "year": "2026",
       "batterId": "1500128",
       "player": "大城 滉二",
+      "uniformNumber": "10",
       "team": "オリックス",
       "teams": [
         "オリックス"
@@ -325721,6 +326345,7 @@
       "year": "2026",
       "batterId": "1800098",
       "player": "太田 椋",
+      "uniformNumber": "1",
       "team": "オリックス",
       "teams": [
         "オリックス"
@@ -327030,6 +327655,7 @@
       "year": "2026",
       "batterId": "1400196",
       "player": "宗 佑磨",
+      "uniformNumber": "6",
       "team": "オリックス",
       "teams": [
         "オリックス"
@@ -328415,6 +329041,7 @@
       "year": "2026",
       "batterId": "1800102",
       "player": "宜保 翔",
+      "uniformNumber": "",
       "team": "オリックス",
       "teams": [
         "オリックス"
@@ -329370,6 +329997,7 @@
       "year": "2026",
       "batterId": "2108361",
       "player": "宮國 凌空",
+      "uniformNumber": "",
       "team": "オリックス",
       "teams": [
         "オリックス"
@@ -329461,6 +330089,7 @@
       "year": "2026",
       "batterId": "1851026",
       "player": "寺西 成騎",
+      "uniformNumber": "",
       "team": "オリックス",
       "teams": [
         "オリックス"
@@ -329596,6 +330225,7 @@
       "year": "2026",
       "batterId": "1750667",
       "player": "山中 稜真",
+      "uniformNumber": "50",
       "team": "オリックス",
       "teams": [
         "オリックス"
@@ -330703,6 +331333,7 @@
       "year": "2026",
       "batterId": "1600155",
       "player": "山﨑 颯一郎",
+      "uniformNumber": "",
       "team": "オリックス",
       "teams": [
         "オリックス"
@@ -330794,6 +331425,7 @@
       "year": "2026",
       "batterId": "800080",
       "player": "岩嵜 翔",
+      "uniformNumber": "",
       "team": "オリックス",
       "teams": [
         "オリックス"
@@ -330885,6 +331517,7 @@
       "year": "2026",
       "batterId": "1500112",
       "player": "平沼 翔太",
+      "uniformNumber": "61",
       "team": "オリックス",
       "teams": [
         "オリックス"
@@ -331865,6 +332498,7 @@
       "year": "2026",
       "batterId": "1500041",
       "player": "廣岡 大志",
+      "uniformNumber": "30",
       "team": "オリックス",
       "teams": [
         "オリックス"
@@ -332801,6 +333435,7 @@
       "year": "2026",
       "batterId": "1750595",
       "player": "曽谷 龍平",
+      "uniformNumber": "",
       "team": "オリックス",
       "teams": [
         "オリックス"
@@ -333255,6 +333890,7 @@
       "year": "2026",
       "batterId": "1500135",
       "player": "杉本 裕太郎",
+      "uniformNumber": "99",
       "team": "オリックス",
       "teams": [
         "オリックス"
@@ -334229,6 +334865,7 @@
       "year": "2026",
       "batterId": "1650722",
       "player": "杉澤 龍",
+      "uniformNumber": "33",
       "team": "オリックス",
       "teams": [
         "オリックス"
@@ -335260,6 +335897,7 @@
       "year": "2026",
       "batterId": "2000098",
       "player": "来田 涼斗",
+      "uniformNumber": "38",
       "team": "オリックス",
       "teams": [
         "オリックス"
@@ -336525,6 +337163,7 @@
       "year": "2026",
       "batterId": "1300100",
       "player": "森 友哉",
+      "uniformNumber": "4",
       "team": "オリックス",
       "teams": [
         "オリックス"
@@ -337815,6 +338454,7 @@
       "year": "2026",
       "batterId": "1650221",
       "player": "椋木 蓮",
+      "uniformNumber": "",
       "team": "オリックス",
       "teams": [
         "オリックス"
@@ -337950,6 +338590,7 @@
       "year": "2026",
       "batterId": "2103713",
       "player": "権田 琉成",
+      "uniformNumber": "",
       "team": "オリックス",
       "teams": [
         "オリックス"
@@ -338041,6 +338682,7 @@
       "year": "2026",
       "batterId": "2111290",
       "player": "横山 聖哉",
+      "uniformNumber": "34",
       "team": "オリックス",
       "teams": [
         "オリックス"
@@ -338806,6 +339448,7 @@
       "year": "2026",
       "batterId": "2050254",
       "player": "池田 陵真",
+      "uniformNumber": "39",
       "team": "オリックス",
       "teams": [
         "オリックス"
@@ -339219,6 +339862,7 @@
       "year": "2026",
       "batterId": "2103747",
       "player": "渡部 遼人",
+      "uniformNumber": "0",
       "team": "オリックス",
       "teams": [
         "オリックス"
@@ -340490,6 +341134,7 @@
       "year": "2026",
       "batterId": "2050019",
       "player": "片山 楽生",
+      "uniformNumber": "",
       "team": "オリックス",
       "teams": [
         "オリックス"
@@ -340770,6 +341415,7 @@
       "year": "2026",
       "batterId": "1700109",
       "player": "田嶋 大樹",
+      "uniformNumber": "",
       "team": "オリックス",
       "teams": [
         "オリックス"
@@ -341050,6 +341696,7 @@
       "year": "2026",
       "batterId": "1300049",
       "player": "石川 亮",
+      "uniformNumber": "",
       "team": "オリックス",
       "teams": [
         "オリックス"
@@ -341185,6 +341832,7 @@
       "year": "2026",
       "batterId": "1650056",
       "player": "福永 奨",
+      "uniformNumber": "32",
       "team": "オリックス",
       "teams": [
         "オリックス"
@@ -341702,6 +342350,7 @@
       "year": "2026",
       "batterId": "2115915",
       "player": "窪田 洋祐",
+      "uniformNumber": "58",
       "team": "オリックス",
       "teams": [
         "オリックス"
@@ -341982,6 +342631,7 @@
       "year": "2026",
       "batterId": "1900088",
       "player": "紅林 弘太郎",
+      "uniformNumber": "24",
       "team": "オリックス",
       "teams": [
         "オリックス"
@@ -343367,6 +344017,7 @@
       "year": "2026",
       "batterId": "1300109",
       "player": "若月 健矢",
+      "uniformNumber": "2",
       "team": "オリックス",
       "teams": [
         "オリックス"
@@ -344657,6 +345308,7 @@
       "year": "2026",
       "batterId": "1500096",
       "player": "西川 龍馬",
+      "uniformNumber": "7",
       "team": "オリックス",
       "teams": [
         "オリックス"
@@ -345947,6 +346599,7 @@
       "year": "2026",
       "batterId": "1400201",
       "player": "西野 真弘",
+      "uniformNumber": "5",
       "team": "オリックス",
       "teams": [
         "オリックス"
@@ -347218,6 +347871,7 @@
       "year": "2026",
       "batterId": "1751068",
       "player": "野口 智哉",
+      "uniformNumber": "9",
       "team": "オリックス",
       "teams": [
         "オリックス"
@@ -348470,6 +349124,7 @@
       "year": "2026",
       "batterId": "2110153",
       "player": "麦谷 祐介",
+      "uniformNumber": "8",
       "team": "オリックス",
       "teams": [
         "オリックス"
@@ -349450,6 +350105,7 @@
       "year": "2026",
       "batterId": "1860167",
       "player": "ウィンゲンター",
+      "uniformNumber": "",
       "team": "西武",
       "teams": [
         "西武"
@@ -349541,6 +350197,7 @@
       "year": "2026",
       "batterId": "2117028",
       "player": "カナリオ",
+      "uniformNumber": "25",
       "team": "西武",
       "teams": [
         "西武"
@@ -350964,6 +351621,7 @@
       "year": "2026",
       "batterId": "2101047",
       "player": "ネビン",
+      "uniformNumber": "26",
       "team": "西武",
       "teams": [
         "西武"
@@ -352147,6 +352805,7 @@
       "year": "2026",
       "batterId": "2117319",
       "player": "ワイナンス",
+      "uniformNumber": "",
       "team": "西武",
       "teams": [
         "西武"
@@ -352446,6 +353105,7 @@
       "year": "2026",
       "batterId": "2106794",
       "player": "上田 大河",
+      "uniformNumber": "",
       "team": "西武",
       "teams": [
         "西武"
@@ -352581,6 +353241,7 @@
       "year": "2026",
       "batterId": "2000073",
       "player": "仲三 優太",
+      "uniformNumber": "55",
       "team": "西武",
       "teams": [
         "西武"
@@ -353378,6 +354039,7 @@
       "year": "2026",
       "batterId": "1750481",
       "player": "仲田 慶介",
+      "uniformNumber": "0",
       "team": "西武",
       "teams": [
         "西武"
@@ -354025,6 +354687,7 @@
       "year": "2026",
       "batterId": "2117835",
       "player": "佐藤 太陽",
+      "uniformNumber": "38",
       "team": "西武",
       "teams": [
         "西武"
@@ -354663,6 +355326,7 @@
       "year": "2026",
       "batterId": "2103714",
       "player": "佐藤 隼輔",
+      "uniformNumber": "",
       "team": "西武",
       "teams": [
         "西武"
@@ -354798,6 +355462,7 @@
       "year": "2026",
       "batterId": "2105684",
       "player": "児玉 亮涼",
+      "uniformNumber": "",
       "team": "西武",
       "teams": [
         "西武"
@@ -354889,6 +355554,7 @@
       "year": "2026",
       "batterId": "1750472",
       "player": "古賀 悠斗",
+      "uniformNumber": "22",
       "team": "西武",
       "teams": [
         "西武"
@@ -356293,6 +356959,7 @@
       "year": "2026",
       "batterId": "1400184",
       "player": "外崎 修汰",
+      "uniformNumber": "5",
       "team": "西武",
       "teams": [
         "西武"
@@ -357254,6 +357921,7 @@
       "year": "2026",
       "batterId": "2050145",
       "player": "小島 大河",
+      "uniformNumber": "10",
       "team": "西武",
       "teams": [
         "西武"
@@ -358639,6 +359307,7 @@
       "year": "2026",
       "batterId": "2000069",
       "player": "山村 崇嘉",
+      "uniformNumber": "32",
       "team": "西武",
       "teams": [
         "西武"
@@ -359815,6 +360484,7 @@
       "year": "2026",
       "batterId": "2121154",
       "player": "岩城 颯空",
+      "uniformNumber": "",
       "team": "西武",
       "teams": [
         "西武"
@@ -359950,6 +360620,7 @@
       "year": "2026",
       "batterId": "1900068",
       "player": "岸 潤一郎",
+      "uniformNumber": "68",
       "team": "西武",
       "teams": [
         "西武"
@@ -361297,6 +361968,7 @@
       "year": "2026",
       "batterId": "1500117",
       "player": "平沢 大河",
+      "uniformNumber": "39",
       "team": "西武",
       "teams": [
         "西武"
@@ -362581,6 +363253,7 @@
       "year": "2026",
       "batterId": "1700124",
       "player": "平良 海馬",
+      "uniformNumber": "",
       "team": "西武",
       "teams": [
         "西武"
@@ -363054,6 +363727,7 @@
       "year": "2026",
       "batterId": "1660299",
       "player": "林 安可",
+      "uniformNumber": "73",
       "team": "西武",
       "teams": [
         "西武"
@@ -364262,6 +364936,7 @@
       "year": "2026",
       "batterId": "1900065",
       "player": "柘植 世那",
+      "uniformNumber": "37",
       "team": "西武",
       "teams": [
         "西武"
@@ -365318,6 +365993,7 @@
       "year": "2026",
       "batterId": "12102",
       "player": "栗山 巧",
+      "uniformNumber": "1",
       "team": "西武",
       "teams": [
         "西武"
@@ -366026,6 +366702,7 @@
       "year": "2026",
       "batterId": "1100061",
       "player": "桑原 将志",
+      "uniformNumber": "7",
       "team": "西武",
       "teams": [
         "西武"
@@ -367411,6 +368088,7 @@
       "year": "2026",
       "batterId": "2105080",
       "player": "武内 夏暉",
+      "uniformNumber": "",
       "team": "西武",
       "teams": [
         "西武"
@@ -367884,6 +368562,7 @@
       "year": "2026",
       "batterId": "1900062",
       "player": "浜屋 将太",
+      "uniformNumber": "",
       "team": "西武",
       "teams": [
         "西武"
@@ -368019,6 +368698,7 @@
       "year": "2026",
       "batterId": "1800081",
       "player": "渡邉 勇太朗",
+      "uniformNumber": "",
       "team": "西武",
       "teams": [
         "西武"
@@ -368492,6 +369172,7 @@
       "year": "2026",
       "batterId": "1950417",
       "player": "渡部 聖弥",
+      "uniformNumber": "8",
       "team": "西武",
       "teams": [
         "西武"
@@ -369934,6 +370615,7 @@
       "year": "2026",
       "batterId": "1600129",
       "player": "源田 壮亮",
+      "uniformNumber": "6",
       "team": "西武",
       "teams": [
         "西武"
@@ -371300,6 +371982,7 @@
       "year": "2026",
       "batterId": "2103618",
       "player": "滝澤 夏央",
+      "uniformNumber": "62",
       "team": "西武",
       "teams": [
         "西武"
@@ -372628,6 +373311,7 @@
       "year": "2026",
       "batterId": "1800106",
       "player": "甲斐野 央",
+      "uniformNumber": "",
       "team": "西武",
       "teams": [
         "西武"
@@ -372763,6 +373447,7 @@
       "year": "2026",
       "batterId": "1600134",
       "player": "石井 一成",
+      "uniformNumber": "4",
       "team": "西武",
       "teams": [
         "西武"
@@ -374110,6 +374795,7 @@
       "year": "2026",
       "batterId": "2100048",
       "player": "秋山 俊",
+      "uniformNumber": "35",
       "team": "西武",
       "teams": [
         "西武"
@@ -374739,6 +375425,7 @@
       "year": "2026",
       "batterId": "2117734",
       "player": "篠原 響",
+      "uniformNumber": "",
       "team": "西武",
       "teams": [
         "西武"
@@ -374874,6 +375561,7 @@
       "year": "2026",
       "batterId": "2107897",
       "player": "茶野 篤政",
+      "uniformNumber": "31",
       "team": "西武",
       "teams": [
         "西武"
@@ -375521,6 +376209,7 @@
       "year": "2026",
       "batterId": "1700122",
       "player": "西川 愛也",
+      "uniformNumber": "51",
       "team": "西武",
       "teams": [
         "西武"
@@ -376944,6 +377633,7 @@
       "year": "2026",
       "batterId": "2000077",
       "player": "豆田 泰志",
+      "uniformNumber": "",
       "team": "西武",
       "teams": [
         "西武"
@@ -377079,6 +377769,7 @@
       "year": "2026",
       "batterId": "2000075",
       "player": "長谷川 信哉",
+      "uniformNumber": "63",
       "team": "西武",
       "teams": [
         "西武"
@@ -378540,6 +379231,7 @@
       "year": "2026",
       "batterId": "1751148",
       "player": "隅田 知一郎",
+      "uniformNumber": "",
       "team": "西武",
       "teams": [
         "西武"
@@ -378953,6 +379645,7 @@
       "year": "2026",
       "batterId": "2106286",
       "player": "青山 美夏人",
+      "uniformNumber": "",
       "team": "西武",
       "teams": [
         "西武"
@@ -379044,6 +379737,7 @@
       "year": "2026",
       "batterId": "1400182",
       "player": "髙橋 光成",
+      "uniformNumber": "",
       "team": "西武",
       "teams": [
         "西武"
@@ -379400,6 +380094,7 @@
       "year": "2026",
       "batterId": "2103612",
       "player": "黒田 将矢",
+      "uniformNumber": "",
       "team": "西武",
       "teams": [
         "西武"
@@ -379535,6 +380230,7 @@
       "year": "2026",
       "batterId": "2103740",
       "player": "YG安田",
+      "uniformNumber": "55",
       "team": "東北楽天",
       "teams": [
         "東北楽天"
@@ -380452,6 +381148,7 @@
       "year": "2026",
       "batterId": "1961929",
       "player": "ゴンザレス",
+      "uniformNumber": "12",
       "team": "東北楽天",
       "teams": [
         "東北楽天"
@@ -380998,6 +381695,7 @@
       "year": "2026",
       "batterId": "1760551",
       "player": "ボイト",
+      "uniformNumber": "9",
       "team": "東北楽天",
       "teams": [
         "東北楽天"
@@ -382073,6 +382771,7 @@
       "year": "2026",
       "batterId": "2122300",
       "player": "マッカスカー",
+      "uniformNumber": "34",
       "team": "東北楽天",
       "teams": [
         "東北楽天"
@@ -383382,6 +384081,7 @@
       "year": "2026",
       "batterId": "2112158",
       "player": "ワォーターズ",
+      "uniformNumber": "60",
       "team": "東北楽天",
       "teams": [
         "東北楽天"
@@ -384042,6 +384742,7 @@
       "year": "2026",
       "batterId": "1950278",
       "player": "中島 大輔",
+      "uniformNumber": "32",
       "team": "東北楽天",
       "teams": [
         "東北楽天"
@@ -385370,6 +386071,7 @@
       "year": "2026",
       "batterId": "2121018",
       "player": "九谷 瑠",
+      "uniformNumber": "",
       "team": "東北楽天",
       "teams": [
         "東北楽天"
@@ -385505,6 +386207,7 @@
       "year": "2026",
       "batterId": "800075",
       "player": "伊藤 光",
+      "uniformNumber": "27",
       "team": "東北楽天",
       "teams": [
         "東北楽天"
@@ -386529,6 +387232,7 @@
       "year": "2026",
       "batterId": "1950716",
       "player": "伊藤 樹",
+      "uniformNumber": "",
       "team": "東北楽天",
       "teams": [
         "東北楽天"
@@ -386620,6 +387324,7 @@
       "year": "2026",
       "batterId": "1800044",
       "player": "伊藤 裕季也",
+      "uniformNumber": "39",
       "team": "東北楽天",
       "teams": [
         "東北楽天"
@@ -387613,6 +388318,7 @@
       "year": "2026",
       "batterId": "1900100",
       "player": "佐藤 直樹",
+      "uniformNumber": "38",
       "team": "東北楽天",
       "teams": [
         "東北楽天"
@@ -388979,6 +389685,7 @@
       "year": "2026",
       "batterId": "2000125",
       "player": "入江 大樹",
+      "uniformNumber": "63",
       "team": "東北楽天",
       "teams": [
         "東北楽天"
@@ -389851,6 +390558,7 @@
       "year": "2026",
       "batterId": "2000126",
       "player": "内 星龍",
+      "uniformNumber": "",
       "team": "東北楽天",
       "teams": [
         "東北楽天"
@@ -389942,6 +390650,7 @@
       "year": "2026",
       "batterId": "700049",
       "player": "前田 健太",
+      "uniformNumber": "",
       "team": "東北楽天",
       "teams": [
         "東北楽天"
@@ -390222,6 +390931,7 @@
       "year": "2026",
       "batterId": "1300076",
       "player": "加治屋 蓮",
+      "uniformNumber": "",
       "team": "東北楽天",
       "teams": [
         "東北楽天"
@@ -390357,6 +391067,7 @@
       "year": "2026",
       "batterId": "2110316",
       "player": "古謝 樹",
+      "uniformNumber": "",
       "team": "東北楽天",
       "teams": [
         "東北楽天"
@@ -390792,6 +391503,7 @@
       "year": "2026",
       "batterId": "2103640",
       "player": "吉野 創士",
+      "uniformNumber": "78",
       "team": "東北楽天",
       "teams": [
         "東北楽天"
@@ -391557,6 +392269,7 @@
       "year": "2026",
       "batterId": "1600004",
       "player": "堀内 謙伍",
+      "uniformNumber": "65",
       "team": "東北楽天",
       "teams": [
         "東北楽天"
@@ -392474,6 +393187,7 @@
       "year": "2026",
       "batterId": "1800118",
       "player": "太田 光",
+      "uniformNumber": "2",
       "team": "東北楽天",
       "teams": [
         "東北楽天"
@@ -393802,6 +394516,7 @@
       "year": "2026",
       "batterId": "1600012",
       "player": "宋 家豪",
+      "uniformNumber": "",
       "team": "東北楽天",
       "teams": [
         "東北楽天"
@@ -393893,6 +394608,7 @@
       "year": "2026",
       "batterId": "2103614",
       "player": "小森 航大郎",
+      "uniformNumber": "73",
       "team": "東北楽天",
       "teams": [
         "東北楽天"
@@ -394433,6 +395149,7 @@
       "year": "2026",
       "batterId": "1900112",
       "player": "小深田 大翔",
+      "uniformNumber": "0",
       "team": "東北楽天",
       "teams": [
         "東北楽天"
@@ -395742,6 +396459,7 @@
       "year": "2026",
       "batterId": "1800123",
       "player": "小郷 裕哉",
+      "uniformNumber": "51",
       "team": "東北楽天",
       "teams": [
         "東北楽天"
@@ -396912,6 +397630,7 @@
       "year": "2026",
       "batterId": "700065",
       "player": "岸 孝之",
+      "uniformNumber": "",
       "team": "東北楽天",
       "teams": [
         "東北楽天"
@@ -397192,6 +397911,7 @@
       "year": "2026",
       "batterId": "2105283",
       "player": "平良 竜哉",
+      "uniformNumber": "48",
       "team": "東北楽天",
       "teams": [
         "東北楽天"
@@ -398596,6 +399316,7 @@
       "year": "2026",
       "batterId": "2000121",
       "player": "早川 隆久",
+      "uniformNumber": "",
       "team": "東北楽天",
       "teams": [
         "東北楽天"
@@ -398933,6 +399654,7 @@
       "year": "2026",
       "batterId": "1600007",
       "player": "村林 一輝",
+      "uniformNumber": "6",
       "team": "東北楽天",
       "teams": [
         "東北楽天"
@@ -400394,6 +401116,7 @@
       "year": "2026",
       "batterId": "2103765",
       "player": "柴田 大地",
+      "uniformNumber": "",
       "team": "東北楽天",
       "teams": [
         "東北楽天"
@@ -400485,6 +401208,7 @@
       "year": "2026",
       "batterId": "1900115",
       "player": "武藤 敦貴",
+      "uniformNumber": "50",
       "team": "東北楽天",
       "teams": [
         "東北楽天"
@@ -401351,6 +402075,7 @@
       "year": "2026",
       "batterId": "1900114",
       "player": "津留﨑 大成",
+      "uniformNumber": "",
       "team": "東北楽天",
       "teams": [
         "東北楽天"
@@ -401486,6 +402211,7 @@
       "year": "2026",
       "batterId": "900056",
       "player": "浅村 栄斗",
+      "uniformNumber": "3",
       "team": "東北楽天",
       "teams": [
         "東北楽天"
@@ -402909,6 +403635,7 @@
       "year": "2026",
       "batterId": "2105140",
       "player": "渡辺 翔太",
+      "uniformNumber": "",
       "team": "東北楽天",
       "teams": [
         "東北楽天"
@@ -403044,6 +403771,7 @@
       "year": "2026",
       "batterId": "1800122",
       "player": "渡邊 佳明",
+      "uniformNumber": "35",
       "team": "東北楽天",
       "teams": [
         "東北楽天"
@@ -404448,6 +405176,7 @@
       "year": "2026",
       "batterId": "1900117",
       "player": "瀧中 瞭太",
+      "uniformNumber": "",
       "team": "東北楽天",
       "teams": [
         "東北楽天"
@@ -404883,6 +405612,7 @@
       "year": "2026",
       "batterId": "1600099",
       "player": "石原 彪",
+      "uniformNumber": "70",
       "team": "東北楽天",
       "teams": [
         "東北楽天"
@@ -405632,6 +406362,7 @@
       "year": "2026",
       "batterId": "2100271",
       "player": "繁永 晟",
+      "uniformNumber": "30",
       "team": "東北楽天",
       "teams": [
         "東北楽天"
@@ -406261,6 +406992,7 @@
       "year": "2026",
       "batterId": "2106793",
       "player": "荘司 康誠",
+      "uniformNumber": "",
       "team": "東北楽天",
       "teams": [
         "東北楽天"
@@ -406734,6 +407466,7 @@
       "year": "2026",
       "batterId": "2110493",
       "player": "藤原 聡大",
+      "uniformNumber": "",
       "team": "東北楽天",
       "teams": [
         "東北楽天"
@@ -406825,6 +407558,7 @@
       "year": "2026",
       "batterId": "1600092",
       "player": "藤平 尚真",
+      "uniformNumber": "",
       "team": "東北楽天",
       "teams": [
         "東北楽天"
@@ -406916,6 +407650,7 @@
       "year": "2026",
       "batterId": "1750493",
       "player": "西垣 雅矢",
+      "uniformNumber": "",
       "team": "東北楽天",
       "teams": [
         "東北楽天"
@@ -407051,6 +407786,7 @@
       "year": "2026",
       "batterId": "1800117",
       "player": "辰己 涼介",
+      "uniformNumber": "8",
       "team": "東北楽天",
       "teams": [
         "東北楽天"
@@ -408474,6 +409210,7 @@
       "year": "2026",
       "batterId": "2102018",
       "player": "金子 京介",
+      "uniformNumber": "",
       "team": "東北楽天",
       "teams": [
         "東北楽天"
@@ -408773,6 +409510,7 @@
       "year": "2026",
       "batterId": "1100103",
       "player": "鈴木 大地",
+      "uniformNumber": "7",
       "team": "東北楽天",
       "teams": [
         "東北楽天"
@@ -410025,6 +410763,7 @@
       "year": "2026",
       "batterId": "1800124",
       "player": "鈴木 翔天",
+      "uniformNumber": "",
       "team": "東北楽天",
       "teams": [
         "東北楽天"
@@ -410160,6 +410899,7 @@
       "year": "2026",
       "batterId": "2100284",
       "player": "阪上 翔也",
+      "uniformNumber": "42",
       "team": "東北楽天",
       "teams": [
         "東北楽天"
@@ -410719,6 +411459,7 @@
       "year": "2026",
       "batterId": "2117858",
       "player": "陽 柏翔",
+      "uniformNumber": "75",
       "team": "東北楽天",
       "teams": [
         "東北楽天"
@@ -410999,6 +411740,7 @@
       "year": "2026",
       "batterId": "1900113",
       "player": "黒川 史陽",
+      "uniformNumber": "24",
       "team": "東北楽天",
       "teams": [
         "東北楽天"
