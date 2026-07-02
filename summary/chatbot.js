@@ -127,6 +127,18 @@
     return Number.isFinite(number) ? number : Number.POSITIVE_INFINITY;
   }
 
+  function formatUniformNumber(value) {
+    const digits = `${value || ""}`.trim().normalize("NFKC").replace(/[^\d]/g, "");
+    if (!digits) return "";
+    const number = Number.parseInt(digits, 10);
+    return Number.isFinite(number) ? `#${number}` : `#${digits}`;
+  }
+
+  function playerOptionLabel(player, uniformNumber) {
+    const numberLabel = formatUniformNumber(uniformNumber);
+    return numberLabel ? `${numberLabel} ${player}` : player;
+  }
+
   function visibleText(selector, limit = 1000) {
     const node = document.querySelector(selector);
     return node ? normalizeText(node.innerText || node.textContent, limit) : "";
@@ -697,7 +709,8 @@
         const key = `${entry.team}::${value}`;
         if (seen.has(key)) return null;
         seen.add(key);
-        const label = filters.team ? `${entry.player}（${entry.kind}）` : `${entry.team} ${entry.player}（${entry.kind}）`;
+        const playerLabel = playerOptionLabel(entry.player, entry.uniformNumber);
+        const label = filters.team ? `${playerLabel}（${entry.kind}）` : `${entry.team} ${playerLabel}（${entry.kind}）`;
         return optionNode(value, label, {
           "data-player": entry.player,
           "data-kind": entry.kind,
