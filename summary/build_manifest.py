@@ -4,6 +4,7 @@ import csv
 import importlib.util
 import json
 import re
+import time
 from collections import Counter, defaultdict
 from datetime import datetime
 from pathlib import Path
@@ -205,9 +206,22 @@ def safe_load_json(path: Path) -> dict | None:
 
 
 def write_text_atomic(path: Path, content: str) -> None:
+    try:
+        if path.exists() and path.read_text(encoding="utf-8") == content:
+            return
+    except Exception:
+        pass
     temp_path = path.with_name(f"{path.name}.tmp")
     temp_path.write_text(content, encoding="utf-8")
-    temp_path.replace(path)
+    last_error = None
+    for attempt in range(5):
+        try:
+            temp_path.replace(path)
+            return
+        except PermissionError as exc:
+            last_error = exc
+            time.sleep(0.25 * (attempt + 1))
+    raise last_error
 
 
 def team_league(team: str) -> str:
