@@ -1,0 +1,88 @@
+{
+  "game_id": "2021039109",
+  "metadata": {
+    "date_jp": "2026年7月8日",
+    "matchup": "埼玉西武ライオンズvs東北楽天ゴールデンイーグルス"
+  },
+  "statline": {
+    "player": "森脇 亮介",
+    "era": "0.00",
+    "innings": "0.1",
+    "pitches": "4",
+    "batters": "1",
+    "hits": "0",
+    "hr": "0",
+    "k": "1",
+    "bb": "0",
+    "hbp": "0",
+    "balk": "0",
+    "runs": "0",
+    "er": "0"
+  },
+  "pitches": [
+    {
+      "pa_index": "1010900",
+      "pitcher": "森脇 亮介",
+      "pitcher_id": "1800085",
+      "pitcher_hand": "右",
+      "batter": "堀内 謙伍",
+      "batter_id": "1600004",
+      "batter_hand": "左",
+      "seq": "1",
+      "pitchNo": "1",
+      "pitchType": "フォーク",
+      "speed": "119km/h",
+      "result": "見逃し",
+      "top": 21.599999999999998,
+      "left": 12.24
+    },
+    {
+      "pa_index": "1010900",
+      "pitcher": "森脇 亮介",
+      "pitcher_id": "1800085",
+      "pitcher_hand": "右",
+      "batter": "堀内 謙伍",
+      "batter_id": "1600004",
+      "batter_hand": "左",
+      "seq": "2",
+      "pitchNo": "2",
+      "pitchType": "フォーク",
+      "speed": "125km/h",
+      "result": "空振り",
+      "top": 54.72,
+      "left": 43.559999999999995
+    },
+    {
+      "pa_index": "1010900",
+      "pitcher": "森脇 亮介",
+      "pitcher_id": "1800085",
+      "pitcher_hand": "右",
+      "batter": "堀内 謙伍",
+      "batter_id": "1600004",
+      "batter_hand": "左",
+      "seq": "3",
+      "pitchNo": "3",
+      "pitchType": "フォーク",
+      "speed": "121km/h",
+      "result": "ファウル [ポール際]",
+      "top": 55.8,
+      "left": 16.2
+    },
+    {
+      "pa_index": "1010900",
+      "pitcher": "森脇 亮介",
+      "pitcher_id": "1800085",
+      "pitcher_hand": "右",
+      "batter": "堀内 謙伍",
+      "batter_id": "1600004",
+      "batter_hand": "左",
+      "seq": "4",
+      "pitchNo": "4",
+      "pitchType": "ストレート",
+      "speed": "143km/h",
+      "result": "空三振",
+      "top": 25.919999999999998,
+      "left": 32.04
+    }
+  ]
+}

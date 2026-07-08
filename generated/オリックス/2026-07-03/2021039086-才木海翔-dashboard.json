@@ -1,0 +1,56 @@
+{
+  "game_id": "2021039086",
+  "metadata": {
+    "date_jp": "2026年7月3日",
+    "matchup": "オリックス・バファローズvs埼玉西武ライオンズ"
+  },
+  "statline": {
+    "player": "才木 海翔",
+    "era": "13.50",
+    "innings": "0.1",
+    "pitches": "2",
+    "batters": "1",
+    "hits": "0",
+    "hr": "0",
+    "k": "0",
+    "bb": "0",
+    "hbp": "0",
+    "balk": "0",
+    "runs": "0",
+    "er": "0"
+  },
+  "pitches": [
+    {
+      "pa_index": "0510700",
+      "pitcher": "才木 海翔",
+      "pitcher_id": "2107872",
+      "pitcher_hand": "右",
+      "batter": "平沢 大河",
+      "batter_id": "1500117",
+      "batter_hand": "左",
+      "seq": "1",
+      "pitchNo": "1",
+      "pitchType": "ストレート",
+      "speed": "150km/h",
+      "result": "ボール",
+      "top": 53.64,
+      "left": 27.72
+    },
+    {
+      "pa_index": "0510700",
+      "pitcher": "才木 海翔",
+      "pitcher_id": "2107872",
+      "pitcher_hand": "右",
+      "batter": "平沢 大河",
+      "batter_id": "1500117",
+      "batter_hand": "左",
+      "seq": "2",
+      "pitchNo": "2",
+      "pitchType": "ストレート",
+      "speed": "-",
+      "result": "中飛",
+      "top": 33.839999999999996,
+      "left": 33.839999999999996
+    }
+  ]
+}

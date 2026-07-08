@@ -1,0 +1,72 @@
+{
+  "game_id": "2021039087",
+  "metadata": {
+    "date_jp": "2026年7月3日",
+    "matchup": "福岡ソフトバンクホークスvs千葉ロッテマリーンズ"
+  },
+  "statline": {
+    "player": "津森 宥紀",
+    "era": "1.59",
+    "innings": "0.1",
+    "pitches": "3",
+    "batters": "1",
+    "hits": "0",
+    "hr": "0",
+    "k": "1",
+    "bb": "0",
+    "hbp": "0",
+    "balk": "0",
+    "runs": "0",
+    "er": "0"
+  },
+  "pitches": [
+    {
+      "pa_index": "0610400",
+      "pitcher": "津森 宥紀",
+      "pitcher_id": "1900102",
+      "pitcher_hand": "右",
+      "batter": "安田 尚憲",
+      "batter_id": "1700092",
+      "batter_hand": "左",
+      "seq": "1",
+      "pitchNo": "1",
+      "pitchType": "ストレート",
+      "speed": "149km/h",
+      "result": "見逃し",
+      "top": 43.199999999999996,
+      "left": 34.56
+    },
+    {
+      "pa_index": "0610400",
+      "pitcher": "津森 宥紀",
+      "pitcher_id": "1900102",
+      "pitcher_hand": "右",
+      "batter": "安田 尚憲",
+      "batter_id": "1700092",
+      "batter_hand": "左",
+      "seq": "2",
+      "pitchNo": "2",
+      "pitchType": "ストレート",
+      "speed": "150km/h",
+      "result": "空振り [ハーフスイング]",
+      "top": 7.56,
+      "left": 37.44
+    },
+    {
+      "pa_index": "0610400",
+      "pitcher": "津森 宥紀",
+      "pitcher_id": "1900102",
+      "pitcher_hand": "右",
+      "batter": "安田 尚憲",
+      "batter_id": "1700092",
+      "batter_hand": "左",
+      "seq": "3",
+      "pitchNo": "3",
+      "pitchType": "ストレート",
+      "speed": "148km/h",
+      "result": "見三振 [構えたところにズバリ]",
+      "top": 34.56,
+      "left": 12.6
+    }
+  ]
+}

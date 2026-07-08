@@ -1,0 +1,40 @@
+{
+  "game_id": "2021039083",
+  "metadata": {
+    "date_jp": "2026年7月3日",
+    "matchup": "中日ドラゴンズvs読売ジャイアンツ"
+  },
+  "statline": {
+    "player": "田和 廉",
+    "era": "1.52",
+    "innings": "0.1",
+    "pitches": "1",
+    "batters": "1",
+    "hits": "0",
+    "hr": "0",
+    "k": "0",
+    "bb": "0",
+    "hbp": "0",
+    "balk": "0",
+    "runs": "0",
+    "er": "0"
+  },
+  "pitches": [
+    {
+      "pa_index": "0820400",
+      "pitcher": "田和 廉",
+      "pitcher_id": "2118291",
+      "pitcher_hand": "右",
+      "batter": "細川 成也",
+      "batter_id": "1600085",
+      "batter_hand": "右",
+      "seq": "1",
+      "pitchNo": "1",
+      "pitchType": "シンカー",
+      "speed": "123km/h",
+      "result": "遊ゴロ",
+      "top": 25.2,
+      "left": 19.439999999999998
+    }
+  ]
+}
