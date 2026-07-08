@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-02T23:46:50",
+  "updatedAt": "2026-07-09T00:28:32",
   "source": [
     "sportsnavi_game_context_2026.json"
   ],
@@ -13,19 +13,19 @@
   ],
   "bySeason": {
     "2026": {
-      "games": 437,
+      "games": 466,
       "leagueAverages": [
         {
           "league": "セ",
-          "games": 213,
-          "totalRuns": 1435,
-          "runsPerGame": 6.737
+          "games": 228,
+          "totalRuns": 1531,
+          "runsPerGame": 6.715
         },
         {
           "league": "パ",
-          "games": 224,
-          "totalRuns": 1652,
-          "runsPerGame": 7.375
+          "games": 238,
+          "totalRuns": 1758,
+          "runsPerGame": 7.387
         }
       ],
       "stadiums": [
@@ -39,8 +39,8 @@
           "primaryHomeTeam": "ヤクルト",
           "totalRuns": 2,
           "runsPerGame": 2.0,
-          "leagueRunsPerGame": 6.737,
-          "runFactor": 29.7,
+          "leagueRunsPerGame": 6.715,
+          "runFactor": 29.8,
           "homeRuns": 0,
           "awayRuns": 2
         },
@@ -54,40 +54,40 @@
           "primaryHomeTeam": "DeNA",
           "totalRuns": 11,
           "runsPerGame": 11.0,
-          "leagueRunsPerGame": 6.737,
-          "runFactor": 163.3,
+          "leagueRunsPerGame": 6.715,
+          "runFactor": 163.8,
           "homeRuns": 4,
           "awayRuns": 7
         },
         {
           "league": "セ",
           "stadium": "バンテリンドーム",
-          "games": 36,
+          "games": 39,
           "homeTeams": [
             "中日"
           ],
           "primaryHomeTeam": "中日",
-          "totalRuns": 250,
-          "runsPerGame": 6.944,
-          "leagueRunsPerGame": 6.737,
-          "runFactor": 103.1,
-          "homeRuns": 122,
-          "awayRuns": 128
+          "totalRuns": 255,
+          "runsPerGame": 6.538,
+          "leagueRunsPerGame": 6.715,
+          "runFactor": 97.4,
+          "homeRuns": 125,
+          "awayRuns": 130
         },
         {
           "league": "セ",
           "stadium": "マツダスタジアム",
-          "games": 34,
+          "games": 36,
           "homeTeams": [
             "広島"
           ],
           "primaryHomeTeam": "広島",
-          "totalRuns": 199,
-          "runsPerGame": 5.853,
-          "leagueRunsPerGame": 6.737,
-          "runFactor": 86.9,
-          "homeRuns": 86,
-          "awayRuns": 113
+          "totalRuns": 213,
+          "runsPerGame": 5.917,
+          "leagueRunsPerGame": 6.715,
+          "runFactor": 88.1,
+          "homeRuns": 94,
+          "awayRuns": 119
         },
         {
           "league": "セ",
@@ -99,8 +99,8 @@
           "primaryHomeTeam": "阪神",
           "totalRuns": 17,
           "runsPerGame": 5.667,
-          "leagueRunsPerGame": 6.737,
-          "runFactor": 84.1,
+          "leagueRunsPerGame": 6.715,
+          "runFactor": 84.4,
           "homeRuns": 9,
           "awayRuns": 8
         },
@@ -114,8 +114,8 @@
           "primaryHomeTeam": "阪神",
           "totalRuns": 6,
           "runsPerGame": 6.0,
-          "leagueRunsPerGame": 6.737,
-          "runFactor": 89.1,
+          "leagueRunsPerGame": 6.715,
+          "runFactor": 89.4,
           "homeRuns": 4,
           "awayRuns": 2
         },
@@ -129,8 +129,8 @@
           "primaryHomeTeam": "巨人",
           "totalRuns": 6,
           "runsPerGame": 6.0,
-          "leagueRunsPerGame": 6.737,
-          "runFactor": 89.1,
+          "leagueRunsPerGame": 6.715,
+          "runFactor": 89.4,
           "homeRuns": 5,
           "awayRuns": 1
         },
@@ -145,8 +145,8 @@
           "primaryHomeTeam": "巨人",
           "totalRuns": 15,
           "runsPerGame": 7.5,
-          "leagueRunsPerGame": 6.737,
-          "runFactor": 111.3,
+          "leagueRunsPerGame": 6.715,
+          "runFactor": 111.7,
           "homeRuns": 10,
           "awayRuns": 5
         },
@@ -160,25 +160,25 @@
           "primaryHomeTeam": "巨人",
           "totalRuns": 7,
           "runsPerGame": 7.0,
-          "leagueRunsPerGame": 6.737,
-          "runFactor": 103.9,
+          "leagueRunsPerGame": 6.715,
+          "runFactor": 104.2,
           "homeRuns": 3,
           "awayRuns": 4
         },
         {
           "league": "セ",
           "stadium": "東京ドーム",
-          "games": 33,
+          "games": 35,
           "homeTeams": [
             "巨人"
           ],
           "primaryHomeTeam": "巨人",
-          "totalRuns": 205,
-          "runsPerGame": 6.212,
-          "leagueRunsPerGame": 6.737,
-          "runFactor": 92.2,
-          "homeRuns": 90,
-          "awayRuns": 115
+          "totalRuns": 217,
+          "runsPerGame": 6.2,
+          "leagueRunsPerGame": 6.715,
+          "runFactor": 92.3,
+          "homeRuns": 95,
+          "awayRuns": 122
         },
         {
           "league": "セ",
@@ -190,40 +190,40 @@
           "primaryHomeTeam": "ヤクルト",
           "totalRuns": 8,
           "runsPerGame": 8.0,
-          "leagueRunsPerGame": 6.737,
-          "runFactor": 118.7,
+          "leagueRunsPerGame": 6.715,
+          "runFactor": 119.1,
           "homeRuns": 5,
           "awayRuns": 3
         },
         {
           "league": "セ",
           "stadium": "横浜",
-          "games": 32,
+          "games": 35,
           "homeTeams": [
             "DeNA"
           ],
           "primaryHomeTeam": "DeNA",
-          "totalRuns": 258,
-          "runsPerGame": 8.062,
-          "leagueRunsPerGame": 6.737,
-          "runFactor": 119.7,
-          "homeRuns": 114,
-          "awayRuns": 144
+          "totalRuns": 275,
+          "runsPerGame": 7.857,
+          "leagueRunsPerGame": 6.715,
+          "runFactor": 117.0,
+          "homeRuns": 125,
+          "awayRuns": 150
         },
         {
           "league": "セ",
           "stadium": "甲子園",
-          "games": 32,
+          "games": 34,
           "homeTeams": [
             "阪神"
           ],
           "primaryHomeTeam": "阪神",
-          "totalRuns": 192,
-          "runsPerGame": 6.0,
-          "leagueRunsPerGame": 6.737,
-          "runFactor": 89.1,
-          "homeRuns": 99,
-          "awayRuns": 93
+          "totalRuns": 208,
+          "runsPerGame": 6.118,
+          "leagueRunsPerGame": 6.715,
+          "runFactor": 91.1,
+          "homeRuns": 106,
+          "awayRuns": 102
         },
         {
           "league": "セ",
@@ -235,25 +235,25 @@
           "primaryHomeTeam": "巨人",
           "totalRuns": 3,
           "runsPerGame": 3.0,
-          "leagueRunsPerGame": 6.737,
-          "runFactor": 44.5,
+          "leagueRunsPerGame": 6.715,
+          "runFactor": 44.7,
           "homeRuns": 2,
           "awayRuns": 1
         },
         {
           "league": "セ",
           "stadium": "神宮",
-          "games": 31,
+          "games": 34,
           "homeTeams": [
             "ヤクルト"
           ],
           "primaryHomeTeam": "ヤクルト",
-          "totalRuns": 239,
-          "runsPerGame": 7.71,
-          "leagueRunsPerGame": 6.737,
-          "runFactor": 114.4,
-          "homeRuns": 110,
-          "awayRuns": 129
+          "totalRuns": 271,
+          "runsPerGame": 7.971,
+          "leagueRunsPerGame": 6.715,
+          "runFactor": 118.7,
+          "homeRuns": 117,
+          "awayRuns": 154
         },
         {
           "league": "セ",
@@ -265,8 +265,8 @@
           "primaryHomeTeam": "巨人",
           "totalRuns": 6,
           "runsPerGame": 6.0,
-          "leagueRunsPerGame": 6.737,
-          "runFactor": 89.1,
+          "leagueRunsPerGame": 6.715,
+          "runFactor": 89.4,
           "homeRuns": 4,
           "awayRuns": 2
         },
@@ -280,8 +280,8 @@
           "primaryHomeTeam": "中日",
           "totalRuns": 8,
           "runsPerGame": 8.0,
-          "leagueRunsPerGame": 6.737,
-          "runFactor": 118.7,
+          "leagueRunsPerGame": 6.715,
+          "runFactor": 119.1,
           "homeRuns": 6,
           "awayRuns": 2
         },
@@ -295,55 +295,55 @@
           "primaryHomeTeam": "巨人",
           "totalRuns": 3,
           "runsPerGame": 3.0,
-          "leagueRunsPerGame": 6.737,
-          "runFactor": 44.5,
+          "leagueRunsPerGame": 6.715,
+          "runFactor": 44.7,
           "homeRuns": 2,
           "awayRuns": 1
         },
         {
           "league": "パ",
           "stadium": "ZOZOマリン",
-          "games": 34,
+          "games": 36,
           "homeTeams": [
             "ロッテ"
           ],
           "primaryHomeTeam": "ロッテ",
-          "totalRuns": 267,
-          "runsPerGame": 7.853,
-          "leagueRunsPerGame": 7.375,
-          "runFactor": 106.5,
-          "homeRuns": 137,
-          "awayRuns": 130
+          "totalRuns": 288,
+          "runsPerGame": 8.0,
+          "leagueRunsPerGame": 7.387,
+          "runFactor": 108.3,
+          "homeRuns": 149,
+          "awayRuns": 139
         },
         {
           "league": "パ",
           "stadium": "ほっと神戸",
-          "games": 2,
+          "games": 3,
           "homeTeams": [
             "オリックス"
           ],
           "primaryHomeTeam": "オリックス",
-          "totalRuns": 13,
-          "runsPerGame": 6.5,
-          "leagueRunsPerGame": 7.375,
-          "runFactor": 88.1,
-          "homeRuns": 6,
-          "awayRuns": 7
+          "totalRuns": 21,
+          "runsPerGame": 7.0,
+          "leagueRunsPerGame": 7.387,
+          "runFactor": 94.8,
+          "homeRuns": 10,
+          "awayRuns": 11
         },
         {
           "league": "パ",
           "stadium": "みずほPayPay",
-          "games": 36,
+          "games": 39,
           "homeTeams": [
             "ソフトバンク"
           ],
           "primaryHomeTeam": "ソフトバンク",
-          "totalRuns": 276,
+          "totalRuns": 299,
           "runsPerGame": 7.667,
-          "leagueRunsPerGame": 7.375,
-          "runFactor": 104.0,
-          "homeRuns": 166,
-          "awayRuns": 110
+          "leagueRunsPerGame": 7.387,
+          "runFactor": 103.8,
+          "homeRuns": 177,
+          "awayRuns": 122
         },
         {
           "league": "パ",
@@ -355,8 +355,8 @@
           "primaryHomeTeam": "日本ハム",
           "totalRuns": 331,
           "runsPerGame": 8.487,
-          "leagueRunsPerGame": 7.375,
-          "runFactor": 115.1,
+          "leagueRunsPerGame": 7.387,
+          "runFactor": 114.9,
           "homeRuns": 188,
           "awayRuns": 143
         },
@@ -370,25 +370,25 @@
           "primaryHomeTeam": "西武",
           "totalRuns": 227,
           "runsPerGame": 6.486,
-          "leagueRunsPerGame": 7.375,
-          "runFactor": 87.9,
+          "leagueRunsPerGame": 7.387,
+          "runFactor": 87.8,
           "homeRuns": 131,
           "awayRuns": 96
         },
         {
           "league": "パ",
           "stadium": "京セラD大阪",
-          "games": 34,
+          "games": 37,
           "homeTeams": [
             "オリックス"
           ],
           "primaryHomeTeam": "オリックス",
-          "totalRuns": 227,
-          "runsPerGame": 6.676,
-          "leagueRunsPerGame": 7.375,
-          "runFactor": 90.5,
-          "homeRuns": 132,
-          "awayRuns": 95
+          "totalRuns": 245,
+          "runsPerGame": 6.622,
+          "leagueRunsPerGame": 7.387,
+          "runFactor": 89.6,
+          "homeRuns": 141,
+          "awayRuns": 104
         },
         {
           "league": "パ",
@@ -400,8 +400,8 @@
           "primaryHomeTeam": "西武",
           "totalRuns": 5,
           "runsPerGame": 5.0,
-          "leagueRunsPerGame": 7.375,
-          "runFactor": 67.8,
+          "leagueRunsPerGame": 7.387,
+          "runFactor": 67.7,
           "homeRuns": 3,
           "awayRuns": 2
         },
@@ -415,8 +415,8 @@
           "primaryHomeTeam": "ソフトバンク",
           "totalRuns": 6,
           "runsPerGame": 6.0,
-          "leagueRunsPerGame": 7.375,
-          "runFactor": 81.4,
+          "leagueRunsPerGame": 7.387,
+          "runFactor": 81.2,
           "homeRuns": 6,
           "awayRuns": 0
         },
@@ -430,8 +430,8 @@
           "primaryHomeTeam": "東北楽天",
           "totalRuns": 12,
           "runsPerGame": 12.0,
-          "leagueRunsPerGame": 7.375,
-          "runFactor": 162.7,
+          "leagueRunsPerGame": 7.387,
+          "runFactor": 162.5,
           "homeRuns": 8,
           "awayRuns": 4
         },
@@ -445,7 +445,7 @@
           "primaryHomeTeam": "東北楽天",
           "totalRuns": 2,
           "runsPerGame": 2.0,
-          "leagueRunsPerGame": 7.375,
+          "leagueRunsPerGame": 7.387,
           "runFactor": 27.1,
           "homeRuns": 0,
           "awayRuns": 2
@@ -461,25 +461,25 @@
           "primaryHomeTeam": "東北楽天",
           "totalRuns": 21,
           "runsPerGame": 10.5,
-          "leagueRunsPerGame": 7.375,
-          "runFactor": 142.4,
+          "leagueRunsPerGame": 7.387,
+          "runFactor": 142.2,
           "homeRuns": 14,
           "awayRuns": 7
         },
         {
           "league": "パ",
           "stadium": "楽天モバイル",
-          "games": 34,
+          "games": 37,
           "homeTeams": [
             "東北楽天"
           ],
           "primaryHomeTeam": "東北楽天",
-          "totalRuns": 242,
-          "runsPerGame": 7.118,
-          "leagueRunsPerGame": 7.375,
-          "runFactor": 96.5,
-          "homeRuns": 113,
-          "awayRuns": 129
+          "totalRuns": 264,
+          "runsPerGame": 7.135,
+          "leagueRunsPerGame": 7.387,
+          "runFactor": 96.6,
+          "homeRuns": 128,
+          "awayRuns": 136
         },
         {
           "league": "パ",
@@ -491,8 +491,8 @@
           "primaryHomeTeam": "ソフトバンク",
           "totalRuns": 5,
           "runsPerGame": 5.0,
-          "leagueRunsPerGame": 7.375,
-          "runFactor": 67.8,
+          "leagueRunsPerGame": 7.387,
+          "runFactor": 67.7,
           "homeRuns": 0,
           "awayRuns": 5
         },
@@ -506,10 +506,25 @@
           "primaryHomeTeam": "西武",
           "totalRuns": 13,
           "runsPerGame": 6.5,
-          "leagueRunsPerGame": 7.375,
-          "runFactor": 88.1,
+          "leagueRunsPerGame": 7.387,
+          "runFactor": 88.0,
           "homeRuns": 4,
           "awayRuns": 9
+        },
+        {
+          "league": "パ",
+          "stadium": "那覇",
+          "games": 2,
+          "homeTeams": [
+            "西武"
+          ],
+          "primaryHomeTeam": "西武",
+          "totalRuns": 14,
+          "runsPerGame": 7.0,
+          "leagueRunsPerGame": 7.387,
+          "runFactor": 94.8,
+          "homeRuns": 8,
+          "awayRuns": 6
         },
         {
           "league": "パ",
@@ -521,8 +536,8 @@
           "primaryHomeTeam": "東北楽天",
           "totalRuns": 5,
           "runsPerGame": 5.0,
-          "leagueRunsPerGame": 7.375,
-          "runFactor": 67.8,
+          "leagueRunsPerGame": 7.387,
+          "runFactor": 67.7,
           "homeRuns": 0,
           "awayRuns": 5
         }
@@ -531,20 +546,20 @@
         {
           "team": "巨人",
           "league": "セ",
-          "homeGames": 39,
-          "roadGames": 32,
-          "homeTotalRuns": 238,
-          "roadTotalRuns": 206,
-          "homeRunsPerGame": 6.103,
-          "roadRunsPerGame": 6.438,
-          "homeParkFactor": 94.8,
+          "homeGames": 41,
+          "roadGames": 35,
+          "homeTotalRuns": 250,
+          "roadTotalRuns": 211,
+          "homeRunsPerGame": 6.098,
+          "roadRunsPerGame": 6.029,
+          "homeParkFactor": 101.1,
           "primaryStadium": "東京ドーム",
           "venueBreakdown": [
             {
               "stadium": "東京ドーム",
-              "games": 33,
-              "totalRuns": 205,
-              "runsPerGame": 6.212
+              "games": 35,
+              "totalRuns": 217,
+              "runsPerGame": 6.2
             },
             {
               "stadium": "前橋",
@@ -587,20 +602,20 @@
         {
           "team": "阪神",
           "league": "セ",
-          "homeGames": 36,
-          "roadGames": 35,
-          "homeTotalRuns": 215,
-          "roadTotalRuns": 291,
-          "homeRunsPerGame": 5.972,
-          "roadRunsPerGame": 8.314,
-          "homeParkFactor": 71.8,
+          "homeGames": 38,
+          "roadGames": 37,
+          "homeTotalRuns": 231,
+          "roadTotalRuns": 303,
+          "homeRunsPerGame": 6.079,
+          "roadRunsPerGame": 8.189,
+          "homeParkFactor": 74.2,
           "primaryStadium": "甲子園",
           "venueBreakdown": [
             {
               "stadium": "甲子園",
-              "games": 32,
-              "totalRuns": 192,
-              "runsPerGame": 6.0
+              "games": 34,
+              "totalRuns": 208,
+              "runsPerGame": 6.118
             },
             {
               "stadium": "京セラD大阪",
@@ -619,20 +634,20 @@
         {
           "team": "DeNA",
           "league": "セ",
-          "homeGames": 33,
-          "roadGames": 38,
-          "homeTotalRuns": 269,
-          "roadTotalRuns": 272,
-          "homeRunsPerGame": 8.152,
-          "roadRunsPerGame": 7.158,
-          "homeParkFactor": 113.9,
+          "homeGames": 36,
+          "roadGames": 41,
+          "homeTotalRuns": 286,
+          "roadTotalRuns": 304,
+          "homeRunsPerGame": 7.944,
+          "roadRunsPerGame": 7.415,
+          "homeParkFactor": 107.1,
           "primaryStadium": "横浜",
           "venueBreakdown": [
             {
               "stadium": "横浜",
-              "games": 32,
-              "totalRuns": 258,
-              "runsPerGame": 8.062
+              "games": 35,
+              "totalRuns": 275,
+              "runsPerGame": 7.857
             },
             {
               "stadium": "ハードオフ新潟",
@@ -645,40 +660,40 @@
         {
           "team": "広島",
           "league": "セ",
-          "homeGames": 34,
-          "roadGames": 35,
-          "homeTotalRuns": 199,
-          "roadTotalRuns": 239,
-          "homeRunsPerGame": 5.853,
-          "roadRunsPerGame": 6.829,
-          "homeParkFactor": 85.7,
+          "homeGames": 36,
+          "roadGames": 38,
+          "homeTotalRuns": 213,
+          "roadTotalRuns": 261,
+          "homeRunsPerGame": 5.917,
+          "roadRunsPerGame": 6.868,
+          "homeParkFactor": 86.1,
           "primaryStadium": "マツダスタジアム",
           "venueBreakdown": [
             {
               "stadium": "マツダスタジアム",
-              "games": 34,
-              "totalRuns": 199,
-              "runsPerGame": 5.853
+              "games": 36,
+              "totalRuns": 213,
+              "runsPerGame": 5.917
             }
           ]
         },
         {
           "team": "ヤクルト",
           "league": "セ",
-          "homeGames": 33,
-          "roadGames": 38,
-          "homeTotalRuns": 249,
-          "roadTotalRuns": 229,
-          "homeRunsPerGame": 7.545,
-          "roadRunsPerGame": 6.026,
-          "homeParkFactor": 125.2,
+          "homeGames": 36,
+          "roadGames": 40,
+          "homeTotalRuns": 281,
+          "roadTotalRuns": 243,
+          "homeRunsPerGame": 7.806,
+          "roadRunsPerGame": 6.075,
+          "homeParkFactor": 128.5,
           "primaryStadium": "神宮",
           "venueBreakdown": [
             {
               "stadium": "神宮",
-              "games": 31,
-              "totalRuns": 239,
-              "runsPerGame": 7.71
+              "games": 34,
+              "totalRuns": 271,
+              "runsPerGame": 7.971
             },
             {
               "stadium": "いわき",
@@ -697,20 +712,20 @@
         {
           "team": "中日",
           "league": "セ",
-          "homeGames": 38,
-          "roadGames": 35,
-          "homeTotalRuns": 265,
-          "roadTotalRuns": 240,
-          "homeRunsPerGame": 6.974,
-          "roadRunsPerGame": 6.857,
-          "homeParkFactor": 101.7,
+          "homeGames": 41,
+          "roadGames": 37,
+          "homeTotalRuns": 270,
+          "roadTotalRuns": 251,
+          "homeRunsPerGame": 6.585,
+          "roadRunsPerGame": 6.784,
+          "homeParkFactor": 97.1,
           "primaryStadium": "バンテリンドーム",
           "venueBreakdown": [
             {
               "stadium": "バンテリンドーム",
-              "games": 36,
-              "totalRuns": 250,
-              "runsPerGame": 6.944
+              "games": 39,
+              "totalRuns": 255,
+              "runsPerGame": 6.538
             },
             {
               "stadium": "岐阜",
@@ -729,19 +744,19 @@
         {
           "team": "ソフトバンク",
           "league": "パ",
-          "homeGames": 39,
-          "roadGames": 34,
-          "homeTotalRuns": 293,
-          "roadTotalRuns": 288,
-          "homeRunsPerGame": 7.513,
-          "roadRunsPerGame": 8.471,
-          "homeParkFactor": 88.7,
+          "homeGames": 42,
+          "roadGames": 36,
+          "homeTotalRuns": 316,
+          "roadTotalRuns": 302,
+          "homeRunsPerGame": 7.524,
+          "roadRunsPerGame": 8.389,
+          "homeParkFactor": 89.7,
           "primaryStadium": "みずほPayPay",
           "venueBreakdown": [
             {
               "stadium": "みずほPayPay",
-              "games": 36,
-              "totalRuns": 276,
+              "games": 39,
+              "totalRuns": 299,
               "runsPerGame": 7.667
             },
             {
@@ -768,12 +783,12 @@
           "team": "日本ハム",
           "league": "パ",
           "homeGames": 39,
-          "roadGames": 39,
+          "roadGames": 44,
           "homeTotalRuns": 331,
-          "roadTotalRuns": 262,
+          "roadTotalRuns": 305,
           "homeRunsPerGame": 8.487,
-          "roadRunsPerGame": 6.718,
-          "homeParkFactor": 126.3,
+          "roadRunsPerGame": 6.932,
+          "homeParkFactor": 122.4,
           "primaryStadium": "エスコンF",
           "venueBreakdown": [
             {
@@ -787,59 +802,59 @@
         {
           "team": "ロッテ",
           "league": "パ",
-          "homeGames": 34,
-          "roadGames": 37,
-          "homeTotalRuns": 267,
-          "roadTotalRuns": 248,
-          "homeRunsPerGame": 7.853,
-          "roadRunsPerGame": 6.703,
-          "homeParkFactor": 117.2,
+          "homeGames": 36,
+          "roadGames": 40,
+          "homeTotalRuns": 288,
+          "roadTotalRuns": 271,
+          "homeRunsPerGame": 8.0,
+          "roadRunsPerGame": 6.775,
+          "homeParkFactor": 118.1,
           "primaryStadium": "ZOZOマリン",
           "venueBreakdown": [
             {
               "stadium": "ZOZOマリン",
-              "games": 34,
-              "totalRuns": 267,
-              "runsPerGame": 7.853
+              "games": 36,
+              "totalRuns": 288,
+              "runsPerGame": 8.0
             }
           ]
         },
         {
           "team": "オリックス",
           "league": "パ",
-          "homeGames": 36,
+          "homeGames": 40,
           "roadGames": 39,
-          "homeTotalRuns": 240,
+          "homeTotalRuns": 266,
           "roadTotalRuns": 295,
-          "homeRunsPerGame": 6.667,
+          "homeRunsPerGame": 6.65,
           "roadRunsPerGame": 7.564,
-          "homeParkFactor": 88.1,
+          "homeParkFactor": 87.9,
           "primaryStadium": "京セラD大阪",
           "venueBreakdown": [
             {
               "stadium": "京セラD大阪",
-              "games": 34,
-              "totalRuns": 227,
-              "runsPerGame": 6.676
+              "games": 37,
+              "totalRuns": 245,
+              "runsPerGame": 6.622
             },
             {
               "stadium": "ほっと神戸",
-              "games": 2,
-              "totalRuns": 13,
-              "runsPerGame": 6.5
+              "games": 3,
+              "totalRuns": 21,
+              "runsPerGame": 7.0
             }
           ]
         },
         {
           "team": "西武",
           "league": "パ",
-          "homeGames": 38,
-          "roadGames": 40,
-          "homeTotalRuns": 245,
-          "roadTotalRuns": 278,
-          "homeRunsPerGame": 6.447,
-          "roadRunsPerGame": 6.95,
-          "homeParkFactor": 92.8,
+          "homeGames": 40,
+          "roadGames": 42,
+          "homeTotalRuns": 259,
+          "roadTotalRuns": 290,
+          "homeRunsPerGame": 6.475,
+          "roadRunsPerGame": 6.905,
+          "homeParkFactor": 93.8,
           "primaryStadium": "ベルーナドーム",
           "venueBreakdown": [
             {
@@ -855,6 +870,12 @@
               "runsPerGame": 6.5
             },
             {
+              "stadium": "那覇",
+              "games": 2,
+              "totalRuns": 14,
+              "runsPerGame": 7.0
+            },
+            {
               "stadium": "前橋",
               "games": 1,
               "totalRuns": 5,
@@ -865,20 +886,20 @@
         {
           "team": "東北楽天",
           "league": "パ",
-          "homeGames": 38,
-          "roadGames": 35,
-          "homeTotalRuns": 276,
-          "roadTotalRuns": 239,
-          "homeRunsPerGame": 7.263,
-          "roadRunsPerGame": 6.829,
-          "homeParkFactor": 106.4,
+          "homeGames": 41,
+          "roadGames": 37,
+          "homeTotalRuns": 298,
+          "roadTotalRuns": 253,
+          "homeRunsPerGame": 7.268,
+          "roadRunsPerGame": 6.838,
+          "homeParkFactor": 106.3,
           "primaryStadium": "楽天モバイル",
           "venueBreakdown": [
             {
               "stadium": "楽天モバイル",
-              "games": 34,
-              "totalRuns": 242,
-              "runsPerGame": 7.118
+              "games": 37,
+              "totalRuns": 264,
+              "runsPerGame": 7.135
             },
             {
               "stadium": "山形市",
