@@ -32,13 +32,11 @@ const state = {
   team: "all",
   date: "all",
   player: "all",
-  query: "",
   selectedId: null,
   section: "table",
 };
 
 const els = {
-  searchInput: document.getElementById("searchInput"),
   clearTeamButton: document.getElementById("clearTeamButton"),
   teamSelect: document.getElementById("teamSelect"),
   dateSelect: document.getElementById("dateSelect"),
@@ -111,14 +109,24 @@ function playerOptionLabel(player, uniformNumber) {
   return numberLabel ? `${numberLabel} ${player}` : player;
 }
 
+function resolvedUniformNumber(entry) {
+  return window.getNpbUniformNumber?.(
+    entry.team,
+    entry.player,
+    entry.uniformNumber,
+    `${entry.date || ""}`.slice(0, 4)
+  ) || entry.uniformNumber || "";
+}
+
 function comparePlayerOption(a, b) {
-  const numberCompare = uniformNumberSortValue(a.uniformNumber) - uniformNumberSortValue(b.uniformNumber);
-  if (numberCompare !== 0) return numberCompare;
+  const aNumber = uniformNumberSortValue(a.uniformNumber);
+  const bNumber = uniformNumberSortValue(b.uniformNumber);
+  if (aNumber !== bNumber) return aNumber - bNumber;
   return `${a.player || ""}`.localeCompare(`${b.player || ""}`, "ja");
 }
 
 function hasScopedSelection() {
-  return state.team !== "all";
+  return state.team !== "all" || state.date !== "all" || state.player !== "all";
 }
 
 function entryOrder(entry) {
@@ -151,18 +159,12 @@ function availableDates() {
 
 function filteredEntries() {
   if (!hasScopedSelection()) return [];
-  const query = state.query.trim().toLowerCase();
   return manifest.entries
     .filter((entry) => {
       if (state.team !== "all" && entry.team !== state.team) return false;
       if (state.date !== "all" && entry.date !== state.date) return false;
       if (state.player !== "all" && entry.player !== state.player) return false;
-      if (!query) return true;
-      const haystack = [entry.title, entry.player, entry.team, entry.matchup, entry.prefix, entry.date]
-        .filter(Boolean)
-        .join(" ")
-        .toLowerCase();
-      return haystack.includes(query);
+      return true;
     })
     .sort(compareEntries);
 }
@@ -264,9 +266,10 @@ function renderPlayerOptions() {
   const current = state.player;
   const playersByName = new Map();
   entriesForPlayerOptions().forEach((entry) => {
-    const row = playersByName.get(entry.player) || { player: entry.player, uniformNumber: entry.uniformNumber, count: 0 };
+    const entryUniformNumber = resolvedUniformNumber(entry);
+    const row = playersByName.get(entry.player) || { player: entry.player, uniformNumber: entryUniformNumber, count: 0 };
     row.count += 1;
-    if (!row.uniformNumber && entry.uniformNumber) row.uniformNumber = entry.uniformNumber;
+    if (!row.uniformNumber && entryUniformNumber) row.uniformNumber = entryUniformNumber;
     playersByName.set(entry.player, row);
   });
 
@@ -351,8 +354,9 @@ function renderDateOptions() {
 function renderPlayerOptions() {
   const playersByName = new Map();
   entriesForPlayerOptions().forEach((entry) => {
-    const row = playersByName.get(entry.player) || { player: entry.player, uniformNumber: entry.uniformNumber };
-    if (!row.uniformNumber && entry.uniformNumber) row.uniformNumber = entry.uniformNumber;
+    const entryUniformNumber = resolvedUniformNumber(entry);
+    const row = playersByName.get(entry.player) || { player: entry.player, uniformNumber: entryUniformNumber };
+    if (!row.uniformNumber && entryUniformNumber) row.uniformNumber = entryUniformNumber;
     playersByName.set(entry.player, row);
   });
   const players = [...playersByName.values()].sort(comparePlayerOption);
@@ -379,8 +383,8 @@ function renderResultList(entries) {
     els.resultList.innerHTML = `
       <div class="empty-state slim">
         <p class="empty-kicker">Select Filters</p>
-        <h2>球団と日付を選択すると選手カードを表示します</h2>
-        <p>先に球団を選び、そのチームが試合をした日付を選択してください。</p>
+        <h2>球団または日付を選択してください</h2>
+        <p>球団を選ぶと、選手名でも絞り込めます。</p>
       </div>
     `;
     return;
@@ -395,7 +399,7 @@ function renderResultList(entries) {
     empty.innerHTML = `
       <p class="empty-kicker">No Results</p>
       <h2>条件に合うダッシュボードがありません</h2>
-      <p>検索語かフィルタ条件を調整してください。</p>
+      <p>絞り込み条件を調整してください。</p>
     `;
     els.resultList.appendChild(empty);
     return;
@@ -724,6 +728,7 @@ function rerender() {
   renderTeamFilters();
   renderDateOptions();
   renderPlayerOptions();
+  els.clearTeamButton.disabled = !hasScopedSelection();
   const entries = filteredEntries();
   const entry = selectedEntry(entries);
   renderResultList(entries);
@@ -731,11 +736,6 @@ function rerender() {
 }
 
 function bindEvents() {
-  els.searchInput.addEventListener("input", (event) => {
-    state.query = event.target.value;
-    rerender();
-  });
-
   els.clearTeamButton.addEventListener("click", () => {
     state.team = "all";
     state.date = "all";

@@ -100,11 +100,16 @@ function playerOptionLabel(player, uniformNumber) {
   return numberLabel ? `${numberLabel} ${player}` : player;
 }
 
+function resolvedUniformNumber(row) {
+  return window.getNpbUniformNumber?.(row.team, row.player, row.uniformNumber, row.year) || row.uniformNumber || "";
+}
+
 function comparePlayerOptionRows(a, b) {
+  const aNumber = uniformNumberSortValue(resolvedUniformNumber(a));
+  const bNumber = uniformNumberSortValue(resolvedUniformNumber(b));
+  if (aNumber !== bNumber) return aNumber - bNumber;
   const teamCompare = compareTeam(a.team, b.team);
   if (teamCompare !== 0) return teamCompare;
-  const numberCompare = uniformNumberSortValue(a.uniformNumber) - uniformNumberSortValue(b.uniformNumber);
-  if (numberCompare !== 0) return numberCompare;
   return `${a.player || ""}`.localeCompare(`${b.player || ""}`, "ja");
 }
 
@@ -157,8 +162,8 @@ function availablePlayers() {
     value: playerValue(row),
     label:
       nameCounts.get(row.player) > 1
-        ? `${playerOptionLabel(row.player, row.uniformNumber)} (${row.team})`
-        : playerOptionLabel(row.player, row.uniformNumber),
+        ? `${playerOptionLabel(row.player, resolvedUniformNumber(row))} (${row.team})`
+        : playerOptionLabel(row.player, resolvedUniformNumber(row)),
   }));
 }
 
@@ -258,7 +263,7 @@ function renderSelectedPlayer() {
     return;
   }
   els.playerSelectionLabel.textContent = `${row.year}年度 ${row.team} ${config().label}`;
-  els.playerSelectionTitle.textContent = playerOptionLabel(row.player, row.uniformNumber);
+  els.playerSelectionTitle.textContent = playerOptionLabel(row.player, resolvedUniformNumber(row));
   const nextSrc = embeddedPlayerHref(row);
   if (els.playerStatsFrame.getAttribute("src") !== nextSrc) {
     els.playerStatsFrame.style.height = "640px";
