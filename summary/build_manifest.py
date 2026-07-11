@@ -5,6 +5,7 @@ import importlib.util
 import json
 import re
 import time
+import unicodedata
 from collections import Counter, defaultdict
 from datetime import datetime
 from pathlib import Path
@@ -20,6 +21,7 @@ MANIFEST_PATH = SUMMARY_DIR / "manifest.js"
 BATTER_MANIFEST_PATH = SUMMARY_DIR / "batter_manifest.js"
 PLAYER_TOTALS_PATH = SUMMARY_DIR / "player_totals.json"
 BATTER_TOTALS_PATH = SUMMARY_DIR / "batter_totals.json"
+UNIFORM_NUMBERS_PATH = SUMMARY_DIR / "uniform_numbers.js"
 PARK_FACTORS_PATH = SUMMARY_DIR / "park_factors.json"
 WOBA_CONSTANTS_PATH = SUMMARY_DIR / "woba_constants.json"
 GAME_DECISIONS_CACHE_PATH = SUMMARY_DIR / "game_decisions_cache.json"
@@ -148,6 +150,18 @@ SOURCE_TEAM_NAME_MAP = {
     "e": "東北楽天",
     "bs": "オリックス",
 }
+
+PLAYER_NAME_VARIANTS = str.maketrans(
+    {
+        "﨑": "崎",
+        "髙": "高",
+        "神": "神",
+        "濵": "浜",
+        "邉": "辺",
+        "邊": "辺",
+        "澤": "沢",
+    }
+)
 
 
 def load_dashboard_module():
@@ -308,7 +322,8 @@ def normalize_source_team_name(team: str) -> str:
 
 
 def player_lookup_name(value: str) -> str:
-    return re.sub(r"\s+", "", str(value or "").strip())
+    normalized = unicodedata.normalize("NFKC", str(value or "")).translate(PLAYER_NAME_VARIANTS)
+    return re.sub(r"[\s\u3000]+", "", normalized)
 
 
 def uniform_number_key(season: str, team: str, player_name: str) -> tuple[str, str, str]:
@@ -431,6 +446,27 @@ def load_uniform_number_index(kind: str) -> dict[tuple[str, str, str], str]:
         if not player_name or not uniform_number:
             continue
         index[uniform_number_key(season, team, player_name)] = uniform_number
+    index.update(load_official_uniform_number_index())
+    return index
+
+
+def load_official_uniform_number_index() -> dict[tuple[str, str, str], str]:
+    if not UNIFORM_NUMBERS_PATH.exists():
+        return {}
+    try:
+        source = UNIFORM_NUMBERS_PATH.read_text(encoding="utf-8")
+        assignment = source.split("=", 1)[1]
+        payload = json.loads(assignment.split(";", 1)[0].strip())
+    except (IndexError, json.JSONDecodeError, OSError):
+        return {}
+
+    season = str(payload.get("season") or "")
+    index: dict[tuple[str, str, str], str] = {}
+    for team, players in (payload.get("teams") or {}).items():
+        for player_name, uniform_number in (players or {}).items():
+            number = str(uniform_number or "").strip()
+            if number:
+                index[uniform_number_key(season, team, player_name)] = number
     return index
 
 

@@ -20,6 +20,33 @@
   box-sizing: border-box;
 }
 
+.skip-link {
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  z-index: 200;
+  padding: 10px 14px;
+  border-radius: 12px;
+  background: var(--navy);
+  color: white;
+  text-decoration: none;
+  transform: translateY(-160%);
+  transition: transform 120ms ease;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+[tabindex="-1"]:focus-visible {
+  outline: 3px solid #e5b94f;
+  outline-offset: 3px;
+}
+
 body {
   margin: 0;
   color: var(--text);
@@ -359,6 +386,11 @@ button.type-switch-link {
   cursor: pointer;
 }
 
+.ghost-button:disabled {
+  cursor: default;
+  opacity: 0.45;
+}
+
 .chip-wrap {
   display: flex;
   flex-wrap: wrap;
@@ -500,7 +532,7 @@ button.type-switch-link {
 }
 
 .dashboard-viewer {
-  min-height: 860px;
+  min-height: min(860px, calc(100vh - 40px));
   padding: 24px;
   min-width: 0;
 }
@@ -2744,7 +2776,6 @@ body.compare-embed .season-detail-wrap {
   }
 
   .hero,
-  .layout,
   .page-one,
   .page-two,
   .page-heat,
@@ -2755,21 +2786,8 @@ body.compare-embed .season-detail-wrap {
     grid-template-columns: 1fr;
   }
 
-  .hero-bar,
   .filters-grid {
     grid-template-columns: 1fr;
-  }
-
-  .hero-bar {
-    display: grid;
-  }
-
-  .sidebar {
-    position: static;
-  }
-
-  .result-list {
-    max-height: none;
   }
 
   .stat-strip {
@@ -2781,6 +2799,29 @@ body.compare-embed .season-detail-wrap {
   .monthly-chart-grid,
   .season-pitch-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 1120px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-bar {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    position: static;
+  }
+
+  .result-list {
+    max-height: min(70vh, 760px);
+  }
+
+  .dashboard-viewer.empty {
+    min-height: 360px;
   }
 }
 
@@ -2799,6 +2840,10 @@ body.compare-embed .season-detail-wrap {
   .hero,
   .dashboard-viewer {
     padding: 18px;
+  }
+
+  .dashboard-viewer.empty {
+    min-height: 280px;
   }
 
   .hero-stats,
@@ -3007,6 +3052,17 @@ body.compare-embed .season-detail-wrap {
 
   .chart-axis {
     font-size: 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }
 

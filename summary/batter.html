@@ -4,19 +4,20 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>NPB dashboard | 試合別打者成績</title>
-  <link rel="stylesheet" href="./styles.css?v=20260601-output-ja">
+  <link rel="stylesheet" href="./styles.css?v=20260711-filter-ux">
 </head>
 <body>
+  <a class="skip-link" href="#teamSelect">絞り込み条件へ移動</a>
   <div class="site-shell">
     <header class="hero summary-hero">
       <div class="hero-bar">
         <div class="hero-copy">
           <p class="hero-kicker">NPB dashboard</p>
           <h1>試合別打者成績</h1>
-          <p class="hero-subtitle">試合ごとの打者データを検索して表示します。</p>
+          <p class="hero-subtitle">試合ごとの打者データを条件から選んで表示します。</p>
         </div>
         <nav class="hero-nav" aria-label="成績ページ切替">
-          <a class="hero-nav-link active" href="./index.html">試合別成績</a>
+          <a class="hero-nav-link active" href="./index.html" aria-current="page">試合別成績</a>
           <a class="hero-nav-link" href="./annual.html">年度別成績</a>
           <a class="hero-nav-link" href="./ranking-pitcher.html">ランキング</a>
           <a class="hero-nav-link" href="./player.html">個人成績</a>
@@ -27,40 +28,32 @@
     <section class="type-switch-section" aria-label="投手・打者切替">
       <div class="type-switch">
         <a class="type-switch-link" href="./index.html">投手</a>
-        <a class="type-switch-link active" href="./batter.html?v=20260508-utf8-2">打者</a>
+        <a class="type-switch-link active" href="./batter.html?v=20260711-filter-ux" aria-current="page">打者</a>
       </div>
     </section>
 
     <div class="layout">
       <aside class="sidebar panel">
         <section class="panel-block">
-          <h2>検索</h2>
-          <label class="search-box">
-            <span>球団 / 日付 / 選手名 / 対戦カード</span>
-            <input id="searchInput" type="search" placeholder="例: オリックス / 2026-04-12 / 若月">
-          </label>
-        </section>
-
-        <section class="panel-block">
           <div class="section-head">
             <h2>球団</h2>
-            <button id="clearTeamButton" class="ghost-button" type="button">全表示</button>
+            <button id="clearTeamButton" class="ghost-button" type="button">条件をクリア</button>
           </div>
-          <select id="teamSelect" class="field-select">
+          <select id="teamSelect" class="field-select" aria-label="球団">
             <option value="all">球団を選択</option>
           </select>
         </section>
 
         <section class="panel-block">
           <h2>日付</h2>
-          <select id="dateSelect" class="field-select">
+          <select id="dateSelect" class="field-select" aria-label="日付">
             <option value="all">すべての日付</option>
           </select>
         </section>
 
         <section class="panel-block">
           <h2>選手名</h2>
-          <select id="playerSelect" class="field-select">
+          <select id="playerSelect" class="field-select" aria-label="選手名">
             <option value="all">すべての選手</option>
           </select>
         </section>
@@ -68,14 +61,14 @@
         <section class="panel-block results-block">
           <div class="section-head">
             <h2>一覧</h2>
-            <span id="resultCount" class="result-count">0件</span>
+            <span id="resultCount" class="result-count" role="status" aria-live="polite" aria-atomic="true">0件</span>
           </div>
           <div id="resultList" class="result-list"></div>
         </section>
       </aside>
 
-      <main class="viewer">
-        <section id="viewerPanel" class="dashboard-viewer panel empty">
+      <main class="viewer" id="mainContent">
+        <section id="viewerPanel" class="dashboard-viewer panel empty" tabindex="-1" aria-label="打者ダッシュボード">
           <div class="empty-state">
             <p class="empty-kicker">Select Dashboard</p>
             <h2>左の一覧から打者を選択してください</h2>
@@ -86,8 +79,9 @@
     </div>
   </div>
 
+  <script src="./uniform_numbers.js?v=20260711"></script>
   <script src="./batter_manifest.js?v=20260511-count" charset="utf-8"></script>
-  <script src="./batter.js?v=20260524-ui" charset="utf-8"></script>
-  <script defer src="./chatbot.js?v=20260601-output-ja"></script>
+  <script src="./batter.js?v=20260711-uniform-numbers" charset="utf-8"></script>
+  <script defer src="./chatbot.js?v=20260711-uniform-numbers"></script>
 </body>
 </html>

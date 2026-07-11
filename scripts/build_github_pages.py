@@ -30,6 +30,7 @@ SUMMARY_FILES = (
     "player.js",
     "compare.js",
     "chatbot.js",
+    "uniform_numbers.js",
     "manifest.js",
     "batter_manifest.js",
     "player_totals.json",

@@ -139,6 +139,10 @@
     return numberLabel ? `${numberLabel} ${player}` : player;
   }
 
+  function resolvedUniformNumber(team, player, uniformNumber, season) {
+    return window.getNpbUniformNumber?.(team, player, uniformNumber, season) || uniformNumber || "";
+  }
+
   function visibleText(selector, limit = 1000) {
     const node = document.querySelector(selector);
     return node ? normalizeText(node.innerText || node.textContent, limit) : "";
@@ -624,13 +628,21 @@
     const entries = manifests.flatMap(({ source, manifest }) => {
       const rows = Array.isArray(manifest?.entries) ? manifest.entries : [];
       return rows
-        .map((entry) => ({
-          kind: source.kind,
-          date: normalizeText(entry.date, 20),
-          team: normalizeText(entry.team || entry.teams?.[0], 80),
-          player: normalizeText(entry.player, 120),
-          uniformNumber: normalizeText(entry.uniformNumber, 12),
-        }))
+        .map((entry) => {
+          const date = normalizeText(entry.date, 20);
+          const team = normalizeText(entry.team || entry.teams?.[0], 80);
+          const player = normalizeText(entry.player, 120);
+          return {
+            kind: source.kind,
+            date,
+            team,
+            player,
+            uniformNumber: normalizeText(
+              resolvedUniformNumber(team, player, entry.uniformNumber, date.slice(0, 4)),
+              12
+            ),
+          };
+        })
         .filter((entry) => entry.date && entry.team && entry.player);
     });
     state.selector.entries = entries;
@@ -696,12 +708,16 @@
     const filters = selectedFilters(dateInput, teamSelect);
     const players = state.selector.entries
       .filter((entry) => selectorMatches(entry, filters))
-      .sort((a, b) => (
-        a.team.localeCompare(b.team, "ja")
-        || uniformNumberSortValue(a.uniformNumber) - uniformNumberSortValue(b.uniformNumber)
-        || a.player.localeCompare(b.player, "ja")
-        || a.kind.localeCompare(b.kind, "ja")
-      ));
+      .sort((a, b) => {
+        const aNumber = uniformNumberSortValue(a.uniformNumber);
+        const bNumber = uniformNumberSortValue(b.uniformNumber);
+        if (aNumber !== bNumber) return aNumber - bNumber;
+        return (
+          a.team.localeCompare(b.team, "ja")
+          || a.player.localeCompare(b.player, "ja")
+          || a.kind.localeCompare(b.kind, "ja")
+        );
+      });
     const seen = new Set();
     const options = players
       .map((entry) => {

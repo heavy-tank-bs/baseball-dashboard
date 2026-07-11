@@ -9,6 +9,7 @@
 !/scripts/build_park_factors.py
 !/scripts/fetch_sportsnavi_game_context.py
 !/scripts/dashboard_chat_lambda.py
+!/scripts/build_uniform_numbers.py
 !/summary/
 !/summary/index.html
 !/summary/batter.html
@@ -29,6 +30,7 @@
 !/summary/batter_totals.json
 !/summary/park_factors.json
 !/summary/woba_constants.json
+!/summary/uniform_numbers.js
 !/summary/sportsnavi_game_context_*.json
 !/summary/sportsnavi_woba_events_*.json
 !/generated/
