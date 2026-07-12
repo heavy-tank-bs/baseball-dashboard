@@ -3409,6 +3409,55 @@ body.compare-embed .season-detail-wrap {
   border-bottom: 0;
 }
 
+.ai-chatbot-fact-list {
+  display: grid;
+  gap: 0;
+  margin: 8px 0;
+}
+
+.ai-chatbot-fact-item {
+  display: grid;
+  grid-template-columns: minmax(88px, 0.9fr) minmax(0, 1.1fr);
+  gap: 8px;
+  padding: 7px 2px;
+  border-bottom: 1px solid rgba(15, 35, 64, 0.1);
+}
+
+.ai-chatbot-fact-item:last-child {
+  border-bottom: 0;
+}
+
+.ai-chatbot-fact-item dt {
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 800;
+  line-height: 1.4;
+}
+
+.ai-chatbot-fact-item dd {
+  min-width: 0;
+  margin: 0;
+  color: #14213a;
+  font-size: 12px;
+  line-height: 1.4;
+  text-align: right;
+}
+
+.ai-chatbot-fact-value {
+  display: block;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+}
+
+.ai-chatbot-fact-note {
+  display: block;
+  margin-top: 2px;
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 500;
+  overflow-wrap: anywhere;
+}
+
 .ai-chatbot-metric-card-list {
   display: grid;
   gap: 8px;

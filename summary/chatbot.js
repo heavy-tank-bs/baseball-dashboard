@@ -284,11 +284,20 @@
   }
 
   function appendMarkdownTable(parent, lines) {
-    const headers = parseMarkdownTableRow(lines[0]);
-    const rows = lines.slice(2).map(parseMarkdownTableRow).filter((row) => row.length > 1);
+    const parsedHeaders = parseMarkdownTableRow(lines[0]);
+    const parsedRows = lines.slice(2).map(parseMarkdownTableRow).filter((row) => row.length > 1);
+    const { headers, rows } = compactTableColumns(parsedHeaders, parsedRows);
     if (headers.length < 2 || !rows.length) return false;
     if (!isMetricTable(headers, rows)) {
       appendPlainTableText(parent, headers, rows);
+      return true;
+    }
+    if (isItemValueTable(headers)) {
+      appendFactList(parent, rows);
+      return true;
+    }
+    if (rows.length === 1) {
+      appendSingleRecord(parent, headers, rows[0]);
       return true;
     }
     appendSimpleTable(parent, headers, rows);
@@ -319,6 +328,64 @@
   function isMetricTable(headers, rows) {
     const evidence = metricEvidence(headers, rows);
     return evidence.hasMetricLabel && evidence.numericCells > 0;
+  }
+
+  function compactTableColumns(headers, rows) {
+    const width = Math.max(headers.length, ...rows.map((row) => row.length));
+    const indexes = Array.from({ length: width }, (_, index) => index).filter((index) => {
+      const hasValue = rows.some((row) => `${row[index] || ""}`.trim());
+      if (hasValue) return true;
+      return index === 0 && Boolean(`${headers[index] || ""}`.trim());
+    });
+    return {
+      headers: indexes.map((index) => headers[index] || ""),
+      rows: rows.map((row) => indexes.map((index) => row[index] || "")),
+    };
+  }
+
+  function isItemValueTable(headers) {
+    if (headers.length < 2 || headers.length > 3) return false;
+    const first = `${headers[0] || ""}`.trim();
+    const second = `${headers[1] || ""}`.trim();
+    const third = `${headers[2] || ""}`.trim();
+    if (!/^(項目|指標|Metric)$/i.test(first)) return false;
+    if (!/^(値|数値|結果|成績|Value)$/i.test(second)) return false;
+    return !third || /^(補足|説明|備考|Note|Notes)$/i.test(third);
+  }
+
+  function appendFactList(parent, rows) {
+    const list = createNode("dl", "ai-chatbot-fact-list");
+    rows.forEach((row, index) => {
+      const label = `${row[0] || "項目"}`.trim();
+      const value = `${row[1] || ""}`.trim();
+      const note = row.slice(2).map((cell) => `${cell || ""}`.trim()).filter(Boolean).join(" / ");
+      if (!value && !note) return;
+
+      const item = createNode("div", "ai-chatbot-fact-item");
+      const term = createNode("dt", "");
+      const detail = createNode("dd", "");
+      appendInlineText(term, label || `項目${index + 1}`);
+      if (value) {
+        const valueNode = createNode("span", "ai-chatbot-fact-value");
+        appendInlineText(valueNode, value);
+        detail.appendChild(valueNode);
+      }
+      if (note) {
+        const noteNode = createNode("span", "ai-chatbot-fact-note");
+        appendInlineText(noteNode, note);
+        detail.appendChild(noteNode);
+      }
+      item.append(term, detail);
+      list.appendChild(item);
+    });
+    if (list.childElementCount) parent.appendChild(list);
+  }
+
+  function appendSingleRecord(parent, headers, row) {
+    const facts = headers
+      .map((header, index) => [header || `項目${index + 1}`, row[index] || ""])
+      .filter(([, value]) => `${value || ""}`.trim());
+    appendFactList(parent, facts);
   }
 
   function appendPlainTableText(parent, headers, rows) {
