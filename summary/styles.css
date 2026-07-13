@@ -3334,7 +3334,9 @@ body.compare-embed .season-detail-wrap {
 
 .ai-chatbot-text-block + .ai-chatbot-text-block,
 .ai-chatbot-table-wrap + .ai-chatbot-text-block,
-.ai-chatbot-text-block + .ai-chatbot-table-wrap {
+.ai-chatbot-text-block + .ai-chatbot-table-wrap,
+.ai-chatbot-detail-list + .ai-chatbot-text-block,
+.ai-chatbot-text-block + .ai-chatbot-detail-list {
   margin-top: 10px;
 }
 
@@ -3407,6 +3409,40 @@ body.compare-embed .season-detail-wrap {
 
 .ai-chatbot-table tbody tr:last-child td {
   border-bottom: 0;
+}
+
+.ai-chatbot-detail-list {
+  display: grid;
+  gap: 12px;
+  margin: 8px 0;
+}
+
+.ai-chatbot-detail-section {
+  min-width: 0;
+}
+
+.ai-chatbot-detail-title {
+  margin: 0 0 4px;
+  color: #14213a;
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1.4;
+}
+
+.ai-chatbot-detail-values {
+  display: grid;
+  gap: 3px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ai-chatbot-detail-value {
+  min-width: 0;
+  color: #14213a;
+  font-size: 12px;
+  line-height: 1.55;
+  overflow-wrap: anywhere;
 }
 
 .ai-chatbot-fact-list {

@@ -541,27 +541,54 @@
   function parseStatBulletLine(line) {
     const match = `${line || ""}`.trim().match(/^[-*]\s+(.+)$/);
     if (!match || !/[：:]/.test(match[1])) return null;
-    const rows = [];
-    let fallbackLabel = "";
-    match[1]
-      .split(/、\s*/)
-      .map((part) => part.trim())
-      .filter(Boolean)
-      .forEach((part) => {
-        const pair = part.match(/^(.+?)[：:]\s*(.+)$/);
-        if (pair) {
-          fallbackLabel = pair[1].trim();
-          rows.push([fallbackLabel, pair[2].trim()]);
-          return;
-        }
-        if (fallbackLabel) rows.push([fallbackLabel, part]);
-      });
-    return rows.length && isMetricTable(["項目", "値"], rows) ? rows : null;
+    const pair = match[1].match(/^(.+?)[：:]\s*(.+)$/);
+    if (!pair) return null;
+    const label = pair[1].trim();
+    const value = pair[2].trim();
+    if (!label || !value) return null;
+    const values = /(球種|球速)/.test(label)
+      ? value.split(/、\s*/).map((item) => item.trim()).filter(Boolean)
+      : [value];
+    return { label, values };
   }
 
-  function appendStatBulletTable(parent, lines) {
-    const rows = lines.flatMap((line) => parseStatBulletLine(line) || []);
-    appendSimpleTable(parent, ["項目", "値"], rows);
+  function appendStatBulletSections(parent, lines) {
+    const sections = [];
+    const sectionByLabel = new Map();
+    lines.forEach((line) => {
+      const parsed = parseStatBulletLine(line);
+      if (!parsed) return;
+      const key = parsed.label.replace(/\*\*|__/g, "").trim();
+      let section = sectionByLabel.get(key);
+      if (!section) {
+        section = { label: parsed.label, values: [] };
+        sectionByLabel.set(key, section);
+        sections.push(section);
+      }
+      parsed.values.forEach((value) => {
+        if (!section.values.includes(value)) section.values.push(value);
+      });
+    });
+
+    if (!sections.length) return;
+    const list = createNode("div", "ai-chatbot-detail-list");
+    sections.forEach((section) => {
+      const item = createNode("section", "ai-chatbot-detail-section");
+      const title = createNode("p", "ai-chatbot-detail-title");
+      title.appendChild(document.createTextNode("■"));
+      appendInlineText(title, section.label);
+
+      const values = createNode("ul", "ai-chatbot-detail-values");
+      section.values.forEach((value) => {
+        const valueItem = createNode("li", "ai-chatbot-detail-value");
+        valueItem.appendChild(document.createTextNode("・"));
+        appendInlineText(valueItem, value);
+        values.appendChild(valueItem);
+      });
+      item.append(title, values);
+      list.appendChild(item);
+    });
+    parent.appendChild(list);
   }
 
   function hasRenderableMarkdown(lines) {
@@ -635,7 +662,7 @@
           index += 1;
         }
         index -= 1;
-        appendStatBulletTable(parent, statLines);
+        appendStatBulletSections(parent, statLines);
         continue;
       }
 
