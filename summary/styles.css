@@ -3336,7 +3336,9 @@ body.compare-embed .season-detail-wrap {
 .ai-chatbot-table-wrap + .ai-chatbot-text-block,
 .ai-chatbot-text-block + .ai-chatbot-table-wrap,
 .ai-chatbot-detail-list + .ai-chatbot-text-block,
-.ai-chatbot-text-block + .ai-chatbot-detail-list {
+.ai-chatbot-text-block + .ai-chatbot-detail-list,
+.ai-chatbot-bullet-list + .ai-chatbot-text-block,
+.ai-chatbot-text-block + .ai-chatbot-bullet-list {
   margin-top: 10px;
 }
 
@@ -3443,6 +3445,37 @@ body.compare-embed .season-detail-wrap {
   font-size: 12px;
   line-height: 1.55;
   overflow-wrap: anywhere;
+}
+
+.ai-chatbot-bullet-list {
+  display: grid;
+  gap: 5px;
+  margin: 6px 0 10px;
+  padding: 0;
+  list-style: none;
+}
+
+.ai-chatbot-bullet-item {
+  min-width: 0;
+}
+
+.ai-chatbot-bullet-line {
+  display: block;
+  color: #14213a;
+  font-size: 12px;
+  line-height: 1.55;
+  overflow-wrap: anywhere;
+}
+
+.ai-chatbot-bullet-list.nested {
+  gap: 2px;
+  margin: 3px 0 0 16px;
+}
+
+.ai-chatbot-bullet-item.nested .ai-chatbot-bullet-line {
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.5;
 }
 
 .ai-chatbot-fact-list {

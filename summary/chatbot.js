@@ -591,10 +591,52 @@
     parent.appendChild(list);
   }
 
+  function parseBulletLine(line) {
+    const match = `${line || ""}`.match(/^(\s*)[-*]\s+(.+)$/);
+    if (!match) return null;
+    const indent = match[1].replace(/\t/g, "  ").length;
+    const content = match[2].trim();
+    return content ? { level: indent >= 2 ? 1 : 0, content } : null;
+  }
+
+  function createBulletItem(content, nested = false) {
+    const item = createNode("li", nested ? "ai-chatbot-bullet-item nested" : "ai-chatbot-bullet-item");
+    const line = createNode("span", "ai-chatbot-bullet-line");
+    line.appendChild(document.createTextNode("・"));
+    appendInlineText(line, content);
+    item.appendChild(line);
+    return item;
+  }
+
+  function appendBulletList(parent, lines) {
+    const list = createNode("ul", "ai-chatbot-bullet-list");
+    let activeItem = null;
+    let nestedList = null;
+
+    lines.forEach((line) => {
+      const parsed = parseBulletLine(line);
+      if (!parsed) return;
+      if (parsed.level === 0 || !activeItem) {
+        activeItem = createBulletItem(parsed.content);
+        list.appendChild(activeItem);
+        nestedList = null;
+        return;
+      }
+
+      if (!nestedList) {
+        nestedList = createNode("ul", "ai-chatbot-bullet-list nested");
+        activeItem.appendChild(nestedList);
+      }
+      nestedList.appendChild(createBulletItem(parsed.content, true));
+    });
+
+    if (list.childElementCount) parent.appendChild(list);
+  }
+
   function hasRenderableMarkdown(lines) {
     return lines.some((line, index) => (
       line.trim().includes("|") && isMarkdownTableSeparator(lines[index + 1] || "")
-    ) || Boolean(parseStatBulletLine(line)));
+    ) || Boolean(parseBulletLine(line)));
   }
 
   function normalizeAssistantMarkdown(content) {
@@ -636,6 +678,7 @@
   function renderAssistantContent(parent, content) {
     const lines = normalizeAssistantMarkdown(content);
     let textBuffer = [];
+    let hasActiveHeading = false;
     for (let index = 0; index < lines.length; index += 1) {
       const line = lines[index];
       const nextLine = lines[index + 1] || "";
@@ -653,26 +696,31 @@
         continue;
       }
 
-      if (parseStatBulletLine(line)) {
-        appendTextBlock(parent, textBuffer);
-        textBuffer = [];
-        const statLines = [];
-        while (index < lines.length && parseStatBulletLine(lines[index])) {
-          statLines.push(lines[index]);
-          index += 1;
-        }
-        index -= 1;
-        appendStatBulletSections(parent, statLines);
-        continue;
-      }
-
       const heading = line.match(/^\s{0,3}#{1,4}\s+(.+)$/);
       if (heading) {
         appendTextBlock(parent, textBuffer);
         textBuffer = [];
         const headingNode = createNode("p", "ai-chatbot-section-title");
-        appendInlineText(headingNode, heading[1]);
+        const headingText = heading[1].trim();
+        if (!headingText.startsWith("■")) headingNode.appendChild(document.createTextNode("■"));
+        appendInlineText(headingNode, headingText);
         parent.appendChild(headingNode);
+        hasActiveHeading = true;
+        continue;
+      }
+
+      if (parseBulletLine(line)) {
+        appendTextBlock(parent, textBuffer);
+        textBuffer = [];
+        const bulletLines = [];
+        while (index < lines.length && parseBulletLine(lines[index])) {
+          bulletLines.push(lines[index]);
+          index += 1;
+        }
+        index -= 1;
+        const allLabeled = bulletLines.every((bulletLine) => Boolean(parseStatBulletLine(bulletLine)));
+        if (!hasActiveHeading && allLabeled) appendStatBulletSections(parent, bulletLines);
+        else appendBulletList(parent, bulletLines);
         continue;
       }
 
