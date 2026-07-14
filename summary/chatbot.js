@@ -284,11 +284,20 @@
   }
 
   function appendMarkdownTable(parent, lines) {
-    const headers = parseMarkdownTableRow(lines[0]);
-    const rows = lines.slice(2).map(parseMarkdownTableRow).filter((row) => row.length > 1);
+    const parsedHeaders = parseMarkdownTableRow(lines[0]);
+    const parsedRows = lines.slice(2).map(parseMarkdownTableRow).filter((row) => row.length > 1);
+    const { headers, rows } = compactTableColumns(parsedHeaders, parsedRows);
     if (headers.length < 2 || !rows.length) return false;
     if (!isMetricTable(headers, rows)) {
       appendPlainTableText(parent, headers, rows);
+      return true;
+    }
+    if (isItemValueTable(headers)) {
+      appendFactList(parent, rows);
+      return true;
+    }
+    if (rows.length === 1) {
+      appendSingleRecord(parent, headers, rows[0]);
       return true;
     }
     appendSimpleTable(parent, headers, rows);
@@ -319,6 +328,64 @@
   function isMetricTable(headers, rows) {
     const evidence = metricEvidence(headers, rows);
     return evidence.hasMetricLabel && evidence.numericCells > 0;
+  }
+
+  function compactTableColumns(headers, rows) {
+    const width = Math.max(headers.length, ...rows.map((row) => row.length));
+    const indexes = Array.from({ length: width }, (_, index) => index).filter((index) => {
+      const hasValue = rows.some((row) => `${row[index] || ""}`.trim());
+      if (hasValue) return true;
+      return index === 0 && Boolean(`${headers[index] || ""}`.trim());
+    });
+    return {
+      headers: indexes.map((index) => headers[index] || ""),
+      rows: rows.map((row) => indexes.map((index) => row[index] || "")),
+    };
+  }
+
+  function isItemValueTable(headers) {
+    if (headers.length < 2 || headers.length > 3) return false;
+    const first = `${headers[0] || ""}`.trim();
+    const second = `${headers[1] || ""}`.trim();
+    const third = `${headers[2] || ""}`.trim();
+    if (!/^(項目|指標|Metric)$/i.test(first)) return false;
+    if (!/^(値|数値|結果|成績|Value)$/i.test(second)) return false;
+    return !third || /^(補足|説明|備考|Note|Notes)$/i.test(third);
+  }
+
+  function appendFactList(parent, rows) {
+    const list = createNode("dl", "ai-chatbot-fact-list");
+    rows.forEach((row, index) => {
+      const label = `${row[0] || "項目"}`.trim();
+      const value = `${row[1] || ""}`.trim();
+      const note = row.slice(2).map((cell) => `${cell || ""}`.trim()).filter(Boolean).join(" / ");
+      if (!value && !note) return;
+
+      const item = createNode("div", "ai-chatbot-fact-item");
+      const term = createNode("dt", "");
+      const detail = createNode("dd", "");
+      appendInlineText(term, label || `項目${index + 1}`);
+      if (value) {
+        const valueNode = createNode("span", "ai-chatbot-fact-value");
+        appendInlineText(valueNode, value);
+        detail.appendChild(valueNode);
+      }
+      if (note) {
+        const noteNode = createNode("span", "ai-chatbot-fact-note");
+        appendInlineText(noteNode, note);
+        detail.appendChild(noteNode);
+      }
+      item.append(term, detail);
+      list.appendChild(item);
+    });
+    if (list.childElementCount) parent.appendChild(list);
+  }
+
+  function appendSingleRecord(parent, headers, row) {
+    const facts = headers
+      .map((header, index) => [header || `項目${index + 1}`, row[index] || ""])
+      .filter(([, value]) => `${value || ""}`.trim());
+    appendFactList(parent, facts);
   }
 
   function appendPlainTableText(parent, headers, rows) {
@@ -474,33 +541,102 @@
   function parseStatBulletLine(line) {
     const match = `${line || ""}`.trim().match(/^[-*]\s+(.+)$/);
     if (!match || !/[：:]/.test(match[1])) return null;
-    const rows = [];
-    let fallbackLabel = "";
-    match[1]
-      .split(/、\s*/)
-      .map((part) => part.trim())
-      .filter(Boolean)
-      .forEach((part) => {
-        const pair = part.match(/^(.+?)[：:]\s*(.+)$/);
-        if (pair) {
-          fallbackLabel = pair[1].trim();
-          rows.push([fallbackLabel, pair[2].trim()]);
-          return;
-        }
-        if (fallbackLabel) rows.push([fallbackLabel, part]);
-      });
-    return rows.length && isMetricTable(["項目", "値"], rows) ? rows : null;
+    const pair = match[1].match(/^(.+?)[：:]\s*(.+)$/);
+    if (!pair) return null;
+    const label = pair[1].trim();
+    const value = pair[2].trim();
+    if (!label || !value) return null;
+    const values = /(球種|球速)/.test(label)
+      ? value.split(/、\s*/).map((item) => item.trim()).filter(Boolean)
+      : [value];
+    return { label, values };
   }
 
-  function appendStatBulletTable(parent, lines) {
-    const rows = lines.flatMap((line) => parseStatBulletLine(line) || []);
-    appendSimpleTable(parent, ["項目", "値"], rows);
+  function appendStatBulletSections(parent, lines) {
+    const sections = [];
+    const sectionByLabel = new Map();
+    lines.forEach((line) => {
+      const parsed = parseStatBulletLine(line);
+      if (!parsed) return;
+      const key = parsed.label.replace(/\*\*|__/g, "").trim();
+      let section = sectionByLabel.get(key);
+      if (!section) {
+        section = { label: parsed.label, values: [] };
+        sectionByLabel.set(key, section);
+        sections.push(section);
+      }
+      parsed.values.forEach((value) => {
+        if (!section.values.includes(value)) section.values.push(value);
+      });
+    });
+
+    if (!sections.length) return;
+    const list = createNode("div", "ai-chatbot-detail-list");
+    sections.forEach((section) => {
+      const item = createNode("section", "ai-chatbot-detail-section");
+      const title = createNode("p", "ai-chatbot-detail-title");
+      title.appendChild(document.createTextNode("■"));
+      appendInlineText(title, section.label);
+
+      const values = createNode("ul", "ai-chatbot-detail-values");
+      section.values.forEach((value) => {
+        const valueItem = createNode("li", "ai-chatbot-detail-value");
+        valueItem.appendChild(document.createTextNode("・"));
+        appendInlineText(valueItem, value);
+        values.appendChild(valueItem);
+      });
+      item.append(title, values);
+      list.appendChild(item);
+    });
+    parent.appendChild(list);
+  }
+
+  function parseBulletLine(line) {
+    const match = `${line || ""}`.match(/^(\s*)[-*]\s+(.+)$/);
+    if (!match) return null;
+    const indent = match[1].replace(/\t/g, "  ").length;
+    const content = match[2].trim();
+    return content ? { level: indent >= 2 ? 1 : 0, content } : null;
+  }
+
+  function createBulletItem(content, nested = false) {
+    const item = createNode("li", nested ? "ai-chatbot-bullet-item nested" : "ai-chatbot-bullet-item");
+    const line = createNode("span", "ai-chatbot-bullet-line");
+    line.appendChild(document.createTextNode("・"));
+    appendInlineText(line, content);
+    item.appendChild(line);
+    return item;
+  }
+
+  function appendBulletList(parent, lines) {
+    const list = createNode("ul", "ai-chatbot-bullet-list");
+    let activeItem = null;
+    let nestedList = null;
+
+    lines.forEach((line) => {
+      const parsed = parseBulletLine(line);
+      if (!parsed) return;
+      if (parsed.level === 0 || !activeItem) {
+        activeItem = createBulletItem(parsed.content);
+        list.appendChild(activeItem);
+        nestedList = null;
+        return;
+      }
+
+      if (!nestedList) {
+        nestedList = createNode("ul", "ai-chatbot-bullet-list nested");
+        activeItem.appendChild(nestedList);
+      }
+      nestedList.appendChild(createBulletItem(parsed.content, true));
+    });
+
+    if (list.childElementCount) parent.appendChild(list);
   }
 
   function hasRenderableMarkdown(lines) {
     return lines.some((line, index) => (
       line.trim().includes("|") && isMarkdownTableSeparator(lines[index + 1] || "")
-    ) || Boolean(parseStatBulletLine(line)));
+    ) || Boolean(parseBulletLine(line)));
   }
 
   function normalizeAssistantMarkdown(content) {
@@ -542,6 +678,7 @@
   function renderAssistantContent(parent, content) {
     const lines = normalizeAssistantMarkdown(content);
     let textBuffer = [];
+    let hasActiveHeading = false;
     for (let index = 0; index < lines.length; index += 1) {
       const line = lines[index];
       const nextLine = lines[index + 1] || "";
@@ -559,26 +696,31 @@
         continue;
       }
 
-      if (parseStatBulletLine(line)) {
-        appendTextBlock(parent, textBuffer);
-        textBuffer = [];
-        const statLines = [];
-        while (index < lines.length && parseStatBulletLine(lines[index])) {
-          statLines.push(lines[index]);
-          index += 1;
-        }
-        index -= 1;
-        appendStatBulletTable(parent, statLines);
-        continue;
-      }
-
       const heading = line.match(/^\s{0,3}#{1,4}\s+(.+)$/);
       if (heading) {
         appendTextBlock(parent, textBuffer);
         textBuffer = [];
         const headingNode = createNode("p", "ai-chatbot-section-title");
-        appendInlineText(headingNode, heading[1]);
+        const headingText = heading[1].trim();
+        if (!headingText.startsWith("■")) headingNode.appendChild(document.createTextNode("■"));
+        appendInlineText(headingNode, headingText);
         parent.appendChild(headingNode);
+        hasActiveHeading = true;
+        continue;
+      }
+
+      if (parseBulletLine(line)) {
+        appendTextBlock(parent, textBuffer);
+        textBuffer = [];
+        const bulletLines = [];
+        while (index < lines.length && parseBulletLine(lines[index])) {
+          bulletLines.push(lines[index]);
+          index += 1;
+        }
+        index -= 1;
+        const allLabeled = bulletLines.every((bulletLine) => Boolean(parseStatBulletLine(bulletLine)));
+        if (!hasActiveHeading && allLabeled) appendStatBulletSections(parent, bulletLines);
+        else appendBulletList(parent, bulletLines);
         continue;
       }
 

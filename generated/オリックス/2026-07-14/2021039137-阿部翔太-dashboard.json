@@ -1,0 +1,40 @@
+{
+  "game_id": "2021039137",
+  "metadata": {
+    "date_jp": "2026年7月14日",
+    "matchup": "東北楽天ゴールデンイーグルスvsオリックス・バファローズ"
+  },
+  "statline": {
+    "player": "阿部 翔太",
+    "era": "27.00",
+    "innings": "0.1",
+    "pitches": "1",
+    "batters": "1",
+    "hits": "0",
+    "hr": "0",
+    "k": "0",
+    "bb": "0",
+    "hbp": "0",
+    "balk": "0",
+    "runs": "0",
+    "er": "0"
+  },
+  "pitches": [
+    {
+      "pa_index": "0720700",
+      "pitcher": "阿部 翔太",
+      "pitcher_id": "2000101",
+      "pitcher_hand": "右",
+      "batter": "マッカスカー",
+      "batter_id": "2122300",
+      "batter_hand": "右",
+      "seq": "1",
+      "pitchNo": "1",
+      "pitchType": "シュート",
+      "speed": "147km/h",
+      "result": "一邪飛 [詰り]",
+      "top": 24.119999999999997,
+      "left": 38.879999999999995
+    }
+  ]
+}
