@@ -3474,7 +3474,7 @@ body.compare-embed .season-detail-wrap {
 }
 
 .ai-chatbot-bullet-item.nested .ai-chatbot-bullet-line {
-  color: var(--muted);
+  color: #14213a;
   font-size: 13px;
   line-height: 1.55;
 }
