@@ -1,0 +1,40 @@
+{
+  "game_id": "2021039141",
+  "metadata": {
+    "date_jp": "2026年7月15日",
+    "matchup": "広島東洋カープvs横浜DeNAベイスターズ"
+  },
+  "statline": {
+    "player": "辻 大雅",
+    "era": "4.29",
+    "innings": "0.1",
+    "pitches": "1",
+    "batters": "1",
+    "hits": "0",
+    "hr": "0",
+    "k": "0",
+    "bb": "0",
+    "hbp": "0",
+    "balk": "0",
+    "runs": "0",
+    "er": "0"
+  },
+  "pitches": [
+    {
+      "pa_index": "0510700",
+      "pitcher": "辻 大雅",
+      "pitcher_id": "2106037",
+      "pitcher_hand": "左",
+      "batter": "梶原 昂希",
+      "batter_id": "2103703",
+      "batter_hand": "左",
+      "seq": "1",
+      "pitchNo": "1",
+      "pitchType": "カットボール",
+      "speed": "137km/h",
+      "result": "左飛 [好リリーフ]",
+      "top": 18.0,
+      "left": 38.879999999999995
+    }
+  ]
+}
