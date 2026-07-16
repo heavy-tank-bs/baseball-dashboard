@@ -73,7 +73,7 @@
         "zSwing": 75.0,
         "oContact": 33.3,
         "chase": 20.0,
-        "chasePlus": 61.0
+        "chasePlus": 62.0
       },
       {
         "pitchType": "ナックルカーブ",
@@ -3796,7 +3796,7 @@
       "スライダー": "#C8A55A"
     },
     "metricBaselines": {
-      "chase": 32.6,
+      "chase": 32.5,
       "chaseScope": "league"
     }
   }
