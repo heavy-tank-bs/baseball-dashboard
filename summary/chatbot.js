@@ -35,6 +35,11 @@
       note: "日付・チームを選んで試合内容を質問します。選手は未選択でも使えます。",
     },
     {
+      type: "compare",
+      label: "過去比較",
+      note: "対象日の成績を、それ以前の直近登板・試合と比較します。",
+    },
+    {
       type: "personal",
       label: "個人成績",
       note: "チーム・選手を選んで年度成績や指標を質問します。",
@@ -805,11 +810,11 @@
   }
 
   function usesDateFilter() {
-    return state.selector.activeType === "game";
+    return ["game", "compare"].includes(state.selector.activeType);
   }
 
   function usesTeamPlayerFilters() {
-    return ["game", "personal", "traits"].includes(state.selector.activeType);
+    return ["game", "compare", "personal", "traits"].includes(state.selector.activeType);
   }
 
   function usesKindFilter() {
@@ -817,7 +822,20 @@
   }
 
   function selectorRequiresPlayer() {
-    return ["personal", "traits"].includes(state.selector.activeType);
+    return ["compare", "personal", "traits"].includes(state.selector.activeType);
+  }
+
+  function renderComparisonCountOptions(elements) {
+    const current = elements.comparisonCountSelect.value;
+    const pitcher = state.selector.activeKind === "投手";
+    const counts = pitcher ? [1, 3, 5, 10] : [1, 3, 5, 10, 20];
+    const unit = pitcher ? "登板" : "試合";
+    const defaultCount = pitcher ? 3 : 5;
+    elements.comparisonCountLabel.textContent = `比較する${unit}数`;
+    elements.comparisonCountSelect.replaceChildren(
+      ...counts.map((count) => optionNode(`${count}`, `直近${count}${unit}`))
+    );
+    elements.comparisonCountSelect.value = counts.includes(Number(current)) ? current : `${defaultCount}`;
   }
 
   function optionNode(value, label, attrs = {}) {
@@ -893,6 +911,7 @@
     const showKind = usesKindFilter();
     const showTeam = usesTeamPlayerFilters() && Boolean(state.selector.activeKind);
     const showPlayer = showTeam && Boolean(elements.teamSelect.value);
+    const showComparisonCount = type?.type === "compare" && Boolean(state.selector.activeKind);
     elements.kindTitle.hidden = !showKind;
     elements.kindGroup.hidden = !showKind;
     elements.kindButtons.forEach((button) => {
@@ -904,12 +923,16 @@
     elements.teamSelect.hidden = !showTeam;
     elements.playerLabel.hidden = !showPlayer;
     elements.playerSelect.hidden = !showPlayer;
-    elements.startButton.hidden = true;
+    elements.comparisonCountLabel.hidden = !showComparisonCount;
+    elements.comparisonCountSelect.hidden = !showComparisonCount;
+    elements.startButton.hidden = type?.type !== "compare" || !showPlayer || !elements.playerSelect.value;
+    elements.startButton.textContent = type?.type === "compare" ? "比較する" : "チャットへ進む";
     elements.textarea.placeholder = type?.type === "free" ? "自由に質問を入力" : "このダッシュボードについて質問";
   }
 
   function renderSelectorOptions(elements) {
     syncSelectorVisibility(elements);
+    if (activeQuestionType()?.type === "compare") renderComparisonCountOptions(elements);
     const type = activeQuestionType();
     if (!type) {
       elements.note.textContent = "最初に質問ジャンルを選択してください。";
@@ -939,19 +962,20 @@
     elements.note.textContent = usesDateFilter() ? `${type.note} 対象日: ${dateText}` : type.note;
   }
 
-  function selectorValidationMessage(dateInput, teamSelect, playerSelect) {
+  function selectorValidationMessage(dateInput, teamSelect, playerSelect, comparisonCountSelect) {
     const type = activeQuestionType();
     if (!type) return "質問ジャンルを選択してください。";
     if (type.type === "free") return "";
     if (usesKindFilter() && !state.selector.activeKind) return "投手か野手を選択してください。";
-    if (type.type === "game" && !dateInput.value) return "日付を選択してください。";
+    if (["game", "compare"].includes(type.type) && !dateInput.value) return "日付を選択してください。";
     if (usesTeamPlayerFilters() && !teamSelect.value) return "チームを選択してください。";
     if (type.type === "game" && !playerSelect.value) return "選手を選択するか、「選手を指定しない」を選んでください。";
     if (selectorRequiresPlayer() && !playerSelect.value) return "選手を選択してください。";
+    if (type.type === "compare" && !comparisonCountSelect?.value) return "比較する登板数・試合数を選択してください。";
     return "";
   }
 
-  function buildSelectorQuestion(dateInput, teamSelect, playerSelect) {
+  function buildSelectorQuestion(dateInput, teamSelect, playerSelect, comparisonCountSelect) {
     const type = activeQuestionType();
     if (!type || type.type === "free") return "";
     const date = dateInput.value || "";
@@ -961,6 +985,11 @@
     const player = option?.dataset.player || "";
     const kind = option?.dataset.kind || state.selector.activeKind || "";
     const kindLabel = kind ? `（${kind}）` : "";
+    if (type.type === "compare" && player) {
+      const count = Number(comparisonCountSelect?.value) || (kind === "投手" ? 3 : 5);
+      const unit = kind === "投手" ? "登板" : "試合";
+      return `${date}の${team ? `${team}の` : ""}${player}${kindLabel}の試合内容を、それ以前の直近${count}${unit}と比較して、変化と注目ポイントを教えて`;
+    }
     if (type.type === "game" && player && !selectedNoPlayer) {
       return `${date ? `${date}の` : ""}${team ? `${team}の` : ""}${player}${kindLabel}について、試合内容と注目ポイントを教えて`;
     }
@@ -1011,12 +1040,26 @@
   function maybeAutoSend(elements) {
     const type = activeQuestionType();
     if (!type || type.type === "free") return;
-    const validationMessage = selectorValidationMessage(elements.dateInput, elements.teamSelect, elements.playerSelect);
+    const validationMessage = selectorValidationMessage(
+      elements.dateInput,
+      elements.teamSelect,
+      elements.playerSelect,
+      elements.comparisonCountSelect
+    );
     if (validationMessage) {
       elements.note.textContent = validationMessage;
       return;
     }
-    completeSelector(elements, buildSelectorQuestion(elements.dateInput, elements.teamSelect, elements.playerSelect), true);
+    completeSelector(
+      elements,
+      buildSelectorQuestion(
+        elements.dateInput,
+        elements.teamSelect,
+        elements.playerSelect,
+        elements.comparisonCountSelect
+      ),
+      true
+    );
   }
 
   function resetSelectorFlow(elements) {
@@ -1025,6 +1068,7 @@
     elements.dateInput.value = "";
     elements.teamSelect.value = "";
     elements.playerSelect.value = "";
+    elements.comparisonCountSelect.value = "";
     elements.textarea.value = "";
     renderSelectorOptions(elements);
     setChatStep(elements, "select");
@@ -1038,6 +1082,7 @@
         state.selector.activeKind = "";
         elements.teamSelect.value = "";
         elements.playerSelect.value = "";
+        elements.comparisonCountSelect.value = "";
         refresh();
         if (state.selector.activeType === "free") completeSelector(elements);
       });
@@ -1047,6 +1092,7 @@
         state.selector.activeKind = button.dataset.chatPlayerKind || "";
         elements.teamSelect.value = "";
         elements.playerSelect.value = "";
+        elements.comparisonCountSelect.value = "";
         refresh();
       });
     });
@@ -1060,16 +1106,28 @@
       refresh();
     });
     elements.playerSelect.addEventListener("change", () => {
-      maybeAutoSend(elements);
+      if (state.selector.activeType === "compare") refresh();
+      else maybeAutoSend(elements);
     });
+    elements.comparisonCountSelect.addEventListener("change", refresh);
     elements.startButton.addEventListener("click", () => {
-      const validationMessage = selectorValidationMessage(elements.dateInput, elements.teamSelect, elements.playerSelect);
+      const validationMessage = selectorValidationMessage(
+        elements.dateInput,
+        elements.teamSelect,
+        elements.playerSelect,
+        elements.comparisonCountSelect
+      );
       if (validationMessage) {
         elements.note.textContent = validationMessage;
         return;
       }
-      const question = buildSelectorQuestion(elements.dateInput, elements.teamSelect, elements.playerSelect);
-      completeSelector(elements, question);
+      const question = buildSelectorQuestion(
+        elements.dateInput,
+        elements.teamSelect,
+        elements.playerSelect,
+        elements.comparisonCountSelect
+      );
+      completeSelector(elements, question, state.selector.activeType === "compare");
     });
     elements.backButton.addEventListener("click", () => setChatStep(elements, "select"));
     refresh();
@@ -1162,8 +1220,12 @@
     const playerSelect = createNode("select", "ai-chatbot-filter-control", {
       "aria-label": "選手",
     });
+    const comparisonCountSelect = createNode("select", "ai-chatbot-filter-control", {
+      "aria-label": "比較する登板数・試合数",
+    });
     teamSelect.append(optionNode("", "読み込み中..."));
     playerSelect.append(optionNode("", "選手を選択"));
+    comparisonCountSelect.append(optionNode("", "比較数を選択"));
     const startButton = createNode("button", "ai-chatbot-selector-button", {
       type: "button",
       text: "チャットへ進む",
@@ -1172,6 +1234,7 @@
     const dateLabel = createNode("label", "ai-chatbot-filter-field", { text: "日付" });
     const teamLabel = createNode("label", "ai-chatbot-filter-field", { text: "チーム" });
     const playerLabel = createNode("label", "ai-chatbot-filter-field", { text: "選手" });
+    const comparisonCountLabel = createNode("label", "ai-chatbot-filter-field", { text: "比較数" });
     selectorPanel.append(
       dateLabel,
       dateInput,
@@ -1179,6 +1242,8 @@
       teamSelect,
       playerLabel,
       playerSelect,
+      comparisonCountLabel,
+      comparisonCountSelect,
       startButton,
       selectorNote
     );
@@ -1212,6 +1277,8 @@
       teamSelect,
       playerLabel,
       playerSelect,
+      comparisonCountLabel,
+      comparisonCountSelect,
       startButton,
       note: selectorNote,
       messages,

@@ -96,6 +96,11 @@ def innings_to_outs(value: Any) -> int:
     return to_int(text) * 3
 
 
+def outs_to_innings(outs: int) -> str:
+    safe_outs = max(int(outs or 0), 0)
+    return f"{safe_outs // 3}.{safe_outs % 3}"
+
+
 def fmt(value: Any, suffix: str = "") -> str:
     if value in (None, "", "-"):
         return "-"
@@ -202,6 +207,10 @@ class DashboardSearchIndex:
 
         years = sorted(set(re.findall(r"20\d{2}", query)))
         dates = sorted(set(re.findall(r"20\d{2}-\d{2}-\d{2}", query)))
+        comparison_requested = bool(dates) and any(
+            compact_text(term) in q_compact for term in ("比較", "比べ", "以前", "過去", "直近", "前回")
+        )
+        target_date = dates[-1] if dates else ""
         pitcher_names = self._matched_names(q_compact, self.pitcher_names)
         batter_names = self._matched_names(q_compact, self.batter_names)
         teams = self._matched_names(q_compact, self.teams)
@@ -228,12 +237,22 @@ class DashboardSearchIndex:
             pitcher_game_rows = self._search_pitcher_games(q_compact, pitcher_names, teams, years, dates)
             parts.append(self._format_pitcher_totals(pitcher_total_rows))
             parts.append(self._format_pitcher_games(pitcher_game_rows))
+            if comparison_requested:
+                comparison_count = self._comparison_count(query, "登板", 3)
+                parts.append(
+                    self._format_pitcher_comparison(pitcher_names, teams, target_date, comparison_count)
+                )
 
         if wants_batter:
             batter_total_rows = self._search_batter_totals(q_compact, batter_names, teams, years)
             batter_game_rows = self._search_batter_games(q_compact, batter_names, teams, years, dates)
             parts.append(self._format_batter_totals(batter_total_rows))
             parts.append(self._format_batter_games(batter_game_rows))
+            if comparison_requested:
+                comparison_count = self._comparison_count(query, "試合", 5)
+                parts.append(
+                    self._format_batter_comparison(batter_names, teams, target_date, comparison_count)
+                )
 
         return "\n\n".join(part for part in parts if part)[:MAX_SEARCH_CONTEXT_CHARS]
 
@@ -334,6 +353,184 @@ class DashboardSearchIndex:
         else:
             rows.sort(key=lambda entry: (self._entry_score(entry, q_compact), entry.get("date", "")), reverse=True)
         return rows[:12]
+
+    def _comparison_count(self, query: str, unit: str, default: int) -> int:
+        normalized = unicodedata.normalize("NFKC", str(query or ""))
+        match = re.search(rf"直近\s*(\d{{1,2}})\s*{unit}", normalized)
+        if not match:
+            match = re.search(r"直近\s*(\d{1,2})\s*(?:登板|試合)", normalized)
+        count = to_int(match.group(1)) if match else default
+        return min(max(count, 1), 20)
+
+    def _comparison_entries(
+        self,
+        entries: list[dict[str, Any]],
+        names: list[str],
+        teams: list[str],
+        target_date: str,
+        count: int,
+    ) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
+        if not target_date or not names:
+            return [], []
+        matching = [entry for entry in entries if self._entry_matches(entry, names, teams, [], [])]
+        target = [entry for entry in matching if str(entry.get("date", "")) == target_date]
+        previous = [entry for entry in matching if str(entry.get("date", "")) < target_date]
+        target.sort(key=lambda entry: str(entry.get("gameId", "")))
+        previous.sort(
+            key=lambda entry: (str(entry.get("date", "")), str(entry.get("gameId", ""))),
+            reverse=True,
+        )
+        return target, previous[:count]
+
+    def _pitcher_comparison_stats(self, entries: list[dict[str, Any]]) -> dict[str, Any]:
+        appearances = len(entries)
+        statlines = [entry.get("statline", {}) for entry in entries]
+        outs = sum(innings_to_outs(row.get("innings")) for row in statlines)
+        pitches = sum(to_int(row.get("pitches")) for row in statlines)
+        hits = sum(to_int(row.get("hits")) for row in statlines)
+        strikeouts = sum(to_int(row.get("k")) for row in statlines)
+        walks = sum(to_int(row.get("bb")) for row in statlines)
+        runs = sum(to_int(row.get("runs")) for row in statlines)
+        earned_runs = sum(to_int(row.get("er")) for row in statlines)
+        divisor = max(appearances, 1)
+        return {
+            "appearances": appearances,
+            "innings": outs_to_innings(outs),
+            "pitchesAvg": pitches / divisor,
+            "hitsAvg": hits / divisor,
+            "strikeoutsAvg": strikeouts / divisor,
+            "walksAvg": walks / divisor,
+            "runsAvg": runs / divisor,
+            "era": earned_runs * 27 / outs if outs else None,
+            "whip": (hits + walks) * 3 / outs if outs else None,
+            "kPer9": strikeouts * 27 / outs if outs else None,
+            "bbPer9": walks * 27 / outs if outs else None,
+        }
+
+    def _batter_comparison_stats(self, entries: list[dict[str, Any]]) -> dict[str, Any]:
+        games = len(entries)
+        statlines = [entry.get("statline", {}) for entry in entries]
+        at_bats = sum(to_int(row.get("ab")) for row in statlines)
+        hits = sum(to_int(row.get("hits")) for row in statlines)
+        home_runs = sum(to_int(row.get("homeRuns")) for row in statlines)
+        rbi = sum(to_int(row.get("rbi")) for row in statlines)
+        walks = sum(to_int(row.get("walks")) for row in statlines)
+        strikeouts = sum(to_int(row.get("strikeouts")) for row in statlines)
+        divisor = max(games, 1)
+        return {
+            "games": games,
+            "atBatsAvg": at_bats / divisor,
+            "hitsAvg": hits / divisor,
+            "homeRunsAvg": home_runs / divisor,
+            "rbiAvg": rbi / divisor,
+            "walksAvg": walks / divisor,
+            "strikeoutsAvg": strikeouts / divisor,
+            "battingAverage": hits / at_bats if at_bats else None,
+        }
+
+    def _rate_text(self, value: Any, digits: int = 2) -> str:
+        number = to_float(value)
+        return "-" if number is None else f"{number:.{digits}f}"
+
+    def _format_pitcher_comparison(
+        self, names: list[str], teams: list[str], target_date: str, count: int
+    ) -> str:
+        target, previous = self._comparison_entries(
+            self.pitcher_entries, names, teams, target_date, count
+        )
+        lines = ["## 投手 過去比較データ"]
+        if not target:
+            lines.append("- 対象日の登板データは見つかりません。")
+            return "\n".join(lines)
+        if not previous:
+            lines.append("- 対象日より前の登板データは見つかりません。")
+            return "\n".join(lines)
+
+        target_stats = self._pitcher_comparison_stats(target)
+        previous_stats = self._pitcher_comparison_stats(previous)
+        lines.extend(
+            [
+                f"- 比較条件: 対象日 {target_date} / 対象日より前の直近 {len(previous)}登板（指定 {count}登板）",
+                (
+                    f"- 対象日（{target_stats['appearances']}登板）: 投球回 {target_stats['innings']}, "
+                    f"平均球数 {self._rate_text(target_stats['pitchesAvg'], 1)}, "
+                    f"平均被安打 {self._rate_text(target_stats['hitsAvg'], 1)}, "
+                    f"平均奪三振 {self._rate_text(target_stats['strikeoutsAvg'], 1)}, "
+                    f"平均与四球 {self._rate_text(target_stats['walksAvg'], 1)}, "
+                    f"平均失点 {self._rate_text(target_stats['runsAvg'], 1)}, "
+                    f"ERA {self._rate_text(target_stats['era'])}, WHIP {self._rate_text(target_stats['whip'])}, "
+                    f"奪三振率 {self._rate_text(target_stats['kPer9'])}, 与四球率 {self._rate_text(target_stats['bbPer9'])}"
+                ),
+                (
+                    f"- 過去{len(previous)}登板: 合計投球回 {previous_stats['innings']}, "
+                    f"1登板平均球数 {self._rate_text(previous_stats['pitchesAvg'], 1)}, "
+                    f"平均被安打 {self._rate_text(previous_stats['hitsAvg'], 1)}, "
+                    f"平均奪三振 {self._rate_text(previous_stats['strikeoutsAvg'], 1)}, "
+                    f"平均与四球 {self._rate_text(previous_stats['walksAvg'], 1)}, "
+                    f"平均失点 {self._rate_text(previous_stats['runsAvg'], 1)}, "
+                    f"ERA {self._rate_text(previous_stats['era'])}, WHIP {self._rate_text(previous_stats['whip'])}, "
+                    f"奪三振率 {self._rate_text(previous_stats['kPer9'])}, 与四球率 {self._rate_text(previous_stats['bbPer9'])}"
+                ),
+                "### 過去登板の内訳",
+            ]
+        )
+        for entry in previous:
+            row = entry.get("statline", {})
+            lines.append(
+                f"- {entry.get('date')}: 投球回 {fmt(row.get('innings'))}, {fmt(row.get('pitches'))}球, "
+                f"{fmt(row.get('hits'))}安打, {fmt(row.get('k'))}奪三振, "
+                f"{fmt(row.get('bb'))}与四球, {fmt(row.get('runs'))}失点"
+            )
+        return "\n".join(lines)
+
+    def _format_batter_comparison(
+        self, names: list[str], teams: list[str], target_date: str, count: int
+    ) -> str:
+        target, previous = self._comparison_entries(
+            self.batter_entries, names, teams, target_date, count
+        )
+        lines = ["## 野手 過去比較データ"]
+        if not target:
+            lines.append("- 対象日の試合データは見つかりません。")
+            return "\n".join(lines)
+        if not previous:
+            lines.append("- 対象日より前の試合データは見つかりません。")
+            return "\n".join(lines)
+
+        target_stats = self._batter_comparison_stats(target)
+        previous_stats = self._batter_comparison_stats(previous)
+        lines.extend(
+            [
+                f"- 比較条件: 対象日 {target_date} / 対象日より前の直近 {len(previous)}試合（指定 {count}試合）",
+                (
+                    f"- 対象日（{target_stats['games']}試合）: 平均打数 {self._rate_text(target_stats['atBatsAvg'], 1)}, "
+                    f"平均安打 {self._rate_text(target_stats['hitsAvg'], 1)}, "
+                    f"平均本塁打 {self._rate_text(target_stats['homeRunsAvg'], 1)}, "
+                    f"平均打点 {self._rate_text(target_stats['rbiAvg'], 1)}, "
+                    f"平均四球 {self._rate_text(target_stats['walksAvg'], 1)}, "
+                    f"平均三振 {self._rate_text(target_stats['strikeoutsAvg'], 1)}, "
+                    f"打率 {self._rate_text(target_stats['battingAverage'], 3)}"
+                ),
+                (
+                    f"- 過去{len(previous)}試合: 1試合平均打数 {self._rate_text(previous_stats['atBatsAvg'], 1)}, "
+                    f"平均安打 {self._rate_text(previous_stats['hitsAvg'], 1)}, "
+                    f"平均本塁打 {self._rate_text(previous_stats['homeRunsAvg'], 1)}, "
+                    f"平均打点 {self._rate_text(previous_stats['rbiAvg'], 1)}, "
+                    f"平均四球 {self._rate_text(previous_stats['walksAvg'], 1)}, "
+                    f"平均三振 {self._rate_text(previous_stats['strikeoutsAvg'], 1)}, "
+                    f"打率 {self._rate_text(previous_stats['battingAverage'], 3)}"
+                ),
+                "### 過去試合の内訳",
+            ]
+        )
+        for entry in previous:
+            row = entry.get("statline", {})
+            lines.append(
+                f"- {entry.get('date')}: {fmt(row.get('ab'))}打数, {fmt(row.get('hits'))}安打, "
+                f"{fmt(row.get('homeRuns'))}本塁打, {fmt(row.get('rbi'))}打点, "
+                f"{fmt(row.get('walks'))}四球, {fmt(row.get('strikeouts'))}三振"
+            )
+        return "\n".join(lines)
 
     def _entry_score(self, entry: dict[str, Any], q_compact: str) -> int:
         fields = [
@@ -626,6 +823,7 @@ def call_openai(payload: dict[str, Any], search_context: str) -> str:
             "For a single player or game, combine the most important metrics into a short sentence, such as 投球回、球数、被安打、与四球、失点, and omit less relevant metrics unless the user asks for detail.",
             "For mobile readability, keep comparison tables narrow and split combined metrics such as Whiff / CSW into separate rows or columns when necessary.",
             "When comparing pitch types, players, teams, or dates as columns, keep the entity names in the Markdown table header so the UI can preserve column labels.",
+            "When the full-data context contains `過去比較データ`, compare the target date only with the listed games before that date. State the actual number of prior appearances or games used when fewer rows exist than requested, and never mix in games after the target date.",
             "Do not add standalone prose before the opening heading. Avoid generic player labels or abstract descriptions; state the concrete characteristic directly. Put any comparison table under a later section heading, then explain traits and interpretation with the two-level bullet structure.",
             "Do not wrap Markdown tables or final answers in fenced code blocks such as ```markdown.",
             "Localize metric labels in final answers: write IP as 投球回, BB/9 as 与四球率, and K/9 or KK/9 as 奪三振率.",
