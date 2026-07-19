@@ -215,8 +215,27 @@ class DashboardSearchIndex:
         batter_names = self._matched_names(q_compact, self.batter_names)
         teams = self._matched_names(q_compact, self.teams)
 
-        wants_pitcher = bool(pitcher_names) or any(compact_text(term) in q_compact for term in PITCHER_TERMS)
-        wants_batter = bool(batter_names) or any(compact_text(term) in q_compact for term in BATTER_TERMS)
+        selected_pitcher_kind = bool(re.search(r"[（(]\s*投手\s*[）)]", query))
+        selected_batter_kind = bool(re.search(r"[（(]\s*野手\s*[）)]", query))
+        pitcher_kind_requested = any(
+            compact_text(term) in q_compact for term in ("pitcher", "投手", "先発", "登板")
+        )
+        batter_kind_requested = any(
+            compact_text(term) in q_compact for term in ("batter", "hitter", "野手", "打者")
+        )
+        explicit_pitcher = any(compact_text(term) in q_compact for term in PITCHER_TERMS)
+        explicit_batter = any(compact_text(term) in q_compact for term in BATTER_TERMS)
+        if selected_pitcher_kind and not selected_batter_kind:
+            wants_pitcher, wants_batter = True, False
+        elif selected_batter_kind and not selected_pitcher_kind:
+            wants_pitcher, wants_batter = False, True
+        elif pitcher_kind_requested and not batter_kind_requested:
+            wants_pitcher, wants_batter = True, False
+        elif batter_kind_requested and not pitcher_kind_requested:
+            wants_pitcher, wants_batter = False, True
+        else:
+            wants_pitcher = bool(pitcher_names) or explicit_pitcher
+            wants_batter = bool(batter_names) or explicit_batter
         if not wants_pitcher and not wants_batter:
             wants_pitcher = wants_batter = True
 
@@ -236,6 +255,8 @@ class DashboardSearchIndex:
             pitcher_total_rows = self._search_pitcher_totals(q_compact, pitcher_names, teams, years)
             pitcher_game_rows = self._search_pitcher_games(q_compact, pitcher_names, teams, years, dates)
             parts.append(self._format_pitcher_totals(pitcher_total_rows))
+            if pitcher_names:
+                parts.append(self._format_pitcher_detail_context(pitcher_total_rows, q_compact, years))
             parts.append(self._format_pitcher_games(pitcher_game_rows))
             if comparison_requested:
                 comparison_count = self._comparison_count(query, "登板", 3)
@@ -247,6 +268,8 @@ class DashboardSearchIndex:
             batter_total_rows = self._search_batter_totals(q_compact, batter_names, teams, years)
             batter_game_rows = self._search_batter_games(q_compact, batter_names, teams, years, dates)
             parts.append(self._format_batter_totals(batter_total_rows))
+            if batter_names:
+                parts.append(self._format_batter_detail_context(batter_total_rows, q_compact, years))
             parts.append(self._format_batter_games(batter_game_rows))
             if comparison_requested:
                 comparison_count = self._comparison_count(query, "試合", 5)
@@ -257,6 +280,11 @@ class DashboardSearchIndex:
         return "\n\n".join(part for part in parts if part)[:MAX_SEARCH_CONTEXT_CHARS]
 
     def _matched_names(self, q_compact: str, names: list[str]) -> list[str]:
+        exact_matches = [
+            name for name in names if len(compact_text(name)) >= 2 and compact_text(name) in q_compact
+        ]
+        if exact_matches:
+            return exact_matches[:8]
         matches: list[str] = []
         for name in names:
             key = compact_text(name)
@@ -530,6 +558,229 @@ class DashboardSearchIndex:
                 f"{fmt(row.get('homeRuns'))}本塁打, {fmt(row.get('rbi'))}打点, "
                 f"{fmt(row.get('walks'))}四球, {fmt(row.get('strikeouts'))}三振"
             )
+        return "\n".join(lines)
+
+    def _detail_rows(
+        self, rows: list[dict[str, Any]], years: list[str], limit: int = 4
+    ) -> list[dict[str, Any]]:
+        available = [
+            row for row in rows if row.get("monthlySplits") or row.get("seasonDashboard")
+        ]
+        ordered = sorted(available, key=lambda row: str(row.get("year", "")), reverse=True)
+        if years:
+            return ordered[:limit]
+        selected: list[dict[str, Any]] = []
+        seen_players: set[str] = set()
+        for row in ordered:
+            player_key = compact_text(row.get("player"))
+            if not player_key or player_key in seen_players:
+                continue
+            seen_players.add(player_key)
+            selected.append(row)
+            if len(selected) >= limit:
+                break
+        return selected
+
+    def _split_sample_size(self, row: dict[str, Any]) -> float:
+        for key in ("plateAppearances", "count", "inningsOuts", "atBats", "games"):
+            value = to_float(row.get(key))
+            if value is not None:
+                return value
+        return 0.0
+
+    def _split_label_matches(self, label: Any, q_compact: str) -> bool:
+        key = compact_text(label)
+        if not key:
+            return False
+        variants = {
+            key,
+            key.replace("kmh", "キロ"),
+            re.sub(r"(?:投手|打者|球場|スタジアム|ドーム|以上|未満)$", "", key),
+        }
+        if any(len(variant) >= 1 and variant in q_compact for variant in variants):
+            return True
+        if not any(character.isdigit() for character in key) and len(key) >= 3 and any(
+            key[index : index + 3] in q_compact for index in range(len(key) - 2)
+        ):
+            return True
+        return compact_text("追い込") in q_compact and "2ストライク" in key
+
+    def _select_split_rows(
+        self,
+        rows: list[dict[str, Any]],
+        q_compact: str,
+        limit: int = 6,
+        label_key: str = "label",
+    ) -> list[dict[str, Any]]:
+        available = [row for row in rows if isinstance(row, dict)]
+        matched = [
+            row
+            for row in available
+            if self._split_label_matches(row.get(label_key), q_compact)
+        ]
+        candidates = matched or available
+        candidates.sort(key=self._split_sample_size, reverse=True)
+        return candidates[:limit]
+
+    def _format_pitcher_monthly(self, rows: list[dict[str, Any]]) -> str:
+        available = [row for row in rows if isinstance(row, dict)]
+        available.sort(
+            key=lambda row: (str(row.get("year", "")), to_int(row.get("month"))),
+            reverse=True,
+        )
+        parts = []
+        for row in available[:6]:
+            month = row.get("monthLabel") or f"{fmt(row.get('month'))}月"
+            parts.append(
+                f"{row.get('year')}年{month}: {fmt(row.get('games'))}試合, "
+                f"{fmt(row.get('innings'))}回, ERA {fmt(row.get('era'))}, WHIP {fmt(row.get('whip'))}, "
+                f"奪三振率 {fmt(row.get('kPer9'))}, 与四球率 {fmt(row.get('bbPer9'))}, "
+                f"空振り率 {pct(row.get('whiffRate'))}"
+            )
+        return "; ".join(parts)
+
+    def _format_batter_monthly(self, rows: list[dict[str, Any]]) -> str:
+        available = [row for row in rows if isinstance(row, dict)]
+        available.sort(
+            key=lambda row: (str(row.get("year", "")), to_int(row.get("month"))),
+            reverse=True,
+        )
+        parts = []
+        for row in available[:6]:
+            month = row.get("monthLabel") or f"{fmt(row.get('month'))}月"
+            parts.append(
+                f"{row.get('year')}年{month}: {fmt(row.get('games'))}試合/{fmt(row.get('plateAppearances'))}打席, "
+                f"打率 {fmt(row.get('battingAverage'))}, 出塁率 {fmt(row.get('onBasePercentage'))}, "
+                f"長打率 {fmt(row.get('sluggingPercentage'))}, OPS {fmt(row.get('ops'))}, "
+                f"wRC+ {fmt(row.get('wrcPlus'))}, {fmt(row.get('homeRuns'))}本塁打"
+            )
+        return "; ".join(parts)
+
+    def _format_pitcher_pitch_rows(
+        self,
+        rows: list[dict[str, Any]],
+        q_compact: str,
+        label_key: str = "label",
+        limit: int = 6,
+    ) -> str:
+        selected = self._select_split_rows(rows, q_compact, limit, label_key)
+        parts = []
+        for row in selected:
+            label = row.get(label_key)
+            if label_key == "inning" and label not in (None, "", "-"):
+                label = f"{label}回"
+            metrics = [f"{label}: {fmt(row.get('count'))}球"]
+            if row.get("ratio") not in (None, "", "-"):
+                metrics.append(f"割合 {pct(row.get('ratio'))}")
+            if row.get("avgSpeed") not in (None, "", "-"):
+                metrics.append(f"平均 {fmt(row.get('avgSpeed'))}km/h")
+            if row.get("maxSpeed") not in (None, "", "-"):
+                metrics.append(f"最速 {fmt(row.get('maxSpeed'))}km/h")
+            for key, metric_label in (
+                ("whiffRate", "空振り率"),
+                ("csw", "CSW"),
+                ("zoneRate", "ゾーン率"),
+                ("chase", "チェイス率"),
+                ("oContact", "O-Contact"),
+                ("zSwing", "Z-Swing"),
+            ):
+                if row.get(key) not in (None, "", "-"):
+                    metrics.append(f"{metric_label} {pct(row.get(key))}")
+            hit_rate = to_float(row.get("hitRate"))
+            if hit_rate is not None:
+                metrics.append(f"被打率 {hit_rate:.3f}")
+            if row.get("grounders") not in (None, "", "-") or row.get("flyBalls") not in (None, "", "-"):
+                metrics.append(f"ゴロ/フライ {fmt(row.get('grounders'))}/{fmt(row.get('flyBalls'))}")
+            parts.append(", ".join(metrics))
+        return "; ".join(parts)
+
+    def _format_pitcher_result_rows(
+        self, rows: list[dict[str, Any]], q_compact: str, limit: int = 6
+    ) -> str:
+        selected = self._select_split_rows(rows, q_compact, limit)
+        return "; ".join(
+            f"{row.get('label')}: {fmt(row.get('games'))}試合/{fmt(row.get('innings'))}回, "
+            f"ERA {fmt(row.get('era'))}, WHIP {fmt(row.get('whip'))}, "
+            f"被打率 {fmt(row.get('battingAverageAllowed'))}, {fmt(row.get('strikeouts'))}奪三振, "
+            f"{fmt(row.get('walks'))}与四球, {fmt(row.get('homeRuns'))}被本塁打"
+            for row in selected
+        )
+
+    def _format_batter_split_rows(
+        self, rows: list[dict[str, Any]], q_compact: str, limit: int = 6
+    ) -> str:
+        selected = self._select_split_rows(rows, q_compact, limit)
+        return "; ".join(
+            f"{row.get('label')}: {fmt(row.get('plateAppearances'))}打席/{fmt(row.get('atBats'))}打数, "
+            f"打率 {fmt(row.get('battingAverage'))}, 出塁率 {fmt(row.get('onBasePercentage'))}, "
+            f"長打率 {fmt(row.get('sluggingPercentage'))}, OPS {fmt(row.get('ops'))}, "
+            f"{fmt(row.get('hits'))}安打, {fmt(row.get('homeRuns'))}本塁打, "
+            f"{fmt(row.get('walks'))}四球, {fmt(row.get('strikeouts'))}三振"
+            for row in selected
+        )
+
+    def _format_pitcher_detail_context(
+        self, rows: list[dict[str, Any]], q_compact: str, years: list[str]
+    ) -> str:
+        detail_rows = self._detail_rows(rows, years)
+        if not detail_rows:
+            return ""
+        lines = ["## 投手 詳細傾向データ"]
+        for row in detail_rows:
+            dashboard = row.get("seasonDashboard") or {}
+            lines.append(f"### {row.get('year')} {row.get('team')} {row.get('player')}")
+            sections = [
+                ("月別推移", self._format_pitcher_monthly(row.get("monthlySplits") or [])),
+                (
+                    "球種別詳細",
+                    self._format_pitcher_pitch_rows(
+                        dashboard.get("pitchMix") or [], q_compact, label_key="pitchType"
+                    ),
+                ),
+                (
+                    "左右打者別",
+                    self._format_pitcher_pitch_rows(dashboard.get("batterHandRows") or [], q_compact),
+                ),
+                (
+                    "イニング別",
+                    self._format_pitcher_pitch_rows(
+                        dashboard.get("inningRows") or [], q_compact, label_key="inning", limit=9
+                    ),
+                ),
+                (
+                    "対戦相手別",
+                    self._format_pitcher_result_rows(dashboard.get("opponentRows") or [], q_compact),
+                ),
+                (
+                    "球場別",
+                    self._format_pitcher_result_rows(dashboard.get("stadiumRows") or [], q_compact),
+                ),
+            ]
+            lines.extend(f"- {label}: {value}" for label, value in sections if value)
+        return "\n".join(lines)
+
+    def _format_batter_detail_context(
+        self, rows: list[dict[str, Any]], q_compact: str, years: list[str]
+    ) -> str:
+        detail_rows = self._detail_rows(rows, years)
+        if not detail_rows:
+            return ""
+        lines = ["## 野手 詳細傾向データ"]
+        for row in detail_rows:
+            dashboard = row.get("seasonDashboard") or {}
+            lines.append(f"### {row.get('year')} {row.get('team')} {row.get('player')}")
+            sections = [
+                ("月別推移", self._format_batter_monthly(row.get("monthlySplits") or [])),
+                ("球種別", self._format_batter_split_rows(dashboard.get("byPitchType") or [], q_compact)),
+                ("球速帯別", self._format_batter_split_rows(dashboard.get("byVelocity") or [], q_compact)),
+                ("左右投手別", self._format_batter_split_rows(dashboard.get("byPitcherHand") or [], q_compact)),
+                ("カウント別", self._format_batter_split_rows(dashboard.get("byStrikeCount") or [], q_compact)),
+                ("打順別", self._format_batter_split_rows(dashboard.get("byBattingOrder") or [], q_compact)),
+                ("打席順別", self._format_batter_split_rows(dashboard.get("byPlateAppearance") or [], q_compact)),
+                ("対戦相手別", self._format_batter_split_rows(dashboard.get("byOpponent") or [], q_compact)),
+                ("球場別", self._format_batter_split_rows(dashboard.get("byStadium") or [], q_compact)),
+            ]
+            lines.extend(f"- {label}: {value}" for label, value in sections if value)
         return "\n".join(lines)
 
     def _entry_score(self, entry: dict[str, Any], q_compact: str) -> int:
@@ -824,6 +1075,8 @@ def call_openai(payload: dict[str, Any], search_context: str) -> str:
             "For mobile readability, keep comparison tables narrow and split combined metrics such as Whiff / CSW into separate rows or columns when necessary.",
             "When comparing pitch types, players, teams, or dates as columns, keep the entity names in the Markdown table header so the UI can preserve column labels.",
             "When the full-data context contains `過去比較データ`, compare the target date only with the listed games before that date. State the actual number of prior appearances or games used when fewer rows exist than requested, and never mix in games after the target date.",
+            "When the full-data context contains `詳細傾向データ`, use the monthly and split rows that directly answer the question. Always mention the relevant sample size, distinguish season or monthly splits from a single-game result, and do not claim a stable strength or weakness from a very small sample.",
+            "Interpret CSW as called-strike-plus-whiff rate and chase rate as swings at pitches outside the zone; never describe CSW as chase or out-of-zone swing rate. Batting average and batting average allowed are decimal rates such as .250, not percentages.",
             "Do not add standalone prose before the opening heading. Avoid generic player labels or abstract descriptions; state the concrete characteristic directly. Put any comparison table under a later section heading, then explain traits and interpretation with the two-level bullet structure.",
             "Do not wrap Markdown tables or final answers in fenced code blocks such as ```markdown.",
             "Localize metric labels in final answers: write IP as 投球回, BB/9 as 与四球率, and K/9 or KK/9 as 奪三振率.",
