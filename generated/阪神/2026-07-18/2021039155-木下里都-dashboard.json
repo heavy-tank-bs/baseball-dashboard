@@ -1,0 +1,72 @@
+{
+  "game_id": "2021039155",
+  "metadata": {
+    "date_jp": "2026年7月18日",
+    "matchup": "広島東洋カープvs阪神タイガース"
+  },
+  "statline": {
+    "player": "木下 里都",
+    "era": "2.57",
+    "innings": "0.2",
+    "pitches": "3",
+    "batters": "2",
+    "hits": "1",
+    "hr": "0",
+    "k": "0",
+    "bb": "0",
+    "hbp": "0",
+    "balk": "0",
+    "runs": "0",
+    "er": "0"
+  },
+  "pitches": [
+    {
+      "pa_index": "0620400",
+      "pitcher": "木下 里都",
+      "pitcher_id": "2112444",
+      "pitcher_hand": "右",
+      "batter": "佐々木 泰",
+      "batter_id": "2050203",
+      "batter_hand": "右",
+      "seq": "1",
+      "pitchNo": "2",
+      "pitchType": "ツーシーム",
+      "speed": "146km/h",
+      "result": "ボール",
+      "top": 38.519999999999996,
+      "left": 45.36
+    },
+    {
+      "pa_index": "0620400",
+      "pitcher": "木下 里都",
+      "pitcher_id": "2112444",
+      "pitcher_hand": "右",
+      "batter": "佐々木 泰",
+      "batter_id": "2050203",
+      "batter_hand": "右",
+      "seq": "2",
+      "pitchNo": "3",
+      "pitchType": "ストレート",
+      "speed": "151km/h",
+      "result": "投併打 [止めたバットに当たる、詰り、バット折れる]",
+      "top": 19.8,
+      "left": 42.12
+    },
+    {
+      "pa_index": "0620300",
+      "pitcher": "木下 里都",
+      "pitcher_id": "2112444",
+      "pitcher_hand": "右",
+      "batter": "モンテロ",
+      "batter_id": "1961927",
+      "batter_hand": "右",
+      "seq": "1",
+      "pitchNo": "1",
+      "pitchType": "ツーシーム",
+      "speed": "149km/h",
+      "result": "左安",
+      "top": 37.44,
+      "left": 35.28
+    }
+  ]
+}
