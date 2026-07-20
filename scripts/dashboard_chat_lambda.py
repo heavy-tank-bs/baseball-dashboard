@@ -253,7 +253,15 @@ class DashboardSearchIndex:
 
         if wants_pitcher:
             pitcher_total_rows = self._search_pitcher_totals(q_compact, pitcher_names, teams, years)
-            pitcher_game_rows = self._search_pitcher_games(q_compact, pitcher_names, teams, years, dates)
+            pitcher_game_limit = self._requested_recent_count(query, "登板") if not dates else None
+            pitcher_game_rows = self._search_pitcher_games(
+                q_compact,
+                pitcher_names,
+                teams,
+                years,
+                dates,
+                limit=pitcher_game_limit or 12,
+            )
             parts.append(self._format_pitcher_totals(pitcher_total_rows))
             if pitcher_names:
                 parts.append(self._format_pitcher_detail_context(pitcher_total_rows, q_compact, years))
@@ -266,7 +274,15 @@ class DashboardSearchIndex:
 
         if wants_batter:
             batter_total_rows = self._search_batter_totals(q_compact, batter_names, teams, years)
-            batter_game_rows = self._search_batter_games(q_compact, batter_names, teams, years, dates)
+            batter_game_limit = self._requested_recent_count(query, "試合") if not dates else None
+            batter_game_rows = self._search_batter_games(
+                q_compact,
+                batter_names,
+                teams,
+                years,
+                dates,
+                limit=batter_game_limit or 12,
+            )
             parts.append(self._format_batter_totals(batter_total_rows))
             if batter_names:
                 parts.append(self._format_batter_detail_context(batter_total_rows, q_compact, years))
@@ -359,7 +375,13 @@ class DashboardSearchIndex:
         return rows[:10]
 
     def _search_pitcher_games(
-        self, q_compact: str, names: list[str], teams: list[str], years: list[str], dates: list[str]
+        self,
+        q_compact: str,
+        names: list[str],
+        teams: list[str],
+        years: list[str],
+        dates: list[str],
+        limit: int = 12,
     ) -> list[dict[str, Any]]:
         rows = [entry for entry in self.pitcher_entries if self._entry_matches(entry, names, teams, years, dates)]
         if not rows and not (names or teams or years or dates):
@@ -368,10 +390,16 @@ class DashboardSearchIndex:
             rows.sort(key=self._pitcher_game_quality, reverse=True)
         else:
             rows.sort(key=lambda entry: (self._entry_score(entry, q_compact), entry.get("date", "")), reverse=True)
-        return rows[:12]
+        return rows[:limit]
 
     def _search_batter_games(
-        self, q_compact: str, names: list[str], teams: list[str], years: list[str], dates: list[str]
+        self,
+        q_compact: str,
+        names: list[str],
+        teams: list[str],
+        years: list[str],
+        dates: list[str],
+        limit: int = 12,
     ) -> list[dict[str, Any]]:
         rows = [entry for entry in self.batter_entries if self._entry_matches(entry, names, teams, years, dates)]
         if not rows and not (names or teams or years or dates):
@@ -380,13 +408,21 @@ class DashboardSearchIndex:
             rows.sort(key=self._batter_game_quality, reverse=True)
         else:
             rows.sort(key=lambda entry: (self._entry_score(entry, q_compact), entry.get("date", "")), reverse=True)
-        return rows[:12]
+        return rows[:limit]
+
+    def _requested_recent_count(self, query: str, unit: str) -> int | None:
+        normalized = unicodedata.normalize("NFKC", str(query or ""))
+        match = re.search(rf"直近\s*(\d{{1,2}})\s*{re.escape(unit)}", normalized)
+        if not match:
+            return None
+        return min(max(to_int(match.group(1)), 1), 20)
 
     def _comparison_count(self, query: str, unit: str, default: int) -> int:
+        requested_count = self._requested_recent_count(query, unit)
+        if requested_count is not None:
+            return requested_count
         normalized = unicodedata.normalize("NFKC", str(query or ""))
-        match = re.search(rf"直近\s*(\d{{1,2}})\s*{unit}", normalized)
-        if not match:
-            match = re.search(r"直近\s*(\d{1,2})\s*(?:登板|試合)", normalized)
+        match = re.search(r"直近\s*(\d{1,2})\s*(?:登板|試合)", normalized)
         count = to_int(match.group(1)) if match else default
         return min(max(count, 1), 20)
 
