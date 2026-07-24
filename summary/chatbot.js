@@ -40,6 +40,11 @@
       note: "対象日の成績を、それ以前の直近登板・試合と比較します。",
     },
     {
+      type: "recent",
+      label: "最近の調子",
+      note: "選手と確認範囲を選んで、月別推移と直近の内容から状態を確認します。",
+    },
+    {
       type: "personal",
       label: "個人成績",
       note: "チーム・選手を選んで年度成績や指標を質問します。",
@@ -50,12 +55,61 @@
       note: "チーム・選手を選んで球種傾向、打撃傾向、強みを質問します。",
     },
     {
+      type: "conditions",
+      label: "条件別分析",
+      note: "球種、左右、イニング、カウントなどの条件別傾向を分析します。",
+    },
+    {
+      type: "matchup",
+      label: "相性分析",
+      note: "対戦相手別・球場別の成績から、得意・苦手の傾向を分析します。",
+    },
+    {
       type: "free",
       label: "その他",
       note: "下の入力欄に自由に質問を書いてください。",
     },
   ];
   const PLAYER_KINDS = ["投手", "野手"];
+  const ANALYSIS_TYPES = ["recent", "conditions", "matchup"];
+  const ANALYSIS_DETAIL_OPTIONS = {
+    recent: {
+      投手: [
+        { value: "recent3", label: "月別＋直近3登板" },
+        { value: "recent5", label: "月別＋直近5登板" },
+        { value: "monthly", label: "月別推移" },
+      ],
+      野手: [
+        { value: "recent5", label: "月別＋直近5試合" },
+        { value: "recent10", label: "月別＋直近10試合" },
+        { value: "monthly", label: "月別推移" },
+      ],
+    },
+    conditions: {
+      投手: [
+        { value: "pitch_mix", label: "球種・球速" },
+        { value: "batter_hand", label: "左右打者別" },
+        { value: "inning", label: "イニング別" },
+      ],
+      野手: [
+        { value: "pitch_type", label: "球種別" },
+        { value: "velocity", label: "球速帯別" },
+        { value: "pitcher_hand", label: "左右投手別" },
+        { value: "strike_count", label: "カウント別" },
+        { value: "batting_order", label: "打順別" },
+      ],
+    },
+    matchup: {
+      投手: [
+        { value: "opponent", label: "対戦相手別" },
+        { value: "stadium", label: "球場別" },
+      ],
+      野手: [
+        { value: "opponent", label: "対戦相手別" },
+        { value: "stadium", label: "球場別" },
+      ],
+    },
+  };
 
   const initialMessage = {
     role: "assistant",
@@ -814,7 +868,9 @@
   }
 
   function usesTeamPlayerFilters() {
-    return ["game", "compare", "personal", "traits"].includes(state.selector.activeType);
+    return ["game", "compare", "recent", "personal", "traits", "conditions", "matchup"].includes(
+      state.selector.activeType
+    );
   }
 
   function usesKindFilter() {
@@ -822,7 +878,13 @@
   }
 
   function selectorRequiresPlayer() {
-    return ["compare", "personal", "traits"].includes(state.selector.activeType);
+    return ["compare", "recent", "personal", "traits", "conditions", "matchup"].includes(
+      state.selector.activeType
+    );
+  }
+
+  function usesAnalysisDetail() {
+    return ANALYSIS_TYPES.includes(state.selector.activeType);
   }
 
   function renderComparisonCountOptions(elements) {
@@ -836,6 +898,20 @@
       ...counts.map((count) => optionNode(`${count}`, `直近${count}${unit}`))
     );
     elements.comparisonCountSelect.value = counts.includes(Number(current)) ? current : `${defaultCount}`;
+  }
+
+  function renderAnalysisDetailOptions(elements) {
+    const current = elements.analysisDetailSelect.value;
+    const type = state.selector.activeType;
+    const options = ANALYSIS_DETAIL_OPTIONS[type]?.[state.selector.activeKind] || [];
+    const label = type === "recent" ? "確認範囲" : "分析項目";
+    elements.analysisDetailLabel.textContent = label;
+    elements.analysisDetailSelect.setAttribute("aria-label", label);
+    elements.analysisDetailSelect.replaceChildren(
+      optionNode("", `${label}を選択`),
+      ...options.map((item) => optionNode(item.value, item.label))
+    );
+    if (options.some((item) => item.value === current)) elements.analysisDetailSelect.value = current;
   }
 
   function optionNode(value, label, attrs = {}) {
@@ -912,6 +988,10 @@
     const showTeam = usesTeamPlayerFilters() && Boolean(state.selector.activeKind);
     const showPlayer = showTeam && Boolean(elements.teamSelect.value);
     const showComparisonCount = type?.type === "compare" && Boolean(state.selector.activeKind);
+    const showAnalysisDetail = usesAnalysisDetail() && showPlayer && Boolean(elements.playerSelect.value);
+    const showStartButton =
+      (type?.type === "compare" && showPlayer && Boolean(elements.playerSelect.value))
+      || (showAnalysisDetail && Boolean(elements.analysisDetailSelect.value));
     elements.kindTitle.hidden = !showKind;
     elements.kindGroup.hidden = !showKind;
     elements.kindButtons.forEach((button) => {
@@ -925,12 +1005,15 @@
     elements.playerSelect.hidden = !showPlayer;
     elements.comparisonCountLabel.hidden = !showComparisonCount;
     elements.comparisonCountSelect.hidden = !showComparisonCount;
-    elements.startButton.hidden = type?.type !== "compare" || !showPlayer || !elements.playerSelect.value;
-    elements.startButton.textContent = type?.type === "compare" ? "比較する" : "チャットへ進む";
+    elements.analysisDetailLabel.hidden = !showAnalysisDetail;
+    elements.analysisDetailSelect.hidden = !showAnalysisDetail;
+    elements.startButton.hidden = !showStartButton;
+    elements.startButton.textContent = type?.type === "compare" ? "比較する" : "質問する";
     elements.textarea.placeholder = type?.type === "free" ? "自由に質問を入力" : "このダッシュボードについて質問";
   }
 
   function renderSelectorOptions(elements) {
+    if (usesAnalysisDetail()) renderAnalysisDetailOptions(elements);
     syncSelectorVisibility(elements);
     if (activeQuestionType()?.type === "compare") renderComparisonCountOptions(elements);
     const type = activeQuestionType();
@@ -962,7 +1045,13 @@
     elements.note.textContent = usesDateFilter() ? `${type.note} 対象日: ${dateText}` : type.note;
   }
 
-  function selectorValidationMessage(dateInput, teamSelect, playerSelect, comparisonCountSelect) {
+  function selectorValidationMessage(
+    dateInput,
+    teamSelect,
+    playerSelect,
+    comparisonCountSelect,
+    analysisDetailSelect
+  ) {
     const type = activeQuestionType();
     if (!type) return "質問ジャンルを選択してください。";
     if (type.type === "free") return "";
@@ -972,10 +1061,19 @@
     if (type.type === "game" && !playerSelect.value) return "選手を選択するか、「選手を指定しない」を選んでください。";
     if (selectorRequiresPlayer() && !playerSelect.value) return "選手を選択してください。";
     if (type.type === "compare" && !comparisonCountSelect?.value) return "比較する登板数・試合数を選択してください。";
+    if (usesAnalysisDetail() && !analysisDetailSelect?.value) {
+      return type.type === "recent" ? "確認範囲を選択してください。" : "分析項目を選択してください。";
+    }
     return "";
   }
 
-  function buildSelectorQuestion(dateInput, teamSelect, playerSelect, comparisonCountSelect) {
+  function buildSelectorQuestion(
+    dateInput,
+    teamSelect,
+    playerSelect,
+    comparisonCountSelect,
+    analysisDetailSelect
+  ) {
     const type = activeQuestionType();
     if (!type || type.type === "free") return "";
     const date = dateInput.value || "";
@@ -985,6 +1083,9 @@
     const player = option?.dataset.player || "";
     const kind = option?.dataset.kind || state.selector.activeKind || "";
     const kindLabel = kind ? `（${kind}）` : "";
+    const subject = `${team ? `${team}の` : ""}${player}${kindLabel}`;
+    const detail = analysisDetailSelect?.value || "";
+    const bulletInstruction = "表は使わず、見出しと箇条書きでまとめて";
     if (type.type === "compare" && player) {
       const count = Number(comparisonCountSelect?.value) || (kind === "投手" ? 3 : 5);
       const unit = kind === "投手" ? "登板" : "試合";
@@ -1010,6 +1111,33 @@
     }
     if (type.type === "traits" && team) {
       return `${team}の${kind}の特徴と注目選手を教えて`;
+    }
+    if (type.type === "recent" && player) {
+      if (detail === "monthly") {
+        return `${subject}の月別成績の推移と最近の調子を、各月の母数も含めて分析して。${bulletInstruction}`;
+      }
+      const count = Number(detail.replace("recent", "")) || (kind === "投手" ? 3 : 5);
+      const unit = kind === "投手" ? "登板" : "試合";
+      return `${subject}の最近の調子を、月別成績と直近${count}${unit}の内容から分析して。${bulletInstruction}`;
+    }
+    if (type.type === "conditions" && player) {
+      const prompts = {
+        pitch_mix: "球種・球速別の傾向を、使用割合・球速・空振り率などの母数と主要指標から分析して",
+        batter_hand: "左右打者別の傾向を、投球数などの母数と主要指標から分析して",
+        inning: "イニング別の傾向を、投球数などの母数と主要指標から分析して",
+        pitch_type: "球種別の打撃傾向を、打席数などの母数と主要指標から分析して",
+        velocity: "球速帯別の打撃傾向を、打席数などの母数と主要指標から分析して",
+        pitcher_hand: "左右投手別の打撃傾向を、打席数などの母数と主要指標から分析して",
+        strike_count: "カウント別の打撃傾向を、打席数などの母数と主要指標から分析して",
+        batting_order: "打順別の打撃傾向を、打席数などの母数と主要指標から分析して",
+      };
+      return `${subject}の${prompts[detail] || "条件別の傾向を母数と主要指標から分析して"}。${bulletInstruction}`;
+    }
+    if (type.type === "matchup" && player) {
+      if (detail === "stadium") {
+        return `${subject}の球場別成績から、得意な球場と苦手な球場を、母数と主要指標を含めて分析して。${bulletInstruction}`;
+      }
+      return `${subject}の対戦相手別成績から、相性が良い相手と苦手な相手を、母数と主要指標を含めて分析して。${bulletInstruction}`;
     }
     return "";
   }
@@ -1044,7 +1172,8 @@
       elements.dateInput,
       elements.teamSelect,
       elements.playerSelect,
-      elements.comparisonCountSelect
+      elements.comparisonCountSelect,
+      elements.analysisDetailSelect
     );
     if (validationMessage) {
       elements.note.textContent = validationMessage;
@@ -1056,7 +1185,8 @@
         elements.dateInput,
         elements.teamSelect,
         elements.playerSelect,
-        elements.comparisonCountSelect
+        elements.comparisonCountSelect,
+        elements.analysisDetailSelect
       ),
       true
     );
@@ -1069,6 +1199,7 @@
     elements.teamSelect.value = "";
     elements.playerSelect.value = "";
     elements.comparisonCountSelect.value = "";
+    elements.analysisDetailSelect.value = "";
     elements.textarea.value = "";
     renderSelectorOptions(elements);
     setChatStep(elements, "select");
@@ -1083,6 +1214,7 @@
         elements.teamSelect.value = "";
         elements.playerSelect.value = "";
         elements.comparisonCountSelect.value = "";
+        elements.analysisDetailSelect.value = "";
         refresh();
         if (state.selector.activeType === "free") completeSelector(elements);
       });
@@ -1093,6 +1225,7 @@
         elements.teamSelect.value = "";
         elements.playerSelect.value = "";
         elements.comparisonCountSelect.value = "";
+        elements.analysisDetailSelect.value = "";
         refresh();
       });
     });
@@ -1103,19 +1236,23 @@
     });
     elements.teamSelect.addEventListener("change", () => {
       renderPlayerOptions(elements.dateInput, elements.teamSelect, elements.playerSelect);
+      elements.analysisDetailSelect.value = "";
       refresh();
     });
     elements.playerSelect.addEventListener("change", () => {
-      if (state.selector.activeType === "compare") refresh();
+      if (usesAnalysisDetail()) elements.analysisDetailSelect.value = "";
+      if (state.selector.activeType === "compare" || usesAnalysisDetail()) refresh();
       else maybeAutoSend(elements);
     });
     elements.comparisonCountSelect.addEventListener("change", refresh);
+    elements.analysisDetailSelect.addEventListener("change", refresh);
     elements.startButton.addEventListener("click", () => {
       const validationMessage = selectorValidationMessage(
         elements.dateInput,
         elements.teamSelect,
         elements.playerSelect,
-        elements.comparisonCountSelect
+        elements.comparisonCountSelect,
+        elements.analysisDetailSelect
       );
       if (validationMessage) {
         elements.note.textContent = validationMessage;
@@ -1125,9 +1262,10 @@
         elements.dateInput,
         elements.teamSelect,
         elements.playerSelect,
-        elements.comparisonCountSelect
+        elements.comparisonCountSelect,
+        elements.analysisDetailSelect
       );
-      completeSelector(elements, question, state.selector.activeType === "compare");
+      completeSelector(elements, question, state.selector.activeType === "compare" || usesAnalysisDetail());
     });
     elements.backButton.addEventListener("click", () => setChatStep(elements, "select"));
     refresh();
@@ -1223,9 +1361,13 @@
     const comparisonCountSelect = createNode("select", "ai-chatbot-filter-control", {
       "aria-label": "比較する登板数・試合数",
     });
+    const analysisDetailSelect = createNode("select", "ai-chatbot-filter-control", {
+      "aria-label": "分析項目",
+    });
     teamSelect.append(optionNode("", "読み込み中..."));
     playerSelect.append(optionNode("", "選手を選択"));
     comparisonCountSelect.append(optionNode("", "比較数を選択"));
+    analysisDetailSelect.append(optionNode("", "分析項目を選択"));
     const startButton = createNode("button", "ai-chatbot-selector-button", {
       type: "button",
       text: "チャットへ進む",
@@ -1235,6 +1377,7 @@
     const teamLabel = createNode("label", "ai-chatbot-filter-field", { text: "チーム" });
     const playerLabel = createNode("label", "ai-chatbot-filter-field", { text: "選手" });
     const comparisonCountLabel = createNode("label", "ai-chatbot-filter-field", { text: "比較数" });
+    const analysisDetailLabel = createNode("label", "ai-chatbot-filter-field", { text: "分析項目" });
     selectorPanel.append(
       dateLabel,
       dateInput,
@@ -1244,6 +1387,8 @@
       playerSelect,
       comparisonCountLabel,
       comparisonCountSelect,
+      analysisDetailLabel,
+      analysisDetailSelect,
       startButton,
       selectorNote
     );
@@ -1279,6 +1424,8 @@
       playerSelect,
       comparisonCountLabel,
       comparisonCountSelect,
+      analysisDetailLabel,
+      analysisDetailSelect,
       startButton,
       note: selectorNote,
       messages,
