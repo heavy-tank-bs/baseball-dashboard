@@ -1,0 +1,88 @@
+{
+  "game_id": "2021039184",
+  "metadata": {
+    "date_jp": "2026年7月24日",
+    "matchup": "東京ヤクルトスワローズvs広島東洋カープ"
+  },
+  "statline": {
+    "player": "丸山 翔大",
+    "era": "2.59",
+    "innings": "1",
+    "pitches": "24",
+    "batters": "5",
+    "hits": "0",
+    "hr": "0",
+    "k": "0",
+    "bb": "1",
+    "hbp": "1",
+    "balk": "0",
+    "runs": "0",
+    "er": "0"
+  },
+  "pitches": [
+    {
+      "pa_index": "1110500",
+      "pitcher": "丸山 翔大",
+      "pitcher_id": "2000033",
+      "pitcher_hand": "右",
+      "batter": "菊池 涼介",
+      "batter_id": "1100082",
+      "batter_hand": "右",
+      "seq": "1",
+      "pitchNo": "21",
+      "pitchType": "スプリット",
+      "speed": "139km/h",
+      "result": "見逃し",
+      "top": 37.44,
+      "left": 15.479999999999999
+    },
+    {
+      "pa_index": "1110500",
+      "pitcher": "丸山 翔大",
+      "pitcher_id": "2000033",
+      "pitcher_hand": "右",
+      "batter": "菊池 涼介",
+      "batter_id": "1100082",
+      "batter_hand": "右",
+      "seq": "2",
+      "pitchNo": "22",
+      "pitchType": "ストレート",
+      "speed": "151km/h",
+      "result": "空振り",
+      "top": 34.56,
+      "left": 31.68
+    },
+    {
+      "pa_index": "1110500",
+      "pitcher": "丸山 翔大",
+      "pitcher_id": "2000033",
+      "pitcher_hand": "右",
+      "batter": "菊池 涼介",
+      "batter_id": "1100082",
+      "batter_hand": "右",
+      "seq": "3",
+      "pitchNo": "23",
+      "pitchType": "ストレート",
+      "speed": "151km/h",
+      "result": "ボール",
+      "top": 24.84,
+      "left": 4.68
+    },
+    {
+      "pa_index": "1110500",
+      "pitcher": "丸山 翔大",
+      "pitcher_id": "2000033",
+      "pitcher_hand": "右",
+      "batter": "菊池 涼介",
+      "batter_id": "1100082",
+      "batter_hand": "右",
+      "seq": "4",
+      "pitchNo": "24",
+      "pitchType": "スプリット",
+      "speed": "-",
+      "result": "一邪飛",
+      "top": 44.64,
+      "left": 21.599999999999998
+    }
+  ]
+}
