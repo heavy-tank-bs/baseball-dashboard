@@ -1,0 +1,88 @@
+{
+  "game_id": "2021039192",
+  "metadata": {
+    "date_jp": "2026年7月25日",
+    "matchup": "北海道日本ハムファイターズvs東北楽天ゴールデンイーグルス"
+  },
+  "statline": {
+    "player": "堀 瑞輝",
+    "era": "1.69",
+    "innings": "0.1",
+    "pitches": "4",
+    "batters": "1",
+    "hits": "0",
+    "hr": "0",
+    "k": "0",
+    "bb": "0",
+    "hbp": "0",
+    "balk": "0",
+    "runs": "0",
+    "er": "0"
+  },
+  "pitches": [
+    {
+      "pa_index": "0810500",
+      "pitcher": "堀 瑞輝",
+      "pitcher_id": "1600133",
+      "pitcher_hand": "左",
+      "batter": "辰己 涼介",
+      "batter_id": "1800117",
+      "batter_hand": "左",
+      "seq": "1",
+      "pitchNo": "1",
+      "pitchType": "ストレート",
+      "speed": "145km/h",
+      "result": "ファウル",
+      "top": 28.799999999999997,
+      "left": 31.68
+    },
+    {
+      "pa_index": "0810500",
+      "pitcher": "堀 瑞輝",
+      "pitcher_id": "1600133",
+      "pitcher_hand": "左",
+      "batter": "辰己 涼介",
+      "batter_id": "1800117",
+      "batter_hand": "左",
+      "seq": "2",
+      "pitchNo": "2",
+      "pitchType": "ストレート",
+      "speed": "149km/h",
+      "result": "見逃し",
+      "top": 35.64,
+      "left": 41.76
+    },
+    {
+      "pa_index": "0810500",
+      "pitcher": "堀 瑞輝",
+      "pitcher_id": "1600133",
+      "pitcher_hand": "左",
+      "batter": "辰己 涼介",
+      "batter_id": "1800117",
+      "batter_hand": "左",
+      "seq": "3",
+      "pitchNo": "3",
+      "pitchType": "スライダー",
+      "speed": "134km/h",
+      "result": "ボール",
+      "top": 53.64,
+      "left": 46.8
+    },
+    {
+      "pa_index": "0810500",
+      "pitcher": "堀 瑞輝",
+      "pitcher_id": "1600133",
+      "pitcher_hand": "左",
+      "batter": "辰己 涼介",
+      "batter_id": "1800117",
+      "batter_hand": "左",
+      "seq": "4",
+      "pitchNo": "4",
+      "pitchType": "ストレート",
+      "speed": "149km/h",
+      "result": "遊ゴロ [リプレー検証後判定変わらず]",
+      "top": 36.36,
+      "left": 37.44
+    }
+  ]
+}
