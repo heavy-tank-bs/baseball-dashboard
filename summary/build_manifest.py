@@ -4466,6 +4466,10 @@ def build_manifest(entries: list[dict], entry_serializer=None) -> dict:
     }
 
 
+def dumps_compact(data: dict) -> str:
+    return json.dumps(data, ensure_ascii=False, separators=(",", ":"))
+
+
 def main() -> None:
     pitcher_uniform_numbers = load_uniform_number_index("pitcher")
     batter_uniform_numbers = load_uniform_number_index("batter")
@@ -4483,13 +4487,13 @@ def main() -> None:
     write_text_atomic(
         MANIFEST_PATH,
         "window.PITCH_DASHBOARD_MANIFEST = "
-        + json.dumps(manifest, ensure_ascii=False, indent=2)
+        + dumps_compact(manifest)
         + ";\n",
     )
     write_text_atomic(
         BATTER_MANIFEST_PATH,
         "window.BATTER_GAME_MANIFEST = "
-        + json.dumps(batter_manifest, ensure_ascii=False, indent=2)
+        + dumps_compact(batter_manifest)
         + ";\n",
     )
     write_text_atomic(

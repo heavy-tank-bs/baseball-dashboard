@@ -1,0 +1,88 @@
+{
+  "game_id": "2021039183",
+  "metadata": {
+    "date_jp": "2026年7月23日",
+    "matchup": "福岡ソフトバンクホークスvsオリックス・バファローズ"
+  },
+  "statline": {
+    "player": "松本 裕樹",
+    "era": "2.27",
+    "innings": "1",
+    "pitches": "4",
+    "batters": "3",
+    "hits": "1",
+    "hr": "0",
+    "k": "0",
+    "bb": "0",
+    "hbp": "0",
+    "balk": "0",
+    "runs": "0",
+    "er": "0"
+  },
+  "pitches": [
+    {
+      "pa_index": "0810300",
+      "pitcher": "松本 裕樹",
+      "pitcher_id": "1400126",
+      "pitcher_hand": "右",
+      "batter": "太田 椋",
+      "batter_id": "1800098",
+      "batter_hand": "右",
+      "seq": "1",
+      "pitchNo": "4",
+      "pitchType": "ストレート",
+      "speed": "-",
+      "result": "遊併打 [逆シングル、ジャンピングスロー]",
+      "top": 20.16,
+      "left": 23.04
+    },
+    {
+      "pa_index": "0810200",
+      "pitcher": "松本 裕樹",
+      "pitcher_id": "1400126",
+      "pitcher_hand": "右",
+      "batter": "山中 稜真",
+      "batter_id": "1750667",
+      "batter_hand": "左",
+      "seq": "1",
+      "pitchNo": "2",
+      "pitchType": "フォーク",
+      "speed": "140km/h",
+      "result": "見逃し",
+      "top": 37.8,
+      "left": 38.519999999999996
+    },
+    {
+      "pa_index": "0810200",
+      "pitcher": "松本 裕樹",
+      "pitcher_id": "1400126",
+      "pitcher_hand": "右",
+      "batter": "山中 稜真",
+      "batter_id": "1750667",
+      "batter_hand": "左",
+      "seq": "2",
+      "pitchNo": "3",
+      "pitchType": "フォーク",
+      "speed": "-",
+      "result": "右安 [バットの先、バット折れる]",
+      "top": 54.0,
+      "left": 28.08
+    },
+    {
+      "pa_index": "0810100",
+      "pitcher": "松本 裕樹",
+      "pitcher_id": "1400126",
+      "pitcher_hand": "右",
+      "batter": "西川 龍馬",
+      "batter_id": "1500096",
+      "batter_hand": "左",
+      "seq": "1",
+      "pitchNo": "1",
+      "pitchType": "ストレート",
+      "speed": "-",
+      "result": "中飛",
+      "top": 23.759999999999998,
+      "left": 34.199999999999996
+    }
+  ]
+}
