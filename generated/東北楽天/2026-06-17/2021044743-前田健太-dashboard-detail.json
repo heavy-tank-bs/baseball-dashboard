@@ -37,7 +37,7 @@
         "zSwing": 75.0,
         "oContact": 75.0,
         "chase": 36.4,
-        "chasePlus": 111.0
+        "chasePlus": 112.0
       },
       {
         "pitchType": "スプリット",
@@ -73,7 +73,7 @@
         "zSwing": 66.7,
         "oContact": 62.5,
         "chase": 72.7,
-        "chasePlus": 222.0
+        "chasePlus": 223.0
       },
       {
         "pitchType": "スライダー",
@@ -4189,7 +4189,7 @@
       "シンカー": "#7D97B5"
     },
     "metricBaselines": {
-      "chase": 32.7,
+      "chase": 32.6,
       "chaseScope": "league"
     }
   }

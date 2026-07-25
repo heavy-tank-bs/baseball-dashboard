@@ -37,7 +37,7 @@
         "zSwing": 66.7,
         "oContact": 100.0,
         "chase": 41.7,
-        "chasePlus": 127.0
+        "chasePlus": 128.0
       },
       {
         "pitchType": "ツーシーム",
@@ -109,7 +109,7 @@
         "zSwing": 83.3,
         "oContact": 66.7,
         "chase": 27.3,
-        "chasePlus": 83.0
+        "chasePlus": 84.0
       },
       {
         "pitchType": "ナックルカーブ",
@@ -3724,7 +3724,7 @@
       "ナックルカーブ": "#C8A55A"
     },
     "metricBaselines": {
-      "chase": 32.7,
+      "chase": 32.6,
       "chaseScope": "league"
     }
   }
