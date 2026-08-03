@@ -1,0 +1,72 @@
+{
+  "game_id": "2021039208",
+  "metadata": {
+    "date_jp": "2026年8月1日",
+    "matchup": "東京ヤクルトスワローズvs阪神タイガース"
+  },
+  "statline": {
+    "player": "ドリス",
+    "era": "1.25",
+    "innings": "0.2",
+    "pitches": "3",
+    "batters": "2",
+    "hits": "0",
+    "hr": "0",
+    "k": "0",
+    "bb": "0",
+    "hbp": "0",
+    "balk": "0",
+    "runs": "0",
+    "er": "0"
+  },
+  "pitches": [
+    {
+      "pa_index": "0920600",
+      "pitcher": "ドリス",
+      "pitcher_id": "1600033",
+      "pitcher_hand": "右",
+      "batter": "丸山 和郁",
+      "batter_id": "1650522",
+      "batter_hand": "左",
+      "seq": "1",
+      "pitchNo": "2",
+      "pitchType": "スライダー",
+      "speed": "143km/h",
+      "result": "ボール",
+      "top": 59.4,
+      "left": 35.64
+    },
+    {
+      "pa_index": "0920600",
+      "pitcher": "ドリス",
+      "pitcher_id": "1600033",
+      "pitcher_hand": "右",
+      "batter": "丸山 和郁",
+      "batter_id": "1650522",
+      "batter_hand": "左",
+      "seq": "2",
+      "pitchNo": "3",
+      "pitchType": "スライダー",
+      "speed": "-",
+      "result": "二ゴロ [引っかけ]",
+      "top": 27.0,
+      "left": 35.64
+    },
+    {
+      "pa_index": "0920500",
+      "pitcher": "ドリス",
+      "pitcher_id": "1600033",
+      "pitcher_hand": "右",
+      "batter": "塩見 泰隆",
+      "batter_id": "1700087",
+      "batter_hand": "右",
+      "seq": "1",
+      "pitchNo": "1",
+      "pitchType": "スライダー",
+      "speed": "-",
+      "result": "左飛 [走者動けず]",
+      "top": 20.16,
+      "left": 33.48
+    }
+  ]
+}
