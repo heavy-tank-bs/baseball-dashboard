@@ -145,7 +145,7 @@
         "zSwing": 50.0,
         "oContact": 75.0,
         "chase": 57.1,
-        "chasePlus": 176.0
+        "chasePlus": 175.0
       },
       {
         "pitchType": "ツーシーム",
@@ -181,7 +181,7 @@
         "zSwing": 40.0,
         "oContact": 100.0,
         "chase": 33.3,
-        "chasePlus": 103.0
+        "chasePlus": 102.0
       },
       {
         "pitchType": "チェンジアップ",
@@ -289,7 +289,7 @@
         "zSwing": 100.0,
         "oContact": 100.0,
         "chase": 100.0,
-        "chasePlus": 308.0
+        "chasePlus": 307.0
       }
     ],
     "inningRows": [
@@ -4971,7 +4971,7 @@
       "カットボール": "#0F2340"
     },
     "metricBaselines": {
-      "chase": 32.5,
+      "chase": 32.6,
       "chaseScope": "league"
     }
   }

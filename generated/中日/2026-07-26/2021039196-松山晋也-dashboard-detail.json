@@ -73,7 +73,7 @@
         "zSwing": null,
         "oContact": 33.3,
         "chase": 100.0,
-        "chasePlus": 308.0
+        "chasePlus": 309.0
       }
     ],
     "inningRows": [
@@ -1505,7 +1505,7 @@
       "フォーク": "#355C8C"
     },
     "metricBaselines": {
-      "chase": 32.5,
+      "chase": 32.4,
       "chaseScope": "league"
     }
   }
