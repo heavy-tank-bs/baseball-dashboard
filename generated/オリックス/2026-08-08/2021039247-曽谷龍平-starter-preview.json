@@ -1,0 +1,71 @@
+{
+  "gameId": "2021039247",
+  "dateShort": "08/08",
+  "dateLabel": "2026年8月8日",
+  "player": "曽谷 龍平",
+  "tag": "予告先発・左投",
+  "matchup": "千葉ロッテマリーンズ vs オリックス・バファローズ",
+  "venue": "ZOZOマリン",
+  "startTime": "18:00",
+  "kpis": [
+    { "label": "今季先発", "value": "8" },
+    { "label": "勝敗", "value": "4勝3敗" },
+    { "label": "防御率", "value": "3.08" },
+    { "label": "投球回", "value": "49回2/3" },
+    { "label": "奪三振", "value": "45" },
+    { "label": "与四球", "value": "7" },
+    { "label": "WHIP", "value": "1.05" },
+    { "label": "QS", "value": "4" }
+  ],
+  "farmPrevious": {
+    "date": "2026年8月1日",
+    "competition": "ファーム・リーグ 西地区",
+    "opponent": "ソフトバンク",
+    "badge": "調整登板",
+    "innings": "4回",
+    "pitches": "76球",
+    "stats": [
+      { "label": "被安打", "value": "5" },
+      { "label": "被本塁打", "value": "1" },
+      { "label": "奪三振", "value": "3" },
+      { "label": "与四球", "value": "2" },
+      { "label": "失点", "value": "4" },
+      { "label": "自責点", "value": "4" }
+    ],
+    "note": "直近の実戦登板・中6日で一軍マウンドへ"
+  },
+  "firstTeamPrevious": {
+    "date": "2026年6月10日",
+    "competition": "セ・パ交流戦",
+    "opponent": "ヤクルト",
+    "badge": "完投勝利",
+    "innings": "9回",
+    "pitches": "125球",
+    "stats": [
+      { "label": "被安打", "value": "5" },
+      { "label": "被本塁打", "value": "1" },
+      { "label": "奪三振", "value": "4" },
+      { "label": "与四球", "value": "1" },
+      { "label": "失点", "value": "4" },
+      { "label": "自責点", "value": "4" }
+    ],
+    "note": "約2カ月ぶりの一軍登板"
+  },
+  "vsOpponent": {
+    "badge": "2戦ともQS",
+    "games": "2試合・2先発",
+    "record": "1勝1敗",
+    "era": "2.77",
+    "stats": [
+      { "label": "投球回", "value": "13回" },
+      { "label": "被安打", "value": "8" },
+      { "label": "奪三振", "value": "11" },
+      { "label": "与四球", "value": "1" },
+      { "label": "被打率", "value": ".178" },
+      { "label": "WHIP", "value": "0.69" },
+      { "label": "QS", "value": "2 / 2" },
+      { "label": "自責点", "value": "4" }
+    ],
+    "note": "今季のロッテ戦は防御率・被打率ともに良好"
+  }
+}

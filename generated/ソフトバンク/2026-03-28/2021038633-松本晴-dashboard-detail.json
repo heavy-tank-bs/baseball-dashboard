@@ -73,7 +73,7 @@
         "zSwing": 63.6,
         "oContact": 20.0,
         "chase": 50.0,
-        "chasePlus": 153.0
+        "chasePlus": 154.0
       },
       {
         "pitchType": "チェンジアップ",
@@ -109,7 +109,7 @@
         "zSwing": 100.0,
         "oContact": 42.9,
         "chase": 87.5,
-        "chasePlus": 268.0
+        "chasePlus": 269.0
       },
       {
         "pitchType": "カーブ",
@@ -3861,7 +3861,7 @@
       "カットボール": "#D6C192"
     },
     "metricBaselines": {
-      "chase": 32.6,
+      "chase": 32.5,
       "chaseScope": "league"
     }
   }
