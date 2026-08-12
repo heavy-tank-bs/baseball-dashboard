@@ -1,0 +1,88 @@
+{
+  "game_id": "2021039242",
+  "metadata": {
+    "date_jp": "2026年8月8日",
+    "matchup": "読売ジャイアンツvs東京ヤクルトスワローズ"
+  },
+  "statline": {
+    "player": "森田 駿哉",
+    "era": "4.24",
+    "innings": "0.2",
+    "pitches": "4",
+    "batters": "2",
+    "hits": "0",
+    "hr": "0",
+    "k": "0",
+    "bb": "0",
+    "hbp": "0",
+    "balk": "0",
+    "runs": "0",
+    "er": "0"
+  },
+  "pitches": [
+    {
+      "pa_index": "0710500",
+      "pitcher": "森田 駿哉",
+      "pitcher_id": "1450977",
+      "pitcher_hand": "左",
+      "batter": "長岡 秀樹",
+      "batter_id": "1900028",
+      "batter_hand": "左",
+      "seq": "1",
+      "pitchNo": "2",
+      "pitchType": "ストレート",
+      "speed": "149km/h",
+      "result": "ファウル",
+      "top": 25.919999999999998,
+      "left": 27.36
+    },
+    {
+      "pa_index": "0710500",
+      "pitcher": "森田 駿哉",
+      "pitcher_id": "1450977",
+      "pitcher_hand": "左",
+      "batter": "長岡 秀樹",
+      "batter_id": "1900028",
+      "batter_hand": "左",
+      "seq": "2",
+      "pitchNo": "3",
+      "pitchType": "ストレート",
+      "speed": "148km/h",
+      "result": "ボール",
+      "top": 28.799999999999997,
+      "left": 43.199999999999996
+    },
+    {
+      "pa_index": "0710500",
+      "pitcher": "森田 駿哉",
+      "pitcher_id": "1450977",
+      "pitcher_hand": "左",
+      "batter": "長岡 秀樹",
+      "batter_id": "1900028",
+      "batter_hand": "左",
+      "seq": "3",
+      "pitchNo": "4",
+      "pitchType": "カットボール",
+      "speed": "136km/h",
+      "result": "中飛",
+      "top": 16.2,
+      "left": 12.959999999999999
+    },
+    {
+      "pa_index": "0710400",
+      "pitcher": "森田 駿哉",
+      "pitcher_id": "1450977",
+      "pitcher_hand": "左",
+      "batter": "宮本 丈",
+      "batter_id": "1700089",
+      "batter_hand": "左",
+      "seq": "1",
+      "pitchNo": "1",
+      "pitchType": "カットボール",
+      "speed": "136km/h",
+      "result": "遊ゴロ [内野定位置]",
+      "top": 21.599999999999998,
+      "left": 43.92
+    }
+  ]
+}
