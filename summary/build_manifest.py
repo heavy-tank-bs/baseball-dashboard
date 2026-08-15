@@ -1767,13 +1767,43 @@ def build_pitch_discipline_summary(rows: list[dict], chase_plus_baseline: float 
     }, chase_baseline
 
 
+def normalized_player_name(value: str | None) -> str:
+    return "".join(str(value or "").split())
+
+
+def pitcher_game_identity(
+    team: str,
+    game_id: str | None,
+    pitcher_id: str | None,
+    player_name: str | None,
+) -> tuple[str, str, str] | None:
+    """Return the unique identity of one pitcher appearance in one game."""
+    game_key = str(game_id or "").strip()
+    player_key = str(pitcher_id or "").strip() or normalized_player_name(player_name)
+    if not game_key or not player_key:
+        return None
+    return (team, game_key, player_key)
+
+
 def build_league_chase_baselines(grouped_entries: dict[tuple[str, str, str], dict]) -> dict[str, float | None]:
     buckets: dict[str, dict] = defaultdict(build_plate_discipline_bucket)
+    seen_appearances: set[tuple[str, str, str]] = set()
     for (team, date, prefix) in grouped_entries:
         json_path = GENERATED_DIR / team / date / f"{prefix}-dashboard.json"
         payload = safe_load_json(json_path)
         if not payload:
             continue
+        title, _ = infer_title(prefix, date, payload)
+        identity = pitcher_game_identity(
+            team,
+            extract_game_id(prefix),
+            extract_pitcher_id(payload),
+            payload.get("statline", {}).get("player") or title,
+        )
+        if identity and identity in seen_appearances:
+            continue
+        if identity:
+            seen_appearances.add(identity)
         league = team_league(team)
         if not league:
             continue
@@ -4397,6 +4427,22 @@ def collect_entries(uniform_numbers: dict[tuple[str, str, str], str] | None = No
             }
         )
 
+    deduplicated_entries: dict[tuple[str, str, str], dict] = {}
+    for item in entries:
+        identity = pitcher_game_identity(
+            item["team"],
+            item.get("gameId"),
+            item.get("pitcherId"),
+            item.get("player"),
+        )
+        if identity is None:
+            identity = (item["team"], item["date"], item["prefix"])
+        previous = deduplicated_entries.get(identity)
+        # Keep the version with rendered dashboard pages when duplicate JSON files exist.
+        if previous is None or (len(item["pages"]), item["prefix"]) > (len(previous["pages"]), previous["prefix"]):
+            deduplicated_entries[identity] = item
+
+    entries = list(deduplicated_entries.values())
     entries.sort(key=lambda item: (team_sort_key(item["team"]), item.get("gameId") or "", item.get("order", 10**9), item["player"]))
     entries.sort(key=lambda item: item["date"], reverse=True)
     return entries
