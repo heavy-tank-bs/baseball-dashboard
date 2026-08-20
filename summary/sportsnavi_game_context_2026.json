@@ -1,7 +1,7 @@
 {
-  "updatedAt": "2026-08-16T22:57:22+09:00",
+  "updatedAt": "2026-08-20T23:39:27+09:00",
   "season": 2026,
-  "throughDate": "2026-08-16",
+  "throughDate": "2026-08-20",
   "source": {
     "schedule": "https://baseball.yahoo.co.jp/npb/schedule/?date=YYYY-MM-DD",
     "stats": "https://baseball.yahoo.co.jp/npb/game/{gameId}/stats",
@@ -86828,6 +86828,2574 @@
           ]
         }
       }
+    },
+    {
+      "date": "2026-08-18",
+      "gameId": "2021039290",
+      "status": "試合終了",
+      "stadium": "横浜",
+      "homeTeam": "横浜DeNAベイスターズ",
+      "awayTeam": "読売ジャイアンツ",
+      "homeScore": 4,
+      "awayScore": 3,
+      "totalRuns": 7,
+      "scheduleUrl": "https://baseball.yahoo.co.jp/npb/schedule/?date=2026-08-18",
+      "statsUrl": "https://baseball.yahoo.co.jp/npb/game/2021039290/stats",
+      "intentionalWalks": {
+        "total": 0,
+        "teams": {
+          "読売ジャイアンツ": {
+            "team": "読売ジャイアンツ",
+            "intentionalWalks": 0,
+            "players": []
+          },
+          "横浜DeNAベイスターズ": {
+            "team": "横浜DeNAベイスターズ",
+            "intentionalWalks": 0,
+            "players": []
+          }
+        }
+      },
+      "inningScores": {
+        "home": {
+          "team": "横浜DeNAベイスターズ",
+          "innings": [
+            {
+              "inning": 1,
+              "runs": 2,
+              "raw": "2"
+            },
+            {
+              "inning": 2,
+              "runs": 1,
+              "raw": "1"
+            },
+            {
+              "inning": 3,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 4,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 5,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 6,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 7,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 8,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 9,
+              "runs": null,
+              "raw": "1X"
+            }
+          ]
+        },
+        "away": {
+          "team": "読売ジャイアンツ",
+          "innings": [
+            {
+              "inning": 1,
+              "runs": 1,
+              "raw": "1"
+            },
+            {
+              "inning": 2,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 3,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 4,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 5,
+              "runs": 1,
+              "raw": "1"
+            },
+            {
+              "inning": 6,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 7,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 8,
+              "runs": 1,
+              "raw": "1"
+            },
+            {
+              "inning": 9,
+              "runs": 0,
+              "raw": "0"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "date": "2026-08-18",
+      "gameId": "2021039291",
+      "status": "試合終了",
+      "stadium": "京セラD大阪",
+      "homeTeam": "阪神タイガース",
+      "awayTeam": "東京ヤクルトスワローズ",
+      "homeScore": 3,
+      "awayScore": 2,
+      "totalRuns": 5,
+      "scheduleUrl": "https://baseball.yahoo.co.jp/npb/schedule/?date=2026-08-18",
+      "statsUrl": "https://baseball.yahoo.co.jp/npb/game/2021039291/stats",
+      "intentionalWalks": {
+        "total": 0,
+        "teams": {
+          "東京ヤクルトスワローズ": {
+            "team": "東京ヤクルトスワローズ",
+            "intentionalWalks": 0,
+            "players": []
+          },
+          "阪神タイガース": {
+            "team": "阪神タイガース",
+            "intentionalWalks": 0,
+            "players": []
+          }
+        }
+      },
+      "inningScores": {
+        "home": {
+          "team": "阪神タイガース",
+          "innings": [
+            {
+              "inning": 1,
+              "runs": 1,
+              "raw": "1"
+            },
+            {
+              "inning": 2,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 3,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 4,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 5,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 6,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 7,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 8,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 9,
+              "runs": null,
+              "raw": "2X"
+            }
+          ]
+        },
+        "away": {
+          "team": "東京ヤクルトスワローズ",
+          "innings": [
+            {
+              "inning": 1,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 2,
+              "runs": 1,
+              "raw": "1"
+            },
+            {
+              "inning": 3,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 4,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 5,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 6,
+              "runs": 1,
+              "raw": "1"
+            },
+            {
+              "inning": 7,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 8,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 9,
+              "runs": 0,
+              "raw": "0"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "date": "2026-08-18",
+      "gameId": "2021039292",
+      "status": "試合終了",
+      "stadium": "マツダスタジアム",
+      "homeTeam": "広島東洋カープ",
+      "awayTeam": "中日ドラゴンズ",
+      "homeScore": 11,
+      "awayScore": 4,
+      "totalRuns": 15,
+      "scheduleUrl": "https://baseball.yahoo.co.jp/npb/schedule/?date=2026-08-18",
+      "statsUrl": "https://baseball.yahoo.co.jp/npb/game/2021039292/stats",
+      "intentionalWalks": {
+        "total": 1,
+        "teams": {
+          "中日ドラゴンズ": {
+            "team": "中日ドラゴンズ",
+            "intentionalWalks": 1,
+            "players": [
+              {
+                "order": 10,
+                "player": "ロドリゲス",
+                "playerId": "2112338",
+                "intentionalWalks": 1,
+                "details": [
+                  "故意四"
+                ],
+                "events": [
+                  {
+                    "inning": 2,
+                    "detail": "故意四"
+                  }
+                ]
+              }
+            ]
+          },
+          "広島東洋カープ": {
+            "team": "広島東洋カープ",
+            "intentionalWalks": 0,
+            "players": []
+          }
+        }
+      },
+      "inningScores": {
+        "home": {
+          "team": "広島東洋カープ",
+          "innings": [
+            {
+              "inning": 1,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 2,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 3,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 4,
+              "runs": 2,
+              "raw": "2"
+            },
+            {
+              "inning": 5,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 6,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 7,
+              "runs": 8,
+              "raw": "8"
+            },
+            {
+              "inning": 8,
+              "runs": 1,
+              "raw": "1"
+            },
+            {
+              "inning": 9,
+              "runs": null,
+              "raw": "X"
+            }
+          ]
+        },
+        "away": {
+          "team": "中日ドラゴンズ",
+          "innings": [
+            {
+              "inning": 1,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 2,
+              "runs": 1,
+              "raw": "1"
+            },
+            {
+              "inning": 3,
+              "runs": 2,
+              "raw": "2"
+            },
+            {
+              "inning": 4,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 5,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 6,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 7,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 8,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 9,
+              "runs": 1,
+              "raw": "1"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "date": "2026-08-18",
+      "gameId": "2021039293",
+      "status": "試合終了",
+      "stadium": "エスコンF",
+      "homeTeam": "北海道日本ハムファイターズ",
+      "awayTeam": "福岡ソフトバンクホークス",
+      "homeScore": 1,
+      "awayScore": 7,
+      "totalRuns": 8,
+      "scheduleUrl": "https://baseball.yahoo.co.jp/npb/schedule/?date=2026-08-18",
+      "statsUrl": "https://baseball.yahoo.co.jp/npb/game/2021039293/stats",
+      "intentionalWalks": {
+        "total": 0,
+        "teams": {
+          "福岡ソフトバンクホークス": {
+            "team": "福岡ソフトバンクホークス",
+            "intentionalWalks": 0,
+            "players": []
+          },
+          "北海道日本ハムファイターズ": {
+            "team": "北海道日本ハムファイターズ",
+            "intentionalWalks": 0,
+            "players": []
+          }
+        }
+      },
+      "inningScores": {
+        "home": {
+          "team": "北海道日本ハムファイターズ",
+          "innings": [
+            {
+              "inning": 1,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 2,
+              "runs": 1,
+              "raw": "1"
+            },
+            {
+              "inning": 3,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 4,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 5,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 6,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 7,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 8,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 9,
+              "runs": 0,
+              "raw": "0"
+            }
+          ]
+        },
+        "away": {
+          "team": "福岡ソフトバンクホークス",
+          "innings": [
+            {
+              "inning": 1,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 2,
+              "runs": 1,
+              "raw": "1"
+            },
+            {
+              "inning": 3,
+              "runs": 4,
+              "raw": "4"
+            },
+            {
+              "inning": 4,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 5,
+              "runs": 1,
+              "raw": "1"
+            },
+            {
+              "inning": 6,
+              "runs": 1,
+              "raw": "1"
+            },
+            {
+              "inning": 7,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 8,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 9,
+              "runs": 0,
+              "raw": "0"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "date": "2026-08-18",
+      "gameId": "2021039294",
+      "status": "試合終了",
+      "stadium": "楽天モバイル",
+      "homeTeam": "東北楽天ゴールデンイーグルス",
+      "awayTeam": "千葉ロッテマリーンズ",
+      "homeScore": 6,
+      "awayScore": 2,
+      "totalRuns": 8,
+      "scheduleUrl": "https://baseball.yahoo.co.jp/npb/schedule/?date=2026-08-18",
+      "statsUrl": "https://baseball.yahoo.co.jp/npb/game/2021039294/stats",
+      "intentionalWalks": {
+        "total": 0,
+        "teams": {
+          "千葉ロッテマリーンズ": {
+            "team": "千葉ロッテマリーンズ",
+            "intentionalWalks": 0,
+            "players": []
+          },
+          "東北楽天ゴールデンイーグルス": {
+            "team": "東北楽天ゴールデンイーグルス",
+            "intentionalWalks": 0,
+            "players": []
+          }
+        }
+      },
+      "inningScores": {
+        "home": {
+          "team": "東北楽天ゴールデンイーグルス",
+          "innings": [
+            {
+              "inning": 1,
+              "runs": 1,
+              "raw": "1"
+            },
+            {
+              "inning": 2,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 3,
+              "runs": 2,
+              "raw": "2"
+            },
+            {
+              "inning": 4,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 5,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 6,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 7,
+              "runs": 1,
+              "raw": "1"
+            },
+            {
+              "inning": 8,
+              "runs": 2,
+              "raw": "2"
+            },
+            {
+              "inning": 9,
+              "runs": null,
+              "raw": "X"
+            }
+          ]
+        },
+        "away": {
+          "team": "千葉ロッテマリーンズ",
+          "innings": [
+            {
+              "inning": 1,
+              "runs": 2,
+              "raw": "2"
+            },
+            {
+              "inning": 2,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 3,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 4,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 5,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 6,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 7,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 8,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 9,
+              "runs": 0,
+              "raw": "0"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "date": "2026-08-18",
+      "gameId": "2021039295",
+      "status": "試合終了",
+      "stadium": "東京ドーム",
+      "homeTeam": "埼玉西武ライオンズ",
+      "awayTeam": "オリックス・バファローズ",
+      "homeScore": 7,
+      "awayScore": 4,
+      "totalRuns": 11,
+      "scheduleUrl": "https://baseball.yahoo.co.jp/npb/schedule/?date=2026-08-18",
+      "statsUrl": "https://baseball.yahoo.co.jp/npb/game/2021039295/stats",
+      "intentionalWalks": {
+        "total": 0,
+        "teams": {
+          "オリックス・バファローズ": {
+            "team": "オリックス・バファローズ",
+            "intentionalWalks": 0,
+            "players": []
+          },
+          "埼玉西武ライオンズ": {
+            "team": "埼玉西武ライオンズ",
+            "intentionalWalks": 0,
+            "players": []
+          }
+        }
+      },
+      "inningScores": {
+        "home": {
+          "team": "埼玉西武ライオンズ",
+          "innings": [
+            {
+              "inning": 1,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 2,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 3,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 4,
+              "runs": 6,
+              "raw": "6"
+            },
+            {
+              "inning": 5,
+              "runs": 1,
+              "raw": "1"
+            },
+            {
+              "inning": 6,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 7,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 8,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 9,
+              "runs": null,
+              "raw": "X"
+            }
+          ]
+        },
+        "away": {
+          "team": "オリックス・バファローズ",
+          "innings": [
+            {
+              "inning": 1,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 2,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 3,
+              "runs": 1,
+              "raw": "1"
+            },
+            {
+              "inning": 4,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 5,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 6,
+              "runs": 1,
+              "raw": "1"
+            },
+            {
+              "inning": 7,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 8,
+              "runs": 2,
+              "raw": "2"
+            },
+            {
+              "inning": 9,
+              "runs": 0,
+              "raw": "0"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "date": "2026-08-19",
+      "gameId": "2021039296",
+      "status": "試合終了",
+      "stadium": "横浜",
+      "homeTeam": "横浜DeNAベイスターズ",
+      "awayTeam": "読売ジャイアンツ",
+      "homeScore": 1,
+      "awayScore": 0,
+      "totalRuns": 1,
+      "scheduleUrl": "https://baseball.yahoo.co.jp/npb/schedule/?date=2026-08-19",
+      "statsUrl": "https://baseball.yahoo.co.jp/npb/game/2021039296/stats",
+      "intentionalWalks": {
+        "total": 0,
+        "teams": {
+          "読売ジャイアンツ": {
+            "team": "読売ジャイアンツ",
+            "intentionalWalks": 0,
+            "players": []
+          },
+          "横浜DeNAベイスターズ": {
+            "team": "横浜DeNAベイスターズ",
+            "intentionalWalks": 0,
+            "players": []
+          }
+        }
+      },
+      "inningScores": {
+        "home": {
+          "team": "横浜DeNAベイスターズ",
+          "innings": [
+            {
+              "inning": 1,
+              "runs": 1,
+              "raw": "1"
+            },
+            {
+              "inning": 2,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 3,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 4,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 5,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 6,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 7,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 8,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 9,
+              "runs": null,
+              "raw": "X"
+            }
+          ]
+        },
+        "away": {
+          "team": "読売ジャイアンツ",
+          "innings": [
+            {
+              "inning": 1,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 2,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 3,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 4,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 5,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 6,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 7,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 8,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 9,
+              "runs": 0,
+              "raw": "0"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "date": "2026-08-19",
+      "gameId": "2021039297",
+      "status": "試合終了",
+      "stadium": "京セラD大阪",
+      "homeTeam": "阪神タイガース",
+      "awayTeam": "東京ヤクルトスワローズ",
+      "homeScore": 2,
+      "awayScore": 1,
+      "totalRuns": 3,
+      "scheduleUrl": "https://baseball.yahoo.co.jp/npb/schedule/?date=2026-08-19",
+      "statsUrl": "https://baseball.yahoo.co.jp/npb/game/2021039297/stats",
+      "intentionalWalks": {
+        "total": 4,
+        "teams": {
+          "東京ヤクルトスワローズ": {
+            "team": "東京ヤクルトスワローズ",
+            "intentionalWalks": 2,
+            "players": [
+              {
+                "order": 5,
+                "player": "モンテル",
+                "playerId": "2107178",
+                "intentionalWalks": 1,
+                "details": [
+                  "故意四"
+                ],
+                "events": [
+                  {
+                    "inning": 8,
+                    "detail": "故意四"
+                  }
+                ]
+              },
+              {
+                "order": 8,
+                "player": "内山 壮真",
+                "playerId": "2000026",
+                "intentionalWalks": 1,
+                "details": [
+                  "故意四"
+                ],
+                "events": [
+                  {
+                    "inning": 4,
+                    "detail": "故意四"
+                  }
+                ]
+              }
+            ]
+          },
+          "阪神タイガース": {
+            "team": "阪神タイガース",
+            "intentionalWalks": 2,
+            "players": [
+              {
+                "order": 5,
+                "player": "佐藤 輝明",
+                "playerId": "2000051",
+                "intentionalWalks": 1,
+                "details": [
+                  "故意四"
+                ],
+                "events": [
+                  {
+                    "inning": 10,
+                    "detail": "故意四"
+                  }
+                ]
+              },
+              {
+                "order": 9,
+                "player": "前川 右京",
+                "playerId": "1950996",
+                "intentionalWalks": 1,
+                "details": [
+                  "故意四"
+                ],
+                "events": [
+                  {
+                    "inning": 9,
+                    "detail": "故意四"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      },
+      "inningScores": {
+        "home": {
+          "team": "阪神タイガース",
+          "innings": [
+            {
+              "inning": 1,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 2,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 3,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 4,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 5,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 6,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 7,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 8,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 9,
+              "runs": 1,
+              "raw": "1"
+            },
+            {
+              "inning": 10,
+              "runs": null,
+              "raw": "1X"
+            }
+          ]
+        },
+        "away": {
+          "team": "東京ヤクルトスワローズ",
+          "innings": [
+            {
+              "inning": 1,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 2,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 3,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 4,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 5,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 6,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 7,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 8,
+              "runs": 1,
+              "raw": "1"
+            },
+            {
+              "inning": 9,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 10,
+              "runs": 0,
+              "raw": "0"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "date": "2026-08-19",
+      "gameId": "2021039298",
+      "status": "試合終了",
+      "stadium": "マツダスタジアム",
+      "homeTeam": "広島東洋カープ",
+      "awayTeam": "中日ドラゴンズ",
+      "homeScore": 4,
+      "awayScore": 1,
+      "totalRuns": 5,
+      "scheduleUrl": "https://baseball.yahoo.co.jp/npb/schedule/?date=2026-08-19",
+      "statsUrl": "https://baseball.yahoo.co.jp/npb/game/2021039298/stats",
+      "intentionalWalks": {
+        "total": 0,
+        "teams": {
+          "中日ドラゴンズ": {
+            "team": "中日ドラゴンズ",
+            "intentionalWalks": 0,
+            "players": []
+          },
+          "広島東洋カープ": {
+            "team": "広島東洋カープ",
+            "intentionalWalks": 0,
+            "players": []
+          }
+        }
+      },
+      "inningScores": {
+        "home": {
+          "team": "広島東洋カープ",
+          "innings": [
+            {
+              "inning": 1,
+              "runs": 3,
+              "raw": "3"
+            },
+            {
+              "inning": 2,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 3,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 4,
+              "runs": 1,
+              "raw": "1"
+            },
+            {
+              "inning": 5,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 6,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 7,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 8,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 9,
+              "runs": null,
+              "raw": "X"
+            }
+          ]
+        },
+        "away": {
+          "team": "中日ドラゴンズ",
+          "innings": [
+            {
+              "inning": 1,
+              "runs": 1,
+              "raw": "1"
+            },
+            {
+              "inning": 2,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 3,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 4,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 5,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 6,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 7,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 8,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 9,
+              "runs": 0,
+              "raw": "0"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "date": "2026-08-19",
+      "gameId": "2021039299",
+      "status": "試合終了",
+      "stadium": "エスコンF",
+      "homeTeam": "北海道日本ハムファイターズ",
+      "awayTeam": "福岡ソフトバンクホークス",
+      "homeScore": 8,
+      "awayScore": 7,
+      "totalRuns": 15,
+      "scheduleUrl": "https://baseball.yahoo.co.jp/npb/schedule/?date=2026-08-19",
+      "statsUrl": "https://baseball.yahoo.co.jp/npb/game/2021039299/stats",
+      "intentionalWalks": {
+        "total": 0,
+        "teams": {
+          "福岡ソフトバンクホークス": {
+            "team": "福岡ソフトバンクホークス",
+            "intentionalWalks": 0,
+            "players": []
+          },
+          "北海道日本ハムファイターズ": {
+            "team": "北海道日本ハムファイターズ",
+            "intentionalWalks": 0,
+            "players": []
+          }
+        }
+      },
+      "inningScores": {
+        "home": {
+          "team": "北海道日本ハムファイターズ",
+          "innings": [
+            {
+              "inning": 1,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 2,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 3,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 4,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 5,
+              "runs": 3,
+              "raw": "3"
+            },
+            {
+              "inning": 6,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 7,
+              "runs": 4,
+              "raw": "4"
+            },
+            {
+              "inning": 8,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 9,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 10,
+              "runs": null,
+              "raw": "1X"
+            }
+          ]
+        },
+        "away": {
+          "team": "福岡ソフトバンクホークス",
+          "innings": [
+            {
+              "inning": 1,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 2,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 3,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 4,
+              "runs": 4,
+              "raw": "4"
+            },
+            {
+              "inning": 5,
+              "runs": 2,
+              "raw": "2"
+            },
+            {
+              "inning": 6,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 7,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 8,
+              "runs": 1,
+              "raw": "1"
+            },
+            {
+              "inning": 9,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 10,
+              "runs": 0,
+              "raw": "0"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "date": "2026-08-19",
+      "gameId": "2021039300",
+      "status": "試合終了",
+      "stadium": "楽天モバイル",
+      "homeTeam": "東北楽天ゴールデンイーグルス",
+      "awayTeam": "千葉ロッテマリーンズ",
+      "homeScore": 5,
+      "awayScore": 2,
+      "totalRuns": 7,
+      "scheduleUrl": "https://baseball.yahoo.co.jp/npb/schedule/?date=2026-08-19",
+      "statsUrl": "https://baseball.yahoo.co.jp/npb/game/2021039300/stats",
+      "intentionalWalks": {
+        "total": 0,
+        "teams": {
+          "千葉ロッテマリーンズ": {
+            "team": "千葉ロッテマリーンズ",
+            "intentionalWalks": 0,
+            "players": []
+          },
+          "東北楽天ゴールデンイーグルス": {
+            "team": "東北楽天ゴールデンイーグルス",
+            "intentionalWalks": 0,
+            "players": []
+          }
+        }
+      },
+      "inningScores": {
+        "home": {
+          "team": "東北楽天ゴールデンイーグルス",
+          "innings": [
+            {
+              "inning": 1,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 2,
+              "runs": 2,
+              "raw": "2"
+            },
+            {
+              "inning": 3,
+              "runs": 1,
+              "raw": "1"
+            },
+            {
+              "inning": 4,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 5,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 6,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 7,
+              "runs": 1,
+              "raw": "1"
+            },
+            {
+              "inning": 8,
+              "runs": 1,
+              "raw": "1"
+            },
+            {
+              "inning": 9,
+              "runs": null,
+              "raw": "X"
+            }
+          ]
+        },
+        "away": {
+          "team": "千葉ロッテマリーンズ",
+          "innings": [
+            {
+              "inning": 1,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 2,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 3,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 4,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 5,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 6,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 7,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 8,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 9,
+              "runs": 2,
+              "raw": "2"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "date": "2026-08-19",
+      "gameId": "2021039301",
+      "status": "試合終了",
+      "stadium": "ベルーナドーム",
+      "homeTeam": "埼玉西武ライオンズ",
+      "awayTeam": "オリックス・バファローズ",
+      "homeScore": 3,
+      "awayScore": 2,
+      "totalRuns": 5,
+      "scheduleUrl": "https://baseball.yahoo.co.jp/npb/schedule/?date=2026-08-19",
+      "statsUrl": "https://baseball.yahoo.co.jp/npb/game/2021039301/stats",
+      "intentionalWalks": {
+        "total": 1,
+        "teams": {
+          "オリックス・バファローズ": {
+            "team": "オリックス・バファローズ",
+            "intentionalWalks": 0,
+            "players": []
+          },
+          "埼玉西武ライオンズ": {
+            "team": "埼玉西武ライオンズ",
+            "intentionalWalks": 1,
+            "players": [
+              {
+                "order": 8,
+                "player": "岸 潤一郎",
+                "playerId": "1900068",
+                "intentionalWalks": 1,
+                "details": [
+                  "故意四"
+                ],
+                "events": [
+                  {
+                    "inning": 9,
+                    "detail": "故意四"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      },
+      "inningScores": {
+        "home": {
+          "team": "埼玉西武ライオンズ",
+          "innings": [
+            {
+              "inning": 1,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 2,
+              "runs": 1,
+              "raw": "1"
+            },
+            {
+              "inning": 3,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 4,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 5,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 6,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 7,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 8,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 9,
+              "runs": null,
+              "raw": "2X"
+            }
+          ]
+        },
+        "away": {
+          "team": "オリックス・バファローズ",
+          "innings": [
+            {
+              "inning": 1,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 2,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 3,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 4,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 5,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 6,
+              "runs": 2,
+              "raw": "2"
+            },
+            {
+              "inning": 7,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 8,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 9,
+              "runs": 0,
+              "raw": "0"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "date": "2026-08-20",
+      "gameId": "2021039302",
+      "status": "試合終了",
+      "stadium": "横浜",
+      "homeTeam": "横浜DeNAベイスターズ",
+      "awayTeam": "読売ジャイアンツ",
+      "homeScore": 3,
+      "awayScore": 6,
+      "totalRuns": 9,
+      "scheduleUrl": "https://baseball.yahoo.co.jp/npb/schedule/?date=2026-08-20",
+      "statsUrl": "https://baseball.yahoo.co.jp/npb/game/2021039302/stats",
+      "intentionalWalks": {
+        "total": 0,
+        "teams": {
+          "読売ジャイアンツ": {
+            "team": "読売ジャイアンツ",
+            "intentionalWalks": 0,
+            "players": []
+          },
+          "横浜DeNAベイスターズ": {
+            "team": "横浜DeNAベイスターズ",
+            "intentionalWalks": 0,
+            "players": []
+          }
+        }
+      },
+      "inningScores": {
+        "home": {
+          "team": "横浜DeNAベイスターズ",
+          "innings": [
+            {
+              "inning": 1,
+              "runs": 1,
+              "raw": "1"
+            },
+            {
+              "inning": 2,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 3,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 4,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 5,
+              "runs": 2,
+              "raw": "2"
+            },
+            {
+              "inning": 6,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 7,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 8,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 9,
+              "runs": 0,
+              "raw": "0"
+            }
+          ]
+        },
+        "away": {
+          "team": "読売ジャイアンツ",
+          "innings": [
+            {
+              "inning": 1,
+              "runs": 2,
+              "raw": "2"
+            },
+            {
+              "inning": 2,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 3,
+              "runs": 1,
+              "raw": "1"
+            },
+            {
+              "inning": 4,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 5,
+              "runs": 2,
+              "raw": "2"
+            },
+            {
+              "inning": 6,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 7,
+              "runs": 1,
+              "raw": "1"
+            },
+            {
+              "inning": 8,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 9,
+              "runs": 0,
+              "raw": "0"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "date": "2026-08-20",
+      "gameId": "2021039303",
+      "status": "試合終了",
+      "stadium": "京セラD大阪",
+      "homeTeam": "阪神タイガース",
+      "awayTeam": "東京ヤクルトスワローズ",
+      "homeScore": 1,
+      "awayScore": 4,
+      "totalRuns": 5,
+      "scheduleUrl": "https://baseball.yahoo.co.jp/npb/schedule/?date=2026-08-20",
+      "statsUrl": "https://baseball.yahoo.co.jp/npb/game/2021039303/stats",
+      "intentionalWalks": {
+        "total": 1,
+        "teams": {
+          "東京ヤクルトスワローズ": {
+            "team": "東京ヤクルトスワローズ",
+            "intentionalWalks": 1,
+            "players": [
+              {
+                "order": 10,
+                "player": "武岡 龍世",
+                "playerId": "1900029",
+                "intentionalWalks": 1,
+                "details": [
+                  "故意四"
+                ],
+                "events": [
+                  {
+                    "inning": 6,
+                    "detail": "故意四"
+                  }
+                ]
+              }
+            ]
+          },
+          "阪神タイガース": {
+            "team": "阪神タイガース",
+            "intentionalWalks": 0,
+            "players": []
+          }
+        }
+      },
+      "inningScores": {
+        "home": {
+          "team": "阪神タイガース",
+          "innings": [
+            {
+              "inning": 1,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 2,
+              "runs": 1,
+              "raw": "1"
+            },
+            {
+              "inning": 3,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 4,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 5,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 6,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 7,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 8,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 9,
+              "runs": 0,
+              "raw": "0"
+            }
+          ]
+        },
+        "away": {
+          "team": "東京ヤクルトスワローズ",
+          "innings": [
+            {
+              "inning": 1,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 2,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 3,
+              "runs": 1,
+              "raw": "1"
+            },
+            {
+              "inning": 4,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 5,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 6,
+              "runs": 3,
+              "raw": "3"
+            },
+            {
+              "inning": 7,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 8,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 9,
+              "runs": 0,
+              "raw": "0"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "date": "2026-08-20",
+      "gameId": "2021039304",
+      "status": "試合終了",
+      "stadium": "マツダスタジアム",
+      "homeTeam": "広島東洋カープ",
+      "awayTeam": "中日ドラゴンズ",
+      "homeScore": 2,
+      "awayScore": 1,
+      "totalRuns": 3,
+      "scheduleUrl": "https://baseball.yahoo.co.jp/npb/schedule/?date=2026-08-20",
+      "statsUrl": "https://baseball.yahoo.co.jp/npb/game/2021039304/stats",
+      "intentionalWalks": {
+        "total": 2,
+        "teams": {
+          "中日ドラゴンズ": {
+            "team": "中日ドラゴンズ",
+            "intentionalWalks": 0,
+            "players": []
+          },
+          "広島東洋カープ": {
+            "team": "広島東洋カープ",
+            "intentionalWalks": 2,
+            "players": [
+              {
+                "order": 6,
+                "player": "モンテロ",
+                "playerId": "1961927",
+                "intentionalWalks": 1,
+                "details": [
+                  "故意四"
+                ],
+                "events": [
+                  {
+                    "inning": 9,
+                    "detail": "故意四"
+                  }
+                ]
+              },
+              {
+                "order": 8,
+                "player": "佐々木 泰",
+                "playerId": "2050203",
+                "intentionalWalks": 1,
+                "details": [
+                  "故意四"
+                ],
+                "events": [
+                  {
+                    "inning": 7,
+                    "detail": "故意四"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      },
+      "inningScores": {
+        "home": {
+          "team": "広島東洋カープ",
+          "innings": [
+            {
+              "inning": 1,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 2,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 3,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 4,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 5,
+              "runs": 1,
+              "raw": "1"
+            },
+            {
+              "inning": 6,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 7,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 8,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 9,
+              "runs": null,
+              "raw": "1X"
+            }
+          ]
+        },
+        "away": {
+          "team": "中日ドラゴンズ",
+          "innings": [
+            {
+              "inning": 1,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 2,
+              "runs": 1,
+              "raw": "1"
+            },
+            {
+              "inning": 3,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 4,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 5,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 6,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 7,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 8,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 9,
+              "runs": 0,
+              "raw": "0"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "date": "2026-08-20",
+      "gameId": "2021039305",
+      "status": "試合終了",
+      "stadium": "エスコンF",
+      "homeTeam": "北海道日本ハムファイターズ",
+      "awayTeam": "福岡ソフトバンクホークス",
+      "homeScore": 5,
+      "awayScore": 5,
+      "totalRuns": 10,
+      "scheduleUrl": "https://baseball.yahoo.co.jp/npb/schedule/?date=2026-08-20",
+      "statsUrl": "https://baseball.yahoo.co.jp/npb/game/2021039305/stats",
+      "intentionalWalks": {
+        "total": 3,
+        "teams": {
+          "福岡ソフトバンクホークス": {
+            "team": "福岡ソフトバンクホークス",
+            "intentionalWalks": 1,
+            "players": [
+              {
+                "order": 6,
+                "player": "柳田 悠岐",
+                "playerId": "1000128",
+                "intentionalWalks": 1,
+                "details": [
+                  "故意四"
+                ],
+                "events": [
+                  {
+                    "inning": 10,
+                    "detail": "故意四"
+                  }
+                ]
+              }
+            ]
+          },
+          "北海道日本ハムファイターズ": {
+            "team": "北海道日本ハムファイターズ",
+            "intentionalWalks": 2,
+            "players": [
+              {
+                "order": 5,
+                "player": "レイエス",
+                "playerId": "1860140",
+                "intentionalWalks": 2,
+                "details": [
+                  "故意四",
+                  "故意四"
+                ],
+                "events": [
+                  {
+                    "inning": 9,
+                    "detail": "故意四"
+                  },
+                  {
+                    "inning": 11,
+                    "detail": "故意四"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      },
+      "inningScores": {
+        "home": {
+          "team": "北海道日本ハムファイターズ",
+          "innings": [
+            {
+              "inning": 1,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 2,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 3,
+              "runs": 3,
+              "raw": "3"
+            },
+            {
+              "inning": 4,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 5,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 6,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 7,
+              "runs": 2,
+              "raw": "2"
+            },
+            {
+              "inning": 8,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 9,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 10,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 11,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 12,
+              "runs": 0,
+              "raw": "0"
+            }
+          ]
+        },
+        "away": {
+          "team": "福岡ソフトバンクホークス",
+          "innings": [
+            {
+              "inning": 1,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 2,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 3,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 4,
+              "runs": 1,
+              "raw": "1"
+            },
+            {
+              "inning": 5,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 6,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 7,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 8,
+              "runs": 4,
+              "raw": "4"
+            },
+            {
+              "inning": 9,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 10,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 11,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 12,
+              "runs": 0,
+              "raw": "0"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "date": "2026-08-20",
+      "gameId": "2021039306",
+      "status": "試合終了",
+      "stadium": "楽天モバイル",
+      "homeTeam": "東北楽天ゴールデンイーグルス",
+      "awayTeam": "千葉ロッテマリーンズ",
+      "homeScore": 3,
+      "awayScore": 4,
+      "totalRuns": 7,
+      "scheduleUrl": "https://baseball.yahoo.co.jp/npb/schedule/?date=2026-08-20",
+      "statsUrl": "https://baseball.yahoo.co.jp/npb/game/2021039306/stats",
+      "intentionalWalks": {
+        "total": 0,
+        "teams": {
+          "千葉ロッテマリーンズ": {
+            "team": "千葉ロッテマリーンズ",
+            "intentionalWalks": 0,
+            "players": []
+          },
+          "東北楽天ゴールデンイーグルス": {
+            "team": "東北楽天ゴールデンイーグルス",
+            "intentionalWalks": 0,
+            "players": []
+          }
+        }
+      },
+      "inningScores": {
+        "home": {
+          "team": "東北楽天ゴールデンイーグルス",
+          "innings": [
+            {
+              "inning": 1,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 2,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 3,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 4,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 5,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 6,
+              "runs": 1,
+              "raw": "1"
+            },
+            {
+              "inning": 7,
+              "runs": 2,
+              "raw": "2"
+            },
+            {
+              "inning": 8,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 9,
+              "runs": 0,
+              "raw": "0"
+            }
+          ]
+        },
+        "away": {
+          "team": "千葉ロッテマリーンズ",
+          "innings": [
+            {
+              "inning": 1,
+              "runs": 1,
+              "raw": "1"
+            },
+            {
+              "inning": 2,
+              "runs": 1,
+              "raw": "1"
+            },
+            {
+              "inning": 3,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 4,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 5,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 6,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 7,
+              "runs": 2,
+              "raw": "2"
+            },
+            {
+              "inning": 8,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 9,
+              "runs": 0,
+              "raw": "0"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "date": "2026-08-20",
+      "gameId": "2021039307",
+      "status": "試合終了",
+      "stadium": "ベルーナドーム",
+      "homeTeam": "埼玉西武ライオンズ",
+      "awayTeam": "オリックス・バファローズ",
+      "homeScore": 1,
+      "awayScore": 3,
+      "totalRuns": 4,
+      "scheduleUrl": "https://baseball.yahoo.co.jp/npb/schedule/?date=2026-08-20",
+      "statsUrl": "https://baseball.yahoo.co.jp/npb/game/2021039307/stats",
+      "intentionalWalks": {
+        "total": 0,
+        "teams": {
+          "オリックス・バファローズ": {
+            "team": "オリックス・バファローズ",
+            "intentionalWalks": 0,
+            "players": []
+          },
+          "埼玉西武ライオンズ": {
+            "team": "埼玉西武ライオンズ",
+            "intentionalWalks": 0,
+            "players": []
+          }
+        }
+      },
+      "inningScores": {
+        "home": {
+          "team": "埼玉西武ライオンズ",
+          "innings": [
+            {
+              "inning": 1,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 2,
+              "runs": 1,
+              "raw": "1"
+            },
+            {
+              "inning": 3,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 4,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 5,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 6,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 7,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 8,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 9,
+              "runs": 0,
+              "raw": "0"
+            }
+          ]
+        },
+        "away": {
+          "team": "オリックス・バファローズ",
+          "innings": [
+            {
+              "inning": 1,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 2,
+              "runs": 1,
+              "raw": "1"
+            },
+            {
+              "inning": 3,
+              "runs": 1,
+              "raw": "1"
+            },
+            {
+              "inning": 4,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 5,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 6,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 7,
+              "runs": 1,
+              "raw": "1"
+            },
+            {
+              "inning": 8,
+              "runs": 0,
+              "raw": "0"
+            },
+            {
+              "inning": 9,
+              "runs": 0,
+              "raw": "0"
+            }
+          ]
+        }
+      }
     }
   ],
   "canceledGames": [
@@ -87280,12 +89848,12 @@
       "error": "500 Server Error: Internal Server Error for url: https://baseball.yahoo.co.jp/npb/game/2021039194/stats"
     }
   ],
-  "scheduledGames": 675,
+  "scheduledGames": 693,
   "canceledGamesCount": 31,
   "otherStatusGamesCount": 2,
   "fetchErrorsCount": 3,
-  "completedGames": 643,
+  "completedGames": 661,
   "fetchErrorCount": 3,
-  "gamesWithIntentionalWalks": 140,
-  "intentionalWalkPlateAppearances": 165
+  "gamesWithIntentionalWalks": 146,
+  "intentionalWalkPlateAppearances": 177
 }
