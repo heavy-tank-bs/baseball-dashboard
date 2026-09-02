@@ -1,0 +1,72 @@
+{
+  "game_id": "2021039320",
+  "metadata": {
+    "date_jp": "2026年8月23日",
+    "matchup": "横浜DeNAベイスターズvs阪神タイガース"
+  },
+  "statline": {
+    "player": "岩崎 優",
+    "era": "2.80",
+    "innings": "0.1",
+    "pitches": "3",
+    "batters": "2",
+    "hits": "1",
+    "hr": "0",
+    "k": "0",
+    "bb": "0",
+    "hbp": "0",
+    "balk": "0",
+    "runs": "0",
+    "er": "0"
+  },
+  "pitches": [
+    {
+      "pa_index": "0820600",
+      "pitcher": "岩崎 優",
+      "pitcher_id": "1300075",
+      "pitcher_hand": "左",
+      "batter": "牧 秀悟",
+      "batter_id": "2000035",
+      "batter_hand": "右",
+      "seq": "1",
+      "pitchNo": "3",
+      "pitchType": "ストレート",
+      "speed": "145km/h",
+      "result": "三邪飛 [転倒]",
+      "top": 8.64,
+      "left": 36.72
+    },
+    {
+      "pa_index": "0820500",
+      "pitcher": "岩崎 優",
+      "pitcher_id": "1300075",
+      "pitcher_hand": "左",
+      "batter": "度会 隆輝",
+      "batter_id": "1850873",
+      "batter_hand": "左",
+      "seq": "1",
+      "pitchNo": "1",
+      "pitchType": "スライダー",
+      "speed": "126km/h",
+      "result": "ボール",
+      "top": 5.76,
+      "left": 21.24
+    },
+    {
+      "pa_index": "0820500",
+      "pitcher": "岩崎 優",
+      "pitcher_id": "1300075",
+      "pitcher_hand": "左",
+      "batter": "度会 隆輝",
+      "batter_id": "1850873",
+      "batter_hand": "左",
+      "seq": "2",
+      "pitchNo": "2",
+      "pitchType": "スライダー",
+      "speed": "119km/h",
+      "result": "右安 [打者ガッツポーズ]",
+      "top": 47.519999999999996,
+      "left": 15.12
+    }
+  ]
+}

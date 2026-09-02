@@ -1,0 +1,56 @@
+{
+  "game_id": "2021039361",
+  "metadata": {
+    "date_jp": "2026年9月1日",
+    "matchup": "東京ヤクルトスワローズvs阪神タイガース"
+  },
+  "statline": {
+    "player": "岡留 英貴",
+    "era": "0.00",
+    "innings": "0.2",
+    "pitches": "2",
+    "batters": "1",
+    "hits": "0",
+    "hr": "0",
+    "k": "0",
+    "bb": "0",
+    "hbp": "0",
+    "balk": "0",
+    "runs": "0",
+    "er": "0"
+  },
+  "pitches": [
+    {
+      "pa_index": "0720600",
+      "pitcher": "岡留 英貴",
+      "pitcher_id": "2103848",
+      "pitcher_hand": "右",
+      "batter": "サンタナ",
+      "batter_id": "2000135",
+      "batter_hand": "右",
+      "seq": "1",
+      "pitchNo": "1",
+      "pitchType": "スライダー",
+      "speed": "131km/h",
+      "result": "見逃し",
+      "top": 44.64,
+      "left": 9.719999999999999
+    },
+    {
+      "pa_index": "0720600",
+      "pitcher": "岡留 英貴",
+      "pitcher_id": "2103848",
+      "pitcher_hand": "右",
+      "batter": "サンタナ",
+      "batter_id": "2000135",
+      "batter_hand": "右",
+      "seq": "2",
+      "pitchNo": "2",
+      "pitchType": "スライダー",
+      "speed": "-",
+      "result": "遊併打 [泳ぎ、バットの先、引っかけ]",
+      "top": 35.64,
+      "left": 6.12
+    }
+  ]
+}

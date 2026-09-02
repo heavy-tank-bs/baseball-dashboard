@@ -1,0 +1,88 @@
+{
+  "game_id": "2021039335",
+  "metadata": {
+    "date_jp": "2026年8月26日",
+    "matchup": "千葉ロッテマリーンズvs福岡ソフトバンクホークス"
+  },
+  "statline": {
+    "player": "鈴木 豪太",
+    "era": "1.91",
+    "innings": "0.1",
+    "pitches": "4",
+    "batters": "2",
+    "hits": "1",
+    "hr": "1",
+    "k": "0",
+    "bb": "0",
+    "hbp": "0",
+    "balk": "0",
+    "runs": "1",
+    "er": "1"
+  },
+  "pitches": [
+    {
+      "pa_index": "1020200",
+      "pitcher": "鈴木 豪太",
+      "pitcher_id": "2102969",
+      "pitcher_hand": "右",
+      "batter": "山口 航輝",
+      "batter_id": "1800053",
+      "batter_hand": "右",
+      "seq": "1",
+      "pitchNo": "4",
+      "pitchType": "スライダー",
+      "speed": "-",
+      "result": "左本 [サヨナラホームラン、観客大歓声、チームメイトから手荒い祝福を受ける]",
+      "top": 30.959999999999997,
+      "left": 19.8
+    },
+    {
+      "pa_index": "1020100",
+      "pitcher": "鈴木 豪太",
+      "pitcher_id": "2102969",
+      "pitcher_hand": "右",
+      "batter": "西川 史礁",
+      "batter_id": "1950286",
+      "batter_hand": "右",
+      "seq": "1",
+      "pitchNo": "1",
+      "pitchType": "ストレート",
+      "speed": "145km/h",
+      "result": "見逃し",
+      "top": 15.84,
+      "left": 14.04
+    },
+    {
+      "pa_index": "1020100",
+      "pitcher": "鈴木 豪太",
+      "pitcher_id": "2102969",
+      "pitcher_hand": "右",
+      "batter": "西川 史礁",
+      "batter_id": "1950286",
+      "batter_hand": "右",
+      "seq": "2",
+      "pitchNo": "2",
+      "pitchType": "カットボール",
+      "speed": "140km/h",
+      "result": "見逃し",
+      "top": 20.16,
+      "left": 10.08
+    },
+    {
+      "pa_index": "1020100",
+      "pitcher": "鈴木 豪太",
+      "pitcher_id": "2102969",
+      "pitcher_hand": "右",
+      "batter": "西川 史礁",
+      "batter_id": "1950286",
+      "batter_hand": "右",
+      "seq": "3",
+      "pitchNo": "3",
+      "pitchType": "スライダー",
+      "speed": "128km/h",
+      "result": "三ゴロ",
+      "top": 26.64,
+      "left": 5.76
+    }
+  ]
+}

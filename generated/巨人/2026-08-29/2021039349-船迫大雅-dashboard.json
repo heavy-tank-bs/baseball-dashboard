@@ -1,0 +1,88 @@
+{
+  "game_id": "2021039349",
+  "metadata": {
+    "date_jp": "2026年8月29日",
+    "matchup": "阪神タイガースvs読売ジャイアンツ"
+  },
+  "statline": {
+    "player": "船迫 大雅",
+    "era": "2.30",
+    "innings": "0.1",
+    "pitches": "4",
+    "batters": "1",
+    "hits": "0",
+    "hr": "0",
+    "k": "0",
+    "bb": "0",
+    "hbp": "0",
+    "balk": "0",
+    "runs": "0",
+    "er": "0"
+  },
+  "pitches": [
+    {
+      "pa_index": "0520600",
+      "pitcher": "船迫 大雅",
+      "pitcher_id": "1450689",
+      "pitcher_hand": "右",
+      "batter": "髙寺 望夢",
+      "batter_id": "2000057",
+      "batter_hand": "左",
+      "seq": "1",
+      "pitchNo": "1",
+      "pitchType": "スライダー",
+      "speed": "132km/h",
+      "result": "ボール",
+      "top": 25.919999999999998,
+      "left": 44.64
+    },
+    {
+      "pa_index": "0520600",
+      "pitcher": "船迫 大雅",
+      "pitcher_id": "1450689",
+      "pitcher_hand": "右",
+      "batter": "髙寺 望夢",
+      "batter_id": "2000057",
+      "batter_hand": "左",
+      "seq": "2",
+      "pitchNo": "2",
+      "pitchType": "スライダー",
+      "speed": "131km/h",
+      "result": "空振り",
+      "top": 34.199999999999996,
+      "left": 32.4
+    },
+    {
+      "pa_index": "0520600",
+      "pitcher": "船迫 大雅",
+      "pitcher_id": "1450689",
+      "pitcher_hand": "右",
+      "batter": "髙寺 望夢",
+      "batter_id": "2000057",
+      "batter_hand": "左",
+      "seq": "3",
+      "pitchNo": "3",
+      "pitchType": "スライダー",
+      "speed": "132km/h",
+      "result": "ボール",
+      "top": 59.04,
+      "left": 6.4799999999999995
+    },
+    {
+      "pa_index": "0520600",
+      "pitcher": "船迫 大雅",
+      "pitcher_id": "1450689",
+      "pitcher_hand": "右",
+      "batter": "髙寺 望夢",
+      "batter_id": "2000057",
+      "batter_hand": "左",
+      "seq": "4",
+      "pitchNo": "4",
+      "pitchType": "ストレート",
+      "speed": "146km/h",
+      "result": "左飛",
+      "top": 52.919999999999995,
+      "left": 25.2
+    }
+  ]
+}
