@@ -8,7 +8,6 @@
 !/scripts/build_woba_constants.py
 !/scripts/build_park_factors.py
 !/scripts/fetch_sportsnavi_game_context.py
-!/scripts/dashboard_chat_lambda.py
 !/scripts/build_uniform_numbers.py
 !/summary/
 !/summary/index.html
@@ -22,7 +21,6 @@
 !/summary/annual.js
 !/summary/annual-batter.js
 !/summary/compare.js
-!/summary/chatbot.js
 !/summary/build_manifest.py
 !/summary/manifest.js
 !/summary/batter_manifest.js
@@ -37,8 +35,6 @@
 !/generated/**/*.json
 !/generated/**/*.png
 !/docs/
-!/docs/ai-chatbot-spec.md
-!/docs/ai-chatbot-spec.html
 !/GITHUB_PAGES.md
 
 site/

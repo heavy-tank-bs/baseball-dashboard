@@ -33,3 +33,7 @@ python scripts/build_github_pages.py
 ```
 
 The publishable artifact will be created in `site/`.
+
+## Hosting and updates
+
+The dashboard is published through GitHub Pages. The AI chat feature was retired on 2026-09-16. Dashboard updates must not sync data to AWS S3 or update Lambda. Continue generating local assets and publishing them through GitHub Pages.

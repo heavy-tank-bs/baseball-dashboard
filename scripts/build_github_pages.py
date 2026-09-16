@@ -29,7 +29,6 @@ SUMMARY_FILES = (
     "ranking.js",
     "player.js",
     "compare.js",
-    "chatbot.js",
     "uniform_numbers.js",
     "manifest.js",
     "batter_manifest.js",
