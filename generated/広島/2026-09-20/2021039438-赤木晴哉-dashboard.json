@@ -1,0 +1,56 @@
+{
+  "game_id": "2021039438",
+  "metadata": {
+    "date_jp": "2026年9月20日",
+    "matchup": "中日ドラゴンズvs広島東洋カープ"
+  },
+  "statline": {
+    "player": "赤木 晴哉",
+    "era": "4.35",
+    "innings": "0.1",
+    "pitches": "2",
+    "batters": "1",
+    "hits": "0",
+    "hr": "0",
+    "k": "0",
+    "bb": "0",
+    "hbp": "0",
+    "balk": "0",
+    "runs": "0",
+    "er": "0"
+  },
+  "pitches": [
+    {
+      "pa_index": "0820700",
+      "pitcher": "赤木 晴哉",
+      "pitcher_id": "2114641",
+      "pitcher_hand": "右",
+      "batter": "村松 開人",
+      "batter_id": "1750223",
+      "batter_hand": "左",
+      "seq": "1",
+      "pitchNo": "1",
+      "pitchType": "ストレート",
+      "speed": "149km/h",
+      "result": "見逃し",
+      "top": 41.76,
+      "left": 19.08
+    },
+    {
+      "pa_index": "0820700",
+      "pitcher": "赤木 晴哉",
+      "pitcher_id": "2114641",
+      "pitcher_hand": "右",
+      "batter": "村松 開人",
+      "batter_id": "1750223",
+      "batter_hand": "左",
+      "seq": "2",
+      "pitchNo": "2",
+      "pitchType": "カットボール",
+      "speed": "139km/h",
+      "result": "左飛",
+      "top": 37.44,
+      "left": 36.72
+    }
+  ]
+}

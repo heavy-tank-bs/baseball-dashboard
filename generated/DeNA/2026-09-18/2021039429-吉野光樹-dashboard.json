@@ -1,0 +1,88 @@
+{
+  "game_id": "2021039429",
+  "metadata": {
+    "date_jp": "2026年9月18日",
+    "matchup": "横浜DeNAベイスターズvs東京ヤクルトスワローズ"
+  },
+  "statline": {
+    "player": "吉野 光樹",
+    "era": "3.00",
+    "innings": "0.2",
+    "pitches": "4",
+    "batters": "2",
+    "hits": "0",
+    "hr": "0",
+    "k": "1",
+    "bb": "0",
+    "hbp": "0",
+    "balk": "0",
+    "runs": "0",
+    "er": "0"
+  },
+  "pitches": [
+    {
+      "pa_index": "0810800",
+      "pitcher": "吉野 光樹",
+      "pitcher_id": "2105707",
+      "pitcher_hand": "右",
+      "batter": "鈴木 叶",
+      "batter_id": "2109495",
+      "batter_hand": "右",
+      "seq": "1",
+      "pitchNo": "4",
+      "pitchType": "フォーク",
+      "speed": "135km/h",
+      "result": "遊飛 [詰り、バット折れる]",
+      "top": 30.24,
+      "left": 38.519999999999996
+    },
+    {
+      "pa_index": "0810700",
+      "pitcher": "吉野 光樹",
+      "pitcher_id": "2105707",
+      "pitcher_hand": "右",
+      "batter": "田中 陽翔",
+      "batter_id": "2113365",
+      "batter_hand": "左",
+      "seq": "1",
+      "pitchNo": "1",
+      "pitchType": "ストレート",
+      "speed": "148km/h",
+      "result": "ファウル",
+      "top": 34.56,
+      "left": 15.84
+    },
+    {
+      "pa_index": "0810700",
+      "pitcher": "吉野 光樹",
+      "pitcher_id": "2105707",
+      "pitcher_hand": "右",
+      "batter": "田中 陽翔",
+      "batter_id": "2113365",
+      "batter_hand": "左",
+      "seq": "2",
+      "pitchNo": "2",
+      "pitchType": "フォーク",
+      "speed": "134km/h",
+      "result": "見逃し",
+      "top": 30.599999999999998,
+      "left": 24.84
+    },
+    {
+      "pa_index": "0810700",
+      "pitcher": "吉野 光樹",
+      "pitcher_id": "2105707",
+      "pitcher_hand": "右",
+      "batter": "田中 陽翔",
+      "batter_id": "2113365",
+      "batter_hand": "左",
+      "seq": "3",
+      "pitchNo": "3",
+      "pitchType": "フォーク",
+      "speed": "134km/h",
+      "result": "空三振",
+      "top": 56.519999999999996,
+      "left": 27.36
+    }
+  ]
+}
