@@ -1,0 +1,88 @@
+{
+  "game_id": "2021039455",
+  "metadata": {
+    "date_jp": "2026年9月23日",
+    "matchup": "広島東洋カープvs読売ジャイアンツ"
+  },
+  "statline": {
+    "player": "堀田 賢慎",
+    "era": "0.71",
+    "innings": "0.0",
+    "pitches": "4",
+    "batters": "1",
+    "hits": "0",
+    "hr": "0",
+    "k": "0",
+    "bb": "1",
+    "hbp": "0",
+    "balk": "0",
+    "runs": "0",
+    "er": "0"
+  },
+  "pitches": [
+    {
+      "pa_index": "0620400",
+      "pitcher": "堀田 賢慎",
+      "pitcher_id": "1900016",
+      "pitcher_hand": "右",
+      "batter": "モンテロ",
+      "batter_id": "1961927",
+      "batter_hand": "右",
+      "seq": "1",
+      "pitchNo": "1",
+      "pitchType": "カットボール",
+      "speed": "129km/h",
+      "result": "ボール",
+      "top": 33.12,
+      "left": 4.32
+    },
+    {
+      "pa_index": "0620400",
+      "pitcher": "堀田 賢慎",
+      "pitcher_id": "1900016",
+      "pitcher_hand": "右",
+      "batter": "モンテロ",
+      "batter_id": "1961927",
+      "batter_hand": "右",
+      "seq": "2",
+      "pitchNo": "2",
+      "pitchType": "ストレート",
+      "speed": "143km/h",
+      "result": "ボール",
+      "top": 46.8,
+      "left": 3.5999999999999996
+    },
+    {
+      "pa_index": "0620400",
+      "pitcher": "堀田 賢慎",
+      "pitcher_id": "1900016",
+      "pitcher_hand": "右",
+      "batter": "モンテロ",
+      "batter_id": "1961927",
+      "batter_hand": "右",
+      "seq": "3",
+      "pitchNo": "3",
+      "pitchType": "チェンジアップ",
+      "speed": "133km/h",
+      "result": "ボール",
+      "top": null,
+      "left": 32.04
+    },
+    {
+      "pa_index": "0620400",
+      "pitcher": "堀田 賢慎",
+      "pitcher_id": "1900016",
+      "pitcher_hand": "右",
+      "batter": "モンテロ",
+      "batter_id": "1961927",
+      "batter_hand": "右",
+      "seq": "4",
+      "pitchNo": "4",
+      "pitchType": "チェンジアップ",
+      "speed": "133km/h",
+      "result": "四球",
+      "top": 8.64,
+      "left": 2.16
+    }
+  ]
+}

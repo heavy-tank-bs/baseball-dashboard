@@ -1,0 +1,88 @@
+{
+  "game_id": "2021039454",
+  "metadata": {
+    "date_jp": "2026年9月23日",
+    "matchup": "横浜DeNAベイスターズvs中日ドラゴンズ"
+  },
+  "statline": {
+    "player": "松山 晋也",
+    "era": "1.74",
+    "innings": "0.0",
+    "pitches": "4",
+    "batters": "1",
+    "hits": "1",
+    "hr": "1",
+    "k": "0",
+    "bb": "0",
+    "hbp": "0",
+    "balk": "0",
+    "runs": "1",
+    "er": "1"
+  },
+  "pitches": [
+    {
+      "pa_index": "1220100",
+      "pitcher": "松山 晋也",
+      "pitcher_id": "2107869",
+      "pitcher_hand": "右",
+      "batter": "戸柱 恭孝",
+      "batter_id": "1500064",
+      "batter_hand": "左",
+      "seq": "1",
+      "pitchNo": "1",
+      "pitchType": "ストレート",
+      "speed": "152km/h",
+      "result": "見逃し",
+      "top": 30.24,
+      "left": 35.28
+    },
+    {
+      "pa_index": "1220100",
+      "pitcher": "松山 晋也",
+      "pitcher_id": "2107869",
+      "pitcher_hand": "右",
+      "batter": "戸柱 恭孝",
+      "batter_id": "1500064",
+      "batter_hand": "左",
+      "seq": "2",
+      "pitchNo": "2",
+      "pitchType": "ストレート",
+      "speed": "155km/h",
+      "result": "ボール",
+      "top": 57.239999999999995,
+      "left": 5.76
+    },
+    {
+      "pa_index": "1220100",
+      "pitcher": "松山 晋也",
+      "pitcher_id": "2107869",
+      "pitcher_hand": "右",
+      "batter": "戸柱 恭孝",
+      "batter_id": "1500064",
+      "batter_hand": "左",
+      "seq": "3",
+      "pitchNo": "3",
+      "pitchType": "ストレート",
+      "speed": "152km/h",
+      "result": "ボール",
+      "top": 8.64,
+      "left": 35.64
+    },
+    {
+      "pa_index": "1220100",
+      "pitcher": "松山 晋也",
+      "pitcher_id": "2107869",
+      "pitcher_hand": "右",
+      "batter": "戸柱 恭孝",
+      "batter_id": "1500064",
+      "batter_hand": "左",
+      "seq": "4",
+      "pitchNo": "4",
+      "pitchType": "ストレート",
+      "speed": "152km/h",
+      "result": "右本 [サヨナラホームラン、観客大歓声、チームメイトから手荒い祝福を受ける]",
+      "top": 30.24,
+      "left": 16.919999999999998
+    }
+  ]
+}
