@@ -1,0 +1,40 @@
+{
+  "game_id": "2021049817",
+  "metadata": {
+    "date_jp": "2026年10月1日",
+    "matchup": "千葉ロッテマリーンズvs北海道日本ハムファイターズ"
+  },
+  "statline": {
+    "player": "宮﨑 颯",
+    "era": "6.00",
+    "innings": "0.1",
+    "pitches": "1",
+    "batters": "1",
+    "hits": "0",
+    "hr": "0",
+    "k": "0",
+    "bb": "0",
+    "hbp": "0",
+    "balk": "0",
+    "runs": "0",
+    "er": "0"
+  },
+  "pitches": [
+    {
+      "pa_index": "0910400",
+      "pitcher": "宮﨑 颯",
+      "pitcher_id": "2107586",
+      "pitcher_hand": "左",
+      "batter": "矢澤 宏太",
+      "batter_id": "2106284",
+      "batter_hand": "左",
+      "seq": "1",
+      "pitchNo": "1",
+      "pitchType": "フォーク",
+      "speed": "-",
+      "result": "遊飛",
+      "top": 40.68,
+      "left": 7.199999999999999
+    }
+  ]
+}
