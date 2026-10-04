@@ -1,0 +1,88 @@
+{
+  "game_id": "2021048603",
+  "metadata": {
+    "date_jp": "2026年10月3日",
+    "matchup": "東北楽天ゴールデンイーグルスvsオリックス・バファローズ"
+  },
+  "statline": {
+    "player": "辛島 航",
+    "era": "0.00",
+    "innings": "0.1",
+    "pitches": "4",
+    "batters": "1",
+    "hits": "0",
+    "hr": "0",
+    "k": "0",
+    "bb": "0",
+    "hbp": "0",
+    "balk": "0",
+    "runs": "0",
+    "er": "0"
+  },
+  "pitches": [
+    {
+      "pa_index": "0110100",
+      "pitcher": "辛島 航",
+      "pitcher_id": "900090",
+      "pitcher_hand": "左",
+      "batter": "西川 龍馬",
+      "batter_id": "1500096",
+      "batter_hand": "左",
+      "seq": "1",
+      "pitchNo": "1",
+      "pitchType": "ストレート",
+      "speed": "136km/h",
+      "result": "ボール",
+      "top": 17.28,
+      "left": 3.2399999999999998
+    },
+    {
+      "pa_index": "0110100",
+      "pitcher": "辛島 航",
+      "pitcher_id": "900090",
+      "pitcher_hand": "左",
+      "batter": "西川 龍馬",
+      "batter_id": "1500096",
+      "batter_hand": "左",
+      "seq": "2",
+      "pitchNo": "2",
+      "pitchType": "ストレート",
+      "speed": "130km/h",
+      "result": "見逃し",
+      "top": 12.959999999999999,
+      "left": 21.599999999999998
+    },
+    {
+      "pa_index": "0110100",
+      "pitcher": "辛島 航",
+      "pitcher_id": "900090",
+      "pitcher_hand": "左",
+      "batter": "西川 龍馬",
+      "batter_id": "1500096",
+      "batter_hand": "左",
+      "seq": "3",
+      "pitchNo": "3",
+      "pitchType": "カーブ",
+      "speed": "107km/h",
+      "result": "見逃し",
+      "top": 38.16,
+      "left": 34.56
+    },
+    {
+      "pa_index": "0110100",
+      "pitcher": "辛島 航",
+      "pitcher_id": "900090",
+      "pitcher_hand": "左",
+      "batter": "西川 龍馬",
+      "batter_id": "1500096",
+      "batter_hand": "左",
+      "seq": "4",
+      "pitchNo": "4",
+      "pitchType": "スライダー",
+      "speed": "-",
+      "result": "左飛",
+      "top": 12.959999999999999,
+      "left": 31.68
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "game_id": "2021049818",
+  "metadata": {
+    "date_jp": "2026年10月3日",
+    "matchup": "東京ヤクルトスワローズvs中日ドラゴンズ"
+  },
+  "statline": {
+    "player": "清水 昇",
+    "era": "3.56",
+    "innings": "0.1",
+    "pitches": "2",
+    "batters": "1",
+    "hits": "0",
+    "hr": "0",
+    "k": "0",
+    "bb": "0",
+    "hbp": "0",
+    "balk": "0",
+    "runs": "0",
+    "er": "0"
+  },
+  "pitches": [
+    {
+      "pa_index": "0810200",
+      "pitcher": "清水 昇",
+      "pitcher_id": "1800033",
+      "pitcher_hand": "右",
+      "batter": "石川 昂弥",
+      "batter_id": "1900037",
+      "batter_hand": "右",
+      "seq": "1",
+      "pitchNo": "1",
+      "pitchType": "ストレート",
+      "speed": "-",
+      "result": "ボール",
+      "top": 7.92,
+      "left": 2.52
+    },
+    {
+      "pa_index": "0810200",
+      "pitcher": "清水 昇",
+      "pitcher_id": "1800033",
+      "pitcher_hand": "右",
+      "batter": "石川 昂弥",
+      "batter_id": "1900037",
+      "batter_hand": "右",
+      "seq": "2",
+      "pitchNo": "2",
+      "pitchType": "ストレート",
+      "speed": "-",
+      "result": "二直",
+      "top": 36.36,
+      "left": 13.68
+    }
+  ]
+}
