@@ -1,0 +1,56 @@
+{
+  "game_id": "2021039395",
+  "metadata": {
+    "date_jp": "2026年9月8日",
+    "matchup": "福岡ソフトバンクホークスvs北海道日本ハムファイターズ"
+  },
+  "statline": {
+    "player": "進藤 勇也",
+    "era": "0.00",
+    "innings": "0.1",
+    "pitches": "2",
+    "batters": "1",
+    "hits": "0",
+    "hr": "0",
+    "k": "0",
+    "bb": "0",
+    "hbp": "0",
+    "balk": "0",
+    "runs": "0",
+    "er": "0"
+  },
+  "pitches": [
+    {
+      "pa_index": "0821400",
+      "pitcher": "進藤 勇也",
+      "pitcher_id": "1950486",
+      "pitcher_hand": "右",
+      "batter": "柳町 達",
+      "batter_id": "1900104",
+      "batter_hand": "左",
+      "seq": "1",
+      "pitchNo": "1",
+      "pitchType": "ストレート",
+      "speed": "142km/h",
+      "result": "見逃し",
+      "top": 39.24,
+      "left": 18.0
+    },
+    {
+      "pa_index": "0821400",
+      "pitcher": "進藤 勇也",
+      "pitcher_id": "1950486",
+      "pitcher_hand": "右",
+      "batter": "柳町 達",
+      "batter_id": "1900104",
+      "batter_hand": "左",
+      "seq": "2",
+      "pitchNo": "2",
+      "pitchType": "ストレート",
+      "speed": "-",
+      "result": "二ゴロ",
+      "top": 41.4,
+      "left": 33.12
+    }
+  ]
+}

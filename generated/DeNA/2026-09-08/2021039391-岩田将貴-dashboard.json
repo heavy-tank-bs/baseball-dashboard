@@ -1,0 +1,56 @@
+{
+  "game_id": "2021039391",
+  "metadata": {
+    "date_jp": "2026年9月8日",
+    "matchup": "横浜DeNAベイスターズvs東京ヤクルトスワローズ"
+  },
+  "statline": {
+    "player": "岩田 将貴",
+    "era": "1.96",
+    "innings": "0.1",
+    "pitches": "2",
+    "batters": "1",
+    "hits": "0",
+    "hr": "0",
+    "k": "0",
+    "bb": "0",
+    "hbp": "0",
+    "balk": "0",
+    "runs": "0",
+    "er": "0"
+  },
+  "pitches": [
+    {
+      "pa_index": "0910700",
+      "pitcher": "岩田 将貴",
+      "pitcher_id": "2000059",
+      "pitcher_hand": "左",
+      "batter": "西村 瑠伊斗",
+      "batter_id": "2102997",
+      "batter_hand": "左",
+      "seq": "1",
+      "pitchNo": "1",
+      "pitchType": "ストレート",
+      "speed": "136km/h",
+      "result": "見逃し",
+      "top": 43.92,
+      "left": 37.44
+    },
+    {
+      "pa_index": "0910700",
+      "pitcher": "岩田 将貴",
+      "pitcher_id": "2000059",
+      "pitcher_hand": "左",
+      "batter": "西村 瑠伊斗",
+      "batter_id": "2102997",
+      "batter_hand": "左",
+      "seq": "2",
+      "pitchNo": "2",
+      "pitchType": "スライダー",
+      "speed": "120km/h",
+      "result": "中飛 [後ろ向きにキャッチ]",
+      "top": 15.12,
+      "left": 17.28
+    }
+  ]
+}

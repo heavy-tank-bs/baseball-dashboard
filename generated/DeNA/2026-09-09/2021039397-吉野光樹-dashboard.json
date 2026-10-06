@@ -1,0 +1,88 @@
+{
+  "game_id": "2021039397",
+  "metadata": {
+    "date_jp": "2026年9月9日",
+    "matchup": "横浜DeNAベイスターズvs東京ヤクルトスワローズ"
+  },
+  "statline": {
+    "player": "吉野 光樹",
+    "era": "3.00",
+    "innings": "1",
+    "pitches": "4",
+    "batters": "1",
+    "hits": "0",
+    "hr": "0",
+    "k": "0",
+    "bb": "0",
+    "hbp": "0",
+    "balk": "0",
+    "runs": "0",
+    "er": "0"
+  },
+  "pitches": [
+    {
+      "pa_index": "0610301",
+      "pitcher": "吉野 光樹",
+      "pitcher_id": "2105707",
+      "pitcher_hand": "右",
+      "batter": "内山 壮真",
+      "batter_id": "2000026",
+      "batter_hand": "右",
+      "seq": "1",
+      "pitchNo": "1",
+      "pitchType": "ストレート",
+      "speed": "148km/h",
+      "result": "空振り [セーフティバント、バント空振り]",
+      "top": 33.839999999999996,
+      "left": 23.04
+    },
+    {
+      "pa_index": "0610301",
+      "pitcher": "吉野 光樹",
+      "pitcher_id": "2105707",
+      "pitcher_hand": "右",
+      "batter": "内山 壮真",
+      "batter_id": "2000026",
+      "batter_hand": "右",
+      "seq": "2",
+      "pitchNo": "2",
+      "pitchType": "ストレート",
+      "speed": "148km/h",
+      "result": "見逃し",
+      "top": 46.8,
+      "left": 21.599999999999998
+    },
+    {
+      "pa_index": "0610301",
+      "pitcher": "吉野 光樹",
+      "pitcher_id": "2105707",
+      "pitcher_hand": "右",
+      "batter": "内山 壮真",
+      "batter_id": "2000026",
+      "batter_hand": "右",
+      "seq": "3",
+      "pitchNo": "3",
+      "pitchType": "フォーク",
+      "speed": "136km/h",
+      "result": "ファウル",
+      "top": 56.16,
+      "left": 24.84
+    },
+    {
+      "pa_index": "0610301",
+      "pitcher": "吉野 光樹",
+      "pitcher_id": "2105707",
+      "pitcher_hand": "右",
+      "batter": "内山 壮真",
+      "batter_id": "2000026",
+      "batter_hand": "右",
+      "seq": "4",
+      "pitchNo": "4",
+      "pitchType": "ストレート",
+      "speed": "146km/h",
+      "result": "遊併打 [高めのつり球を要求、好リリーフ]",
+      "top": 23.4,
+      "left": 24.48
+    }
+  ]
+}
