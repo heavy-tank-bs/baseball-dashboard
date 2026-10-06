@@ -1,0 +1,88 @@
+{
+  "game_id": "2021051119",
+  "metadata": {
+    "date_jp": "2026年10月5日",
+    "matchup": "千葉ロッテマリーンズvs埼玉西武ライオンズ"
+  },
+  "statline": {
+    "player": "八木 彬",
+    "era": "2.11",
+    "innings": "0.2",
+    "pitches": "4",
+    "batters": "2",
+    "hits": "0",
+    "hr": "0",
+    "k": "0",
+    "bb": "0",
+    "hbp": "0",
+    "balk": "0",
+    "runs": "0",
+    "er": "0"
+  },
+  "pitches": [
+    {
+      "pa_index": "0810702",
+      "pitcher": "八木 彬",
+      "pitcher_id": "1450608",
+      "pitcher_hand": "右",
+      "batter": "ネビン",
+      "batter_id": "2101047",
+      "batter_hand": "右",
+      "seq": "1",
+      "pitchNo": "2",
+      "pitchType": "ツーシーム",
+      "speed": "150km/h",
+      "result": "見逃し",
+      "top": 45.0,
+      "left": 15.479999999999999
+    },
+    {
+      "pa_index": "0810702",
+      "pitcher": "八木 彬",
+      "pitcher_id": "1450608",
+      "pitcher_hand": "右",
+      "batter": "ネビン",
+      "batter_id": "2101047",
+      "batter_hand": "右",
+      "seq": "2",
+      "pitchNo": "3",
+      "pitchType": "フォーク",
+      "speed": "140km/h",
+      "result": "ボール [ワンバウンド]",
+      "top": 64.8,
+      "left": 3.2399999999999998
+    },
+    {
+      "pa_index": "0810702",
+      "pitcher": "八木 彬",
+      "pitcher_id": "1450608",
+      "pitcher_hand": "右",
+      "batter": "ネビン",
+      "batter_id": "2101047",
+      "batter_hand": "右",
+      "seq": "3",
+      "pitchNo": "4",
+      "pitchType": "ツーシーム",
+      "speed": "150km/h",
+      "result": "一ゴロ [詰り、バット折れる、ボテボテ、ライン際]",
+      "top": 11.879999999999999,
+      "left": 45.0
+    },
+    {
+      "pa_index": "0810600",
+      "pitcher": "八木 彬",
+      "pitcher_id": "1450608",
+      "pitcher_hand": "右",
+      "batter": "小島 大河",
+      "batter_id": "2050145",
+      "batter_hand": "左",
+      "seq": "1",
+      "pitchNo": "1",
+      "pitchType": "ツーシーム",
+      "speed": "150km/h",
+      "result": "遊飛 [インフィールドフライ]",
+      "top": 25.919999999999998,
+      "left": 37.44
+    }
+  ]
+}
