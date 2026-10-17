@@ -187,6 +187,8 @@ def classify_event(result: str) -> str:
         return "1B"
     if "犠牲フライ" in value or "犠飛" in value:
         return "SF"
+    if "送りバント失敗" in value:
+        return "OUT"
     if "送りバント" in value or "犠打" in value or "バントを成功" in value:
         return "SH"
     if "失策" in value or "エラー" in value or "悪送球" in value:
@@ -320,6 +322,9 @@ def parse_game_text(game: dict, html: str) -> list[dict]:
                     runs_before = half_runs
 
             final_text = text(summaries[final_index])
+            # An inning-ending runner out leaves the batter's PA unfinished.
+            if re.match(r"(?:[一二三]塁走者|ランナー).*?(?:盗塁|けん制|牽制).*?3アウト", final_text):
+                continue
             event_type = classify_event(final_text)
             event_runs = advance_score_from_text(final_text, home_team, away_team, current_score, batting_side)
             half_runs += event_runs

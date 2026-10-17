@@ -37,7 +37,7 @@
         "zSwing": 76.9,
         "oContact": 100.0,
         "chase": 21.1,
-        "chasePlus": 65.0
+        "chasePlus": 64.0
       },
       {
         "pitchType": "スライダー",
@@ -73,7 +73,7 @@
         "zSwing": 71.4,
         "oContact": 28.6,
         "chase": 50.0,
-        "chasePlus": 153.0
+        "chasePlus": 152.0
       },
       {
         "pitchType": "カットボール",
@@ -109,7 +109,7 @@
         "zSwing": 54.5,
         "oContact": 100.0,
         "chase": 37.5,
-        "chasePlus": 115.0
+        "chasePlus": 114.0
       },
       {
         "pitchType": "チェンジアップ",
@@ -3662,7 +3662,7 @@
       "チェンジアップ": "#C8A55A"
     },
     "metricBaselines": {
-      "chase": 32.6,
+      "chase": 32.9,
       "chaseScope": "league"
     }
   }

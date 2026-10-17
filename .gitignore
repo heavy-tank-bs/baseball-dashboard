@@ -9,6 +9,17 @@
 !/scripts/build_park_factors.py
 !/scripts/fetch_sportsnavi_game_context.py
 !/scripts/build_uniform_numbers.py
+!/scripts/audit_dashboard.py
+!/scripts/refresh_dashboard_stats.py
+!/scripts/rebuild_annual_totals.py
+!/scripts/test_transfer_aggregation.py
+!/scripts/test_transfer_selection.js
+!/scripts/dashboard_requirements.txt
+!/scripts/npb_boxscore_stats.py
+!/scripts/verify_annual_totals.py
+!/scripts/collect_final_games.py
+!/scripts/build_dashboard.py
+!/scripts/verify_final_games.py
 !/summary/
 !/summary/index.html
 !/summary/batter.html
@@ -32,9 +43,13 @@
 !/summary/sportsnavi_game_context_*.json
 !/summary/sportsnavi_woba_events_*.json
 !/generated/
+!/generated/**/
 !/generated/**/*.json
 !/generated/**/*.png
 !/docs/
+!/docs/coverage-2026.json
+!/docs/dashboard-maintenance.txt
+!/docs/aggregation-verification.json
 !/GITHUB_PAGES.md
 
 site/

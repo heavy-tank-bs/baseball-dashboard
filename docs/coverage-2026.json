@@ -1,0 +1,93 @@
+{
+  "scope": "2026 regular season",
+  "officialGames": 858,
+  "localGames": 858,
+  "missing": [],
+  "extra": [],
+  "teams": [
+    {
+      "team": "DeNA",
+      "official": 143,
+      "collected": 143,
+      "lastOfficial": "2026-10-04",
+      "lastCollected": "2026-10-04"
+    },
+    {
+      "team": "オリックス",
+      "official": 143,
+      "collected": 143,
+      "lastOfficial": "2026-10-03",
+      "lastCollected": "2026-10-03"
+    },
+    {
+      "team": "ソフトバンク",
+      "official": 143,
+      "collected": 143,
+      "lastOfficial": "2026-10-05",
+      "lastCollected": "2026-10-05"
+    },
+    {
+      "team": "ヤクルト",
+      "official": 143,
+      "collected": 143,
+      "lastOfficial": "2026-10-08",
+      "lastCollected": "2026-10-08"
+    },
+    {
+      "team": "ロッテ",
+      "official": 143,
+      "collected": 143,
+      "lastOfficial": "2026-10-06",
+      "lastCollected": "2026-10-06"
+    },
+    {
+      "team": "中日",
+      "official": 143,
+      "collected": 143,
+      "lastOfficial": "2026-10-03",
+      "lastCollected": "2026-10-03"
+    },
+    {
+      "team": "巨人",
+      "official": 143,
+      "collected": 143,
+      "lastOfficial": "2026-10-03",
+      "lastCollected": "2026-10-03"
+    },
+    {
+      "team": "広島",
+      "official": 143,
+      "collected": 143,
+      "lastOfficial": "2026-10-07",
+      "lastCollected": "2026-10-07"
+    },
+    {
+      "team": "日本ハム",
+      "official": 143,
+      "collected": 143,
+      "lastOfficial": "2026-10-01",
+      "lastCollected": "2026-10-01"
+    },
+    {
+      "team": "東北楽天",
+      "official": 143,
+      "collected": 143,
+      "lastOfficial": "2026-10-05",
+      "lastCollected": "2026-10-05"
+    },
+    {
+      "team": "西武",
+      "official": 143,
+      "collected": 143,
+      "lastOfficial": "2026-10-06",
+      "lastCollected": "2026-10-06"
+    },
+    {
+      "team": "阪神",
+      "official": 143,
+      "collected": 143,
+      "lastOfficial": "2026-10-08",
+      "lastCollected": "2026-10-08"
+    }
+  ]
+}

@@ -1,0 +1,6977 @@
+{
+  "player_totals.json": {
+    "differences": [
+      {
+        "player": [
+          "2026",
+          "1300057"
+        ],
+        "metric": "games",
+        "before": 17,
+        "after": 18
+      },
+      {
+        "player": [
+          "2026",
+          "1300057"
+        ],
+        "metric": "holds",
+        "before": 5,
+        "after": 6
+      },
+      {
+        "player": [
+          "2026",
+          "1300057"
+        ],
+        "metric": "inningsOuts",
+        "before": 64,
+        "after": 67
+      },
+      {
+        "player": [
+          "2026",
+          "1300057"
+        ],
+        "metric": "batters",
+        "before": 91,
+        "after": 95
+      },
+      {
+        "player": [
+          "2026",
+          "1300057"
+        ],
+        "metric": "pitches",
+        "before": 357,
+        "after": 372
+      },
+      {
+        "player": [
+          "2026",
+          "1300057"
+        ],
+        "metric": "walks",
+        "before": 8,
+        "after": 9
+      },
+      {
+        "player": [
+          "2026",
+          "1300075"
+        ],
+        "metric": "games",
+        "before": 48,
+        "after": 50
+      },
+      {
+        "player": [
+          "2026",
+          "1300075"
+        ],
+        "metric": "holds",
+        "before": 18,
+        "after": 19
+      },
+      {
+        "player": [
+          "2026",
+          "1300075"
+        ],
+        "metric": "inningsOuts",
+        "before": 134,
+        "after": 138
+      },
+      {
+        "player": [
+          "2026",
+          "1300075"
+        ],
+        "metric": "batters",
+        "before": 181,
+        "after": 187
+      },
+      {
+        "player": [
+          "2026",
+          "1300075"
+        ],
+        "metric": "pitches",
+        "before": 683,
+        "after": 701
+      },
+      {
+        "player": [
+          "2026",
+          "1300075"
+        ],
+        "metric": "hits",
+        "before": 39,
+        "after": 40
+      },
+      {
+        "player": [
+          "2026",
+          "1300075"
+        ],
+        "metric": "walks",
+        "before": 15,
+        "after": 16
+      },
+      {
+        "player": [
+          "2026",
+          "1500042"
+        ],
+        "metric": "games",
+        "before": 18,
+        "after": 19
+      },
+      {
+        "player": [
+          "2026",
+          "1500042"
+        ],
+        "metric": "holds",
+        "before": 1,
+        "after": 2
+      },
+      {
+        "player": [
+          "2026",
+          "1500042"
+        ],
+        "metric": "inningsOuts",
+        "before": 281,
+        "after": 287
+      },
+      {
+        "player": [
+          "2026",
+          "1500042"
+        ],
+        "metric": "batters",
+        "before": 413,
+        "after": 420
+      },
+      {
+        "player": [
+          "2026",
+          "1500042"
+        ],
+        "metric": "pitches",
+        "before": 1660,
+        "after": 1685
+      },
+      {
+        "player": [
+          "2026",
+          "1500042"
+        ],
+        "metric": "hits",
+        "before": 99,
+        "after": 100
+      },
+      {
+        "player": [
+          "2026",
+          "1600075"
+        ],
+        "metric": "games",
+        "before": 50,
+        "after": 51
+      },
+      {
+        "player": [
+          "2026",
+          "1600075"
+        ],
+        "metric": "inningsOuts",
+        "before": 141,
+        "after": 144
+      },
+      {
+        "player": [
+          "2026",
+          "1600075"
+        ],
+        "metric": "batters",
+        "before": 201,
+        "after": 204
+      },
+      {
+        "player": [
+          "2026",
+          "1600075"
+        ],
+        "metric": "pitches",
+        "before": 734,
+        "after": 749
+      },
+      {
+        "player": [
+          "2026",
+          "1600075"
+        ],
+        "metric": "strikeouts",
+        "before": 30,
+        "after": 33
+      },
+      {
+        "player": [
+          "2026",
+          "1700072"
+        ],
+        "metric": "games",
+        "before": 59,
+        "after": 60
+      },
+      {
+        "player": [
+          "2026",
+          "1700072"
+        ],
+        "metric": "holds",
+        "before": 22,
+        "after": 23
+      },
+      {
+        "player": [
+          "2026",
+          "1700072"
+        ],
+        "metric": "inningsOuts",
+        "before": 176,
+        "after": 179
+      },
+      {
+        "player": [
+          "2026",
+          "1700072"
+        ],
+        "metric": "batters",
+        "before": 235,
+        "after": 241
+      },
+      {
+        "player": [
+          "2026",
+          "1700072"
+        ],
+        "metric": "pitches",
+        "before": 973,
+        "after": 995
+      },
+      {
+        "player": [
+          "2026",
+          "1700072"
+        ],
+        "metric": "hits",
+        "before": 44,
+        "after": 46
+      },
+      {
+        "player": [
+          "2026",
+          "1700072"
+        ],
+        "metric": "walks",
+        "before": 16,
+        "after": 17
+      },
+      {
+        "player": [
+          "2026",
+          "1900046"
+        ],
+        "metric": "games",
+        "before": 45,
+        "after": 46
+      },
+      {
+        "player": [
+          "2026",
+          "1900046"
+        ],
+        "metric": "holds",
+        "before": 10,
+        "after": 11
+      },
+      {
+        "player": [
+          "2026",
+          "1900046"
+        ],
+        "metric": "inningsOuts",
+        "before": 127,
+        "after": 130
+      },
+      {
+        "player": [
+          "2026",
+          "1900046"
+        ],
+        "metric": "batters",
+        "before": 179,
+        "after": 182
+      },
+      {
+        "player": [
+          "2026",
+          "1900046"
+        ],
+        "metric": "pitches",
+        "before": 672,
+        "after": 686
+      },
+      {
+        "player": [
+          "2026",
+          "1900057"
+        ],
+        "metric": "games",
+        "before": 15,
+        "after": 16
+      },
+      {
+        "player": [
+          "2026",
+          "1900057"
+        ],
+        "metric": "inningsOuts",
+        "before": 235,
+        "after": 256
+      },
+      {
+        "player": [
+          "2026",
+          "1900057"
+        ],
+        "metric": "batters",
+        "before": 316,
+        "after": 341
+      },
+      {
+        "player": [
+          "2026",
+          "1900057"
+        ],
+        "metric": "pitches",
+        "before": 1210,
+        "after": 1311
+      },
+      {
+        "player": [
+          "2026",
+          "1900057"
+        ],
+        "metric": "hits",
+        "before": 69,
+        "after": 74
+      },
+      {
+        "player": [
+          "2026",
+          "1900057"
+        ],
+        "metric": "strikeouts",
+        "before": 56,
+        "after": 61
+      },
+      {
+        "player": [
+          "2026",
+          "1900057"
+        ],
+        "metric": "walks",
+        "before": 16,
+        "after": 17
+      },
+      {
+        "player": [
+          "2026",
+          "1900057"
+        ],
+        "metric": "runs",
+        "before": 27,
+        "after": 28
+      },
+      {
+        "player": [
+          "2026",
+          "1900057"
+        ],
+        "metric": "earnedRuns",
+        "before": 24,
+        "after": 25
+      },
+      {
+        "player": [
+          "2026",
+          "1950429"
+        ],
+        "metric": "games",
+        "before": 55,
+        "after": 56
+      },
+      {
+        "player": [
+          "2026",
+          "1950429"
+        ],
+        "metric": "holds",
+        "before": 23,
+        "after": 24
+      },
+      {
+        "player": [
+          "2026",
+          "1950429"
+        ],
+        "metric": "inningsOuts",
+        "before": 150,
+        "after": 153
+      },
+      {
+        "player": [
+          "2026",
+          "1950429"
+        ],
+        "metric": "batters",
+        "before": 204,
+        "after": 208
+      },
+      {
+        "player": [
+          "2026",
+          "1950429"
+        ],
+        "metric": "pitches",
+        "before": 838,
+        "after": 855
+      },
+      {
+        "player": [
+          "2026",
+          "1950429"
+        ],
+        "metric": "walks",
+        "before": 16,
+        "after": 17
+      },
+      {
+        "player": [
+          "2026",
+          "2000058"
+        ],
+        "metric": "games",
+        "before": 11,
+        "after": 12
+      },
+      {
+        "player": [
+          "2026",
+          "2000058"
+        ],
+        "metric": "inningsOuts",
+        "before": 32,
+        "after": 35
+      },
+      {
+        "player": [
+          "2026",
+          "2000058"
+        ],
+        "metric": "batters",
+        "before": 45,
+        "after": 48
+      },
+      {
+        "player": [
+          "2026",
+          "2000058"
+        ],
+        "metric": "pitches",
+        "before": 197,
+        "after": 210
+      },
+      {
+        "player": [
+          "2026",
+          "2000058"
+        ],
+        "metric": "strikeouts",
+        "before": 13,
+        "after": 15
+      },
+      {
+        "player": [
+          "2026",
+          "2103707"
+        ],
+        "metric": "games",
+        "before": 23,
+        "after": 24
+      },
+      {
+        "player": [
+          "2026",
+          "2103707"
+        ],
+        "metric": "inningsOuts",
+        "before": 60,
+        "after": 66
+      },
+      {
+        "player": [
+          "2026",
+          "2103707"
+        ],
+        "metric": "batters",
+        "before": 94,
+        "after": 100
+      },
+      {
+        "player": [
+          "2026",
+          "2103707"
+        ],
+        "metric": "pitches",
+        "before": 364,
+        "after": 389
+      },
+      {
+        "player": [
+          "2026",
+          "2103707"
+        ],
+        "metric": "strikeouts",
+        "before": 12,
+        "after": 15
+      },
+      {
+        "player": [
+          "2026",
+          "2103848"
+        ],
+        "metric": "games",
+        "before": 12,
+        "after": 13
+      },
+      {
+        "player": [
+          "2026",
+          "2103848"
+        ],
+        "metric": "wins",
+        "before": 0,
+        "after": 1
+      },
+      {
+        "player": [
+          "2026",
+          "2103848"
+        ],
+        "metric": "inningsOuts",
+        "before": 36,
+        "after": 39
+      },
+      {
+        "player": [
+          "2026",
+          "2103848"
+        ],
+        "metric": "batters",
+        "before": 43,
+        "after": 46
+      },
+      {
+        "player": [
+          "2026",
+          "2103848"
+        ],
+        "metric": "pitches",
+        "before": 176,
+        "after": 185
+      },
+      {
+        "player": [
+          "2026",
+          "2103848"
+        ],
+        "metric": "strikeouts",
+        "before": 16,
+        "after": 17
+      },
+      {
+        "player": [
+          "2026",
+          "2105626"
+        ],
+        "metric": "games",
+        "before": 42,
+        "after": 43
+      },
+      {
+        "player": [
+          "2026",
+          "2105626"
+        ],
+        "metric": "inningsOuts",
+        "before": 120,
+        "after": 123
+      },
+      {
+        "player": [
+          "2026",
+          "2105626"
+        ],
+        "metric": "batters",
+        "before": 166,
+        "after": 170
+      },
+      {
+        "player": [
+          "2026",
+          "2105626"
+        ],
+        "metric": "pitches",
+        "before": 661,
+        "after": 676
+      },
+      {
+        "player": [
+          "2026",
+          "2105626"
+        ],
+        "metric": "strikeouts",
+        "before": 30,
+        "after": 31
+      },
+      {
+        "player": [
+          "2026",
+          "2105626"
+        ],
+        "metric": "walks",
+        "before": 17,
+        "after": 18
+      },
+      {
+        "player": [
+          "2026",
+          "2106233"
+        ],
+        "metric": "games",
+        "before": 13,
+        "after": 14
+      },
+      {
+        "player": [
+          "2026",
+          "2106233"
+        ],
+        "metric": "inningsOuts",
+        "before": 53,
+        "after": 59
+      },
+      {
+        "player": [
+          "2026",
+          "2106233"
+        ],
+        "metric": "batters",
+        "before": 80,
+        "after": 91
+      },
+      {
+        "player": [
+          "2026",
+          "2106233"
+        ],
+        "metric": "pitches",
+        "before": 341,
+        "after": 390
+      },
+      {
+        "player": [
+          "2026",
+          "2106233"
+        ],
+        "metric": "hits",
+        "before": 18,
+        "after": 22
+      },
+      {
+        "player": [
+          "2026",
+          "2106233"
+        ],
+        "metric": "strikeouts",
+        "before": 21,
+        "after": 22
+      },
+      {
+        "player": [
+          "2026",
+          "2106233"
+        ],
+        "metric": "walks",
+        "before": 7,
+        "after": 9
+      },
+      {
+        "player": [
+          "2026",
+          "2106233"
+        ],
+        "metric": "runs",
+        "before": 9,
+        "after": 10
+      },
+      {
+        "player": [
+          "2026",
+          "2106233"
+        ],
+        "metric": "earnedRuns",
+        "before": 9,
+        "after": 10
+      },
+      {
+        "player": [
+          "2026",
+          "2108124"
+        ],
+        "metric": "games",
+        "before": 21,
+        "after": 22
+      },
+      {
+        "player": [
+          "2026",
+          "2108124"
+        ],
+        "metric": "inningsOuts",
+        "before": 64,
+        "after": 69
+      },
+      {
+        "player": [
+          "2026",
+          "2108124"
+        ],
+        "metric": "batters",
+        "before": 84,
+        "after": 88
+      },
+      {
+        "player": [
+          "2026",
+          "2108124"
+        ],
+        "metric": "pitches",
+        "before": 337,
+        "after": 346
+      },
+      {
+        "player": [
+          "2026",
+          "2108124"
+        ],
+        "metric": "hits",
+        "before": 16,
+        "after": 17
+      },
+      {
+        "player": [
+          "2026",
+          "2108238"
+        ],
+        "metric": "games",
+        "before": 23,
+        "after": 24
+      },
+      {
+        "player": [
+          "2026",
+          "2108238"
+        ],
+        "metric": "losses",
+        "before": 6,
+        "after": 7
+      },
+      {
+        "player": [
+          "2026",
+          "2108238"
+        ],
+        "metric": "inningsOuts",
+        "before": 169,
+        "after": 170
+      },
+      {
+        "player": [
+          "2026",
+          "2108238"
+        ],
+        "metric": "batters",
+        "before": 245,
+        "after": 249
+      },
+      {
+        "player": [
+          "2026",
+          "2108238"
+        ],
+        "metric": "pitches",
+        "before": 988,
+        "after": 1006
+      },
+      {
+        "player": [
+          "2026",
+          "2108238"
+        ],
+        "metric": "hits",
+        "before": 52,
+        "after": 53
+      },
+      {
+        "player": [
+          "2026",
+          "2108238"
+        ],
+        "metric": "walks",
+        "before": 21,
+        "after": 23
+      },
+      {
+        "player": [
+          "2026",
+          "2108238"
+        ],
+        "metric": "runs",
+        "before": 24,
+        "after": 25
+      },
+      {
+        "player": [
+          "2026",
+          "2108238"
+        ],
+        "metric": "earnedRuns",
+        "before": 23,
+        "after": 24
+      },
+      {
+        "player": [
+          "2026",
+          "2108545"
+        ],
+        "metric": "games",
+        "before": 18,
+        "after": 19
+      },
+      {
+        "player": [
+          "2026",
+          "2108545"
+        ],
+        "metric": "inningsOuts",
+        "before": 59,
+        "after": 61
+      },
+      {
+        "player": [
+          "2026",
+          "2108545"
+        ],
+        "metric": "batters",
+        "before": 79,
+        "after": 81
+      },
+      {
+        "player": [
+          "2026",
+          "2108545"
+        ],
+        "metric": "pitches",
+        "before": 304,
+        "after": 313
+      },
+      {
+        "player": [
+          "2026",
+          "2108545"
+        ],
+        "metric": "strikeouts",
+        "before": 22,
+        "after": 23
+      },
+      {
+        "player": [
+          "2026",
+          "2110265"
+        ],
+        "metric": "games",
+        "before": 8,
+        "after": 9
+      },
+      {
+        "player": [
+          "2026",
+          "2110265"
+        ],
+        "metric": "inningsOuts",
+        "before": 105,
+        "after": 111
+      },
+      {
+        "player": [
+          "2026",
+          "2110265"
+        ],
+        "metric": "batters",
+        "before": 156,
+        "after": 165
+      },
+      {
+        "player": [
+          "2026",
+          "2110265"
+        ],
+        "metric": "pitches",
+        "before": 631,
+        "after": 668
+      },
+      {
+        "player": [
+          "2026",
+          "2110265"
+        ],
+        "metric": "hits",
+        "before": 44,
+        "after": 48
+      },
+      {
+        "player": [
+          "2026",
+          "2110265"
+        ],
+        "metric": "strikeouts",
+        "before": 33,
+        "after": 34
+      },
+      {
+        "player": [
+          "2026",
+          "2110265"
+        ],
+        "metric": "runs",
+        "before": 20,
+        "after": 23
+      },
+      {
+        "player": [
+          "2026",
+          "2110265"
+        ],
+        "metric": "earnedRuns",
+        "before": 17,
+        "after": 20
+      },
+      {
+        "player": [
+          "2026",
+          "2112444"
+        ],
+        "metric": "games",
+        "before": 44,
+        "after": 45
+      },
+      {
+        "player": [
+          "2026",
+          "2112444"
+        ],
+        "metric": "holds",
+        "before": 15,
+        "after": 16
+      },
+      {
+        "player": [
+          "2026",
+          "2112444"
+        ],
+        "metric": "inningsOuts",
+        "before": 151,
+        "after": 154
+      },
+      {
+        "player": [
+          "2026",
+          "2112444"
+        ],
+        "metric": "batters",
+        "before": 212,
+        "after": 215
+      },
+      {
+        "player": [
+          "2026",
+          "2112444"
+        ],
+        "metric": "pitches",
+        "before": 899,
+        "after": 913
+      },
+      {
+        "player": [
+          "2026",
+          "2112444"
+        ],
+        "metric": "strikeouts",
+        "before": 51,
+        "after": 53
+      },
+      {
+        "player": [
+          "2026",
+          "2113273"
+        ],
+        "metric": "games",
+        "before": 3,
+        "after": 4
+      },
+      {
+        "player": [
+          "2026",
+          "2113273"
+        ],
+        "metric": "wins",
+        "before": 0,
+        "after": 1
+      },
+      {
+        "player": [
+          "2026",
+          "2113273"
+        ],
+        "metric": "inningsOuts",
+        "before": 12,
+        "after": 27
+      },
+      {
+        "player": [
+          "2026",
+          "2113273"
+        ],
+        "metric": "batters",
+        "before": 17,
+        "after": 36
+      },
+      {
+        "player": [
+          "2026",
+          "2113273"
+        ],
+        "metric": "pitches",
+        "before": 59,
+        "after": 144
+      },
+      {
+        "player": [
+          "2026",
+          "2113273"
+        ],
+        "metric": "hits",
+        "before": 4,
+        "after": 7
+      },
+      {
+        "player": [
+          "2026",
+          "2113273"
+        ],
+        "metric": "strikeouts",
+        "before": 5,
+        "after": 10
+      },
+      {
+        "player": [
+          "2026",
+          "2113273"
+        ],
+        "metric": "walks",
+        "before": 1,
+        "after": 3
+      },
+      {
+        "player": [
+          "2026",
+          "2117268"
+        ],
+        "metric": "games",
+        "before": 6,
+        "after": 7
+      },
+      {
+        "player": [
+          "2026",
+          "2117268"
+        ],
+        "metric": "losses",
+        "before": 2,
+        "after": 3
+      },
+      {
+        "player": [
+          "2026",
+          "2117268"
+        ],
+        "metric": "inningsOuts",
+        "before": 77,
+        "after": 92
+      },
+      {
+        "player": [
+          "2026",
+          "2117268"
+        ],
+        "metric": "batters",
+        "before": 111,
+        "after": 131
+      },
+      {
+        "player": [
+          "2026",
+          "2117268"
+        ],
+        "metric": "pitches",
+        "before": 447,
+        "after": 525
+      },
+      {
+        "player": [
+          "2026",
+          "2117268"
+        ],
+        "metric": "hits",
+        "before": 27,
+        "after": 29
+      },
+      {
+        "player": [
+          "2026",
+          "2117268"
+        ],
+        "metric": "strikeouts",
+        "before": 25,
+        "after": 34
+      },
+      {
+        "player": [
+          "2026",
+          "2117268"
+        ],
+        "metric": "walks",
+        "before": 9,
+        "after": 11
+      },
+      {
+        "player": [
+          "2026",
+          "2117268"
+        ],
+        "metric": "hitByPitch",
+        "before": 0,
+        "after": 1
+      },
+      {
+        "player": [
+          "2026",
+          "2117268"
+        ],
+        "metric": "runs",
+        "before": 12,
+        "after": 13
+      },
+      {
+        "player": [
+          "2026",
+          "2117268"
+        ],
+        "metric": "earnedRuns",
+        "before": 12,
+        "after": 13
+      },
+      {
+        "player": [
+          "2026",
+          "900062"
+        ],
+        "metric": "games",
+        "before": 8,
+        "after": 9
+      },
+      {
+        "player": [
+          "2026",
+          "900062"
+        ],
+        "metric": "inningsOuts",
+        "before": 115,
+        "after": 119
+      },
+      {
+        "player": [
+          "2026",
+          "900062"
+        ],
+        "metric": "batters",
+        "before": 164,
+        "after": 168
+      },
+      {
+        "player": [
+          "2026",
+          "900062"
+        ],
+        "metric": "pitches",
+        "before": 622,
+        "after": 637
+      },
+      {
+        "player": [
+          "2026",
+          "900062"
+        ],
+        "metric": "strikeouts",
+        "before": 22,
+        "after": 25
+      }
+    ],
+    "differencesExcludingAddedGames": [],
+    "transfers": [
+      {
+        "player": "尾形 崇斗",
+        "team": "DeNA",
+        "league": "セ",
+        "games": 18,
+        "innings": "87.2",
+        "atBats": 316,
+        "hits": 64,
+        "wins": 7,
+        "losses": 3
+      },
+      {
+        "player": "尾形 崇斗",
+        "team": "ソフトバンク",
+        "league": "パ",
+        "games": 10,
+        "innings": "12",
+        "atBats": 42,
+        "hits": 8,
+        "wins": 0,
+        "losses": 2
+      }
+    ]
+  },
+  "batter_totals.json": {
+    "differences": [
+      {
+        "player": [
+          "2026",
+          "1000128"
+        ],
+        "metric": "plateAppearances",
+        "before": 494,
+        "after": 495
+      },
+      {
+        "player": [
+          "2026",
+          "1000128"
+        ],
+        "metric": "atBats",
+        "before": 459,
+        "after": 460
+      },
+      {
+        "player": [
+          "2026",
+          "1000128"
+        ],
+        "metric": "runs",
+        "before": 56,
+        "after": 57
+      },
+      {
+        "player": [
+          "2026",
+          "1000128"
+        ],
+        "metric": "hits",
+        "before": 138,
+        "after": 139
+      },
+      {
+        "player": [
+          "2026",
+          "1000132"
+        ],
+        "metric": "games",
+        "before": 29,
+        "after": 30
+      },
+      {
+        "player": [
+          "2026",
+          "1000132"
+        ],
+        "metric": "plateAppearances",
+        "before": 57,
+        "after": 60
+      },
+      {
+        "player": [
+          "2026",
+          "1000132"
+        ],
+        "metric": "atBats",
+        "before": 54,
+        "after": 56
+      },
+      {
+        "player": [
+          "2026",
+          "1000132"
+        ],
+        "metric": "runs",
+        "before": 4,
+        "after": 5
+      },
+      {
+        "player": [
+          "2026",
+          "1000132"
+        ],
+        "metric": "walks",
+        "before": 3,
+        "after": 4
+      },
+      {
+        "player": [
+          "2026",
+          "1000132"
+        ],
+        "metric": "strikeouts",
+        "before": 7,
+        "after": 8
+      },
+      {
+        "player": [
+          "2026",
+          "1000175"
+        ],
+        "metric": "runs",
+        "before": 54,
+        "after": 55
+      },
+      {
+        "player": [
+          "2026",
+          "1100082"
+        ],
+        "metric": "games",
+        "before": 132,
+        "after": 133
+      },
+      {
+        "player": [
+          "2026",
+          "1100082"
+        ],
+        "metric": "plateAppearances",
+        "before": 537,
+        "after": 540
+      },
+      {
+        "player": [
+          "2026",
+          "1100082"
+        ],
+        "metric": "atBats",
+        "before": 463,
+        "after": 466
+      },
+      {
+        "player": [
+          "2026",
+          "1100082"
+        ],
+        "metric": "strikeouts",
+        "before": 101,
+        "after": 103
+      },
+      {
+        "player": [
+          "2026",
+          "1100097"
+        ],
+        "metric": "plateAppearances",
+        "before": 600,
+        "after": 601
+      },
+      {
+        "player": [
+          "2026",
+          "1100097"
+        ],
+        "metric": "atBats",
+        "before": 488,
+        "after": 489
+      },
+      {
+        "player": [
+          "2026",
+          "1100097"
+        ],
+        "metric": "runs",
+        "before": 94,
+        "after": 95
+      },
+      {
+        "player": [
+          "2026",
+          "1200100"
+        ],
+        "metric": "games",
+        "before": 52,
+        "after": 54
+      },
+      {
+        "player": [
+          "2026",
+          "1200100"
+        ],
+        "metric": "plateAppearances",
+        "before": 146,
+        "after": 149
+      },
+      {
+        "player": [
+          "2026",
+          "1200100"
+        ],
+        "metric": "atBats",
+        "before": 128,
+        "after": 131
+      },
+      {
+        "player": [
+          "2026",
+          "1200100"
+        ],
+        "metric": "hits",
+        "before": 28,
+        "after": 29
+      },
+      {
+        "player": [
+          "2026",
+          "1200100"
+        ],
+        "metric": "strikeouts",
+        "before": 27,
+        "after": 28
+      },
+      {
+        "player": [
+          "2026",
+          "1300057"
+        ],
+        "metric": "games",
+        "before": 17,
+        "after": 18
+      },
+      {
+        "player": [
+          "2026",
+          "1300073"
+        ],
+        "metric": "games",
+        "before": 25,
+        "after": 27
+      },
+      {
+        "player": [
+          "2026",
+          "1300073"
+        ],
+        "metric": "plateAppearances",
+        "before": 76,
+        "after": 83
+      },
+      {
+        "player": [
+          "2026",
+          "1300073"
+        ],
+        "metric": "atBats",
+        "before": 67,
+        "after": 73
+      },
+      {
+        "player": [
+          "2026",
+          "1300073"
+        ],
+        "metric": "hits",
+        "before": 13,
+        "after": 16
+      },
+      {
+        "player": [
+          "2026",
+          "1300073"
+        ],
+        "metric": "runsBattedIn",
+        "before": 3,
+        "after": 4
+      },
+      {
+        "player": [
+          "2026",
+          "1300073"
+        ],
+        "metric": "walks",
+        "before": 3,
+        "after": 4
+      },
+      {
+        "player": [
+          "2026",
+          "1300073"
+        ],
+        "metric": "steals",
+        "before": 1,
+        "after": 2
+      },
+      {
+        "player": [
+          "2026",
+          "1300073"
+        ],
+        "metric": "strikeouts",
+        "before": 20,
+        "after": 22
+      },
+      {
+        "player": [
+          "2026",
+          "1300075"
+        ],
+        "metric": "games",
+        "before": 45,
+        "after": 47
+      },
+      {
+        "player": [
+          "2026",
+          "1300100"
+        ],
+        "metric": "games",
+        "before": 65,
+        "after": 66
+      },
+      {
+        "player": [
+          "2026",
+          "1300100"
+        ],
+        "metric": "plateAppearances",
+        "before": 250,
+        "after": 252
+      },
+      {
+        "player": [
+          "2026",
+          "1300100"
+        ],
+        "metric": "atBats",
+        "before": 224,
+        "after": 226
+      },
+      {
+        "player": [
+          "2026",
+          "1300100"
+        ],
+        "metric": "runs",
+        "before": 24,
+        "after": 25
+      },
+      {
+        "player": [
+          "2026",
+          "1300100"
+        ],
+        "metric": "hits",
+        "before": 54,
+        "after": 55
+      },
+      {
+        "player": [
+          "2026",
+          "1300101"
+        ],
+        "metric": "plateAppearances",
+        "before": 211,
+        "after": 212
+      },
+      {
+        "player": [
+          "2026",
+          "1300101"
+        ],
+        "metric": "atBats",
+        "before": 179,
+        "after": 180
+      },
+      {
+        "player": [
+          "2026",
+          "1400127"
+        ],
+        "metric": "plateAppearances",
+        "before": 627,
+        "after": 628
+      },
+      {
+        "player": [
+          "2026",
+          "1400127"
+        ],
+        "metric": "atBats",
+        "before": 538,
+        "after": 539
+      },
+      {
+        "player": [
+          "2026",
+          "1400127"
+        ],
+        "metric": "runs",
+        "before": 86,
+        "after": 88
+      },
+      {
+        "player": [
+          "2026",
+          "1400127"
+        ],
+        "metric": "hits",
+        "before": 145,
+        "after": 146
+      },
+      {
+        "player": [
+          "2026",
+          "1400127"
+        ],
+        "metric": "homeRuns",
+        "before": 39,
+        "after": 40
+      },
+      {
+        "player": [
+          "2026",
+          "1400127"
+        ],
+        "metric": "runsBattedIn",
+        "before": 115,
+        "after": 118
+      },
+      {
+        "player": [
+          "2026",
+          "1400172"
+        ],
+        "metric": "games",
+        "before": 28,
+        "after": 29
+      },
+      {
+        "player": [
+          "2026",
+          "1400172"
+        ],
+        "metric": "runs",
+        "before": 8,
+        "after": 9
+      },
+      {
+        "player": [
+          "2026",
+          "1400172"
+        ],
+        "metric": "steals",
+        "before": 6,
+        "after": 7
+      },
+      {
+        "player": [
+          "2026",
+          "1400196"
+        ],
+        "metric": "plateAppearances",
+        "before": 540,
+        "after": 541
+      },
+      {
+        "player": [
+          "2026",
+          "1400196"
+        ],
+        "metric": "atBats",
+        "before": 464,
+        "after": 465
+      },
+      {
+        "player": [
+          "2026",
+          "1500042"
+        ],
+        "metric": "games",
+        "before": 17,
+        "after": 18
+      },
+      {
+        "player": [
+          "2026",
+          "1500050"
+        ],
+        "metric": "plateAppearances",
+        "before": 79,
+        "after": 80
+      },
+      {
+        "player": [
+          "2026",
+          "1500050"
+        ],
+        "metric": "atBats",
+        "before": 68,
+        "after": 69
+      },
+      {
+        "player": [
+          "2026",
+          "1500063"
+        ],
+        "metric": "plateAppearances",
+        "before": 14,
+        "after": 15
+      },
+      {
+        "player": [
+          "2026",
+          "1500063"
+        ],
+        "metric": "atBats",
+        "before": 10,
+        "after": 11
+      },
+      {
+        "player": [
+          "2026",
+          "1500063"
+        ],
+        "metric": "strikeouts",
+        "before": 1,
+        "after": 2
+      },
+      {
+        "player": [
+          "2026",
+          "1500064"
+        ],
+        "metric": "games",
+        "before": 41,
+        "after": 42
+      },
+      {
+        "player": [
+          "2026",
+          "1500064"
+        ],
+        "metric": "plateAppearances",
+        "before": 109,
+        "after": 110
+      },
+      {
+        "player": [
+          "2026",
+          "1500064"
+        ],
+        "metric": "atBats",
+        "before": 101,
+        "after": 102
+      },
+      {
+        "player": [
+          "2026",
+          "1500091"
+        ],
+        "metric": "games",
+        "before": 77,
+        "after": 78
+      },
+      {
+        "player": [
+          "2026",
+          "1500091"
+        ],
+        "metric": "plateAppearances",
+        "before": 201,
+        "after": 202
+      },
+      {
+        "player": [
+          "2026",
+          "1500091"
+        ],
+        "metric": "atBats",
+        "before": 182,
+        "after": 183
+      },
+      {
+        "player": [
+          "2026",
+          "1500091"
+        ],
+        "metric": "hits",
+        "before": 42,
+        "after": 43
+      },
+      {
+        "player": [
+          "2026",
+          "1500096"
+        ],
+        "metric": "plateAppearances",
+        "before": 611,
+        "after": 612
+      },
+      {
+        "player": [
+          "2026",
+          "1500096"
+        ],
+        "metric": "atBats",
+        "before": 572,
+        "after": 573
+      },
+      {
+        "player": [
+          "2026",
+          "1500096"
+        ],
+        "metric": "strikeouts",
+        "before": 90,
+        "after": 91
+      },
+      {
+        "player": [
+          "2026",
+          "1500112"
+        ],
+        "metric": "games",
+        "before": 26,
+        "after": 27
+      },
+      {
+        "player": [
+          "2026",
+          "1500125"
+        ],
+        "metric": "games",
+        "before": 0,
+        "after": 1
+      },
+      {
+        "player": [
+          "2026",
+          "1500125"
+        ],
+        "metric": "plateAppearances",
+        "before": 0,
+        "after": 2
+      },
+      {
+        "player": [
+          "2026",
+          "1500125"
+        ],
+        "metric": "atBats",
+        "before": 0,
+        "after": 2
+      },
+      {
+        "player": [
+          "2026",
+          "1500125"
+        ],
+        "metric": "strikeouts",
+        "before": 0,
+        "after": 2
+      },
+      {
+        "player": [
+          "2026",
+          "1500140"
+        ],
+        "metric": "plateAppearances",
+        "before": 65,
+        "after": 66
+      },
+      {
+        "player": [
+          "2026",
+          "1500140"
+        ],
+        "metric": "atBats",
+        "before": 62,
+        "after": 63
+      },
+      {
+        "player": [
+          "2026",
+          "1500140"
+        ],
+        "metric": "strikeouts",
+        "before": 22,
+        "after": 23
+      },
+      {
+        "player": [
+          "2026",
+          "1561820"
+        ],
+        "metric": "hits",
+        "before": 123,
+        "after": 124
+      },
+      {
+        "player": [
+          "2026",
+          "1561820"
+        ],
+        "metric": "runsBattedIn",
+        "before": 80,
+        "after": 81
+      },
+      {
+        "player": [
+          "2026",
+          "1600003"
+        ],
+        "metric": "games",
+        "before": 23,
+        "after": 24
+      },
+      {
+        "player": [
+          "2026",
+          "1600003"
+        ],
+        "metric": "plateAppearances",
+        "before": 39,
+        "after": 40
+      },
+      {
+        "player": [
+          "2026",
+          "1600003"
+        ],
+        "metric": "atBats",
+        "before": 30,
+        "after": 31
+      },
+      {
+        "player": [
+          "2026",
+          "1600021"
+        ],
+        "metric": "games",
+        "before": 20,
+        "after": 21
+      },
+      {
+        "player": [
+          "2026",
+          "1600021"
+        ],
+        "metric": "plateAppearances",
+        "before": 30,
+        "after": 31
+      },
+      {
+        "player": [
+          "2026",
+          "1600021"
+        ],
+        "metric": "atBats",
+        "before": 27,
+        "after": 28
+      },
+      {
+        "player": [
+          "2026",
+          "1600021"
+        ],
+        "metric": "strikeouts",
+        "before": 4,
+        "after": 5
+      },
+      {
+        "player": [
+          "2026",
+          "1600075"
+        ],
+        "metric": "games",
+        "before": 46,
+        "after": 47
+      },
+      {
+        "player": [
+          "2026",
+          "1600113"
+        ],
+        "metric": "games",
+        "before": 139,
+        "after": 141
+      },
+      {
+        "player": [
+          "2026",
+          "1600113"
+        ],
+        "metric": "plateAppearances",
+        "before": 585,
+        "after": 591
+      },
+      {
+        "player": [
+          "2026",
+          "1600113"
+        ],
+        "metric": "atBats",
+        "before": 507,
+        "after": 512
+      },
+      {
+        "player": [
+          "2026",
+          "1600113"
+        ],
+        "metric": "hits",
+        "before": 143,
+        "after": 146
+      },
+      {
+        "player": [
+          "2026",
+          "1600113"
+        ],
+        "metric": "walks",
+        "before": 60,
+        "after": 61
+      },
+      {
+        "player": [
+          "2026",
+          "1600113"
+        ],
+        "metric": "strikeouts",
+        "before": 87,
+        "after": 88
+      },
+      {
+        "player": [
+          "2026",
+          "1600117"
+        ],
+        "metric": "games",
+        "before": 19,
+        "after": 21
+      },
+      {
+        "player": [
+          "2026",
+          "1600117"
+        ],
+        "metric": "plateAppearances",
+        "before": 19,
+        "after": 20
+      },
+      {
+        "player": [
+          "2026",
+          "1600117"
+        ],
+        "metric": "atBats",
+        "before": 19,
+        "after": 20
+      },
+      {
+        "player": [
+          "2026",
+          "1600124"
+        ],
+        "metric": "games",
+        "before": 139,
+        "after": 140
+      },
+      {
+        "player": [
+          "2026",
+          "1600124"
+        ],
+        "metric": "plateAppearances",
+        "before": 571,
+        "after": 576
+      },
+      {
+        "player": [
+          "2026",
+          "1600124"
+        ],
+        "metric": "atBats",
+        "before": 500,
+        "after": 505
+      },
+      {
+        "player": [
+          "2026",
+          "1600124"
+        ],
+        "metric": "hits",
+        "before": 126,
+        "after": 127
+      },
+      {
+        "player": [
+          "2026",
+          "1600124"
+        ],
+        "metric": "strikeouts",
+        "before": 113,
+        "after": 117
+      },
+      {
+        "player": [
+          "2026",
+          "1650522"
+        ],
+        "metric": "games",
+        "before": 53,
+        "after": 54
+      },
+      {
+        "player": [
+          "2026",
+          "1650522"
+        ],
+        "metric": "plateAppearances",
+        "before": 135,
+        "after": 136
+      },
+      {
+        "player": [
+          "2026",
+          "1650522"
+        ],
+        "metric": "atBats",
+        "before": 124,
+        "after": 125
+      },
+      {
+        "player": [
+          "2026",
+          "1650813"
+        ],
+        "metric": "games",
+        "before": 101,
+        "after": 103
+      },
+      {
+        "player": [
+          "2026",
+          "1650813"
+        ],
+        "metric": "plateAppearances",
+        "before": 44,
+        "after": 45
+      },
+      {
+        "player": [
+          "2026",
+          "1650813"
+        ],
+        "metric": "atBats",
+        "before": 41,
+        "after": 42
+      },
+      {
+        "player": [
+          "2026",
+          "1700025"
+        ],
+        "metric": "plateAppearances",
+        "before": 512,
+        "after": 513
+      },
+      {
+        "player": [
+          "2026",
+          "1700025"
+        ],
+        "metric": "atBats",
+        "before": 446,
+        "after": 447
+      },
+      {
+        "player": [
+          "2026",
+          "1700068"
+        ],
+        "metric": "games",
+        "before": 57,
+        "after": 58
+      },
+      {
+        "player": [
+          "2026",
+          "1700068"
+        ],
+        "metric": "plateAppearances",
+        "before": 189,
+        "after": 194
+      },
+      {
+        "player": [
+          "2026",
+          "1700068"
+        ],
+        "metric": "atBats",
+        "before": 169,
+        "after": 174
+      },
+      {
+        "player": [
+          "2026",
+          "1700072"
+        ],
+        "metric": "games",
+        "before": 56,
+        "after": 57
+      },
+      {
+        "player": [
+          "2026",
+          "1700079"
+        ],
+        "metric": "games",
+        "before": 78,
+        "after": 80
+      },
+      {
+        "player": [
+          "2026",
+          "1700079"
+        ],
+        "metric": "plateAppearances",
+        "before": 179,
+        "after": 181
+      },
+      {
+        "player": [
+          "2026",
+          "1700079"
+        ],
+        "metric": "atBats",
+        "before": 165,
+        "after": 166
+      },
+      {
+        "player": [
+          "2026",
+          "1700079"
+        ],
+        "metric": "runs",
+        "before": 17,
+        "after": 18
+      },
+      {
+        "player": [
+          "2026",
+          "1700079"
+        ],
+        "metric": "sacBunts",
+        "before": 8,
+        "after": 9
+      },
+      {
+        "player": [
+          "2026",
+          "1700087"
+        ],
+        "metric": "games",
+        "before": 37,
+        "after": 38
+      },
+      {
+        "player": [
+          "2026",
+          "1700087"
+        ],
+        "metric": "plateAppearances",
+        "before": 83,
+        "after": 87
+      },
+      {
+        "player": [
+          "2026",
+          "1700087"
+        ],
+        "metric": "atBats",
+        "before": 77,
+        "after": 80
+      },
+      {
+        "player": [
+          "2026",
+          "1700087"
+        ],
+        "metric": "hits",
+        "before": 13,
+        "after": 14
+      },
+      {
+        "player": [
+          "2026",
+          "1700087"
+        ],
+        "metric": "walks",
+        "before": 5,
+        "after": 6
+      },
+      {
+        "player": [
+          "2026",
+          "1700087"
+        ],
+        "metric": "strikeouts",
+        "before": 28,
+        "after": 29
+      },
+      {
+        "player": [
+          "2026",
+          "1700090"
+        ],
+        "metric": "games",
+        "before": 15,
+        "after": 16
+      },
+      {
+        "player": [
+          "2026",
+          "1700090"
+        ],
+        "metric": "plateAppearances",
+        "before": 37,
+        "after": 38
+      },
+      {
+        "player": [
+          "2026",
+          "1700090"
+        ],
+        "metric": "atBats",
+        "before": 33,
+        "after": 34
+      },
+      {
+        "player": [
+          "2026",
+          "1700090"
+        ],
+        "metric": "runs",
+        "before": 4,
+        "after": 5
+      },
+      {
+        "player": [
+          "2026",
+          "1700090"
+        ],
+        "metric": "hits",
+        "before": 8,
+        "after": 9
+      },
+      {
+        "player": [
+          "2026",
+          "1700090"
+        ],
+        "metric": "runsBattedIn",
+        "before": 4,
+        "after": 5
+      },
+      {
+        "player": [
+          "2026",
+          "1700131"
+        ],
+        "metric": "plateAppearances",
+        "before": 444,
+        "after": 445
+      },
+      {
+        "player": [
+          "2026",
+          "1700131"
+        ],
+        "metric": "atBats",
+        "before": 402,
+        "after": 403
+      },
+      {
+        "player": [
+          "2026",
+          "1700135"
+        ],
+        "metric": "plateAppearances",
+        "before": 548,
+        "after": 550
+      },
+      {
+        "player": [
+          "2026",
+          "1700135"
+        ],
+        "metric": "atBats",
+        "before": 481,
+        "after": 483
+      },
+      {
+        "player": [
+          "2026",
+          "1700135"
+        ],
+        "metric": "runs",
+        "before": 74,
+        "after": 75
+      },
+      {
+        "player": [
+          "2026",
+          "1700135"
+        ],
+        "metric": "hits",
+        "before": 132,
+        "after": 133
+      },
+      {
+        "player": [
+          "2026",
+          "1700135"
+        ],
+        "metric": "runsBattedIn",
+        "before": 38,
+        "after": 39
+      },
+      {
+        "player": [
+          "2026",
+          "1700135"
+        ],
+        "metric": "steals",
+        "before": 29,
+        "after": 30
+      },
+      {
+        "player": [
+          "2026",
+          "1750223"
+        ],
+        "metric": "plateAppearances",
+        "before": 529,
+        "after": 530
+      },
+      {
+        "player": [
+          "2026",
+          "1750223"
+        ],
+        "metric": "atBats",
+        "before": 445,
+        "after": 446
+      },
+      {
+        "player": [
+          "2026",
+          "1800043"
+        ],
+        "metric": "games",
+        "before": 2,
+        "after": 3
+      },
+      {
+        "player": [
+          "2026",
+          "1800050"
+        ],
+        "metric": "plateAppearances",
+        "before": 466,
+        "after": 467
+      },
+      {
+        "player": [
+          "2026",
+          "1800050"
+        ],
+        "metric": "runs",
+        "before": 57,
+        "after": 58
+      },
+      {
+        "player": [
+          "2026",
+          "1800050"
+        ],
+        "metric": "walks",
+        "before": 45,
+        "after": 46
+      },
+      {
+        "player": [
+          "2026",
+          "1800065"
+        ],
+        "metric": "games",
+        "before": 88,
+        "after": 90
+      },
+      {
+        "player": [
+          "2026",
+          "1800065"
+        ],
+        "metric": "plateAppearances",
+        "before": 405,
+        "after": 414
+      },
+      {
+        "player": [
+          "2026",
+          "1800065"
+        ],
+        "metric": "atBats",
+        "before": 364,
+        "after": 372
+      },
+      {
+        "player": [
+          "2026",
+          "1800065"
+        ],
+        "metric": "hits",
+        "before": 111,
+        "after": 114
+      },
+      {
+        "player": [
+          "2026",
+          "1800065"
+        ],
+        "metric": "walks",
+        "before": 39,
+        "after": 40
+      },
+      {
+        "player": [
+          "2026",
+          "1800065"
+        ],
+        "metric": "strikeouts",
+        "before": 52,
+        "after": 53
+      },
+      {
+        "player": [
+          "2026",
+          "1800066"
+        ],
+        "metric": "games",
+        "before": 38,
+        "after": 40
+      },
+      {
+        "player": [
+          "2026",
+          "1800066"
+        ],
+        "metric": "plateAppearances",
+        "before": 108,
+        "after": 113
+      },
+      {
+        "player": [
+          "2026",
+          "1800066"
+        ],
+        "metric": "atBats",
+        "before": 97,
+        "after": 102
+      },
+      {
+        "player": [
+          "2026",
+          "1800067"
+        ],
+        "metric": "games",
+        "before": 62,
+        "after": 64
+      },
+      {
+        "player": [
+          "2026",
+          "1800067"
+        ],
+        "metric": "plateAppearances",
+        "before": 154,
+        "after": 163
+      },
+      {
+        "player": [
+          "2026",
+          "1800067"
+        ],
+        "metric": "atBats",
+        "before": 143,
+        "after": 152
+      },
+      {
+        "player": [
+          "2026",
+          "1800067"
+        ],
+        "metric": "hits",
+        "before": 31,
+        "after": 32
+      },
+      {
+        "player": [
+          "2026",
+          "1800067"
+        ],
+        "metric": "steals",
+        "before": 1,
+        "after": 2
+      },
+      {
+        "player": [
+          "2026",
+          "1800067"
+        ],
+        "metric": "strikeouts",
+        "before": 39,
+        "after": 41
+      },
+      {
+        "player": [
+          "2026",
+          "1800072"
+        ],
+        "metric": "plateAppearances",
+        "before": 400,
+        "after": 401
+      },
+      {
+        "player": [
+          "2026",
+          "1800072"
+        ],
+        "metric": "atBats",
+        "before": 368,
+        "after": 369
+      },
+      {
+        "player": [
+          "2026",
+          "1800074"
+        ],
+        "metric": "games",
+        "before": 10,
+        "after": 11
+      },
+      {
+        "player": [
+          "2026",
+          "1800074"
+        ],
+        "metric": "plateAppearances",
+        "before": 17,
+        "after": 20
+      },
+      {
+        "player": [
+          "2026",
+          "1800074"
+        ],
+        "metric": "atBats",
+        "before": 15,
+        "after": 18
+      },
+      {
+        "player": [
+          "2026",
+          "1800082"
+        ],
+        "metric": "games",
+        "before": 20,
+        "after": 21
+      },
+      {
+        "player": [
+          "2026",
+          "1800082"
+        ],
+        "metric": "runs",
+        "before": 1,
+        "after": 2
+      },
+      {
+        "player": [
+          "2026",
+          "1800098"
+        ],
+        "metric": "plateAppearances",
+        "before": 514,
+        "after": 515
+      },
+      {
+        "player": [
+          "2026",
+          "1800098"
+        ],
+        "metric": "atBats",
+        "before": 463,
+        "after": 464
+      },
+      {
+        "player": [
+          "2026",
+          "1800102"
+        ],
+        "metric": "plateAppearances",
+        "before": 46,
+        "after": 47
+      },
+      {
+        "player": [
+          "2026",
+          "1800102"
+        ],
+        "metric": "atBats",
+        "before": 42,
+        "after": 43
+      },
+      {
+        "player": [
+          "2026",
+          "1800102"
+        ],
+        "metric": "steals",
+        "before": 1,
+        "after": 2
+      },
+      {
+        "player": [
+          "2026",
+          "1800104"
+        ],
+        "metric": "plateAppearances",
+        "before": 437,
+        "after": 438
+      },
+      {
+        "player": [
+          "2026",
+          "1800104"
+        ],
+        "metric": "atBats",
+        "before": 392,
+        "after": 393
+      },
+      {
+        "player": [
+          "2026",
+          "1850172"
+        ],
+        "metric": "plateAppearances",
+        "before": 99,
+        "after": 100
+      },
+      {
+        "player": [
+          "2026",
+          "1850172"
+        ],
+        "metric": "atBats",
+        "before": 83,
+        "after": 84
+      },
+      {
+        "player": [
+          "2026",
+          "1850172"
+        ],
+        "metric": "hits",
+        "before": 18,
+        "after": 19
+      },
+      {
+        "player": [
+          "2026",
+          "1850172"
+        ],
+        "metric": "runsBattedIn",
+        "before": 9,
+        "after": 11
+      },
+      {
+        "player": [
+          "2026",
+          "1850183"
+        ],
+        "metric": "games",
+        "before": 141,
+        "after": 143
+      },
+      {
+        "player": [
+          "2026",
+          "1850183"
+        ],
+        "metric": "plateAppearances",
+        "before": 610,
+        "after": 616
+      },
+      {
+        "player": [
+          "2026",
+          "1850183"
+        ],
+        "metric": "atBats",
+        "before": 518,
+        "after": 521
+      },
+      {
+        "player": [
+          "2026",
+          "1850183"
+        ],
+        "metric": "walks",
+        "before": 68,
+        "after": 71
+      },
+      {
+        "player": [
+          "2026",
+          "1850183"
+        ],
+        "metric": "strikeouts",
+        "before": 94,
+        "after": 95
+      },
+      {
+        "player": [
+          "2026",
+          "1850405"
+        ],
+        "metric": "games",
+        "before": 82,
+        "after": 83
+      },
+      {
+        "player": [
+          "2026",
+          "1850405"
+        ],
+        "metric": "plateAppearances",
+        "before": 284,
+        "after": 285
+      },
+      {
+        "player": [
+          "2026",
+          "1850405"
+        ],
+        "metric": "atBats",
+        "before": 266,
+        "after": 267
+      },
+      {
+        "player": [
+          "2026",
+          "1850772"
+        ],
+        "metric": "games",
+        "before": 27,
+        "after": 28
+      },
+      {
+        "player": [
+          "2026",
+          "1850772"
+        ],
+        "metric": "plateAppearances",
+        "before": 63,
+        "after": 65
+      },
+      {
+        "player": [
+          "2026",
+          "1850772"
+        ],
+        "metric": "atBats",
+        "before": 55,
+        "after": 57
+      },
+      {
+        "player": [
+          "2026",
+          "1850772"
+        ],
+        "metric": "runs",
+        "before": 7,
+        "after": 8
+      },
+      {
+        "player": [
+          "2026",
+          "1850772"
+        ],
+        "metric": "hits",
+        "before": 8,
+        "after": 9
+      },
+      {
+        "player": [
+          "2026",
+          "1850932"
+        ],
+        "metric": "games",
+        "before": 115,
+        "after": 116
+      },
+      {
+        "player": [
+          "2026",
+          "1860140"
+        ],
+        "metric": "plateAppearances",
+        "before": 530,
+        "after": 531
+      },
+      {
+        "player": [
+          "2026",
+          "1860140"
+        ],
+        "metric": "atBats",
+        "before": 475,
+        "after": 476
+      },
+      {
+        "player": [
+          "2026",
+          "1900028"
+        ],
+        "metric": "games",
+        "before": 125,
+        "after": 126
+      },
+      {
+        "player": [
+          "2026",
+          "1900028"
+        ],
+        "metric": "plateAppearances",
+        "before": 530,
+        "after": 533
+      },
+      {
+        "player": [
+          "2026",
+          "1900028"
+        ],
+        "metric": "atBats",
+        "before": 477,
+        "after": 480
+      },
+      {
+        "player": [
+          "2026",
+          "1900029"
+        ],
+        "metric": "plateAppearances",
+        "before": 290,
+        "after": 291
+      },
+      {
+        "player": [
+          "2026",
+          "1900029"
+        ],
+        "metric": "walks",
+        "before": 22,
+        "after": 23
+      },
+      {
+        "player": [
+          "2026",
+          "1900037"
+        ],
+        "metric": "plateAppearances",
+        "before": 388,
+        "after": 389
+      },
+      {
+        "player": [
+          "2026",
+          "1900037"
+        ],
+        "metric": "atBats",
+        "before": 353,
+        "after": 354
+      },
+      {
+        "player": [
+          "2026",
+          "1900037"
+        ],
+        "metric": "strikeouts",
+        "before": 67,
+        "after": 68
+      },
+      {
+        "player": [
+          "2026",
+          "1900040"
+        ],
+        "metric": "plateAppearances",
+        "before": 380,
+        "after": 381
+      },
+      {
+        "player": [
+          "2026",
+          "1900040"
+        ],
+        "metric": "atBats",
+        "before": 322,
+        "after": 323
+      },
+      {
+        "player": [
+          "2026",
+          "1900046"
+        ],
+        "metric": "games",
+        "before": 42,
+        "after": 43
+      },
+      {
+        "player": [
+          "2026",
+          "1900050"
+        ],
+        "metric": "games",
+        "before": 24,
+        "after": 26
+      },
+      {
+        "player": [
+          "2026",
+          "1900050"
+        ],
+        "metric": "plateAppearances",
+        "before": 18,
+        "after": 19
+      },
+      {
+        "player": [
+          "2026",
+          "1900050"
+        ],
+        "metric": "walks",
+        "before": 0,
+        "after": 1
+      },
+      {
+        "player": [
+          "2026",
+          "1900056"
+        ],
+        "metric": "games",
+        "before": 69,
+        "after": 70
+      },
+      {
+        "player": [
+          "2026",
+          "1900056"
+        ],
+        "metric": "plateAppearances",
+        "before": 153,
+        "after": 155
+      },
+      {
+        "player": [
+          "2026",
+          "1900056"
+        ],
+        "metric": "atBats",
+        "before": 139,
+        "after": 141
+      },
+      {
+        "player": [
+          "2026",
+          "1900057"
+        ],
+        "metric": "games",
+        "before": 13,
+        "after": 14
+      },
+      {
+        "player": [
+          "2026",
+          "1900057"
+        ],
+        "metric": "plateAppearances",
+        "before": 18,
+        "after": 20
+      },
+      {
+        "player": [
+          "2026",
+          "1900057"
+        ],
+        "metric": "atBats",
+        "before": 15,
+        "after": 17
+      },
+      {
+        "player": [
+          "2026",
+          "1900057"
+        ],
+        "metric": "hits",
+        "before": 1,
+        "after": 2
+      },
+      {
+        "player": [
+          "2026",
+          "1900058"
+        ],
+        "metric": "games",
+        "before": 101,
+        "after": 102
+      },
+      {
+        "player": [
+          "2026",
+          "1900058"
+        ],
+        "metric": "plateAppearances",
+        "before": 298,
+        "after": 299
+      },
+      {
+        "player": [
+          "2026",
+          "1900058"
+        ],
+        "metric": "atBats",
+        "before": 245,
+        "after": 246
+      },
+      {
+        "player": [
+          "2026",
+          "1900082"
+        ],
+        "metric": "plateAppearances",
+        "before": 153,
+        "after": 154
+      },
+      {
+        "player": [
+          "2026",
+          "1900082"
+        ],
+        "metric": "atBats",
+        "before": 143,
+        "after": 144
+      },
+      {
+        "player": [
+          "2026",
+          "1900082"
+        ],
+        "metric": "runsBattedIn",
+        "before": 6,
+        "after": 7
+      },
+      {
+        "player": [
+          "2026",
+          "1900088"
+        ],
+        "metric": "plateAppearances",
+        "before": 531,
+        "after": 532
+      },
+      {
+        "player": [
+          "2026",
+          "1900088"
+        ],
+        "metric": "atBats",
+        "before": 469,
+        "after": 470
+      },
+      {
+        "player": [
+          "2026",
+          "1900101"
+        ],
+        "metric": "plateAppearances",
+        "before": 270,
+        "after": 271
+      },
+      {
+        "player": [
+          "2026",
+          "1900101"
+        ],
+        "metric": "atBats",
+        "before": 227,
+        "after": 228
+      },
+      {
+        "player": [
+          "2026",
+          "1900113"
+        ],
+        "metric": "steals",
+        "before": 1,
+        "after": 2
+      },
+      {
+        "player": [
+          "2026",
+          "1950286"
+        ],
+        "metric": "plateAppearances",
+        "before": 585,
+        "after": 586
+      },
+      {
+        "player": [
+          "2026",
+          "1950286"
+        ],
+        "metric": "atBats",
+        "before": 533,
+        "after": 534
+      },
+      {
+        "player": [
+          "2026",
+          "1950429"
+        ],
+        "metric": "games",
+        "before": 52,
+        "after": 53
+      },
+      {
+        "player": [
+          "2026",
+          "1961927"
+        ],
+        "metric": "games",
+        "before": 123,
+        "after": 124
+      },
+      {
+        "player": [
+          "2026",
+          "1961927"
+        ],
+        "metric": "plateAppearances",
+        "before": 333,
+        "after": 334
+      },
+      {
+        "player": [
+          "2026",
+          "1961927"
+        ],
+        "metric": "walks",
+        "before": 35,
+        "after": 36
+      },
+      {
+        "player": [
+          "2026",
+          "2000026"
+        ],
+        "metric": "plateAppearances",
+        "before": 347,
+        "after": 348
+      },
+      {
+        "player": [
+          "2026",
+          "2000026"
+        ],
+        "metric": "atBats",
+        "before": 306,
+        "after": 307
+      },
+      {
+        "player": [
+          "2026",
+          "2000026"
+        ],
+        "metric": "runs",
+        "before": 32,
+        "after": 33
+      },
+      {
+        "player": [
+          "2026",
+          "2000026"
+        ],
+        "metric": "hits",
+        "before": 70,
+        "after": 71
+      },
+      {
+        "player": [
+          "2026",
+          "2000026"
+        ],
+        "metric": "homeRuns",
+        "before": 4,
+        "after": 5
+      },
+      {
+        "player": [
+          "2026",
+          "2000026"
+        ],
+        "metric": "runsBattedIn",
+        "before": 24,
+        "after": 26
+      },
+      {
+        "player": [
+          "2026",
+          "2000027"
+        ],
+        "metric": "games",
+        "before": 55,
+        "after": 57
+      },
+      {
+        "player": [
+          "2026",
+          "2000027"
+        ],
+        "metric": "plateAppearances",
+        "before": 182,
+        "after": 186
+      },
+      {
+        "player": [
+          "2026",
+          "2000027"
+        ],
+        "metric": "atBats",
+        "before": 150,
+        "after": 154
+      },
+      {
+        "player": [
+          "2026",
+          "2000027"
+        ],
+        "metric": "strikeouts",
+        "before": 37,
+        "after": 38
+      },
+      {
+        "player": [
+          "2026",
+          "2000051"
+        ],
+        "metric": "games",
+        "before": 141,
+        "after": 143
+      },
+      {
+        "player": [
+          "2026",
+          "2000051"
+        ],
+        "metric": "plateAppearances",
+        "before": 606,
+        "after": 614
+      },
+      {
+        "player": [
+          "2026",
+          "2000051"
+        ],
+        "metric": "atBats",
+        "before": 531,
+        "after": 539
+      },
+      {
+        "player": [
+          "2026",
+          "2000051"
+        ],
+        "metric": "strikeouts",
+        "before": 161,
+        "after": 164
+      },
+      {
+        "player": [
+          "2026",
+          "2000056"
+        ],
+        "metric": "games",
+        "before": 141,
+        "after": 143
+      },
+      {
+        "player": [
+          "2026",
+          "2000056"
+        ],
+        "metric": "plateAppearances",
+        "before": 579,
+        "after": 581
+      },
+      {
+        "player": [
+          "2026",
+          "2000056"
+        ],
+        "metric": "atBats",
+        "before": 506,
+        "after": 508
+      },
+      {
+        "player": [
+          "2026",
+          "2000057"
+        ],
+        "metric": "games",
+        "before": 126,
+        "after": 128
+      },
+      {
+        "player": [
+          "2026",
+          "2000057"
+        ],
+        "metric": "plateAppearances",
+        "before": 376,
+        "after": 385
+      },
+      {
+        "player": [
+          "2026",
+          "2000057"
+        ],
+        "metric": "atBats",
+        "before": 326,
+        "after": 334
+      },
+      {
+        "player": [
+          "2026",
+          "2000057"
+        ],
+        "metric": "hits",
+        "before": 71,
+        "after": 73
+      },
+      {
+        "player": [
+          "2026",
+          "2000057"
+        ],
+        "metric": "runsBattedIn",
+        "before": 23,
+        "after": 24
+      },
+      {
+        "player": [
+          "2026",
+          "2000057"
+        ],
+        "metric": "walks",
+        "before": 39,
+        "after": 40
+      },
+      {
+        "player": [
+          "2026",
+          "2000057"
+        ],
+        "metric": "strikeouts",
+        "before": 78,
+        "after": 79
+      },
+      {
+        "player": [
+          "2026",
+          "2000058"
+        ],
+        "metric": "games",
+        "before": 11,
+        "after": 12
+      },
+      {
+        "player": [
+          "2026",
+          "2000066"
+        ],
+        "metric": "games",
+        "before": 47,
+        "after": 48
+      },
+      {
+        "player": [
+          "2026",
+          "2000066"
+        ],
+        "metric": "plateAppearances",
+        "before": 67,
+        "after": 69
+      },
+      {
+        "player": [
+          "2026",
+          "2000066"
+        ],
+        "metric": "atBats",
+        "before": 58,
+        "after": 60
+      },
+      {
+        "player": [
+          "2026",
+          "2000066"
+        ],
+        "metric": "strikeouts",
+        "before": 24,
+        "after": 25
+      },
+      {
+        "player": [
+          "2026",
+          "2000080"
+        ],
+        "metric": "games",
+        "before": 100,
+        "after": 101
+      },
+      {
+        "player": [
+          "2026",
+          "2000098"
+        ],
+        "metric": "plateAppearances",
+        "before": 355,
+        "after": 356
+      },
+      {
+        "player": [
+          "2026",
+          "2000098"
+        ],
+        "metric": "atBats",
+        "before": 330,
+        "after": 331
+      },
+      {
+        "player": [
+          "2026",
+          "2050143"
+        ],
+        "metric": "plateAppearances",
+        "before": 155,
+        "after": 156
+      },
+      {
+        "player": [
+          "2026",
+          "2050143"
+        ],
+        "metric": "atBats",
+        "before": 137,
+        "after": 138
+      },
+      {
+        "player": [
+          "2026",
+          "2050203"
+        ],
+        "metric": "games",
+        "before": 120,
+        "after": 121
+      },
+      {
+        "player": [
+          "2026",
+          "2050203"
+        ],
+        "metric": "plateAppearances",
+        "before": 417,
+        "after": 421
+      },
+      {
+        "player": [
+          "2026",
+          "2050203"
+        ],
+        "metric": "atBats",
+        "before": 385,
+        "after": 389
+      },
+      {
+        "player": [
+          "2026",
+          "2050203"
+        ],
+        "metric": "hits",
+        "before": 97,
+        "after": 99
+      },
+      {
+        "player": [
+          "2026",
+          "2050203"
+        ],
+        "metric": "runsBattedIn",
+        "before": 25,
+        "after": 26
+      },
+      {
+        "player": [
+          "2026",
+          "2102997"
+        ],
+        "metric": "games",
+        "before": 40,
+        "after": 41
+      },
+      {
+        "player": [
+          "2026",
+          "2102997"
+        ],
+        "metric": "plateAppearances",
+        "before": 109,
+        "after": 113
+      },
+      {
+        "player": [
+          "2026",
+          "2102997"
+        ],
+        "metric": "atBats",
+        "before": 101,
+        "after": 105
+      },
+      {
+        "player": [
+          "2026",
+          "2102997"
+        ],
+        "metric": "strikeouts",
+        "before": 28,
+        "after": 31
+      },
+      {
+        "player": [
+          "2026",
+          "2103693"
+        ],
+        "metric": "plateAppearances",
+        "before": 93,
+        "after": 94
+      },
+      {
+        "player": [
+          "2026",
+          "2103693"
+        ],
+        "metric": "atBats",
+        "before": 89,
+        "after": 90
+      },
+      {
+        "player": [
+          "2026",
+          "2103707"
+        ],
+        "metric": "games",
+        "before": 23,
+        "after": 24
+      },
+      {
+        "player": [
+          "2026",
+          "2103747"
+        ],
+        "metric": "plateAppearances",
+        "before": 251,
+        "after": 252
+      },
+      {
+        "player": [
+          "2026",
+          "2103747"
+        ],
+        "metric": "atBats",
+        "before": 216,
+        "after": 217
+      },
+      {
+        "player": [
+          "2026",
+          "2103768"
+        ],
+        "metric": "games",
+        "before": 15,
+        "after": 16
+      },
+      {
+        "player": [
+          "2026",
+          "2103768"
+        ],
+        "metric": "plateAppearances",
+        "before": 52,
+        "after": 56
+      },
+      {
+        "player": [
+          "2026",
+          "2103768"
+        ],
+        "metric": "atBats",
+        "before": 49,
+        "after": 52
+      },
+      {
+        "player": [
+          "2026",
+          "2103768"
+        ],
+        "metric": "hits",
+        "before": 7,
+        "after": 8
+      },
+      {
+        "player": [
+          "2026",
+          "2103768"
+        ],
+        "metric": "walks",
+        "before": 3,
+        "after": 4
+      },
+      {
+        "player": [
+          "2026",
+          "2103768"
+        ],
+        "metric": "strikeouts",
+        "before": 15,
+        "after": 17
+      },
+      {
+        "player": [
+          "2026",
+          "2103780"
+        ],
+        "metric": "plateAppearances",
+        "before": 441,
+        "after": 442
+      },
+      {
+        "player": [
+          "2026",
+          "2103780"
+        ],
+        "metric": "walks",
+        "before": 32,
+        "after": 33
+      },
+      {
+        "player": [
+          "2026",
+          "2103780"
+        ],
+        "metric": "steals",
+        "before": 14,
+        "after": 15
+      },
+      {
+        "player": [
+          "2026",
+          "2103848"
+        ],
+        "metric": "games",
+        "before": 12,
+        "after": 13
+      },
+      {
+        "player": [
+          "2026",
+          "2103917"
+        ],
+        "metric": "games",
+        "before": 126,
+        "after": 127
+      },
+      {
+        "player": [
+          "2026",
+          "2103917"
+        ],
+        "metric": "plateAppearances",
+        "before": 451,
+        "after": 456
+      },
+      {
+        "player": [
+          "2026",
+          "2103917"
+        ],
+        "metric": "atBats",
+        "before": 417,
+        "after": 422
+      },
+      {
+        "player": [
+          "2026",
+          "2103917"
+        ],
+        "metric": "hits",
+        "before": 107,
+        "after": 108
+      },
+      {
+        "player": [
+          "2026",
+          "2103917"
+        ],
+        "metric": "runsBattedIn",
+        "before": 24,
+        "after": 26
+      },
+      {
+        "player": [
+          "2026",
+          "2103917"
+        ],
+        "metric": "steals",
+        "before": 38,
+        "after": 39
+      },
+      {
+        "player": [
+          "2026",
+          "2103917"
+        ],
+        "metric": "strikeouts",
+        "before": 79,
+        "after": 81
+      },
+      {
+        "player": [
+          "2026",
+          "2104035"
+        ],
+        "metric": "plateAppearances",
+        "before": 132,
+        "after": 134
+      },
+      {
+        "player": [
+          "2026",
+          "2104035"
+        ],
+        "metric": "atBats",
+        "before": 123,
+        "after": 124
+      },
+      {
+        "player": [
+          "2026",
+          "2104035"
+        ],
+        "metric": "hits",
+        "before": 28,
+        "after": 29
+      },
+      {
+        "player": [
+          "2026",
+          "2104035"
+        ],
+        "metric": "walks",
+        "before": 9,
+        "after": 10
+      },
+      {
+        "player": [
+          "2026",
+          "2105626"
+        ],
+        "metric": "games",
+        "before": 39,
+        "after": 40
+      },
+      {
+        "player": [
+          "2026",
+          "2106233"
+        ],
+        "metric": "games",
+        "before": 13,
+        "after": 14
+      },
+      {
+        "player": [
+          "2026",
+          "2106233"
+        ],
+        "metric": "plateAppearances",
+        "before": 1,
+        "after": 2
+      },
+      {
+        "player": [
+          "2026",
+          "2106233"
+        ],
+        "metric": "atBats",
+        "before": 1,
+        "after": 2
+      },
+      {
+        "player": [
+          "2026",
+          "2106284"
+        ],
+        "metric": "plateAppearances",
+        "before": 121,
+        "after": 122
+      },
+      {
+        "player": [
+          "2026",
+          "2106284"
+        ],
+        "metric": "atBats",
+        "before": 114,
+        "after": 115
+      },
+      {
+        "player": [
+          "2026",
+          "2106284"
+        ],
+        "metric": "strikeouts",
+        "before": 23,
+        "after": 24
+      },
+      {
+        "player": [
+          "2026",
+          "2107875"
+        ],
+        "metric": "games",
+        "before": 22,
+        "after": 23
+      },
+      {
+        "player": [
+          "2026",
+          "2107875"
+        ],
+        "metric": "plateAppearances",
+        "before": 8,
+        "after": 9
+      },
+      {
+        "player": [
+          "2026",
+          "2107875"
+        ],
+        "metric": "atBats",
+        "before": 7,
+        "after": 8
+      },
+      {
+        "player": [
+          "2026",
+          "2107887"
+        ],
+        "metric": "games",
+        "before": 70,
+        "after": 71
+      },
+      {
+        "player": [
+          "2026",
+          "2108124"
+        ],
+        "metric": "games",
+        "before": 21,
+        "after": 22
+      },
+      {
+        "player": [
+          "2026",
+          "2108238"
+        ],
+        "metric": "games",
+        "before": 22,
+        "after": 23
+      },
+      {
+        "player": [
+          "2026",
+          "2108545"
+        ],
+        "metric": "games",
+        "before": 18,
+        "after": 19
+      },
+      {
+        "player": [
+          "2026",
+          "2110153"
+        ],
+        "metric": "plateAppearances",
+        "before": 94,
+        "after": 95
+      },
+      {
+        "player": [
+          "2026",
+          "2110153"
+        ],
+        "metric": "runsBattedIn",
+        "before": 4,
+        "after": 5
+      },
+      {
+        "player": [
+          "2026",
+          "2110225"
+        ],
+        "metric": "games",
+        "before": 70,
+        "after": 71
+      },
+      {
+        "player": [
+          "2026",
+          "2110225"
+        ],
+        "metric": "plateAppearances",
+        "before": 152,
+        "after": 154
+      },
+      {
+        "player": [
+          "2026",
+          "2110225"
+        ],
+        "metric": "atBats",
+        "before": 135,
+        "after": 136
+      },
+      {
+        "player": [
+          "2026",
+          "2110225"
+        ],
+        "metric": "walks",
+        "before": 9,
+        "after": 10
+      },
+      {
+        "player": [
+          "2026",
+          "2110225"
+        ],
+        "metric": "steals",
+        "before": 6,
+        "after": 7
+      },
+      {
+        "player": [
+          "2026",
+          "2110265"
+        ],
+        "metric": "games",
+        "before": 8,
+        "after": 9
+      },
+      {
+        "player": [
+          "2026",
+          "2110422"
+        ],
+        "metric": "games",
+        "before": 108,
+        "after": 109
+      },
+      {
+        "player": [
+          "2026",
+          "2110422"
+        ],
+        "metric": "plateAppearances",
+        "before": 290,
+        "after": 295
+      },
+      {
+        "player": [
+          "2026",
+          "2110422"
+        ],
+        "metric": "atBats",
+        "before": 252,
+        "after": 256
+      },
+      {
+        "player": [
+          "2026",
+          "2110422"
+        ],
+        "metric": "runs",
+        "before": 13,
+        "after": 14
+      },
+      {
+        "player": [
+          "2026",
+          "2110422"
+        ],
+        "metric": "walks",
+        "before": 20,
+        "after": 21
+      },
+      {
+        "player": [
+          "2026",
+          "2110422"
+        ],
+        "metric": "strikeouts",
+        "before": 47,
+        "after": 49
+      },
+      {
+        "player": [
+          "2026",
+          "2112136"
+        ],
+        "metric": "games",
+        "before": 0,
+        "after": 1
+      },
+      {
+        "player": [
+          "2026",
+          "2112444"
+        ],
+        "metric": "games",
+        "before": 41,
+        "after": 42
+      },
+      {
+        "player": [
+          "2026",
+          "2113273"
+        ],
+        "metric": "games",
+        "before": 3,
+        "after": 4
+      },
+      {
+        "player": [
+          "2026",
+          "2113273"
+        ],
+        "metric": "plateAppearances",
+        "before": 0,
+        "after": 2
+      },
+      {
+        "player": [
+          "2026",
+          "2113273"
+        ],
+        "metric": "atBats",
+        "before": 0,
+        "after": 2
+      },
+      {
+        "player": [
+          "2026",
+          "2113273"
+        ],
+        "metric": "strikeouts",
+        "before": 0,
+        "after": 1
+      },
+      {
+        "player": [
+          "2026",
+          "2113365"
+        ],
+        "metric": "games",
+        "before": 36,
+        "after": 37
+      },
+      {
+        "player": [
+          "2026",
+          "2113365"
+        ],
+        "metric": "plateAppearances",
+        "before": 97,
+        "after": 101
+      },
+      {
+        "player": [
+          "2026",
+          "2113365"
+        ],
+        "metric": "atBats",
+        "before": 90,
+        "after": 94
+      },
+      {
+        "player": [
+          "2026",
+          "2113365"
+        ],
+        "metric": "runs",
+        "before": 7,
+        "after": 8
+      },
+      {
+        "player": [
+          "2026",
+          "2113365"
+        ],
+        "metric": "hits",
+        "before": 19,
+        "after": 21
+      },
+      {
+        "player": [
+          "2026",
+          "2113365"
+        ],
+        "metric": "runsBattedIn",
+        "before": 8,
+        "after": 9
+      },
+      {
+        "player": [
+          "2026",
+          "2113365"
+        ],
+        "metric": "strikeouts",
+        "before": 32,
+        "after": 34
+      },
+      {
+        "player": [
+          "2026",
+          "2114882"
+        ],
+        "metric": "games",
+        "before": 101,
+        "after": 102
+      },
+      {
+        "player": [
+          "2026",
+          "2114882"
+        ],
+        "metric": "plateAppearances",
+        "before": 362,
+        "after": 364
+      },
+      {
+        "player": [
+          "2026",
+          "2114882"
+        ],
+        "metric": "atBats",
+        "before": 325,
+        "after": 327
+      },
+      {
+        "player": [
+          "2026",
+          "2114882"
+        ],
+        "metric": "hits",
+        "before": 72,
+        "after": 73
+      },
+      {
+        "player": [
+          "2026",
+          "2116854"
+        ],
+        "metric": "games",
+        "before": 37,
+        "after": 38
+      },
+      {
+        "player": [
+          "2026",
+          "2116854"
+        ],
+        "metric": "plateAppearances",
+        "before": 112,
+        "after": 116
+      },
+      {
+        "player": [
+          "2026",
+          "2116854"
+        ],
+        "metric": "atBats",
+        "before": 106,
+        "after": 109
+      },
+      {
+        "player": [
+          "2026",
+          "2116854"
+        ],
+        "metric": "hitByPitch",
+        "before": 2,
+        "after": 3
+      },
+      {
+        "player": [
+          "2026",
+          "2116854"
+        ],
+        "metric": "strikeouts",
+        "before": 32,
+        "after": 34
+      },
+      {
+        "player": [
+          "2026",
+          "2117200"
+        ],
+        "metric": "plateAppearances",
+        "before": 141,
+        "after": 144
+      },
+      {
+        "player": [
+          "2026",
+          "2117200"
+        ],
+        "metric": "atBats",
+        "before": 136,
+        "after": 139
+      },
+      {
+        "player": [
+          "2026",
+          "2117200"
+        ],
+        "metric": "hits",
+        "before": 21,
+        "after": 22
+      },
+      {
+        "player": [
+          "2026",
+          "2117200"
+        ],
+        "metric": "strikeouts",
+        "before": 44,
+        "after": 45
+      },
+      {
+        "player": [
+          "2026",
+          "2117268"
+        ],
+        "metric": "games",
+        "before": 6,
+        "after": 7
+      },
+      {
+        "player": [
+          "2026",
+          "2117268"
+        ],
+        "metric": "plateAppearances",
+        "before": 7,
+        "after": 8
+      },
+      {
+        "player": [
+          "2026",
+          "2117268"
+        ],
+        "metric": "atBats",
+        "before": 6,
+        "after": 7
+      },
+      {
+        "player": [
+          "2026",
+          "2117268"
+        ],
+        "metric": "strikeouts",
+        "before": 4,
+        "after": 5
+      },
+      {
+        "player": [
+          "2026",
+          "2117693"
+        ],
+        "metric": "games",
+        "before": 15,
+        "after": 16
+      },
+      {
+        "player": [
+          "2026",
+          "900062"
+        ],
+        "metric": "games",
+        "before": 7,
+        "after": 8
+      },
+      {
+        "player": [
+          "2026",
+          "ビシエド"
+        ],
+        "metric": "games",
+        "before": 1,
+        "after": 0
+      },
+      {
+        "player": [
+          "2026",
+          "ビシエド"
+        ],
+        "metric": "plateAppearances",
+        "before": 1,
+        "after": 0
+      },
+      {
+        "player": [
+          "2026",
+          "ビシエド"
+        ],
+        "metric": "atBats",
+        "before": 1,
+        "after": 0
+      },
+      {
+        "player": [
+          "2026",
+          "ビシエド"
+        ],
+        "metric": "strikeouts",
+        "before": 1,
+        "after": 0
+      }
+    ],
+    "differencesExcludingAddedGames": [
+      {
+        "player": [
+          "2026",
+          "1000128"
+        ],
+        "metric": "plateAppearances",
+        "expected": 494,
+        "after": 495
+      },
+      {
+        "player": [
+          "2026",
+          "1000128"
+        ],
+        "metric": "atBats",
+        "expected": 459,
+        "after": 460
+      },
+      {
+        "player": [
+          "2026",
+          "1000128"
+        ],
+        "metric": "runs",
+        "expected": 56,
+        "after": 57
+      },
+      {
+        "player": [
+          "2026",
+          "1000128"
+        ],
+        "metric": "hits",
+        "expected": 138,
+        "after": 139
+      },
+      {
+        "player": [
+          "2026",
+          "1000175"
+        ],
+        "metric": "runs",
+        "expected": 54,
+        "after": 55
+      },
+      {
+        "player": [
+          "2026",
+          "1100097"
+        ],
+        "metric": "plateAppearances",
+        "expected": 600,
+        "after": 601
+      },
+      {
+        "player": [
+          "2026",
+          "1100097"
+        ],
+        "metric": "atBats",
+        "expected": 488,
+        "after": 489
+      },
+      {
+        "player": [
+          "2026",
+          "1100097"
+        ],
+        "metric": "runs",
+        "expected": 94,
+        "after": 95
+      },
+      {
+        "player": [
+          "2026",
+          "1300100"
+        ],
+        "metric": "games",
+        "expected": 65,
+        "after": 66
+      },
+      {
+        "player": [
+          "2026",
+          "1300100"
+        ],
+        "metric": "plateAppearances",
+        "expected": 250,
+        "after": 252
+      },
+      {
+        "player": [
+          "2026",
+          "1300100"
+        ],
+        "metric": "atBats",
+        "expected": 224,
+        "after": 226
+      },
+      {
+        "player": [
+          "2026",
+          "1300100"
+        ],
+        "metric": "runs",
+        "expected": 24,
+        "after": 25
+      },
+      {
+        "player": [
+          "2026",
+          "1300100"
+        ],
+        "metric": "hits",
+        "expected": 54,
+        "after": 55
+      },
+      {
+        "player": [
+          "2026",
+          "1300101"
+        ],
+        "metric": "plateAppearances",
+        "expected": 211,
+        "after": 212
+      },
+      {
+        "player": [
+          "2026",
+          "1300101"
+        ],
+        "metric": "atBats",
+        "expected": 179,
+        "after": 180
+      },
+      {
+        "player": [
+          "2026",
+          "1400127"
+        ],
+        "metric": "plateAppearances",
+        "expected": 627,
+        "after": 628
+      },
+      {
+        "player": [
+          "2026",
+          "1400127"
+        ],
+        "metric": "atBats",
+        "expected": 538,
+        "after": 539
+      },
+      {
+        "player": [
+          "2026",
+          "1400127"
+        ],
+        "metric": "runs",
+        "expected": 86,
+        "after": 88
+      },
+      {
+        "player": [
+          "2026",
+          "1400127"
+        ],
+        "metric": "hits",
+        "expected": 145,
+        "after": 146
+      },
+      {
+        "player": [
+          "2026",
+          "1400127"
+        ],
+        "metric": "homeRuns",
+        "expected": 39,
+        "after": 40
+      },
+      {
+        "player": [
+          "2026",
+          "1400127"
+        ],
+        "metric": "runsBattedIn",
+        "expected": 115,
+        "after": 118
+      },
+      {
+        "player": [
+          "2026",
+          "1400196"
+        ],
+        "metric": "plateAppearances",
+        "expected": 540,
+        "after": 541
+      },
+      {
+        "player": [
+          "2026",
+          "1400196"
+        ],
+        "metric": "atBats",
+        "expected": 464,
+        "after": 465
+      },
+      {
+        "player": [
+          "2026",
+          "1500050"
+        ],
+        "metric": "plateAppearances",
+        "expected": 79,
+        "after": 80
+      },
+      {
+        "player": [
+          "2026",
+          "1500050"
+        ],
+        "metric": "atBats",
+        "expected": 68,
+        "after": 69
+      },
+      {
+        "player": [
+          "2026",
+          "1500063"
+        ],
+        "metric": "plateAppearances",
+        "expected": 14,
+        "after": 15
+      },
+      {
+        "player": [
+          "2026",
+          "1500063"
+        ],
+        "metric": "atBats",
+        "expected": 10,
+        "after": 11
+      },
+      {
+        "player": [
+          "2026",
+          "1500063"
+        ],
+        "metric": "strikeouts",
+        "expected": 1,
+        "after": 2
+      },
+      {
+        "player": [
+          "2026",
+          "1500064"
+        ],
+        "metric": "games",
+        "expected": 41,
+        "after": 42
+      },
+      {
+        "player": [
+          "2026",
+          "1500064"
+        ],
+        "metric": "plateAppearances",
+        "expected": 109,
+        "after": 110
+      },
+      {
+        "player": [
+          "2026",
+          "1500064"
+        ],
+        "metric": "atBats",
+        "expected": 101,
+        "after": 102
+      },
+      {
+        "player": [
+          "2026",
+          "1500091"
+        ],
+        "metric": "games",
+        "expected": 77,
+        "after": 78
+      },
+      {
+        "player": [
+          "2026",
+          "1500091"
+        ],
+        "metric": "plateAppearances",
+        "expected": 201,
+        "after": 202
+      },
+      {
+        "player": [
+          "2026",
+          "1500091"
+        ],
+        "metric": "atBats",
+        "expected": 182,
+        "after": 183
+      },
+      {
+        "player": [
+          "2026",
+          "1500091"
+        ],
+        "metric": "hits",
+        "expected": 42,
+        "after": 43
+      },
+      {
+        "player": [
+          "2026",
+          "1500096"
+        ],
+        "metric": "plateAppearances",
+        "expected": 611,
+        "after": 612
+      },
+      {
+        "player": [
+          "2026",
+          "1500096"
+        ],
+        "metric": "atBats",
+        "expected": 572,
+        "after": 573
+      },
+      {
+        "player": [
+          "2026",
+          "1500096"
+        ],
+        "metric": "strikeouts",
+        "expected": 90,
+        "after": 91
+      },
+      {
+        "player": [
+          "2026",
+          "1500112"
+        ],
+        "metric": "games",
+        "expected": 26,
+        "after": 27
+      },
+      {
+        "player": [
+          "2026",
+          "1500140"
+        ],
+        "metric": "plateAppearances",
+        "expected": 65,
+        "after": 66
+      },
+      {
+        "player": [
+          "2026",
+          "1500140"
+        ],
+        "metric": "atBats",
+        "expected": 62,
+        "after": 63
+      },
+      {
+        "player": [
+          "2026",
+          "1500140"
+        ],
+        "metric": "strikeouts",
+        "expected": 22,
+        "after": 23
+      },
+      {
+        "player": [
+          "2026",
+          "1561820"
+        ],
+        "metric": "hits",
+        "expected": 123,
+        "after": 124
+      },
+      {
+        "player": [
+          "2026",
+          "1561820"
+        ],
+        "metric": "runsBattedIn",
+        "expected": 80,
+        "after": 81
+      },
+      {
+        "player": [
+          "2026",
+          "1600021"
+        ],
+        "metric": "games",
+        "expected": 20,
+        "after": 21
+      },
+      {
+        "player": [
+          "2026",
+          "1600021"
+        ],
+        "metric": "plateAppearances",
+        "expected": 30,
+        "after": 31
+      },
+      {
+        "player": [
+          "2026",
+          "1600021"
+        ],
+        "metric": "atBats",
+        "expected": 27,
+        "after": 28
+      },
+      {
+        "player": [
+          "2026",
+          "1600021"
+        ],
+        "metric": "strikeouts",
+        "expected": 4,
+        "after": 5
+      },
+      {
+        "player": [
+          "2026",
+          "1600124"
+        ],
+        "metric": "plateAppearances",
+        "expected": 575,
+        "after": 576
+      },
+      {
+        "player": [
+          "2026",
+          "1600124"
+        ],
+        "metric": "atBats",
+        "expected": 504,
+        "after": 505
+      },
+      {
+        "player": [
+          "2026",
+          "1600124"
+        ],
+        "metric": "strikeouts",
+        "expected": 116,
+        "after": 117
+      },
+      {
+        "player": [
+          "2026",
+          "1650813"
+        ],
+        "metric": "games",
+        "expected": 101,
+        "after": 103
+      },
+      {
+        "player": [
+          "2026",
+          "1650813"
+        ],
+        "metric": "plateAppearances",
+        "expected": 44,
+        "after": 45
+      },
+      {
+        "player": [
+          "2026",
+          "1650813"
+        ],
+        "metric": "atBats",
+        "expected": 41,
+        "after": 42
+      },
+      {
+        "player": [
+          "2026",
+          "1700025"
+        ],
+        "metric": "plateAppearances",
+        "expected": 512,
+        "after": 513
+      },
+      {
+        "player": [
+          "2026",
+          "1700025"
+        ],
+        "metric": "atBats",
+        "expected": 446,
+        "after": 447
+      },
+      {
+        "player": [
+          "2026",
+          "1700131"
+        ],
+        "metric": "plateAppearances",
+        "expected": 444,
+        "after": 445
+      },
+      {
+        "player": [
+          "2026",
+          "1700131"
+        ],
+        "metric": "atBats",
+        "expected": 402,
+        "after": 403
+      },
+      {
+        "player": [
+          "2026",
+          "1700135"
+        ],
+        "metric": "plateAppearances",
+        "expected": 548,
+        "after": 550
+      },
+      {
+        "player": [
+          "2026",
+          "1700135"
+        ],
+        "metric": "atBats",
+        "expected": 481,
+        "after": 483
+      },
+      {
+        "player": [
+          "2026",
+          "1700135"
+        ],
+        "metric": "runs",
+        "expected": 74,
+        "after": 75
+      },
+      {
+        "player": [
+          "2026",
+          "1700135"
+        ],
+        "metric": "hits",
+        "expected": 132,
+        "after": 133
+      },
+      {
+        "player": [
+          "2026",
+          "1700135"
+        ],
+        "metric": "runsBattedIn",
+        "expected": 38,
+        "after": 39
+      },
+      {
+        "player": [
+          "2026",
+          "1700135"
+        ],
+        "metric": "steals",
+        "expected": 29,
+        "after": 30
+      },
+      {
+        "player": [
+          "2026",
+          "1750223"
+        ],
+        "metric": "plateAppearances",
+        "expected": 529,
+        "after": 530
+      },
+      {
+        "player": [
+          "2026",
+          "1750223"
+        ],
+        "metric": "atBats",
+        "expected": 445,
+        "after": 446
+      },
+      {
+        "player": [
+          "2026",
+          "1800043"
+        ],
+        "metric": "games",
+        "expected": 2,
+        "after": 3
+      },
+      {
+        "player": [
+          "2026",
+          "1800050"
+        ],
+        "metric": "plateAppearances",
+        "expected": 466,
+        "after": 467
+      },
+      {
+        "player": [
+          "2026",
+          "1800050"
+        ],
+        "metric": "runs",
+        "expected": 57,
+        "after": 58
+      },
+      {
+        "player": [
+          "2026",
+          "1800050"
+        ],
+        "metric": "walks",
+        "expected": 45,
+        "after": 46
+      },
+      {
+        "player": [
+          "2026",
+          "1800072"
+        ],
+        "metric": "plateAppearances",
+        "expected": 400,
+        "after": 401
+      },
+      {
+        "player": [
+          "2026",
+          "1800072"
+        ],
+        "metric": "atBats",
+        "expected": 368,
+        "after": 369
+      },
+      {
+        "player": [
+          "2026",
+          "1800082"
+        ],
+        "metric": "games",
+        "expected": 20,
+        "after": 21
+      },
+      {
+        "player": [
+          "2026",
+          "1800082"
+        ],
+        "metric": "runs",
+        "expected": 1,
+        "after": 2
+      },
+      {
+        "player": [
+          "2026",
+          "1800098"
+        ],
+        "metric": "plateAppearances",
+        "expected": 514,
+        "after": 515
+      },
+      {
+        "player": [
+          "2026",
+          "1800098"
+        ],
+        "metric": "atBats",
+        "expected": 463,
+        "after": 464
+      },
+      {
+        "player": [
+          "2026",
+          "1800102"
+        ],
+        "metric": "plateAppearances",
+        "expected": 46,
+        "after": 47
+      },
+      {
+        "player": [
+          "2026",
+          "1800102"
+        ],
+        "metric": "atBats",
+        "expected": 42,
+        "after": 43
+      },
+      {
+        "player": [
+          "2026",
+          "1800102"
+        ],
+        "metric": "steals",
+        "expected": 1,
+        "after": 2
+      },
+      {
+        "player": [
+          "2026",
+          "1800104"
+        ],
+        "metric": "plateAppearances",
+        "expected": 437,
+        "after": 438
+      },
+      {
+        "player": [
+          "2026",
+          "1800104"
+        ],
+        "metric": "atBats",
+        "expected": 392,
+        "after": 393
+      },
+      {
+        "player": [
+          "2026",
+          "1850172"
+        ],
+        "metric": "plateAppearances",
+        "expected": 99,
+        "after": 100
+      },
+      {
+        "player": [
+          "2026",
+          "1850172"
+        ],
+        "metric": "atBats",
+        "expected": 83,
+        "after": 84
+      },
+      {
+        "player": [
+          "2026",
+          "1850172"
+        ],
+        "metric": "hits",
+        "expected": 18,
+        "after": 19
+      },
+      {
+        "player": [
+          "2026",
+          "1850172"
+        ],
+        "metric": "runsBattedIn",
+        "expected": 9,
+        "after": 11
+      },
+      {
+        "player": [
+          "2026",
+          "1850932"
+        ],
+        "metric": "games",
+        "expected": 115,
+        "after": 116
+      },
+      {
+        "player": [
+          "2026",
+          "1860140"
+        ],
+        "metric": "plateAppearances",
+        "expected": 530,
+        "after": 531
+      },
+      {
+        "player": [
+          "2026",
+          "1860140"
+        ],
+        "metric": "atBats",
+        "expected": 475,
+        "after": 476
+      },
+      {
+        "player": [
+          "2026",
+          "1900029"
+        ],
+        "metric": "plateAppearances",
+        "expected": 290,
+        "after": 291
+      },
+      {
+        "player": [
+          "2026",
+          "1900029"
+        ],
+        "metric": "walks",
+        "expected": 22,
+        "after": 23
+      },
+      {
+        "player": [
+          "2026",
+          "1900037"
+        ],
+        "metric": "plateAppearances",
+        "expected": 388,
+        "after": 389
+      },
+      {
+        "player": [
+          "2026",
+          "1900037"
+        ],
+        "metric": "atBats",
+        "expected": 353,
+        "after": 354
+      },
+      {
+        "player": [
+          "2026",
+          "1900037"
+        ],
+        "metric": "strikeouts",
+        "expected": 67,
+        "after": 68
+      },
+      {
+        "player": [
+          "2026",
+          "1900040"
+        ],
+        "metric": "plateAppearances",
+        "expected": 380,
+        "after": 381
+      },
+      {
+        "player": [
+          "2026",
+          "1900040"
+        ],
+        "metric": "atBats",
+        "expected": 322,
+        "after": 323
+      },
+      {
+        "player": [
+          "2026",
+          "1900082"
+        ],
+        "metric": "plateAppearances",
+        "expected": 153,
+        "after": 154
+      },
+      {
+        "player": [
+          "2026",
+          "1900082"
+        ],
+        "metric": "atBats",
+        "expected": 143,
+        "after": 144
+      },
+      {
+        "player": [
+          "2026",
+          "1900082"
+        ],
+        "metric": "runsBattedIn",
+        "expected": 6,
+        "after": 7
+      },
+      {
+        "player": [
+          "2026",
+          "1900088"
+        ],
+        "metric": "plateAppearances",
+        "expected": 531,
+        "after": 532
+      },
+      {
+        "player": [
+          "2026",
+          "1900088"
+        ],
+        "metric": "atBats",
+        "expected": 469,
+        "after": 470
+      },
+      {
+        "player": [
+          "2026",
+          "1900101"
+        ],
+        "metric": "plateAppearances",
+        "expected": 270,
+        "after": 271
+      },
+      {
+        "player": [
+          "2026",
+          "1900101"
+        ],
+        "metric": "atBats",
+        "expected": 227,
+        "after": 228
+      },
+      {
+        "player": [
+          "2026",
+          "1900113"
+        ],
+        "metric": "steals",
+        "expected": 1,
+        "after": 2
+      },
+      {
+        "player": [
+          "2026",
+          "1950286"
+        ],
+        "metric": "plateAppearances",
+        "expected": 585,
+        "after": 586
+      },
+      {
+        "player": [
+          "2026",
+          "1950286"
+        ],
+        "metric": "atBats",
+        "expected": 533,
+        "after": 534
+      },
+      {
+        "player": [
+          "2026",
+          "2000026"
+        ],
+        "metric": "plateAppearances",
+        "expected": 347,
+        "after": 348
+      },
+      {
+        "player": [
+          "2026",
+          "2000026"
+        ],
+        "metric": "atBats",
+        "expected": 306,
+        "after": 307
+      },
+      {
+        "player": [
+          "2026",
+          "2000026"
+        ],
+        "metric": "runs",
+        "expected": 32,
+        "after": 33
+      },
+      {
+        "player": [
+          "2026",
+          "2000026"
+        ],
+        "metric": "hits",
+        "expected": 70,
+        "after": 71
+      },
+      {
+        "player": [
+          "2026",
+          "2000026"
+        ],
+        "metric": "homeRuns",
+        "expected": 4,
+        "after": 5
+      },
+      {
+        "player": [
+          "2026",
+          "2000026"
+        ],
+        "metric": "runsBattedIn",
+        "expected": 24,
+        "after": 26
+      },
+      {
+        "player": [
+          "2026",
+          "2000057"
+        ],
+        "metric": "hits",
+        "expected": 72,
+        "after": 73
+      },
+      {
+        "player": [
+          "2026",
+          "2000080"
+        ],
+        "metric": "games",
+        "expected": 100,
+        "after": 101
+      },
+      {
+        "player": [
+          "2026",
+          "2000098"
+        ],
+        "metric": "plateAppearances",
+        "expected": 355,
+        "after": 356
+      },
+      {
+        "player": [
+          "2026",
+          "2000098"
+        ],
+        "metric": "atBats",
+        "expected": 330,
+        "after": 331
+      },
+      {
+        "player": [
+          "2026",
+          "2050143"
+        ],
+        "metric": "plateAppearances",
+        "expected": 155,
+        "after": 156
+      },
+      {
+        "player": [
+          "2026",
+          "2050143"
+        ],
+        "metric": "atBats",
+        "expected": 137,
+        "after": 138
+      },
+      {
+        "player": [
+          "2026",
+          "2103693"
+        ],
+        "metric": "plateAppearances",
+        "expected": 93,
+        "after": 94
+      },
+      {
+        "player": [
+          "2026",
+          "2103693"
+        ],
+        "metric": "atBats",
+        "expected": 89,
+        "after": 90
+      },
+      {
+        "player": [
+          "2026",
+          "2103747"
+        ],
+        "metric": "plateAppearances",
+        "expected": 251,
+        "after": 252
+      },
+      {
+        "player": [
+          "2026",
+          "2103747"
+        ],
+        "metric": "atBats",
+        "expected": 216,
+        "after": 217
+      },
+      {
+        "player": [
+          "2026",
+          "2103780"
+        ],
+        "metric": "plateAppearances",
+        "expected": 441,
+        "after": 442
+      },
+      {
+        "player": [
+          "2026",
+          "2103780"
+        ],
+        "metric": "walks",
+        "expected": 32,
+        "after": 33
+      },
+      {
+        "player": [
+          "2026",
+          "2103780"
+        ],
+        "metric": "steals",
+        "expected": 14,
+        "after": 15
+      },
+      {
+        "player": [
+          "2026",
+          "2103917"
+        ],
+        "metric": "plateAppearances",
+        "expected": 455,
+        "after": 456
+      },
+      {
+        "player": [
+          "2026",
+          "2103917"
+        ],
+        "metric": "atBats",
+        "expected": 421,
+        "after": 422
+      },
+      {
+        "player": [
+          "2026",
+          "2103917"
+        ],
+        "metric": "strikeouts",
+        "expected": 80,
+        "after": 81
+      },
+      {
+        "player": [
+          "2026",
+          "2104035"
+        ],
+        "metric": "plateAppearances",
+        "expected": 132,
+        "after": 134
+      },
+      {
+        "player": [
+          "2026",
+          "2104035"
+        ],
+        "metric": "atBats",
+        "expected": 123,
+        "after": 124
+      },
+      {
+        "player": [
+          "2026",
+          "2104035"
+        ],
+        "metric": "hits",
+        "expected": 28,
+        "after": 29
+      },
+      {
+        "player": [
+          "2026",
+          "2104035"
+        ],
+        "metric": "walks",
+        "expected": 9,
+        "after": 10
+      },
+      {
+        "player": [
+          "2026",
+          "2106284"
+        ],
+        "metric": "plateAppearances",
+        "expected": 121,
+        "after": 122
+      },
+      {
+        "player": [
+          "2026",
+          "2106284"
+        ],
+        "metric": "atBats",
+        "expected": 114,
+        "after": 115
+      },
+      {
+        "player": [
+          "2026",
+          "2106284"
+        ],
+        "metric": "strikeouts",
+        "expected": 23,
+        "after": 24
+      },
+      {
+        "player": [
+          "2026",
+          "2110153"
+        ],
+        "metric": "plateAppearances",
+        "expected": 94,
+        "after": 95
+      },
+      {
+        "player": [
+          "2026",
+          "2110153"
+        ],
+        "metric": "runsBattedIn",
+        "expected": 4,
+        "after": 5
+      },
+      {
+        "player": [
+          "2026",
+          "2112136"
+        ],
+        "metric": "games",
+        "expected": 0,
+        "after": 1
+      },
+      {
+        "player": [
+          "2026",
+          "2114882"
+        ],
+        "metric": "plateAppearances",
+        "expected": 363,
+        "after": 364
+      },
+      {
+        "player": [
+          "2026",
+          "2114882"
+        ],
+        "metric": "atBats",
+        "expected": 326,
+        "after": 327
+      },
+      {
+        "player": [
+          "2026",
+          "2117200"
+        ],
+        "metric": "plateAppearances",
+        "expected": 141,
+        "after": 144
+      },
+      {
+        "player": [
+          "2026",
+          "2117200"
+        ],
+        "metric": "atBats",
+        "expected": 136,
+        "after": 139
+      },
+      {
+        "player": [
+          "2026",
+          "2117200"
+        ],
+        "metric": "hits",
+        "expected": 21,
+        "after": 22
+      },
+      {
+        "player": [
+          "2026",
+          "2117200"
+        ],
+        "metric": "strikeouts",
+        "expected": 44,
+        "after": 45
+      },
+      {
+        "player": [
+          "2026",
+          "2117693"
+        ],
+        "metric": "games",
+        "expected": 15,
+        "after": 16
+      },
+      {
+        "player": [
+          "2026",
+          "ビシエド"
+        ],
+        "metric": "games",
+        "expected": 1,
+        "after": 0
+      },
+      {
+        "player": [
+          "2026",
+          "ビシエド"
+        ],
+        "metric": "plateAppearances",
+        "expected": 1,
+        "after": 0
+      },
+      {
+        "player": [
+          "2026",
+          "ビシエド"
+        ],
+        "metric": "atBats",
+        "expected": 1,
+        "after": 0
+      },
+      {
+        "player": [
+          "2026",
+          "ビシエド"
+        ],
+        "metric": "strikeouts",
+        "expected": 1,
+        "after": 0
+      }
+    ],
+    "transfers": [
+      {
+        "player": "若林 楽人",
+        "team": "巨人",
+        "league": "セ",
+        "games": 21,
+        "innings": null,
+        "atBats": 28,
+        "hits": 5,
+        "wins": null,
+        "losses": null
+      },
+      {
+        "player": "若林 楽人",
+        "team": "西武",
+        "league": "パ",
+        "games": 5,
+        "innings": null,
+        "atBats": 14,
+        "hits": 2,
+        "wins": null,
+        "losses": null
+      },
+      {
+        "player": "山本 祐大",
+        "team": "DeNA",
+        "league": "セ",
+        "games": 28,
+        "innings": null,
+        "atBats": 88,
+        "hits": 20,
+        "wins": null,
+        "losses": null
+      },
+      {
+        "player": "山本 祐大",
+        "team": "ソフトバンク",
+        "league": "パ",
+        "games": 55,
+        "innings": null,
+        "atBats": 191,
+        "hits": 51,
+        "wins": null,
+        "losses": null
+      }
+    ]
+  },
+  "verification": {
+    "status": "passed",
+    "historical2025Unchanged": true,
+    "existingPitcherAppearancesAndStatlinesUnchanged": true,
+    "pitcherCountingStatsUnchanged": false,
+    "pitcherCountingStatsMatchBaselinePlusAddedGames": true,
+    "transferredCombinedCountingStatsMatchBaselinePlusAddedGames": true,
+    "allBatterGameStatlinesMatchOfficialCache": true,
+    "addedGameIds": [
+      "2021051134",
+      "2021051699"
+    ],
+    "addedPitcherAppearances": 22,
+    "addedBatterAppearances": 79,
+    "correctedBatterGameLines": 47,
+    "correctedGames": 8
+  },
+  "officialGameCorrections": [
+    {
+      "date": "2026-07-24",
+      "gameId": "2021039184",
+      "team": "広島",
+      "player": "ファビアン",
+      "before": {
+        "ab": 3,
+        "hits": 1,
+        "homeRuns": 0,
+        "rbi": 1,
+        "walks": 1,
+        "strikeouts": 0
+      },
+      "after": {
+        "ab": 4,
+        "hits": 1,
+        "homeRuns": 0,
+        "rbi": 1,
+        "walks": 1,
+        "strikeouts": 0
+      }
+    },
+    {
+      "date": "2026-07-24",
+      "gameId": "2021039184",
+      "team": "広島",
+      "player": "坂倉 将吾",
+      "before": {
+        "ab": 5,
+        "hits": 2,
+        "homeRuns": 0,
+        "rbi": 2,
+        "walks": 0,
+        "strikeouts": 1
+      },
+      "after": {
+        "ab": 6,
+        "hits": 2,
+        "homeRuns": 0,
+        "rbi": 2,
+        "walks": 0,
+        "strikeouts": 2
+      }
+    },
+    {
+      "date": "2026-07-24",
+      "gameId": "2021039184",
+      "team": "広島",
+      "player": "小園 海斗",
+      "before": {
+        "ab": 5,
+        "hits": 1,
+        "homeRuns": 0,
+        "rbi": 0,
+        "walks": 0,
+        "strikeouts": 0
+      },
+      "after": {
+        "ab": 6,
+        "hits": 1,
+        "homeRuns": 0,
+        "rbi": 0,
+        "walks": 0,
+        "strikeouts": 0
+      }
+    },
+    {
+      "date": "2026-07-24",
+      "gameId": "2021039184",
+      "team": "ヤクルト",
+      "player": "岩田 幸宏",
+      "before": {
+        "ab": 1,
+        "hits": 0,
+        "homeRuns": 0,
+        "rbi": 0,
+        "walks": 0,
+        "strikeouts": 0
+      },
+      "after": {
+        "ab": 2,
+        "hits": 0,
+        "homeRuns": 0,
+        "rbi": 0,
+        "walks": 0,
+        "strikeouts": 1
+      }
+    },
+    {
+      "date": "2026-07-24",
+      "gameId": "2021039184",
+      "team": "ヤクルト",
+      "player": "増田 珠",
+      "before": {
+        "ab": 5,
+        "hits": 1,
+        "homeRuns": 0,
+        "rbi": 0,
+        "walks": 0,
+        "strikeouts": 2
+      },
+      "after": {
+        "ab": 6,
+        "hits": 1,
+        "homeRuns": 0,
+        "rbi": 0,
+        "walks": 0,
+        "strikeouts": 2
+      }
+    },
+    {
+      "date": "2026-07-24",
+      "gameId": "2021039184",
+      "team": "ヤクルト",
+      "player": "武岡 龍世",
+      "before": {
+        "ab": 4,
+        "hits": 2,
+        "homeRuns": 0,
+        "rbi": 0,
+        "walks": 1,
+        "strikeouts": 2
+      },
+      "after": {
+        "ab": 4,
+        "hits": 2,
+        "homeRuns": 0,
+        "rbi": 0,
+        "walks": 2,
+        "strikeouts": 2
+      }
+    },
+    {
+      "date": "2026-07-24",
+      "gameId": "2021039184",
+      "team": "ヤクルト",
+      "player": "内山 壮真",
+      "before": {
+        "ab": 4,
+        "hits": 0,
+        "homeRuns": 0,
+        "rbi": 0,
+        "walks": 1,
+        "strikeouts": 0
+      },
+      "after": {
+        "ab": 5,
+        "hits": 1,
+        "homeRuns": 1,
+        "rbi": 2,
+        "walks": 1,
+        "strikeouts": 0
+      }
+    },
+    {
+      "date": "2026-07-02",
+      "gameId": "2021039078",
+      "team": "DeNA",
+      "player": "柴田 竜拓",
+      "before": {
+        "ab": 0,
+        "hits": 0,
+        "homeRuns": 0,
+        "rbi": 0,
+        "walks": 0,
+        "strikeouts": 0
+      },
+      "after": {
+        "ab": 1,
+        "hits": 0,
+        "homeRuns": 0,
+        "rbi": 0,
+        "walks": 0,
+        "strikeouts": 1
+      }
+    },
+    {
+      "date": "2026-06-27",
+      "gameId": "2021039058",
+      "team": "阪神",
+      "player": "髙寺 望夢",
+      "before": {
+        "ab": 5,
+        "hits": 3,
+        "homeRuns": 0,
+        "rbi": 1,
+        "walks": 0,
+        "strikeouts": 0
+      },
+      "after": {
+        "ab": 5,
+        "hits": 4,
+        "homeRuns": 0,
+        "rbi": 1,
+        "walks": 0,
+        "strikeouts": 0
+      }
+    },
+    {
+      "date": "2026-06-03",
+      "gameId": "2021038954",
+      "team": "中日",
+      "player": "福永 裕基",
+      "before": {
+        "ab": 4,
+        "hits": 2,
+        "homeRuns": 0,
+        "rbi": 1,
+        "walks": 1,
+        "strikeouts": 1
+      },
+      "after": {
+        "ab": 4,
+        "hits": 2,
+        "homeRuns": 0,
+        "rbi": 1,
+        "walks": 2,
+        "strikeouts": 1
+      }
+    },
+    {
+      "date": "2026-06-03",
+      "gameId": "2021038954",
+      "team": "中日",
+      "player": "村松 開人",
+      "before": {
+        "ab": 4,
+        "hits": 1,
+        "homeRuns": 0,
+        "rbi": 1,
+        "walks": 0,
+        "strikeouts": 2
+      },
+      "after": {
+        "ab": 5,
+        "hits": 1,
+        "homeRuns": 0,
+        "rbi": 1,
+        "walks": 0,
+        "strikeouts": 2
+      }
+    },
+    {
+      "date": "2026-06-03",
+      "gameId": "2021038954",
+      "team": "中日",
+      "player": "石川 昂弥",
+      "before": {
+        "ab": 4,
+        "hits": 1,
+        "homeRuns": 0,
+        "rbi": 0,
+        "walks": 1,
+        "strikeouts": 3
+      },
+      "after": {
+        "ab": 5,
+        "hits": 1,
+        "homeRuns": 0,
+        "rbi": 0,
+        "walks": 1,
+        "strikeouts": 4
+      }
+    },
+    {
+      "date": "2026-06-03",
+      "gameId": "2021038954",
+      "team": "中日",
+      "player": "山本 泰寛",
+      "before": {
+        "ab": 4,
+        "hits": 3,
+        "homeRuns": 0,
+        "rbi": 0,
+        "walks": 0,
+        "strikeouts": 0
+      },
+      "after": {
+        "ab": 5,
+        "hits": 3,
+        "homeRuns": 0,
+        "rbi": 0,
+        "walks": 0,
+        "strikeouts": 0
+      }
+    },
+    {
+      "date": "2026-06-03",
+      "gameId": "2021038954",
+      "team": "ソフトバンク",
+      "player": "谷川原 健太",
+      "before": {
+        "ab": 1,
+        "hits": 0,
+        "homeRuns": 0,
+        "rbi": 0,
+        "walks": 0,
+        "strikeouts": 0
+      },
+      "after": {
+        "ab": 2,
+        "hits": 0,
+        "homeRuns": 0,
+        "rbi": 0,
+        "walks": 0,
+        "strikeouts": 1
+      }
+    },
+    {
+      "date": "2026-06-03",
+      "gameId": "2021038954",
+      "team": "ソフトバンク",
+      "player": "廣瀨 隆太",
+      "before": {
+        "ab": 3,
+        "hits": 2,
+        "homeRuns": 0,
+        "rbi": 0,
+        "walks": 1,
+        "strikeouts": 0
+      },
+      "after": {
+        "ab": 4,
+        "hits": 3,
+        "homeRuns": 0,
+        "rbi": 2,
+        "walks": 1,
+        "strikeouts": 0
+      }
+    },
+    {
+      "date": "2026-06-03",
+      "gameId": "2021038954",
+      "team": "ソフトバンク",
+      "player": "周東 佑京",
+      "before": {
+        "ab": 3,
+        "hits": 1,
+        "homeRuns": 0,
+        "rbi": 0,
+        "walks": 1,
+        "strikeouts": 1
+      },
+      "after": {
+        "ab": 4,
+        "hits": 1,
+        "homeRuns": 0,
+        "rbi": 1,
+        "walks": 1,
+        "strikeouts": 1
+      }
+    },
+    {
+      "date": "2026-06-03",
+      "gameId": "2021038954",
+      "team": "ソフトバンク",
+      "player": "野村 勇",
+      "before": {
+        "ab": 1,
+        "hits": 0,
+        "homeRuns": 0,
+        "rbi": 0,
+        "walks": 0,
+        "strikeouts": 1
+      },
+      "after": {
+        "ab": 1,
+        "hits": 0,
+        "homeRuns": 0,
+        "rbi": 0,
+        "walks": 1,
+        "strikeouts": 1
+      }
+    },
+    {
+      "date": "2026-05-05",
+      "gameId": "2021038821",
+      "team": "ロッテ",
+      "player": "藤原 恭大",
+      "before": {
+        "ab": 3,
+        "hits": 0,
+        "homeRuns": 0,
+        "rbi": 0,
+        "walks": 0,
+        "strikeouts": 1
+      },
+      "after": {
+        "ab": 3,
+        "hits": 0,
+        "homeRuns": 0,
+        "rbi": 0,
+        "walks": 1,
+        "strikeouts": 1
+      }
+    },
+    {
+      "date": "2026-05-05",
+      "gameId": "2021038821",
+      "team": "ロッテ",
+      "player": "西川 史礁",
+      "before": {
+        "ab": 3,
+        "hits": 1,
+        "homeRuns": 0,
+        "rbi": 0,
+        "walks": 0,
+        "strikeouts": 0
+      },
+      "after": {
+        "ab": 4,
+        "hits": 1,
+        "homeRuns": 0,
+        "rbi": 0,
+        "walks": 0,
+        "strikeouts": 0
+      }
+    },
+    {
+      "date": "2026-05-05",
+      "gameId": "2021038821",
+      "team": "ロッテ",
+      "player": "髙部 瑛斗",
+      "before": {
+        "ab": 3,
+        "hits": 0,
+        "homeRuns": 0,
+        "rbi": 0,
+        "walks": 0,
+        "strikeouts": 0
+      },
+      "after": {
+        "ab": 4,
+        "hits": 0,
+        "homeRuns": 0,
+        "rbi": 1,
+        "walks": 0,
+        "strikeouts": 0
+      }
+    },
+    {
+      "date": "2026-05-05",
+      "gameId": "2021038821",
+      "team": "ロッテ",
+      "player": "池田 来翔",
+      "before": {
+        "ab": 1,
+        "hits": 0,
+        "homeRuns": 0,
+        "rbi": 0,
+        "walks": 0,
+        "strikeouts": 0
+      },
+      "after": {
+        "ab": 2,
+        "hits": 0,
+        "homeRuns": 0,
+        "rbi": 0,
+        "walks": 0,
+        "strikeouts": 0
+      }
+    },
+    {
+      "date": "2026-05-05",
+      "gameId": "2021038821",
+      "team": "オリックス",
+      "player": "シーモア",
+      "before": {
+        "ab": 3,
+        "hits": 0,
+        "homeRuns": 0,
+        "rbi": 0,
+        "walks": 0,
+        "strikeouts": 0
+      },
+      "after": {
+        "ab": 4,
+        "hits": 1,
+        "homeRuns": 0,
+        "rbi": 0,
+        "walks": 0,
+        "strikeouts": 0
+      }
+    },
+    {
+      "date": "2026-05-05",
+      "gameId": "2021038821",
+      "team": "オリックス",
+      "player": "宜保 翔",
+      "before": {
+        "ab": 2,
+        "hits": 1,
+        "homeRuns": 0,
+        "rbi": 0,
+        "walks": 1,
+        "strikeouts": 0
+      },
+      "after": {
+        "ab": 3,
+        "hits": 1,
+        "homeRuns": 0,
+        "rbi": 0,
+        "walks": 1,
+        "strikeouts": 0
+      }
+    },
+    {
+      "date": "2026-05-05",
+      "gameId": "2021038821",
+      "team": "オリックス",
+      "player": "麦谷 祐介",
+      "before": {
+        "ab": 3,
+        "hits": 1,
+        "homeRuns": 0,
+        "rbi": 1,
+        "walks": 0,
+        "strikeouts": 2
+      },
+      "after": {
+        "ab": 3,
+        "hits": 1,
+        "homeRuns": 0,
+        "rbi": 2,
+        "walks": 0,
+        "strikeouts": 2
+      }
+    },
+    {
+      "date": "2026-05-05",
+      "gameId": "2021038821",
+      "team": "オリックス",
+      "player": "紅林 弘太郎",
+      "before": {
+        "ab": 2,
+        "hits": 1,
+        "homeRuns": 0,
+        "rbi": 1,
+        "walks": 0,
+        "strikeouts": 0
+      },
+      "after": {
+        "ab": 3,
+        "hits": 1,
+        "homeRuns": 0,
+        "rbi": 1,
+        "walks": 0,
+        "strikeouts": 0
+      }
+    },
+    {
+      "date": "2026-05-03",
+      "gameId": "2021038807",
+      "team": "日本ハム",
+      "player": "大塚 瑠晏",
+      "before": {
+        "ab": 3,
+        "hits": 0,
+        "homeRuns": 0,
+        "rbi": 0,
+        "walks": 0,
+        "strikeouts": 2
+      },
+      "after": {
+        "ab": 4,
+        "hits": 0,
+        "homeRuns": 0,
+        "rbi": 0,
+        "walks": 0,
+        "strikeouts": 2
+      }
+    },
+    {
+      "date": "2026-05-03",
+      "gameId": "2021038807",
+      "team": "日本ハム",
+      "player": "レイエス",
+      "before": {
+        "ab": 3,
+        "hits": 3,
+        "homeRuns": 0,
+        "rbi": 1,
+        "walks": 0,
+        "strikeouts": 0
+      },
+      "after": {
+        "ab": 4,
+        "hits": 3,
+        "homeRuns": 0,
+        "rbi": 1,
+        "walks": 0,
+        "strikeouts": 0
+      }
+    },
+    {
+      "date": "2026-05-03",
+      "gameId": "2021038807",
+      "team": "日本ハム",
+      "player": "郡司 裕也",
+      "before": {
+        "ab": 3,
+        "hits": 1,
+        "homeRuns": 0,
+        "rbi": 0,
+        "walks": 0,
+        "strikeouts": 0
+      },
+      "after": {
+        "ab": 4,
+        "hits": 1,
+        "homeRuns": 0,
+        "rbi": 0,
+        "walks": 0,
+        "strikeouts": 0
+      }
+    },
+    {
+      "date": "2026-05-03",
+      "gameId": "2021038807",
+      "team": "日本ハム",
+      "player": "清宮 幸太郎",
+      "before": {
+        "ab": 2,
+        "hits": 0,
+        "homeRuns": 0,
+        "rbi": 1,
+        "walks": 0,
+        "strikeouts": 0
+      },
+      "after": {
+        "ab": 3,
+        "hits": 0,
+        "homeRuns": 0,
+        "rbi": 1,
+        "walks": 0,
+        "strikeouts": 0
+      }
+    },
+    {
+      "date": "2026-05-03",
+      "gameId": "2021038807",
+      "team": "日本ハム",
+      "player": "矢澤 宏太",
+      "before": {
+        "ab": 0,
+        "hits": 0,
+        "homeRuns": 0,
+        "rbi": 0,
+        "walks": 0,
+        "strikeouts": 0
+      },
+      "after": {
+        "ab": 1,
+        "hits": 0,
+        "homeRuns": 0,
+        "rbi": 0,
+        "walks": 0,
+        "strikeouts": 1
+      }
+    },
+    {
+      "date": "2026-05-03",
+      "gameId": "2021038807",
+      "team": "オリックス",
+      "player": "宗 佑磨",
+      "before": {
+        "ab": 3,
+        "hits": 0,
+        "homeRuns": 0,
+        "rbi": 0,
+        "walks": 0,
+        "strikeouts": 1
+      },
+      "after": {
+        "ab": 4,
+        "hits": 0,
+        "homeRuns": 0,
+        "rbi": 0,
+        "walks": 0,
+        "strikeouts": 1
+      }
+    },
+    {
+      "date": "2026-05-03",
+      "gameId": "2021038807",
+      "team": "オリックス",
+      "player": "渡部 遼人",
+      "before": {
+        "ab": 3,
+        "hits": 0,
+        "homeRuns": 0,
+        "rbi": 0,
+        "walks": 0,
+        "strikeouts": 0
+      },
+      "after": {
+        "ab": 4,
+        "hits": 0,
+        "homeRuns": 0,
+        "rbi": 0,
+        "walks": 0,
+        "strikeouts": 0
+      }
+    },
+    {
+      "date": "2026-05-03",
+      "gameId": "2021038807",
+      "team": "オリックス",
+      "player": "西川 龍馬",
+      "before": {
+        "ab": 3,
+        "hits": 1,
+        "homeRuns": 0,
+        "rbi": 0,
+        "walks": 0,
+        "strikeouts": 0
+      },
+      "after": {
+        "ab": 4,
+        "hits": 1,
+        "homeRuns": 0,
+        "rbi": 0,
+        "walks": 0,
+        "strikeouts": 1
+      }
+    },
+    {
+      "date": "2026-05-03",
+      "gameId": "2021038807",
+      "team": "オリックス",
+      "player": "シーモア",
+      "before": {
+        "ab": 2,
+        "hits": 0,
+        "homeRuns": 0,
+        "rbi": 0,
+        "walks": 0,
+        "strikeouts": 1
+      },
+      "after": {
+        "ab": 3,
+        "hits": 0,
+        "homeRuns": 0,
+        "rbi": 0,
+        "walks": 0,
+        "strikeouts": 2
+      }
+    },
+    {
+      "date": "2026-05-03",
+      "gameId": "2021038807",
+      "team": "オリックス",
+      "player": "来田 涼斗",
+      "before": {
+        "ab": 2,
+        "hits": 1,
+        "homeRuns": 0,
+        "rbi": 0,
+        "walks": 0,
+        "strikeouts": 0
+      },
+      "after": {
+        "ab": 3,
+        "hits": 1,
+        "homeRuns": 0,
+        "rbi": 0,
+        "walks": 0,
+        "strikeouts": 0
+      }
+    },
+    {
+      "date": "2026-04-28",
+      "gameId": "2021038781",
+      "team": "ソフトバンク",
+      "player": "柳田 悠岐",
+      "before": {
+        "ab": 4,
+        "hits": 0,
+        "homeRuns": 0,
+        "rbi": 0,
+        "walks": 0,
+        "strikeouts": 1
+      },
+      "after": {
+        "ab": 5,
+        "hits": 1,
+        "homeRuns": 0,
+        "rbi": 0,
+        "walks": 0,
+        "strikeouts": 1
+      }
+    },
+    {
+      "date": "2026-04-28",
+      "gameId": "2021038781",
+      "team": "ソフトバンク",
+      "player": "周東 佑京",
+      "before": {
+        "ab": 4,
+        "hits": 2,
+        "homeRuns": 0,
+        "rbi": 0,
+        "walks": 0,
+        "strikeouts": 0
+      },
+      "after": {
+        "ab": 5,
+        "hits": 3,
+        "homeRuns": 0,
+        "rbi": 0,
+        "walks": 0,
+        "strikeouts": 0
+      }
+    },
+    {
+      "date": "2026-04-28",
+      "gameId": "2021038781",
+      "team": "ソフトバンク",
+      "player": "栗原 陵矢",
+      "before": {
+        "ab": 2,
+        "hits": 0,
+        "homeRuns": 0,
+        "rbi": 0,
+        "walks": 1,
+        "strikeouts": 1
+      },
+      "after": {
+        "ab": 3,
+        "hits": 1,
+        "homeRuns": 1,
+        "rbi": 3,
+        "walks": 1,
+        "strikeouts": 1
+      }
+    },
+    {
+      "date": "2026-04-28",
+      "gameId": "2021038781",
+      "team": "ソフトバンク",
+      "player": "近藤 健介",
+      "before": {
+        "ab": 3,
+        "hits": 0,
+        "homeRuns": 0,
+        "rbi": 0,
+        "walks": 1,
+        "strikeouts": 1
+      },
+      "after": {
+        "ab": 4,
+        "hits": 0,
+        "homeRuns": 0,
+        "rbi": 0,
+        "walks": 1,
+        "strikeouts": 1
+      }
+    },
+    {
+      "date": "2026-04-28",
+      "gameId": "2021038781",
+      "team": "ソフトバンク",
+      "player": "野村 勇",
+      "before": {
+        "ab": 0,
+        "hits": 0,
+        "homeRuns": 0,
+        "rbi": 0,
+        "walks": 0,
+        "strikeouts": 0
+      },
+      "after": {
+        "ab": 1,
+        "hits": 1,
+        "homeRuns": 0,
+        "rbi": 0,
+        "walks": 0,
+        "strikeouts": 0
+      }
+    },
+    {
+      "date": "2026-04-28",
+      "gameId": "2021038781",
+      "team": "ソフトバンク",
+      "player": "山川 穂高",
+      "before": {
+        "ab": 4,
+        "hits": 0,
+        "homeRuns": 0,
+        "rbi": 1,
+        "walks": 0,
+        "strikeouts": 2
+      },
+      "after": {
+        "ab": 5,
+        "hits": 0,
+        "homeRuns": 0,
+        "rbi": 1,
+        "walks": 0,
+        "strikeouts": 2
+      }
+    },
+    {
+      "date": "2026-04-28",
+      "gameId": "2021038781",
+      "team": "ソフトバンク",
+      "player": "海野 隆司",
+      "before": {
+        "ab": 2,
+        "hits": 0,
+        "homeRuns": 0,
+        "rbi": 0,
+        "walks": 0,
+        "strikeouts": 0
+      },
+      "after": {
+        "ab": 3,
+        "hits": 0,
+        "homeRuns": 0,
+        "rbi": 0,
+        "walks": 0,
+        "strikeouts": 0
+      }
+    },
+    {
+      "date": "2026-04-28",
+      "gameId": "2021038781",
+      "team": "オリックス",
+      "player": "太田 椋",
+      "before": {
+        "ab": 1,
+        "hits": 0,
+        "homeRuns": 0,
+        "rbi": 0,
+        "walks": 2,
+        "strikeouts": 0
+      },
+      "after": {
+        "ab": 2,
+        "hits": 0,
+        "homeRuns": 0,
+        "rbi": 0,
+        "walks": 2,
+        "strikeouts": 0
+      }
+    },
+    {
+      "date": "2026-04-28",
+      "gameId": "2021038781",
+      "team": "オリックス",
+      "player": "森 友哉",
+      "before": {
+        "ab": 3,
+        "hits": 0,
+        "homeRuns": 0,
+        "rbi": 0,
+        "walks": 0,
+        "strikeouts": 3
+      },
+      "after": {
+        "ab": 4,
+        "hits": 1,
+        "homeRuns": 0,
+        "rbi": 0,
+        "walks": 0,
+        "strikeouts": 3
+      }
+    },
+    {
+      "date": "2026-04-28",
+      "gameId": "2021038781",
+      "team": "オリックス",
+      "player": "中川 圭太",
+      "before": {
+        "ab": 3,
+        "hits": 1,
+        "homeRuns": 0,
+        "rbi": 1,
+        "walks": 0,
+        "strikeouts": 1
+      },
+      "after": {
+        "ab": 4,
+        "hits": 1,
+        "homeRuns": 0,
+        "rbi": 1,
+        "walks": 0,
+        "strikeouts": 1
+      }
+    },
+    {
+      "date": "2026-04-28",
+      "gameId": "2021038781",
+      "team": "オリックス",
+      "player": "シーモア",
+      "before": {
+        "ab": 3,
+        "hits": 0,
+        "homeRuns": 0,
+        "rbi": 0,
+        "walks": 0,
+        "strikeouts": 1
+      },
+      "after": {
+        "ab": 4,
+        "hits": 0,
+        "homeRuns": 0,
+        "rbi": 0,
+        "walks": 0,
+        "strikeouts": 1
+      }
+    },
+    {
+      "date": "2026-04-22",
+      "gameId": "2021038750",
+      "team": "巨人",
+      "player": "ダルベック",
+      "before": {
+        "ab": 4,
+        "hits": 1,
+        "homeRuns": 1,
+        "rbi": 1,
+        "walks": 0,
+        "strikeouts": 1
+      },
+      "after": {
+        "ab": 4,
+        "hits": 2,
+        "homeRuns": 1,
+        "rbi": 2,
+        "walks": 0,
+        "strikeouts": 1
+      }
+    }
+  ]
+}

@@ -312,7 +312,7 @@ function findCurrentRow(rows, params, config) {
     return true;
   });
   if (playerId) {
-    const byId = scopedRows.find((row) => (row[config.idKey] || "") === playerId);
+    const byId = scopedRows.find((row) => (row[config.idKey] || "") === playerId && (!team || row.team === team));
     if (byId) return byId;
   }
   if (team) {
@@ -330,7 +330,9 @@ function findPreviousRow(rows, currentRow, params, config) {
   const candidates = rows.filter((row) => row.year === previousYear && rowMatchesPlayerName(row, currentRow.player));
   if (!candidates.length) return null;
   if (playerId) {
-    const byId = candidates.find((row) => (row[config.idKey] || "") === playerId);
+    const byId = candidates.find((row) => (row[config.idKey] || "") === playerId && row.team === currentRow.team)
+      || candidates.find((row) => (row[config.idKey] || "") === playerId && row.league === currentRow.league)
+      || candidates.find((row) => (row[config.idKey] || "") === playerId);
     if (byId) return byId;
   }
   const requestedTeam = params.get("team") || currentRow.team || "";

@@ -123,7 +123,7 @@ function rows() {
 
 function playerValue(row) {
   const id = row[config().idKey];
-  return id || `${row.team}::${row.player}`;
+  return row.aggregationKey || id || `${row.team}::${row.player}`;
 }
 
 function availableYears() {
@@ -201,7 +201,8 @@ function applyInitialSelection() {
   if (initialSelection.league) state.league = initialSelection.league;
   if (initialSelection.team) state.team = initialSelection.team;
   if (initialSelection.playerId) {
-    state.player = initialSelection.playerId;
+    const match = filteredRowsBase().find((row) => row[config().idKey] === initialSelection.playerId);
+    state.player = match ? playerValue(match) : initialSelection.playerId;
   } else if (initialSelection.player && initialSelection.team && initialSelection.team !== "all") {
     state.player = `${initialSelection.team}::${initialSelection.player}`;
   } else if (initialSelection.player) {

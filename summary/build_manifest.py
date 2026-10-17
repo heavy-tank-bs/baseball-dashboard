@@ -27,14 +27,7 @@ WOBA_CONSTANTS_PATH = SUMMARY_DIR / "woba_constants.json"
 GAME_DECISIONS_CACHE_PATH = SUMMARY_DIR / "game_decisions_cache.json"
 GAME_BATTING_CACHE_PATH = SUMMARY_DIR / "game_batting_cache.json"
 PITCHER_MANIFEST_DETAIL_SUFFIX = "-dashboard-detail.json"
-DASHBOARD_SCRIPT = (
-    Path.home()
-    / ".codex"
-    / "skills"
-    / "sportsnavi-pitch-dashboard"
-    / "scripts"
-    / "build_dashboard.py"
-)
+DASHBOARD_SCRIPT = ROOT / "scripts" / "build_dashboard.py"
 
 TEAM_ORDER = [
     "巨人",
@@ -763,7 +756,7 @@ def build_pitcher_monthly_splits(
         statline = entry.get("statline") or {}
         dashboard = entry.get("dashboard") or {}
         league = entry.get("league") or team_league(entry.get("team", ""))
-        pitcher_key = entry.get("pitcherId") or f"{entry.get('team', '')}::{entry.get('player', '')}"
+        pitcher_key = annual_player_key(year, entry.get("pitcherId"), entry.get("team", ""), entry.get("player", ""))
         outs = innings_to_outs(statline.get("innings"))
         pitch_rows = dashboard.get("pitchMix") or []
         outcome_rows = {row.get("id"): parse_int(row.get("count")) for row in (dashboard.get("outcomes", {}).get("rows") or [])}
@@ -1001,7 +994,7 @@ def build_batter_monthly_splits(
         team = entry.get("team") or ""
         batter_id = entry.get("batterId") or ""
         player_name = entry.get("player") or ""
-        bucket_key = batter_id or f"{team}::{player_name}"
+        bucket_key = annual_player_key(year, batter_id, team, player_name)
         plate_rows = ((entry.get("dashboard") or {}).get("plateAppearances") or [])
         sacrifice_flies_by_player[(year, bucket_key, month)] += sum(
             1
@@ -1034,7 +1027,7 @@ def build_batter_monthly_splits(
                     continue
                 batter_id = stats.get("playerId") or ""
                 player_name = stats.get("player") or ""
-                player_key = batter_id or f"{team}::{player_name}"
+                player_key = annual_player_key(year, batter_id, team, player_name)
                 bucket = players[(year, player_key)].setdefault(
                     month,
                     empty_bucket(year, month, team, league, batter_id, player_name, player_key),
@@ -2954,7 +2947,7 @@ def iter_context_intentional_walks(game_contexts: dict[str, dict]):
 
 
 def context_batter_bucket_key(event: dict) -> str:
-    return event.get("playerId") or f"{event.get('team', '')}::{event.get('player', '')}"
+    return annual_player_key(str(event.get("date") or "")[:4], event.get("playerId"), event.get("team", ""), event.get("player", ""))
 
 
 def add_context_batter_intentional_walks(target: dict, game_contexts: dict[str, dict], monthly: bool = False) -> None:
@@ -3267,7 +3260,7 @@ def build_batter_season_dashboard(
         team = entry.get("team") or ""
         player_name = entry.get("player") or ""
         batter_id = entry.get("batterId") or ""
-        bucket_key = (year, batter_id or f"{team}::{player_name}")
+        bucket_key = (year, annual_player_key(year, batter_id, team, player_name))
         source = dashboards.get(bucket_key)
         if source is None:
             source = {
@@ -3350,7 +3343,52 @@ def build_batter_season_dashboard(
     return finalized
 
 
+_ANNUAL_AFFILIATIONS: dict[tuple[str, str], dict[str, dict]] = {}
+
+
+def configure_annual_affiliations(entries: list[dict], id_field: str) -> None:
+    """Use dated appearances, independent of input order, to resolve transfers."""
+    _ANNUAL_AFFILIATIONS.clear()
+    for entry in entries:
+        player_id = str(entry.get(id_field) or "")
+        team = entry.get("team") or ""
+        date = entry.get("date") or ""
+        if not player_id or not team or not date:
+            continue
+        history = _ANNUAL_AFFILIATIONS.setdefault((date[:4], player_id), {})
+        previous = history.get(team)
+        if previous is None or date > previous["date"]:
+            history[team] = {**(previous or {}), **entry}
+
+
+def annual_player_key(year: str, player_id: str, team: str, name: str) -> str:
+    if not player_id:
+        return f"{team}::{name}"
+    history = _ANNUAL_AFFILIATIONS.get((year, str(player_id)), {})
+    # Cross-league transfers retain a separate row for each actual team.
+    if len({team_league(value) for value in history}) > 1:
+        return f"{player_id}::{team}"
+    return str(player_id)
+
+
+def apply_annual_affiliation(row: dict, id_field: str) -> None:
+    history = _ANNUAL_AFFILIATIONS.get((row["year"], str(row.get(id_field) or "")), {})
+    source_teams = list(row.get("teams") or [])
+    if history and len({team_league(value) for value in history}) == 1:
+        latest = max(history.values(), key=lambda item: item["date"])
+        row["team"] = latest["team"]
+        row["teams"] = [latest["team"]]
+        row["uniformNumber"] = latest.get("uniformNumber") or row.get("uniformNumber", "")
+    row["sourceTeams"] = source_teams
+    row["aggregationKey"] = annual_player_key(row["year"], row.get(id_field) or "", row["team"], row["player"])
+    for month in row.get("monthlySplits") or []:
+        month["sourceTeams"] = month.get("teams", [])
+        month["team"] = row["team"]
+        month["teams"] = row["teams"][:]
+
+
 def build_player_totals(entries: list[dict], game_decisions: dict[str, dict], game_contexts: dict[str, dict]) -> dict:
+    configure_annual_affiliations(entries, "pitcherId")
     monthly_splits_by_player = build_pitcher_monthly_splits(entries, game_decisions, game_contexts)
     game_context_index = build_game_context_index(game_contexts)
     context_game_ids = context_intentional_walk_game_ids(game_contexts)
@@ -3376,7 +3414,7 @@ def build_player_totals(entries: list[dict], game_decisions: dict[str, dict], ga
         dashboard = entry.get("dashboard") or {}
         year = str(entry.get("date", ""))[:4] or "unknown"
         league = entry.get("league") or team_league(entry.get("team", ""))
-        pitcher_id = entry.get("pitcherId") or f"{entry.get('team', '')}::{entry.get('player', '')}"
+        pitcher_id = annual_player_key(year, entry.get("pitcherId"), entry.get("team", ""), entry.get("player", ""))
         outs = innings_to_outs(statline.get("innings"))
         pitch_rows = dashboard.get("pitchMix") or []
         outcome_rows = {row.get("id"): parse_int(row.get("count")) for row in (dashboard.get("outcomes", {}).get("rows") or [])}
@@ -3734,6 +3772,7 @@ def build_player_totals(entries: list[dict], game_decisions: dict[str, dict], ga
         season_dashboard = finalize_season_dashboard(player)
         if season_dashboard:
             player_row["seasonDashboard"] = season_dashboard
+        apply_annual_affiliation(player_row, "pitcherId")
         player_rows.append(player_row)
 
     player_rows.sort(key=lambda row: (row["year"], team_sort_key(row["team"].split(" / ")[0]), row["player"]))
@@ -3743,6 +3782,7 @@ def build_player_totals(entries: list[dict], game_decisions: dict[str, dict], ga
         "years": sorted(years),
         "notes": {
             "fip": "FIP uses uBB derived from Sports Navi intentional-walk context when available.",
+            "transfers": "Cross-league transfers are separate by team; same-league transfers are combined under the latest observed team. Game entries retain their original team.",
         },
         "leagueStats": league_rows,
         "players": player_rows,
@@ -3756,6 +3796,14 @@ def build_batter_totals(
     park_factors: dict,
     game_contexts: dict[str, dict],
 ) -> dict:
+    affiliation_entries = list(batter_entries)
+    game_dates_for_affiliations = {entry["gameId"]: entry["date"] for entry in entries}
+    for game_id, teams in batting_stats_by_game.items():
+        for team, stats in teams.items():
+            for key, player in stats.items():
+                if key == player.get("playerId"):
+                    affiliation_entries.append({"date": game_dates_for_affiliations.get(game_id, ""), "team": team, "batterId": key})
+    configure_annual_affiliations(affiliation_entries, "batterId")
     monthly_splits_by_player = build_batter_monthly_splits(entries, batting_stats_by_game, batter_entries, park_factors, game_contexts)
     season_dashboards_by_player = build_batter_season_dashboard(batter_entries, game_contexts)
     is_ab_result = getattr(DASHBOARD, "is_ab_result", lambda value: True)
@@ -3783,7 +3831,7 @@ def build_batter_totals(
         team = entry.get("team") or ""
         batter_id = entry.get("batterId") or ""
         player_name = entry.get("player") or ""
-        bucket_key = (year, batter_id or f"{team}::{player_name}")
+        bucket_key = (year, annual_player_key(year, batter_id, team, player_name))
         if entry.get("uniformNumber"):
             uniform_numbers_by_player.setdefault(bucket_key, entry["uniformNumber"])
         plate_rows = ((entry.get("dashboard") or {}).get("plateAppearances") or [])
@@ -3822,7 +3870,7 @@ def build_batter_totals(
                     continue
                 batter_id = stats.get("playerId") or ""
                 player_name = stats.get("player") or ""
-                bucket_key = (year, batter_id or f"{team}::{player_name}")
+                bucket_key = (year, annual_player_key(year, batter_id, team, player_name))
                 bucket = players.setdefault(
                     bucket_key,
                     {
@@ -3887,7 +3935,7 @@ def build_batter_totals(
             continue
         league = team_league(team)
         batter_id = ""
-        bucket_key = (year, batter_id or f"{team}::{player_name}")
+        bucket_key = (year, annual_player_key(year, batter_id, team, player_name))
         uniform_number = str(row.get("背番号") or "").strip()
         hits = parse_int(row.get("安打"))
         doubles = parse_int(row.get("二塁打"))
@@ -4130,16 +4178,18 @@ def build_batter_totals(
         season_dashboard = season_dashboards_by_player.get(player["_bucketKey"])
         if season_dashboard:
             player_row["seasonDashboard"] = season_dashboard
+        apply_annual_affiliation(player_row, "batterId")
         rows.append(player_row)
 
     rows.sort(key=lambda row: (row["year"], team_sort_key(row["team"].split(" / ")[0]), row["player"]))
     return {
         "updatedAt": datetime.now().isoformat(timespec="seconds"),
-        "source": "Sports Navi game batting tables and intentional-walk context for games present under generated/*/*/*-dashboard.json + 元データ/*_打撃成績.csv",
+        "source": "Sports Navi or NPB official game batting tables, Sports Navi intentional-walk context for games present under generated/*/*/*-dashboard.json + 元データ/*_打撃成績.csv",
         "notes": {
             "uBB": "Unintentional walks are derived from Sports Navi intentional-walk context when available.",
             "obp": "OBP remains the official BB-based formula rather than a uBB-based variant.",
             "wrcPlus": "wRC+ は対象試合の league R/PA と team park factor の半分補正を使った暫定値です。",
+            "transfers": "Cross-league transfers are separate by team; same-league transfers are combined under the latest observed team. Game entries retain their original team.",
         },
         "metricContexts": {
             "wobaConstants": [
@@ -4516,6 +4566,21 @@ def dumps_compact(data: dict) -> str:
     return json.dumps(data, ensure_ascii=False, separators=(",", ":"))
 
 
+def preserve_unavailable_seasons(current: dict, path: Path) -> dict:
+    """Retain published seasons when their raw source files are unavailable."""
+    if not path.exists():
+        return current
+    previous = json.loads(path.read_text(encoding="utf-8"))
+    years = set(current["years"])
+    for key in ("players", "leagueStats"):
+        if key in current:
+            current[key] = [row for row in previous.get(key, []) if row["year"] not in years] + current[key]
+    for key, rows in current.get("metricContexts", {}).items():
+        current["metricContexts"][key] = [row for row in previous.get("metricContexts", {}).get(key, []) if row["year"] not in years] + rows
+    current["years"] = sorted(years | set(previous.get("years", [])))
+    return current
+
+
 def main() -> None:
     pitcher_uniform_numbers = load_uniform_number_index("pitcher")
     batter_uniform_numbers = load_uniform_number_index("batter")
@@ -4530,6 +4595,8 @@ def main() -> None:
     batter_manifest = build_manifest(batter_entries)
     player_totals = build_player_totals(entries, game_decisions, game_contexts)
     batter_totals = build_batter_totals(entries, batting_stats_by_game, batter_entries, park_factors, game_contexts)
+    player_totals = preserve_unavailable_seasons(player_totals, PLAYER_TOTALS_PATH)
+    batter_totals = preserve_unavailable_seasons(batter_totals, BATTER_TOTALS_PATH)
     write_text_atomic(
         MANIFEST_PATH,
         "window.PITCH_DASHBOARD_MANIFEST = "

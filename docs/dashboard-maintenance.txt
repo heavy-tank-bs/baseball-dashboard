@@ -1,0 +1,53 @@
+2026年データ確認・移籍集計の運用
+
+対象: 2026年のレギュラーシーズン。クライマックスシリーズ、日本シリーズ、オールスターは年度成績に混在させない。
+公式日程の照合結果は coverage-2026.json を参照。
+2026-10-17の照合: 全858試合を保存済み。欠損・余分な試合はゼロ、12球団すべて143試合分。
+10/7 阪神対広島（2021051134）、10/8 阪神対ヤクルト（2021051699）の22登板を追加。
+追加22登板の投球数・全投球の位置座標を検証し、投手別JSON・4枚ずつのPNGを生成した。
+試合の有無は日付・両球団で照合。各投球の正確性を全件再監査した結果ではない。
+表示用詳細JSONは初回確認で267件不足していたが、元の投球JSONから再生成した。追加試合を含む全7172件の参照先が存在する。
+収集済み8試合・47選手行の基本打撃成績に古い結果が残っていたため、公式最終成績で更新した。
+移籍選手の球団別内訳: 尾形崇斗 DeNA18登板/ソフトバンク10登板、山本祐大 DeNA28試合/ソフトバンク55試合、若林楽人 巨人21試合/西武5試合。
+既存投手の登板行・基本成績は保持し、年度計数は更新前の値と追加2試合の成績の合計に一致。2025年データも完全一致。
+検証結果は aggregation-verification.json を参照。打者の基本成績は公式キャッシュと全件照合した。
+IDなしで別行になっていたビシエドの1試合分は既存の選手IDへ統合。篠﨑国忠の打席0の出場1試合も反映した。
+試合コンテキストの completedGames=860 は公式戦858試合とオールスター2試合。throughDateを2026-10-08へ更新。
+既存コンテキストの取得エラー件数3には対象試合の詳細が残っていない。公式戦の試合コンテキスト行に欠損はない。
+wOBAの独自暫定係数は199試合・14750イベントから算出。全858試合から算出した係数ではない。
+追加試合では打席途中の盗塁死を打席から除外し、送りバント失敗を犠打と誤分類しないようテキスト解析を修正した。
+
+移籍の扱い
+別リーグにまたがる年度は球団ごとに別行とし、年度・月別・詳細指標を同じ区分で集計する。
+同一リーグ内の移籍は年度内で合算し、日付が最新の出場球団に所属させる。
+試合別データには実際に出場した当時の球団を残す。
+sourceTeams は元の所属履歴、teams/team は年度画面の表示・絞り込み用。
+移籍先未出場の場合は出場履歴だけで新所属を特定できないため、公式所属情報の追加が必要。
+2026年の公式公示で確認したトレードはすべて別リーグ間。
+https://npb.jp/announcement/2026/pn_traded.html
+
+再実行（リポジトリ直下から）
+python -m pip install -r scripts/dashboard_requirements.txt
+python scripts/audit_dashboard.py
+python scripts/collect_final_games.py
+python scripts/rebuild_annual_totals.py --pitcher-manifest-only
+python scripts/refresh_dashboard_stats.py
+スポーツナビ障害時: python scripts/refresh_dashboard_stats.py --source npb
+python scripts/rebuild_annual_totals.py --refresh-manifests
+python scripts/test_transfer_aggregation.py
+node scripts/test_transfer_selection.js
+python scripts/verify_annual_totals.py
+python scripts/verify_final_games.py
+
+scripts/collect_final_games.py は追加2試合の一球速報を各ページ1回取得し全投手で再利用。成績・コンテキスト・wOBAイベントも更新する。
+使用したスキルの解析・描画コードも scripts/build_dashboard.py に同梱し、個人のスキル配置への依存をなくした。
+scripts/rebuild_annual_totals.py は公開済みmanifestから集計し、元CSVがない過年度の集計を保持する。
+--refresh-manifests は新しいgeneratedデータを発見し、投手manifest・表示用詳細JSONも更新する。
+--repair-details-only は不足する表示用詳細JSONのみを元の投球JSONから再生成する。
+summary/build_manifest.py も元データがない過年度の集計を保持する。
+
+取得済み成績キャッシュは summary/game_batting_cache.json と summary/game_decisions_cache.json。
+NPB代替取得時はキャッシュの sources に取得元を記録する。
+.site-build 内のHTML・対応表・エラーログは一時ファイルであり、必要時は照合スクリプトから再作成できる。
+公開前に python scripts/build_github_pages.py で成果物を検証し、対象ファイルをcommitしてmainへpushする。
+build_github_pages.py は .site-build をビルド用に初期化するため、取得・集計・検証を完了してから実行する。

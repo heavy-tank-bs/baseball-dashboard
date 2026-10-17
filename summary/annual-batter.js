@@ -196,7 +196,7 @@ if (playerColumnIndex > 0) {
 const SORT_COLUMN_MAP = Object.fromEntries(SORT_COLUMNS.map((column) => [column.key, column]));
 
 function playerValue(row) {
-  return row.batterId || `${row.team}::${row.player}`;
+  return row.aggregationKey || row.batterId || `${row.team}::${row.player}`;
 }
 
 function playerPersonalHref(row) {

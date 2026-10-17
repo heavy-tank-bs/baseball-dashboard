@@ -1,0 +1,72 @@
+{
+  "game_id": "2021051699",
+  "metadata": {
+    "date_jp": "2026年10月8日",
+    "matchup": "阪神タイガースvs東京ヤクルトスワローズ"
+  },
+  "statline": {
+    "player": "岩崎 優",
+    "era": "2.54",
+    "innings": "0.1",
+    "pitches": "3",
+    "batters": "1",
+    "hits": "0",
+    "hr": "0",
+    "k": "0",
+    "bb": "0",
+    "hbp": "0",
+    "balk": "0",
+    "runs": "0",
+    "er": "0"
+  },
+  "pitches": [
+    {
+      "pa_index": "0810100",
+      "pitcher": "岩崎 優",
+      "pitcher_id": "1300075",
+      "pitcher_hand": "左",
+      "batter": "茂木 栄五郎",
+      "batter_id": "1600003",
+      "batter_hand": "左",
+      "seq": "1",
+      "pitchNo": "1",
+      "pitchType": "ストレート",
+      "speed": "141km/h",
+      "result": "見逃し",
+      "top": 33.12,
+      "left": 37.44
+    },
+    {
+      "pa_index": "0810100",
+      "pitcher": "岩崎 優",
+      "pitcher_id": "1300075",
+      "pitcher_hand": "左",
+      "batter": "茂木 栄五郎",
+      "batter_id": "1600003",
+      "batter_hand": "左",
+      "seq": "2",
+      "pitchNo": "2",
+      "pitchType": "スライダー",
+      "speed": "127km/h",
+      "result": "ボール",
+      "top": 43.199999999999996,
+      "left": 43.199999999999996
+    },
+    {
+      "pa_index": "0810100",
+      "pitcher": "岩崎 優",
+      "pitcher_id": "1300075",
+      "pitcher_hand": "左",
+      "batter": "茂木 栄五郎",
+      "batter_id": "1600003",
+      "batter_hand": "左",
+      "seq": "3",
+      "pitchNo": "3",
+      "pitchType": "スライダー",
+      "speed": "127km/h",
+      "result": "左飛",
+      "top": 30.599999999999998,
+      "left": 35.28
+    }
+  ]
+}
