@@ -1312,6 +1312,9 @@ def parse_game_batting_stats_from_html(html: str) -> dict[str, dict[str, dict]]:
         headers = [text(cell) for cell in header_cells]
         header_map = {label: idx for idx, label in enumerate(headers)}
         team_rows: dict[str, dict] = {}
+        batting_order = 0
+        if "位置" not in header_map:
+            raise ValueError(f"Missing SportsNavi batting position column: {team_name}")
         for order, row in enumerate(table.select("tr")[1:], start=1):
             cells = row.select("th,td")
             if not cells:
@@ -1320,6 +1323,14 @@ def parse_game_batting_stats_from_html(html: str) -> dict[str, dict[str, dict]]:
             player_name = text(player_link) or (text(cells[header_map["選手名"]]) if "選手名" in header_map else "")
             if not player_name:
                 continue
+            # SportsNavi explicitly marks starters with parenthesized positions
+            # (its table legend is '（）:先発'); substitutes inherit that slot.
+            position = re.sub(r"\s+", "", text(cells[header_map["位置"]]))
+            is_starter = bool(re.fullmatch(r"[（(][^（）()]+[）)]", position))
+            if is_starter:
+                batting_order += 1
+            if not 1 <= batting_order <= 9:
+                raise ValueError(f"Invalid SportsNavi batting-order sequence: {team_name} {player_name}")
             href = player_link.get("href", "") if player_link else ""
             match = re.search(r"/npb/player/(\d+)/top", href)
             player_id = match.group(1) if match else ""
@@ -1338,6 +1349,8 @@ def parse_game_batting_stats_from_html(html: str) -> dict[str, dict[str, dict]]:
             hits = parse_int(text(cells[header_map["安打"]])) if "安打" in header_map else 0
             stats = {
                 "order": order,
+                "battingOrder": batting_order,
+                "isStarter": is_starter,
                 "player": player_name,
                 "playerId": player_id,
                 "ab": parse_int(text(cells[header_map["打数"]])) if "打数" in header_map else 0,
@@ -1347,6 +1360,7 @@ def parse_game_batting_stats_from_html(html: str) -> dict[str, dict[str, dict]]:
                 "walks": parse_int(text(cells[header_map["四球"]])) if "四球" in header_map else 0,
                 "hitByPitch": parse_int(text(cells[header_map["死球"]])) if "死球" in header_map else 0,
                 "sacBunts": parse_int(text(cells[header_map["犠打"]])) if "犠打" in header_map else 0,
+                "sacFlies": sum("犠飛" in detail for detail in detail_items),
                 "steals": parse_int(text(cells[header_map["盗塁"]])) if "盗塁" in header_map else 0,
                 "strikeouts": parse_int(text(cells[header_map["三振"]])) if "三振" in header_map else 0,
                 "homeRuns": home_runs,
@@ -1358,6 +1372,8 @@ def parse_game_batting_stats_from_html(html: str) -> dict[str, dict[str, dict]]:
             team_rows[player_id or player_name] = stats
             if player_id:
                 team_rows[player_name] = stats
+        if batting_order != 9:
+            raise ValueError(f"Expected nine SportsNavi starting batting slots for {team_name}, got {batting_order}")
         stats_by_team[team_name] = team_rows
     return stats_by_team
 
@@ -3251,6 +3267,7 @@ def finalize_batter_split_bucket(bucket: dict) -> dict:
 def build_batter_season_dashboard(
     batter_entries: list[dict],
     game_contexts: dict[str, dict],
+    batting_stats_by_game: dict | None = None,
 ) -> dict[tuple[str, str], dict]:
     game_context_index = build_game_context_index(game_contexts)
     dashboards: dict[tuple[str, str], dict] = {}
@@ -3293,8 +3310,10 @@ def build_batter_season_dashboard(
         opponent = matchup_opponent_team(team, entry.get("matchup") or "")
         game_context = game_context_index.get(str(entry.get("gameId") or "")) or {}
         stadium = game_context.get("stadium") or "-"
-        batting_order = parse_int(entry.get("order"))
-        order_label = f"{batting_order}番" if 1 <= batting_order <= 9 else "途中出場"
+        # `order` is a display row index, including replacement players.
+        # Only the explicit lineup slot may be used as batting order.
+        batting_order = parse_int(entry.get("battingOrder"))
+        order_label = f"{batting_order}番" if 1 <= batting_order <= 9 else "打順不明"
 
         source["recentGames"].append(build_recent_batter_game_row(entry))
 
@@ -3340,7 +3359,36 @@ def build_batter_season_dashboard(
             reverse=True,
         )[:6]
         finalized[bucket_key] = dashboard
+    if batting_stats_by_game is not None:
+        order_splits = build_batter_order_splits(batter_entries, batting_stats_by_game)
+        for key, dashboard in finalized.items():
+            dashboard["byBattingOrder"] = order_splits.get(key, [])
     return finalized
+
+
+def build_batter_order_splits(batter_entries: list[dict], batting_stats_by_game: dict) -> dict:
+    """Group official counting stats by actual lineup slot, including substitutes."""
+    groups = defaultdict(dict)
+    fields = {"plateAppearances": "plateAppearances", "atBats": "ab", "hits": "hits",
+              "singles": "singles", "doubles": "doubles", "triples": "triples",
+              "homeRuns": "homeRuns", "walks": "walks", "hitByPitch": "hitByPitch",
+              "sacBunts": "sacBunts", "sacFlies": "sacFlies", "strikeouts": "strikeouts"}
+    game_dates = {entry["gameId"]: entry["date"] for entry in batter_entries}
+    for game_id, date in game_dates.items():
+        for team, rows in batting_stats_by_game.get(game_id, {}).items():
+            for player_id, stats in rows.items():
+                # Include official PAs without logged pitches (e.g. IBB-only
+                # appearances); the manifest is only a source of game dates.
+                if player_id != stats.get("playerId") or not parse_int(stats.get("plateAppearances")):
+                    continue
+                slot = parse_int(stats.get("battingOrder"))
+                label = f"{slot}番" if 1 <= slot <= 9 else "打順不明"
+                key = (date[:4], annual_player_key(date[:4], player_id, team, stats["player"]))
+                bucket = groups[key].setdefault(label, build_batter_split_bucket(label, slot if 1 <= slot <= 9 else 99))
+                for target, source in fields.items():
+                    bucket[target] += parse_int(stats.get(source))
+    return {key: [finalize_batter_split_bucket(row) for row in sorted(values.values(), key=lambda row: row["order"])]
+            for key, values in groups.items()}
 
 
 _ANNUAL_AFFILIATIONS: dict[tuple[str, str], dict[str, dict]] = {}
@@ -3805,7 +3853,7 @@ def build_batter_totals(
                     affiliation_entries.append({"date": game_dates_for_affiliations.get(game_id, ""), "team": team, "batterId": key})
     configure_annual_affiliations(affiliation_entries, "batterId")
     monthly_splits_by_player = build_batter_monthly_splits(entries, batting_stats_by_game, batter_entries, park_factors, game_contexts)
-    season_dashboards_by_player = build_batter_season_dashboard(batter_entries, game_contexts)
+    season_dashboards_by_player = build_batter_season_dashboard(batter_entries, game_contexts, batting_stats_by_game)
     is_ab_result = getattr(DASHBOARD, "is_ab_result", lambda value: True)
     classify_plate_appearance_result = getattr(DASHBOARD, "classify_plate_appearance_result", lambda value: None)
     players: dict[tuple[str, str], dict] = {}
@@ -4188,6 +4236,7 @@ def build_batter_totals(
         "notes": {
             "uBB": "Unintentional walks are derived from Sports Navi intentional-walk context when available.",
             "obp": "OBP remains the official BB-based formula rather than a uBB-based variant.",
+            "battingOrder": "Batting-order splits use official lineup slots and box-score counting stats. Substitutes inherit the replaced lineup slot; display row order is never a lineup slot.",
             "wrcPlus": "wRC+ は対象試合の league R/PA と team park factor の半分補正を使った暫定値です。",
             "transfers": "Cross-league transfers are separate by team; same-league transfers are combined under the latest observed team. Game entries retain their original team.",
         },
@@ -4356,6 +4405,8 @@ def collect_batter_entries(
                     "matchup": game["matchup"],
                     "dateLabel": game["dateLabel"],
                     "order": official.get("order", 999),
+                    "battingOrder": official.get("battingOrder"),
+                    "isStarter": official.get("isStarter"),
                     "statline": statline,
                     "dashboard": {
                         "pitchMix": pitch_mix,

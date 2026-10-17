@@ -13,7 +13,9 @@ from rebuild_annual_totals import ROOT, load_builder, read_manifest
 
 def valid_batting(value):
     return isinstance(value, dict) and len(value) == 2 and all(
-        isinstance(rows, dict) and rows and all(isinstance(row, dict) and 'plateAppearances' in row for row in rows.values())
+        isinstance(rows, dict) and rows and all(isinstance(row, dict) and 'plateAppearances' in row and 'sacFlies' in row
+            and row.get('battingOrder') in range(1, 10) and isinstance(row.get('isStarter'), bool)
+            for row in rows.values())
         for rows in value.values()
     )
 

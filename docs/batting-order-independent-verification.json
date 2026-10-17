@@ -1,0 +1,259 @@
+{
+  "baselineCommit": "4d262ceefa3afd1544fe6249461efdab81ba8cbc",
+  "games": 858,
+  "officialPlayerRows": 23692,
+  "manifestRows": 19058,
+  "annualPlayers": 648,
+  "splitsChecked": 2233,
+  "officialMetadataMatchesCacheAndManifest": true,
+  "splitCountsAndRatesMatchOfficialCache": true,
+  "allOtherAnnualMonthlyAndDashboardFieldsUnchanged": true,
+  "historicalSeasonsUnchanged": true,
+  "pitcherTotalsAndWobaAssetsUnchanged": true,
+  "officialPARowsWithoutPitchManifest": [
+    {
+      "gameId": "2021038649",
+      "date": "2026-04-01",
+      "team": "ロッテ",
+      "batterId": "1300044",
+      "player": "岡 大海",
+      "plateAppearances": 1,
+      "battingOrder": 1
+    },
+    {
+      "gameId": "2021038761",
+      "date": "2026-04-24",
+      "team": "DeNA",
+      "batterId": "1600021",
+      "player": "ビシエド",
+      "plateAppearances": 1,
+      "battingOrder": 7
+    },
+    {
+      "gameId": "2021038954",
+      "date": "2026-06-03",
+      "team": "ソフトバンク",
+      "batterId": "1650813",
+      "player": "川村 友斗",
+      "plateAppearances": 1,
+      "battingOrder": 1
+    },
+    {
+      "gameId": "2021038954",
+      "date": "2026-06-03",
+      "team": "中日",
+      "batterId": "1500091",
+      "player": "板山 祐太郎",
+      "plateAppearances": 1,
+      "battingOrder": 9
+    },
+    {
+      "gameId": "2021038960",
+      "date": "2026-06-04",
+      "team": "ソフトバンク",
+      "batterId": "1100097",
+      "player": "近藤 健介",
+      "plateAppearances": 1,
+      "battingOrder": 9
+    },
+    {
+      "gameId": "2021038978",
+      "date": "2026-06-07",
+      "team": "中日",
+      "batterId": "1500078",
+      "player": "阿部 寿樹",
+      "plateAppearances": 1,
+      "battingOrder": 2
+    },
+    {
+      "gameId": "2021044686",
+      "date": "2026-06-16",
+      "team": "日本ハム",
+      "batterId": "1800008",
+      "player": "マルティネス",
+      "plateAppearances": 1,
+      "battingOrder": 2
+    },
+    {
+      "gameId": "2021039037",
+      "date": "2026-06-23",
+      "team": "ヤクルト",
+      "batterId": "2000135",
+      "player": "サンタナ",
+      "plateAppearances": 1,
+      "battingOrder": 6
+    },
+    {
+      "gameId": "2021039078",
+      "date": "2026-07-02",
+      "team": "DeNA",
+      "batterId": "1500064",
+      "player": "戸柱 恭孝",
+      "plateAppearances": 1,
+      "battingOrder": 1
+    },
+    {
+      "gameId": "2021039108",
+      "date": "2026-07-08",
+      "team": "ヤクルト",
+      "batterId": "2000135",
+      "player": "サンタナ",
+      "plateAppearances": 1,
+      "battingOrder": 9
+    },
+    {
+      "gameId": "2021039183",
+      "date": "2026-07-23",
+      "team": "ソフトバンク",
+      "batterId": "1900104",
+      "player": "柳町 達",
+      "plateAppearances": 1,
+      "battingOrder": 8
+    },
+    {
+      "gameId": "2021039184",
+      "date": "2026-07-24",
+      "team": "広島",
+      "batterId": "1000150",
+      "player": "秋山 翔吾",
+      "plateAppearances": 1,
+      "battingOrder": 9
+    },
+    {
+      "gameId": "2021039266",
+      "date": "2026-08-13",
+      "team": "阪神",
+      "batterId": "2000057",
+      "player": "髙寺 望夢",
+      "plateAppearances": 1,
+      "battingOrder": 6
+    },
+    {
+      "gameId": "2021039297",
+      "date": "2026-08-19",
+      "team": "阪神",
+      "batterId": "1950996",
+      "player": "前川 右京",
+      "plateAppearances": 1,
+      "battingOrder": 7
+    },
+    {
+      "gameId": "2021039315",
+      "date": "2026-08-22",
+      "team": "中日",
+      "batterId": "1500078",
+      "player": "阿部 寿樹",
+      "plateAppearances": 1,
+      "battingOrder": 8
+    },
+    {
+      "gameId": "2021039331",
+      "date": "2026-08-26",
+      "team": "巨人",
+      "batterId": "1700044",
+      "player": "大城 卓三",
+      "plateAppearances": 1,
+      "battingOrder": 5
+    },
+    {
+      "gameId": "2021039338",
+      "date": "2026-08-27",
+      "team": "中日",
+      "batterId": "1500078",
+      "player": "阿部 寿樹",
+      "plateAppearances": 1,
+      "battingOrder": 9
+    },
+    {
+      "gameId": "2021039391",
+      "date": "2026-09-08",
+      "team": "DeNA",
+      "batterId": "2000035",
+      "player": "牧 秀悟",
+      "plateAppearances": 1,
+      "battingOrder": 8
+    },
+    {
+      "gameId": "2021039450",
+      "date": "2026-09-22",
+      "team": "広島",
+      "batterId": "1900058",
+      "player": "持丸 泰輝",
+      "plateAppearances": 1,
+      "battingOrder": 7
+    }
+  ],
+  "satoSplits": [
+    {
+      "label": "2番",
+      "plateAppearances": 4,
+      "atBats": 4,
+      "hits": 0,
+      "singles": 0,
+      "doubles": 0,
+      "triples": 0,
+      "homeRuns": 0,
+      "walks": 0,
+      "hitByPitch": 0,
+      "sacBunts": 0,
+      "sacFlies": 0,
+      "strikeouts": 2,
+      "battingAverage": 0.0,
+      "onBasePercentage": 0.0,
+      "sluggingPercentage": 0.0,
+      "ops": 0.0
+    },
+    {
+      "label": "3番",
+      "plateAppearances": 38,
+      "atBats": 33,
+      "hits": 7,
+      "singles": 4,
+      "doubles": 2,
+      "triples": 0,
+      "homeRuns": 1,
+      "walks": 4,
+      "hitByPitch": 1,
+      "sacBunts": 0,
+      "sacFlies": 0,
+      "strikeouts": 9,
+      "battingAverage": 0.212,
+      "onBasePercentage": 0.316,
+      "sluggingPercentage": 0.364,
+      "ops": 0.679
+    },
+    {
+      "label": "4番",
+      "plateAppearances": 572,
+      "atBats": 502,
+      "hits": 158,
+      "singles": 79,
+      "doubles": 38,
+      "triples": 3,
+      "homeRuns": 38,
+      "walks": 64,
+      "hitByPitch": 1,
+      "sacBunts": 0,
+      "sacFlies": 5,
+      "strikeouts": 153,
+      "battingAverage": 0.315,
+      "onBasePercentage": 0.39,
+      "sluggingPercentage": 0.629,
+      "ops": 1.019
+    }
+  ],
+  "satoSecondSlotOfficialEvidence": [
+    {
+      "battingOrder": 2,
+      "isStarter": true,
+      "officialPlayerId": "41045153",
+      "officialOrderCell": "2",
+      "officialPlayerLabel": "佐藤",
+      "gameId": "2021051699",
+      "date": "2026-10-08",
+      "source": "https://npb.jp/scores/2026/1008/t-s-25/box.html",
+      "atBats": 4,
+      "hits": 0
+    }
+  ]
+}

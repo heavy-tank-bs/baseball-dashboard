@@ -35,6 +35,17 @@ sourceTeams は元の所属履歴、teams/team は年度画面の表示・絞り
 2026年の公式公示で確認したトレードはすべて別リーグ間。
 https://npb.jp/announcement/2026/pn_traded.html
 
+打順別成績の扱い
+order は成績表の表示行順であり、途中出場選手の行を含む。打順として使わない。
+battingOrder は実際の打順（1～9）、isStarter は先発出場の有無。途中出場は交代した選手の打順を引き継ぐ。
+NPBは表の先頭列の数字、スポーツナビは凡例「（）:先発」に従う位置欄から読み取る。
+打順別成績は公式試合成績のPA・AB・安打等を合算し、打率をH/ABで計算する。
+一球速報の結果文字列から打順別の打数を推測しない。打順不明時は行番号で補完しない。
+2026年全858試合の打順を照合して修正済み。batting-order-verification.json に佐藤輝明の修正前後と全件照合結果を保存する。
+独立検証は batting-order-independent-verification.json を参照。打順別以外の年度・月別成績、2025年、投手成績、wOBA係数は変更していない。
+再実行: python scripts/audit_dashboard.py → python scripts/repair_batting_order.py
+検証: python scripts/test_batting_order.py、python scripts/verify_batting_order.py
+
 再実行（リポジトリ直下から）
 python -m pip install -r scripts/dashboard_requirements.txt
 python scripts/audit_dashboard.py

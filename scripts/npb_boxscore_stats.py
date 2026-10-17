@@ -154,10 +154,19 @@ def parse_boxscore(html: str, id_lookup: dict) -> tuple[dict, dict]:
         if headers[:8] != ["", "守備", "選手", "打数", "得点", "安打", "打点", "盗塁"]:
             raise ValueError(f"Unexpected batting headers: {headers[:8]}")
         team_rows = {}
+        batting_order = 0
         for order, row in enumerate(table.direct("tbody")[0].direct("tr"), 1):
             cells = _cells(row)
             if len(cells) != len(headers):
                 raise ValueError(f"Unexpected batting column count for {team}")
+            order_label = normalize_name(cells[0].text())
+            is_starter = bool(order_label)
+            if is_starter:
+                if not re.fullmatch(r"[1-9]", order_label) or int(order_label) != batting_order + 1:
+                    raise ValueError(f"Invalid batting-order sequence for {team}: {order_label!r}")
+                batting_order = int(order_label)
+            elif not batting_order:
+                raise ValueError(f"Substitute without a preceding batting slot for {team}")
             player_id, player = _identity(row, team, id_lookup)
             details = _results(cells[8:])
             walks = sum("四球" in d or "故意四" in d or "敬遠" in d for d in details)
@@ -174,7 +183,8 @@ def parse_boxscore(html: str, id_lookup: dict) -> tuple[dict, dict]:
             singles = hits - doubles - triples - homers
             if singles < 0:
                 raise ValueError(f"Invalid extra-base hit counts {team} {player}")
-            stats = {"order": order, "player": player, "playerId": player_id,
+            stats = {"order": order, "battingOrder": batting_order, "isStarter": is_starter,
+                     "player": player, "playerId": player_id,
                      "ab": ab, "runs": runs, "hits": hits, "rbi": rbi,
                      "walks": walks, "hitByPitch": hbp, "sacBunts": bunt,
                      "sacFlies": sac_fly, "steals": steals,
@@ -187,6 +197,8 @@ def parse_boxscore(html: str, id_lookup: dict) -> tuple[dict, dict]:
             team_rows[player] = stats
         if not team_rows:
             raise ValueError(f"Empty batting table: {team}")
+        if batting_order != 9:
+            raise ValueError(f"Expected nine starting batting slots for {team}, got {batting_order}")
         batting[team] = team_rows
         pitching_totals[team] = dict.fromkeys(("plateAppearances", "hits", "homeRuns", "walks", "hitByPitch", "strikeouts"), 0)
         for row in pitching.direct("tbody")[0].direct("tr"):

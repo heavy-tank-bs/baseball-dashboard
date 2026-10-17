@@ -28,6 +28,10 @@
 !/scripts/probe_woba_fetch.py
 !/scripts/verify_woba_inputs.py
 !/scripts/sync_official_intentional_walks.py
+!/scripts/audit_batting_order.py
+!/scripts/repair_batting_order.py
+!/scripts/test_batting_order.py
+!/scripts/verify_batting_order.py
 !/summary/
 !/summary/index.html
 !/summary/batter.html
@@ -61,6 +65,8 @@
 !/docs/woba-coverage-2026.json
 !/docs/woba-inputs-verification.json
 !/docs/intentional-walk-sync-2026.json
+!/docs/batting-order-verification.json
+!/docs/batting-order-independent-verification.json
 !/GITHUB_PAGES.md
 
 site/
