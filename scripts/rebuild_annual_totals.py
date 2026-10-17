@@ -105,6 +105,7 @@ def main():
     parser.add_argument("--repair-details-only", action="store_true")
     parser.add_argument("--refresh-manifests", action="store_true", help="Discover new generated games and refresh every pitcher detail")
     parser.add_argument("--pitcher-manifest-only", action="store_true", help="Discover games before refreshing official batting caches")
+    parser.add_argument("--batter-only", action="store_true", help="Refresh annual/monthly batting metrics after changing wOBA constants")
     args = parser.parse_args()
     m = load_builder()
     if args.repair_details_only:
@@ -119,14 +120,15 @@ def main():
         if args.pitcher_manifest_only:
             return
     entries, decisions, batting, batters = load_inputs(m, entries)
-    m.write_text_atomic(m.BATTER_MANIFEST_PATH, "window.BATTER_GAME_MANIFEST = " + m.dumps_compact(m.build_manifest(batters)) + ";\n")
+    if not args.batter_only:
+        m.write_text_atomic(m.BATTER_MANIFEST_PATH, "window.BATTER_GAME_MANIFEST = " + m.dumps_compact(m.build_manifest(batters)) + ";\n")
     contexts = m.load_game_contexts()
-    parks = m.build_park_factors(contexts)
-    m.write_text_atomic(m.PARK_FACTORS_PATH, json.dumps(parks, ensure_ascii=False, indent=2) + '\n')
-    outputs = [
-        (m.PLAYER_TOTALS_PATH, m.build_player_totals(entries, decisions, contexts)),
-        (m.BATTER_TOTALS_PATH, m.build_batter_totals(entries, batting, batters, parks, contexts)),
-    ]
+    parks = json.loads(m.PARK_FACTORS_PATH.read_text(encoding='utf-8')) if args.batter_only else m.build_park_factors(contexts)
+    outputs = []
+    if not args.batter_only:
+        m.write_text_atomic(m.PARK_FACTORS_PATH, json.dumps(parks, ensure_ascii=False, indent=2) + '\n')
+        outputs.append((m.PLAYER_TOTALS_PATH, m.build_player_totals(entries, decisions, contexts)))
+    outputs.append((m.BATTER_TOTALS_PATH, m.build_batter_totals(entries, batting, batters, parks, contexts)))
     for path, current in outputs:
         previous = json.loads(path.read_text(encoding="utf-8"))
         result = preserve_other_years(current, previous)

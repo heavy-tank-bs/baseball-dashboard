@@ -192,6 +192,9 @@ def main():
     context_path.write_text(json.dumps(context, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
     events_path = ROOT / 'summary/sportsnavi_woba_events_2026.json'
     events_payload = json.loads(events_path.read_text(encoding='utf-8'))
+    if events_payload.get('eventParser', '').startswith('npb-official'):
+        print('Kept complete NPB wOBA inputs. Use refresh_woba_season.py to update coefficients from all official games.', flush=True)
+        return
     events_payload['events'] = [e for e in events_payload['events'] if str(e['gameId']) not in GAMES] + new_events
     events_payload['eventCount'] = len(events_payload['events'])
     events_payload['updatedAt'] = context['updatedAt']

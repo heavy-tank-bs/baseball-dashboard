@@ -56,6 +56,7 @@ TEAM_SCORE_LABELS = {
 
 EVENT_CATEGORIES = ("uBB", "HBP", "1B", "2B", "3B", "HR")
 DENOMINATOR_EVENTS = set(EVENT_CATEGORIES) | {"OUT", "SF", "ROE"}
+PARSER_VERSION = 2
 
 
 def text(node) -> str:
@@ -169,7 +170,7 @@ def parse_score(text_value: str, home_team: str, away_team: str) -> tuple[int, i
     return left_score_int, right_score_int
 
 
-def classify_event(result: str) -> str:
+def classify_event(result: str, pre_state=None) -> str:
     value = result or ""
     if "敬遠" in value or "故意四" in value:
         return "IBB"
@@ -183,15 +184,34 @@ def classify_event(result: str) -> str:
         return "3B"
     if "二塁打" in value or "ツーベース" in value or re.search(r"[左右中]２", value):
         return "2B"
+    if "セーフティバント" in value and any(term in value for term in ("決め", "成功", "内野安打", "一塁セーフ")):
+        return "1B"
     if "ヒット" in value or "安打" in value or re.search(r"[左右中投捕一二三遊]安", value):
         return "1B"
     if "犠牲フライ" in value or "犠飛" in value:
         return "SF"
-    if "送りバント失敗" in value:
+    if "スクイズ" in value:
+        if any(term in value for term in ("失敗", "試みるも", "ダブルプレー", "空振り")):
+            return "OUT"
+        # A successful squeeze can be a hit (batter safe) or a sacrifice,
+        # including a sacrifice reached on a fielder's choice/error.
+        final_outs = re.search(r"([0-3])アウト(?:[一二三]{1,3}塁|満塁)?\s*$", value)
+        if any(term in value for term in ("フィルダースチョイス", "野選", "エラー", "悪送球")):
+            return "SH"
+        if final_outs and (pre_state is None or int(final_outs[1]) > pre_state[0]):
+            return "SH"
+        return "1B"
+    if "送りバント" in value and any(term in value for term in ("失敗", "試みるも", "ダブルプレー", "併殺", "空振り")):
         return "OUT"
     if "送りバント" in value or "犠打" in value or "バントを成功" in value:
         return "SH"
-    if "失策" in value or "エラー" in value or "悪送球" in value:
+    if "振り逃げ" in value or "振逃" in value:
+        return "OUT"
+    if "フィルダースチョイス" in value or "野選" in value:
+        return "OUT"
+    if "打撃妨害" in value or "打妨" in value:
+        return "INT"
+    if any(term in value for term in ("失策", "エラー", "悪送球", "ファンブル", "後逸", "落球")):
         return "ROE"
     if any(term in value for term in ("三振", "ゴロ", "フライ", "ライナー", "併殺", "併打", "邪飛", "アウト")):
         return "OUT"
@@ -216,32 +236,52 @@ def advance_score_from_text(
     return max(latest - previous, 0)
 
 
-def post_state_from_result(result: str, pre_state: tuple[int, tuple[bool, bool, bool]], event_type: str) -> tuple[int, tuple[bool, bool, bool]]:
-    parsed = parse_state(result, pre_state)
-    if parsed:
-        return parsed
+def post_state_from_result(result: str, pre_state: tuple[int, tuple[bool, bool, bool]], event_type: str, runs_on_play: int = 0) -> tuple[int, tuple[bool, bool, bool]]:
+    """Read trailing state, never the result's leading pre-play situation."""
     outs, bases = pre_state
     if event_type == "HR":
         return outs, (False, False, False)
-    if event_type in {"uBB", "IBB", "HBP"}:
+    next_outs, next_bases = outs, bases
+    if event_type in {"uBB", "IBB", "HBP", "INT"}:
         first, second, third = bases
-        if first and second and third:
-            return outs, (True, True, True)
-        if first and second:
-            return outs, (True, True, third)
-        if first:
-            return outs, (True, True, third)
-        return outs, (True, second, third)
-    if event_type == "1B":
-        return outs, (True, False, False)
-    if event_type == "2B":
-        return outs, (False, True, False)
-    if event_type == "3B":
-        return outs, (False, False, True)
-    if event_type in {"OUT", "SF", "SH"}:
-        next_outs = min(outs + (2 if "併" in result else 1), 3)
-        return next_outs, (False, False, False) if next_outs == 3 else bases
-    return pre_state
+        next_bases = (True, second or first, third or (first and second))
+    elif event_type in {"1B", "2B", "3B", "ROE"}:
+        next_bases = {"1B": (True, False, False), "2B": (False, True, False),
+                      "3B": (False, False, True), "ROE": (True, False, False)}[event_type]
+    elif event_type in {"OUT", "SF", "SH"}:
+        reached = any(term in result for term in ("振り逃げ", "振逃", "フィルダースチョイス", "野選", "オールセーフ"))
+        double_play = "併" in result or "ダブルプレー" in result
+        next_outs = min(outs + (0 if reached else 2 if double_play else 1), 3)
+        remaining = list(bases)
+        if double_play:
+            remaining[0] = False
+        for index in (2, 1, 0):
+            if runs_on_play and remaining[index]:
+                remaining[index] = False
+                runs_on_play -= 1
+        if reached:
+            remaining[0] = True
+        next_bases = tuple(remaining)
+    # Source text appends its post-play base/out state. Matching only the tail
+    # avoids confusing "ランナー三塁の..." with runners left after a scoring play.
+    tail = re.search(r"(?:(?P<outs>[0-3])アウト\s*)?(?P<bases>走者なし|満塁|[一二三]{1,3}塁)?[\s！!]*$", result)
+    if tail and tail.group('outs') is not None:
+        next_outs = int(tail.group('outs'))
+    if tail and tail.group('bases'):
+        next_bases = bases_from_text(tail.group('bases'))
+    return next_outs, (False, False, False) if next_outs == 3 else next_bases
+
+
+def is_runner_event(value: str) -> bool:
+    """Independent runner/pitching events do not complete a batter's PA."""
+    return bool(re.search(r"(?:盗塁|けん制|牽制|暴投|ワイルドピッチ|捕逸|ボーク|走塁死)", value)
+                and not any(term in value for term in ("三振", "振り逃げ", "振逃", "四球", "フォアボール")))
+
+
+def is_administrative_summary(value: str) -> bool:
+    return value in {"試合終了", "ゲームセット", "チェンジ"} or any(
+        term in value for term in ("リクエスト", "リプレー検証", "コーチマウンド", "監督マウンド")) or bool(
+            re.search(r"ファウル.*(?:落球|ファンブル|エラー)", value))
 
 
 def fetch_with_retry(session: requests.Session, url: str, attempts: int = 4, delay_seconds: float = 1.0) -> str:
@@ -277,10 +317,18 @@ def parse_game_text(game: dict, html: str) -> list[dict]:
         batting_team = game_side_team(game, half)
         half_events: list[dict] = []
         half_runs = 0
+        can_link_previous = False
 
         for item in section.select(".bb-liveText__item"):
-            batter_node = item.select_one(".bb-liveText__batter")
+            summaries = [summary for summary in item.select(".bb-liveText__summary") if text(summary)]
+            batter_nodes = item.select(".bb-liveText__batter")
+            batter_node = batter_nodes[-1] if batter_nodes else None
             if not batter_node:
+                for summary in summaries:
+                    value = text(summary)
+                    half_runs += advance_score_from_text(value, home_team, away_team, current_score, batting_side)
+                    if is_runner_event(value):
+                        can_link_previous = False
                 continue
             player_link = batter_node.select_one(".bb-liveText__player")
             if not player_link:
@@ -290,45 +338,60 @@ def parse_game_text(game: dict, html: str) -> list[dict]:
             order_label = text(batter_node.select_one(".bb-liveText__order"))
             pre_state_text = text(batter_node.select_one(".bb-liveText__state"))
             pre_state = parse_state(pre_state_text)
-            if pre_state is None:
+            if pre_state is None or pre_state[0] == 3:
                 continue
-
-            summaries = [
-                summary
-                for summary in item.select(".bb-liveText__summary")
-                if text(summary)
-            ]
             if not summaries:
                 continue
-            final_index = len(summaries) - 1
-            for index in range(len(summaries) - 1, -1, -1):
-                classes = summaries[index].get("class") or []
-                summary_text = text(summaries[index])
+            if half_events and can_link_previous:
+                # This is the next batter's START state, before steals/WP/etc.
+                # Never substitute the state after that batter's runner events.
+                half_events[-1]['postState'] = state_key(pre_state)
+                half_events[-1]['postStateSource'] = 'next-batter-start'
+            eligible = []
+            for index, summary in enumerate(summaries):
+                classes = summary.get("class") or []
+                summary_text = text(summary)
                 if "bb-liveText__summary--change" in classes:
                     continue
-                if any(skip in summary_text for skip in ("リクエスト", "リプレー検証", "コーチマウンド", "監督マウンド")):
+                if is_administrative_summary(summary_text) or is_runner_event(summary_text):
                     continue
-                final_index = index
-                break
+                eligible.append(index)
+            # The PA result precedes possible fielding-error details and the
+            # final "試合終了" annotation. Taking the last summary loses the hit.
+            final_index = next((i for i in eligible if classify_event(text(summaries[i])) != 'OTHER'), eligible[0] if eligible else None)
+            if final_index is None:
+                for summary in summaries:
+                    half_runs += advance_score_from_text(text(summary), home_team, away_team, current_score, batting_side)
+                can_link_previous = False
+                continue
 
             current_state = pre_state
             runs_before = half_runs
             for summary in summaries[:final_index]:
                 summary_text = text(summary)
                 half_runs += advance_score_from_text(summary_text, home_team, away_team, current_score, batting_side)
-                state_update = parse_state(summary_text, current_state)
-                if state_update:
-                    current_state = state_update
-                    runs_before = half_runs
+                current_state = post_state_from_result(summary_text, current_state, 'OTHER')
+                runs_before = half_runs
 
             final_text = text(summaries[final_index])
-            # An inning-ending runner out leaves the batter's PA unfinished.
-            if re.match(r"(?:[一二三]塁走者|ランナー).*?(?:盗塁|けん制|牽制).*?3アウト", final_text):
-                continue
-            event_type = classify_event(final_text)
+            event_type = classify_event(final_text, current_state)
             event_runs = advance_score_from_text(final_text, home_team, away_team, current_score, batting_side)
             half_runs += event_runs
-            post_state = post_state_from_result(final_text, current_state, event_type)
+            post_state = post_state_from_result(final_text, current_state, event_type, event_runs)
+            can_link_previous = True
+            for summary in summaries[final_index + 1:]:
+                value = text(summary)
+                if is_administrative_summary(value) or 'bb-liveText__summary--change' in (summary.get('class') or []):
+                    continue
+                runs = advance_score_from_text(value, home_team, away_team, current_score, batting_side)
+                half_runs += runs
+                if is_runner_event(value):
+                    # Do not assign an independent steal/WP after a completed
+                    # PA to the batter's run value or overwrite its post-state.
+                    can_link_previous = False
+                else:
+                    event_runs += runs
+                    post_state = post_state_from_result(value, post_state, 'OTHER')
 
             half_events.append(
                 {
@@ -343,7 +406,10 @@ def parse_game_text(game: dict, html: str) -> list[dict]:
                     "eventType": event_type,
                     "result": final_text,
                     "preState": state_key(current_state),
+                    "plateAppearancePreState": state_key(pre_state),
                     "postState": state_key(post_state),
+                    "postStateSource": "result",
+                    "summaries": [text(summary) for summary in summaries],
                     "runsBefore": runs_before,
                     "runsOnPlay": event_runs,
                     "runsAfter": half_runs,
@@ -404,6 +470,8 @@ def calculate_constants_for_year(year: str, events: list[dict]) -> dict:
 
     denominator = sum(counts[event] for event in DENOMINATOR_EVENTS)
     on_base_numerator = counts["1B"] + counts["2B"] + counts["3B"] + counts["HR"] + counts["uBB"] + counts["HBP"]
+    # FanGraphs' linear-weights derivation scales to OBP with IBB removed.
+    # Both this target and the wOBA denominator exclude IBB, SH and interference.
     league_obp = on_base_numerator / denominator if denominator else 0.0
     unscaled_woba = (
         sum(raw_weights[category] * counts[category] for category in EVENT_CATEGORIES) / denominator
@@ -431,6 +499,10 @@ def calculate_constants_for_year(year: str, events: list[dict]) -> dict:
         "w3B": round(weights["3B"], 3),
         "wHR": round(weights["HR"], 3),
         "eventCounts": dict(sorted(counts.items())),
+        "runValueSampleCounts": {key: len(value) for key, value in sorted(values.items())},
+        "missingRunValueCounts": {key: count - len(values[key]) for key, count in sorted(counts.items())
+                                  if count != len(values[key])},
+        "parserVersion": PARSER_VERSION,
         "denominator": denominator,
         "leagueObp": round(league_obp, 3),
         "rawRunValues": {key: round(value, 4) for key, value in sorted(run_values.items())},
@@ -442,12 +514,24 @@ def calculate_constants_for_year(year: str, events: list[dict]) -> dict:
 def build_for_season(season: str, through_date: str | None = None, delay_seconds: float = 0.2) -> tuple[dict, list[dict]]:
     context_path = Path(str(CONTEXT_TEMPLATE).format(season=season))
     context = json.loads(context_path.read_text(encoding="utf-8"))
+    manifest_text = (SUMMARY_DIR / 'manifest.js').read_text(encoding='utf-8')
+    manifest = json.loads(manifest_text[manifest_text.index('{'):].rstrip(';\n'))
+    regular_ids = {e['gameId'] for e in manifest['entries'] if e['date'].startswith(season)
+                   and (not through_date or e['date'] <= through_date)}
+    if not regular_ids:
+        raise ValueError(f'No saved regular-season games for {season}')
     games = [
         game
         for game in context.get("games") or []
         if str(game.get("date") or "").startswith(season)
+        and game['gameId'] in regular_ids
         and (not through_date or str(game.get("date") or "") <= through_date)
     ]
+    context_ids = {str(game['gameId']) for game in games}
+    if context_ids != regular_ids or len(games) != len(regular_ids):
+        missing = sorted(regular_ids - context_ids)
+        raise RuntimeError(f'Incomplete or duplicate game context for {season}; missing game IDs: {missing}. '
+                           'Published files left unchanged.')
 
     session = requests.Session()
     events: list[dict] = []
@@ -464,6 +548,8 @@ def build_for_season(season: str, through_date: str | None = None, delay_seconds
         if delay_seconds:
             time.sleep(delay_seconds)
 
+    if fetch_errors or {e['gameId'] for e in events} != {g['gameId'] for g in games}:
+        raise RuntimeError(f'Incomplete season: {len(fetch_errors)} fetch errors; published files left unchanged. Use scripts/refresh_woba_season.py for resumable official-source collection.')
     constants = calculate_constants_for_year(season, events)
     constants["games"] = len(games)
     constants["parsedPlateAppearances"] = len(events)
@@ -489,6 +575,14 @@ def main() -> None:
         },
         "byYear": {args.season: constants},
     }
+    if CONSTANTS_PATH.exists():
+        previous = json.loads(CONSTANTS_PATH.read_text(encoding='utf-8'))
+        previous_year = previous.get('byYear', {}).get(args.season, {})
+        previous_games = max(int(previous_year.get('games') or 0), int(previous_year.get('expectedGames') or 0))
+        if previous_year.get('coverageComplete') and int(constants.get('games') or 0) < previous_games:
+            raise RuntimeError(f'Refusing to replace the complete {args.season} season ({previous_games} games) '
+                               f'with {constants.get("games", 0)} games. Published files left unchanged.')
+        payload['byYear'] = {**previous.get('byYear', {}), **payload['byYear']}
     CONSTANTS_PATH.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     EVENTS_TEMPLATE.with_name(EVENTS_TEMPLATE.name.format(season=args.season)).write_text(
         json.dumps(

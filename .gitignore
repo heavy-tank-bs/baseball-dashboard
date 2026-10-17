@@ -20,6 +20,14 @@
 !/scripts/collect_final_games.py
 !/scripts/build_dashboard.py
 !/scripts/verify_final_games.py
+!/scripts/refresh_woba_season.py
+!/scripts/test_woba_parser.py
+!/scripts/verify_woba_season.py
+!/scripts/npb_woba_events.py
+!/scripts/test_npb_woba_events.py
+!/scripts/probe_woba_fetch.py
+!/scripts/verify_woba_inputs.py
+!/scripts/sync_official_intentional_walks.py
 !/summary/
 !/summary/index.html
 !/summary/batter.html
@@ -50,6 +58,9 @@
 !/docs/coverage-2026.json
 !/docs/dashboard-maintenance.txt
 !/docs/aggregation-verification.json
+!/docs/woba-coverage-2026.json
+!/docs/woba-inputs-verification.json
+!/docs/intentional-walk-sync-2026.json
 !/GITHUB_PAGES.md
 
 site/

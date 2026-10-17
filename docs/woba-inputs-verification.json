@@ -1,0 +1,64 @@
+{
+  "season": "2026",
+  "games": 858,
+  "plateAppearances": 63898,
+  "annualRows": 648,
+  "monthlyRows": 2906,
+  "eventCounts": {
+    "OUT": 42906,
+    "1B": 9772,
+    "HR": 1426,
+    "uBB": 4605,
+    "SF": 374,
+    "SH": 868,
+    "2B": 2335,
+    "HBP": 632,
+    "3B": 209,
+    "IBB": 236,
+    "ROE": 532,
+    "INT": 3
+  },
+  "historicalSeasonsUnchanged": true,
+  "differenceCount": 0,
+  "differences": [],
+  "intentionalWalkEvidence": [],
+  "derived": {
+    "rows": 3554,
+    "metricsChecked": 7108,
+    "differenceCount": 0,
+    "differences": []
+  },
+  "pitchers": {
+    "baselineCommit": "8dc604204dac5b41e56091308dd1705fe6962923",
+    "rows": 2118,
+    "leagueFipConstants": {
+      "セ": 2.8566820678232063,
+      "パ": 2.7996153173631755
+    },
+    "affectedPitchers": [
+      {
+        "pitcherId": "2103689",
+        "player": "赤星 優志",
+        "intentionalWalksBefore": 4,
+        "intentionalWalksAfter": 4,
+        "expectedAddedIntentionalWalks": 0
+      },
+      {
+        "pitcherId": "2000061",
+        "player": "森浦 大輔",
+        "intentionalWalksBefore": 2,
+        "intentionalWalksAfter": 3,
+        "expectedAddedIntentionalWalks": 1
+      },
+      {
+        "pitcherId": "1700072",
+        "player": "遠藤 淳志",
+        "intentionalWalksBefore": 4,
+        "intentionalWalksAfter": 6,
+        "expectedAddedIntentionalWalks": 2
+      }
+    ],
+    "differenceCount": 0,
+    "differences": []
+  }
+}

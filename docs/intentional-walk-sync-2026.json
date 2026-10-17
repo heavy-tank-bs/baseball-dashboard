@@ -1,0 +1,98 @@
+{
+  "season": "2026",
+  "officialGamesVerified": 858,
+  "officialIntentionalWalks": 236,
+  "addedEvents": 3,
+  "affectedGames": 2,
+  "identityCorrections": [
+    {
+      "gameId": "2021038761",
+      "date": "2026-04-24",
+      "team": "DeNA",
+      "player": "ビシエド",
+      "beforePlayerId": "",
+      "afterPlayerId": "1600021"
+    }
+  ],
+  "sourceAndUnrelatedContextUnchanged": true,
+  "changes": [
+    {
+      "gameId": "2021039189",
+      "date": "2026-07-25",
+      "inning": 9,
+      "half": "裏",
+      "battingTeam": "ヤクルト",
+      "batterId": "2000026",
+      "batter": "内山 壮真",
+      "result": "敬遠フォアボール"
+    },
+    {
+      "gameId": "2021039189",
+      "date": "2026-07-25",
+      "inning": 10,
+      "half": "裏",
+      "battingTeam": "ヤクルト",
+      "batterId": "1900028",
+      "batter": "長岡 秀樹",
+      "result": "敬遠フォアボール"
+    },
+    {
+      "gameId": "2021039189",
+      "date": "2026-07-25",
+      "inning": 10,
+      "half": "裏",
+      "battingTeam": "ヤクルト",
+      "batterId": "1650522",
+      "batter": "丸山 和郁",
+      "result": "敬遠フォアボール"
+    }
+  ],
+  "summaryBefore": {
+    "scheduledGames": 902,
+    "completedGames": 860,
+    "canceledGames": 40,
+    "otherStatusGames": 2,
+    "gamesWithIntentionalWalks": 191,
+    "intentionalWalkPlateAppearances": 233,
+    "statusCounts": {
+      "12回裏": 1,
+      "ノーゲーム": 1,
+      "試合中止": 40,
+      "試合終了": 860
+    },
+    "fetchErrors": 3
+  },
+  "summaryAfter": {
+    "scheduledGames": 902,
+    "completedGames": 860,
+    "canceledGames": 40,
+    "otherStatusGames": 2,
+    "gamesWithIntentionalWalks": 192,
+    "intentionalWalkPlateAppearances": 236,
+    "statusCounts": {
+      "12回裏": 1,
+      "ノーゲーム": 1,
+      "試合中止": 40,
+      "試合終了": 860
+    },
+    "fetchErrors": 3
+  },
+  "metadataCorrections": [
+    {
+      "field": "gamesWithIntentionalWalks",
+      "before": 181,
+      "after": 192
+    },
+    {
+      "field": "intentionalWalkGames",
+      "before": 190,
+      "after": 192
+    },
+    {
+      "field": "intentionalWalkPlateAppearances",
+      "before": 232,
+      "after": 236
+    }
+  ],
+  "baselineCommit": "8dc604204dac5b41e56091308dd1705fe6962923"
+}

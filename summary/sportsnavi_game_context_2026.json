@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-17T16:55:45+09:00",
+  "updatedAt": "2026-10-17T17:51:34+09:00",
   "season": 2026,
   "throughDate": "2026-10-08",
   "source": {
@@ -12,8 +12,8 @@
     "completedGames": 860,
     "canceledGames": 40,
     "otherStatusGames": 2,
-    "gamesWithIntentionalWalks": 191,
-    "intentionalWalkPlateAppearances": 233,
+    "gamesWithIntentionalWalks": 192,
+    "intentionalWalkPlateAppearances": 236,
     "statusCounts": {
       "12回裏": 1,
       "ノーゲーム": 1,
@@ -17818,7 +17818,7 @@
               {
                 "order": 12,
                 "player": "ビシエド",
-                "playerId": "",
+                "playerId": "1600021",
                 "intentionalWalks": 1,
                 "details": [
                   "故意四"
@@ -73641,8 +73641,63 @@
       "scheduleUrl": "https://baseball.yahoo.co.jp/npb/schedule/?date=2026-07-25",
       "statsUrl": "https://baseball.yahoo.co.jp/npb/game/2021039189/stats",
       "intentionalWalks": {
-        "total": 0,
-        "teams": {}
+        "total": 3,
+        "teams": {
+          "東京ヤクルトスワローズ": {
+            "team": "東京ヤクルトスワローズ",
+            "intentionalWalks": 3,
+            "players": [
+              {
+                "order": 15,
+                "player": "内山 壮真",
+                "playerId": "2000026",
+                "intentionalWalks": 1,
+                "details": [
+                  "敬遠フォアボール"
+                ],
+                "events": [
+                  {
+                    "inning": 9,
+                    "detail": "敬遠フォアボール",
+                    "source": "NPB official play-by-play"
+                  }
+                ]
+              },
+              {
+                "order": 1,
+                "player": "長岡 秀樹",
+                "playerId": "1900028",
+                "intentionalWalks": 1,
+                "details": [
+                  "敬遠フォアボール"
+                ],
+                "events": [
+                  {
+                    "inning": 10,
+                    "detail": "敬遠フォアボール",
+                    "source": "NPB official play-by-play"
+                  }
+                ]
+              },
+              {
+                "order": 2,
+                "player": "丸山 和郁",
+                "playerId": "1650522",
+                "intentionalWalks": 1,
+                "details": [
+                  "敬遠フォアボール"
+                ],
+                "events": [
+                  {
+                    "inning": 10,
+                    "detail": "敬遠フォアボール",
+                    "source": "NPB official play-by-play"
+                  }
+                ]
+              }
+            ]
+          }
+        }
       },
       "inningScores": {
         "home": {
@@ -116595,7 +116650,12 @@
   "fetchErrorsCount": 3,
   "completedGames": 858,
   "fetchErrorCount": 3,
-  "gamesWithIntentionalWalks": 181,
-  "intentionalWalkPlateAppearances": 232,
-  "intentionalWalkGames": 190
+  "gamesWithIntentionalWalks": 192,
+  "intentionalWalkPlateAppearances": 236,
+  "intentionalWalkGames": 192,
+  "intentionalWalkSync": {
+    "source": "NPB official play-by-play",
+    "gamesVerified": 858,
+    "report": "docs/intentional-walk-sync-2026.json"
+  }
 }

@@ -14,7 +14,16 @@
 IDなしで別行になっていたビシエドの1試合分は既存の選手IDへ統合。篠﨑国忠の打席0の出場1試合も反映した。
 試合コンテキストの completedGames=860 は公式戦858試合とオールスター2試合。throughDateを2026-10-08へ更新。
 既存コンテキストの取得エラー件数3には対象試合の詳細が残っていない。公式戦の試合コンテキスト行に欠損はない。
-wOBAの独自暫定係数は199試合・14750イベントから算出。全858試合から算出した係数ではない。
+wOBAの独自暫定係数はNPB公式の全858試合・63,898打席から再計算済み。取得エラー・計数照合の不一致はゼロ。
+全打席を公式打撃成績の選手別PA・AB・安打分類・四死球・犠打、および球団別得点と照合した。
+RE24の24状態をすべて観測し、走者・アウト状態の不足で除外された得点価値サンプルはゼロ。
+2026係数: wBB=0.714、wHBP=0.735、w1B=0.881、w2B=1.354、w3B=1.845、wHR=2.155、wOBAScale=1.337。
+旧199試合の係数を置換し、年度・月別wRC/wRC+とリーグ指標を更新した。
+独自の計算法による値でありNPB公式係数ではないため、provisional表示を維持する。
+出塁率へのスケール合わせでは敬遠を除外する。球場別の打席補正は行わず、イニング終了・試合終了後の期待得点はゼロとする。
+根拠・網羅性は woba-coverage-2026.json、年度・月別入力の独立照合は woba-inputs-verification.json を参照。
+公式一球速報との照合で、4/24ビシエドの敬遠の選手IDを補完し、7/25内山壮真・長岡秀樹・丸山和郁の敬遠3件を追加した。
+補正内容は intentional-walk-sync-2026.json に記録。7/25森浦の敬遠1件・遠藤の敬遠2件と関連FIPも再集計した。
 追加試合では打席途中の盗塁死を打席から除外し、送りバント失敗を犠打と誤分類しないようテキスト解析を修正した。
 
 移籍の扱い
@@ -40,11 +49,29 @@ python scripts/verify_annual_totals.py
 python scripts/verify_final_games.py
 
 scripts/collect_final_games.py は追加2試合の一球速報を各ページ1回取得し全投手で再利用。成績・コンテキスト・wOBAイベントも更新する。
+全季NPBイベントを保存済みの場合は、部分的なスポーツナビイベントでwOBAデータを上書きしない。
 使用したスキルの解析・描画コードも scripts/build_dashboard.py に同梱し、個人のスキル配置への依存をなくした。
 scripts/rebuild_annual_totals.py は公開済みmanifestから集計し、元CSVがない過年度の集計を保持する。
 --refresh-manifests は新しいgeneratedデータを発見し、投手manifest・表示用詳細JSONも更新する。
 --repair-details-only は不足する表示用詳細JSONのみを元の投球JSONから再生成する。
+--batter-only は投手成績と球場係数を保持し、打撃年度・月別指標のみ更新する。敬遠コンテキストも補正した場合は通常の全再集計を使う。
 summary/build_manifest.py も元データがない過年度の集計を保持する。
+
+wOBAの全季再取得・再計算（公式成績キャッシュを用意した後）
+python scripts/audit_dashboard.py
+python scripts/refresh_woba_season.py --season 2026 --source npb
+python scripts/sync_official_intentional_walks.py --apply
+python scripts/rebuild_annual_totals.py
+python scripts/test_npb_woba_events.py
+python scripts/test_woba_parser.py
+python scripts/verify_woba_inputs.py --check-derived --report docs/woba-inputs-verification.json
+python scripts/verify_woba_season.py
+python scripts/verify_annual_totals.py --no-write
+公式ページのURL対応表はaudit_dashboard.py、選手ID対応は公式打撃キャッシュとNPB名簿から作る。
+refresh_woba_season.py は失敗時に保存済みHTMLから再開し、全試合の照合に成功するまで公開JSONを更新しない。
+--game-id、--audit-only、--audit-cached は部分検証専用で、公開データを上書きしない。
+既存の sportsnavi_woba_events_2026.json という名前を維持するが、source/eventParserにNPB公式由来と記録する。
+検証スクリプトの過年度・計数保持確認は、実行時のHEADとの比較で行う。
 
 取得済み成績キャッシュは summary/game_batting_cache.json と summary/game_decisions_cache.json。
 NPB代替取得時はキャッシュの sources に取得元を記録する。
