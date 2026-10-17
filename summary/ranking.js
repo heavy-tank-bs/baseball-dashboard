@@ -160,6 +160,7 @@ function escapeHtml(value) {
 }
 
 function parseNumber(value) {
+  if (value === null || value === undefined || (typeof value === "string" && value.trim() === "")) return null;
   const number = Number(value);
   return Number.isFinite(number) ? number : null;
 }
@@ -535,12 +536,15 @@ function renderTable(rows) {
 
 function renderChart(rows) {
   const metric = currentMetric();
+  rows = rows.filter((row) => parseNumber(row.value) !== null);
   if (!rows.length) {
     return '<div class="section-empty">グラフデータがありません。</div>';
   }
   const values = rows.map((row) => Number(row.value)).filter((value) => Number.isFinite(value));
   const maxValue = Math.max(...values, 0);
-  const yMax = chartAxisMax(metric, maxValue);
+  const minValue = Math.min(...values, 0);
+  const yMax = maxValue > 0 || minValue === 0 ? chartAxisMax(metric, maxValue) : 0;
+  const yMin = minValue < 0 ? -chartAxisMax(metric, -minValue) : 0;
   const plotLeft = 56;
   const plotTop = 22;
   const plotHeight = 230;
@@ -550,10 +554,13 @@ function renderChart(rows) {
   const width = plotLeft + plotWidth + 24;
   const height = plotTop + plotHeight + labelHeight;
   const barWidthValue = Math.max(12, Math.min(34, gap * 0.56));
-  const ticks = [1, 0.75, 0.5, 0.25, 0];
+  const yScale = (value) => plotTop + ((yMax - value) / (yMax - yMin)) * plotHeight;
+  const zeroY = yScale(0);
+  const ticks = [...new Set([1, 0.75, 0.5, 0.25, 0, -yMin / (yMax - yMin)])].sort((a, b) => b - a);
   const tickLines = ticks
     .map((ratio) => {
-      const value = yMax * ratio;
+      const rawValue = yMin + (yMax - yMin) * ratio;
+      const value = Math.abs(rawValue) < 1e-10 ? 0 : rawValue;
       const y = plotTop + plotHeight - ratio * plotHeight;
       return `
         <g>
@@ -566,15 +573,18 @@ function renderChart(rows) {
   const bars = rows
     .map((row, index) => {
       const x = plotLeft + index * gap + (gap - barWidthValue) / 2;
-      const barHeight = yMax ? (Number(row.value) / yMax) * plotHeight : 0;
-      const y = plotTop + plotHeight - barHeight;
+      const value = Number(row.value);
+      const valueY = yScale(value);
+      const barHeight = Math.abs(valueY - zeroY);
+      const y = Math.min(valueY, zeroY);
+      const labelY = value < 0 ? Math.min(valueY + 14, plotTop + plotHeight - 4) : valueY - 7;
       const label = row.pitchType ? `${row.player} / ${row.pitchType}` : row.player;
       const xCenter = x + barWidthValue / 2;
       return `
         <g>
           <title>${escapeHtml(`${label}\n${metric.label}: ${formatMetricValue(metric, row.value)}`)}</title>
-          <rect x="${x.toFixed(1)}" y="${y.toFixed(1)}" width="${barWidthValue.toFixed(1)}" height="${Math.max(barHeight, 2).toFixed(1)}" class="ranking-chart-bar"></rect>
-          <text x="${xCenter.toFixed(1)}" y="${(y - 7).toFixed(1)}" class="ranking-chart-value">${escapeHtml(formatMetricValue(metric, row.value))}</text>
+          <rect x="${x.toFixed(1)}" y="${y.toFixed(1)}" width="${barWidthValue.toFixed(1)}" height="${barHeight.toFixed(1)}" class="ranking-chart-bar"></rect>
+          <text x="${xCenter.toFixed(1)}" y="${labelY.toFixed(1)}" class="ranking-chart-value">${escapeHtml(formatMetricValue(metric, row.value))}</text>
           <text x="${xCenter.toFixed(1)}" y="${(plotTop + plotHeight + 18).toFixed(1)}" class="ranking-chart-x-label" transform="rotate(-45 ${xCenter.toFixed(1)} ${(plotTop + plotHeight + 18).toFixed(1)})">${escapeHtml(truncateLabel(row.player))}</text>
         </g>
       `;
@@ -585,7 +595,7 @@ function renderChart(rows) {
       <svg class="ranking-axis-chart" viewBox="0 0 ${width} ${height}" role="img" aria-label="${escapeHtml(metric.label)}ランキング">
         ${tickLines}
         <line x1="${plotLeft}" y1="${plotTop}" x2="${plotLeft}" y2="${plotTop + plotHeight}" class="ranking-chart-axis-line"></line>
-        <line x1="${plotLeft}" y1="${plotTop + plotHeight}" x2="${plotLeft + plotWidth}" y2="${plotTop + plotHeight}" class="ranking-chart-axis-line"></line>
+        <line x1="${plotLeft}" y1="${zeroY.toFixed(1)}" x2="${plotLeft + plotWidth}" y2="${zeroY.toFixed(1)}" class="ranking-chart-axis-line"></line>
         ${bars}
       </svg>
     </div>

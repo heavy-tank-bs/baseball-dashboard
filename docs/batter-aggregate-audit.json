@@ -1,0 +1,28 @@
+{
+  "season": "2026",
+  "games": 858,
+  "plateAppearances": 63898,
+  "annualRows": 648,
+  "dashboardRows": 483,
+  "checks": {
+    "count": 1675758,
+    "rate": 106422,
+    "historicalRate": 1432
+  },
+  "officialManifestChecked": true,
+  "officialManifestCompletedPlates": 63898,
+  "unknownSplitAttributes": {
+    "byVelocity": 15218,
+    "byPitchType": 292,
+    "byPitcherHand": 292,
+    "byStrikeCount": 297
+  },
+  "historicalRateRowsChecked": 179,
+  "missingFinalPitchSpeed": {
+    "plateAppearances": 15256
+  },
+  "differenceCount": 0,
+  "affectedPlayers": 0,
+  "differencesByScope": {},
+  "differences": []
+}

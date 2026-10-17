@@ -120,8 +120,7 @@ def main():
         if args.pitcher_manifest_only:
             return
     entries, decisions, batting, batters = load_inputs(m, entries)
-    if not args.batter_only:
-        m.write_text_atomic(m.BATTER_MANIFEST_PATH, "window.BATTER_GAME_MANIFEST = " + m.dumps_compact(m.build_manifest(batters)) + ";\n")
+    m.write_text_atomic(m.BATTER_MANIFEST_PATH, "window.BATTER_GAME_MANIFEST = " + m.dumps_compact(m.build_manifest(batters)) + ";\n")
     contexts = m.load_game_contexts()
     parks = json.loads(m.PARK_FACTORS_PATH.read_text(encoding='utf-8')) if args.batter_only else m.build_park_factors(contexts)
     outputs = []

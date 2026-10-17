@@ -1,0 +1,851 @@
+{
+  "scope": "2026 saved pitcher source and aggregate audit",
+  "annualRows": 385,
+  "uniquePitchers": 384,
+  "appearances": 7175,
+  "rawPitches": 249622,
+  "checks": {
+    "rawPitchCount": 7175,
+    "rawPitchIdentity": 7175,
+    "rawStatline": 64575,
+    "gameDashboard": 7175,
+    "rawTerminalVsStatline": 28700,
+    "sourceCoverage": 20268,
+    "outcomes": 43050,
+    "countMix": 315880,
+    "finish": 23049,
+    "annualOfficialCounts": 5775,
+    "monthlyOfficialCounts": 25995,
+    "derivedRates": 23298,
+    "seasonDashboard": 385,
+    "seasonOutcomes": 2310,
+    "gameSplit:opponentRows": 25135,
+    "gameSplitPartition": 8470,
+    "gameSplit:stadiumRows": 25355,
+    "source:pitchMix": 38380,
+    "sourceRates:pitchMix": 14140,
+    "source:batterHandRows": 14554,
+    "sourceRates:batterHandRows": 5362,
+    "source:inningRows": 87780,
+    "sourceRates:inningRows": 32340
+  },
+  "rawTerminalCategories": {
+    "K": 13423,
+    "OUT": 29989,
+    "BB": 4598,
+    "1B": 9759,
+    "HBP": 631,
+    "2B": 2333,
+    "INCOMPLETE": 238,
+    "SH": 865,
+    "HR": 1424,
+    "SF": 374,
+    "3B": 209,
+    "INT": 3
+  },
+  "unknownTerminalResults": {},
+  "incompletePASamples": [
+    {
+      "entry": "広島-2026-10-07-2021051134-玉村昇悟",
+      "paIndex": "0720500",
+      "result": "見逃し"
+    },
+    {
+      "entry": "広島-2026-10-07-2021051134-ターノック",
+      "paIndex": "1120300",
+      "result": "ボール"
+    },
+    {
+      "entry": "阪神-2026-10-04-2021049648-伊藤将司",
+      "paIndex": "0520400",
+      "result": "ボール"
+    },
+    {
+      "entry": "ヤクルト-2026-10-02-2021048569-山野太一",
+      "paIndex": "0110400",
+      "result": "見逃し"
+    },
+    {
+      "entry": "ヤクルト-2026-10-02-2021048569-星知弥",
+      "paIndex": "0810300",
+      "result": "ボール"
+    },
+    {
+      "entry": "ロッテ-2026-10-02-2021048602-田中晴也",
+      "paIndex": "0410500",
+      "result": "見逃し"
+    },
+    {
+      "entry": "ロッテ-2026-10-01-2021049817-ロング",
+      "paIndex": "0110600",
+      "result": "ボール [ワンバウンド]"
+    },
+    {
+      "entry": "ロッテ-2026-09-30-2021039472-ルケーシー",
+      "paIndex": "0520400",
+      "result": "見逃し"
+    },
+    {
+      "entry": "阪神-2026-09-26-2021048560-木下里都",
+      "paIndex": "0620400",
+      "result": "ボール [ランエンドヒット]"
+    },
+    {
+      "entry": "ヤクルト-2026-09-26-2021048559-高梨裕稔",
+      "paIndex": "0510400",
+      "result": "ボール [ワンバウンド、挟まれる]"
+    },
+    {
+      "entry": "中日-2026-09-26-2021048559-涌井秀章",
+      "paIndex": "0420700",
+      "result": "ボール"
+    },
+    {
+      "entry": "中日-2026-09-25-2021048556-森博人",
+      "paIndex": "0820400",
+      "result": "見逃し [リプレー検証後判定覆る]"
+    },
+    {
+      "entry": "オリックス-2026-09-23-2021039457-山﨑颯一郎",
+      "paIndex": "0820400",
+      "result": "見逃し"
+    },
+    {
+      "entry": "巨人-2026-09-22-2021039450-田中瑛斗",
+      "paIndex": "0820400",
+      "result": "ボール [ヘッドスライディング]"
+    },
+    {
+      "entry": "阪神-2026-09-22-2021039448-ドリス",
+      "paIndex": "1020400",
+      "result": "ボール"
+    },
+    {
+      "entry": "日本ハム-2026-09-22-2021039451-北山亘基",
+      "paIndex": "0610400",
+      "result": "ボール"
+    },
+    {
+      "entry": "西武-2026-09-22-2021039452-豆田泰志",
+      "paIndex": "0620400",
+      "result": "ボール"
+    },
+    {
+      "entry": "阪神-2026-09-21-2021039444-ルーカス",
+      "paIndex": "0310400",
+      "result": "ボール"
+    },
+    {
+      "entry": "DeNA-2026-09-21-2021039444-レイノルズ",
+      "paIndex": "0920401",
+      "result": "見逃し [送球できず]"
+    },
+    {
+      "entry": "広島-2026-09-21-2021039443-斉藤優汰",
+      "paIndex": "0520400",
+      "result": "ボール [ランエンドヒット]"
+    },
+    {
+      "entry": "DeNA-2026-09-19-2021039432-尾形崇斗",
+      "paIndex": "0510600",
+      "result": "ボール"
+    },
+    {
+      "entry": "DeNA-2026-09-18-2021039429-伊勢大夢",
+      "paIndex": "0810501",
+      "result": "見逃し [送球できず]"
+    },
+    {
+      "entry": "広島-2026-09-17-2021048555-床田寛樹",
+      "paIndex": "0320400",
+      "result": "ボール"
+    },
+    {
+      "entry": "オリックス-2026-09-17-2021039427-曽谷龍平",
+      "paIndex": "0610400",
+      "result": "ボール [ピッチアウト、セーフティバント、バント構え]"
+    },
+    {
+      "entry": "日本ハム-2026-09-15-2021039420-柳川大晟",
+      "paIndex": "0910600",
+      "result": "ボール"
+    },
+    {
+      "entry": "DeNA-2026-09-14-2021047474-平良拳太郎",
+      "paIndex": "0210400",
+      "result": "ボール"
+    },
+    {
+      "entry": "DeNA-2026-09-14-2021047474-佐々木千隼",
+      "paIndex": "1210500",
+      "result": "ボール [捕手が投球を弾く、進塁を狙うもアウト]"
+    },
+    {
+      "entry": "ヤクルト-2026-09-13-2021039415-高橋奎二",
+      "paIndex": "0110400",
+      "result": "見逃し"
+    },
+    {
+      "entry": "中日-2026-09-13-2021039417-髙橋宏斗",
+      "paIndex": "0920500",
+      "result": "ボール [ワンバウンド]"
+    },
+    {
+      "entry": "ヤクルト-2026-09-12-2021039410-高梨裕稔",
+      "paIndex": "0120800",
+      "result": "ボール"
+    },
+    {
+      "entry": "ヤクルト-2026-09-12-2021039410-清水昇",
+      "paIndex": "0720600",
+      "result": "ボール [ランエンドヒット]"
+    },
+    {
+      "entry": "オリックス-2026-09-12-2021039413-エスピノーザ",
+      "paIndex": "0510400",
+      "result": "ボール"
+    },
+    {
+      "entry": "西武-2026-09-12-2021039412-佐藤隼輔",
+      "paIndex": "1110400",
+      "result": "ボール"
+    },
+    {
+      "entry": "広島-2026-09-11-2021039408-森下暢仁",
+      "paIndex": "0510400",
+      "result": "ボール [送球がバウンド、送球を巧みに処理]"
+    },
+    {
+      "entry": "西武-2026-09-11-2021048140-渡邉勇太朗",
+      "paIndex": "0420600",
+      "result": "ボール"
+    },
+    {
+      "entry": "日本ハム-2026-09-10-2021039407-加藤貴之",
+      "paIndex": "0620400",
+      "result": "ボール"
+    },
+    {
+      "entry": "ソフトバンク-2026-09-08-2021039395-モイネロ",
+      "paIndex": "0310400",
+      "result": "ボール [セーフティバント、バント構え]"
+    },
+    {
+      "entry": "阪神-2026-09-06-2021039385-岩崎優",
+      "paIndex": "0810400",
+      "result": "ボール [ランエンドヒット]"
+    },
+    {
+      "entry": "広島-2026-09-06-2021039386-森翔平",
+      "paIndex": "0410400",
+      "result": "見逃し"
+    },
+    {
+      "entry": "広島-2026-09-06-2021039386-塹江敦哉",
+      "paIndex": "0910400",
+      "result": "見逃し"
+    }
+  ],
+  "unknownInningSamples": [
+    {
+      "entry": "広島-2026-07-24-2021039184-鈴木健矢",
+      "pitch": {
+        "pa_index": "live",
+        "pitcher": "鈴木 健矢",
+        "pitcher_id": "1900073",
+        "pitcher_hand": "右",
+        "batter": "宮本 丈",
+        "batter_id": "1700089",
+        "batter_hand": "左",
+        "seq": "5",
+        "pitchNo": "11",
+        "pitchType": "ストレート",
+        "speed": "134km/h",
+        "result": "ボール",
+        "top": 47.879999999999995,
+        "left": 44.64
+      }
+    },
+    {
+      "entry": "広島-2026-07-24-2021039184-鈴木健矢",
+      "pitch": {
+        "pa_index": "live",
+        "pitcher": "鈴木 健矢",
+        "pitcher_id": "1900073",
+        "pitcher_hand": "右",
+        "batter": "宮本 丈",
+        "batter_id": "1700089",
+        "batter_hand": "左",
+        "seq": "4",
+        "pitchNo": "10",
+        "pitchType": "ストレート",
+        "speed": "132km/h",
+        "result": "ボール",
+        "top": 51.839999999999996,
+        "left": 43.199999999999996
+      }
+    },
+    {
+      "entry": "広島-2026-07-24-2021039184-鈴木健矢",
+      "pitch": {
+        "pa_index": "live",
+        "pitcher": "鈴木 健矢",
+        "pitcher_id": "1900073",
+        "pitcher_hand": "右",
+        "batter": "宮本 丈",
+        "batter_id": "1700089",
+        "batter_hand": "左",
+        "seq": "3",
+        "pitchNo": "9",
+        "pitchType": "ストレート",
+        "speed": "135km/h",
+        "result": "ボール",
+        "top": 40.32,
+        "left": 45.72
+      }
+    },
+    {
+      "entry": "広島-2026-07-24-2021039184-鈴木健矢",
+      "pitch": {
+        "pa_index": "live",
+        "pitcher": "鈴木 健矢",
+        "pitcher_id": "1900073",
+        "pitcher_hand": "右",
+        "batter": "宮本 丈",
+        "batter_id": "1700089",
+        "batter_hand": "左",
+        "seq": "2",
+        "pitchNo": "8",
+        "pitchType": "シンカー",
+        "speed": "127km/h",
+        "result": "ファウル",
+        "top": 47.519999999999996,
+        "left": 33.12
+      }
+    },
+    {
+      "entry": "広島-2026-07-24-2021039184-鈴木健矢",
+      "pitch": {
+        "pa_index": "live",
+        "pitcher": "鈴木 健矢",
+        "pitcher_id": "1900073",
+        "pitcher_hand": "右",
+        "batter": "宮本 丈",
+        "batter_id": "1700089",
+        "batter_hand": "左",
+        "seq": "1",
+        "pitchNo": "7",
+        "pitchType": "ストレート",
+        "speed": "-",
+        "result": "見逃し",
+        "top": 33.12,
+        "left": 33.839999999999996
+      }
+    }
+  ],
+  "sourceIncompleteAppearances": [
+    {
+      "entry": "阪神-2026-09-22-2021039448-セベリーノ",
+      "recordedPitches": 13,
+      "officialPitches": 12,
+      "recordedTerminals": {
+        "K": 2,
+        "BB": 1
+      }
+    },
+    {
+      "entry": "オリックス-2026-09-17-2021039427-富山凌雅",
+      "recordedPitches": 33,
+      "officialPitches": 32,
+      "recordedTerminals": {
+        "K": 1,
+        "BB": 1,
+        "1B": 1,
+        "OUT": 1,
+        "3B": 1,
+        "SH": 1
+      }
+    },
+    {
+      "entry": "西武-2026-09-11-2021048140-浜屋将太",
+      "recordedPitches": 29,
+      "officialPitches": 27,
+      "recordedTerminals": {
+        "1B": 1,
+        "OUT": 1,
+        "BB": 2,
+        "K": 2
+      }
+    },
+    {
+      "entry": "ロッテ-2026-09-09-2021039399-宮﨑颯",
+      "recordedPitches": 3,
+      "officialPitches": 5,
+      "recordedTerminals": {
+        "OUT": 1
+      }
+    },
+    {
+      "entry": "西武-2026-08-21-2021039311-篠原響",
+      "recordedPitches": 10,
+      "officialPitches": 16,
+      "recordedTerminals": {
+        "OUT": 1,
+        "K": 1,
+        "SH": 1
+      }
+    },
+    {
+      "entry": "中日-2026-08-19-2021039298-齋藤綱記",
+      "recordedPitches": 12,
+      "officialPitches": 8,
+      "recordedTerminals": {
+        "OUT": 2,
+        "SH": 1,
+        "BB": 1
+      }
+    },
+    {
+      "entry": "巨人-2026-07-24-2021039186-田中瑛斗",
+      "recordedPitches": 6,
+      "officialPitches": 10,
+      "recordedTerminals": {
+        "K": 1,
+        "OUT": 1
+      }
+    },
+    {
+      "entry": "DeNA-2026-07-24-2021039185-伊勢大夢",
+      "recordedPitches": 9,
+      "officialPitches": 24,
+      "recordedTerminals": {
+        "1B": 1,
+        "INCOMPLETE": 1,
+        "3B": 1
+      }
+    },
+    {
+      "entry": "広島-2026-07-24-2021039184-鈴木健矢",
+      "recordedPitches": 11,
+      "officialPitches": 15,
+      "recordedTerminals": {
+        "INCOMPLETE": 1,
+        "OUT": 1,
+        "1B": 1
+      }
+    },
+    {
+      "entry": "ヤクルト-2026-07-24-2021039184-丸山翔大",
+      "recordedPitches": 4,
+      "officialPitches": 24,
+      "recordedTerminals": {
+        "OUT": 1
+      }
+    },
+    {
+      "entry": "ソフトバンク-2026-07-24-2021039187-鈴木豪太",
+      "recordedPitches": 11,
+      "officialPitches": 16,
+      "recordedTerminals": {
+        "OUT": 1,
+        "K": 1
+      }
+    },
+    {
+      "entry": "日本ハム-2026-07-23-2021039181-北山亘基",
+      "recordedPitches": 48,
+      "officialPitches": 86,
+      "recordedTerminals": {
+        "OUT": 6,
+        "2B": 1,
+        "1B": 3,
+        "K": 2
+      }
+    },
+    {
+      "entry": "西武-2026-07-23-2021039181-隅田知一郎",
+      "recordedPitches": 4,
+      "officialPitches": 88,
+      "recordedTerminals": {
+        "K": 1
+      }
+    },
+    {
+      "entry": "広島-2026-07-02-2021039078-髙太一",
+      "recordedPitches": 6,
+      "officialPitches": 19,
+      "recordedTerminals": {
+        "BB": 1
+      }
+    },
+    {
+      "entry": "広島-2026-06-27-2021039058-床田寛樹",
+      "recordedPitches": 83,
+      "officialPitches": 83,
+      "recordedTerminals": {
+        "OUT": 10,
+        "1B": 4,
+        "2B": 2,
+        "K": 2,
+        "BB": 2,
+        "SH": 1
+      }
+    },
+    {
+      "entry": "阪神-2026-06-13-2021039009-木下里都",
+      "recordedPitches": 6,
+      "officialPitches": 3,
+      "recordedTerminals": {
+        "K": 1
+      }
+    },
+    {
+      "entry": "中日-2026-04-22-2021038750-櫻井頼之介",
+      "recordedPitches": 77,
+      "officialPitches": 77,
+      "recordedTerminals": {
+        "K": 4,
+        "1B": 4,
+        "OUT": 6,
+        "3B": 1,
+        "BB": 2,
+        "2B": 1
+      }
+    },
+    {
+      "entry": "東北楽天-2026-04-15-2021038720-西垣雅矢",
+      "recordedPitches": 6,
+      "officialPitches": 1,
+      "recordedTerminals": {
+        "OUT": 1
+      }
+    },
+    {
+      "entry": "オリックス-2026-04-09-2021038691-山﨑颯一郎",
+      "recordedPitches": 10,
+      "officialPitches": 9,
+      "recordedTerminals": {
+        "OUT": 1,
+        "BB": 1
+      }
+    },
+    {
+      "entry": "東北楽天-2026-04-07-2021038679-加治屋蓮",
+      "recordedPitches": 26,
+      "officialPitches": 23,
+      "recordedTerminals": {
+        "K": 2,
+        "BB": 1,
+        "1B": 1,
+        "OUT": 3
+      }
+    },
+    {
+      "entry": "オリックス-2026-04-05-2021038673-佐藤一磨",
+      "recordedPitches": 6,
+      "officialPitches": 1,
+      "recordedTerminals": {
+        "OUT": 1
+      }
+    },
+    {
+      "entry": "ソフトバンク-2026-03-27-2021038627-上沢直之",
+      "recordedPitches": 85,
+      "officialPitches": 90,
+      "recordedTerminals": {
+        "OUT": 11,
+        "HR": 2,
+        "K": 4,
+        "1B": 4,
+        "INCOMPLETE": 1,
+        "HBP": 1
+      }
+    },
+    {
+      "entry": "日本ハム-2026-03-27-2021038627-古林睿煬",
+      "recordedPitches": 21,
+      "officialPitches": 24,
+      "recordedTerminals": {
+        "1B": 2,
+        "INCOMPLETE": 1,
+        "SF": 1,
+        "BB": 2
+      }
+    }
+  ],
+  "findings": {
+    "rawPitchCount:pitches": {
+      "count": 21,
+      "players": [
+        "1100099",
+        "1300076",
+        "1400199",
+        "1600155",
+        "1700027",
+        "1750493",
+        "1750903",
+        "1751148",
+        "1800101",
+        "1900032",
+        "1900062",
+        "1900073",
+        "1900092",
+        "1950429",
+        "2000033",
+        "2100554",
+        "2102969",
+        "2107586",
+        "2108124",
+        "2112444",
+        "2117734"
+      ],
+      "examples": [
+        {
+          "player": "セベリーノ",
+          "pitcherId": "2108124",
+          "detail": "阪神-2026-09-22-2021039448-セベリーノ",
+          "actual": 13,
+          "expected": 12
+        },
+        {
+          "player": "富山 凌雅",
+          "pitcherId": "1800101",
+          "detail": "オリックス-2026-09-17-2021039427-富山凌雅",
+          "actual": 33,
+          "expected": 32
+        },
+        {
+          "player": "浜屋 将太",
+          "pitcherId": "1900062",
+          "detail": "西武-2026-09-11-2021048140-浜屋将太",
+          "actual": 29,
+          "expected": 27
+        },
+        {
+          "player": "宮﨑 颯",
+          "pitcherId": "2107586",
+          "detail": "ロッテ-2026-09-09-2021039399-宮﨑颯",
+          "actual": 3,
+          "expected": 5
+        },
+        {
+          "player": "篠原 響",
+          "pitcherId": "2117734",
+          "detail": "西武-2026-08-21-2021039311-篠原響",
+          "actual": 10,
+          "expected": 16
+        },
+        {
+          "player": "齋藤 綱記",
+          "pitcherId": "1400199",
+          "detail": "中日-2026-08-19-2021039298-齋藤綱記",
+          "actual": 12,
+          "expected": 8
+        },
+        {
+          "player": "田中 瑛斗",
+          "pitcherId": "1700027",
+          "detail": "巨人-2026-07-24-2021039186-田中瑛斗",
+          "actual": 6,
+          "expected": 10
+        },
+        {
+          "player": "伊勢 大夢",
+          "pitcherId": "1900032",
+          "detail": "DeNA-2026-07-24-2021039185-伊勢大夢",
+          "actual": 9,
+          "expected": 24
+        },
+        {
+          "player": "鈴木 健矢",
+          "pitcherId": "1900073",
+          "detail": "広島-2026-07-24-2021039184-鈴木健矢",
+          "actual": 11,
+          "expected": 15
+        },
+        {
+          "player": "丸山 翔大",
+          "pitcherId": "2000033",
+          "detail": "ヤクルト-2026-07-24-2021039184-丸山翔大",
+          "actual": 4,
+          "expected": 24
+        },
+        {
+          "player": "鈴木 豪太",
+          "pitcherId": "2102969",
+          "detail": "ソフトバンク-2026-07-24-2021039187-鈴木豪太",
+          "actual": 11,
+          "expected": 16
+        },
+        {
+          "player": "北山 亘基",
+          "pitcherId": "1750903",
+          "detail": "日本ハム-2026-07-23-2021039181-北山亘基",
+          "actual": 48,
+          "expected": 86
+        }
+      ]
+    },
+    "rawTerminalVsStatline:hits": {
+      "count": 7,
+      "players": [
+        "1600123",
+        "1700027",
+        "1750903",
+        "1751148",
+        "1900032",
+        "1900073",
+        "2100410"
+      ],
+      "examples": [
+        {
+          "player": "田中 瑛斗",
+          "pitcherId": "1700027",
+          "detail": "巨人-2026-07-24-2021039186-田中瑛斗",
+          "actual": 0,
+          "expected": 1
+        },
+        {
+          "player": "伊勢 大夢",
+          "pitcherId": "1900032",
+          "detail": "DeNA-2026-07-24-2021039185-伊勢大夢",
+          "actual": 2,
+          "expected": 3
+        },
+        {
+          "player": "鈴木 健矢",
+          "pitcherId": "1900073",
+          "detail": "広島-2026-07-24-2021039184-鈴木健矢",
+          "actual": 1,
+          "expected": 2
+        },
+        {
+          "player": "北山 亘基",
+          "pitcherId": "1750903",
+          "detail": "日本ハム-2026-07-23-2021039181-北山亘基",
+          "actual": 4,
+          "expected": 7
+        },
+        {
+          "player": "隅田 知一郎",
+          "pitcherId": "1751148",
+          "detail": "西武-2026-07-23-2021039181-隅田知一郎",
+          "actual": 0,
+          "expected": 9
+        },
+        {
+          "player": "床田 寛樹",
+          "pitcherId": "1600123",
+          "detail": "広島-2026-06-27-2021039058-床田寛樹",
+          "actual": 6,
+          "expected": 7
+        },
+        {
+          "player": "櫻井 頼之介",
+          "pitcherId": "2100410",
+          "detail": "中日-2026-04-22-2021038750-櫻井頼之介",
+          "actual": 6,
+          "expected": 7
+        }
+      ]
+    },
+    "rawTerminalVsStatline:strikeouts": {
+      "count": 6,
+      "players": [
+        "1100099",
+        "1750903",
+        "1751148",
+        "1900032",
+        "1950429",
+        "2100554"
+      ],
+      "examples": [
+        {
+          "player": "伊勢 大夢",
+          "pitcherId": "1900032",
+          "detail": "DeNA-2026-07-24-2021039185-伊勢大夢",
+          "actual": 0,
+          "expected": 1
+        },
+        {
+          "player": "北山 亘基",
+          "pitcherId": "1750903",
+          "detail": "日本ハム-2026-07-23-2021039181-北山亘基",
+          "actual": 2,
+          "expected": 3
+        },
+        {
+          "player": "隅田 知一郎",
+          "pitcherId": "1751148",
+          "detail": "西武-2026-07-23-2021039181-隅田知一郎",
+          "actual": 1,
+          "expected": 3
+        },
+        {
+          "player": "髙 太一",
+          "pitcherId": "1950429",
+          "detail": "広島-2026-07-02-2021039078-髙太一",
+          "actual": 0,
+          "expected": 1
+        },
+        {
+          "player": "上沢 直之",
+          "pitcherId": "1100099",
+          "detail": "ソフトバンク-2026-03-27-2021038627-上沢直之",
+          "actual": 4,
+          "expected": 5
+        },
+        {
+          "player": "古林 睿煬",
+          "pitcherId": "2100554",
+          "detail": "日本ハム-2026-03-27-2021038627-古林睿煬",
+          "actual": 0,
+          "expected": 1
+        }
+      ]
+    },
+    "rawTerminalVsStatline:hitByPitch": {
+      "count": 1,
+      "players": [
+        "2000033"
+      ],
+      "examples": [
+        {
+          "player": "丸山 翔大",
+          "pitcherId": "2000033",
+          "detail": "ヤクルト-2026-07-24-2021039184-丸山翔大",
+          "actual": 0,
+          "expected": 1
+        }
+      ]
+    },
+    "rawTerminalVsStatline:homeRuns": {
+      "count": 1,
+      "players": [
+        "1751148"
+      ],
+      "examples": [
+        {
+          "player": "隅田 知一郎",
+          "pitcherId": "1751148",
+          "detail": "西武-2026-07-23-2021039181-隅田知一郎",
+          "actual": 0,
+          "expected": 2
+        }
+      ]
+    }
+  },
+  "limitations": [
+    "Saved game statlines are the counting-stat baseline; their full external box-score verification is recorded separately in pitcher-official-audit.json.",
+    "Raw pitch locations and velocities are source observations, not independently measured values.",
+    "Intentional walks can have no pitch row; official context is needed for complete BB/PA accounting.",
+    "Inning runs assigned proportionally by the builder are estimates, not verified pitcher responsibility per inning.",
+    "Inning walk rows count observed pitch-ending BB/HBP only; unpitched IBB and missing PA cannot be reconstructed by inning.",
+    "Pitch-type/hand/inning rates describe recorded pitches and PA only; incomplete source coverage is carried in sourceCoverage.",
+    "Count states after a missing initial pitch or a sequence gap are explicitly unknown, not assumed 0-0.",
+    "2025 has no full raw pitch corpus here and is excluded from source reconstruction."
+  ],
+  "aggregateDifferenceCount": 0,
+  "sourceDifferenceCount": 36,
+  "status": "passed-with-source-limitations"
+}

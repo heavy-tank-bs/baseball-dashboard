@@ -1517,6 +1517,12 @@ function renderSection(entry) {
   }
 }
 
+function renderSourceCoverageNote(entry) {
+  const coverage = entry.dashboard?.sourceCoverage;
+  if (coverage?.complete !== false) return "";
+  return `<p class="section-empty">保存成績の球数・結果と投球ログに不一致があります。球種・左右・回別の指標は確認できた投球のみで集計しています。</p>`;
+}
+
 function renderViewer(entry) {
   if (!entry) {
     els.viewerPanel.classList.add("empty");
@@ -1551,6 +1557,7 @@ function renderViewer(entry) {
     </div>
     ${renderMetaGrid(entry)}
     ${renderStatStrip(entry.statline)}
+    ${renderSourceCoverageNote(entry)}
     <div class="page-tabs">${tabs}</div>
     <div class="native-stage">${renderSection(entry)}</div>
   `;
@@ -1698,6 +1705,7 @@ function renderViewer(entry) {
     </div>
     ${renderMetaGrid(entry)}
     ${renderStatStrip(entry.statline)}
+    ${renderSourceCoverageNote(entry)}
     <div class="page-tabs">${tabs}</div>
     <div class="native-stage">${renderSection(entry)}</div>
   `;

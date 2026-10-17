@@ -1,0 +1,695 @@
+{
+  "refreshedSets": 23,
+  "refreshedImages": 92,
+  "rawSourcesUnchanged": true,
+  "refreshed": [
+    {
+      "source": "generated/オリックス/2026-04-12/2021038708-山田修義-dashboard.json",
+      "sourceSha256": "0d78d09314d0ab7484e0a34dde530f3b21797dfc17b8df0117d1c26912f2e7f8",
+      "pages": [
+        "generated/オリックス/2026-04-12/2021038708-山田修義-dashboard-1.png",
+        "generated/オリックス/2026-04-12/2021038708-山田修義-dashboard-2.png",
+        "generated/オリックス/2026-04-12/2021038708-山田修義-dashboard-3.png",
+        "generated/オリックス/2026-04-12/2021038708-山田修義-dashboard-4.png"
+      ],
+      "dimensions": [
+        [
+          1612,
+          2472
+        ],
+        [
+          1612,
+          2472
+        ],
+        [
+          1612,
+          2472
+        ],
+        [
+          1612,
+          2472
+        ]
+      ]
+    },
+    {
+      "source": "generated/ヤクルト/2026-10-08/2021051699-中村優斗-dashboard.json",
+      "sourceSha256": "ee41b1d3264505d327282cff75982910293f85a4f60b1d0020e19e5e8ece812c",
+      "pages": [
+        "generated/ヤクルト/2026-10-08/2021051699-中村優斗-dashboard-1.png",
+        "generated/ヤクルト/2026-10-08/2021051699-中村優斗-dashboard-2.png",
+        "generated/ヤクルト/2026-10-08/2021051699-中村優斗-dashboard-3.png",
+        "generated/ヤクルト/2026-10-08/2021051699-中村優斗-dashboard-4.png"
+      ],
+      "dimensions": [
+        [
+          1612,
+          2472
+        ],
+        [
+          1612,
+          2472
+        ],
+        [
+          1612,
+          2472
+        ],
+        [
+          1612,
+          2472
+        ]
+      ]
+    },
+    {
+      "source": "generated/ヤクルト/2026-10-08/2021051699-廣澤優-dashboard.json",
+      "sourceSha256": "09b282ff17f52305aeecfe70ba01bbc1773be9182a18f35f70e1c20c59b0225d",
+      "pages": [
+        "generated/ヤクルト/2026-10-08/2021051699-廣澤優-dashboard-1.png",
+        "generated/ヤクルト/2026-10-08/2021051699-廣澤優-dashboard-2.png",
+        "generated/ヤクルト/2026-10-08/2021051699-廣澤優-dashboard-3.png",
+        "generated/ヤクルト/2026-10-08/2021051699-廣澤優-dashboard-4.png"
+      ],
+      "dimensions": [
+        [
+          1612,
+          2472
+        ],
+        [
+          1612,
+          2472
+        ],
+        [
+          1612,
+          2472
+        ],
+        [
+          1612,
+          2472
+        ]
+      ]
+    },
+    {
+      "source": "generated/ヤクルト/2026-10-08/2021051699-星知弥-dashboard.json",
+      "sourceSha256": "e71812f66fc22b1ca65fa2a8d1c18e6adb236f54026fafc54a422280865ca396",
+      "pages": [
+        "generated/ヤクルト/2026-10-08/2021051699-星知弥-dashboard-1.png",
+        "generated/ヤクルト/2026-10-08/2021051699-星知弥-dashboard-2.png",
+        "generated/ヤクルト/2026-10-08/2021051699-星知弥-dashboard-3.png",
+        "generated/ヤクルト/2026-10-08/2021051699-星知弥-dashboard-4.png"
+      ],
+      "dimensions": [
+        [
+          1612,
+          2472
+        ],
+        [
+          1612,
+          2472
+        ],
+        [
+          1612,
+          2472
+        ],
+        [
+          1612,
+          2472
+        ]
+      ]
+    },
+    {
+      "source": "generated/ヤクルト/2026-10-08/2021051699-高橋奎二-dashboard.json",
+      "sourceSha256": "c8e6668914e84a0ba7e38f06318d4b790727853d4b4e5fd3a1e306fc79452e4d",
+      "pages": [
+        "generated/ヤクルト/2026-10-08/2021051699-高橋奎二-dashboard-1.png",
+        "generated/ヤクルト/2026-10-08/2021051699-高橋奎二-dashboard-2.png",
+        "generated/ヤクルト/2026-10-08/2021051699-高橋奎二-dashboard-3.png",
+        "generated/ヤクルト/2026-10-08/2021051699-高橋奎二-dashboard-4.png"
+      ],
+      "dimensions": [
+        [
+          1612,
+          2472
+        ],
+        [
+          1612,
+          2472
+        ],
+        [
+          1612,
+          2472
+        ],
+        [
+          1612,
+          2472
+        ]
+      ]
+    },
+    {
+      "source": "generated/広島/2026-10-07/2021051134-ターノック-dashboard.json",
+      "sourceSha256": "31ff8013f339d5c57d6308cd42ae0b37fc18247f41faa2e2ca9eec0d29ef5816",
+      "pages": [
+        "generated/広島/2026-10-07/2021051134-ターノック-dashboard-1.png",
+        "generated/広島/2026-10-07/2021051134-ターノック-dashboard-2.png",
+        "generated/広島/2026-10-07/2021051134-ターノック-dashboard-3.png",
+        "generated/広島/2026-10-07/2021051134-ターノック-dashboard-4.png"
+      ],
+      "dimensions": [
+        [
+          1612,
+          2472
+        ],
+        [
+          1612,
+          2472
+        ],
+        [
+          1612,
+          2472
+        ],
+        [
+          1612,
+          2472
+        ]
+      ]
+    },
+    {
+      "source": "generated/広島/2026-10-07/2021051134-大瀬良大地-dashboard.json",
+      "sourceSha256": "e7ba804b6876c97b919c9e411d013b87bcbf233b1d2127517b1363805ab6b19e",
+      "pages": [
+        "generated/広島/2026-10-07/2021051134-大瀬良大地-dashboard-1.png",
+        "generated/広島/2026-10-07/2021051134-大瀬良大地-dashboard-2.png",
+        "generated/広島/2026-10-07/2021051134-大瀬良大地-dashboard-3.png",
+        "generated/広島/2026-10-07/2021051134-大瀬良大地-dashboard-4.png"
+      ],
+      "dimensions": [
+        [
+          1612,
+          2472
+        ],
+        [
+          1612,
+          2472
+        ],
+        [
+          1612,
+          2472
+        ],
+        [
+          1612,
+          2472
+        ]
+      ]
+    },
+    {
+      "source": "generated/広島/2026-10-07/2021051134-玉村昇悟-dashboard.json",
+      "sourceSha256": "b34ceca39beafa7dd78083757fa216ca69142518213b31e02dcbf830c9b95d01",
+      "pages": [
+        "generated/広島/2026-10-07/2021051134-玉村昇悟-dashboard-1.png",
+        "generated/広島/2026-10-07/2021051134-玉村昇悟-dashboard-2.png",
+        "generated/広島/2026-10-07/2021051134-玉村昇悟-dashboard-3.png",
+        "generated/広島/2026-10-07/2021051134-玉村昇悟-dashboard-4.png"
+      ],
+      "dimensions": [
+        [
+          1612,
+          2472
+        ],
+        [
+          1612,
+          2472
+        ],
+        [
+          1612,
+          2472
+        ],
+        [
+          1612,
+          2472
+        ]
+      ]
+    },
+    {
+      "source": "generated/広島/2026-10-07/2021051134-遠藤淳志-dashboard.json",
+      "sourceSha256": "f034dba8ef5854868b2f7de2ac5266233903d074a7fd58217ce33064af7abe99",
+      "pages": [
+        "generated/広島/2026-10-07/2021051134-遠藤淳志-dashboard-1.png",
+        "generated/広島/2026-10-07/2021051134-遠藤淳志-dashboard-2.png",
+        "generated/広島/2026-10-07/2021051134-遠藤淳志-dashboard-3.png",
+        "generated/広島/2026-10-07/2021051134-遠藤淳志-dashboard-4.png"
+      ],
+      "dimensions": [
+        [
+          1612,
+          2472
+        ],
+        [
+          1612,
+          2472
+        ],
+        [
+          1612,
+          2472
+        ],
+        [
+          1612,
+          2472
+        ]
+      ]
+    },
+    {
+      "source": "generated/広島/2026-10-07/2021051134-髙太一-dashboard.json",
+      "sourceSha256": "9ac92b396899c31e6c30fe5c832c40bcc0d9566dac881cac5c8b1f292521210f",
+      "pages": [
+        "generated/広島/2026-10-07/2021051134-髙太一-dashboard-1.png",
+        "generated/広島/2026-10-07/2021051134-髙太一-dashboard-2.png",
+        "generated/広島/2026-10-07/2021051134-髙太一-dashboard-3.png",
+        "generated/広島/2026-10-07/2021051134-髙太一-dashboard-4.png"
+      ],
+      "dimensions": [
+        [
+          1612,
+          2472
+        ],
+        [
+          1612,
+          2472
+        ],
+        [
+          1612,
+          2472
+        ],
+        [
+          1612,
+          2472
+        ]
+      ]
+    },
+    {
+      "source": "generated/阪神/2026-10-07/2021051134-セベリーノ-dashboard.json",
+      "sourceSha256": "58cf028539fe15c8324d2ca3ba866a01912520140bfa29e1016540eb6e1319c9",
+      "pages": [
+        "generated/阪神/2026-10-07/2021051134-セベリーノ-dashboard-1.png",
+        "generated/阪神/2026-10-07/2021051134-セベリーノ-dashboard-2.png",
+        "generated/阪神/2026-10-07/2021051134-セベリーノ-dashboard-3.png",
+        "generated/阪神/2026-10-07/2021051134-セベリーノ-dashboard-4.png"
+      ],
+      "dimensions": [
+        [
+          1612,
+          2472
+        ],
+        [
+          1612,
+          2472
+        ],
+        [
+          1612,
+          2472
+        ],
+        [
+          1612,
+          2472
+        ]
+      ]
+    },
+    {
+      "source": "generated/阪神/2026-10-07/2021051134-及川雅貴-dashboard.json",
+      "sourceSha256": "3ff798ae0521242c5e061d113fa2a5aee389f2b0e943d1f5b4dfc0ab7cfd50ee",
+      "pages": [
+        "generated/阪神/2026-10-07/2021051134-及川雅貴-dashboard-1.png",
+        "generated/阪神/2026-10-07/2021051134-及川雅貴-dashboard-2.png",
+        "generated/阪神/2026-10-07/2021051134-及川雅貴-dashboard-3.png",
+        "generated/阪神/2026-10-07/2021051134-及川雅貴-dashboard-4.png"
+      ],
+      "dimensions": [
+        [
+          1612,
+          2472
+        ],
+        [
+          1612,
+          2472
+        ],
+        [
+          1612,
+          2472
+        ],
+        [
+          1612,
+          2472
+        ]
+      ]
+    },
+    {
+      "source": "generated/阪神/2026-10-07/2021051134-岡留英貴-dashboard.json",
+      "sourceSha256": "9b99738ba9d9a4d97973ffb0730686092473e402a7ea8c47c000fa82336237f0",
+      "pages": [
+        "generated/阪神/2026-10-07/2021051134-岡留英貴-dashboard-1.png",
+        "generated/阪神/2026-10-07/2021051134-岡留英貴-dashboard-2.png",
+        "generated/阪神/2026-10-07/2021051134-岡留英貴-dashboard-3.png",
+        "generated/阪神/2026-10-07/2021051134-岡留英貴-dashboard-4.png"
+      ],
+      "dimensions": [
+        [
+          1612,
+          2472
+        ],
+        [
+          1612,
+          2472
+        ],
+        [
+          1612,
+          2472
+        ],
+        [
+          1612,
+          2472
+        ]
+      ]
+    },
+    {
+      "source": "generated/阪神/2026-10-07/2021051134-岩崎優-dashboard.json",
+      "sourceSha256": "35f93c45b79a7c76936ebc6c1e9973be61ef6fddc81113302ccd0fdb856b59f9",
+      "pages": [
+        "generated/阪神/2026-10-07/2021051134-岩崎優-dashboard-1.png",
+        "generated/阪神/2026-10-07/2021051134-岩崎優-dashboard-2.png",
+        "generated/阪神/2026-10-07/2021051134-岩崎優-dashboard-3.png",
+        "generated/阪神/2026-10-07/2021051134-岩崎優-dashboard-4.png"
+      ],
+      "dimensions": [
+        [
+          1612,
+          2472
+        ],
+        [
+          1612,
+          2472
+        ],
+        [
+          1612,
+          2472
+        ],
+        [
+          1612,
+          2472
+        ]
+      ]
+    },
+    {
+      "source": "generated/阪神/2026-10-07/2021051134-木下里都-dashboard.json",
+      "sourceSha256": "9234e0ba09604219cc183db7f4a27870855f620f904cf330f7afdb3b07bd05cb",
+      "pages": [
+        "generated/阪神/2026-10-07/2021051134-木下里都-dashboard-1.png",
+        "generated/阪神/2026-10-07/2021051134-木下里都-dashboard-2.png",
+        "generated/阪神/2026-10-07/2021051134-木下里都-dashboard-3.png",
+        "generated/阪神/2026-10-07/2021051134-木下里都-dashboard-4.png"
+      ],
+      "dimensions": [
+        [
+          1612,
+          2472
+        ],
+        [
+          1612,
+          2472
+        ],
+        [
+          1612,
+          2472
+        ],
+        [
+          1612,
+          2472
+        ]
+      ]
+    },
+    {
+      "source": "generated/阪神/2026-10-07/2021051134-桐敷拓馬-dashboard.json",
+      "sourceSha256": "58d787f6eac03d42c3d22fcda6ac60c6f2bc59587154e6662f253700ce391e41",
+      "pages": [
+        "generated/阪神/2026-10-07/2021051134-桐敷拓馬-dashboard-1.png",
+        "generated/阪神/2026-10-07/2021051134-桐敷拓馬-dashboard-2.png",
+        "generated/阪神/2026-10-07/2021051134-桐敷拓馬-dashboard-3.png",
+        "generated/阪神/2026-10-07/2021051134-桐敷拓馬-dashboard-4.png"
+      ],
+      "dimensions": [
+        [
+          1612,
+          2472
+        ],
+        [
+          1612,
+          2472
+        ],
+        [
+          1612,
+          2472
+        ],
+        [
+          1612,
+          2472
+        ]
+      ]
+    },
+    {
+      "source": "generated/阪神/2026-10-07/2021051134-石黒佑弥-dashboard.json",
+      "sourceSha256": "1d87cf787d4f9e4ea9ef2f801d493f0b8529d39f38d47d6ee33227807080334f",
+      "pages": [
+        "generated/阪神/2026-10-07/2021051134-石黒佑弥-dashboard-1.png",
+        "generated/阪神/2026-10-07/2021051134-石黒佑弥-dashboard-2.png",
+        "generated/阪神/2026-10-07/2021051134-石黒佑弥-dashboard-3.png",
+        "generated/阪神/2026-10-07/2021051134-石黒佑弥-dashboard-4.png"
+      ],
+      "dimensions": [
+        [
+          1612,
+          2472
+        ],
+        [
+          1612,
+          2472
+        ],
+        [
+          1612,
+          2472
+        ],
+        [
+          1612,
+          2472
+        ]
+      ]
+    },
+    {
+      "source": "generated/阪神/2026-10-07/2021051134-西勇輝-dashboard.json",
+      "sourceSha256": "7a8e00691f605eddf2577e2a940b2b32a183c6f98bb58aced3f8b2c249acf082",
+      "pages": [
+        "generated/阪神/2026-10-07/2021051134-西勇輝-dashboard-1.png",
+        "generated/阪神/2026-10-07/2021051134-西勇輝-dashboard-2.png",
+        "generated/阪神/2026-10-07/2021051134-西勇輝-dashboard-3.png",
+        "generated/阪神/2026-10-07/2021051134-西勇輝-dashboard-4.png"
+      ],
+      "dimensions": [
+        [
+          1612,
+          2472
+        ],
+        [
+          1612,
+          2472
+        ],
+        [
+          1612,
+          2472
+        ],
+        [
+          1612,
+          2472
+        ]
+      ]
+    },
+    {
+      "source": "generated/阪神/2026-10-08/2021051699-ルーカス-dashboard.json",
+      "sourceSha256": "e0e0049821f3f6e9c8a1a95fce8c31a025d21c6bfb52040a3c705fe4323a783d",
+      "pages": [
+        "generated/阪神/2026-10-08/2021051699-ルーカス-dashboard-1.png",
+        "generated/阪神/2026-10-08/2021051699-ルーカス-dashboard-2.png",
+        "generated/阪神/2026-10-08/2021051699-ルーカス-dashboard-3.png",
+        "generated/阪神/2026-10-08/2021051699-ルーカス-dashboard-4.png"
+      ],
+      "dimensions": [
+        [
+          1612,
+          2472
+        ],
+        [
+          1612,
+          2472
+        ],
+        [
+          1612,
+          2472
+        ],
+        [
+          1612,
+          2472
+        ]
+      ]
+    },
+    {
+      "source": "generated/阪神/2026-10-08/2021051699-下村海翔-dashboard.json",
+      "sourceSha256": "322da2a54d258f84c55487b83aa10df95c3c7269f19d255712cc85f3f7c1aebc",
+      "pages": [
+        "generated/阪神/2026-10-08/2021051699-下村海翔-dashboard-1.png",
+        "generated/阪神/2026-10-08/2021051699-下村海翔-dashboard-2.png",
+        "generated/阪神/2026-10-08/2021051699-下村海翔-dashboard-3.png",
+        "generated/阪神/2026-10-08/2021051699-下村海翔-dashboard-4.png"
+      ],
+      "dimensions": [
+        [
+          1612,
+          2472
+        ],
+        [
+          1612,
+          2472
+        ],
+        [
+          1612,
+          2472
+        ],
+        [
+          1612,
+          2472
+        ]
+      ]
+    },
+    {
+      "source": "generated/阪神/2026-10-08/2021051699-岩崎優-dashboard.json",
+      "sourceSha256": "c8abdd5712aa79435f8fa15d83659379aa4651986be716b9af5ccb1516bbca7d",
+      "pages": [
+        "generated/阪神/2026-10-08/2021051699-岩崎優-dashboard-1.png",
+        "generated/阪神/2026-10-08/2021051699-岩崎優-dashboard-2.png",
+        "generated/阪神/2026-10-08/2021051699-岩崎優-dashboard-3.png",
+        "generated/阪神/2026-10-08/2021051699-岩崎優-dashboard-4.png"
+      ],
+      "dimensions": [
+        [
+          1612,
+          2472
+        ],
+        [
+          1612,
+          2472
+        ],
+        [
+          1612,
+          2472
+        ],
+        [
+          1612,
+          2472
+        ]
+      ]
+    },
+    {
+      "source": "generated/阪神/2026-10-08/2021051699-石井大智-dashboard.json",
+      "sourceSha256": "bb0e65c722af31cbc627db2ada890112cee0be203c0a6429aa073b1974373e5e",
+      "pages": [
+        "generated/阪神/2026-10-08/2021051699-石井大智-dashboard-1.png",
+        "generated/阪神/2026-10-08/2021051699-石井大智-dashboard-2.png",
+        "generated/阪神/2026-10-08/2021051699-石井大智-dashboard-3.png",
+        "generated/阪神/2026-10-08/2021051699-石井大智-dashboard-4.png"
+      ],
+      "dimensions": [
+        [
+          1612,
+          2472
+        ],
+        [
+          1612,
+          2472
+        ],
+        [
+          1612,
+          2472
+        ],
+        [
+          1612,
+          2472
+        ]
+      ]
+    },
+    {
+      "source": "generated/阪神/2026-10-08/2021051699-神宮僚介-dashboard.json",
+      "sourceSha256": "4c4ac5b889a01c891310815f337cf2794b862c5b8861ccb65216a31b416806c3",
+      "pages": [
+        "generated/阪神/2026-10-08/2021051699-神宮僚介-dashboard-1.png",
+        "generated/阪神/2026-10-08/2021051699-神宮僚介-dashboard-2.png",
+        "generated/阪神/2026-10-08/2021051699-神宮僚介-dashboard-3.png",
+        "generated/阪神/2026-10-08/2021051699-神宮僚介-dashboard-4.png"
+      ],
+      "dimensions": [
+        [
+          1612,
+          2472
+        ],
+        [
+          1612,
+          2472
+        ],
+        [
+          1612,
+          2472
+        ],
+        [
+          1612,
+          2472
+        ]
+      ]
+    }
+  ],
+  "skipped": [
+    {
+      "firstPage": "generated/オリックス/2026-03-27/2026-03-27-orix-miyagi-pitchtable-line-check-dashboard-1.png",
+      "reason": "No matching source JSON"
+    },
+    {
+      "firstPage": "generated/オリックス/2026-04-09/miyagi-countmix-legend-mid-check-dashboard-1.png",
+      "reason": "No matching source JSON"
+    },
+    {
+      "firstPage": "generated/巨人/2026-03-27/2026-03-27-giants-takemaru-dashboard-1.png",
+      "reason": "No matching source JSON"
+    },
+    {
+      "firstPage": "generated/広島/2026-03-27/2026-03-27-carp-tokoda-dashboard-1.png",
+      "reason": "No matching source JSON"
+    },
+    {
+      "firstPage": "generated/東北楽天/2026-03-27/2026-03-27-rakuten-shoji-dashboard-1.png",
+      "reason": "No matching source JSON"
+    }
+  ],
+  "removedUnreferencedImages": [
+    "generated/オリックス/2026-03-27/2026-03-27-orix-miyagi-pitchtable-line-check-dashboard-1.png",
+    "generated/オリックス/2026-03-27/2026-03-27-orix-miyagi-pitchtable-line-check-dashboard-2.png",
+    "generated/オリックス/2026-03-27/2026-03-27-orix-miyagi-pitchtable-line-check-dashboard-3.png",
+    "generated/オリックス/2026-03-27/2026-03-27-orix-miyagi-pitchtable-line-check-dashboard-4.png",
+    "generated/オリックス/2026-04-09/miyagi-countmix-legend-mid-check-dashboard-1.png",
+    "generated/オリックス/2026-04-09/miyagi-countmix-legend-mid-check-dashboard-2.png",
+    "generated/オリックス/2026-04-09/miyagi-countmix-legend-mid-check-dashboard-3.png",
+    "generated/オリックス/2026-04-09/miyagi-countmix-legend-mid-check-dashboard-4.png",
+    "generated/巨人/2026-03-27/2026-03-27-giants-takemaru-dashboard-1.png",
+    "generated/巨人/2026-03-27/2026-03-27-giants-takemaru-dashboard-2.png",
+    "generated/巨人/2026-03-27/2026-03-27-giants-takemaru-dashboard-3.png",
+    "generated/巨人/2026-03-27/2026-03-27-giants-takemaru-dashboard-4.png",
+    "generated/広島/2026-03-27/2026-03-27-carp-tokoda-dashboard-1.png",
+    "generated/広島/2026-03-27/2026-03-27-carp-tokoda-dashboard-2.png",
+    "generated/広島/2026-03-27/2026-03-27-carp-tokoda-dashboard-3.png",
+    "generated/広島/2026-03-27/2026-03-27-carp-tokoda-dashboard-4.png",
+    "generated/東北楽天/2026-03-27/2026-03-27-rakuten-shoji-dashboard-1.png",
+    "generated/東北楽天/2026-03-27/2026-03-27-rakuten-shoji-dashboard-2.png",
+    "generated/東北楽天/2026-03-27/2026-03-27-rakuten-shoji-dashboard-3.png",
+    "generated/東北楽天/2026-03-27/2026-03-27-rakuten-shoji-dashboard-4.png"
+  ]
+}

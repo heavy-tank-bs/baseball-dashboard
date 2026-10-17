@@ -51,7 +51,7 @@ DISPLAY_INNINGS = tuple(range(1, 10))
 JINA_PREFIX = "https://r.jina.ai/http://"
 MAX_SCORE_INNINGS = 12
 MAX_BATTERS_PER_HALF = 20
-COUNT_BUCKETS = ("初球", "追い込み前", "2ストライク以降", "フルカウント")
+COUNT_BUCKETS = ("初球", "追い込み前", "2ストライク以降", "フルカウント", "不明")
 PITCH_COLORS = [NAVY, "#355C8C", "#6A89B4", GOLD, "#D6C192", "#9D8B75", "#7D97B5"]
 
 
@@ -601,9 +601,29 @@ def is_hit(result: str):
 
 
 def is_ab_result(result: str):
-    if not result:
-        return False
-    return not any(word in result for word in AB_EXCLUDE)
+    return classify_terminal_result(result) in {"1B", "2B", "3B", "HR", "K", "OUT"}
+
+
+def classify_terminal_result(result: str) -> str:
+    """Classify a completed PA, keeping interrupted and unknown results explicit."""
+    primary = normalize_result(result)
+    if not primary or primary in {"ボール", "ストライク", "見逃し", "空振り", "ファウル", "バントファウル"}:
+        return "INCOMPLETE"
+    if any(word in primary for word in ("三振", "振逃")):
+        return "K"
+    if any(word in primary for word in ("盗塁", "盗失", "けん制", "牽制", "走塁死", "途中終了", "途中交代")):
+        return "INCOMPLETE"
+    for terms, category in [(("故意四", "敬遠"), "IBB"), (("四球",), "BB"), (("死球",), "HBP"),
+                            (("犠飛",), "SF"), (("犠打", "犠野", "犠失"), "SH"),
+                            (("打撃妨害", "打妨", "捕妨"), "INT")]:
+        if any(word in primary for word in terms):
+            return category
+    hit_type = classify_hit_type(primary)
+    if hit_type:
+        return {"singles": "1B", "doubles": "2B", "triples": "3B", "home_runs": "HR"}[hit_type]
+    if any(word in primary for word in ("ゴロ", "併打", "飛", "直", "ライナー", "失", "野選", "アウト", "守備妨害")):
+        return "OUT"
+    return "UNKNOWN"
 
 
 def normalize_result(result: str) -> str:
@@ -739,8 +759,13 @@ def build_count_mix_summary(plate_appearances):
     for pitches in plate_appearances.values():
         balls = 0
         strikes = 0
+        expected_seq = 1
+        count_known = True
         for idx, row in enumerate(pitches):
-            bucket = classify_count_bucket(safe_int(row["seq"], idx + 1), balls, strikes)
+            seq = safe_int(row.get("seq"), 0)
+            count_known = count_known and seq == expected_seq
+            expected_seq = seq + 1
+            bucket = classify_count_bucket(seq, balls, strikes) if count_known else "不明"
             bucket_counts[bucket][row["pitchType"]] += 1
             bucket_totals[bucket] += 1
             if idx == len(pitches) - 1:

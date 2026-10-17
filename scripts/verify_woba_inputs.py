@@ -71,6 +71,58 @@ def verify_derived(players, constants):
             'differenceCount': len(differences), 'differences': differences}
 
 
+def documented_pitcher_walk_additions(season):
+    """Prove added BB/IBB from full pitch logs, official lines and NPB IBB events."""
+    from verify_annual_totals import (committed_manifest, current_manifest,
+                                     pitcher_additions, pitcher_change_evidence)
+    evidence = pitcher_change_evidence()
+    if not evidence:
+        return {}
+    entries = current_manifest('manifest.js')
+    pitcher_additions(committed_manifest('manifest.js'), entries,
+                      read_json('game_decisions_cache.json')['games'], evidence)
+    assert all('bb' not in row['differences'] for row in evidence['corrections'].values()), 'Unaccounted BB correction'
+    additions = evidence['collections']
+    events = read_json(f'sportsnavi_woba_events_{season}.json')['events']
+    result = {}
+    for game_id in {key[0] for key in additions}:
+        game_entries = [e for e in entries if e['gameId'] == game_id]
+        gaps, innings = {}, {}
+        for entry in game_entries:
+            source = ROOT/'generated'/entry['team']/entry['date']/f'{entry["prefix"]}-dashboard.json'
+            raw = json.loads(source.read_text(encoding='utf-8'))
+            official = evidence['official'][entry['id']]['official']
+            assert len(raw['pitches']) == official['pitches'], 'Cannot infer IBB from incomplete game pitch logs'
+            # Annotation such as "四球 [敬遠ぎみ]" remains an ordinary walk.
+            primary_results = [(pitch['pa_index'], (pitch.get('result') or '').split('[', 1)[0].strip())
+                               for pitch in raw['pitches']]
+            ordinary_walk_pas = {pa_id for pa_id, text in primary_results
+                                 if '四球' in text and not any(term in text for term in ('敬遠', '故意四'))}
+            gaps[entry['id']] = official['bb'] - len(ordinary_walk_pas)
+            assert gaps[entry['id']] >= 0, 'Logged walks exceed official walks'
+            innings[entry['id']] = {int(str(pitch['pa_index'])[:2]) for pitch in raw['pitches']}
+        assigned = Counter()
+        for event in events:
+            if event['gameId'] != game_id or event['eventType'] != 'IBB':
+                continue
+            candidates = [entry for entry in game_entries if entry['team'] != event['battingTeam']
+                          and event['inning'] in innings[entry['id']] and gaps[entry['id']] > 0]
+            assert len(candidates) == 1, f'Ambiguous official IBB ownership: {game_id} {event["inning"]}'
+            identifier = candidates[0]['id']
+            assigned[identifier] += 1
+            gaps[identifier] -= 1
+        assert not any(gaps.values()), f'Official IBB events do not explain pitcher walk gaps: {gaps}'
+        for entry in game_entries:
+            key = (entry['gameId'], entry['team'], entry['pitcherId'])
+            if key not in additions:
+                continue
+            walks = evidence['official'][entry['id']]['official']['bb']
+            result[(entry['pitcherId'], entry['team'], entry['date'][:7])] = {
+                'intentionalWalks': assigned[entry['id']],
+                'unintentionalWalks': walks - assigned[entry['id']]}
+    return result
+
+
 def verify_pitcher_inputs(season):
     sync = json.loads((ROOT / f'docs/intentional-walk-sync-{season}.json').read_text(encoding='utf-8'))
     baseline = sync['baselineCommit']
@@ -82,6 +134,7 @@ def verify_pitcher_inputs(season):
     # play-by-play: 2021039189 inning 9 Moriura, inning 10 Endoh.
     # Akahoshi's 2021038761 IBB already existed; only the batter ID was absent.
     expected_deltas = {'2000061': ('2026-07', 1), '1700072': ('2026-07', 2)} if season == '2026' else {}
+    walk_additions = documented_pitcher_walk_additions(season)
     identity = lambda p: (p['pitcherId'], p.get('aggregationKey') or p['team'])
     previous = {identity(p): p for p in old_rows}
     assert previous.keys() == {identity(p) for p in new_rows}, 'Pitcher identities changed'
@@ -102,9 +155,12 @@ def verify_pitcher_inputs(season):
         old_months = {m['month']: m for m in old_player['monthlySplits']}
         entries = [(None, player, old_player)] + [(m['month'], m, old_months[m['month']]) for m in player['monthlySplits']]
         target_month, delta = expected_deltas.get(player['pitcherId'], ('', 0))
+        additions = [(month, counts) for (player_id, team, month), counts in walk_additions.items()
+                     if player_id == player['pitcherId'] and team in (player.get('teams') or [player['team']])]
         for month, row, before in entries:
             expected_delta = delta if month is None or month == target_month else 0
             for field, change in [('intentionalWalks', expected_delta), ('unintentionalWalks', -expected_delta)]:
+                change += sum(counts[field] for added_month, counts in additions if month is None or month == added_month)
                 expected = (before.get(field) or 0) + change
                 if (row.get(field) or 0) != expected:
                     differences.append({'player': player['player'], 'month': month, 'field': field,
@@ -119,11 +175,12 @@ def verify_pitcher_inputs(season):
                 differences.append({'player': player['player'], 'month': month, 'field': 'fip',
                                     'expected': expected_fip, 'actual': actual})
             checked += 1
-        if player['pitcherId'] in expected_deltas or player['pitcherId'] == '2103689':
+        if player['pitcherId'] in expected_deltas or player['pitcherId'] == '2103689' or additions:
             affected.append({'pitcherId': player['pitcherId'], 'player': player['player'],
                              'intentionalWalksBefore': old_player['intentionalWalks'],
                              'intentionalWalksAfter': player['intentionalWalks'],
-                             'expectedAddedIntentionalWalks': delta})
+                             'expectedAddedIntentionalWalks': delta + sum(c['intentionalWalks'] for _, c in additions),
+                             'collectedUnintentionalWalks': sum(c['unintentionalWalks'] for _, c in additions)})
     return {'baselineCommit': baseline, 'rows': checked, 'leagueFipConstants': constants,
             'affectedPitchers': affected, 'differenceCount': len(differences), 'differences': differences}
 

@@ -1,0 +1,22 @@
+const assert = require('node:assert/strict');
+const fs = require('node:fs');
+const path = require('node:path');
+const vm = require('node:vm');
+const source = fs.readFileSync(path.join(__dirname, '../summary/compare.js'), 'utf8');
+const scope = { formatInningsFromOuts: n => `${Math.floor(n / 3)}.${n % 3}` };
+vm.createContext(scope);
+vm.runInContext(source.slice(source.indexOf('function safeDivide('), source.indexOf('function monthlySplits(')), scope);
+assert.equal(scope.safeDivide(null, 10), null);
+assert.equal(scope.weightedAverage([{value: null, pa: 50}, {value: 120, pa: 50}], 'value', 'pa'), 120);
+assert.equal(scope.weightedAverage([{value: null, pa: 50}], 'value', 'pa'), null);
+const pitcher = {inningsOuts: 9, atBats: 10, hits: 2, fipConstant: null,
+  sourceCoverage: {games: 1, incompleteGames: 1, unknownGames: 0}};
+const merged = scope.aggregatePitcherBucket([pitcher], {key: '03', label: '3月'});
+assert.equal(merged.fip, null);
+assert.equal(merged.fipConstant, null);
+assert.equal(merged.battingAverageAllowed, null);
+assert.equal(merged.babipAllowed, null);
+vm.runInContext(source.slice(source.indexOf('const MONTH_BUCKETS ='), source.indexOf('const state =')) + '\nglobalThis.buckets = MONTH_BUCKETS;', scope);
+assert.equal(scope.buckets.length, 8);
+assert(scope.buckets.every(bucket => bucket.months.length === 1), 'Monthly wRC contexts must not be averaged across months');
+console.log('Compare missing values, source coverage, and monthly metric contexts: PASS');

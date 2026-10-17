@@ -65,7 +65,7 @@ scripts/collect_final_games.py は追加2試合の一球速報を各ページ1�
 scripts/rebuild_annual_totals.py は公開済みmanifestから集計し、元CSVがない過年度の集計を保持する。
 --refresh-manifests は新しいgeneratedデータを発見し、投手manifest・表示用詳細JSONも更新する。
 --repair-details-only は不足する表示用詳細JSONのみを元の投球JSONから再生成する。
---batter-only は投手成績と球場係数を保持し、打撃年度・月別指標のみ更新する。敬遠コンテキストも補正した場合は通常の全再集計を使う。
+--batter-only は投手成績と球場係数を保持し、打者manifestと年度・月別・条件別指標を更新する。敬遠コンテキストも補正した場合は通常の全再集計を使う。
 summary/build_manifest.py も元データがない過年度の集計を保持する。
 
 wOBAの全季再取得・再計算（公式成績キャッシュを用意した後）
@@ -89,3 +89,45 @@ NPB代替取得時はキャッシュの sources に取得元を記録する。
 .site-build 内のHTML・対応表・エラーログは一時ファイルであり、必要時は照合スクリプトから再作成できる。
 公開前に python scripts/build_github_pages.py で成果物を検証し、対象ファイルをcommitしてmainへpushする。
 build_github_pages.py は .site-build をビルド用に初期化するため、取得・集計・検証を完了してから実行する。
+
+全選手の集計監査（2026-10-17）
+python scripts/audit_pitcher_official_subset.py --all
+欠落登板がある場合: python scripts/collect_missing_pitchers.py
+公式訂正を反映: python scripts/audit_pitcher_official_subset.py --all --include-collected --apply
+python scripts/rebuild_annual_totals.py --refresh-manifests
+python scripts/audit_pitcher_official_subset.py --all
+python scripts/audit_batter_aggregates.py
+python scripts/audit_pitcher_aggregates.py
+python scripts/test_batter_event_ledger.py
+python scripts/test_pitcher_aggregates.py
+node scripts/test_compare_aggregates.js
+node scripts/test_ranking_metrics.js
+python scripts/refresh_saved_dashboard_images.py
+
+打者の年度・月別の基本計数はNPB公式box、条件別は全858試合63,898完了打席を使用する。
+batter_event_ledger.py は半イニングの打者列を順序照合し、一意に結合できる投球属性だけを使用する。
+敬遠236打席と未結合56打席の球種・球速・投手左右・カウントは推測せず不明とする。
+得点圏はNPB打席結果直前preStateの二・三塁走者で判定し、単打ごとの仮想進塁は集計に使わない。
+manifestのcompleted=falseは参考投球で、公式打席数には含めない。投球位置・球速の原観測は保持する。
+officialCountsは非ゼロの計数だけを保存し、省略は0。splitAttributesは条件集計に必要な4項目のみ。
+これにより単一公開manifestをGitHubのファイル上限内に保つ。再生成後にサイズも検査すること。
+直近試合の出塁率には死球・犠飛を含め、月別wRC/wRC+は月単位のリーグ基準を維持する。
+監査結果はdocs/batter-aggregate-audit.json、照合coverageはdocs/batter-ledger-verification.json。
+
+投手は保存済み7,175登板・249,622投球から、年度/月別・球種/左右/回別・相手/球場・カウント別を独立再集計する。
+全858試合のNPB公式投手成績表7,175登板との照合結果はpitcher-official-audit.jsonに記録する。
+6月3日中日対ソフトバンク戦の勝野昌慶・篠﨑国忠・上茶谷大河の欠落3登板を追加した。
+鈴木健矢7月24日・髙太一7月2日・床田寛樹6月27日・櫻井頼之介4月22日の保存公式成績欄を訂正した。
+訂正の前後と公式URLはpitcher-official-corrections.json、追加記録はmissing-pitcher-collection.jsonを参照。
+過去のverify_batting_order.pyは打順修正だけの差分を検証する用途。今回の全項目変更にはaudit_batter_aggregates.pyを使用する。
+未完了打席・打撃妨害・犠野を打数から除外し、犠飛とスイング/ゾーン計数を各分割に伝える。
+途中からの投球列や連番欠落後のカウントは不明とする。
+sourceCoverageは保存公式成績欄と投球ログの球数・H/K/HBP/HR等の整合性を記録する。
+収録不一致を含む全体の被打率/被BABIPはnull、球種/左右/回別は収録投球内の指標として表示する。
+回別失点の比例配分値は確定記録ではないため画面に表示しない。回別四死球は投球ログで確認できる打席に限定する。
+投球の座標・球速そのものの正確性は外部実測では検証していない。2025年は元投球がなく保存年度集計を保持する。
+監査結果と制約はdocs/pitcher-aggregate-audit.jsonに記録する。
+
+画像再描画はGit追跡済みで対応rawを持つ既存画像だけを対象とし、rawのSHA256が変わらないことを確認する。
+対応rawがなくsummaryからも参照されない旧確認画像20枚はscripts/remove_unused_dashboard_images.ps1で削除した。
+生成時の一時テキストや取得HTMLは.site-buildに置き、最終サイトビルド時に除去される。

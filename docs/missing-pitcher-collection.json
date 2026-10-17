@@ -1,0 +1,31 @@
+{
+  "appearances": [
+    {
+      "gameId": "2021038954",
+      "date": "2026-06-03",
+      "team": "中日",
+      "pitcherId": "1800061",
+      "player": "勝野 昌慶",
+      "pitches": 18,
+      "path": "generated/中日/2026-06-03/2021038954-勝野昌慶-dashboard.json"
+    },
+    {
+      "gameId": "2021038954",
+      "date": "2026-06-03",
+      "team": "中日",
+      "pitcherId": "2112136",
+      "player": "篠﨑 国忠",
+      "pitches": 15,
+      "path": "generated/中日/2026-06-03/2021038954-篠﨑国忠-dashboard.json"
+    },
+    {
+      "gameId": "2021038954",
+      "date": "2026-06-03",
+      "team": "ソフトバンク",
+      "pitcherId": "1800043",
+      "player": "上茶谷 大河",
+      "pitches": 24,
+      "path": "generated/ソフトバンク/2026-06-03/2021038954-上茶谷大河-dashboard.json"
+    }
+  ]
+}

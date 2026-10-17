@@ -84,6 +84,8 @@ def copy_summary_assets(target_dir: Path) -> list[Path]:
         source = SUMMARY_DIR / name
         if not source.exists():
             raise FileNotFoundError(f"Missing summary asset: {source}")
+        if source.stat().st_size >= 100 * 1024 * 1024:
+            raise ValueError(f"Summary asset exceeds GitHub file limit: {source}")
         target = target_dir / name
         target.parent.mkdir(parents=True, exist_ok=True)
         shutil.copy2(source, target)

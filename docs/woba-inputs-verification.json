@@ -32,8 +32,8 @@
     "baselineCommit": "8dc604204dac5b41e56091308dd1705fe6962923",
     "rows": 2118,
     "leagueFipConstants": {
-      "セ": 2.8566820678232063,
-      "パ": 2.7996153173631755
+      "セ": 2.859078826964138,
+      "パ": 2.7991170942785963
     },
     "affectedPitchers": [
       {
@@ -41,21 +41,48 @@
         "player": "赤星 優志",
         "intentionalWalksBefore": 4,
         "intentionalWalksAfter": 4,
-        "expectedAddedIntentionalWalks": 0
+        "expectedAddedIntentionalWalks": 0,
+        "collectedUnintentionalWalks": 0
       },
       {
         "pitcherId": "2000061",
         "player": "森浦 大輔",
         "intentionalWalksBefore": 2,
         "intentionalWalksAfter": 3,
-        "expectedAddedIntentionalWalks": 1
+        "expectedAddedIntentionalWalks": 1,
+        "collectedUnintentionalWalks": 0
       },
       {
         "pitcherId": "1700072",
         "player": "遠藤 淳志",
         "intentionalWalksBefore": 4,
         "intentionalWalksAfter": 6,
-        "expectedAddedIntentionalWalks": 2
+        "expectedAddedIntentionalWalks": 2,
+        "collectedUnintentionalWalks": 0
+      },
+      {
+        "pitcherId": "1800061",
+        "player": "勝野 昌慶",
+        "intentionalWalksBefore": 1,
+        "intentionalWalksAfter": 2,
+        "expectedAddedIntentionalWalks": 1,
+        "collectedUnintentionalWalks": 1
+      },
+      {
+        "pitcherId": "2112136",
+        "player": "篠﨑 国忠",
+        "intentionalWalksBefore": 0,
+        "intentionalWalksAfter": 0,
+        "expectedAddedIntentionalWalks": 0,
+        "collectedUnintentionalWalks": 1
+      },
+      {
+        "pitcherId": "1800043",
+        "player": "上茶谷 大河",
+        "intentionalWalksBefore": 0,
+        "intentionalWalksAfter": 0,
+        "expectedAddedIntentionalWalks": 0,
+        "collectedUnintentionalWalks": 1
       }
     ],
     "differenceCount": 0,

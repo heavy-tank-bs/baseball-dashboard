@@ -92,12 +92,14 @@ const STADIUM_LABELS = {
 };
 
 const MONTH_BUCKETS = [
-  { key: "03-04", label: "3・4月", months: ["03", "04"] },
+  { key: "03", label: "3月", months: ["03"] },
+  { key: "04", label: "4月", months: ["04"] },
   { key: "05", label: "5月", months: ["05"] },
   { key: "06", label: "6月", months: ["06"] },
   { key: "07", label: "7月", months: ["07"] },
   { key: "08", label: "8月", months: ["08"] },
-  { key: "09-10", label: "9・10月", months: ["09", "10"] },
+  { key: "09", label: "9月", months: ["09"] },
+  { key: "10", label: "10月", months: ["10"] },
 ];
 
 const MONTH_BUCKET_INDEX = new Map(
@@ -396,6 +398,7 @@ function renderSeasonCard(row, config, heading, emptyMessage = "データがあ�
 }
 
 function safeDivide(numerator, denominator, multiplier = 1) {
+  if (numerator == null || denominator == null) return null;
   const safeNumerator = Number(numerator);
   const safeDenominator = Number(denominator);
   if (!Number.isFinite(safeNumerator) || !Number.isFinite(safeDenominator) || safeDenominator === 0) {
@@ -418,13 +421,15 @@ function sumMetric(rows, key) {
 }
 
 function weightedAverage(rows, key, weightKey) {
-  const weighted = rows.reduce((total, row) => {
+  const available = rows.filter((row) => row?.[key] != null && row?.[weightKey] != null
+    && Number.isFinite(Number(row[key])) && Number.isFinite(Number(row[weightKey])) && Number(row[weightKey]) > 0);
+  const weighted = available.reduce((total, row) => {
     const value = Number(row?.[key]);
     const weight = Number(row?.[weightKey]);
     if (!Number.isFinite(value) || !Number.isFinite(weight) || weight <= 0) return total;
     return total + (value * weight);
   }, 0);
-  const totalWeight = rows.reduce((total, row) => {
+  const totalWeight = available.reduce((total, row) => {
     const weight = Number(row?.[weightKey]);
     return Number.isFinite(weight) && weight > 0 ? total + weight : total;
   }, 0);
@@ -442,7 +447,7 @@ function aggregatePitcherBucket(rows, bucket) {
     sumMetric(rows, "swingingStrikeouts") +
     sumMetric(rows, "sacrificeBunts") +
     sumMetric(rows, "interference");
-  const fipConstant = rows.find((row) => Number.isFinite(Number(row?.fipConstant)))?.fipConstant ?? latestRow.fipConstant ?? null;
+  const fipConstant = rows.find((row) => row?.fipConstant != null && Number.isFinite(Number(row.fipConstant)))?.fipConstant ?? null;
   const atBats = sumMetric(rows, "atBats");
   const hits = sumMetric(rows, "hits");
   const scoringPositionAtBats = sumMetric(rows, "scoringPositionAtBats");
@@ -465,14 +470,21 @@ function aggregatePitcherBucket(rows, bucket) {
   const hPer9 = safeDivide(hits, inningsOuts, 27);
   const hrPer9 = safeDivide(homeRuns, inningsOuts, 27);
   const kBb = safeDivide(strikeouts, walks);
-  const battingAverageAllowed = safeDivide(hits, atBats);
-  const babipAllowed = safeDivide(hits - homeRuns, atBats - strikeouts - homeRuns + sacrificeFlies);
+  const sourceCoverage = rows.some((row) => row.sourceCoverage) ? rows.reduce((total, row) => {
+    for (const key of ["games", "incompleteGames", "unknownGames", "recordedPitches", "officialPitches", "unknownInningPitches"]) {
+      total[key] = (total[key] || 0) + (Number(row.sourceCoverage?.[key]) || 0);
+    }
+    return total;
+  }, {}) : null;
+  const incompleteSource = sourceCoverage && (sourceCoverage.incompleteGames > 0 || sourceCoverage.unknownGames > 0);
+  const battingAverageAllowed = incompleteSource ? null : safeDivide(hits, atBats);
+  const babipAllowed = incompleteSource ? null : safeDivide(hits - homeRuns, atBats - strikeouts - homeRuns + sacrificeFlies);
   const goFo = safeDivide(grounders, flyBalls);
   const groundOutRate = safeDivide(grounders, outEventTotal, 100);
   const flyOutRate = safeDivide(flyBalls, outEventTotal, 100);
   const whiffRate = hasPitchCount ? safeDivide(sumMetric(rows, "swingMisses"), pitches, 100) : null;
   const fip =
-    inningsOuts && Number.isFinite(Number(fipConstant))
+    inningsOuts && fipConstant != null && Number.isFinite(Number(fipConstant))
       ? (((13 * homeRuns) + (3 * (unintentionalWalks + hitByPitch)) - (2 * strikeouts)) / (inningsOuts / 3)) + Number(fipConstant)
       : null;
 
@@ -522,7 +534,8 @@ function aggregatePitcherBucket(rows, bucket) {
     hrPer9,
     kBb,
     fip,
-    fipConstant: Number.isFinite(Number(fipConstant)) ? Number(fipConstant) : null,
+    fipConstant: fipConstant != null && Number.isFinite(Number(fipConstant)) ? Number(fipConstant) : null,
+    sourceCoverage,
     battingAverageAllowed,
     babipAllowed,
     goFo,
@@ -1405,6 +1418,7 @@ function renderBatterSplitTable(sectionKey, title, rows = []) {
 
 function renderBatterSeasonPanel(dashboard) {
   return `
+    <p class="section-empty">条件別成績は公式の完了打席で集計しています。球種・球速・投手左右・カウントを特定できない打席は「不明」に含めます。得点圏は打席結果直前の走者状況で判定しています。</p>
     <div class="season-detail-grid">
       ${BATTER_SEASON_SECTIONS
         .map(([key, title]) => renderBatterSplitTable(key, title, dashboard?.[key] || []))
@@ -1415,7 +1429,11 @@ function renderBatterSeasonPanel(dashboard) {
 }
 
 function renderPitcherSeasonPanel(dashboard) {
+  const coverage = dashboard?.sourceCoverage;
+  const note = coverage?.incompleteGames || coverage?.unknownGames
+    ? `<p class="section-empty">投球記録が不完全な登板が${formatNumber((coverage.incompleteGames || 0) + (coverage.unknownGames || 0))}試合あります。球種・左右・回別は収録された投球の集計です。完全な打数を確認できない被打率・被BABIPは「-」で表示します。</p>` : "";
   return `
+    ${note}
     <div class="season-detail-grid">
       ${renderSeasonPitchMix(dashboard)}
       ${renderSeasonPitchSummary(dashboard)}
@@ -1424,8 +1442,8 @@ function renderPitcherSeasonPanel(dashboard) {
       ${renderPitcherHandSummary(dashboard)}
       ${renderPitcherGameSplitTable("opponentRows", "対チーム別投手成績", dashboard?.opponentRows || [])}
       ${renderPitcherGameSplitTable("stadiumRows", "球場別投手成績", dashboard?.stadiumRows || [])}
-      ${renderPitcherDecisionInningTable("イニング別失点数", dashboard?.inningRunRows || [], Boolean(dashboard?.inningRunRowsAvailable))}
-      ${renderPitcherDecisionInningTable("イニング別四死球数", dashboard?.inningWalkRows || [])}
+      ${renderPitcherDecisionInningTable("イニング別失点数", dashboard?.inningRunRows || [], Boolean(dashboard?.inningRunRowsAvailable) && dashboard?.inningRunRowsMethod !== "proportional_estimate")}
+      ${renderPitcherDecisionInningTable("イニング別四死球数（投球ログで確認できた打席）", dashboard?.inningWalkRows || [])}
       ${renderSeasonOutcomes(dashboard)}
       ${renderSeasonFinish(dashboard)}
       ${renderRecentGames(dashboard)}

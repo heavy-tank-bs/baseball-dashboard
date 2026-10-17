@@ -1,0 +1,331 @@
+{
+  "rawPitchesUnchanged": true,
+  "corrections": [
+    {
+      "entry": "広島-2026-07-24-2021039184-鈴木健矢",
+      "source": "https://npb.jp/scores/2026/0724/s-c-15/box.html",
+      "officialName": "鈴木",
+      "headers": [
+        "",
+        "投手",
+        "投球数",
+        "打者",
+        "投球回",
+        "安打",
+        "本塁打",
+        "四球",
+        "死球",
+        "三振",
+        "暴投",
+        "ボーク",
+        "失点",
+        "自責点",
+        "5",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "0",
+        "",
+        "チーム計",
+        "210",
+        "52",
+        "11\n            .2",
+        "11",
+        "16",
+        "3",
+        "4",
+        "0",
+        "11",
+        "0",
+        "0",
+        "5",
+        "5"
+      ],
+      "official": {
+        "batters": 4,
+        "pitches": 15,
+        "hits": 2,
+        "hr": 0,
+        "bb": 0,
+        "hbp": 0,
+        "k": 0,
+        "balk": 0,
+        "runs": 0,
+        "er": 0,
+        "inningsOuts": 3
+      },
+      "saved": {
+        "batters": 2,
+        "pitches": 6,
+        "hits": 1,
+        "hr": 0,
+        "bb": 0,
+        "hbp": 0,
+        "k": 0,
+        "balk": 0,
+        "runs": 0,
+        "er": 0,
+        "inningsOuts": 2
+      },
+      "differences": {
+        "batters": {
+          "saved": 2,
+          "official": 4
+        },
+        "pitches": {
+          "saved": 6,
+          "official": 15
+        },
+        "hits": {
+          "saved": 1,
+          "official": 2
+        },
+        "inningsOuts": {
+          "saved": 2,
+          "official": 3
+        }
+      }
+    },
+    {
+      "entry": "広島-2026-07-02-2021039078-髙太一",
+      "source": "https://npb.jp/scores/2026/0702/db-c-13/box.html",
+      "officialName": "髙",
+      "headers": [
+        "",
+        "投手",
+        "投球数",
+        "打者",
+        "投球回",
+        "安打",
+        "本塁打",
+        "四球",
+        "死球",
+        "三振",
+        "暴投",
+        "ボーク",
+        "失点",
+        "自責点",
+        "6",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "",
+        "チーム計",
+        "218",
+        "55",
+        "12",
+        "12",
+        "11",
+        "2",
+        "9",
+        "0",
+        "9",
+        "2",
+        "0",
+        "3",
+        "3"
+      ],
+      "official": {
+        "batters": 4,
+        "pitches": 19,
+        "hits": 0,
+        "hr": 0,
+        "bb": 1,
+        "hbp": 0,
+        "k": 1,
+        "balk": 0,
+        "runs": 0,
+        "er": 0,
+        "inningsOuts": 3
+      },
+      "saved": {
+        "batters": 1,
+        "pitches": 6,
+        "hits": 0,
+        "hr": 0,
+        "bb": 1,
+        "hbp": 0,
+        "k": 0,
+        "balk": 0,
+        "runs": 0,
+        "er": 0,
+        "inningsOuts": 0
+      },
+      "differences": {
+        "batters": {
+          "saved": 1,
+          "official": 4
+        },
+        "pitches": {
+          "saved": 6,
+          "official": 19
+        },
+        "k": {
+          "saved": 0,
+          "official": 1
+        },
+        "inningsOuts": {
+          "saved": 0,
+          "official": 3
+        }
+      }
+    },
+    {
+      "entry": "広島-2026-06-27-2021039058-床田寛樹",
+      "source": "https://npb.jp/scores/2026/0627/c-t-09/box.html",
+      "officialName": "床田",
+      "headers": [
+        "",
+        "投手",
+        "投球数",
+        "打者",
+        "投球回",
+        "安打",
+        "本塁打",
+        "四球",
+        "死球",
+        "三振",
+        "暴投",
+        "ボーク",
+        "失点",
+        "自責点",
+        "4",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "",
+        "チーム計",
+        "155",
+        "38",
+        "9",
+        "9",
+        "11",
+        "0",
+        "2",
+        "0",
+        "8",
+        "0",
+        "0",
+        "2",
+        "1"
+      ],
+      "official": {
+        "batters": 21,
+        "pitches": 83,
+        "hits": 7,
+        "hr": 0,
+        "bb": 2,
+        "hbp": 0,
+        "k": 2,
+        "balk": 0,
+        "runs": 2,
+        "er": 1,
+        "inningsOuts": 12
+      },
+      "saved": {
+        "batters": 21,
+        "pitches": 83,
+        "hits": 6,
+        "hr": 0,
+        "bb": 2,
+        "hbp": 0,
+        "k": 2,
+        "balk": 0,
+        "runs": 2,
+        "er": 1,
+        "inningsOuts": 12
+      },
+      "differences": {
+        "hits": {
+          "saved": 6,
+          "official": 7
+        }
+      }
+    },
+    {
+      "entry": "中日-2026-04-22-2021038750-櫻井頼之介",
+      "source": "https://npb.jp/scores/2026/0422/g-d-05/box.html",
+      "officialName": "櫻井",
+      "headers": [
+        "",
+        "投手",
+        "投球数",
+        "打者",
+        "投球回",
+        "安打",
+        "本塁打",
+        "四球",
+        "死球",
+        "三振",
+        "暴投",
+        "ボーク",
+        "失点",
+        "自責点",
+        "3",
+        "2",
+        "1",
+        "1",
+        "1",
+        "",
+        "チーム計",
+        "166",
+        "39",
+        "8",
+        "8",
+        "13",
+        "1",
+        "2",
+        "0",
+        "11",
+        "0",
+        "0",
+        "5",
+        "5"
+      ],
+      "official": {
+        "batters": 18,
+        "pitches": 77,
+        "hits": 7,
+        "hr": 0,
+        "bb": 2,
+        "hbp": 0,
+        "k": 4,
+        "balk": 0,
+        "runs": 4,
+        "er": 4,
+        "inningsOuts": 9
+      },
+      "saved": {
+        "batters": 18,
+        "pitches": 77,
+        "hits": 6,
+        "hr": 0,
+        "bb": 2,
+        "hbp": 0,
+        "k": 4,
+        "balk": 0,
+        "runs": 4,
+        "er": 3,
+        "inningsOuts": 9
+      },
+      "differences": {
+        "hits": {
+          "saved": 6,
+          "official": 7
+        },
+        "er": {
+          "saved": 3,
+          "official": 4
+        }
+      }
+    }
+  ]
+}

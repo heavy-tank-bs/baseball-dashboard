@@ -32,6 +32,18 @@
 !/scripts/repair_batting_order.py
 !/scripts/test_batting_order.py
 !/scripts/verify_batting_order.py
+!/scripts/batter_event_ledger.py
+!/scripts/batter_official_stats.py
+!/scripts/test_batter_event_ledger.py
+!/scripts/audit_batter_aggregates.py
+!/scripts/audit_pitcher_aggregates.py
+!/scripts/audit_pitcher_official_subset.py
+!/scripts/collect_missing_pitchers.py
+!/scripts/test_pitcher_aggregates.py
+!/scripts/test_compare_aggregates.js
+!/scripts/refresh_saved_dashboard_images.py
+!/scripts/remove_unused_dashboard_images.ps1
+!/scripts/test_ranking_metrics.js
 !/summary/
 !/summary/index.html
 !/summary/batter.html
@@ -67,6 +79,14 @@
 !/docs/intentional-walk-sync-2026.json
 !/docs/batting-order-verification.json
 !/docs/batting-order-independent-verification.json
+!/docs/batter-aggregate-audit.json
+!/docs/pitcher-aggregate-audit.json
+!/docs/pitcher-official-subset-audit.json
+!/docs/pitcher-official-audit.json
+!/docs/pitcher-official-corrections.json
+!/docs/missing-pitcher-collection.json
+!/docs/batter-ledger-verification.json
+!/docs/dashboard-image-refresh.json
 !/GITHUB_PAGES.md
 
 site/
