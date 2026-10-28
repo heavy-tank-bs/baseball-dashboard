@@ -34,6 +34,8 @@ SUMMARY_FILES = (
     "batter_manifest.js",
     "player_totals.json",
     "batter_totals.json",
+    "nf3_2025_pitchers.json",
+    "nf3_2025_batters.json",
     "woba_constants.json",
     "sportsnavi_game_context_2026.json",
 )

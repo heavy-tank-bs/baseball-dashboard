@@ -2215,6 +2215,137 @@ button.type-switch-link {
   display: none;
 }
 
+.historical-summary-card,
+.historical-source-card {
+  min-width: 0;
+  padding: 24px;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: var(--card-strong);
+}
+
+.historical-source-card {
+  margin-top: 20px;
+}
+
+.historical-summary-card h3,
+.historical-source-card h3 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.historical-stat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(115px, 1fr));
+  gap: 12px;
+  margin: 0;
+}
+
+.historical-stat-grid > div {
+  min-width: 0;
+  padding: 14px;
+  border-radius: 12px;
+  background: var(--bg);
+}
+
+.historical-stat-grid dt {
+  color: var(--muted);
+  font-size: 13px;
+  overflow-wrap: anywhere;
+}
+
+.historical-stat-grid dd {
+  margin: 8px 0 0;
+  font-size: 23px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.historical-source-note {
+  margin: 18px 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.8;
+  overflow-wrap: anywhere;
+}
+
+.historical-source-note a,
+.annual-note a {
+  color: var(--navy);
+  text-underline-offset: 3px;
+}
+
+.historical-table-picker {
+  display: grid;
+  gap: 8px;
+  margin: 20px 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.historical-table-picker select {
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+}
+
+.historical-table-scroll {
+  max-height: 620px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+
+.historical-source-table {
+  width: max-content;
+  min-width: 100%;
+  font-variant-numeric: tabular-nums;
+}
+
+.historical-source-table caption {
+  padding: 14px;
+  color: var(--navy);
+  background: var(--card);
+  text-align: left;
+  white-space: normal;
+  font-weight: 700;
+}
+
+.historical-source-table th,
+.historical-source-table td {
+  padding: 11px 14px;
+  white-space: nowrap;
+  font-size: 14px;
+}
+
+.historical-source-table tbody th {
+  position: sticky;
+  left: 0;
+  z-index: 1;
+  background: var(--card-strong);
+  text-align: left;
+  box-shadow: inset -1px 0 0 var(--line);
+}
+
+@media (max-width: 560px) {
+  .historical-summary-card,
+  .historical-source-card {
+    padding: 16px;
+  }
+
+  .historical-stat-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .historical-stat-grid > div {
+    padding: 10px 8px;
+  }
+
+  .historical-stat-grid dd {
+    font-size: 20px;
+  }
+}
+
 .ranking-filters-grid {
   grid-template-columns: repeat(5, minmax(0, 1fr));
 }

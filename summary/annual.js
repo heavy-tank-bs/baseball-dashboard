@@ -397,7 +397,9 @@ function renderPlayerOptions() {
 }
 
 function renderNote() {
-  els.annualNote.textContent = "";
+  els.annualNote.innerHTML = state.year === "2025"
+    ? '2025年は <a href="https://nf3.sakura.ne.jp/2025/" target="_blank" rel="noopener noreferrer">nf3</a> の年度・条件別成績を補充しています。選手名、または <a href="./player.html?type=pitcher&amp;year=2025">個人成績</a> から詳細を確認できます。一球ごとの投球位置データは未収録です。'
+    : "";
 }
 
 function renderInningsFilter() {
@@ -445,6 +447,7 @@ function renderTable() {
   const scrollState = captureTableScroll();
   const rows = filteredPlayers();
   const columns = activeColumns(rows);
+  const showPitchCount = columns.some((column) => column.key === "pitches");
   if (state.sortKey && !columns.some((column) => column.key === state.sortKey)) {
     state.sortKey = "";
     state.sortDirection = "";
@@ -484,7 +487,7 @@ function renderTable() {
           <td>${formatDecimal(row.hrPer9, 2)}</td>
           <td>${formatPercent(row.groundOutRate, 1)}</td>
           <td>${formatPercent(row.flyOutRate, 1)}</td>
-          ${row.hasPitchCount ? `<td>${row.pitches}</td>` : ""}
+          ${showPitchCount ? `<td>${row.hasPitchCount ? row.pitches : "-"}</td>` : ""}
         </tr>
       `
     )

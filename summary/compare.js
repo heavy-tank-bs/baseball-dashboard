@@ -115,6 +115,7 @@ const state = {
   activeMode: "compare",
   embedded: false,
   error: "",
+  historical: { payload: null, loading: false, loaded: false, error: "", selectedTable: 0 },
 };
 
 const els = {
@@ -135,6 +136,7 @@ const els = {
   compareMetricCount: document.getElementById("compareMetricCount"),
   compareSeasonGrid: document.getElementById("compareSeasonGrid"),
   compareCardGrid: document.getElementById("compareCardGrid"),
+  historicalCompareNote: document.getElementById("historicalCompareNote"),
   monthlyPanel: document.getElementById("monthlyPanel"),
   monthlyMetricCount: document.getElementById("monthlyMetricCount"),
   monthlySeasonGrid: document.getElementById("monthlySeasonGrid"),
@@ -303,6 +305,117 @@ function rowMatchesPlayerName(row, player) {
   return rowPlayer === player || normalizePlayerName(rowPlayer) === normalizePlayerName(player);
 }
 
+function normalizeHistoricalTeam(value) {
+  const normalized = `${value ?? ""}`.normalize("NFKC").replaceAll(/[\s\u3000]+/g, "");
+  return normalized === "東北楽天" ? "楽天" : normalized;
+}
+
+function findHistoricalPlayer(players, row) {
+  if (!row || row.year !== "2025") return null;
+  const teams = (Array.isArray(row.sourceTeams) ? row.sourceTeams : Array.isArray(row.teams) ? row.teams : [row.team])
+    .map(normalizeHistoricalTeam);
+  const matches = players.filter((player) => rowMatchesPlayerName(player, row.player)
+    && teams.includes(normalizeHistoricalTeam(player.team)));
+  const exactTeam = matches.find((player) => normalizeHistoricalTeam(player.team) === normalizeHistoricalTeam(row.team));
+  return exactTeam || (matches.length === 1 ? matches[0] : null);
+}
+
+function historicalPlayerHref(row) {
+  const params = new URLSearchParams({
+    type: state.config === TYPE_CONFIG.pitcher ? "pitcher" : "batter",
+    year: row.year,
+    player: row.player,
+    team: row.team,
+  });
+  return `./compare.html?${params.toString()}`;
+}
+
+function sourceLink(url, label) {
+  if (!/^https?:\/\//i.test(`${url ?? ""}`)) return escapeHtml(label);
+  return `<a href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(label)}</a>`;
+}
+
+function historicalTableGroup(table) {
+  const title = table.title || "";
+  if (/通算|各種指標/.test(title)) return "年度成績・指標";
+  if (/月別/.test(title)) return "月別";
+  if (/球種|コース/.test(title)) return "球種・コース";
+  if (/チーム|球場|左右/.test(title)) return "対戦相手・球場・左右";
+  return "場面別・その他";
+}
+
+function historicalTables(player) {
+  return (player?.tables || []).filter((table) => Array.isArray(table.headers)
+    && table.headers.length && Array.isArray(table.rows) && table.rows.length);
+}
+
+function renderHistoricalTable(table) {
+  if (!table) return '<p class="section-empty">この選手の条件別成績は収録されていません。</p>';
+  const headerCount = table.headers.length;
+  return `
+    <div class="table-scroll historical-table-scroll" tabindex="0" aria-label="${escapeHtml(table.title)}。横にスクロールできます">
+      <table class="data-table historical-source-table">
+        <caption>${escapeHtml(table.title)}</caption>
+        <thead><tr>${table.headers.map((header) => `<th scope="col">${escapeHtml(header)}</th>`).join("")}</tr></thead>
+        <tbody>${table.rows.map((row) => `<tr>${Array.from({ length: headerCount }, (_, index) => index === 0
+          ? `<th scope="row">${escapeHtml(row[index] ?? "-")}</th>`
+          : `<td>${escapeHtml(row[index] ?? "-")}</td>`).join("")}</tr>`).join("")}</tbody>
+      </table>
+    </div>${(table.notes || []).map((note) => `<p class="historical-source-note">${escapeHtml(note)}</p>`).join("")}`;
+}
+
+function renderHistoricalAnnualSummary(row) {
+  const extraMetrics = state.config === TYPE_CONFIG.pitcher
+    ? [{ key: "hits", label: "被安打", kind: "number" }, { key: "runs", label: "失点", kind: "number" }, { key: "earnedRuns", label: "自責点", kind: "number" }]
+    : [{ key: "runs", label: "得点", kind: "number" }, { key: "hitByPitch", label: "死球", kind: "number" }, { key: "sacBunts", label: "犠打", kind: "number" }, { key: "sacFlies", label: "犠飛", kind: "number" }];
+  const metrics = [...state.config.metrics, ...extraMetrics];
+  return `<article class="historical-summary-card">
+    <div class="section-head"><h3>2025年度の基本成績</h3><span>${escapeHtml(row.team)}</span></div>
+    <dl class="historical-stat-grid">${metrics.map((metric) => `<div><dt>${escapeHtml(metric.label)}</dt><dd>${escapeHtml(formatMetricValue(metric, row))}</dd></div>`).join("")}</dl>
+  </article>`;
+}
+
+function renderHistoricalSourcePanel(row) {
+  const historical = state.historical;
+  if (historical.error) return `<article class="historical-source-card"><h3>2025年の条件別成績</h3><p class="section-empty">追加データを読み込めませんでした。${sourceLink("https://nf3.sakura.ne.jp/2025/", "nf3 の2025年ページを開く")}</p></article>`;
+  if (!historical.loaded) return '<article class="historical-source-card" aria-busy="true"><h3>2025年の条件別成績</h3><p class="section-empty">nf3 の条件別成績を読み込み中…</p></article>';
+  const player = findHistoricalPlayer(historical.payload?.players || [], row);
+  if (!player) return '<article class="historical-source-card"><h3>2025年の条件別成績</h3><p class="section-empty">この球団・選手に対応する追加データは収録されていません。</p></article>';
+  const tables = historicalTables(player);
+  const selectedIndex = Math.min(historical.selectedTable, Math.max(0, tables.length - 1));
+  const groups = new Map();
+  tables.forEach((table, index) => {
+    const group = historicalTableGroup(table);
+    if (!groups.has(group)) groups.set(group, []);
+    groups.get(group).push({ table, index });
+  });
+  return `<article class="historical-source-card">
+    <div class="section-head"><h3>2025年の条件別成績</h3><span class="result-count">${tables.length}表</span></div>
+    <p class="historical-source-note">出典：${sourceLink(player.sourceUrl, "nf3 個人成績")}。元サイトの表記・集計定義を使用しています。球種別の Whiff% などは、このサイトの指標と分母が異なる場合があります。</p>
+    ${tables.length ? `<label class="historical-table-picker"><span>表示する成績</span><select id="historicalTableSelect" class="field-select">${[...groups].map(([group, items]) => `<optgroup label="${escapeHtml(group)}">${items.map(({ table, index }) => `<option value="${index}"${index === selectedIndex ? " selected" : ""}>${escapeHtml(table.title)}</option>`).join("")}</optgroup>`).join("")}</select></label>` : ""}
+    <div id="historicalTableContent" aria-live="polite">${renderHistoricalTable(tables[selectedIndex])}</div>
+  </article>`;
+}
+
+async function ensureHistoricalData() {
+  const historical = state.historical;
+  if (state.currentRow?.year !== "2025" || historical.loaded || historical.loading) return;
+  historical.loading = true;
+  try {
+    const kind = state.config === TYPE_CONFIG.pitcher ? "pitchers" : "batters";
+    const response = await fetch(`./nf3_2025_${kind}.json?v=20261028`, { cache: "no-store" });
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    historical.payload = await response.json();
+  } catch (error) {
+    historical.error = error.message || "追加データを取得できませんでした。";
+  } finally {
+    historical.loading = false;
+    historical.loaded = true;
+    renderSeasonPanel();
+    postEmbedHeight();
+  }
+}
+
 function findCurrentRow(rows, params, config) {
   const year = params.get("year") || "";
   const player = params.get("player") || "";
@@ -409,6 +522,8 @@ function safeDivide(numerator, denominator, multiplier = 1) {
 
 function monthNumberFromSplit(split) {
   const rawMonth = `${split?.month ?? ""}`;
+  const sourceLabel = `${split?.sourceGrouping || split?.label || split?.monthLabel || ""}`;
+  if (rawMonth.includes("/") || /\d{1,2}\s*[・･/〜～–-]\s*\d{1,2}\s*月/.test(sourceLabel)) return "";
   const isoMatch = rawMonth.match(/-(\d{2})$/);
   if (isoMatch) return isoMatch[1];
   const labelMatch = `${split?.monthLabel ?? ""}`.match(/(\d{1,2})月/);
@@ -418,6 +533,11 @@ function monthNumberFromSplit(split) {
 
 function sumMetric(rows, key) {
   return rows.reduce((total, row) => total + (Number(row?.[key]) || 0), 0);
+}
+
+function hasKnownCount(rows, key) {
+  return rows.every((row) => row?.[key] != null && row[key] !== ""
+    && Number.isFinite(Number(row[key])) && Number(row[key]) >= 0);
 }
 
 function weightedAverage(rows, key, weightKey) {
@@ -453,7 +573,7 @@ function aggregatePitcherBucket(rows, bucket) {
   const scoringPositionAtBats = sumMetric(rows, "scoringPositionAtBats");
   const scoringPositionHits = sumMetric(rows, "scoringPositionHits");
   const walks = sumMetric(rows, "walks");
-  const unintentionalWalks = sumMetric(rows, "unintentionalWalks");
+  const unintentionalWalks = hasKnownCount(rows, "unintentionalWalks") ? sumMetric(rows, "unintentionalWalks") : null;
   const strikeouts = sumMetric(rows, "strikeouts");
   const homeRuns = sumMetric(rows, "homeRuns");
   const hitByPitch = sumMetric(rows, "hitByPitch");
@@ -477,14 +597,15 @@ function aggregatePitcherBucket(rows, bucket) {
     return total;
   }, {}) : null;
   const incompleteSource = sourceCoverage && (sourceCoverage.incompleteGames > 0 || sourceCoverage.unknownGames > 0);
-  const battingAverageAllowed = incompleteSource ? null : safeDivide(hits, atBats);
-  const babipAllowed = incompleteSource ? null : safeDivide(hits - homeRuns, atBats - strikeouts - homeRuns + sacrificeFlies);
+  const battingAverageAllowed = incompleteSource || !hasKnownCount(rows, "atBats") ? null : safeDivide(hits, atBats);
+  const knownBabipInputs = ["atBats", "hits", "homeRuns", "strikeouts", "sacrificeFlies"].every((key) => hasKnownCount(rows, key));
+  const babipAllowed = incompleteSource || !knownBabipInputs ? null : safeDivide(hits - homeRuns, atBats - strikeouts - homeRuns + sacrificeFlies);
   const goFo = safeDivide(grounders, flyBalls);
   const groundOutRate = safeDivide(grounders, outEventTotal, 100);
   const flyOutRate = safeDivide(flyBalls, outEventTotal, 100);
   const whiffRate = hasPitchCount ? safeDivide(sumMetric(rows, "swingMisses"), pitches, 100) : null;
   const fip =
-    inningsOuts && fipConstant != null && Number.isFinite(Number(fipConstant))
+    inningsOuts && fipConstant != null && unintentionalWalks != null && Number.isFinite(Number(fipConstant))
       ? (((13 * homeRuns) + (3 * (unintentionalWalks + hitByPitch)) - (2 * strikeouts)) / (inningsOuts / 3)) + Number(fipConstant)
       : null;
 
@@ -613,7 +734,7 @@ function aggregateBatterBucket(rows, bucket) {
     isoPower,
     babip,
     ops,
-    wrc: sumMetric(rows, "wrc"),
+    wrc: rows.some((row) => row.wrc != null) ? sumMetric(rows, "wrc") : null,
     wrcPlus: weightedAverage(rows, "wrcPlus", "plateAppearances"),
     parkFactor: weightedAverage(rows, "parkFactor", "plateAppearances"),
     effectiveParkFactor: weightedAverage(rows, "effectiveParkFactor", "plateAppearances"),
@@ -630,11 +751,14 @@ function monthlySplits() {
     const month = monthNumberFromSplit(split);
     const bucket = MONTH_BUCKET_INDEX.get(month);
     if (!bucket) {
+      const sourceLabel = split.sourceGrouping || split.label || split.monthLabel || `${Number.parseInt(month || "0", 10) || month}月`;
+      const groupedFirstMonth = `${sourceLabel}`.match(/(\d{1,2})\s*[・･/〜～–-]\s*\d{1,2}\s*月/)?.[1]?.padStart(2, "0");
+      const groupedOrder = MONTH_BUCKETS.findIndex((item) => item.key === groupedFirstMonth);
       fallbackRows.push({
         key: split.month || month || `${fallbackRows.length}`,
-        label: split.monthLabel || `${Number.parseInt(month || "0", 10) || month}月`,
+        label: sourceLabel,
         rows: [split],
-        order: MONTH_BUCKETS.length + fallbackRows.length,
+        order: groupedOrder >= 0 ? groupedOrder : MONTH_BUCKETS.length + fallbackRows.length,
       });
       continue;
     }
@@ -1464,6 +1588,14 @@ function renderSeasonPanel() {
     els.seasonDetailWrap.innerHTML = `<div class="section-empty compare-empty">${escapeHtml(state.error || "選手データを読み込めませんでした。")}</div>`;
     return;
   }
+  if (!dashboard && state.currentRow.year === "2025") {
+    els.seasonMetricCount.textContent = "2025年度集計";
+    els.seasonDetailWrap.innerHTML = `${renderHistoricalAnnualSummary(state.currentRow)}
+      <p class="historical-source-note">2025年は ${sourceLink("https://nf3.sakura.ne.jp/2025/", "nf3")} の年度・条件別集計を収録しています。一球ごとの投球位置データは未収録です。${state.config === TYPE_CONFIG.batter ? "wRC・wRC+ は年度係数未収録のため未算出です。" : ""}</p>
+      ${renderHistoricalSourcePanel(state.currentRow)}`;
+    void ensureHistoricalData();
+    return;
+  }
   if (!dashboard) {
     els.seasonDetailWrap.innerHTML = '<div class="section-empty compare-empty">この年度の一球データ集計はありません。</div>';
     return;
@@ -1722,6 +1854,11 @@ function renderComparePanel() {
     renderSeasonCard(state.currentRow, state.config, seasonLabel(state.currentRow, "対象年度")),
   ].join("");
   els.compareCardGrid.innerHTML = compareCardsMarkup();
+  const historicalRow = [state.previousRow, state.currentRow].find((row) => row?.year === "2025");
+  els.historicalCompareNote.classList.toggle("is-hidden", !historicalRow);
+  els.historicalCompareNote.innerHTML = historicalRow
+    ? `2025年は ${sourceLink("https://nf3.sakura.ne.jp/2025/", "nf3")} の集計を補充しています。<a href="${escapeHtml(historicalPlayerHref(historicalRow))}" target="${state.embedded ? "_top" : "_self"}">2025年の基本成績・条件別成績を見る</a>。${state.config === TYPE_CONFIG.batter ? "wRC・wRC+ は年度係数未収録のため比較対象外です。" : ""}`
+    : "";
 }
 
 function renderMonthlyPanel() {
@@ -1779,7 +1916,7 @@ function renderHeader() {
   }
 
   const monthlyAvailable = monthlySplits().length > 0;
-  const seasonAvailable = Boolean(seasonDashboard());
+  const seasonAvailable = Boolean(seasonDashboard()) || currentRow.year === "2025";
   els.compareTitle.textContent = `${currentRow.player} 成績ビュー`;
   els.compareSubtitle.textContent = `${currentRow.year}年度 ${state.config.label}`;
   els.comparePlayerName.textContent = currentRow.player;
@@ -1815,6 +1952,13 @@ async function init() {
   renderModeToggles();
   renderMetricToggles();
   renderPanels();
+  els.seasonDetailWrap.addEventListener("change", (event) => {
+    if (event.target.id !== "historicalTableSelect") return;
+    state.historical.selectedTable = Number(event.target.value) || 0;
+    const player = findHistoricalPlayer(state.historical.payload?.players || [], state.currentRow);
+    document.getElementById("historicalTableContent").innerHTML = renderHistoricalTable(historicalTables(player)[state.historical.selectedTable]);
+    postEmbedHeight();
+  });
   if (state.embedded && "ResizeObserver" in window) {
     const resizeObserver = new ResizeObserver(() => postEmbedHeight());
     resizeObserver.observe(document.body);

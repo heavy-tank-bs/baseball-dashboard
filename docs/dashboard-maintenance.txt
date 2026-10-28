@@ -131,3 +131,30 @@ sourceCoverageは保存公式成績欄と投球ログの球数・H/K/HBP/HR等�
 画像再描画はGit追跡済みで対応rawを持つ既存画像だけを対象とし、rawのSHA256が変わらないことを確認する。
 対応rawがなくsummaryからも参照されない旧確認画像20枚はscripts/remove_unused_dashboard_images.ps1で削除した。
 生成時の一時テキストや取得HTMLは.site-buildに置き、最終サイトビルド時に除去される。
+
+2025年の情報補完（2026-10-28）
+出典: プロ野球 ヌルデータ置き場f3 https://nf3.sakura.ne.jp/2025/
+全12球団の投手・打者の個人成績表を保存し、年度成績へ基本計数・球数・正確な被打数・得点圏成績・月別を反映。
+選手の2025年年度成績では、球種・球場・相手・左右・カウント・走者などの出典表を分類から選択できる。
+収録元JSON: summary/nf3_2025_pitchers.json、summary/nf3_2025_batters.json。
+nf3の識別子はsourcePlayerIdへ保存。SportsNavi選手IDとは別に扱う。移籍前の不規則なファイル名も実際のリンクから発見する。
+3・4月は取得元が合算した区分のまま表示し、4月単独の成績にはしない。
+2025年の一球ごとの投球位置・ボールゾーン指標は未収録。元サイトWhiff%はスイングを分母とし、当サイトの空振り率は全投球を分母とする。
+2025年wRC/wRC+は、従来の一部打者・他年度係数による仮計算を廃止。検証済み2025係数・球場補正がないため未算出。
+FIPは既存のuBB式と個人投手成績のリーグ合計から算出。元サイトのFIPは出典表に原表記のまま残す。
+NPB公式の12球団投打計数と照合。個人自責点の合計はチーム自責点と異なる場合があり、公式個人成績の合計で照合する。
+再集計時は2025年選手行・月別・sourceByYear・年度指標文脈を保持する。2026年の選手行・指標文脈は変更しない。
+収集HTMLのキャッシュはGit対象外の.nf3-cache。公開ビルドで初期化される.site-buildには置かない。
+検証結果: docs/nf3-2025-verification.json、docs/nf3-2025-official-totals.json、docs/nf3-pitchers-2025.json、docs/nf3-batters-2025.json。
+
+再収集・反映（リポジトリ直下）
+python scripts/collect_nf3_pitchers.py
+python scripts/collect_nf3_batters.py
+python scripts/apply_nf3_2025.py
+python scripts/verify_nf3_2025.py --refresh-official
+python scripts/test_nf3_pitchers.py
+python scripts/test_nf3_batters.py
+python scripts/test_nf3_integration.py
+node scripts/test_nf3_frontend.cjs
+python scripts/build_github_pages.py
+verify_nf3_2025.pyの既定baselineは今回更新直前のe108e8da。後日の別年度更新では--baselineに適切な更新前コミットを指定する。

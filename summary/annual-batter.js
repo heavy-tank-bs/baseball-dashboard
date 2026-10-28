@@ -384,7 +384,9 @@ function renderPlayerOptions() {
 }
 
 function renderNote() {
-  els.annualNote.textContent = "";
+  els.annualNote.innerHTML = state.year === "2025"
+    ? '2025年は <a href="https://nf3.sakura.ne.jp/2025/" target="_blank" rel="noopener noreferrer">nf3</a> の年度・条件別成績を補充しています。選手名、または <a href="./player.html?type=batter&amp;year=2025">個人成績</a> から詳細を確認できます。一球ごとの投球位置データは未収録です。wRC・wRC+ は年度係数未収録のため未算出です。'
+    : "";
 }
 
 function renderPlateAppearancesFilter() {

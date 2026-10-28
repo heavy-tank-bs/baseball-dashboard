@@ -44,6 +44,14 @@
 !/scripts/refresh_saved_dashboard_images.py
 !/scripts/remove_unused_dashboard_images.ps1
 !/scripts/test_ranking_metrics.js
+!/scripts/collect_nf3_pitchers.py
+!/scripts/collect_nf3_batters.py
+!/scripts/apply_nf3_2025.py
+!/scripts/verify_nf3_2025.py
+!/scripts/test_nf3_integration.py
+!/scripts/test_nf3_frontend.cjs
+!/scripts/test_nf3_pitchers.py
+!/scripts/test_nf3_batters.py
 !/summary/
 !/summary/index.html
 !/summary/batter.html
@@ -61,6 +69,8 @@
 !/summary/batter_manifest.js
 !/summary/player_totals.json
 !/summary/batter_totals.json
+!/summary/nf3_2025_pitchers.json
+!/summary/nf3_2025_batters.json
 !/summary/park_factors.json
 !/summary/woba_constants.json
 !/summary/uniform_numbers.js
@@ -87,6 +97,10 @@
 !/docs/missing-pitcher-collection.json
 !/docs/batter-ledger-verification.json
 !/docs/dashboard-image-refresh.json
+!/docs/nf3-pitchers-2025.json
+!/docs/nf3-batters-2025.json
+!/docs/nf3-2025-verification.json
+!/docs/nf3-2025-official-totals.json
 !/GITHUB_PAGES.md
 
 site/

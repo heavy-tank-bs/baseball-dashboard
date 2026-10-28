@@ -1,0 +1,334 @@
+{
+  "season": "2025",
+  "verifiedAt": "2026-10-28T14:40:16+00:00",
+  "sources": {
+    "pitchers": {
+      "players": 361,
+      "tables": 6651,
+      "source": {
+        "name": "プロ野球 ヌルデータ置き場f3",
+        "url": "https://nf3.sakura.ne.jp/2025/",
+        "retrievedAt": "2026-10-28T14:33:51+00:00",
+        "collection": "Active pitcher links discovered from all team listings; UTF-8 HTML cached with maximum 2 concurrent requests and at least 0.4 seconds between request starts.",
+        "notes": [
+          "The source pitch-type Whiff% uses swings as denominator; normalized annual whiffRate uses all pitches to match the dashboard definition.",
+          "Source FIP and rate metrics are retained with their source definitions; existing annual differences are recorded in coverage."
+        ]
+      },
+      "sourceSha256": "3050f266194eeffc8c4b43729f3acac77254387f6b0a4a63da6469b42fa71d72"
+    },
+    "batters": {
+      "players": 725,
+      "tables": 13482,
+      "source": {
+        "name": "プロ野球 ヌルデータ置き場f3",
+        "url": "https://nf3.sakura.ne.jp/2025/",
+        "retrievedAt": "2026-10-28T14:39:34.774347+00:00"
+      },
+      "sourceSha256": "0acb34b810d314679f12232c25fd14a89d3ecec984f41c6ffb2f1f914e62a393"
+    }
+  },
+  "officialTeamChecks": [
+    {
+      "kind": "pitchers",
+      "team": "阪神",
+      "players": 31,
+      "url": "https://npb.jp/bis/2025/stats/tmp_c.html",
+      "individualUrl": "https://npb.jp/bis/2025/stats/idp1_t.html",
+      "teamEarnedRuns": 321,
+      "individualEarnedRuns": 321,
+      "earnedRunsNote": "チーム自責点と個人自責点の合計は一致しない場合がある（公認野球規則9.16(i)）。年度選手成績は個人の合計と照合。",
+      "fieldsChecked": 15,
+      "differences": {}
+    },
+    {
+      "kind": "pitchers",
+      "team": "DeNA",
+      "players": 32,
+      "url": "https://npb.jp/bis/2025/stats/tmp_c.html",
+      "individualUrl": "https://npb.jp/bis/2025/stats/idp1_db.html",
+      "teamEarnedRuns": 417,
+      "individualEarnedRuns": 417,
+      "earnedRunsNote": "チーム自責点と個人自責点の合計は一致しない場合がある（公認野球規則9.16(i)）。年度選手成績は個人の合計と照合。",
+      "fieldsChecked": 15,
+      "differences": {}
+    },
+    {
+      "kind": "pitchers",
+      "team": "巨人",
+      "players": 27,
+      "url": "https://npb.jp/bis/2025/stats/tmp_c.html",
+      "individualUrl": "https://npb.jp/bis/2025/stats/idp1_g.html",
+      "teamEarnedRuns": 419,
+      "individualEarnedRuns": 419,
+      "earnedRunsNote": "チーム自責点と個人自責点の合計は一致しない場合がある（公認野球規則9.16(i)）。年度選手成績は個人の合計と照合。",
+      "fieldsChecked": 15,
+      "differences": {}
+    },
+    {
+      "kind": "pitchers",
+      "team": "中日",
+      "players": 30,
+      "url": "https://npb.jp/bis/2025/stats/tmp_c.html",
+      "individualUrl": "https://npb.jp/bis/2025/stats/idp1_d.html",
+      "teamEarnedRuns": 421,
+      "individualEarnedRuns": 421,
+      "earnedRunsNote": "チーム自責点と個人自責点の合計は一致しない場合がある（公認野球規則9.16(i)）。年度選手成績は個人の合計と照合。",
+      "fieldsChecked": 15,
+      "differences": {}
+    },
+    {
+      "kind": "pitchers",
+      "team": "広島",
+      "players": 28,
+      "url": "https://npb.jp/bis/2025/stats/tmp_c.html",
+      "individualUrl": "https://npb.jp/bis/2025/stats/idp1_c.html",
+      "teamEarnedRuns": 452,
+      "individualEarnedRuns": 452,
+      "earnedRunsNote": "チーム自責点と個人自責点の合計は一致しない場合がある（公認野球規則9.16(i)）。年度選手成績は個人の合計と照合。",
+      "fieldsChecked": 15,
+      "differences": {}
+    },
+    {
+      "kind": "pitchers",
+      "team": "ヤクルト",
+      "players": 32,
+      "url": "https://npb.jp/bis/2025/stats/tmp_c.html",
+      "individualUrl": "https://npb.jp/bis/2025/stats/idp1_s.html",
+      "teamEarnedRuns": 511,
+      "individualEarnedRuns": 512,
+      "earnedRunsNote": "チーム自責点と個人自責点の合計は一致しない場合がある（公認野球規則9.16(i)）。年度選手成績は個人の合計と照合。",
+      "fieldsChecked": 15,
+      "differences": {}
+    },
+    {
+      "kind": "pitchers",
+      "team": "ソフトバンク",
+      "players": 26,
+      "url": "https://npb.jp/bis/2025/stats/tmp_p.html",
+      "individualUrl": "https://npb.jp/bis/2025/stats/idp1_h.html",
+      "teamEarnedRuns": 339,
+      "individualEarnedRuns": 339,
+      "earnedRunsNote": "チーム自責点と個人自責点の合計は一致しない場合がある（公認野球規則9.16(i)）。年度選手成績は個人の合計と照合。",
+      "fieldsChecked": 15,
+      "differences": {}
+    },
+    {
+      "kind": "pitchers",
+      "team": "日本ハム",
+      "players": 28,
+      "url": "https://npb.jp/bis/2025/stats/tmp_p.html",
+      "individualUrl": "https://npb.jp/bis/2025/stats/idp1_f.html",
+      "teamEarnedRuns": 363,
+      "individualEarnedRuns": 364,
+      "earnedRunsNote": "チーム自責点と個人自責点の合計は一致しない場合がある（公認野球規則9.16(i)）。年度選手成績は個人の合計と照合。",
+      "fieldsChecked": 15,
+      "differences": {}
+    },
+    {
+      "kind": "pitchers",
+      "team": "西武",
+      "players": 29,
+      "url": "https://npb.jp/bis/2025/stats/tmp_p.html",
+      "individualUrl": "https://npb.jp/bis/2025/stats/idp1_l.html",
+      "teamEarnedRuns": 426,
+      "individualEarnedRuns": 426,
+      "earnedRunsNote": "チーム自責点と個人自責点の合計は一致しない場合がある（公認野球規則9.16(i)）。年度選手成績は個人の合計と照合。",
+      "fieldsChecked": 15,
+      "differences": {}
+    },
+    {
+      "kind": "pitchers",
+      "team": "東北楽天",
+      "players": 33,
+      "url": "https://npb.jp/bis/2025/stats/tmp_p.html",
+      "individualUrl": "https://npb.jp/bis/2025/stats/idp1_e.html",
+      "teamEarnedRuns": 481,
+      "individualEarnedRuns": 482,
+      "earnedRunsNote": "チーム自責点と個人自責点の合計は一致しない場合がある（公認野球規則9.16(i)）。年度選手成績は個人の合計と照合。",
+      "fieldsChecked": 15,
+      "differences": {}
+    },
+    {
+      "kind": "pitchers",
+      "team": "オリックス",
+      "players": 32,
+      "url": "https://npb.jp/bis/2025/stats/tmp_p.html",
+      "individualUrl": "https://npb.jp/bis/2025/stats/idp1_b.html",
+      "teamEarnedRuns": 483,
+      "individualEarnedRuns": 483,
+      "earnedRunsNote": "チーム自責点と個人自責点の合計は一致しない場合がある（公認野球規則9.16(i)）。年度選手成績は個人の合計と照合。",
+      "fieldsChecked": 15,
+      "differences": {}
+    },
+    {
+      "kind": "pitchers",
+      "team": "ロッテ",
+      "players": 33,
+      "url": "https://npb.jp/bis/2025/stats/tmp_p.html",
+      "individualUrl": "https://npb.jp/bis/2025/stats/idp1_m.html",
+      "teamEarnedRuns": 508,
+      "individualEarnedRuns": 508,
+      "earnedRunsNote": "チーム自責点と個人自責点の合計は一致しない場合がある（公認野球規則9.16(i)）。年度選手成績は個人の合計と照合。",
+      "fieldsChecked": 15,
+      "differences": {}
+    },
+    {
+      "kind": "batters",
+      "team": "巨人",
+      "players": 63,
+      "url": "https://npb.jp/bis/2025/stats/tmb_c.html",
+      "fieldsChecked": 15,
+      "differences": {}
+    },
+    {
+      "kind": "batters",
+      "team": "DeNA",
+      "players": 62,
+      "url": "https://npb.jp/bis/2025/stats/tmb_c.html",
+      "fieldsChecked": 15,
+      "differences": {}
+    },
+    {
+      "kind": "batters",
+      "team": "広島",
+      "players": 59,
+      "url": "https://npb.jp/bis/2025/stats/tmb_c.html",
+      "fieldsChecked": 15,
+      "differences": {}
+    },
+    {
+      "kind": "batters",
+      "team": "阪神",
+      "players": 57,
+      "url": "https://npb.jp/bis/2025/stats/tmb_c.html",
+      "fieldsChecked": 15,
+      "differences": {}
+    },
+    {
+      "kind": "batters",
+      "team": "ヤクルト",
+      "players": 62,
+      "url": "https://npb.jp/bis/2025/stats/tmb_c.html",
+      "fieldsChecked": 15,
+      "differences": {}
+    },
+    {
+      "kind": "batters",
+      "team": "中日",
+      "players": 64,
+      "url": "https://npb.jp/bis/2025/stats/tmb_c.html",
+      "fieldsChecked": 15,
+      "differences": {}
+    },
+    {
+      "kind": "batters",
+      "team": "ソフトバンク",
+      "players": 56,
+      "url": "https://npb.jp/bis/2025/stats/tmb_p.html",
+      "fieldsChecked": 15,
+      "differences": {}
+    },
+    {
+      "kind": "batters",
+      "team": "オリックス",
+      "players": 60,
+      "url": "https://npb.jp/bis/2025/stats/tmb_p.html",
+      "fieldsChecked": 15,
+      "differences": {}
+    },
+    {
+      "kind": "batters",
+      "team": "日本ハム",
+      "players": 56,
+      "url": "https://npb.jp/bis/2025/stats/tmb_p.html",
+      "fieldsChecked": 15,
+      "differences": {}
+    },
+    {
+      "kind": "batters",
+      "team": "東北楽天",
+      "players": 61,
+      "url": "https://npb.jp/bis/2025/stats/tmb_p.html",
+      "fieldsChecked": 15,
+      "differences": {}
+    },
+    {
+      "kind": "batters",
+      "team": "ロッテ",
+      "players": 62,
+      "url": "https://npb.jp/bis/2025/stats/tmb_p.html",
+      "fieldsChecked": 15,
+      "differences": {}
+    },
+    {
+      "kind": "batters",
+      "team": "西武",
+      "players": 63,
+      "url": "https://npb.jp/bis/2025/stats/tmb_p.html",
+      "fieldsChecked": 15,
+      "differences": {}
+    }
+  ],
+  "otherSeasons": {
+    "pitchers": {
+      "baseline": "e108e8da",
+      "non2025PlayersIdentical": true
+    },
+    "batters": {
+      "baseline": "e108e8da",
+      "non2025PlayersIdentical": true
+    }
+  },
+  "issues": [],
+  "integration": {
+    "pitchers": {
+      "before": 361,
+      "after": 361,
+      "matched": 361,
+      "added": 0,
+      "teamCounts": {
+        "巨人": 27,
+        "阪神": 31,
+        "DeNA": 32,
+        "広島": 28,
+        "ヤクルト": 32,
+        "中日": 30,
+        "ソフトバンク": 26,
+        "日本ハム": 28,
+        "ロッテ": 33,
+        "東北楽天": 33,
+        "オリックス": 32,
+        "西武": 29
+      },
+      "previousRowsNotMatched": []
+    },
+    "batters": {
+      "before": 179,
+      "after": 725,
+      "matched": 179,
+      "added": 546,
+      "teamCounts": {
+        "巨人": 63,
+        "阪神": 57,
+        "DeNA": 62,
+        "広島": 59,
+        "ヤクルト": 62,
+        "中日": 64,
+        "ソフトバンク": 56,
+        "日本ハム": 56,
+        "ロッテ": 62,
+        "東北楽天": 61,
+        "オリックス": 60,
+        "西武": 63
+      },
+      "previousRowsNotMatched": []
+    }
+  },
+  "limitations": [
+    "nf3の3・4月は合算区分のまま収録。",
+    "個別投球位置・ボールゾーン指標は未収録。",
+    "検証済み2025係数・球場補正がないためwRC/wRC+は未算出。",
+    "条件別集計・球速・球種の原観測の正確性は全投球の外部実測とは照合していない。"
+  ]
+}

@@ -94,9 +94,13 @@ def preserve_other_years(current, previous):
     for key in ("players", "leagueStats"):
         if key in current:
             current[key] = [row for row in previous.get(key, []) if row["year"] not in years] + current[key]
-    for key, rows in current.get("metricContexts", {}).items():
+    for key in set(previous.get("metricContexts", {})) | set(current.get("metricContexts", {})):
+        rows = current.setdefault("metricContexts", {}).get(key, [])
         current["metricContexts"][key] = [row for row in previous.get("metricContexts", {}).get(key, []) if row["year"] not in years] + rows
     current["years"] = sorted(years | set(previous.get("years", [])))
+    preserved_sources = {year: value for year, value in previous.get("sourceByYear", {}).items() if year not in years}
+    if preserved_sources or current.get("sourceByYear"):
+        current["sourceByYear"] = {**preserved_sources, **current.get("sourceByYear", {})}
     return current
 
 
