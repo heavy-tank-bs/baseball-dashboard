@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>選手成績ビュー</title>
-  <link rel="stylesheet" href="./styles.css?v=20261028-nf3">
+  <link rel="stylesheet" href="./styles.css?v=20261028-compare">
 </head>
 <body>
   <div class="site-shell">
@@ -41,7 +41,10 @@
           <a id="compareBackLink" class="action-link secondary compare-back-link" href="./annual.html">年度別成績へ戻る</a>
         </div>
         <div id="modeToggleGroup" class="compare-mode-group"></div>
-        <div id="metricToggleGroup" class="compare-toggle-group"></div>
+        <details id="metricControls" class="metric-controls is-hidden">
+          <summary>表示する指標を選ぶ</summary>
+          <div id="metricToggleGroup" class="compare-toggle-group"></div>
+        </details>
       </section>
 
       <section id="seasonPanel" class="panel-block is-hidden">
@@ -53,13 +56,25 @@
       </section>
 
       <section id="comparePanel" class="panel-block">
-        <div class="section-head compare-head">
-          <h2>前年比較</h2>
+        <div class="section-head comparison-heading">
+          <div><h2>前年比較</h2><p class="comparison-help">年度ごとの数値と、前年からの変化を確認できます。</p></div>
           <span id="compareMetricCount" class="result-count">0項目</span>
         </div>
-        <div id="compareSeasonGrid" class="season-meta-grid"></div>
+        <div class="comparison-toolbar">
+          <label class="comparison-year-picker"><span>比較する年度</span><select id="comparisonYearSelect" class="field-select"></select></label>
+          <div class="comparison-presets" role="group" aria-label="比較指標の表示範囲">
+            <button type="button" data-compare-preset="main" aria-pressed="true">主要指標</button>
+            <button type="button" data-compare-preset="all" aria-pressed="false">すべて</button>
+          </div>
+          <div class="comparison-views" role="group" aria-label="前年比較の表示形式">
+            <button type="button" data-compare-view="table" aria-pressed="true">一覧表</button>
+            <button type="button" data-compare-view="bars" aria-pressed="false">棒グラフ</button>
+          </div>
+        </div>
+        <div id="compareSeasonGrid" class="comparison-season-strip"></div>
+        <div id="compareCardGrid" class="comparison-results" aria-live="polite"></div>
         <p id="historicalCompareNote" class="historical-source-note is-hidden"></p>
-        <div id="compareCardGrid" class="comparison-card-grid"></div>
+        <p class="comparison-help comparison-footnote">前年差は後の年度 − 前の年度。色は数値の増減を示します。％表示の指標はポイント差です。「—」は比較に必要なデータがない項目です。</p>
       </section>
 
       <section id="monthlyPanel" class="panel-block is-hidden">
@@ -75,6 +90,6 @@
   </div>
 
   <script src="./uniform_numbers.js?v=20260711"></script>
-  <script defer src="./compare.js?v=20261028-nf3"></script>
+  <script defer src="./compare.js?v=20261028-compare"></script>
 </body>
 </html>

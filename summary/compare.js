@@ -112,6 +112,10 @@ const state = {
   currentRow: null,
   previousRow: null,
   activeMetricKeys: [],
+  comparisonMetricKeys: null,
+  comparisonYear: "",
+  comparisonPreset: "main",
+  comparisonView: "table",
   activeMode: "compare",
   embedded: false,
   error: "",
@@ -129,6 +133,8 @@ const els = {
   compareBatterTypeLink: document.getElementById("compareBatterTypeLink"),
   modeToggleGroup: document.getElementById("modeToggleGroup"),
   metricToggleGroup: document.getElementById("metricToggleGroup"),
+  metricControls: document.getElementById("metricControls"),
+  comparisonYearSelect: document.getElementById("comparisonYearSelect"),
   seasonPanel: document.getElementById("seasonPanel"),
   seasonMetricCount: document.getElementById("seasonMetricCount"),
   seasonDetailWrap: document.getElementById("seasonDetailWrap"),
@@ -206,6 +212,7 @@ function metricMap(config) {
 
 function metricValue(metric, row) {
   if (!row) return null;
+  if (["ops", "isoDiscipline", "isoPower"].includes(metric.key) && row.atBats != null && Number(row.atBats) === 0) return null;
   const value = row[metric.key];
   if (value === null || value === undefined || value === "") return null;
   return value;
@@ -268,12 +275,14 @@ function formatSpeedValue(value) {
 }
 
 function formatMetricDelta(metric, delta) {
-  if (delta === null || delta === undefined) return "差分なし";
+  if (delta === null || delta === undefined || !Number.isFinite(delta)) return "—";
   if (metric.kind === "innings") return formatSignedInnings(delta);
+  const digits = metric.digits ?? (metric.kind === "number" ? 0 : 2);
+  delta = Number(delta.toFixed(digits));
   const sign = delta > 0 ? "+" : "";
   if (metric.kind === "number") return `${sign}${delta.toFixed(0)}`;
   if (metric.kind === "average") return `${sign}${delta.toFixed(metric.digits ?? 3)}`;
-  if (metric.kind === "percent") return `${sign}${delta.toFixed(metric.digits ?? 1)}%`;
+  if (metric.kind === "percent") return `${sign}${delta.toFixed(metric.digits ?? 1)}pt`;
   return `${sign}${delta.toFixed(metric.digits ?? 2)}`;
 }
 
@@ -377,8 +386,8 @@ function renderHistoricalAnnualSummary(row) {
 
 function renderHistoricalSourcePanel(row) {
   const historical = state.historical;
-  if (historical.error) return `<article class="historical-source-card"><h3>2025年の条件別成績</h3><p class="section-empty">追加データを読み込めませんでした。${sourceLink("https://nf3.sakura.ne.jp/2025/", "nf3 の2025年ページを開く")}</p></article>`;
-  if (!historical.loaded) return '<article class="historical-source-card" aria-busy="true"><h3>2025年の条件別成績</h3><p class="section-empty">nf3 の条件別成績を読み込み中…</p></article>';
+  if (historical.error) return '<article class="historical-source-card"><h3>2025年の条件別成績</h3><p class="section-empty">条件別成績を読み込めませんでした。ページを再読み込みしてください。</p></article>';
+  if (!historical.loaded) return '<article class="historical-source-card" aria-busy="true"><h3>2025年の条件別成績</h3><p class="section-empty">条件別成績を読み込み中…</p></article>';
   const player = findHistoricalPlayer(historical.payload?.players || [], row);
   if (!player) return '<article class="historical-source-card"><h3>2025年の条件別成績</h3><p class="section-empty">この球団・選手に対応する追加データは収録されていません。</p></article>';
   const tables = historicalTables(player);
@@ -391,7 +400,7 @@ function renderHistoricalSourcePanel(row) {
   });
   return `<article class="historical-source-card">
     <div class="section-head"><h3>2025年の条件別成績</h3><span class="result-count">${tables.length}表</span></div>
-    <p class="historical-source-note">出典：${sourceLink(player.sourceUrl, "nf3 個人成績")}。元サイトの表記・集計定義を使用しています。球種別の Whiff% などは、このサイトの指標と分母が異なる場合があります。</p>
+    <p class="historical-source-note">球種別の Whiff% は、スイング数に対する空振りの割合です。</p>
     ${tables.length ? `<label class="historical-table-picker"><span>表示する成績</span><select id="historicalTableSelect" class="field-select">${[...groups].map(([group, items]) => `<optgroup label="${escapeHtml(group)}">${items.map(({ table, index }) => `<option value="${index}"${index === selectedIndex ? " selected" : ""}>${escapeHtml(table.title)}</option>`).join("")}</optgroup>`).join("")}</select></label>` : ""}
     <div id="historicalTableContent" aria-live="polite">${renderHistoricalTable(tables[selectedIndex])}</div>
   </article>`;
@@ -416,46 +425,90 @@ async function ensureHistoricalData() {
   }
 }
 
+function seasonPlayerId(row, config) {
+  return `${row?.[config.idKey] ?? ""}`.trim();
+}
+
+function officialPlayerId(row) {
+  return `${row?.npbUrl ?? ""}`.match(/\/bis\/players\/(\d+)\.html(?:[?#].*)?$/)?.[1] || "";
+}
+
+function rowTeamNames(row) {
+  return [...new Set([row?.team, ...(row?.teams || []), ...(row?.sourceTeams || [])]
+    .filter(Boolean).map(normalizeHistoricalTeam))];
+}
+
+function preferSeasonRow(candidates, currentRow, requestedTeam = "") {
+  const preferredTeams = [requestedTeam, currentRow?.team].filter(Boolean).map(normalizeHistoricalTeam);
+  for (const team of preferredTeams) {
+    const exact = candidates.find((row) => normalizeHistoricalTeam(row.team) === team);
+    if (exact) return exact;
+  }
+  const currentTeams = rowTeamNames(currentRow);
+  return candidates.find((row) => rowTeamNames(row).some((team) => currentTeams.includes(team)))
+    || candidates.find((row) => currentRow?.league && row.league === currentRow.league)
+    || candidates[0] || null;
+}
+
+function findPlayerSeasonRow(rows, currentRow, year, config, requestedTeam = "") {
+  if (!currentRow) return null;
+  const seasonRows = rows.filter((row) => !year || `${row.year}` === `${year}`);
+  const playerId = seasonPlayerId(currentRow, config);
+  const npbId = officialPlayerId(currentRow);
+
+  // Positive identities take precedence over display names, including renamed players.
+  if (playerId) {
+    const exactIds = seasonRows.filter((row) => seasonPlayerId(row, config) === playerId);
+    if (exactIds.length) return preferSeasonRow(exactIds, currentRow, requestedTeam);
+  }
+  if (npbId) {
+    const exactProfiles = seasonRows.filter((row) => officialPlayerId(row) === npbId
+      && (!playerId || !seasonPlayerId(row, config) || seasonPlayerId(row, config) === playerId));
+    if (exactProfiles.length) return preferSeasonRow(exactProfiles, currentRow, requestedTeam);
+  }
+  if (!currentRow.player) return null;
+
+  const namesakes = rows.filter((row) => rowMatchesPlayerName(row, currentRow.player));
+  const candidates = seasonRows.filter((row) => rowMatchesPlayerName(row, currentRow.player)
+    && (!playerId || !seasonPlayerId(row, config) || seasonPlayerId(row, config) === playerId)
+    && (!npbId || !officialPlayerId(row) || officialPlayerId(row) === npbId));
+  if (!candidates.length) return null;
+
+  const currentTeams = [...new Set([requestedTeam, ...rowTeamNames(currentRow)]
+    .filter(Boolean).map(normalizeHistoricalTeam))];
+  const sameClub = candidates.filter((row) => rowTeamNames(row).some((team) => currentTeams.includes(team)));
+  const distinctIds = (items, getId) => new Set(items.map(getId).filter(Boolean)).size;
+  if (sameClub.length) {
+    if (distinctIds(sameClub, (row) => seasonPlayerId(row, config)) > 1
+      || distinctIds(sameClub, officialPlayerId) > 1) return null;
+    return preferSeasonRow(sameClub, currentRow, requestedTeam);
+  }
+
+  // A shared surname can represent different players (e.g. the two オスナ players).
+  // Without a club match or positive identity, never infer a transfer between them.
+  if (distinctIds(namesakes, (row) => seasonPlayerId(row, config)) > 1
+    || distinctIds(namesakes, officialPlayerId) > 1) return null;
+  return preferSeasonRow(candidates, currentRow, requestedTeam);
+}
+
 function findCurrentRow(rows, params, config) {
   const year = params.get("year") || "";
   const player = params.get("player") || "";
   const team = params.get("team") || "";
   const playerId = params.get("playerId") || "";
-  const scopedRows = rows.filter((row) => {
-    if (year && row.year !== year) return false;
-    if (!rowMatchesPlayerName(row, player)) return false;
-    return true;
-  });
-  if (playerId) {
-    const byId = scopedRows.find((row) => (row[config.idKey] || "") === playerId && (!team || row.team === team));
-    if (byId) return byId;
+  const scopedRows = rows.filter((row) => !year || `${row.year}` === year);
+  if (player || playerId) {
+    return findPlayerSeasonRow(rows, { player, team, [config.idKey]: playerId }, year, config, team);
   }
-  if (team) {
-    const byTeam = scopedRows.find((row) => row.team === team);
-    if (byTeam) return byTeam;
-  }
-  return scopedRows[0] || null;
+  return scopedRows.find((row) => team && normalizeHistoricalTeam(row.team) === normalizeHistoricalTeam(team))
+    || scopedRows[0] || null;
 }
 
 function findPreviousRow(rows, currentRow, params, config) {
   if (!currentRow) return null;
-  const previousYear = `${Math.max(Number.parseInt(currentRow.year || "0", 10) - 1, 0)}`;
-  if (!previousYear || previousYear === "0") return null;
-  const playerId = currentRow[config.idKey] || params.get("playerId") || "";
-  const candidates = rows.filter((row) => row.year === previousYear && rowMatchesPlayerName(row, currentRow.player));
-  if (!candidates.length) return null;
-  if (playerId) {
-    const byId = candidates.find((row) => (row[config.idKey] || "") === playerId && row.team === currentRow.team)
-      || candidates.find((row) => (row[config.idKey] || "") === playerId && row.league === currentRow.league)
-      || candidates.find((row) => (row[config.idKey] || "") === playerId);
-    if (byId) return byId;
-  }
-  const requestedTeam = params.get("team") || currentRow.team || "";
-  if (requestedTeam) {
-    const byTeam = candidates.find((row) => row.team === requestedTeam);
-    if (byTeam) return byTeam;
-  }
-  return candidates[0];
+  const previousYear = Number.parseInt(currentRow.year, 10) - 1;
+  if (!Number.isFinite(previousYear) || previousYear <= 0) return null;
+  return findPlayerSeasonRow(rows, currentRow, `${previousYear}`, config, params.get("team") || "");
 }
 
 function summaryItems(config, row) {
@@ -1591,7 +1644,7 @@ function renderSeasonPanel() {
   if (!dashboard && state.currentRow.year === "2025") {
     els.seasonMetricCount.textContent = "2025年度集計";
     els.seasonDetailWrap.innerHTML = `${renderHistoricalAnnualSummary(state.currentRow)}
-      <p class="historical-source-note">2025年は ${sourceLink("https://nf3.sakura.ne.jp/2025/", "nf3")} の年度・条件別集計を収録しています。一球ごとの投球位置データは未収録です。${state.config === TYPE_CONFIG.batter ? "wRC・wRC+ は年度係数未収録のため未算出です。" : ""}</p>
+      <p class="historical-source-note">一球ごとの投球位置データは未収録です。${state.config === TYPE_CONFIG.batter ? "wRC・wRC+ は年度係数未収録のため未算出です。" : ""}</p>
       ${renderHistoricalSourcePanel(state.currentRow)}`;
     void ensureHistoricalData();
     return;
@@ -1618,6 +1671,7 @@ function renderModeToggles() {
           type="button"
           class="compare-mode-button${state.activeMode === mode ? " active" : ""}"
           data-mode="${mode}"
+          aria-pressed="${state.activeMode === mode}"
         >
           ${escapeHtml(config.label)}
         </button>
@@ -1629,20 +1683,24 @@ function renderModeToggles() {
       const mode = button.dataset.mode || "compare";
       state.activeMode = mode;
       renderModeToggles();
+      renderMetricToggles();
+      renderHeader();
       renderPanels();
     });
   });
 }
 
 function renderMetricToggles() {
+  const keys = state.activeMode === "compare" ? comparisonMetricKeys() : state.activeMetricKeys;
   els.metricToggleGroup.innerHTML = state.config.metrics
     .map((metric) => {
-      const active = state.activeMetricKeys.includes(metric.key);
+      const active = keys.includes(metric.key);
       return `
         <button
           type="button"
           class="compare-toggle${active ? " active" : ""}"
           data-metric-key="${metric.key}"
+          aria-pressed="${active}"
         >
           ${escapeHtml(metric.label)}
         </button>
@@ -1653,55 +1711,90 @@ function renderMetricToggles() {
     button.addEventListener("click", () => {
       const key = button.dataset.metricKey || "";
       if (!key) return;
-      if (state.activeMetricKeys.includes(key)) {
-        state.activeMetricKeys = state.activeMetricKeys.filter((item) => item !== key);
-      } else {
-        state.activeMetricKeys = [...state.activeMetricKeys, key];
-      }
+      const selected = state.activeMode === "compare" ? comparisonMetricKeys() : state.activeMetricKeys;
+      const next = selected.includes(key) ? selected.filter((item) => item !== key) : [...selected, key];
+      if (state.activeMode === "compare") {
+        state.comparisonMetricKeys = next;
+        state.comparisonPreset = "custom";
+      } else state.activeMetricKeys = next;
       renderMetricToggles();
       renderPanels();
     });
   });
 }
 
+function comparisonMetricKeys() {
+  return state.comparisonMetricKeys ?? state.config.metrics.filter((metric) => metric.default).map((metric) => metric.key);
+}
+
+function availableComparisonYears() {
+  if (!state.currentRow) return [];
+  return [...new Set([state.currentRow.year, ...state.rows.map((row) => row.year)])]
+    .filter((year) => findPlayerSeasonRow(state.rows, state.currentRow, year, state.config) || year === state.currentRow.year)
+    .sort((a, b) => Number(b) - Number(a));
+}
+
+function comparisonPair(year = state.comparisonYear) {
+  const current = !year || year === state.currentRow?.year ? state.currentRow
+    : findPlayerSeasonRow(state.rows, state.currentRow, year, state.config);
+  const previous = current ? findPreviousRow(state.rows, current, new URLSearchParams(), state.config) : null;
+  return { current, previous: previous || (current === state.currentRow ? state.previousRow : null) };
+}
+
+function comparisonSeasonMarkup(row, year) {
+  const detail = !row ? "成績データなし" : state.config === TYPE_CONFIG.pitcher
+    ? `${row.team} · ${row.games}試合 · ${formatInningsFromOuts(row.inningsOuts)}回`
+    : `${row.team} · ${row.games}試合 · ${row.plateAppearances}打席`;
+  return `<div class="comparison-season"><strong>${escapeHtml(year)}<small> 年</small></strong><span>${escapeHtml(detail)}</span></div>`;
+}
+
+function comparisonMetrics() {
+  const selected = new Set(comparisonMetricKeys());
+  return state.config.metrics.filter((metric) => selected.has(metric.key));
+}
+
+function comparisonValue(metric, row) {
+  return numericMetricValue(metric, row) === null ? "—" : formatMetricValue(metric, row);
+}
+
+function differenceMarkup(metric, previous, current) {
+  const before = numericMetricValue(metric, previous);
+  const after = numericMetricValue(metric, current);
+  const delta = before === null || after === null ? null : after - before;
+  const rounded = delta === null ? null : Number(delta.toFixed(metric.digits ?? (metric.kind === "innings" || metric.kind === "number" ? 0 : 2)));
+  const tone = rounded > 0 ? "positive" : rounded < 0 ? "negative" : "flat";
+  return `<span class="comparison-difference comparison-difference--${tone}">${escapeHtml(formatMetricDelta(metric, delta))}</span>`;
+}
+
+function comparisonBarMarkup(metric, previous, current) {
+  const values = [numericMetricValue(metric, previous), numericMetricValue(metric, current)];
+  const known = values.filter((value) => value !== null);
+  const min = Math.min(0, ...known);
+  const max = Math.max(0, ...known);
+  const range = max - min || 1;
+  const line = (row, index) => {
+    const value = values[index];
+    const left = value === null ? 0 : 100 * (Math.min(0, value) - min) / range;
+    const width = value === null ? 0 : 100 * Math.abs(value) / range;
+    return `<div class="comparison-bar-line${index ? " comparison-bar-line--current" : ""}"><span>${escapeHtml(row?.year || Number(current.year) - 1)}</span><div class="comparison-bar-track" aria-hidden="true"><i class="comparison-bar-fill" style="left:${left.toFixed(3)}%;width:${width.toFixed(3)}%"></i><i class="comparison-bar-zero" style="left:${(100 * -min / range).toFixed(3)}%"></i></div><strong>${escapeHtml(comparisonValue(metric, row))}</strong></div>`;
+  };
+  return `<article class="comparison-bar-card"><div class="comparison-bar-head"><h3>${escapeHtml(metric.label)}</h3>${differenceMarkup(metric, previous, current)}</div>${line(previous, 0)}${line(current, 1)}</article>`;
+}
+
 function compareCardsMarkup() {
   if (!state.currentRow) {
     return `<div class="section-empty compare-empty">${escapeHtml(state.error || "選手データを読み込めませんでした。")}</div>`;
   }
-  if (!state.activeMetricKeys.length) {
+  if (!comparisonMetricKeys().length) {
     return '<div class="section-empty compare-empty">比較したい指標を選択してください。</div>';
   }
-  const metricsByKey = metricMap(state.config);
-  return state.activeMetricKeys
-    .map((key) => metricsByKey[key])
-    .filter(Boolean)
-    .map((metric) => {
-      const leftValue = numericMetricValue(metric, state.previousRow);
-      const rightValue = numericMetricValue(metric, state.currentRow);
-      const delta = leftValue === null || rightValue === null ? null : rightValue - leftValue;
-      const direction = comparisonDirection(metric, delta);
-      const deltaLabel = formatMetricDelta(metric, delta);
-      const leftLabel = seasonLabel(state.previousRow, "前年データなし");
-      const rightLabel = seasonLabel(state.currentRow);
-      return `
-        <article class="compare-card">
-          <span>${escapeHtml(metric.label)}</span>
-          <div class="compare-values">
-            <div class="compare-value-block">
-              <small class="compare-year-label">${escapeHtml(leftLabel)}</small>
-              <strong>${escapeHtml(formatMetricValue(metric, state.previousRow))}</strong>
-            </div>
-            <span class="compare-arrow compare-arrow--${direction}">${direction === "up" ? "↗" : direction === "down" ? "↘" : "→"}</span>
-            <div class="compare-value-block">
-              <small class="compare-year-label">${escapeHtml(rightLabel)}</small>
-              <strong>${escapeHtml(formatMetricValue(metric, state.currentRow))}</strong>
-            </div>
-          </div>
-          <p class="compare-delta compare-delta--${direction}">${escapeHtml(deltaLabel)}</p>
-        </article>
-      `;
-    })
-    .join("");
+  const { previous, current } = comparisonPair();
+  if (!current) return '<p class="section-empty">この年度の成績はありません。</p>';
+  const metrics = comparisonMetrics();
+  const missingNote = previous ? "" : '<p class="comparison-help comparison-missing">前年の成績がないため、前年差は表示できません。</p>';
+  if (state.comparisonView === "bars") return `${missingNote}<div class="comparison-bars">${metrics.map((metric) => comparisonBarMarkup(metric, previous, current)).join("")}</div>`;
+  const previousYear = Number(current.year) - 1;
+  return `${missingNote}<div class="comparison-table-scroll" tabindex="0" aria-label="前年比較の成績表。横にスクロールできます"><table class="comparison-table"><thead><tr><th scope="col">指標</th><th scope="col">${escapeHtml(previousYear)}年</th><th scope="col">${escapeHtml(current.year)}年</th><th scope="col">前年差</th></tr></thead><tbody>${metrics.map((metric) => `<tr><th scope="row">${escapeHtml(metric.label)}</th><td>${escapeHtml(comparisonValue(metric, previous))}</td><td>${escapeHtml(comparisonValue(metric, current))}</td><td>${differenceMarkup(metric, previous, current)}</td></tr>`).join("")}</tbody></table></div>`;
 }
 
 function chartSvg(metric, splits) {
@@ -1848,16 +1941,21 @@ function renderMonthlyCharts(splits) {
 }
 
 function renderComparePanel() {
-  els.compareMetricCount.textContent = `${state.activeMetricKeys.length}項目`;
-  els.compareSeasonGrid.innerHTML = [
-    renderSeasonCard(state.previousRow, state.config, state.previousRow ? seasonLabel(state.previousRow) : "前年データなし", "前年データがありません。"),
-    renderSeasonCard(state.currentRow, state.config, seasonLabel(state.currentRow, "対象年度")),
-  ].join("");
+  const { previous, current } = comparisonPair();
+  const year = current?.year || state.currentRow?.year || "";
+  els.compareMetricCount.textContent = `${comparisonMetrics().length}項目`;
+  const years = availableComparisonYears();
+  const pairedYears = years.filter((value) => comparisonPair(value).previous);
+  els.comparisonYearSelect.innerHTML = (pairedYears.length ? pairedYears : years).map((value) => `<option value="${escapeHtml(value)}"${value === year ? " selected" : ""}>${escapeHtml(Number(value) - 1)} → ${escapeHtml(value)}</option>`).join("");
+  els.compareSeasonGrid.innerHTML = current
+    ? `${comparisonSeasonMarkup(previous, Number(year) - 1)}<span class="comparison-season-arrow" aria-hidden="true">→</span>${comparisonSeasonMarkup(current, year)}` : "";
   els.compareCardGrid.innerHTML = compareCardsMarkup();
-  const historicalRow = [state.previousRow, state.currentRow].find((row) => row?.year === "2025");
+  document.querySelectorAll("[data-compare-preset]").forEach((button) => button.setAttribute("aria-pressed", `${button.dataset.comparePreset === state.comparisonPreset}`));
+  document.querySelectorAll("[data-compare-view]").forEach((button) => button.setAttribute("aria-pressed", `${button.dataset.compareView === state.comparisonView}`));
+  const historicalRow = [previous, current].find((row) => row?.year === "2025");
   els.historicalCompareNote.classList.toggle("is-hidden", !historicalRow);
   els.historicalCompareNote.innerHTML = historicalRow
-    ? `2025年は ${sourceLink("https://nf3.sakura.ne.jp/2025/", "nf3")} の集計を補充しています。<a href="${escapeHtml(historicalPlayerHref(historicalRow))}" target="${state.embedded ? "_top" : "_self"}">2025年の基本成績・条件別成績を見る</a>。${state.config === TYPE_CONFIG.batter ? "wRC・wRC+ は年度係数未収録のため比較対象外です。" : ""}`
+    ? `<a href="${escapeHtml(historicalPlayerHref(historicalRow))}" target="${state.embedded ? "_top" : "_self"}">2025年の基本成績・条件別成績を見る</a>${state.config === TYPE_CONFIG.batter ? "。wRC・wRC+ は年度係数未収録のため比較対象外です。" : ""}`
     : "";
 }
 
@@ -1875,13 +1973,14 @@ function renderPanels() {
   const showSeason = state.activeMode === "season";
   const showCompare = state.activeMode === "compare";
   const showMonthly = state.activeMode === "monthly";
-  els.metricToggleGroup.classList.toggle("is-hidden", showSeason);
+  els.metricControls.classList.toggle("is-hidden", showSeason);
+  if (showMonthly) els.metricControls.open = true;
   els.seasonPanel.classList.toggle("is-hidden", !showSeason);
   els.comparePanel.classList.toggle("is-hidden", !showCompare);
   els.monthlyPanel.classList.toggle("is-hidden", !showMonthly);
-  renderSeasonPanel();
-  renderComparePanel();
-  renderMonthlyPanel();
+  if (showSeason) renderSeasonPanel();
+  if (showCompare) renderComparePanel();
+  if (showMonthly) renderMonthlyPanel();
   postEmbedHeight();
 }
 
@@ -1923,6 +2022,15 @@ function renderHeader() {
   els.compareDescription.textContent = previousRow
     ? `${seasonLabel(previousRow)}との比較、${seasonAvailable ? "年度成績" : "年度成績データなし"}、${monthlyAvailable ? `${seasonLabel(currentRow)}の月別推移` : `${seasonLabel(currentRow)}の月別データなし`}を切り替えて表示できます。`
     : `${seasonLabel(currentRow)}の成績を表示しています。${seasonAvailable ? "年度成績を表示できます。" : "この年度の一球データ集計はありません。"}${monthlyAvailable ? "月別推移も表示できます。" : "この年度の月別データはありません。"}`;
+  if (state.activeMode === "compare") {
+    const pair = comparisonPair();
+    if (pair.current) {
+      els.compareSubtitle.textContent = `${Number(pair.current.year) - 1} → ${pair.current.year}年度 ${state.config.label}`;
+      els.compareDescription.textContent = pair.previous
+        ? `${Number(pair.current.year) - 1}年と${pair.current.year}年の数値・前年差を表示しています。`
+        : `${pair.current.year}年の成績を表示しています。前年の成績はありません。`;
+    }
+  }
   document.title = `${currentRow.player} | 成績ビュー`;
 }
 
@@ -1931,7 +2039,7 @@ async function init() {
   state.embedded = params.get("embed") === "1";
   document.body.classList.toggle("compare-embed", state.embedded);
   state.config = TYPE_CONFIG[params.get("type")] || TYPE_CONFIG.pitcher;
-  state.activeMode = "season";
+  state.activeMode = MODE_CONFIG[params.get("mode")] ? params.get("mode") : "season";
   state.activeMetricKeys = [];
 
   try {
@@ -1941,6 +2049,10 @@ async function init() {
     state.rows = payload.players || [];
     state.currentRow = findCurrentRow(state.rows, params, state.config);
     state.previousRow = findPreviousRow(state.rows, state.currentRow, params, state.config);
+    state.comparisonYear = state.currentRow?.year || "";
+    if (state.currentRow && !state.previousRow) {
+      state.comparisonYear = availableComparisonYears().find((year) => comparisonPair(year).previous) || state.currentRow.year;
+    }
     if (!state.currentRow) {
       state.error = "リンク先の選手データが見つかりませんでした。";
     }
@@ -1952,6 +2064,28 @@ async function init() {
   renderModeToggles();
   renderMetricToggles();
   renderPanels();
+  els.comparisonYearSelect.addEventListener("change", (event) => {
+    state.comparisonYear = event.target.value;
+    renderHeader();
+    renderComparePanel();
+    postEmbedHeight();
+  });
+  document.querySelectorAll("[data-compare-preset]").forEach((button) => {
+    button.addEventListener("click", () => {
+      state.comparisonPreset = button.dataset.comparePreset;
+      state.comparisonMetricKeys = state.config.metrics.filter((metric) => state.comparisonPreset === "all" || metric.default).map((metric) => metric.key);
+      renderMetricToggles();
+      renderComparePanel();
+      postEmbedHeight();
+    });
+  });
+  document.querySelectorAll("[data-compare-view]").forEach((button) => {
+    button.addEventListener("click", () => {
+      state.comparisonView = button.dataset.compareView;
+      renderComparePanel();
+      postEmbedHeight();
+    });
+  });
   els.seasonDetailWrap.addEventListener("change", (event) => {
     if (event.target.id !== "historicalTableSelect") return;
     state.historical.selectedTable = Number(event.target.value) || 0;

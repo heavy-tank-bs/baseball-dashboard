@@ -50,6 +50,8 @@
 !/scripts/verify_nf3_2025.py
 !/scripts/test_nf3_integration.py
 !/scripts/test_nf3_frontend.cjs
+!/scripts/test_previous_year_identity.js
+!/scripts/test_comparison_ui.js
 !/scripts/test_nf3_pitchers.py
 !/scripts/test_nf3_batters.py
 !/summary/

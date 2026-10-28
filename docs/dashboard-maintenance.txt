@@ -158,3 +158,16 @@ python scripts/test_nf3_integration.py
 node scripts/test_nf3_frontend.cjs
 python scripts/build_github_pages.py
 verify_nf3_2025.pyの既定baselineは今回更新直前のe108e8da。後日の別年度更新では--baselineに適切な更新前コミットを指定する。
+
+前年比較の表示更新（2026-10-29）
+2025年データの出典名・外部リンクを画面から削除。収集・検証に必要な内部の出典メタデータは保持。
+前年比較は「前年・対象年度・前年差」の一覧を初期表示し、主要指標・すべて・個別選択、一覧表・棒グラフを切り替える。
+比較年度は年度・月別の対象年度と別に保持。2025年から開いたときも、その選手の記録があれば2025→2026を選ぶ。
+mode=compare付きURLで比較へ直接移動できる。通常の個人成績リンクでは年度成績を初期表示する。
+findPlayerSeasonRowはSportsNavi ID、NPBプロフィール、名前・球団で年度間を照合。登録名変更に対応し、同名別人の推測結合を避ける。
+ヤクルトのオスナの2026年投手登板が、ソフトバンクの別選手の2025年投手成績と結び付く問題を修正。
+率の前年差は数値差、%表示の指標はpt。投球回はアウト数で差を計算。色は数値の増減を示し、成績の評価はしない。
+欠損項目は「—」。打数0のOPS・IsoD・IsoPを比較できる数値として使わない。前年記録がない場合はその旨を表示する。
+棒グラフは各指標で両年度の共通ゼロ基準を使う。負値・ゼロ・欠損を区別する。
+成績データJSONの変更なし。非表示の年度成績表は比較モードで先読みしない。
+検証: node scripts/test_previous_year_identity.js、node scripts/test_comparison_ui.js、node scripts/test_nf3_frontend.cjs、node scripts/test_compare_aggregates.js、node scripts/test_transfer_selection.js。

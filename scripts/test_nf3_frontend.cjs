@@ -32,9 +32,15 @@ function loadPage(file, exports) {
   return { api: context.api, element, fetchCalls };
 }
 
+function assertNoVisibleSourceBranding(markup, label) {
+  const visibleText = markup.replace(/<[^>]*>/g, "");
+  assert.doesNotMatch(visibleText, /nf3/i, `${label} must not display a source brand`);
+  assert.doesNotMatch(markup, /href\s*=\s*["'][^"']*nf3\.sakura\.ne\.jp/i, `${label} must not link to the source site`);
+}
+
 async function main() {
   const { api, element, fetchCalls } = loadPage("compare.js", [
-    "state", "TYPE_CONFIG", "findHistoricalPlayer", "renderHistoricalTable", "sourceLink",
+    "state", "TYPE_CONFIG", "findHistoricalPlayer", "renderHistoricalTable", "renderHistoricalSourcePanel", "sourceLink",
     "renderSeasonPanel", "renderComparePanel", "ensureHistoricalData", "aggregateBatterBucket", "aggregatePitcherBucket", "monthlySplits",
   ]);
   const sameNamePlayers = [
@@ -59,12 +65,27 @@ async function main() {
   api.state.currentRow = { year: "2025", team: "オリックス", player: "山田太郎", games: 80, plateAppearances: 300, atBats: 260, hits: 78, battingAverage: .3, ops: .8, wrc: null, wrcPlus: null };
   api.state.historical.loaded = true;
   api.state.historical.payload = { players: [{ ...sameNamePlayers[0], tables: [table] }] };
+  const historicalMarkup = api.renderHistoricalSourcePanel(api.state.currentRow);
+  assert.ok(historicalMarkup.includes("historicalTableSelect"));
+  assertNoVisibleSourceBranding(historicalMarkup, "loaded historical panel");
   api.renderSeasonPanel();
   assert.ok(element("seasonDetailWrap").innerHTML.includes("2025年度の基本成績"));
   assert.ok(element("seasonDetailWrap").innerHTML.includes("年度係数未収録のため未算出"));
   assert.ok(element("seasonDetailWrap").innerHTML.includes("historicalTableSelect"));
   assert.ok(element("seasonDetailWrap").innerHTML.includes("月別成績 &lt;test&gt;"));
+  assertNoVisibleSourceBranding(element("seasonDetailWrap").innerHTML, "season panel");
   assert.equal(fetchCalls.length, 0);
+
+  api.state.historical.loaded = false;
+  const loadingMarkup = api.renderHistoricalSourcePanel(api.state.currentRow);
+  assert.ok(loadingMarkup.includes('aria-busy="true"'));
+  assertNoVisibleSourceBranding(loadingMarkup, "loading historical panel");
+  api.state.historical.error = "network unavailable";
+  const errorMarkup = api.renderHistoricalSourcePanel(api.state.currentRow);
+  assert.ok(errorMarkup.includes("読み込めませんでした"));
+  assertNoVisibleSourceBranding(errorMarkup, "failed historical panel");
+  api.state.historical.error = null;
+  api.state.historical.loaded = true;
 
   const monthly = api.aggregateBatterBucket([{ ...api.state.currentRow, month: "2025-04", wrc: null, wrcPlus: null }], { key: "04", label: "4月" });
   assert.equal(monthly.wrc, null);
@@ -88,7 +109,17 @@ async function main() {
   api.renderComparePanel();
   assert.ok(element("historicalCompareNote").innerHTML.includes("2025年の基本成績・条件別成績を見る"));
   assert.ok(element("historicalCompareNote").innerHTML.includes("year=2025"));
-  assert.ok(element("compareCardGrid").innerHTML.includes(">-</strong>"));
+  assertNoVisibleSourceBranding(element("historicalCompareNote").innerHTML, "comparison note");
+  const comparisonMarkup = element("compareCardGrid").innerHTML;
+  assertNoVisibleSourceBranding(comparisonMarkup, "comparison panel");
+  const comparisonRows = comparisonMarkup.match(/<tr\b[^>]*>[\s\S]*?<\/tr>/g) || [];
+  const missingMetricRow = comparisonRows.find((row) => /<th\b[^>]*>\s*wRC\+\s*<\/th>/.test(row));
+  assert.ok(missingMetricRow, "the comparison table must retain the unavailable wRC+ metric");
+  const missingMetricCells = [...missingMetricRow.matchAll(/<td\b[^>]*>([\s\S]*?)<\/td>/g)]
+    .map((match) => match[1].replace(/<[^>]*>/g, "").trim());
+  assert.equal(missingMetricCells[0], "—", "unavailable previous-year wRC+ must not become zero");
+  assert.equal(missingMetricCells[1], "—", "unavailable current-year wRC+ must not become zero");
+  assert.match(missingMetricCells[2], /—/, "unavailable wRC+ must not produce a numeric difference");
 
   api.state.historical.loaded = false;
   api.state.historical.loading = false;
@@ -111,10 +142,24 @@ async function main() {
   const columnCounts = bodyRows.map((row) => (row.match(/<td>/g) || []).length);
   assert.equal(columnCounts[0], columnCounts[1], "mixed pitch count coverage must preserve table columns");
   annual.api.renderNote();
-  assert.ok(annual.element("annualNote").innerHTML.includes("nf3"));
+  assert.ok(annual.element("annualNote").innerHTML.includes("2025年度の条件別成績は"));
+  assert.ok(annual.element("annualNote").innerHTML.includes("player.html?type=pitcher&amp;year=2025"));
+  assert.ok(annual.element("annualNote").innerHTML.includes("投球位置データは未収録"));
+  assertNoVisibleSourceBranding(annual.element("annualNote").innerHTML, "pitcher annual note");
   annual.api.state.year = "2026";
   annual.api.renderNote();
   assert.equal(annual.element("annualNote").innerHTML, "");
+  const annualBatter = loadPage("annual-batter.js", ["state", "renderNote"]);
+  annualBatter.api.state.year = "2025";
+  annualBatter.api.renderNote();
+  const annualBatterNote = annualBatter.element("annualNote").innerHTML;
+  assert.ok(annualBatterNote.includes("2025年度の条件別成績は"));
+  assert.ok(annualBatterNote.includes("player.html?type=batter&amp;year=2025"));
+  assert.ok(annualBatterNote.includes("年度係数未収録のため未算出"));
+  assertNoVisibleSourceBranding(annualBatterNote, "batter annual note");
+  annualBatter.api.state.year = "2026";
+  annualBatter.api.renderNote();
+  assert.equal(annualBatter.element("annualNote").innerHTML, "");
   for (const [kind, totalsFile] of [["pitchers", "player_totals.json"], ["batters", "batter_totals.json"]]) {
     const sourcePath = path.join(__dirname, "..", "summary", `nf3_2025_${kind}.json`);
     if (!fs.existsSync(sourcePath)) continue;
