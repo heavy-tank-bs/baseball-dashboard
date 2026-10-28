@@ -1,0 +1,112 @@
+.stat-help-trigger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  margin: 0 0 0 4px;
+  padding: 0;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  background: transparent;
+  color: inherit;
+  font: 700 11px/1 system-ui, sans-serif;
+  vertical-align: middle;
+  cursor: help;
+  opacity: .65;
+  touch-action: manipulation;
+}
+
+.stat-help-trigger:hover,
+.stat-help-trigger[aria-expanded="true"] {
+  opacity: 1;
+  background: rgba(100, 116, 139, .14);
+}
+
+.stat-help-trigger:focus-visible {
+  outline: 3px solid #2b83c6;
+  outline-offset: 3px;
+  opacity: 1;
+}
+
+/* Sorting remains on the original button; its adjacent help button has its own action. */
+th.stat-help-target > .sort-header {
+  width: auto;
+  vertical-align: middle;
+}
+
+.stat-help-tooltip {
+  position: fixed;
+  z-index: 2147483000;
+  box-sizing: border-box;
+  width: max-content;
+  max-width: min(350px, calc(100vw - 24px));
+  max-height: calc(100dvh - 24px);
+  overflow: auto;
+  padding: 14px 16px;
+  border: 1px solid #4a6179;
+  border-radius: 12px;
+  background: #10253b;
+  color: #f7fafc;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, .24);
+  text-align: left;
+  white-space: normal;
+  font: 400 13px/1.65 system-ui, -apple-system, "Segoe UI", sans-serif;
+  overflow-wrap: anywhere;
+  font-variant-numeric: normal;
+  user-select: text;
+}
+
+.stat-help-tooltip[hidden] {
+  display: none;
+}
+
+.stat-help-tooltip-title {
+  display: block;
+  margin: 0 0 5px;
+  font-size: 14px;
+  font-weight: 750;
+  line-height: 1.4;
+}
+
+.stat-help-tooltip p {
+  margin: 0;
+}
+
+.stat-help-tooltip .stat-help-tooltip-formula {
+  margin-top: 9px;
+  padding-top: 9px;
+  border-top: 1px solid rgba(255, 255, 255, .2);
+  color: #cbdceb;
+  font-size: 12px;
+}
+
+@media (hover: none), (pointer: coarse) {
+  .stat-help-trigger {
+    width: 28px;
+    height: 28px;
+    min-width: 28px;
+    font-size: 13px;
+    opacity: .8;
+  }
+
+  .stat-help-tooltip {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+}
+
+@media (forced-colors: active) {
+  .stat-help-tooltip {
+    border: 1px solid CanvasText;
+    background: Canvas;
+    color: CanvasText;
+  }
+
+  .stat-help-tooltip .stat-help-tooltip-formula {
+    color: CanvasText;
+    border-color: CanvasText;
+  }
+}

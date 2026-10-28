@@ -52,6 +52,16 @@
 !/scripts/test_nf3_frontend.cjs
 !/scripts/test_previous_year_identity.js
 !/scripts/test_comparison_ui.js
+!/scripts/test_historical_pitcher.js
+!/scripts/test_historical_batter.js
+!/scripts/test_historical_season_ui.js
+!/scripts/test_stat_help.js
+!/scripts/build_pitcher_inning_runs.py
+!/scripts/build_pitcher_inning_walks.py
+!/scripts/test_pitcher_inning_runs.py
+!/scripts/test_pitcher_inning_walks.py
+!/scripts/apply_pitcher_inning_summaries.py
+!/scripts/test_pitcher_inning_summaries.py
 !/scripts/test_nf3_pitchers.py
 !/scripts/test_nf3_batters.py
 !/summary/
@@ -66,6 +76,12 @@
 !/summary/annual.js
 !/summary/annual-batter.js
 !/summary/compare.js
+!/summary/historical-pitcher.js
+!/summary/historical-batter.js
+!/summary/stat-help.js
+!/summary/stat-help.css
+!/summary/pitcher_inning_runs_2026.json
+!/summary/pitcher_inning_walks_2026.json
 !/summary/build_manifest.py
 !/summary/manifest.js
 !/summary/batter_manifest.js
@@ -103,6 +119,8 @@
 !/docs/nf3-batters-2025.json
 !/docs/nf3-2025-verification.json
 !/docs/nf3-2025-official-totals.json
+!/docs/pitcher-inning-runs-verification.json
+!/docs/pitcher-inning-walks-verification.json
 !/GITHUB_PAGES.md
 
 site/

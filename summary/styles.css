@@ -3600,3 +3600,40 @@ body.compare-embed .season-detail-wrap {
     --table-compact-head-font-size: 8px;
   }
 }
+
+.season-coverage-note {
+  margin: 0 0 18px;
+  color: var(--muted, #607086);
+  font-size: 13px;
+  line-height: 1.75;
+}
+
+.season-additional-tables {
+  margin-top: 24px;
+  padding: 18px 22px;
+  border: 1px solid var(--border, #dce3ec);
+  border-radius: 16px;
+  background: var(--card, #fff);
+}
+
+.season-additional-tables summary {
+  cursor: pointer;
+  font-weight: 700;
+  line-height: 1.6;
+}
+
+.season-additional-tables > summary span {
+  margin-left: 8px;
+  color: var(--muted, #607086);
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.season-extra-table {
+  margin-top: 18px;
+}
+
+.season-extra-table > summary {
+  margin-bottom: 12px;
+  font-size: 14px;
+}

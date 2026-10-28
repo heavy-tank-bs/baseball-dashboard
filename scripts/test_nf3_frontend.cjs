@@ -28,6 +28,11 @@ function loadPage(file, exports) {
   });
   const source = fs.readFileSync(path.join(__dirname, "..", "summary", file), "utf8")
     .replace(/\ninit\(\);\s*$/, "");
+  if (file === "compare.js") {
+    for (const adapter of ["historical-pitcher.js", "historical-batter.js"]) {
+      vm.runInContext(fs.readFileSync(path.join(__dirname, "..", "summary", adapter), "utf8"), context, { filename: adapter });
+    }
+  }
   vm.runInContext(`${source}\nglobalThis.api = {${exports.join(",")}};`, context, { filename: file });
   return { api: context.api, element, fetchCalls };
 }
@@ -69,11 +74,14 @@ async function main() {
   assert.ok(historicalMarkup.includes("historicalTableSelect"));
   assertNoVisibleSourceBranding(historicalMarkup, "loaded historical panel");
   api.renderSeasonPanel();
-  assert.ok(element("seasonDetailWrap").innerHTML.includes("2025年度の基本成績"));
-  assert.ok(element("seasonDetailWrap").innerHTML.includes("年度係数未収録のため未算出"));
-  assert.ok(element("seasonDetailWrap").innerHTML.includes("historicalTableSelect"));
-  assert.ok(element("seasonDetailWrap").innerHTML.includes("月別成績 &lt;test&gt;"));
-  assertNoVisibleSourceBranding(element("seasonDetailWrap").innerHTML, "season panel");
+  const unifiedMarkup = element("seasonDetailWrap").innerHTML;
+  assert.ok(unifiedMarkup.includes('class="season-detail-grid"'), "2025 uses the shared dashboard grid");
+  assert.ok(unifiedMarkup.includes("共通の形式"));
+  assert.ok(!unifiedMarkup.includes("historicalTableSelect"), "the live season panel no longer uses the historical table picker");
+  assert.ok(!unifiedMarkup.includes("historical-stat-grid"), "the live season panel does not duplicate the annual totals");
+  assert.ok(unifiedMarkup.includes("月別成績 &lt;test&gt;"), "unrepresented detail remains available in the collapsed additional tables");
+  assert.ok(unifiedMarkup.includes("season-additional-tables"));
+  assertNoVisibleSourceBranding(unifiedMarkup, "season panel");
   assert.equal(fetchCalls.length, 0);
 
   api.state.historical.loaded = false;

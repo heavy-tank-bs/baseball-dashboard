@@ -1,0 +1,192 @@
+{
+  "verifiedAt": "2026-10-28T15:45:39.570479+00:00",
+  "season": 2026,
+  "method": "unique_integer_constraints",
+  "coverage": {
+    "games": 858,
+    "defensiveTeams": 1716,
+    "appearances": 7175,
+    "verifiedAppearances": 7175,
+    "totalRuns": 6168,
+    "verifiedRuns": 6168,
+    "rawPitchRows": 249622,
+    "unknownInningPitchRows": 5,
+    "rawInputSha256": "d38ae143a46fe3ca99c64e0e1fb2154df920afb5f6bac022a230299854b99afb",
+    "solutionCounts": {
+      "unique": 1716
+    },
+    "unresolved": 0,
+    "verifiedPlayerSeasons": 385
+  },
+  "problems": [],
+  "scoreTableRepairs": [
+    {
+      "gameId": "2021039189",
+      "battingSide": "away",
+      "rawScores": [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "1",
+        "0"
+      ],
+      "sourceUrl": "https://baseball.yahoo.co.jp/npb/game/2021039189/stats",
+      "verifiedOn": "2026-10-29",
+      "reason": "cached_context_inning_array_empty"
+    },
+    {
+      "gameId": "2021039189",
+      "battingSide": "home",
+      "rawScores": [
+        "0",
+        "0",
+        "1",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "1X"
+      ],
+      "sourceUrl": "https://baseball.yahoo.co.jp/npb/game/2021039189/stats",
+      "verifiedOn": "2026-10-29",
+      "reason": "cached_context_inning_array_empty"
+    },
+    {
+      "gameId": "2021039192",
+      "battingSide": "away",
+      "rawScores": [
+        "0",
+        "1",
+        "0",
+        "1",
+        "0",
+        "0",
+        "0",
+        "1",
+        "0"
+      ],
+      "sourceUrl": "https://baseball.yahoo.co.jp/npb/game/2021039192/stats",
+      "verifiedOn": "2026-10-29",
+      "reason": "cached_context_inning_array_empty"
+    },
+    {
+      "gameId": "2021039192",
+      "battingSide": "home",
+      "rawScores": [
+        "1",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "1",
+        "1",
+        "1X"
+      ],
+      "sourceUrl": "https://baseball.yahoo.co.jp/npb/game/2021039192/stats",
+      "verifiedOn": "2026-10-29",
+      "reason": "cached_context_inning_array_empty"
+    },
+    {
+      "gameId": "2021039194",
+      "battingSide": "away",
+      "rawScores": [
+        "0",
+        "1",
+        "0",
+        "0",
+        "2",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "sourceUrl": "https://baseball.yahoo.co.jp/npb/game/2021039194/stats",
+      "verifiedOn": "2026-10-29",
+      "reason": "cached_context_inning_array_empty"
+    },
+    {
+      "gameId": "2021039194",
+      "battingSide": "home",
+      "rawScores": [
+        "3",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "1",
+        "1",
+        "X"
+      ],
+      "sourceUrl": "https://baseball.yahoo.co.jp/npb/game/2021039194/stats",
+      "verifiedOn": "2026-10-29",
+      "reason": "cached_context_inning_array_empty"
+    }
+  ],
+  "intervalEvidence": [
+    {
+      "appearance": "2021039181::日本ハム::1750903",
+      "observedInnings": [
+        4,
+        5,
+        6
+      ],
+      "candidateInnings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "inningsOuts": 18,
+      "reason": "official_outs_cover_earlier_innings_missing_from_raw_log",
+      "sourceUrl": "https://baseball.yahoo.co.jp/npb/game/2021039181/stats"
+    },
+    {
+      "appearance": "2021039181::西武::1751148",
+      "observedInnings": [
+        4
+      ],
+      "candidateInnings": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "inningsOuts": 12,
+      "reason": "official_outs_cover_earlier_innings_missing_from_raw_log",
+      "sourceUrl": "https://baseball.yahoo.co.jp/npb/game/2021039181/stats"
+    }
+  ],
+  "seasonTotals": {
+    "playerSeasons": 385,
+    "matchedPlayerSeasons": 385,
+    "annualRuns": 6168,
+    "verifiedRuns": 6168,
+    "mismatches": []
+  },
+  "proof": {
+    "constraints": [
+      "Per-pitcher runs equal the official appearance statline",
+      "Per-inning runs across all pitchers equal the opponent's score table",
+      "Continuous appearance intervals are bounded conservatively using chronological pitcher order and cumulative official outs"
+    ],
+    "uniqueness": "Every feasible allocation was tested for an alternative integer residual-cycle flow; no alternate allocation exists.",
+    "inheritedRuns": "Charged runs may score after the pitcher exits but remain within that same inning; no inning or pitcher receives a proportional allocation."
+  },
+  "inputs": {
+    "summary\\manifest.js": "d1a96a9be62894e24c8fb689ceb52bd4238181d601b92525cc593c8080f30103",
+    "summary\\sportsnavi_game_context_2026.json": "0b34093afde97ab07702f778d62cda550213b32b078f2ea1d45448f55503331b"
+  }
+}

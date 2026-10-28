@@ -124,7 +124,7 @@ officialCountsは非ゼロの計数だけを保存し、省略は0。splitAttrib
 途中からの投球列や連番欠落後のカウントは不明とする。
 sourceCoverageは保存公式成績欄と投球ログの球数・H/K/HBP/HR等の整合性を記録する。
 収録不一致を含む全体の被打率/被BABIPはnull、球種/左右/回別は収録投球内の指標として表示する。
-回別失点の比例配分値は確定記録ではないため画面に表示しない。回別四死球は投球ログで確認できる打席に限定する。
+2026年の回別失点・四死球は、公式登板成績とイニング合計を一意に照合した確定集計を表示する（下記2026-10-29更新参照）。
 投球の座標・球速そのものの正確性は外部実測では検証していない。2025年は元投球がなく保存年度集計を保持する。
 監査結果と制約はdocs/pitcher-aggregate-audit.jsonに記録する。
 
@@ -135,7 +135,7 @@ sourceCoverageは保存公式成績欄と投球ログの球数・H/K/HBP/HR等�
 2025年の情報補完（2026-10-28）
 出典: プロ野球 ヌルデータ置き場f3 https://nf3.sakura.ne.jp/2025/
 全12球団の投手・打者の個人成績表を保存し、年度成績へ基本計数・球数・正確な被打数・得点圏成績・月別を反映。
-選手の2025年年度成績では、球種・球場・相手・左右・カウント・走者などの出典表を分類から選択できる。
+選手の2025年年度成績は2026年と同じカード・表・グラフを使い、その他の条件別集計は折りたたんだ詳細表から表示する。
 収録元JSON: summary/nf3_2025_pitchers.json、summary/nf3_2025_batters.json。
 nf3の識別子はsourcePlayerIdへ保存。SportsNavi選手IDとは別に扱う。移籍前の不規則なファイル名も実際のリンクから発見する。
 3・4月は取得元が合算した区分のまま表示し、4月単独の成績にはしない。
@@ -171,3 +171,31 @@ findPlayerSeasonRowはSportsNavi ID、NPBプロフィール、名前・球団で
 棒グラフは各指標で両年度の共通ゼロ基準を使う。負値・ゼロ・欠損を区別する。
 成績データJSONの変更なし。非表示の年度成績表は比較モードで先読みしない。
 検証: node scripts/test_previous_year_identity.js、node scripts/test_comparison_ui.js、node scripts/test_nf3_frontend.cjs、node scripts/test_compare_aggregates.js、node scripts/test_transfer_selection.js。
+
+
+年度UI・用語説明・回別投手記録（2026-10-29）
+2025年の保存集計はhistorical-pitcher.js/historical-batter.jsで共通の表示形式へ変換する。
+未収録の値はnullを保持する。球種別打撃の四球は故意四球を除く。先発時限定の表はタイトルに明記する。
+用語はstat-help.js/cssを全ページで共用。項目ホバー・キーボードフォーカス・「？」のタップで表示する。
+単一の説明ポップアップを表の外に置き、個人成績iframeの親画面内に位置を収める。
+2026年の回別失点は投手ごとの公式R・チームの回別得点・保守的な登板イニング範囲を制約とし、整数解が一意のときだけ採用する。
+降板時の残塁が生還した失点も元の投手に計上する。按分は使用しない。
+四死球は全投球ログに加え、公式完了打席の回別BB（申告敬遠含む）・HBPと公式登板成績を照合する。
+ログにない申告敬遠・部分的な投球記録・打席途中交代時の四球責任も公式値へ整合させる。
+summary/pitcher_inning_runs_2026.json と pitcher_inning_walks_2026.json はビルダー用の全登板証跡。
+公開画面はplayer_totals.json内の回別表を使う。build_manifest.pyはこの証跡を読み、全登板の検証済みカバー率を確認する。
+完全に検証済みの0件は0として表示する。一部登板が未検証なら回別表を利用不可にする。
+対象は全858試合・7,175登板・385投手年度。合計6,168失点・4,841四球（申告敬遠236）・632死球。
+検証結果と例外の公式URLはdocs/pitcher-inning-runs-verification.json、pitcher-inning-walks-verification.json。
+再集計にはmanifest・generated投球ログ・sportsnavi_game_context_2026.json・sportsnavi_woba_events_2026.json・取得済みgame_decisions_cache.jsonを使う。
+
+python scripts/build_pitcher_inning_runs.py --write
+python scripts/build_pitcher_inning_walks.py
+python scripts/apply_pitcher_inning_summaries.py --write
+python scripts/test_pitcher_inning_runs.py
+python scripts/test_pitcher_inning_walks.py
+python scripts/test_pitcher_inning_summaries.py
+node scripts/test_historical_pitcher.js
+node scripts/test_historical_batter.js
+node scripts/test_historical_season_ui.js
+node scripts/test_stat_help.js

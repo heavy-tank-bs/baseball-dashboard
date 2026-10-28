@@ -2583,6 +2583,7 @@ def season_dashboard_source(player_bucket: dict) -> dict:
             "stadiums": {},
             "inningRunsByDecision": defaultdict(lambda: defaultdict(int)),
             "inningWalksByDecision": defaultdict(lambda: defaultdict(int)),
+            "inningSummaryCoverage": {"appearancesExpected": 0, "runVerifiedAppearances": 0, "walkVerifiedAppearances": 0},
             "outcomes": Counter(),
             "outcomeMeta": {},
             "finish": defaultdict(lambda: {"count": 0, "looking": 0, "swinging": 0}),
@@ -2604,70 +2605,74 @@ def pitcher_decision_key(decision_row: dict) -> str:
     return "noDecision"
 
 
-def pitcher_innings_from_rows(rows: list[dict]) -> list[int]:
-    parse_inning = getattr(DASHBOARD, "parse_inning", lambda value: None)
-    innings = {
-        inning
-        for row in rows
-        for inning in [parse_inning(row.get("pa_index"))]
-        if inning in INNING_SLOTS
-    }
-    return sorted(innings)
+_VERIFIED_PITCHER_INNING_CACHE = {}
+VERIFIED_PITCHER_INNING_METHOD = "verified_official_inning_and_appearance_totals"
 
 
-def opponent_inning_scores(entry: dict, game_context: dict | None) -> dict[int, int]:
-    opponent = matchup_opponent_team(entry.get("team") or "", entry.get("matchup") or "")
-    scores = ((game_context or {}).get("inningScores") or {})
-    rows = []
-    for side in ("home", "away"):
-        side_row = scores.get(side) or {}
-        if normalize_matchup_team_name(side_row.get("team") or "") == normalize_matchup_team_name(opponent):
-            rows = side_row.get("innings") or []
-            break
-    return {
-        parse_int(row.get("inning")): parse_int(row.get("runs"))
-        for row in rows
-        if parse_int(row.get("inning")) in INNING_SLOTS and row.get("runs") is not None
-    }
+def verified_pitcher_inning_appearance(entry: dict, kind: str) -> dict | None:
+    year = str(entry.get("date") or "")[:4]
+    cache_key = (year, kind)
+    if cache_key not in _VERIFIED_PITCHER_INNING_CACHE:
+        path = SUMMARY_DIR / f"pitcher_inning_{kind}_{year}.json"
+        payload = safe_load_json(path) if path.exists() else {}
+        _VERIFIED_PITCHER_INNING_CACHE[cache_key] = (payload or {}).get("appearances") or {}
+    key = f"{entry.get('gameId')}::{entry.get('team')}::{entry.get('pitcherId')}"
+    row = _VERIFIED_PITCHER_INNING_CACHE[cache_key].get(key)
+    if not row or row.get("verified") is not True:
+        return None
+    statline = entry.get("statline") or {}
+    expected = {"runs": parse_int(statline.get("runs"))} if kind == "runs" else {
+        "walks": parse_int(statline.get("bb")), "hitByPitch": parse_int(statline.get("hbp"))}
+    if any(row.get(field) != count for field, count in expected.items()):
+        raise ValueError(f"Verified inning artifact disagrees with official appearance: {key} {kind}")
+    totals = {"runs": sum(int(item["runs"]) for item in row.get("inningRuns") or [])} if kind == "runs" else {
+        field: sum(int(item[field]) for item in (row.get("byInning") or {}).values()) for field in ("walks", "hitByPitch")}
+    if totals != expected:
+        raise ValueError(f"Verified inning artifact does not sum to official appearance: {key} {kind}")
+    return row
 
 
-def allocate_inning_runs(candidate_runs: dict[int, int], pitcher_runs: int) -> dict[int, int]:
-    pitcher_runs = max(parse_int(pitcher_runs), 0)
-    if pitcher_runs <= 0:
-        return {inning: 0 for inning in candidate_runs}
+def record_verified_pitcher_inning_summaries(source: dict, entry: dict, decision_row: dict | None = None) -> None:
+    coverage = source["inningSummaryCoverage"]
+    coverage["appearancesExpected"] += 1
+    decision = pitcher_decision_key(decision_row or {})
+    runs = verified_pitcher_inning_appearance(entry, "runs")
+    walks = verified_pitcher_inning_appearance(entry, "walks")
+    if runs is not None:
+        coverage["runVerifiedAppearances"] += 1
+        for row in runs.get("inningRuns") or []:
+            source["inningRunsByDecision"][decision][int(row["inning"])] += int(row["runs"])
+    if walks is not None:
+        coverage["walkVerifiedAppearances"] += 1
+        for inning, row in (walks.get("byInning") or {}).items():
+            source["inningWalksByDecision"][decision][int(inning)] += int(row["walksAndHbp"])
 
-    positive = {inning: max(parse_int(runs), 0) for inning, runs in candidate_runs.items() if parse_int(runs) > 0}
-    total_candidates = sum(positive.values())
-    if not positive:
-        return {}
-    if total_candidates == pitcher_runs:
-        return positive
-    if len(positive) == 1:
-        inning = next(iter(positive))
-        return {inning: pitcher_runs}
 
-    allocations = {}
-    fractions = []
-    allocated = 0
-    for inning, runs in positive.items():
-        raw = (runs / total_candidates) * pitcher_runs
-        whole = int(raw)
-        allocations[inning] = whole
-        allocated += whole
-        fractions.append((raw - whole, inning))
-
-    for _fraction, inning in sorted(fractions, reverse=True)[: max(pitcher_runs - allocated, 0)]:
-        allocations[inning] += 1
-    return allocations
+def finalize_pitcher_inning_summaries(source: dict) -> dict:
+    coverage = dict(source["inningSummaryCoverage"])
+    expected = coverage["appearancesExpected"]
+    runs_complete = expected > 0 and coverage["runVerifiedAppearances"] == expected
+    walks_complete = expected > 0 and coverage["walkVerifiedAppearances"] == expected
+    result = {"inningSummaryCoverage": coverage,
+              "inningRunRowsMethod": VERIFIED_PITCHER_INNING_METHOD if runs_complete else "unavailable",
+              "inningRunRowsScope": "complete_appearances" if runs_complete else "unavailable",
+              "inningRunRowsAvailable": runs_complete,
+              "inningWalkRowsMethod": VERIFIED_PITCHER_INNING_METHOD if walks_complete else "unavailable",
+              "inningWalkRowsScope": "complete_appearances" if walks_complete else "unavailable",
+              "inningWalkRowsAvailable": walks_complete}
+    for field, source_key in (("inningRunRows", "inningRunsByDecision"), ("inningWalkRows", "inningWalksByDecision")):
+        result[field] = []
+        for inning in INNING_SLOTS:
+            counts = {decision: parse_int(source[source_key][decision].get(inning)) for decision in ("win", "loss", "noDecision")}
+            result[field].append({"inning": inning, **counts, "total": sum(counts.values())})
+    return result
 
 
 def add_season_dashboard_entry(player_bucket: dict, entry: dict, decision_row: dict | None = None, game_context: dict | None = None) -> None:
     dashboard = entry.get("dashboard") or {}
     pitch_mix = dashboard.get("pitchMix") or []
-    if not pitch_mix:
-        return
-
     source = season_dashboard_source(player_bucket)
+    record_verified_pitcher_inning_summaries(source, entry, decision_row)
     source["hasData"] = True
     total_pitches = parse_int(dashboard.get("totalPitches")) or sum(parse_int(row.get("count")) for row in pitch_mix)
     source["totalPitches"] += total_pitches
@@ -2697,22 +2702,6 @@ def add_season_dashboard_entry(player_bucket: dict, entry: dict, decision_row: d
         if inning <= 0:
             continue
         add_serialized_stat_row(source["innings"][inning], row)
-
-    decision_key = pitcher_decision_key(decision_row or {})
-    pitcher_innings = pitcher_innings_from_rows(pitch_rows_raw)
-    candidate_runs = {
-        inning: runs
-        for inning, runs in opponent_inning_scores(entry, game_context).items()
-        if inning in pitcher_innings and runs > 0
-    }
-    for inning, runs in allocate_inning_runs(candidate_runs, parse_int((entry.get("statline") or {}).get("runs"))).items():
-        source["inningRunsByDecision"][decision_key][inning] += runs
-
-    for row in build_pitcher_inning_walk_rows(pitch_rows_raw):
-        inning = parse_int(row.get("inning"))
-        if inning <= 0:
-            continue
-        source["inningWalksByDecision"][decision_key][inning] += parse_int(row.get("walksAndHbp"))
 
     opponent = matchup_opponent_team(entry.get("team") or "", entry.get("matchup") or "")
     opponent_label = opponent or "-"
@@ -2853,36 +2842,6 @@ def finalize_season_dashboard(player: dict) -> dict | None:
         for bucket in sorted(source["stadiums"].values(), key=lambda row: (row.get("label") or ""))
     ]
 
-    inning_walk_rows = []
-    for inning in INNING_SLOTS:
-        win = parse_int(source["inningWalksByDecision"]["win"].get(inning))
-        loss = parse_int(source["inningWalksByDecision"]["loss"].get(inning))
-        no_decision = parse_int(source["inningWalksByDecision"]["noDecision"].get(inning))
-        inning_walk_rows.append(
-            {
-                "inning": inning,
-                "win": win,
-                "loss": loss,
-                "noDecision": no_decision,
-                "total": win + loss + no_decision,
-            }
-        )
-
-    inning_run_rows = []
-    for inning in INNING_SLOTS:
-        win = parse_int(source["inningRunsByDecision"]["win"].get(inning))
-        loss = parse_int(source["inningRunsByDecision"]["loss"].get(inning))
-        no_decision = parse_int(source["inningRunsByDecision"]["noDecision"].get(inning))
-        inning_run_rows.append(
-            {
-                "inning": inning,
-                "win": win,
-                "loss": loss,
-                "noDecision": no_decision,
-                "total": win + loss + no_decision,
-            }
-        )
-
     outcome_total = sum(source["outcomes"].values())
     known_outcome_meta = {key: (label, color) for key, label, color in OUTCOME_META}
     outcome_ids = [key for key, _label, _color in OUTCOME_META]
@@ -2932,8 +2891,7 @@ def finalize_season_dashboard(player: dict) -> dict | None:
     return {
         "totalPitches": total_pitches,
         "sourceCoverage": player.get("sourceCoverage"),
-        "inningRunRowsMethod": "proportional_estimate",
-        "inningWalkRowsScope": "recorded_pitch_plate_appearances",
+        **finalize_pitcher_inning_summaries(source),
         "pitchMix": pitch_rows,
         "metricBaselines": {
             "chase": round_or_none(chase_baseline, 1),
@@ -2943,9 +2901,6 @@ def finalize_season_dashboard(player: dict) -> dict | None:
         "batterHandRows": batter_hand_rows,
         "opponentRows": opponent_rows,
         "stadiumRows": stadium_rows,
-        "inningRunRows": inning_run_rows,
-        "inningRunRowsAvailable": any(row["total"] > 0 for row in inning_run_rows),
-        "inningWalkRows": inning_walk_rows,
         "outcomes": {
             "total": outcome_total,
             "rows": outcome_rows,

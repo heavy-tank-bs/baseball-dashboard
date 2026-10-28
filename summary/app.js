@@ -1857,30 +1857,6 @@ function renderPitchSummaryTable(rows) {
 }
 
 function renderPitchMetricSummaryTable(rows) {
-  const descriptions = [
-    ["whiff%", "スイングを空振りにした割合", "空振り数 ÷ スイング数"],
-    ["csw%", "空振りと見逃しストライクでストライクを取れた割合", "空振り数と見逃しストライク数の合計 ÷ 全投球数"],
-    ["zone%", "ストライクゾーン内へ投げ込めた割合", "ストライクゾーン内の投球数 ÷ 投球座標を取得できた投球数"],
-    ["z-swing%", "ゾーン内の投球を打者が振った割合", "ゾーン内スイング数 ÷ ゾーン内投球数"],
-    ["o-contact%", "ゾーン外を振らせた時にバットへ当てられた割合", "ゾーン外コンタクト数 ÷ ゾーン外スイング数"],
-    ["chase%", "ゾーン外の球を打者に振らせた割合", "ゾーン外スイング数 ÷ ゾーン外投球数"],
-    ["chase+", "リーグ平均を100としてゾーン外を振らせる力を示す指数", "球種別chase% ÷ 同リーグ平均chase% × 100"],
-  ];
-
-  const notes = descriptions
-    .map(
-      ([label, meaning, formula]) => `
-        <div>
-          <dt>${label}</dt>
-          <dd>
-            <span>意味 ${meaning}</span>
-            <span>計算 ${formula}</span>
-          </dd>
-        </div>
-      `
-    )
-    .join("");
-
   return `
     <div class="pitch-metric-summary">
       ${renderResponsiveDataTable({
@@ -1913,7 +1889,6 @@ function renderPitchMetricSummaryTable(rows) {
           ],
         })),
       })}
-      <dl class="metric-description-list">${notes}</dl>
     </div>
   `;
 }

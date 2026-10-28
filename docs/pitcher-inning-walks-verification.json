@@ -1,0 +1,8764 @@
+{
+  "verifiedAt": "2026-10-28T15:41:00.976228+00:00",
+  "season": 2026,
+  "method": "Read every raw pitching log; reconcile official per-inning BB including IBB and HBP with each official appearance total using a uniquely solvable integer allocation.",
+  "coverage": {
+    "games": 858,
+    "defensiveTeams": 1716,
+    "appearances": 7175,
+    "verifiedAppearances": 7175,
+    "walks": 4841,
+    "hitByPitch": 632,
+    "officialEventCounts": {
+      "uBB": 4605,
+      "HBP": 632,
+      "IBB": 236
+    },
+    "rawPitchRows": 249622,
+    "unknownInningPitchRows": 5,
+    "rawTerminalWalks": 4598,
+    "rawTerminalHitByPitch": 631,
+    "solutionCounts": {
+      "walks:unique": 1716,
+      "hitByPitch:unique": 1716
+    },
+    "rawLogDifferences": 237,
+    "unresolved": 0
+  },
+  "inputSha256": {
+    "summary/manifest.js": "d1a96a9be62894e24c8fb689ceb52bd4238181d601b92525cc593c8080f30103",
+    "summary/sportsnavi_game_context_2026.json": "0b34093afde97ab07702f778d62cda550213b32b078f2ea1d45448f55503331b",
+    "summary/sportsnavi_woba_events_2026.json": "b9393426829652c04c0ec0688303f7d49b9c7f3fbfb23301ec5de333e373143e"
+  },
+  "rawLogDifferences": [
+    {
+      "appearance": "2021038624::中日::1800061",
+      "player": "勝野 昌慶",
+      "rawTerminalTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 2,
+        "hitByPitch": 0
+      },
+      "rawByInning": {
+        "10": {
+          "walks": 1
+        }
+      },
+      "verifiedByInning": {
+        "10": {
+          "walks": 2,
+          "hitByPitch": 0,
+          "walksAndHbp": 2
+        }
+      },
+      "observedInnings": [
+        10
+      ],
+      "candidateInnings": [
+        10
+      ]
+    },
+    {
+      "appearance": "2021038624::広島::1960397",
+      "player": "ハーン",
+      "rawTerminalTotals": {
+        "walks": 0,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "rawByInning": {},
+      "verifiedByInning": {
+        "8": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        8
+      ],
+      "candidateInnings": [
+        8,
+        9
+      ]
+    },
+    {
+      "appearance": "2021038636::中日::2000042",
+      "player": "髙橋 宏斗",
+      "rawTerminalTotals": {
+        "walks": 0,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "rawByInning": {},
+      "verifiedByInning": {
+        "2": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "candidateInnings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "appearance": "2021038640::広島::1900052",
+      "player": "森下 暢仁",
+      "rawTerminalTotals": {
+        "walks": 0,
+        "hitByPitch": 1
+      },
+      "officialTotals": {
+        "walks": 1,
+        "hitByPitch": 1
+      },
+      "rawByInning": {
+        "2": {
+          "hitByPitch": 1
+        }
+      },
+      "verifiedByInning": {
+        "2": {
+          "walks": 0,
+          "hitByPitch": 1,
+          "walksAndHbp": 1
+        },
+        "4": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "candidateInnings": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "appearance": "2021038640::広島::1900073",
+      "player": "鈴木 健矢",
+      "rawTerminalTotals": {
+        "walks": 0,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "rawByInning": {},
+      "verifiedByInning": {
+        "5": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        5
+      ],
+      "candidateInnings": [
+        5,
+        6
+      ]
+    },
+    {
+      "appearance": "2021038641::巨人::1450689",
+      "player": "船迫 大雅",
+      "rawTerminalTotals": {
+        "walks": 0,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "rawByInning": {},
+      "verifiedByInning": {
+        "7": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        7
+      ],
+      "candidateInnings": [
+        7,
+        8
+      ]
+    },
+    {
+      "appearance": "2021038644::東北楽天::1900114",
+      "player": "津留﨑 大成",
+      "rawTerminalTotals": {
+        "walks": 2,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 3,
+        "hitByPitch": 0
+      },
+      "rawByInning": {
+        "8": {
+          "walks": 2
+        }
+      },
+      "verifiedByInning": {
+        "8": {
+          "walks": 3,
+          "hitByPitch": 0,
+          "walksAndHbp": 3
+        }
+      },
+      "observedInnings": [
+        8
+      ],
+      "candidateInnings": [
+        8,
+        9
+      ]
+    },
+    {
+      "appearance": "2021038645::オリックス::2111998",
+      "player": "東松 快征",
+      "rawTerminalTotals": {
+        "walks": 0,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "rawByInning": {},
+      "verifiedByInning": {
+        "8": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        8
+      ],
+      "candidateInnings": [
+        8,
+        9
+      ]
+    },
+    {
+      "appearance": "2021038649::ロッテ::2000087",
+      "player": "鈴木 昭汰",
+      "rawTerminalTotals": {
+        "walks": 0,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "rawByInning": {},
+      "verifiedByInning": {
+        "8": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        8
+      ],
+      "candidateInnings": [
+        8,
+        9
+      ]
+    },
+    {
+      "appearance": "2021038649::日本ハム::1000164",
+      "player": "島本 浩也",
+      "rawTerminalTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 2,
+        "hitByPitch": 0
+      },
+      "rawByInning": {
+        "7": {
+          "walks": 1
+        }
+      },
+      "verifiedByInning": {
+        "7": {
+          "walks": 2,
+          "hitByPitch": 0,
+          "walksAndHbp": 2
+        }
+      },
+      "observedInnings": [
+        7
+      ],
+      "candidateInnings": [
+        7,
+        8
+      ]
+    },
+    {
+      "appearance": "2021038659::ヤクルト::2103794",
+      "player": "吉村 貢司郎",
+      "rawTerminalTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 2,
+        "hitByPitch": 0
+      },
+      "rawByInning": {
+        "1": {
+          "walks": 1
+        }
+      },
+      "verifiedByInning": {
+        "1": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        },
+        "5": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "candidateInnings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "appearance": "2021038664::巨人::1961886",
+      "player": "ハワード",
+      "rawTerminalTotals": {
+        "walks": 2,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 3,
+        "hitByPitch": 0
+      },
+      "rawByInning": {
+        "1": {
+          "walks": 1
+        },
+        "4": {
+          "walks": 1
+        }
+      },
+      "verifiedByInning": {
+        "1": {
+          "walks": 2,
+          "hitByPitch": 0,
+          "walksAndHbp": 2
+        },
+        "4": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "candidateInnings": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "appearance": "2021038667::オリックス::1600155",
+      "player": "山﨑 颯一郎",
+      "rawTerminalTotals": {
+        "walks": 0,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "rawByInning": {},
+      "verifiedByInning": {
+        "7": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        7
+      ],
+      "candidateInnings": [
+        7
+      ]
+    },
+    {
+      "appearance": "2021038674::西武::1700124",
+      "player": "平良 海馬",
+      "rawTerminalTotals": {
+        "walks": 2,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 3,
+        "hitByPitch": 0
+      },
+      "rawByInning": {
+        "1": {
+          "walks": 1
+        },
+        "7": {
+          "walks": 1
+        }
+      },
+      "verifiedByInning": {
+        "1": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        },
+        "6": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        },
+        "7": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "candidateInnings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "appearance": "2021038676::DeNA::2100109",
+      "player": "深沢 鳳介",
+      "rawTerminalTotals": {
+        "walks": 2,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 3,
+        "hitByPitch": 0
+      },
+      "rawByInning": {
+        "2": {
+          "walks": 1
+        },
+        "4": {
+          "walks": 1
+        }
+      },
+      "verifiedByInning": {
+        "2": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        },
+        "3": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        },
+        "4": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "candidateInnings": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "appearance": "2021038682::DeNA::2117281",
+      "player": "コックス",
+      "rawTerminalTotals": {
+        "walks": 0,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "rawByInning": {},
+      "verifiedByInning": {
+        "2": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        1,
+        2,
+        3
+      ],
+      "candidateInnings": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "appearance": "2021038682::DeNA::1900031",
+      "player": "坂本 裕哉",
+      "rawTerminalTotals": {
+        "walks": 0,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "rawByInning": {},
+      "verifiedByInning": {
+        "11": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        11
+      ],
+      "candidateInnings": [
+        11,
+        12
+      ]
+    },
+    {
+      "appearance": "2021038682::中日::1951008",
+      "player": "中西 聖輝",
+      "rawTerminalTotals": {
+        "walks": 2,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 3,
+        "hitByPitch": 0
+      },
+      "rawByInning": {
+        "2": {
+          "walks": 1
+        },
+        "5": {
+          "walks": 1
+        }
+      },
+      "verifiedByInning": {
+        "2": {
+          "walks": 2,
+          "hitByPitch": 0,
+          "walksAndHbp": 2
+        },
+        "5": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "candidateInnings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "appearance": "2021038684::巨人::700069",
+      "player": "田中 将大",
+      "rawTerminalTotals": {
+        "walks": 0,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "rawByInning": {},
+      "verifiedByInning": {
+        "5": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "candidateInnings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ]
+    },
+    {
+      "appearance": "2021038688::阪神::2107862",
+      "player": "茨木 秀俊",
+      "rawTerminalTotals": {
+        "walks": 2,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 3,
+        "hitByPitch": 0
+      },
+      "rawByInning": {
+        "2": {
+          "walks": 1
+        },
+        "6": {
+          "walks": 1
+        }
+      },
+      "verifiedByInning": {
+        "2": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        },
+        "4": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        },
+        "6": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "candidateInnings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "appearance": "2021038706::中日::2000042",
+      "player": "髙橋 宏斗",
+      "rawTerminalTotals": {
+        "walks": 4,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 5,
+        "hitByPitch": 0
+      },
+      "rawByInning": {
+        "3": {
+          "walks": 1
+        },
+        "4": {
+          "walks": 2
+        },
+        "5": {
+          "walks": 1
+        }
+      },
+      "verifiedByInning": {
+        "3": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        },
+        "4": {
+          "walks": 2,
+          "hitByPitch": 0,
+          "walksAndHbp": 2
+        },
+        "5": {
+          "walks": 2,
+          "hitByPitch": 0,
+          "walksAndHbp": 2
+        }
+      },
+      "observedInnings": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "candidateInnings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "appearance": "2021038710::ヤクルト::1200076",
+      "player": "小川 泰弘",
+      "rawTerminalTotals": {
+        "walks": 4,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 5,
+        "hitByPitch": 0
+      },
+      "rawByInning": {
+        "1": {
+          "walks": 3
+        },
+        "5": {
+          "walks": 1
+        }
+      },
+      "verifiedByInning": {
+        "1": {
+          "walks": 3,
+          "hitByPitch": 0,
+          "walksAndHbp": 3
+        },
+        "4": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        },
+        "5": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "candidateInnings": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "appearance": "2021038710::ヤクルト::1300029",
+      "player": "田口 麗斗",
+      "rawTerminalTotals": {
+        "walks": 0,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "rawByInning": {},
+      "verifiedByInning": {
+        "5": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        5
+      ],
+      "candidateInnings": [
+        5,
+        6
+      ]
+    },
+    {
+      "appearance": "2021038715::ソフトバンク::1900010",
+      "player": "スチュワート・ジュニア",
+      "rawTerminalTotals": {
+        "walks": 5,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 6,
+        "hitByPitch": 0
+      },
+      "rawByInning": {
+        "1": {
+          "walks": 2
+        },
+        "2": {
+          "walks": 1
+        },
+        "3": {
+          "walks": 1
+        },
+        "5": {
+          "walks": 1
+        }
+      },
+      "verifiedByInning": {
+        "1": {
+          "walks": 2,
+          "hitByPitch": 0,
+          "walksAndHbp": 2
+        },
+        "2": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        },
+        "3": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        },
+        "5": {
+          "walks": 2,
+          "hitByPitch": 0,
+          "walksAndHbp": 2
+        }
+      },
+      "observedInnings": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "candidateInnings": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "appearance": "2021038723::日本ハム::2111822",
+      "player": "細野 晴希",
+      "rawTerminalTotals": {
+        "walks": 3,
+        "hitByPitch": 1
+      },
+      "officialTotals": {
+        "walks": 4,
+        "hitByPitch": 1
+      },
+      "rawByInning": {
+        "3": {
+          "walks": 2,
+          "hitByPitch": 1
+        },
+        "4": {
+          "walks": 1
+        }
+      },
+      "verifiedByInning": {
+        "3": {
+          "walks": 2,
+          "hitByPitch": 1,
+          "walksAndHbp": 3
+        },
+        "4": {
+          "walks": 2,
+          "hitByPitch": 0,
+          "walksAndHbp": 2
+        }
+      },
+      "observedInnings": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "candidateInnings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "appearance": "2021038727::中日::1600106",
+      "player": "柳 裕也",
+      "rawTerminalTotals": {
+        "walks": 2,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 3,
+        "hitByPitch": 0
+      },
+      "rawByInning": {
+        "4": {
+          "walks": 1
+        },
+        "6": {
+          "walks": 1
+        }
+      },
+      "verifiedByInning": {
+        "4": {
+          "walks": 2,
+          "hitByPitch": 0,
+          "walksAndHbp": 2
+        },
+        "6": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "candidateInnings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "appearance": "2021038728::広島::1800073",
+      "player": "島内 颯太郎",
+      "rawTerminalTotals": {
+        "walks": 1,
+        "hitByPitch": 1
+      },
+      "officialTotals": {
+        "walks": 2,
+        "hitByPitch": 1
+      },
+      "rawByInning": {
+        "6": {
+          "walks": 1,
+          "hitByPitch": 1
+        }
+      },
+      "verifiedByInning": {
+        "6": {
+          "walks": 2,
+          "hitByPitch": 1,
+          "walksAndHbp": 3
+        }
+      },
+      "observedInnings": [
+        6
+      ],
+      "candidateInnings": [
+        6
+      ]
+    },
+    {
+      "appearance": "2021038733::阪神::1700137",
+      "player": "大竹 耕太郎",
+      "rawTerminalTotals": {
+        "walks": 2,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 3,
+        "hitByPitch": 0
+      },
+      "rawByInning": {
+        "2": {
+          "walks": 1
+        },
+        "6": {
+          "walks": 1
+        }
+      },
+      "verifiedByInning": {
+        "2": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        },
+        "3": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        },
+        "6": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "candidateInnings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "appearance": "2021038742::ロッテ::2114737",
+      "player": "廣池 康志郎",
+      "rawTerminalTotals": {
+        "walks": 3,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 4,
+        "hitByPitch": 0
+      },
+      "rawByInning": {
+        "1": {
+          "walks": 1
+        },
+        "6": {
+          "walks": 2
+        }
+      },
+      "verifiedByInning": {
+        "1": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        },
+        "6": {
+          "walks": 3,
+          "hitByPitch": 0,
+          "walksAndHbp": 3
+        }
+      },
+      "observedInnings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "candidateInnings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "appearance": "2021038746::広島::1900052",
+      "player": "森下 暢仁",
+      "rawTerminalTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 2,
+        "hitByPitch": 0
+      },
+      "rawByInning": {
+        "5": {
+          "walks": 1
+        }
+      },
+      "verifiedByInning": {
+        "2": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        },
+        "5": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "candidateInnings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ]
+    },
+    {
+      "appearance": "2021038753::日本ハム::1000164",
+      "player": "島本 浩也",
+      "rawTerminalTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 2,
+        "hitByPitch": 0
+      },
+      "rawByInning": {
+        "10": {
+          "walks": 1
+        }
+      },
+      "verifiedByInning": {
+        "10": {
+          "walks": 2,
+          "hitByPitch": 0,
+          "walksAndHbp": 2
+        }
+      },
+      "observedInnings": [
+        10
+      ],
+      "candidateInnings": [
+        10,
+        11
+      ]
+    },
+    {
+      "appearance": "2021038761::巨人::700069",
+      "player": "田中 将大",
+      "rawTerminalTotals": {
+        "walks": 0,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "rawByInning": {},
+      "verifiedByInning": {
+        "4": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "candidateInnings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "appearance": "2021038761::巨人::2103689",
+      "player": "赤星 優志",
+      "rawTerminalTotals": {
+        "walks": 0,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "rawByInning": {},
+      "verifiedByInning": {
+        "11": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        11
+      ],
+      "candidateInnings": [
+        11
+      ]
+    },
+    {
+      "appearance": "2021038766::広島::1000116",
+      "player": "中﨑 翔太",
+      "rawTerminalTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 3,
+        "hitByPitch": 0
+      },
+      "rawByInning": {
+        "8": {
+          "walks": 1
+        }
+      },
+      "verifiedByInning": {
+        "8": {
+          "walks": 3,
+          "hitByPitch": 0,
+          "walksAndHbp": 3
+        }
+      },
+      "observedInnings": [
+        8
+      ],
+      "candidateInnings": [
+        8,
+        9
+      ]
+    },
+    {
+      "appearance": "2021038770::DeNA::1900031",
+      "player": "坂本 裕哉",
+      "rawTerminalTotals": {
+        "walks": 2,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 3,
+        "hitByPitch": 0
+      },
+      "rawByInning": {
+        "8": {
+          "walks": 2
+        }
+      },
+      "verifiedByInning": {
+        "8": {
+          "walks": 3,
+          "hitByPitch": 0,
+          "walksAndHbp": 3
+        }
+      },
+      "observedInnings": [
+        8
+      ],
+      "candidateInnings": [
+        8,
+        9
+      ]
+    },
+    {
+      "appearance": "2021038773::西武::2117734",
+      "player": "篠原 響",
+      "rawTerminalTotals": {
+        "walks": 0,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "rawByInning": {},
+      "verifiedByInning": {
+        "8": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        8
+      ],
+      "candidateInnings": [
+        8,
+        9
+      ]
+    },
+    {
+      "appearance": "2021038779::西武::1800081",
+      "player": "渡邉 勇太朗",
+      "rawTerminalTotals": {
+        "walks": 0,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "rawByInning": {},
+      "verifiedByInning": {
+        "7": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "candidateInnings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "appearance": "2021038781::オリックス::1650221",
+      "player": "椋木 蓮",
+      "rawTerminalTotals": {
+        "walks": 0,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "rawByInning": {},
+      "verifiedByInning": {
+        "8": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        8
+      ],
+      "candidateInnings": [
+        8
+      ]
+    },
+    {
+      "appearance": "2021038781::ソフトバンク::2107909",
+      "player": "松本 晴",
+      "rawTerminalTotals": {
+        "walks": 2,
+        "hitByPitch": 1
+      },
+      "officialTotals": {
+        "walks": 3,
+        "hitByPitch": 1
+      },
+      "rawByInning": {
+        "1": {
+          "walks": 1
+        },
+        "2": {
+          "walks": 1
+        },
+        "3": {
+          "hitByPitch": 1
+        }
+      },
+      "verifiedByInning": {
+        "1": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        },
+        "2": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        },
+        "3": {
+          "walks": 0,
+          "hitByPitch": 1,
+          "walksAndHbp": 1
+        },
+        "6": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "candidateInnings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "appearance": "2021038791::西武::2103625",
+      "player": "羽田 慎之介",
+      "rawTerminalTotals": {
+        "walks": 1,
+        "hitByPitch": 1
+      },
+      "officialTotals": {
+        "walks": 2,
+        "hitByPitch": 1
+      },
+      "rawByInning": {
+        "11": {
+          "hitByPitch": 1,
+          "walks": 1
+        }
+      },
+      "verifiedByInning": {
+        "11": {
+          "walks": 2,
+          "hitByPitch": 1,
+          "walksAndHbp": 3
+        }
+      },
+      "observedInnings": [
+        11
+      ],
+      "candidateInnings": [
+        11,
+        12
+      ]
+    },
+    {
+      "appearance": "2021038793::阪神::2000055",
+      "player": "村上 頌樹",
+      "rawTerminalTotals": {
+        "walks": 2,
+        "hitByPitch": 1
+      },
+      "officialTotals": {
+        "walks": 3,
+        "hitByPitch": 1
+      },
+      "rawByInning": {
+        "2": {
+          "hitByPitch": 1,
+          "walks": 2
+        }
+      },
+      "verifiedByInning": {
+        "2": {
+          "walks": 2,
+          "hitByPitch": 1,
+          "walksAndHbp": 3
+        },
+        "5": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "candidateInnings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "appearance": "2021038797::ソフトバンク::1100099",
+      "player": "上沢 直之",
+      "rawTerminalTotals": {
+        "walks": 2,
+        "hitByPitch": 1
+      },
+      "officialTotals": {
+        "walks": 3,
+        "hitByPitch": 1
+      },
+      "rawByInning": {
+        "1": {
+          "walks": 2,
+          "hitByPitch": 1
+        }
+      },
+      "verifiedByInning": {
+        "1": {
+          "walks": 2,
+          "hitByPitch": 1,
+          "walksAndHbp": 3
+        },
+        "7": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "candidateInnings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ]
+    },
+    {
+      "appearance": "2021038805::巨人::1900019",
+      "player": "井上 温大",
+      "rawTerminalTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 2,
+        "hitByPitch": 0
+      },
+      "rawByInning": {
+        "2": {
+          "walks": 1
+        }
+      },
+      "verifiedByInning": {
+        "2": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        },
+        "6": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "candidateInnings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "appearance": "2021038809::ソフトバンク::1900102",
+      "player": "津森 宥紀",
+      "rawTerminalTotals": {
+        "walks": 0,
+        "hitByPitch": 1
+      },
+      "officialTotals": {
+        "walks": 1,
+        "hitByPitch": 1
+      },
+      "rawByInning": {
+        "8": {
+          "hitByPitch": 1
+        }
+      },
+      "verifiedByInning": {
+        "8": {
+          "walks": 1,
+          "hitByPitch": 1,
+          "walksAndHbp": 2
+        }
+      },
+      "observedInnings": [
+        8
+      ],
+      "candidateInnings": [
+        8,
+        9
+      ]
+    },
+    {
+      "appearance": "2021038813::日本ハム::1000164",
+      "player": "島本 浩也",
+      "rawTerminalTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 2,
+        "hitByPitch": 0
+      },
+      "rawByInning": {
+        "8": {
+          "walks": 1
+        }
+      },
+      "verifiedByInning": {
+        "8": {
+          "walks": 2,
+          "hitByPitch": 0,
+          "walksAndHbp": 2
+        }
+      },
+      "observedInnings": [
+        8
+      ],
+      "candidateInnings": [
+        8,
+        9
+      ]
+    },
+    {
+      "appearance": "2021038820::西武::1800081",
+      "player": "渡邉 勇太朗",
+      "rawTerminalTotals": {
+        "walks": 3,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 4,
+        "hitByPitch": 0
+      },
+      "rawByInning": {
+        "1": {
+          "walks": 1
+        },
+        "2": {
+          "walks": 1
+        },
+        "5": {
+          "walks": 1
+        }
+      },
+      "verifiedByInning": {
+        "1": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        },
+        "2": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        },
+        "5": {
+          "walks": 2,
+          "hitByPitch": 0,
+          "walksAndHbp": 2
+        }
+      },
+      "observedInnings": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "candidateInnings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "appearance": "2021038824::中日::2000042",
+      "player": "髙橋 宏斗",
+      "rawTerminalTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 2,
+        "hitByPitch": 0
+      },
+      "rawByInning": {
+        "4": {
+          "walks": 1
+        }
+      },
+      "verifiedByInning": {
+        "4": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        },
+        "6": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "candidateInnings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "appearance": "2021038830::ヤクルト::1600075",
+      "player": "星 知弥",
+      "rawTerminalTotals": {
+        "walks": 0,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "rawByInning": {},
+      "verifiedByInning": {
+        "8": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        8
+      ],
+      "candidateInnings": [
+        8,
+        9
+      ]
+    },
+    {
+      "appearance": "2021038834::巨人::1500052",
+      "player": "中川 皓太",
+      "rawTerminalTotals": {
+        "walks": 0,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "rawByInning": {},
+      "verifiedByInning": {
+        "6": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        6
+      ],
+      "candidateInnings": [
+        6,
+        7
+      ]
+    },
+    {
+      "appearance": "2021038835::DeNA::1850838",
+      "player": "篠木 健太郎",
+      "rawTerminalTotals": {
+        "walks": 3,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 4,
+        "hitByPitch": 0
+      },
+      "rawByInning": {
+        "3": {
+          "walks": 1
+        },
+        "5": {
+          "walks": 1
+        },
+        "6": {
+          "walks": 1
+        }
+      },
+      "verifiedByInning": {
+        "1": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        },
+        "3": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        },
+        "5": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        },
+        "6": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "candidateInnings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "appearance": "2021038841::DeNA::2112182",
+      "player": "石田 裕太郎",
+      "rawTerminalTotals": {
+        "walks": 0,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "rawByInning": {},
+      "verifiedByInning": {
+        "4": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "candidateInnings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "appearance": "2021038848::中日::2108462",
+      "player": "金丸 夢斗",
+      "rawTerminalTotals": {
+        "walks": 3,
+        "hitByPitch": 2
+      },
+      "officialTotals": {
+        "walks": 4,
+        "hitByPitch": 2
+      },
+      "rawByInning": {
+        "1": {
+          "walks": 1
+        },
+        "2": {
+          "walks": 1
+        },
+        "3": {
+          "hitByPitch": 1,
+          "walks": 1
+        },
+        "5": {
+          "hitByPitch": 1
+        }
+      },
+      "verifiedByInning": {
+        "1": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        },
+        "2": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        },
+        "3": {
+          "walks": 1,
+          "hitByPitch": 1,
+          "walksAndHbp": 2
+        },
+        "5": {
+          "walks": 1,
+          "hitByPitch": 1,
+          "walksAndHbp": 2
+        }
+      },
+      "observedInnings": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "candidateInnings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "appearance": "2021038849::オリックス::1300058",
+      "player": "九里 亜蓮",
+      "rawTerminalTotals": {
+        "walks": 4,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 5,
+        "hitByPitch": 0
+      },
+      "rawByInning": {
+        "2": {
+          "walks": 1
+        },
+        "3": {
+          "walks": 1
+        },
+        "5": {
+          "walks": 1
+        },
+        "7": {
+          "walks": 1
+        }
+      },
+      "verifiedByInning": {
+        "2": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        },
+        "3": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        },
+        "4": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        },
+        "5": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        },
+        "7": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "candidateInnings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "appearance": "2021038850::ロッテ::2000087",
+      "player": "鈴木 昭汰",
+      "rawTerminalTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 2,
+        "hitByPitch": 0
+      },
+      "rawByInning": {
+        "8": {
+          "walks": 1
+        }
+      },
+      "verifiedByInning": {
+        "8": {
+          "walks": 2,
+          "hitByPitch": 0,
+          "walksAndHbp": 2
+        }
+      },
+      "observedInnings": [
+        8
+      ],
+      "candidateInnings": [
+        8,
+        9
+      ]
+    },
+    {
+      "appearance": "2021038852::巨人::1700027",
+      "player": "田中 瑛斗",
+      "rawTerminalTotals": {
+        "walks": 0,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "rawByInning": {},
+      "verifiedByInning": {
+        "10": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        10
+      ],
+      "candidateInnings": [
+        10,
+        11
+      ]
+    },
+    {
+      "appearance": "2021038852::広島::1700072",
+      "player": "遠藤 淳志",
+      "rawTerminalTotals": {
+        "walks": 0,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "rawByInning": {},
+      "verifiedByInning": {
+        "11": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        11,
+        12
+      ],
+      "candidateInnings": [
+        11,
+        12
+      ]
+    },
+    {
+      "appearance": "2021038856::西武::1400182",
+      "player": "髙橋 光成",
+      "rawTerminalTotals": {
+        "walks": 3,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 4,
+        "hitByPitch": 0
+      },
+      "rawByInning": {
+        "5": {
+          "walks": 1
+        },
+        "6": {
+          "walks": 1
+        },
+        "9": {
+          "walks": 1
+        }
+      },
+      "verifiedByInning": {
+        "5": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        },
+        "6": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        },
+        "9": {
+          "walks": 2,
+          "hitByPitch": 0,
+          "walksAndHbp": 2
+        }
+      },
+      "observedInnings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "candidateInnings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ]
+    },
+    {
+      "appearance": "2021038857::DeNA::2107753",
+      "player": "若松 尚輝",
+      "rawTerminalTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 2,
+        "hitByPitch": 0
+      },
+      "rawByInning": {
+        "11": {
+          "walks": 1
+        }
+      },
+      "verifiedByInning": {
+        "11": {
+          "walks": 2,
+          "hitByPitch": 0,
+          "walksAndHbp": 2
+        }
+      },
+      "observedInnings": [
+        11
+      ],
+      "candidateInnings": [
+        11,
+        12
+      ]
+    },
+    {
+      "appearance": "2021038861::中日::2105295",
+      "player": "吉田 聖弥",
+      "rawTerminalTotals": {
+        "walks": 0,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "rawByInning": {},
+      "verifiedByInning": {
+        "7": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        7
+      ],
+      "candidateInnings": [
+        7,
+        8
+      ]
+    },
+    {
+      "appearance": "2021038862::阪神::2105582",
+      "player": "椎葉 剛",
+      "rawTerminalTotals": {
+        "walks": 0,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "rawByInning": {},
+      "verifiedByInning": {
+        "9": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        9
+      ],
+      "candidateInnings": [
+        9,
+        10
+      ]
+    },
+    {
+      "appearance": "2021038868::広島::1900052",
+      "player": "森下 暢仁",
+      "rawTerminalTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 2,
+        "hitByPitch": 0
+      },
+      "rawByInning": {
+        "1": {
+          "walks": 1
+        }
+      },
+      "verifiedByInning": {
+        "1": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        },
+        "4": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "candidateInnings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "appearance": "2021038871::オリックス::2000102",
+      "player": "川瀬 堅斗",
+      "rawTerminalTotals": {
+        "walks": 2,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 3,
+        "hitByPitch": 0
+      },
+      "rawByInning": {
+        "7": {
+          "walks": 1
+        },
+        "8": {
+          "walks": 1
+        }
+      },
+      "verifiedByInning": {
+        "7": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        },
+        "8": {
+          "walks": 2,
+          "hitByPitch": 0,
+          "walksAndHbp": 2
+        }
+      },
+      "observedInnings": [
+        7,
+        8
+      ],
+      "candidateInnings": [
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "appearance": "2021038874::広島::2114807",
+      "player": "岡本 駿",
+      "rawTerminalTotals": {
+        "walks": 2,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 3,
+        "hitByPitch": 0
+      },
+      "rawByInning": {
+        "3": {
+          "walks": 1
+        },
+        "6": {
+          "walks": 1
+        }
+      },
+      "verifiedByInning": {
+        "3": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        },
+        "4": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        },
+        "6": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "candidateInnings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "appearance": "2021038878::ヤクルト::1500042",
+      "player": "高橋 奎二",
+      "rawTerminalTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 2,
+        "hitByPitch": 0
+      },
+      "rawByInning": {
+        "1": {
+          "walks": 1
+        }
+      },
+      "verifiedByInning": {
+        "1": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        },
+        "4": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "candidateInnings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "appearance": "2021038899::中日::1700104",
+      "player": "清水 達也",
+      "rawTerminalTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 2,
+        "hitByPitch": 0
+      },
+      "rawByInning": {
+        "9": {
+          "walks": 1
+        }
+      },
+      "verifiedByInning": {
+        "9": {
+          "walks": 2,
+          "hitByPitch": 0,
+          "walksAndHbp": 2
+        }
+      },
+      "observedInnings": [
+        9
+      ],
+      "candidateInnings": [
+        9,
+        10
+      ]
+    },
+    {
+      "appearance": "2021038900::ロッテ::1900083",
+      "player": "横山 陸人",
+      "rawTerminalTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 2,
+        "hitByPitch": 0
+      },
+      "rawByInning": {
+        "9": {
+          "walks": 1
+        }
+      },
+      "verifiedByInning": {
+        "9": {
+          "walks": 2,
+          "hitByPitch": 0,
+          "walksAndHbp": 2
+        }
+      },
+      "observedInnings": [
+        9
+      ],
+      "candidateInnings": [
+        9,
+        10
+      ]
+    },
+    {
+      "appearance": "2021038904::ヤクルト::1900024",
+      "player": "奥川 恭伸",
+      "rawTerminalTotals": {
+        "walks": 0,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "rawByInning": {},
+      "verifiedByInning": {
+        "4": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "candidateInnings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "appearance": "2021038909::ソフトバンク::1550517",
+      "player": "大津 亮介",
+      "rawTerminalTotals": {
+        "walks": 0,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "rawByInning": {},
+      "verifiedByInning": {
+        "2": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "candidateInnings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ]
+    },
+    {
+      "appearance": "2021038911::DeNA::1300031",
+      "player": "平良 拳太郎",
+      "rawTerminalTotals": {
+        "walks": 2,
+        "hitByPitch": 1
+      },
+      "officialTotals": {
+        "walks": 3,
+        "hitByPitch": 1
+      },
+      "rawByInning": {
+        "1": {
+          "walks": 1,
+          "hitByPitch": 1
+        },
+        "3": {
+          "walks": 1
+        }
+      },
+      "verifiedByInning": {
+        "1": {
+          "walks": 2,
+          "hitByPitch": 1,
+          "walksAndHbp": 3
+        },
+        "3": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "candidateInnings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "appearance": "2021038913::阪神::2103707",
+      "player": "桐敷 拓馬",
+      "rawTerminalTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 2,
+        "hitByPitch": 0
+      },
+      "rawByInning": {
+        "7": {
+          "walks": 1
+        }
+      },
+      "verifiedByInning": {
+        "7": {
+          "walks": 2,
+          "hitByPitch": 0,
+          "walksAndHbp": 2
+        }
+      },
+      "observedInnings": [
+        7
+      ],
+      "candidateInnings": [
+        7,
+        8
+      ]
+    },
+    {
+      "appearance": "2021038919::日本ハム::1500110",
+      "player": "加藤 貴之",
+      "rawTerminalTotals": {
+        "walks": 0,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "rawByInning": {},
+      "verifiedByInning": {
+        "4": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "candidateInnings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "appearance": "2021038930::阪神::1600033",
+      "player": "ドリス",
+      "rawTerminalTotals": {
+        "walks": 0,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "rawByInning": {},
+      "verifiedByInning": {
+        "9": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        9
+      ],
+      "candidateInnings": [
+        9,
+        10
+      ]
+    },
+    {
+      "appearance": "2021038931::オリックス::2000101",
+      "player": "阿部 翔太",
+      "rawTerminalTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 2,
+        "hitByPitch": 0
+      },
+      "rawByInning": {
+        "8": {
+          "walks": 1
+        }
+      },
+      "verifiedByInning": {
+        "8": {
+          "walks": 2,
+          "hitByPitch": 0,
+          "walksAndHbp": 2
+        }
+      },
+      "observedInnings": [
+        8
+      ],
+      "candidateInnings": [
+        8
+      ]
+    },
+    {
+      "appearance": "2021038937::中日::1000138",
+      "player": "大野 雄大",
+      "rawTerminalTotals": {
+        "walks": 0,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "rawByInning": {},
+      "verifiedByInning": {
+        "7": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "candidateInnings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "appearance": "2021038942::阪神::1600115",
+      "player": "才木 浩人",
+      "rawTerminalTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 2,
+        "hitByPitch": 0
+      },
+      "rawByInning": {
+        "6": {
+          "walks": 1
+        }
+      },
+      "verifiedByInning": {
+        "5": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        },
+        "6": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "candidateInnings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "appearance": "2021038951::巨人::1600100",
+      "player": "高梨 雄平",
+      "rawTerminalTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 2,
+        "hitByPitch": 0
+      },
+      "rawByInning": {
+        "6": {
+          "walks": 1
+        }
+      },
+      "verifiedByInning": {
+        "6": {
+          "walks": 2,
+          "hitByPitch": 0,
+          "walksAndHbp": 2
+        }
+      },
+      "observedInnings": [
+        6
+      ],
+      "candidateInnings": [
+        6,
+        7
+      ]
+    },
+    {
+      "appearance": "2021038954::中日::1600110",
+      "player": "藤嶋 健人",
+      "rawTerminalTotals": {
+        "walks": 0,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "rawByInning": {},
+      "verifiedByInning": {
+        "10": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        10
+      ],
+      "candidateInnings": [
+        10,
+        11
+      ]
+    },
+    {
+      "appearance": "2021038954::中日::1800061",
+      "player": "勝野 昌慶",
+      "rawTerminalTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 2,
+        "hitByPitch": 0
+      },
+      "rawByInning": {
+        "11": {
+          "walks": 1
+        }
+      },
+      "verifiedByInning": {
+        "11": {
+          "walks": 2,
+          "hitByPitch": 0,
+          "walksAndHbp": 2
+        }
+      },
+      "observedInnings": [
+        11
+      ],
+      "candidateInnings": [
+        11
+      ]
+    },
+    {
+      "appearance": "2021038956::広島::1600123",
+      "player": "床田 寛樹",
+      "rawTerminalTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 2,
+        "hitByPitch": 0
+      },
+      "rawByInning": {
+        "3": {
+          "walks": 1
+        }
+      },
+      "verifiedByInning": {
+        "3": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        },
+        "4": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "candidateInnings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "appearance": "2021038957::オリックス::1851026",
+      "player": "寺西 成騎",
+      "rawTerminalTotals": {
+        "walks": 0,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "rawByInning": {},
+      "verifiedByInning": {
+        "8": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        8
+      ],
+      "candidateInnings": [
+        8,
+        9
+      ]
+    },
+    {
+      "appearance": "2021038960::中日::1600110",
+      "player": "藤嶋 健人",
+      "rawTerminalTotals": {
+        "walks": 0,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "rawByInning": {},
+      "verifiedByInning": {
+        "9": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        9
+      ],
+      "candidateInnings": [
+        9,
+        10
+      ]
+    },
+    {
+      "appearance": "2021038962::広島::1950429",
+      "player": "髙 太一",
+      "rawTerminalTotals": {
+        "walks": 0,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "rawByInning": {},
+      "verifiedByInning": {
+        "9": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        9
+      ],
+      "candidateInnings": [
+        9,
+        10
+      ]
+    },
+    {
+      "appearance": "2021038964::日本ハム::2100027",
+      "player": "福島 蓮",
+      "rawTerminalTotals": {
+        "walks": 3,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 4,
+        "hitByPitch": 0
+      },
+      "rawByInning": {
+        "1": {
+          "walks": 1
+        },
+        "5": {
+          "walks": 1
+        },
+        "7": {
+          "walks": 1
+        }
+      },
+      "verifiedByInning": {
+        "1": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        },
+        "5": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        },
+        "6": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        },
+        "7": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "candidateInnings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ]
+    },
+    {
+      "appearance": "2021038964::日本ハム::1600133",
+      "player": "堀 瑞輝",
+      "rawTerminalTotals": {
+        "walks": 0,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "rawByInning": {},
+      "verifiedByInning": {
+        "10": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        10
+      ],
+      "candidateInnings": [
+        10
+      ]
+    },
+    {
+      "appearance": "2021038977::DeNA::1900031",
+      "player": "坂本 裕哉",
+      "rawTerminalTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 2,
+        "hitByPitch": 0
+      },
+      "rawByInning": {
+        "10": {
+          "walks": 1
+        }
+      },
+      "verifiedByInning": {
+        "10": {
+          "walks": 2,
+          "hitByPitch": 0,
+          "walksAndHbp": 2
+        }
+      },
+      "observedInnings": [
+        10
+      ],
+      "candidateInnings": [
+        10,
+        11
+      ]
+    },
+    {
+      "appearance": "2021038978::西武::1900062",
+      "player": "浜屋 将太",
+      "rawTerminalTotals": {
+        "walks": 0,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "rawByInning": {},
+      "verifiedByInning": {
+        "11": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        11
+      ],
+      "candidateInnings": [
+        11
+      ]
+    },
+    {
+      "appearance": "2021038980::オリックス::2108361",
+      "player": "宮國 凌空",
+      "rawTerminalTotals": {
+        "walks": 2,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 3,
+        "hitByPitch": 0
+      },
+      "rawByInning": {
+        "2": {
+          "walks": 2
+        }
+      },
+      "verifiedByInning": {
+        "2": {
+          "walks": 3,
+          "hitByPitch": 0,
+          "walksAndHbp": 3
+        }
+      },
+      "observedInnings": [
+        1,
+        2
+      ],
+      "candidateInnings": [
+        1,
+        2
+      ]
+    },
+    {
+      "appearance": "2021038983::広島::1000116",
+      "player": "中﨑 翔太",
+      "rawTerminalTotals": {
+        "walks": 0,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "rawByInning": {},
+      "verifiedByInning": {
+        "9": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        9
+      ],
+      "candidateInnings": [
+        9
+      ]
+    },
+    {
+      "appearance": "2021038987::DeNA::1700067",
+      "player": "中川 虎大",
+      "rawTerminalTotals": {
+        "walks": 0,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "rawByInning": {},
+      "verifiedByInning": {
+        "7": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        7
+      ],
+      "candidateInnings": [
+        7,
+        8
+      ]
+    },
+    {
+      "appearance": "2021038997::ヤクルト::1700060",
+      "player": "阪口 皓亮",
+      "rawTerminalTotals": {
+        "walks": 0,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "rawByInning": {},
+      "verifiedByInning": {
+        "8": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        8
+      ],
+      "candidateInnings": [
+        8,
+        9
+      ]
+    },
+    {
+      "appearance": "2021039000::広島::1700072",
+      "player": "遠藤 淳志",
+      "rawTerminalTotals": {
+        "walks": 0,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "rawByInning": {},
+      "verifiedByInning": {
+        "8": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        8
+      ],
+      "candidateInnings": [
+        8,
+        9
+      ]
+    },
+    {
+      "appearance": "2021039002::DeNA::1800049",
+      "player": "宮城 滝太",
+      "rawTerminalTotals": {
+        "walks": 0,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "rawByInning": {},
+      "verifiedByInning": {
+        "9": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        9
+      ],
+      "candidateInnings": [
+        9
+      ]
+    },
+    {
+      "appearance": "2021039005::中日::2105295",
+      "player": "吉田 聖弥",
+      "rawTerminalTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 2,
+        "hitByPitch": 0
+      },
+      "rawByInning": {
+        "7": {
+          "walks": 1
+        }
+      },
+      "verifiedByInning": {
+        "7": {
+          "walks": 2,
+          "hitByPitch": 0,
+          "walksAndHbp": 2
+        }
+      },
+      "observedInnings": [
+        7
+      ],
+      "candidateInnings": [
+        7,
+        8
+      ]
+    },
+    {
+      "appearance": "2021039015::オリックス::1300058",
+      "player": "九里 亜蓮",
+      "rawTerminalTotals": {
+        "walks": 1,
+        "hitByPitch": 2
+      },
+      "officialTotals": {
+        "walks": 2,
+        "hitByPitch": 2
+      },
+      "rawByInning": {
+        "1": {
+          "hitByPitch": 1
+        },
+        "3": {
+          "hitByPitch": 1
+        },
+        "5": {
+          "walks": 1
+        }
+      },
+      "verifiedByInning": {
+        "1": {
+          "walks": 0,
+          "hitByPitch": 1,
+          "walksAndHbp": 1
+        },
+        "3": {
+          "walks": 0,
+          "hitByPitch": 1,
+          "walksAndHbp": 1
+        },
+        "5": {
+          "walks": 2,
+          "hitByPitch": 0,
+          "walksAndHbp": 2
+        }
+      },
+      "observedInnings": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "candidateInnings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "appearance": "2021039018::広島::2108238",
+      "player": "ターノック",
+      "rawTerminalTotals": {
+        "walks": 2,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 3,
+        "hitByPitch": 0
+      },
+      "rawByInning": {
+        "1": {
+          "walks": 1
+        },
+        "3": {
+          "walks": 1
+        }
+      },
+      "verifiedByInning": {
+        "1": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        },
+        "2": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        },
+        "3": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "candidateInnings": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "appearance": "2021039024::広島::1900052",
+      "player": "森下 暢仁",
+      "rawTerminalTotals": {
+        "walks": 1,
+        "hitByPitch": 1
+      },
+      "officialTotals": {
+        "walks": 2,
+        "hitByPitch": 1
+      },
+      "rawByInning": {
+        "1": {
+          "hitByPitch": 1
+        },
+        "2": {
+          "walks": 1
+        }
+      },
+      "verifiedByInning": {
+        "1": {
+          "walks": 0,
+          "hitByPitch": 1,
+          "walksAndHbp": 1
+        },
+        "2": {
+          "walks": 2,
+          "hitByPitch": 0,
+          "walksAndHbp": 2
+        }
+      },
+      "observedInnings": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "candidateInnings": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "appearance": "2021039028::オリックス::1660014",
+      "player": "ペルドモ",
+      "rawTerminalTotals": {
+        "walks": 3,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 4,
+        "hitByPitch": 0
+      },
+      "rawByInning": {
+        "2": {
+          "walks": 2
+        },
+        "5": {
+          "walks": 1
+        }
+      },
+      "verifiedByInning": {
+        "2": {
+          "walks": 2,
+          "hitByPitch": 0,
+          "walksAndHbp": 2
+        },
+        "5": {
+          "walks": 2,
+          "hitByPitch": 0,
+          "walksAndHbp": 2
+        }
+      },
+      "observedInnings": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "candidateInnings": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "appearance": "2021039033::ロッテ::2000087",
+      "player": "鈴木 昭汰",
+      "rawTerminalTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 2,
+        "hitByPitch": 0
+      },
+      "rawByInning": {
+        "8": {
+          "walks": 1
+        }
+      },
+      "verifiedByInning": {
+        "8": {
+          "walks": 2,
+          "hitByPitch": 0,
+          "walksAndHbp": 2
+        }
+      },
+      "observedInnings": [
+        8
+      ],
+      "candidateInnings": [
+        8
+      ]
+    },
+    {
+      "appearance": "2021039037::阪神::1300075",
+      "player": "岩崎 優",
+      "rawTerminalTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 2,
+        "hitByPitch": 0
+      },
+      "rawByInning": {
+        "8": {
+          "walks": 1
+        }
+      },
+      "verifiedByInning": {
+        "8": {
+          "walks": 2,
+          "hitByPitch": 0,
+          "walksAndHbp": 2
+        }
+      },
+      "observedInnings": [
+        8
+      ],
+      "candidateInnings": [
+        8
+      ]
+    },
+    {
+      "appearance": "2021039039::ロッテ::1760440",
+      "player": "カスティーヨ",
+      "rawTerminalTotals": {
+        "walks": 0,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "rawByInning": {},
+      "verifiedByInning": {
+        "7": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        7
+      ],
+      "candidateInnings": [
+        7,
+        8
+      ]
+    },
+    {
+      "appearance": "2021039062::ヤクルト::2103794",
+      "player": "吉村 貢司郎",
+      "rawTerminalTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 3,
+        "hitByPitch": 0
+      },
+      "rawByInning": {
+        "5": {
+          "walks": 1
+        }
+      },
+      "verifiedByInning": {
+        "5": {
+          "walks": 2,
+          "hitByPitch": 0,
+          "walksAndHbp": 2
+        },
+        "6": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "candidateInnings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "appearance": "2021039062::中日::1600110",
+      "player": "藤嶋 健人",
+      "rawTerminalTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 2,
+        "hitByPitch": 0
+      },
+      "rawByInning": {
+        "9": {
+          "walks": 1
+        }
+      },
+      "verifiedByInning": {
+        "9": {
+          "walks": 2,
+          "hitByPitch": 0,
+          "walksAndHbp": 2
+        }
+      },
+      "observedInnings": [
+        9
+      ],
+      "candidateInnings": [
+        9
+      ]
+    },
+    {
+      "appearance": "2021039063::DeNA::2112182",
+      "player": "石田 裕太郎",
+      "rawTerminalTotals": {
+        "walks": 0,
+        "hitByPitch": 2
+      },
+      "officialTotals": {
+        "walks": 1,
+        "hitByPitch": 2
+      },
+      "rawByInning": {
+        "2": {
+          "hitByPitch": 1
+        },
+        "5": {
+          "hitByPitch": 1
+        }
+      },
+      "verifiedByInning": {
+        "2": {
+          "walks": 0,
+          "hitByPitch": 1,
+          "walksAndHbp": 1
+        },
+        "5": {
+          "walks": 0,
+          "hitByPitch": 1,
+          "walksAndHbp": 1
+        },
+        "6": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "candidateInnings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "appearance": "2021039078::広島::1900052",
+      "player": "森下 暢仁",
+      "rawTerminalTotals": {
+        "walks": 3,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 4,
+        "hitByPitch": 0
+      },
+      "rawByInning": {
+        "2": {
+          "walks": 1
+        },
+        "3": {
+          "walks": 1
+        },
+        "6": {
+          "walks": 1
+        }
+      },
+      "verifiedByInning": {
+        "2": {
+          "walks": 2,
+          "hitByPitch": 0,
+          "walksAndHbp": 2
+        },
+        "3": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        },
+        "6": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "candidateInnings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "appearance": "2021039078::広島::2000061",
+      "player": "森浦 大輔",
+      "rawTerminalTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 2,
+        "hitByPitch": 0
+      },
+      "rawByInning": {
+        "9": {
+          "walks": 1
+        }
+      },
+      "verifiedByInning": {
+        "9": {
+          "walks": 2,
+          "hitByPitch": 0,
+          "walksAndHbp": 2
+        }
+      },
+      "observedInnings": [
+        9
+      ],
+      "candidateInnings": [
+        9,
+        10
+      ]
+    },
+    {
+      "appearance": "2021039079::中日::1900038",
+      "player": "橋本 侑樹",
+      "rawTerminalTotals": {
+        "walks": 0,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "rawByInning": {},
+      "verifiedByInning": {
+        "8": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        8
+      ],
+      "candidateInnings": [
+        8,
+        9
+      ]
+    },
+    {
+      "appearance": "2021039079::中日::1400199",
+      "player": "齋藤 綱記",
+      "rawTerminalTotals": {
+        "walks": 0,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "rawByInning": {},
+      "verifiedByInning": {
+        "10": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        10
+      ],
+      "candidateInnings": [
+        10
+      ]
+    },
+    {
+      "appearance": "2021039091::日本ハム::2111822",
+      "player": "細野 晴希",
+      "rawTerminalTotals": {
+        "walks": 3,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 4,
+        "hitByPitch": 0
+      },
+      "rawByInning": {
+        "2": {
+          "walks": 1
+        },
+        "3": {
+          "walks": 1
+        },
+        "5": {
+          "walks": 1
+        }
+      },
+      "verifiedByInning": {
+        "2": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        },
+        "3": {
+          "walks": 2,
+          "hitByPitch": 0,
+          "walksAndHbp": 2
+        },
+        "5": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "candidateInnings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "appearance": "2021039094::DeNA::2100109",
+      "player": "深沢 鳳介",
+      "rawTerminalTotals": {
+        "walks": 0,
+        "hitByPitch": 1
+      },
+      "officialTotals": {
+        "walks": 1,
+        "hitByPitch": 1
+      },
+      "rawByInning": {
+        "5": {
+          "hitByPitch": 1
+        }
+      },
+      "verifiedByInning": {
+        "4": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        },
+        "5": {
+          "walks": 0,
+          "hitByPitch": 1,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "candidateInnings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "appearance": "2021039096::広島::1600123",
+      "player": "床田 寛樹",
+      "rawTerminalTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 2,
+        "hitByPitch": 0
+      },
+      "rawByInning": {
+        "2": {
+          "walks": 1
+        }
+      },
+      "verifiedByInning": {
+        "2": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        },
+        "4": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "candidateInnings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "appearance": "2021039101::中日::2100961",
+      "player": "マラー",
+      "rawTerminalTotals": {
+        "walks": 2,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 3,
+        "hitByPitch": 0
+      },
+      "rawByInning": {
+        "4": {
+          "walks": 2
+        }
+      },
+      "verifiedByInning": {
+        "4": {
+          "walks": 2,
+          "hitByPitch": 0,
+          "walksAndHbp": 2
+        },
+        "6": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "candidateInnings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "appearance": "2021039107::中日::1200098",
+      "player": "松葉 貴大",
+      "rawTerminalTotals": {
+        "walks": 2,
+        "hitByPitch": 1
+      },
+      "officialTotals": {
+        "walks": 3,
+        "hitByPitch": 1
+      },
+      "rawByInning": {
+        "3": {
+          "walks": 1
+        },
+        "4": {
+          "walks": 1
+        },
+        "5": {
+          "hitByPitch": 1
+        }
+      },
+      "verifiedByInning": {
+        "3": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        },
+        "4": {
+          "walks": 2,
+          "hitByPitch": 0,
+          "walksAndHbp": 2
+        },
+        "5": {
+          "walks": 0,
+          "hitByPitch": 1,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "candidateInnings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "appearance": "2021039108::広島::1700072",
+      "player": "遠藤 淳志",
+      "rawTerminalTotals": {
+        "walks": 0,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "rawByInning": {},
+      "verifiedByInning": {
+        "7": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        7
+      ],
+      "candidateInnings": [
+        7,
+        8
+      ]
+    },
+    {
+      "appearance": "2021039108::広島::2000061",
+      "player": "森浦 大輔",
+      "rawTerminalTotals": {
+        "walks": 0,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "rawByInning": {},
+      "verifiedByInning": {
+        "9": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        9
+      ],
+      "candidateInnings": [
+        9,
+        10
+      ]
+    },
+    {
+      "appearance": "2021039110::ロッテ::1600157",
+      "player": "澤田 圭佑",
+      "rawTerminalTotals": {
+        "walks": 0,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "rawByInning": {},
+      "verifiedByInning": {
+        "7": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        7
+      ],
+      "candidateInnings": [
+        7,
+        8
+      ]
+    },
+    {
+      "appearance": "2021039115::DeNA::1700134",
+      "player": "尾形 崇斗",
+      "rawTerminalTotals": {
+        "walks": 3,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 4,
+        "hitByPitch": 0
+      },
+      "rawByInning": {
+        "1": {
+          "walks": 1
+        },
+        "3": {
+          "walks": 2
+        }
+      },
+      "verifiedByInning": {
+        "1": {
+          "walks": 2,
+          "hitByPitch": 0,
+          "walksAndHbp": 2
+        },
+        "3": {
+          "walks": 2,
+          "hitByPitch": 0,
+          "walksAndHbp": 2
+        }
+      },
+      "observedInnings": [
+        1,
+        2,
+        3
+      ],
+      "candidateInnings": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "appearance": "2021039115::DeNA::2000059",
+      "player": "岩田 将貴",
+      "rawTerminalTotals": {
+        "walks": 0,
+        "hitByPitch": 1
+      },
+      "officialTotals": {
+        "walks": 1,
+        "hitByPitch": 1
+      },
+      "rawByInning": {
+        "4": {
+          "hitByPitch": 1
+        }
+      },
+      "verifiedByInning": {
+        "4": {
+          "walks": 0,
+          "hitByPitch": 1,
+          "walksAndHbp": 1
+        },
+        "5": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        4,
+        5
+      ],
+      "candidateInnings": [
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "appearance": "2021039117::ヤクルト::1961046",
+      "player": "キハダ",
+      "rawTerminalTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 2,
+        "hitByPitch": 0
+      },
+      "rawByInning": {
+        "9": {
+          "walks": 1
+        }
+      },
+      "verifiedByInning": {
+        "9": {
+          "walks": 2,
+          "hitByPitch": 0,
+          "walksAndHbp": 2
+        }
+      },
+      "observedInnings": [
+        9
+      ],
+      "candidateInnings": [
+        9,
+        10
+      ]
+    },
+    {
+      "appearance": "2021039121::DeNA::2107753",
+      "player": "若松 尚輝",
+      "rawTerminalTotals": {
+        "walks": 0,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "rawByInning": {},
+      "verifiedByInning": {
+        "8": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        8
+      ],
+      "candidateInnings": [
+        8,
+        9
+      ]
+    },
+    {
+      "appearance": "2021039127::DeNA::1850838",
+      "player": "篠木 健太郎",
+      "rawTerminalTotals": {
+        "walks": 3,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 4,
+        "hitByPitch": 0
+      },
+      "rawByInning": {
+        "1": {
+          "walks": 3
+        }
+      },
+      "verifiedByInning": {
+        "1": {
+          "walks": 3,
+          "hitByPitch": 0,
+          "walksAndHbp": 3
+        },
+        "4": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "candidateInnings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "appearance": "2021039135::DeNA::2112182",
+      "player": "石田 裕太郎",
+      "rawTerminalTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 2,
+        "hitByPitch": 0
+      },
+      "rawByInning": {
+        "1": {
+          "walks": 1
+        }
+      },
+      "verifiedByInning": {
+        "1": {
+          "walks": 2,
+          "hitByPitch": 0,
+          "walksAndHbp": 2
+        }
+      },
+      "observedInnings": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "candidateInnings": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "appearance": "2021039136::日本ハム::2050307",
+      "player": "達 孝太",
+      "rawTerminalTotals": {
+        "walks": 0,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "rawByInning": {},
+      "verifiedByInning": {
+        "8": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        8
+      ],
+      "candidateInnings": [
+        8,
+        9
+      ]
+    },
+    {
+      "appearance": "2021039150::中日::1400199",
+      "player": "齋藤 綱記",
+      "rawTerminalTotals": {
+        "walks": 0,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "rawByInning": {},
+      "verifiedByInning": {
+        "9": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        9
+      ],
+      "candidateInnings": [
+        9
+      ]
+    },
+    {
+      "appearance": "2021039151::ヤクルト::1500042",
+      "player": "高橋 奎二",
+      "rawTerminalTotals": {
+        "walks": 2,
+        "hitByPitch": 2
+      },
+      "officialTotals": {
+        "walks": 3,
+        "hitByPitch": 2
+      },
+      "rawByInning": {
+        "2": {
+          "hitByPitch": 2,
+          "walks": 1
+        },
+        "3": {
+          "walks": 1
+        }
+      },
+      "verifiedByInning": {
+        "2": {
+          "walks": 1,
+          "hitByPitch": 2,
+          "walksAndHbp": 3
+        },
+        "3": {
+          "walks": 2,
+          "hitByPitch": 0,
+          "walksAndHbp": 2
+        }
+      },
+      "observedInnings": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "candidateInnings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "appearance": "2021039159::中日::2108462",
+      "player": "金丸 夢斗",
+      "rawTerminalTotals": {
+        "walks": 0,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "rawByInning": {},
+      "verifiedByInning": {
+        "7": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "candidateInnings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "appearance": "2021039159::巨人::1700027",
+      "player": "田中 瑛斗",
+      "rawTerminalTotals": {
+        "walks": 0,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "rawByInning": {},
+      "verifiedByInning": {
+        "7": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        7
+      ],
+      "candidateInnings": [
+        7,
+        8
+      ]
+    },
+    {
+      "appearance": "2021039165::広島::1600123",
+      "player": "床田 寛樹",
+      "rawTerminalTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 2,
+        "hitByPitch": 0
+      },
+      "rawByInning": {
+        "6": {
+          "walks": 1
+        }
+      },
+      "verifiedByInning": {
+        "6": {
+          "walks": 2,
+          "hitByPitch": 0,
+          "walksAndHbp": 2
+        }
+      },
+      "observedInnings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "candidateInnings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "appearance": "2021039169::ロッテ::1900083",
+      "player": "横山 陸人",
+      "rawTerminalTotals": {
+        "walks": 1,
+        "hitByPitch": 1
+      },
+      "officialTotals": {
+        "walks": 2,
+        "hitByPitch": 1
+      },
+      "rawByInning": {
+        "9": {
+          "walks": 1,
+          "hitByPitch": 1
+        }
+      },
+      "verifiedByInning": {
+        "9": {
+          "walks": 2,
+          "hitByPitch": 1,
+          "walksAndHbp": 3
+        }
+      },
+      "observedInnings": [
+        9
+      ],
+      "candidateInnings": [
+        9,
+        10
+      ]
+    },
+    {
+      "appearance": "2021039173::DeNA::1900032",
+      "player": "伊勢 大夢",
+      "rawTerminalTotals": {
+        "walks": 0,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "rawByInning": {},
+      "verifiedByInning": {
+        "8": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        8,
+        9
+      ],
+      "candidateInnings": [
+        8,
+        9
+      ]
+    },
+    {
+      "appearance": "2021039173::阪神::2112444",
+      "player": "木下 里都",
+      "rawTerminalTotals": {
+        "walks": 1,
+        "hitByPitch": 1
+      },
+      "officialTotals": {
+        "walks": 2,
+        "hitByPitch": 1
+      },
+      "rawByInning": {
+        "11": {
+          "hitByPitch": 1,
+          "walks": 1
+        }
+      },
+      "verifiedByInning": {
+        "11": {
+          "walks": 2,
+          "hitByPitch": 1,
+          "walksAndHbp": 3
+        }
+      },
+      "observedInnings": [
+        11
+      ],
+      "candidateInnings": [
+        11,
+        12
+      ]
+    },
+    {
+      "appearance": "2021039181::日本ハム::1750903",
+      "player": "北山 亘基",
+      "rawTerminalTotals": {
+        "walks": 0,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "rawByInning": {},
+      "verifiedByInning": {
+        "2": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        4,
+        5,
+        6
+      ],
+      "candidateInnings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "appearance": "2021039181::西武::1751148",
+      "player": "隅田 知一郎",
+      "rawTerminalTotals": {
+        "walks": 0,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 3,
+        "hitByPitch": 0
+      },
+      "rawByInning": {},
+      "verifiedByInning": {
+        "2": {
+          "walks": 2,
+          "hitByPitch": 0,
+          "walksAndHbp": 2
+        },
+        "4": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        4
+      ],
+      "candidateInnings": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "appearance": "2021039183::オリックス::1650221",
+      "player": "椋木 蓮",
+      "rawTerminalTotals": {
+        "walks": 0,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "rawByInning": {},
+      "verifiedByInning": {
+        "9": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        9
+      ],
+      "candidateInnings": [
+        9
+      ]
+    },
+    {
+      "appearance": "2021039184::ヤクルト::2122334",
+      "player": "リランソ",
+      "rawTerminalTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 2,
+        "hitByPitch": 0
+      },
+      "rawByInning": {
+        "8": {
+          "walks": 1
+        }
+      },
+      "verifiedByInning": {
+        "8": {
+          "walks": 2,
+          "hitByPitch": 0,
+          "walksAndHbp": 2
+        }
+      },
+      "observedInnings": [
+        8
+      ],
+      "candidateInnings": [
+        8,
+        9
+      ]
+    },
+    {
+      "appearance": "2021039184::ヤクルト::2000033",
+      "player": "丸山 翔大",
+      "rawTerminalTotals": {
+        "walks": 0,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 1,
+        "hitByPitch": 1
+      },
+      "rawByInning": {},
+      "verifiedByInning": {
+        "11": {
+          "walks": 1,
+          "hitByPitch": 1,
+          "walksAndHbp": 2
+        }
+      },
+      "observedInnings": [
+        11
+      ],
+      "candidateInnings": [
+        11,
+        12
+      ]
+    },
+    {
+      "appearance": "2021039185::DeNA::2117433",
+      "player": "レイノルズ",
+      "rawTerminalTotals": {
+        "walks": 2,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 3,
+        "hitByPitch": 0
+      },
+      "rawByInning": {
+        "8": {
+          "walks": 2
+        }
+      },
+      "verifiedByInning": {
+        "8": {
+          "walks": 3,
+          "hitByPitch": 0,
+          "walksAndHbp": 3
+        }
+      },
+      "observedInnings": [
+        8
+      ],
+      "candidateInnings": [
+        8,
+        9
+      ]
+    },
+    {
+      "appearance": "2021039185::DeNA::1900032",
+      "player": "伊勢 大夢",
+      "rawTerminalTotals": {
+        "walks": 0,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "rawByInning": {},
+      "verifiedByInning": {
+        "9": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        9
+      ],
+      "candidateInnings": [
+        9
+      ]
+    },
+    {
+      "appearance": "2021039187::ソフトバンク::2102969",
+      "player": "鈴木 豪太",
+      "rawTerminalTotals": {
+        "walks": 0,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "rawByInning": {},
+      "verifiedByInning": {
+        "9": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        9
+      ],
+      "candidateInnings": [
+        9,
+        10
+      ]
+    },
+    {
+      "appearance": "2021039188::ロッテ::2000090",
+      "player": "河村 説人",
+      "rawTerminalTotals": {
+        "walks": 0,
+        "hitByPitch": 1
+      },
+      "officialTotals": {
+        "walks": 1,
+        "hitByPitch": 1
+      },
+      "rawByInning": {
+        "2": {
+          "hitByPitch": 1
+        }
+      },
+      "verifiedByInning": {
+        "2": {
+          "walks": 0,
+          "hitByPitch": 1,
+          "walksAndHbp": 1
+        },
+        "9": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "candidateInnings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "appearance": "2021039189::広島::2000061",
+      "player": "森浦 大輔",
+      "rawTerminalTotals": {
+        "walks": 0,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "rawByInning": {},
+      "verifiedByInning": {
+        "9": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        9
+      ],
+      "candidateInnings": [
+        9,
+        10
+      ]
+    },
+    {
+      "appearance": "2021039189::広島::1700072",
+      "player": "遠藤 淳志",
+      "rawTerminalTotals": {
+        "walks": 0,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 2,
+        "hitByPitch": 0
+      },
+      "rawByInning": {},
+      "verifiedByInning": {
+        "10": {
+          "walks": 2,
+          "hitByPitch": 0,
+          "walksAndHbp": 2
+        }
+      },
+      "observedInnings": [
+        10
+      ],
+      "candidateInnings": [
+        10
+      ]
+    },
+    {
+      "appearance": "2021039190::中日::1700104",
+      "player": "清水 達也",
+      "rawTerminalTotals": {
+        "walks": 0,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "rawByInning": {},
+      "verifiedByInning": {
+        "7": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        7
+      ],
+      "candidateInnings": [
+        7,
+        8
+      ]
+    },
+    {
+      "appearance": "2021039196::DeNA::1800049",
+      "player": "宮城 滝太",
+      "rawTerminalTotals": {
+        "walks": 2,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 3,
+        "hitByPitch": 0
+      },
+      "rawByInning": {
+        "8": {
+          "walks": 2
+        }
+      },
+      "verifiedByInning": {
+        "8": {
+          "walks": 3,
+          "hitByPitch": 0,
+          "walksAndHbp": 3
+        }
+      },
+      "observedInnings": [
+        8
+      ],
+      "candidateInnings": [
+        8
+      ]
+    },
+    {
+      "appearance": "2021039197::巨人::1500074",
+      "player": "小笠原 慎之介",
+      "rawTerminalTotals": {
+        "walks": 0,
+        "hitByPitch": 1
+      },
+      "officialTotals": {
+        "walks": 1,
+        "hitByPitch": 1
+      },
+      "rawByInning": {
+        "6": {
+          "hitByPitch": 1
+        }
+      },
+      "verifiedByInning": {
+        "4": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        },
+        "6": {
+          "walks": 0,
+          "hitByPitch": 1,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "candidateInnings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ]
+    },
+    {
+      "appearance": "2021039200::オリックス::1000011",
+      "player": "山田 修義",
+      "rawTerminalTotals": {
+        "walks": 0,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "rawByInning": {},
+      "verifiedByInning": {
+        "8": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        8
+      ],
+      "candidateInnings": [
+        8
+      ]
+    },
+    {
+      "appearance": "2021039201::DeNA::2000059",
+      "player": "岩田 将貴",
+      "rawTerminalTotals": {
+        "walks": 0,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "rawByInning": {},
+      "verifiedByInning": {
+        "8": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        8
+      ],
+      "candidateInnings": [
+        8,
+        9
+      ]
+    },
+    {
+      "appearance": "2021039213::DeNA::2100109",
+      "player": "深沢 鳳介",
+      "rawTerminalTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 2,
+        "hitByPitch": 0
+      },
+      "rawByInning": {
+        "6": {
+          "walks": 1
+        }
+      },
+      "verifiedByInning": {
+        "4": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        },
+        "6": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "candidateInnings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "appearance": "2021039215::広島::1700072",
+      "player": "遠藤 淳志",
+      "rawTerminalTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 2,
+        "hitByPitch": 0
+      },
+      "rawByInning": {
+        "8": {
+          "walks": 1
+        }
+      },
+      "verifiedByInning": {
+        "8": {
+          "walks": 2,
+          "hitByPitch": 0,
+          "walksAndHbp": 2
+        }
+      },
+      "observedInnings": [
+        8
+      ],
+      "candidateInnings": [
+        8,
+        9
+      ]
+    },
+    {
+      "appearance": "2021039221::ヤクルト::1961046",
+      "player": "キハダ",
+      "rawTerminalTotals": {
+        "walks": 0,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "rawByInning": {},
+      "verifiedByInning": {
+        "9": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        9
+      ],
+      "candidateInnings": [
+        9
+      ]
+    },
+    {
+      "appearance": "2021039229::東北楽天::2103765",
+      "player": "柴田 大地",
+      "rawTerminalTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 2,
+        "hitByPitch": 0
+      },
+      "rawByInning": {
+        "8": {
+          "walks": 1
+        }
+      },
+      "verifiedByInning": {
+        "8": {
+          "walks": 2,
+          "hitByPitch": 0,
+          "walksAndHbp": 2
+        }
+      },
+      "observedInnings": [
+        8
+      ],
+      "candidateInnings": [
+        8,
+        9
+      ]
+    },
+    {
+      "appearance": "2021039230::日本ハム::2100027",
+      "player": "福島 蓮",
+      "rawTerminalTotals": {
+        "walks": 0,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "rawByInning": {},
+      "verifiedByInning": {
+        "7": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        7
+      ],
+      "candidateInnings": [
+        7,
+        8
+      ]
+    },
+    {
+      "appearance": "2021039231::DeNA::2105707",
+      "player": "吉野 光樹",
+      "rawTerminalTotals": {
+        "walks": 0,
+        "hitByPitch": 1
+      },
+      "officialTotals": {
+        "walks": 1,
+        "hitByPitch": 1
+      },
+      "rawByInning": {
+        "8": {
+          "hitByPitch": 1
+        }
+      },
+      "verifiedByInning": {
+        "8": {
+          "walks": 0,
+          "hitByPitch": 1,
+          "walksAndHbp": 1
+        },
+        "9": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        8,
+        9
+      ],
+      "candidateInnings": [
+        8,
+        9,
+        10
+      ]
+    },
+    {
+      "appearance": "2021039232::ヤクルト::1750894",
+      "player": "増居 翔太",
+      "rawTerminalTotals": {
+        "walks": 2,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 3,
+        "hitByPitch": 0
+      },
+      "rawByInning": {
+        "5": {
+          "walks": 1
+        },
+        "6": {
+          "walks": 1
+        }
+      },
+      "verifiedByInning": {
+        "5": {
+          "walks": 2,
+          "hitByPitch": 0,
+          "walksAndHbp": 2
+        },
+        "6": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "candidateInnings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "appearance": "2021039232::ヤクルト::1800033",
+      "player": "清水 昇",
+      "rawTerminalTotals": {
+        "walks": 0,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "rawByInning": {},
+      "verifiedByInning": {
+        "8": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        8
+      ],
+      "candidateInnings": [
+        8
+      ]
+    },
+    {
+      "appearance": "2021039237::DeNA::1300031",
+      "player": "平良 拳太郎",
+      "rawTerminalTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 2,
+        "hitByPitch": 0
+      },
+      "rawByInning": {
+        "2": {
+          "walks": 1
+        }
+      },
+      "verifiedByInning": {
+        "2": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        },
+        "4": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "candidateInnings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ]
+    },
+    {
+      "appearance": "2021039243::DeNA::1700077",
+      "player": "馬場 皐輔",
+      "rawTerminalTotals": {
+        "walks": 0,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "rawByInning": {},
+      "verifiedByInning": {
+        "12": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        11,
+        12
+      ],
+      "candidateInnings": [
+        11,
+        12
+      ]
+    },
+    {
+      "appearance": "2021039246::西武::1751148",
+      "player": "隅田 知一郎",
+      "rawTerminalTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 2,
+        "hitByPitch": 0
+      },
+      "rawByInning": {
+        "1": {
+          "walks": 1
+        }
+      },
+      "verifiedByInning": {
+        "1": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        },
+        "7": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "candidateInnings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ]
+    },
+    {
+      "appearance": "2021039256::DeNA::1900031",
+      "player": "坂本 裕哉",
+      "rawTerminalTotals": {
+        "walks": 2,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 3,
+        "hitByPitch": 0
+      },
+      "rawByInning": {
+        "7": {
+          "walks": 2
+        }
+      },
+      "verifiedByInning": {
+        "7": {
+          "walks": 3,
+          "hitByPitch": 0,
+          "walksAndHbp": 3
+        }
+      },
+      "observedInnings": [
+        6,
+        7
+      ],
+      "candidateInnings": [
+        6,
+        7,
+        8
+      ]
+    },
+    {
+      "appearance": "2021039266::巨人::1850035",
+      "player": "西舘 勇陽",
+      "rawTerminalTotals": {
+        "walks": 3,
+        "hitByPitch": 1
+      },
+      "officialTotals": {
+        "walks": 4,
+        "hitByPitch": 1
+      },
+      "rawByInning": {
+        "1": {
+          "hitByPitch": 1
+        },
+        "3": {
+          "walks": 1
+        },
+        "4": {
+          "walks": 1
+        },
+        "6": {
+          "walks": 1
+        }
+      },
+      "verifiedByInning": {
+        "1": {
+          "walks": 0,
+          "hitByPitch": 1,
+          "walksAndHbp": 1
+        },
+        "3": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        },
+        "4": {
+          "walks": 2,
+          "hitByPitch": 0,
+          "walksAndHbp": 2
+        },
+        "6": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "candidateInnings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "appearance": "2021039266::巨人::2103689",
+      "player": "赤星 優志",
+      "rawTerminalTotals": {
+        "walks": 0,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "rawByInning": {},
+      "verifiedByInning": {
+        "9": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        9
+      ],
+      "candidateInnings": [
+        9,
+        10
+      ]
+    },
+    {
+      "appearance": "2021039270::オリックス::1700109",
+      "player": "田嶋 大樹",
+      "rawTerminalTotals": {
+        "walks": 2,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 3,
+        "hitByPitch": 0
+      },
+      "rawByInning": {
+        "1": {
+          "walks": 1
+        },
+        "3": {
+          "walks": 1
+        }
+      },
+      "verifiedByInning": {
+        "1": {
+          "walks": 2,
+          "hitByPitch": 0,
+          "walksAndHbp": 2
+        },
+        "3": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        1,
+        2,
+        3
+      ],
+      "candidateInnings": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "appearance": "2021039270::東北楽天::1900117",
+      "player": "瀧中 瞭太",
+      "rawTerminalTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 2,
+        "hitByPitch": 0
+      },
+      "rawByInning": {
+        "5": {
+          "walks": 1
+        }
+      },
+      "verifiedByInning": {
+        "4": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        },
+        "5": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "candidateInnings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "appearance": "2021039271::ロッテ::2102758",
+      "player": "田中 晴也",
+      "rawTerminalTotals": {
+        "walks": 3,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 4,
+        "hitByPitch": 0
+      },
+      "rawByInning": {
+        "1": {
+          "walks": 1
+        },
+        "3": {
+          "walks": 1
+        },
+        "5": {
+          "walks": 1
+        }
+      },
+      "verifiedByInning": {
+        "1": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        },
+        "3": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        },
+        "5": {
+          "walks": 2,
+          "hitByPitch": 0,
+          "walksAndHbp": 2
+        }
+      },
+      "observedInnings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "candidateInnings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "appearance": "2021039278::DeNA::1700067",
+      "player": "中川 虎大",
+      "rawTerminalTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 2,
+        "hitByPitch": 0
+      },
+      "rawByInning": {
+        "9": {
+          "walks": 1
+        }
+      },
+      "verifiedByInning": {
+        "9": {
+          "walks": 2,
+          "hitByPitch": 0,
+          "walksAndHbp": 2
+        }
+      },
+      "observedInnings": [
+        9
+      ],
+      "candidateInnings": [
+        9
+      ]
+    },
+    {
+      "appearance": "2021039278::ヤクルト::1800033",
+      "player": "清水 昇",
+      "rawTerminalTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 2,
+        "hitByPitch": 0
+      },
+      "rawByInning": {
+        "9": {
+          "walks": 1
+        }
+      },
+      "verifiedByInning": {
+        "9": {
+          "walks": 2,
+          "hitByPitch": 0,
+          "walksAndHbp": 2
+        }
+      },
+      "observedInnings": [
+        9
+      ],
+      "candidateInnings": [
+        9,
+        10
+      ]
+    },
+    {
+      "appearance": "2021039280::阪神::2108545",
+      "player": "神宮 僚介",
+      "rawTerminalTotals": {
+        "walks": 0,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "rawByInning": {},
+      "verifiedByInning": {
+        "7": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        7
+      ],
+      "candidateInnings": [
+        7,
+        8
+      ]
+    },
+    {
+      "appearance": "2021039284::DeNA::2105232",
+      "player": "片山 皓心",
+      "rawTerminalTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 2,
+        "hitByPitch": 0
+      },
+      "rawByInning": {
+        "1": {
+          "walks": 1
+        }
+      },
+      "verifiedByInning": {
+        "1": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        },
+        "4": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "candidateInnings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "appearance": "2021039286::広島::2106037",
+      "player": "辻 大雅",
+      "rawTerminalTotals": {
+        "walks": 0,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "rawByInning": {},
+      "verifiedByInning": {
+        "7": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        7
+      ],
+      "candidateInnings": [
+        7
+      ]
+    },
+    {
+      "appearance": "2021039292::広島::1600123",
+      "player": "床田 寛樹",
+      "rawTerminalTotals": {
+        "walks": 0,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "rawByInning": {},
+      "verifiedByInning": {
+        "2": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "candidateInnings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "appearance": "2021039297::ヤクルト::2105626",
+      "player": "廣澤 優",
+      "rawTerminalTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 2,
+        "hitByPitch": 0
+      },
+      "rawByInning": {
+        "9": {
+          "walks": 1
+        }
+      },
+      "verifiedByInning": {
+        "9": {
+          "walks": 2,
+          "hitByPitch": 0,
+          "walksAndHbp": 2
+        }
+      },
+      "observedInnings": [
+        9
+      ],
+      "candidateInnings": [
+        9,
+        10
+      ]
+    },
+    {
+      "appearance": "2021039297::ヤクルト::1600075",
+      "player": "星 知弥",
+      "rawTerminalTotals": {
+        "walks": 0,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "rawByInning": {},
+      "verifiedByInning": {
+        "10": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        10
+      ],
+      "candidateInnings": [
+        10
+      ]
+    },
+    {
+      "appearance": "2021039297::阪神::2000052",
+      "player": "伊藤 将司",
+      "rawTerminalTotals": {
+        "walks": 1,
+        "hitByPitch": 1
+      },
+      "officialTotals": {
+        "walks": 2,
+        "hitByPitch": 1
+      },
+      "rawByInning": {
+        "1": {
+          "hitByPitch": 1
+        },
+        "6": {
+          "walks": 1
+        }
+      },
+      "verifiedByInning": {
+        "1": {
+          "walks": 0,
+          "hitByPitch": 1,
+          "walksAndHbp": 1
+        },
+        "4": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        },
+        "6": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "candidateInnings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "appearance": "2021039297::阪神::1300075",
+      "player": "岩崎 優",
+      "rawTerminalTotals": {
+        "walks": 3,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 4,
+        "hitByPitch": 0
+      },
+      "rawByInning": {
+        "8": {
+          "walks": 3
+        }
+      },
+      "verifiedByInning": {
+        "8": {
+          "walks": 4,
+          "hitByPitch": 0,
+          "walksAndHbp": 4
+        }
+      },
+      "observedInnings": [
+        8
+      ],
+      "candidateInnings": [
+        8
+      ]
+    },
+    {
+      "appearance": "2021039298::中日::2100410",
+      "player": "櫻井 頼之介",
+      "rawTerminalTotals": {
+        "walks": 3,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 4,
+        "hitByPitch": 0
+      },
+      "rawByInning": {
+        "2": {
+          "walks": 1
+        },
+        "3": {
+          "walks": 1
+        },
+        "4": {
+          "walks": 1
+        }
+      },
+      "verifiedByInning": {
+        "2": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        },
+        "3": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        },
+        "4": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        },
+        "6": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "candidateInnings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "appearance": "2021039298::中日::1400199",
+      "player": "齋藤 綱記",
+      "rawTerminalTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 0,
+        "hitByPitch": 0
+      },
+      "rawByInning": {
+        "6": {
+          "walks": 1
+        }
+      },
+      "verifiedByInning": {},
+      "observedInnings": [
+        6
+      ],
+      "candidateInnings": [
+        6,
+        7
+      ]
+    },
+    {
+      "appearance": "2021039301::オリックス::1961416",
+      "player": "マチャド",
+      "rawTerminalTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 2,
+        "hitByPitch": 0
+      },
+      "rawByInning": {
+        "9": {
+          "walks": 1
+        }
+      },
+      "verifiedByInning": {
+        "9": {
+          "walks": 2,
+          "hitByPitch": 0,
+          "walksAndHbp": 2
+        }
+      },
+      "observedInnings": [
+        9
+      ],
+      "candidateInnings": [
+        9
+      ]
+    },
+    {
+      "appearance": "2021039303::阪神::1800070",
+      "player": "湯浅 京己",
+      "rawTerminalTotals": {
+        "walks": 0,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "rawByInning": {},
+      "verifiedByInning": {
+        "6": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        6
+      ],
+      "candidateInnings": [
+        6,
+        7
+      ]
+    },
+    {
+      "appearance": "2021039304::中日::2108462",
+      "player": "金丸 夢斗",
+      "rawTerminalTotals": {
+        "walks": 0,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "rawByInning": {},
+      "verifiedByInning": {
+        "7": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "candidateInnings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ]
+    },
+    {
+      "appearance": "2021039304::中日::2060049",
+      "player": "アブレウ",
+      "rawTerminalTotals": {
+        "walks": 2,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 3,
+        "hitByPitch": 0
+      },
+      "rawByInning": {
+        "9": {
+          "walks": 2
+        }
+      },
+      "verifiedByInning": {
+        "9": {
+          "walks": 3,
+          "hitByPitch": 0,
+          "walksAndHbp": 3
+        }
+      },
+      "observedInnings": [
+        9
+      ],
+      "candidateInnings": [
+        9
+      ]
+    },
+    {
+      "appearance": "2021039305::ソフトバンク::1900102",
+      "player": "津森 宥紀",
+      "rawTerminalTotals": {
+        "walks": 0,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "rawByInning": {},
+      "verifiedByInning": {
+        "9": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        9
+      ],
+      "candidateInnings": [
+        9,
+        10
+      ]
+    },
+    {
+      "appearance": "2021039305::ソフトバンク::2000063",
+      "player": "小林 樹斗",
+      "rawTerminalTotals": {
+        "walks": 0,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "rawByInning": {},
+      "verifiedByInning": {
+        "11": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        11
+      ],
+      "candidateInnings": [
+        11,
+        12
+      ]
+    },
+    {
+      "appearance": "2021039305::日本ハム::1500109",
+      "player": "上原 健太",
+      "rawTerminalTotals": {
+        "walks": 0,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "rawByInning": {},
+      "verifiedByInning": {
+        "10": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        10
+      ],
+      "candidateInnings": [
+        10,
+        11
+      ]
+    },
+    {
+      "appearance": "2021039311::西武::2117734",
+      "player": "篠原 響",
+      "rawTerminalTotals": {
+        "walks": 0,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "rawByInning": {},
+      "verifiedByInning": {
+        "8": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        8
+      ],
+      "candidateInnings": [
+        8,
+        9
+      ]
+    },
+    {
+      "appearance": "2021039312::日本ハム::1500109",
+      "player": "上原 健太",
+      "rawTerminalTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 2,
+        "hitByPitch": 0
+      },
+      "rawByInning": {
+        "9": {
+          "walks": 1
+        }
+      },
+      "verifiedByInning": {
+        "9": {
+          "walks": 2,
+          "hitByPitch": 0,
+          "walksAndHbp": 2
+        }
+      },
+      "observedInnings": [
+        9
+      ],
+      "candidateInnings": [
+        9,
+        10
+      ]
+    },
+    {
+      "appearance": "2021039313::広島::1651377",
+      "player": "松本 竜也",
+      "rawTerminalTotals": {
+        "walks": 0,
+        "hitByPitch": 1
+      },
+      "officialTotals": {
+        "walks": 1,
+        "hitByPitch": 1
+      },
+      "rawByInning": {
+        "6": {
+          "hitByPitch": 1
+        }
+      },
+      "verifiedByInning": {
+        "6": {
+          "walks": 1,
+          "hitByPitch": 1,
+          "walksAndHbp": 2
+        }
+      },
+      "observedInnings": [
+        6
+      ],
+      "candidateInnings": [
+        6
+      ]
+    },
+    {
+      "appearance": "2021039315::ヤクルト::1750894",
+      "player": "増居 翔太",
+      "rawTerminalTotals": {
+        "walks": 2,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 3,
+        "hitByPitch": 0
+      },
+      "rawByInning": {
+        "7": {
+          "walks": 2
+        }
+      },
+      "verifiedByInning": {
+        "7": {
+          "walks": 3,
+          "hitByPitch": 0,
+          "walksAndHbp": 3
+        }
+      },
+      "observedInnings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "candidateInnings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ]
+    },
+    {
+      "appearance": "2021039315::ヤクルト::2122334",
+      "player": "リランソ",
+      "rawTerminalTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 3,
+        "hitByPitch": 0
+      },
+      "rawByInning": {
+        "10": {
+          "walks": 1
+        }
+      },
+      "verifiedByInning": {
+        "10": {
+          "walks": 3,
+          "hitByPitch": 0,
+          "walksAndHbp": 3
+        }
+      },
+      "observedInnings": [
+        10
+      ],
+      "candidateInnings": [
+        10
+      ]
+    },
+    {
+      "appearance": "2021039327::広島::1600123",
+      "player": "床田 寛樹",
+      "rawTerminalTotals": {
+        "walks": 3,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 4,
+        "hitByPitch": 0
+      },
+      "rawByInning": {
+        "1": {
+          "walks": 1
+        },
+        "4": {
+          "walks": 2
+        }
+      },
+      "verifiedByInning": {
+        "1": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        },
+        "4": {
+          "walks": 2,
+          "hitByPitch": 0,
+          "walksAndHbp": 2
+        },
+        "5": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "candidateInnings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "appearance": "2021039328::西武::1700124",
+      "player": "平良 海馬",
+      "rawTerminalTotals": {
+        "walks": 0,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "rawByInning": {},
+      "verifiedByInning": {
+        "6": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "candidateInnings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ]
+    },
+    {
+      "appearance": "2021039331::ヤクルト::1600075",
+      "player": "星 知弥",
+      "rawTerminalTotals": {
+        "walks": 0,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "rawByInning": {},
+      "verifiedByInning": {
+        "8": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        8
+      ],
+      "candidateInnings": [
+        8,
+        9
+      ]
+    },
+    {
+      "appearance": "2021039335::ロッテ::1900083",
+      "player": "横山 陸人",
+      "rawTerminalTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 2,
+        "hitByPitch": 0
+      },
+      "rawByInning": {
+        "10": {
+          "walks": 1
+        }
+      },
+      "verifiedByInning": {
+        "10": {
+          "walks": 2,
+          "hitByPitch": 0,
+          "walksAndHbp": 2
+        }
+      },
+      "observedInnings": [
+        10
+      ],
+      "candidateInnings": [
+        10,
+        11
+      ]
+    },
+    {
+      "appearance": "2021039338::阪神::2112444",
+      "player": "木下 里都",
+      "rawTerminalTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 2,
+        "hitByPitch": 0
+      },
+      "rawByInning": {
+        "7": {
+          "walks": 1
+        }
+      },
+      "verifiedByInning": {
+        "7": {
+          "walks": 2,
+          "hitByPitch": 0,
+          "walksAndHbp": 2
+        }
+      },
+      "observedInnings": [
+        7
+      ],
+      "candidateInnings": [
+        7,
+        8
+      ]
+    },
+    {
+      "appearance": "2021039338::阪神::2112146",
+      "player": "工藤 泰成",
+      "rawTerminalTotals": {
+        "walks": 0,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "rawByInning": {},
+      "verifiedByInning": {
+        "9": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        9
+      ],
+      "candidateInnings": [
+        9,
+        10
+      ]
+    },
+    {
+      "appearance": "2021039344::広島::1900052",
+      "player": "森下 暢仁",
+      "rawTerminalTotals": {
+        "walks": 3,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 4,
+        "hitByPitch": 0
+      },
+      "rawByInning": {
+        "2": {
+          "walks": 1
+        },
+        "4": {
+          "walks": 1
+        },
+        "6": {
+          "walks": 1
+        }
+      },
+      "verifiedByInning": {
+        "2": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        },
+        "4": {
+          "walks": 2,
+          "hitByPitch": 0,
+          "walksAndHbp": 2
+        },
+        "6": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "candidateInnings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "appearance": "2021039345::ロッテ::1300080",
+      "player": "石川 柊太",
+      "rawTerminalTotals": {
+        "walks": 0,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "rawByInning": {},
+      "verifiedByInning": {
+        "7": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        6,
+        7,
+        8
+      ],
+      "candidateInnings": [
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "appearance": "2021039349::巨人::700069",
+      "player": "田中 将大",
+      "rawTerminalTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 3,
+        "hitByPitch": 0
+      },
+      "rawByInning": {
+        "2": {
+          "walks": 1
+        }
+      },
+      "verifiedByInning": {
+        "2": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        },
+        "4": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        },
+        "5": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "candidateInnings": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "appearance": "2021039350::広島::2117693",
+      "player": "菊地 ハルン",
+      "rawTerminalTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 2,
+        "hitByPitch": 0
+      },
+      "rawByInning": {
+        "7": {
+          "walks": 1
+        }
+      },
+      "verifiedByInning": {
+        "7": {
+          "walks": 2,
+          "hitByPitch": 0,
+          "walksAndHbp": 2
+        }
+      },
+      "observedInnings": [
+        6,
+        7
+      ],
+      "candidateInnings": [
+        6,
+        7
+      ]
+    },
+    {
+      "appearance": "2021039354::中日::2105295",
+      "player": "吉田 聖弥",
+      "rawTerminalTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 3,
+        "hitByPitch": 0
+      },
+      "rawByInning": {
+        "8": {
+          "walks": 1
+        }
+      },
+      "verifiedByInning": {
+        "8": {
+          "walks": 3,
+          "hitByPitch": 0,
+          "walksAndHbp": 3
+        }
+      },
+      "observedInnings": [
+        8
+      ],
+      "candidateInnings": [
+        8,
+        9
+      ]
+    },
+    {
+      "appearance": "2021039361::阪神::1700078",
+      "player": "髙橋 遥人",
+      "rawTerminalTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 3,
+        "hitByPitch": 0
+      },
+      "rawByInning": {
+        "3": {
+          "walks": 1
+        }
+      },
+      "verifiedByInning": {
+        "2": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        },
+        "3": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        },
+        "4": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "candidateInnings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "appearance": "2021039366::巨人::2103689",
+      "player": "赤星 優志",
+      "rawTerminalTotals": {
+        "walks": 0,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "rawByInning": {},
+      "verifiedByInning": {
+        "10": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        10
+      ],
+      "candidateInnings": [
+        10
+      ]
+    },
+    {
+      "appearance": "2021039369::ソフトバンク::1900102",
+      "player": "津森 宥紀",
+      "rawTerminalTotals": {
+        "walks": 0,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "rawByInning": {},
+      "verifiedByInning": {
+        "10": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        10
+      ],
+      "candidateInnings": [
+        10,
+        11
+      ]
+    },
+    {
+      "appearance": "2021039377::西武::1800080",
+      "player": "松本 航",
+      "rawTerminalTotals": {
+        "walks": 0,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 2,
+        "hitByPitch": 0
+      },
+      "rawByInning": {},
+      "verifiedByInning": {
+        "7": {
+          "walks": 2,
+          "hitByPitch": 0,
+          "walksAndHbp": 2
+        }
+      },
+      "observedInnings": [
+        6,
+        7
+      ],
+      "candidateInnings": [
+        6,
+        7,
+        8
+      ]
+    },
+    {
+      "appearance": "2021039380::巨人::1450689",
+      "player": "船迫 大雅",
+      "rawTerminalTotals": {
+        "walks": 0,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "rawByInning": {},
+      "verifiedByInning": {
+        "5": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        5
+      ],
+      "candidateInnings": [
+        5,
+        6
+      ]
+    },
+    {
+      "appearance": "2021039382::ロッテ::1400140",
+      "player": "小野 郁",
+      "rawTerminalTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 2,
+        "hitByPitch": 0
+      },
+      "rawByInning": {
+        "10": {
+          "walks": 1
+        }
+      },
+      "verifiedByInning": {
+        "10": {
+          "walks": 2,
+          "hitByPitch": 0,
+          "walksAndHbp": 2
+        }
+      },
+      "observedInnings": [
+        10
+      ],
+      "candidateInnings": [
+        10
+      ]
+    },
+    {
+      "appearance": "2021039385::阪神::2108545",
+      "player": "神宮 僚介",
+      "rawTerminalTotals": {
+        "walks": 0,
+        "hitByPitch": 1
+      },
+      "officialTotals": {
+        "walks": 1,
+        "hitByPitch": 1
+      },
+      "rawByInning": {
+        "5": {
+          "hitByPitch": 1
+        }
+      },
+      "verifiedByInning": {
+        "5": {
+          "walks": 1,
+          "hitByPitch": 1,
+          "walksAndHbp": 2
+        }
+      },
+      "observedInnings": [
+        3,
+        4,
+        5
+      ],
+      "candidateInnings": [
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "appearance": "2021039385::阪神::2103848",
+      "player": "岡留 英貴",
+      "rawTerminalTotals": {
+        "walks": 0,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "rawByInning": {},
+      "verifiedByInning": {
+        "6": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        6
+      ],
+      "candidateInnings": [
+        6,
+        7
+      ]
+    },
+    {
+      "appearance": "2021039390::中日::1600106",
+      "player": "柳 裕也",
+      "rawTerminalTotals": {
+        "walks": 4,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 5,
+        "hitByPitch": 0
+      },
+      "rawByInning": {
+        "1": {
+          "walks": 1
+        },
+        "6": {
+          "walks": 2
+        },
+        "7": {
+          "walks": 1
+        }
+      },
+      "verifiedByInning": {
+        "1": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        },
+        "2": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        },
+        "6": {
+          "walks": 2,
+          "hitByPitch": 0,
+          "walksAndHbp": 2
+        },
+        "7": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "candidateInnings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ]
+    },
+    {
+      "appearance": "2021039391::DeNA::1700058",
+      "player": "東 克樹",
+      "rawTerminalTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 2,
+        "hitByPitch": 0
+      },
+      "rawByInning": {
+        "3": {
+          "walks": 1
+        }
+      },
+      "verifiedByInning": {
+        "3": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        },
+        "4": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "candidateInnings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ]
+    },
+    {
+      "appearance": "2021039391::ヤクルト::2108291",
+      "player": "ウォルターズ",
+      "rawTerminalTotals": {
+        "walks": 0,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "rawByInning": {},
+      "verifiedByInning": {
+        "9": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        9
+      ],
+      "candidateInnings": [
+        9,
+        10
+      ]
+    },
+    {
+      "appearance": "2021039395::日本ハム::2107859",
+      "player": "金村 尚真",
+      "rawTerminalTotals": {
+        "walks": 3,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 4,
+        "hitByPitch": 0
+      },
+      "rawByInning": {
+        "8": {
+          "walks": 3
+        }
+      },
+      "verifiedByInning": {
+        "8": {
+          "walks": 4,
+          "hitByPitch": 0,
+          "walksAndHbp": 4
+        }
+      },
+      "observedInnings": [
+        8
+      ],
+      "candidateInnings": [
+        8
+      ]
+    },
+    {
+      "appearance": "2021039407::日本ハム::1500110",
+      "player": "加藤 貴之",
+      "rawTerminalTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 2,
+        "hitByPitch": 0
+      },
+      "rawByInning": {
+        "6": {
+          "walks": 1
+        }
+      },
+      "verifiedByInning": {
+        "6": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        },
+        "7": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "candidateInnings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ]
+    },
+    {
+      "appearance": "2021039410::ヤクルト::1300045",
+      "player": "高梨 裕稔",
+      "rawTerminalTotals": {
+        "walks": 2,
+        "hitByPitch": 1
+      },
+      "officialTotals": {
+        "walks": 3,
+        "hitByPitch": 1
+      },
+      "rawByInning": {
+        "1": {
+          "walks": 1
+        },
+        "2": {
+          "walks": 1,
+          "hitByPitch": 1
+        }
+      },
+      "verifiedByInning": {
+        "1": {
+          "walks": 2,
+          "hitByPitch": 0,
+          "walksAndHbp": 2
+        },
+        "2": {
+          "walks": 1,
+          "hitByPitch": 1,
+          "walksAndHbp": 2
+        }
+      },
+      "observedInnings": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "candidateInnings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "appearance": "2021039412::西武::2103714",
+      "player": "佐藤 隼輔",
+      "rawTerminalTotals": {
+        "walks": 0,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "rawByInning": {},
+      "verifiedByInning": {
+        "11": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        11
+      ],
+      "candidateInnings": [
+        11,
+        12
+      ]
+    },
+    {
+      "appearance": "2021039417::中日::2000042",
+      "player": "髙橋 宏斗",
+      "rawTerminalTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 2,
+        "hitByPitch": 0
+      },
+      "rawByInning": {
+        "4": {
+          "walks": 1
+        }
+      },
+      "verifiedByInning": {
+        "4": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        },
+        "9": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "candidateInnings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ]
+    },
+    {
+      "appearance": "2021039420::日本ハム::2103635",
+      "player": "柳川 大晟",
+      "rawTerminalTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 2,
+        "hitByPitch": 0
+      },
+      "rawByInning": {
+        "9": {
+          "walks": 1
+        }
+      },
+      "verifiedByInning": {
+        "9": {
+          "walks": 2,
+          "hitByPitch": 0,
+          "walksAndHbp": 2
+        }
+      },
+      "observedInnings": [
+        9
+      ],
+      "candidateInnings": [
+        9,
+        10
+      ]
+    },
+    {
+      "appearance": "2021039429::DeNA::1900032",
+      "player": "伊勢 大夢",
+      "rawTerminalTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 2,
+        "hitByPitch": 0
+      },
+      "rawByInning": {
+        "8": {
+          "walks": 1
+        }
+      },
+      "verifiedByInning": {
+        "8": {
+          "walks": 2,
+          "hitByPitch": 0,
+          "walksAndHbp": 2
+        }
+      },
+      "observedInnings": [
+        8
+      ],
+      "candidateInnings": [
+        8
+      ]
+    },
+    {
+      "appearance": "2021039430::広島::1900052",
+      "player": "森下 暢仁",
+      "rawTerminalTotals": {
+        "walks": 3,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 4,
+        "hitByPitch": 0
+      },
+      "rawByInning": {
+        "4": {
+          "walks": 2
+        },
+        "5": {
+          "walks": 1
+        }
+      },
+      "verifiedByInning": {
+        "4": {
+          "walks": 3,
+          "hitByPitch": 0,
+          "walksAndHbp": 3
+        },
+        "5": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "candidateInnings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ]
+    },
+    {
+      "appearance": "2021039432::DeNA::1700134",
+      "player": "尾形 崇斗",
+      "rawTerminalTotals": {
+        "walks": 2,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 3,
+        "hitByPitch": 0
+      },
+      "rawByInning": {
+        "4": {
+          "walks": 1
+        },
+        "5": {
+          "walks": 1
+        }
+      },
+      "verifiedByInning": {
+        "4": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        },
+        "5": {
+          "walks": 2,
+          "hitByPitch": 0,
+          "walksAndHbp": 2
+        }
+      },
+      "observedInnings": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "candidateInnings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "appearance": "2021039439::DeNA::1650915",
+      "player": "竹田 祐",
+      "rawTerminalTotals": {
+        "walks": 2,
+        "hitByPitch": 1
+      },
+      "officialTotals": {
+        "walks": 3,
+        "hitByPitch": 1
+      },
+      "rawByInning": {
+        "2": {
+          "walks": 1
+        },
+        "3": {
+          "hitByPitch": 1,
+          "walks": 1
+        }
+      },
+      "verifiedByInning": {
+        "2": {
+          "walks": 2,
+          "hitByPitch": 0,
+          "walksAndHbp": 2
+        },
+        "3": {
+          "walks": 1,
+          "hitByPitch": 1,
+          "walksAndHbp": 2
+        }
+      },
+      "observedInnings": [
+        1,
+        2,
+        3
+      ],
+      "candidateInnings": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "appearance": "2021039443::広島::2114641",
+      "player": "赤木 晴哉",
+      "rawTerminalTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 2,
+        "hitByPitch": 0
+      },
+      "rawByInning": {
+        "6": {
+          "walks": 1
+        }
+      },
+      "verifiedByInning": {
+        "6": {
+          "walks": 2,
+          "hitByPitch": 0,
+          "walksAndHbp": 2
+        }
+      },
+      "observedInnings": [
+        6
+      ],
+      "candidateInnings": [
+        6,
+        7
+      ]
+    },
+    {
+      "appearance": "2021039444::DeNA::2117433",
+      "player": "レイノルズ",
+      "rawTerminalTotals": {
+        "walks": 0,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "rawByInning": {},
+      "verifiedByInning": {
+        "9": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        9
+      ],
+      "candidateInnings": [
+        9,
+        10
+      ]
+    },
+    {
+      "appearance": "2021039444::阪神::2117268",
+      "player": "ルーカス",
+      "rawTerminalTotals": {
+        "walks": 0,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "rawByInning": {},
+      "verifiedByInning": {
+        "3": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        1,
+        2,
+        3
+      ],
+      "candidateInnings": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "appearance": "2021039448::阪神::1600033",
+      "player": "ドリス",
+      "rawTerminalTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 2,
+        "hitByPitch": 0
+      },
+      "rawByInning": {
+        "10": {
+          "walks": 1
+        }
+      },
+      "verifiedByInning": {
+        "10": {
+          "walks": 2,
+          "hitByPitch": 0,
+          "walksAndHbp": 2
+        }
+      },
+      "observedInnings": [
+        10
+      ],
+      "candidateInnings": [
+        10
+      ]
+    },
+    {
+      "appearance": "2021039448::阪神::2108124",
+      "player": "セベリーノ",
+      "rawTerminalTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 0,
+        "hitByPitch": 0
+      },
+      "rawByInning": {
+        "10": {
+          "walks": 1
+        }
+      },
+      "verifiedByInning": {},
+      "observedInnings": [
+        10
+      ],
+      "candidateInnings": [
+        10,
+        11
+      ]
+    },
+    {
+      "appearance": "2021039450::巨人::2103689",
+      "player": "赤星 優志",
+      "rawTerminalTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 2,
+        "hitByPitch": 0
+      },
+      "rawByInning": {
+        "11": {
+          "walks": 1
+        }
+      },
+      "verifiedByInning": {
+        "11": {
+          "walks": 2,
+          "hitByPitch": 0,
+          "walksAndHbp": 2
+        }
+      },
+      "observedInnings": [
+        11
+      ],
+      "candidateInnings": [
+        11
+      ]
+    },
+    {
+      "appearance": "2021044686::広島::1000116",
+      "player": "中﨑 翔太",
+      "rawTerminalTotals": {
+        "walks": 0,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "rawByInning": {},
+      "verifiedByInning": {
+        "8": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        8
+      ],
+      "candidateInnings": [
+        8,
+        9
+      ]
+    },
+    {
+      "appearance": "2021047474::DeNA::1300031",
+      "player": "平良 拳太郎",
+      "rawTerminalTotals": {
+        "walks": 2,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 3,
+        "hitByPitch": 0
+      },
+      "rawByInning": {
+        "3": {
+          "walks": 1
+        },
+        "5": {
+          "walks": 1
+        }
+      },
+      "verifiedByInning": {
+        "2": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        },
+        "3": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        },
+        "5": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "candidateInnings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "appearance": "2021047474::巨人::1700010",
+      "player": "マルティネス",
+      "rawTerminalTotals": {
+        "walks": 0,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "rawByInning": {},
+      "verifiedByInning": {
+        "12": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        12
+      ],
+      "candidateInnings": [
+        12
+      ]
+    },
+    {
+      "appearance": "2021048554::ヤクルト::1900024",
+      "player": "奥川 恭伸",
+      "rawTerminalTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 2,
+        "hitByPitch": 0
+      },
+      "rawByInning": {
+        "6": {
+          "walks": 1
+        }
+      },
+      "verifiedByInning": {
+        "4": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        },
+        "6": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "candidateInnings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ]
+    },
+    {
+      "appearance": "2021048555::広島::1600123",
+      "player": "床田 寛樹",
+      "rawTerminalTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 2,
+        "hitByPitch": 0
+      },
+      "rawByInning": {
+        "1": {
+          "walks": 1
+        }
+      },
+      "verifiedByInning": {
+        "1": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        },
+        "3": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "candidateInnings": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "appearance": "2021048557::DeNA::2112182",
+      "player": "石田 裕太郎",
+      "rawTerminalTotals": {
+        "walks": 3,
+        "hitByPitch": 1
+      },
+      "officialTotals": {
+        "walks": 4,
+        "hitByPitch": 1
+      },
+      "rawByInning": {
+        "1": {
+          "hitByPitch": 1
+        },
+        "4": {
+          "walks": 1
+        },
+        "5": {
+          "walks": 1
+        },
+        "6": {
+          "walks": 1
+        }
+      },
+      "verifiedByInning": {
+        "1": {
+          "walks": 0,
+          "hitByPitch": 1,
+          "walksAndHbp": 1
+        },
+        "4": {
+          "walks": 2,
+          "hitByPitch": 0,
+          "walksAndHbp": 2
+        },
+        "5": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        },
+        "6": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "candidateInnings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ]
+    },
+    {
+      "appearance": "2021048559::中日::500014",
+      "player": "涌井 秀章",
+      "rawTerminalTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 2,
+        "hitByPitch": 0
+      },
+      "rawByInning": {
+        "3": {
+          "walks": 1
+        }
+      },
+      "verifiedByInning": {
+        "3": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        },
+        "4": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "candidateInnings": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "appearance": "2021048567::巨人::2050423",
+      "player": "代木 大和",
+      "rawTerminalTotals": {
+        "walks": 0,
+        "hitByPitch": 1
+      },
+      "officialTotals": {
+        "walks": 1,
+        "hitByPitch": 1
+      },
+      "rawByInning": {
+        "10": {
+          "hitByPitch": 1
+        }
+      },
+      "verifiedByInning": {
+        "10": {
+          "walks": 1,
+          "hitByPitch": 1,
+          "walksAndHbp": 2
+        }
+      },
+      "observedInnings": [
+        10,
+        11,
+        12
+      ],
+      "candidateInnings": [
+        10,
+        11,
+        12
+      ]
+    },
+    {
+      "appearance": "2021048569::ヤクルト::1600075",
+      "player": "星 知弥",
+      "rawTerminalTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 2,
+        "hitByPitch": 0
+      },
+      "rawByInning": {
+        "8": {
+          "walks": 1
+        }
+      },
+      "verifiedByInning": {
+        "8": {
+          "walks": 2,
+          "hitByPitch": 0,
+          "walksAndHbp": 2
+        }
+      },
+      "observedInnings": [
+        8
+      ],
+      "candidateInnings": [
+        8,
+        9
+      ]
+    },
+    {
+      "appearance": "2021048616::ヤクルト::2000033",
+      "player": "丸山 翔大",
+      "rawTerminalTotals": {
+        "walks": 2,
+        "hitByPitch": 1
+      },
+      "officialTotals": {
+        "walks": 3,
+        "hitByPitch": 1
+      },
+      "rawByInning": {
+        "9": {
+          "walks": 2,
+          "hitByPitch": 1
+        }
+      },
+      "verifiedByInning": {
+        "9": {
+          "walks": 3,
+          "hitByPitch": 1,
+          "walksAndHbp": 4
+        }
+      },
+      "observedInnings": [
+        9
+      ],
+      "candidateInnings": [
+        9,
+        10
+      ]
+    },
+    {
+      "appearance": "2021049648::阪神::2000052",
+      "player": "伊藤 将司",
+      "rawTerminalTotals": {
+        "walks": 2,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 3,
+        "hitByPitch": 0
+      },
+      "rawByInning": {
+        "1": {
+          "walks": 2
+        }
+      },
+      "verifiedByInning": {
+        "1": {
+          "walks": 2,
+          "hitByPitch": 0,
+          "walksAndHbp": 2
+        },
+        "5": {
+          "walks": 1,
+          "hitByPitch": 0,
+          "walksAndHbp": 1
+        }
+      },
+      "observedInnings": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "candidateInnings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "appearance": "2021051134::広島::2108238",
+      "player": "ターノック",
+      "rawTerminalTotals": {
+        "walks": 1,
+        "hitByPitch": 0
+      },
+      "officialTotals": {
+        "walks": 2,
+        "hitByPitch": 0
+      },
+      "rawByInning": {
+        "11": {
+          "walks": 1
+        }
+      },
+      "verifiedByInning": {
+        "11": {
+          "walks": 2,
+          "hitByPitch": 0,
+          "walksAndHbp": 2
+        }
+      },
+      "observedInnings": [
+        11
+      ],
+      "candidateInnings": [
+        11
+      ]
+    }
+  ],
+  "problems": []
+}

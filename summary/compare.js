@@ -365,7 +365,9 @@ function renderHistoricalTable(table) {
     <div class="table-scroll historical-table-scroll" tabindex="0" aria-label="${escapeHtml(table.title)}。横にスクロールできます">
       <table class="data-table historical-source-table">
         <caption>${escapeHtml(table.title)}</caption>
-        <thead><tr>${table.headers.map((header) => `<th scope="col">${escapeHtml(header)}</th>`).join("")}</tr></thead>
+        <thead><tr>${table.headers.map((header) => /^球種一覧/.test(table.title) && header === "四球"
+          ? '<th scope="col" data-stat-help="uBB">四球（敬遠除く）</th>'
+          : `<th scope="col">${escapeHtml(header)}</th>`).join("")}</tr></thead>
         <tbody>${table.rows.map((row) => `<tr>${Array.from({ length: headerCount }, (_, index) => index === 0
           ? `<th scope="row">${escapeHtml(row[index] ?? "-")}</th>`
           : `<td>${escapeHtml(row[index] ?? "-")}</td>`).join("")}</tr>`).join("")}</tbody>
@@ -833,16 +835,18 @@ function monthlySplits() {
 }
 
 function seasonDashboard() {
-  return state.currentRow?.seasonDashboard || null;
+  if (state.currentRow?.seasonDashboard) return state.currentRow.seasonDashboard;
+  if (state.currentRow?.year !== "2025" || !state.historical.loaded) return null;
+  const profile = findHistoricalPlayer(state.historical.payload?.players || [], state.currentRow);
+  const type = state.config === TYPE_CONFIG.pitcher ? "pitcher" : "batter";
+  return window.HistoricalSeasonAdapters?.[type]?.(profile, state.currentRow) || null;
 }
 
 function rowHits(row) {
-  return (
-    (Number(row?.singles) || 0)
-    + (Number(row?.doubles) || 0)
-    + (Number(row?.triples) || 0)
-    + (Number(row?.homeRuns) || 0)
-  );
+  if (row?.hits != null && Number.isFinite(Number(row.hits))) return Number(row.hits);
+  const counts = [row?.singles, row?.doubles, row?.triples, row?.homeRuns];
+  return counts.every((value) => value != null && Number.isFinite(Number(value)))
+    ? counts.reduce((sum, value) => sum + Number(value), 0) : null;
 }
 
 function normalizeMatchupTeam(value) {
@@ -1073,35 +1077,6 @@ function renderSeasonPitchSummary(dashboard) {
   `;
 }
 
-function renderMetricDescriptions() {
-  const descriptions = [
-    ["whiff%", "スイングを空振りにした割合", "空振り数 ÷ スイング数"],
-    ["csw%", "空振りと見逃しストライクでストライクを取れた割合", "空振り数と見逃しストライク数の合計 ÷ 全投球数"],
-    ["zone%", "ストライクゾーン内へ投げ込めた割合", "ストライクゾーン内の投球数 ÷ 投球座標を取得できた投球数"],
-    ["z-swing%", "ゾーン内の投球を打者が振った割合", "ゾーン内スイング数 ÷ ゾーン内投球数"],
-    ["o-contact%", "ゾーン外を振らせた時にバットへ当てられた割合", "ゾーン外コンタクト数 ÷ ゾーン外スイング数"],
-    ["chase%", "ゾーン外の球を打者に振らせた割合", "ゾーン外スイング数 ÷ ゾーン外投球数"],
-    ["chase+", "リーグ平均を100としてゾーン外を振らせる力を示す指数", "球種別chase% ÷ 同リーグ平均chase% × 100"],
-  ];
-  return `
-    <dl class="metric-description-list">
-      ${descriptions
-        .map(
-          ([label, meaning, formula]) => `
-            <div>
-              <dt>${escapeHtml(label)}</dt>
-              <dd>
-                <span>意味 ${escapeHtml(meaning)}</span>
-                <span>計算 ${escapeHtml(formula)}</span>
-              </dd>
-            </div>
-          `
-        )
-        .join("")}
-    </dl>
-  `;
-}
-
 function renderSeasonPitchMetricSummary(dashboard) {
   const rows = (dashboard?.pitchMix || []).filter((row) => (Number(row?.count) || 0) > 0);
   if (!rows.length) {
@@ -1131,7 +1106,6 @@ function renderSeasonPitchMetricSummary(dashboard) {
           ],
         })),
       })}
-      ${renderMetricDescriptions()}
     </article>
   `;
 }
@@ -1312,7 +1286,7 @@ function pitcherHandLabel(row) {
 
 function renderPitcherHandSummary(dashboard) {
   const rows = dashboard?.batterHandRows || [];
-  const visibleRows = rows.filter((row) => (Number(row?.count) || 0) > 0);
+  const visibleRows = rows.filter((row) => [row.count, row.countPA, row.atBats].some((value) => Number(value) > 0));
   if (!visibleRows.length) {
     return `
       <article class="dashboard-card season-card-wide">
@@ -1393,16 +1367,15 @@ function renderPitcherGameSplitTable(sectionKey, title, rows = []) {
 }
 
 function renderPitcherDecisionInningTable(title, rows = [], available = true) {
-  const visibleRows = rows.filter((row) => (Number(row?.total) || 0) > 0);
   if (!available) {
     return `
       <article class="dashboard-card season-card-wide">
         <div class="card-head"><h3>${escapeHtml(title)}</h3></div>
-        <div class="section-empty compare-empty">現在のデータには失点発生イニングが含まれていないため、イニング別には算出できません。</div>
+        <div class="section-empty compare-empty">この年度のイニング別集計は未収録です。</div>
       </article>
     `;
   }
-  if (!visibleRows.length) {
+  if (!rows.length) {
     return `
       <article class="dashboard-card season-card-wide">
         <div class="card-head"><h3>${escapeHtml(title)}</h3></div>
@@ -1428,8 +1401,11 @@ function renderPitcherDecisionInningTable(title, rows = [], available = true) {
   };
   const body = conditionRows
     .map(([key, label]) => {
-      const values = innings.map((inning) => Number(rowByInning.get(inning)?.[key]) || 0);
-      const total = values.reduce((sum, value) => sum + value, 0);
+      const values = innings.map((inning) => {
+        const value = rowByInning.get(inning)?.[key];
+        return typeof value === "number" && Number.isFinite(value) ? value : null;
+      });
+      const total = values.every((value) => value != null) ? values.reduce((sum, value) => sum + value, 0) : null;
       return `
         <tr>
           <th scope="row">${escapeHtml(label)}</th>
@@ -1550,10 +1526,17 @@ function batterSplitLabel(sectionKey, row) {
   return label;
 }
 
-function renderBatterSplitTable(sectionKey, title, rows = []) {
+function renderBatterSplitTable(sectionKey, title, rows = [], meta = {}) {
+  title = meta.title || title;
   const splitHeader = BATTER_SPLIT_HEADER_LABELS[sectionKey] || "区分";
   const splitTableClass = BATTER_SPLIT_TABLE_CLASSES[sectionKey] || "";
-  const visibleRows = rows.filter((row) => (Number(row?.plateAppearances) || 0) > 0);
+  const visibleRows = rows.filter((row) => ["plateAppearances", "atBats", "hits", "walks", "hitByPitch", "sacBunts", "sacFlies", "walksAndHitByPitch"].some((key) => Number(row[key]) > 0));
+  const extraColumns = [
+    ["walksAndHitByPitch", "四死球", (value) => formatNumber(value)],
+    ["pitchCount", "球数", (value) => formatNumber(value)],
+    ["averageVelocity", "平均球速", (value) => formatNumber(value, 1)],
+    ["whiffRate", "Whiff%", (value) => formatNumber(value, 1)],
+  ].filter(([key]) => meta.extraColumns?.includes(key));
   if (!visibleRows.length) {
     return `
       <article class="dashboard-card season-card-wide">
@@ -1565,9 +1548,10 @@ function renderBatterSplitTable(sectionKey, title, rows = []) {
   return `
     <article class="dashboard-card season-card-wide">
       <div class="card-head"><h3>${escapeHtml(title)}</h3></div>
+      ${meta.note ? `<p class="season-coverage-note">${escapeHtml(meta.note)}</p>` : ""}
       ${renderResponsiveDataTable({
         tableClass: `batter-season-table ${splitTableClass}`,
-        headers: [escapeHtml(splitHeader), "打率", "打席", "打数", "安打", "二塁打", "三塁打", "本塁打", "四球", "死球", "犠打", "犠飛", "三振", "出塁率", "長打率", "OPS"],
+        headers: [escapeHtml(splitHeader), "打率", "打席", "打数", "安打", "二塁打", "三塁打", "本塁打", meta.scope === "reportedPitchResults" ? '<span data-stat-help="uBB">四球（敬遠除く）</span>' : "四球", "死球", "犠打", "犠飛", "三振", "出塁率", "長打率", "OPS", ...extraColumns.map(([, label]) => label)],
         rows: visibleRows.map((row) => ({
           heading: `<span class="batter-split-label-cell">${escapeHtml(batterSplitLabel(sectionKey, row))}</span>`,
           values: [
@@ -1586,6 +1570,7 @@ function renderBatterSplitTable(sectionKey, title, rows = []) {
             formatAverageValue(row.onBasePercentage),
             formatAverageValue(row.sluggingPercentage),
             formatAverageValue(row.ops),
+            ...extraColumns.map(([key, , formatter]) => formatter(row[key])),
           ],
         })),
       })}
@@ -1594,38 +1579,54 @@ function renderBatterSplitTable(sectionKey, title, rows = []) {
 }
 
 function renderBatterSeasonPanel(dashboard) {
+  const historical = Boolean(dashboard?.historicalSource);
+  const sections = BATTER_SEASON_SECTIONS.filter(([key]) => !historical || dashboard?.sectionMeta?.[key]?.available);
   return `
-    <p class="section-empty">条件別成績は公式の完了打席で集計しています。球種・球速・投手左右・カウントを特定できない打席は「不明」に含めます。得点圏は打席結果直前の走者状況で判定しています。</p>
+    <p class="season-coverage-note">${historical ? "2025年の年度集計を共通の形式で表示しています。未収録の項目は「-」で表示します。" : "条件別成績は公式の完了打席で集計しています。球種・球速・投手左右・カウントを特定できない打席は「不明」に含めます。得点圏は打席結果直前の走者状況で判定しています。"}</p>
     <div class="season-detail-grid">
-      ${BATTER_SEASON_SECTIONS
-        .map(([key, title]) => renderBatterSplitTable(key, title, dashboard?.[key] || []))
+      ${sections
+        .map(([key, title]) => renderBatterSplitTable(key, title, dashboard?.[key] || [], dashboard?.sectionMeta?.[key] || {}))
         .join("")}
-      ${renderBatterRecentGames(dashboard)}
+      ${historical ? "" : renderBatterRecentGames(dashboard)}
     </div>
+    ${historical ? '<p class="season-coverage-note">球速帯別・最近6試合の成績は未収録です。</p>' : ""}
   `;
 }
 
 function renderPitcherSeasonPanel(dashboard) {
+  const historical = Boolean(dashboard?.historical);
   const coverage = dashboard?.sourceCoverage;
   const note = coverage?.incompleteGames || coverage?.unknownGames
     ? `<p class="section-empty">投球記録が不完全な登板が${formatNumber((coverage.incompleteGames || 0) + (coverage.unknownGames || 0))}試合あります。球種・左右・回別は収録された投球の集計です。完全な打数を確認できない被打率・被BABIPは「-」で表示します。</p>` : "";
   return `
     ${note}
+    ${historical ? `<p class="season-coverage-note">${escapeHtml(dashboard.sourceCoverageInfo?.note || "未収録の項目は「-」で表示します。")}${escapeHtml(dashboard.sourceCoverageInfo?.discrepancyNote || "")}</p>` : ""}
     <div class="season-detail-grid">
       ${renderSeasonPitchMix(dashboard)}
       ${renderSeasonPitchSummary(dashboard)}
       ${renderSeasonPitchMetricSummary(dashboard)}
-      ${renderSeasonInningSummary(dashboard)}
+      ${historical ? "" : renderSeasonInningSummary(dashboard)}
       ${renderPitcherHandSummary(dashboard)}
       ${renderPitcherGameSplitTable("opponentRows", "対チーム別投手成績", dashboard?.opponentRows || [])}
       ${renderPitcherGameSplitTable("stadiumRows", "球場別投手成績", dashboard?.stadiumRows || [])}
-      ${renderPitcherDecisionInningTable("イニング別失点数", dashboard?.inningRunRows || [], Boolean(dashboard?.inningRunRowsAvailable) && dashboard?.inningRunRowsMethod !== "proportional_estimate")}
-      ${renderPitcherDecisionInningTable("イニング別四死球数（投球ログで確認できた打席）", dashboard?.inningWalkRows || [])}
+      ${historical ? renderPitcherDecisionInningTable(dashboard.starterInningRunRowsTitle, dashboard.starterInningRunRows || []) : renderPitcherDecisionInningTable("イニング別失点数", dashboard?.inningRunRows || [], Boolean(dashboard?.inningRunRowsAvailable) && dashboard?.inningRunRowsMethod !== "proportional_estimate")}
+      ${historical ? "" : renderPitcherDecisionInningTable("イニング別四死球数", dashboard?.inningWalkRows || [], Boolean(dashboard?.inningWalkRowsAvailable))}
       ${renderSeasonOutcomes(dashboard)}
       ${renderSeasonFinish(dashboard)}
-      ${renderRecentGames(dashboard)}
+      ${historical ? "" : renderRecentGames(dashboard)}
     </div>
   `;
+}
+
+function renderAdditionalSeasonTables() {
+  if (state.currentRow?.year !== "2025") return "";
+  const profile = findHistoricalPlayer(state.historical.payload?.players || [], state.currentRow);
+  const represented = state.config === TYPE_CONFIG.pitcher
+    ? /^(左右別成績|対チーム別成績|球場別成績|対打者結果一覧|先発時のイニング毎失点数)/
+    : /^(対左右別成績|対チーム別成績|球場別成績|打順別成績|打席別成績)/;
+  const tables = historicalTables(profile).filter((table) => !represented.test(table.title));
+  if (!tables.length) return "";
+  return `<details class="season-additional-tables"><summary>その他の年度集計 <span>${tables.length}項目</span></summary><div>${tables.map((table) => `<details class="season-extra-table"><summary>${escapeHtml(table.title)}</summary>${renderHistoricalTable(table)}</details>`).join("")}</div></details>`;
 }
 
 function renderSeasonPanel() {
@@ -1643,9 +1644,7 @@ function renderSeasonPanel() {
   }
   if (!dashboard && state.currentRow.year === "2025") {
     els.seasonMetricCount.textContent = "2025年度集計";
-    els.seasonDetailWrap.innerHTML = `${renderHistoricalAnnualSummary(state.currentRow)}
-      <p class="historical-source-note">一球ごとの投球位置データは未収録です。${state.config === TYPE_CONFIG.batter ? "wRC・wRC+ は年度係数未収録のため未算出です。" : ""}</p>
-      ${renderHistoricalSourcePanel(state.currentRow)}`;
+    els.seasonDetailWrap.innerHTML = `<article class="dashboard-card season-card-wide"><div class="card-head"><h3>年度成績</h3></div><p class="section-empty">${state.historical.error ? "年度成績を読み込めませんでした。ページを再読み込みしてください。" : state.historical.loaded ? "この選手の年度詳細は未収録です。" : "年度成績を読み込み中…"}</p></article>`;
     void ensureHistoricalData();
     return;
   }
@@ -1654,9 +1653,9 @@ function renderSeasonPanel() {
     return;
   }
   els.seasonDetailWrap.innerHTML =
-    state.config === TYPE_CONFIG.pitcher
+    (state.config === TYPE_CONFIG.pitcher
       ? renderPitcherSeasonPanel(dashboard)
-      : renderBatterSeasonPanel(dashboard);
+      : renderBatterSeasonPanel(dashboard)) + renderAdditionalSeasonTables();
 }
 
 function renderModeToggles() {
