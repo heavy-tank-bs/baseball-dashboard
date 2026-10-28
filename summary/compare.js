@@ -1391,6 +1391,7 @@ function renderPitcherDecisionInningTable(title, rows = [], available = true) {
     ["loss", "敗戦"],
     ["noDecision", "勝敗無"],
   ];
+  const conditionHelp = { win: "勝利登板", loss: "敗戦登板", noDecision: "勝敗なし登板" };
   const cellClass = (key, value) => {
     const count = Number(value) || 0;
     if (key === "total" && count === 0) return " inning-cell-zero";
@@ -1408,7 +1409,7 @@ function renderPitcherDecisionInningTable(title, rows = [], available = true) {
       const total = values.every((value) => value != null) ? values.reduce((sum, value) => sum + value, 0) : null;
       return `
         <tr>
-          <th scope="row">${escapeHtml(label)}</th>
+          <th scope="row"${conditionHelp[key] ? ` data-stat-help="${conditionHelp[key]}"` : ""}>${escapeHtml(label)}</th>
           ${values
             .map((value) => `<td class="${cellClass(key, value).trim()}">${formatNumber(value)}</td>`)
             .join("")}

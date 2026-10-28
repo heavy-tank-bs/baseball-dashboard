@@ -12,6 +12,9 @@ assert.match(getHelp("zone%").formula, /投球位置を取得できた投球数/
 assert.match(getHelp("CSW%").formula, /空振り数 ＋ 見逃しストライク数/);
 assert.match(getHelp("chase+").formula, /同リーグ平均/);
 assert.equal(getHelp("四死").formula, "四球 ＋ 死球");
+assert.match(getHelp("勝利登板").meaning, /失点・四死球を集計/);
+assert.match(getHelp("敗戦登板").meaning, /失点・四死球を集計/);
+assert.match(getHelp("勝敗なし登板").meaning, /どちらにもならなかった登板/);
 assert.equal(getHelp("被本"), getHelp("被本塁打"));
 assert.equal(getHelp("ＩｓｏＰ"), getHelp("IsoP"));
 assert.equal(getHelp("2025"), null);
