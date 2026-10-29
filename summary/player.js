@@ -187,7 +187,7 @@ function playerHref(row) {
 }
 
 function embeddedPlayerHref(row) {
-  return `${playerHref(row)}&embed=1&v=20261029-mobile5`;
+  return `${playerHref(row)}&embed=1&v=20261029-innings`;
 }
 
 function renderTypeOptions() {

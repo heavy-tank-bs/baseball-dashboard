@@ -160,14 +160,18 @@ function escapeHtml(value) {
 }
 
 function renderResponsiveDataTable({ tableClass, headers, rows, mobileFirstHeader = "項目" }) {
+  const renderCell = (row, index) => {
+    const cellClass = row.cellClasses?.[index];
+    return `<td${cellClass ? ` class="${escapeHtml(cellClass)}"` : ""}>${row.values[index] ?? "-"}</td>`;
+  };
   const desktopBody = rows
-    .map((row) => `<tr><td>${row.heading}</td>${row.values.map((value) => `<td>${value}</td>`).join("")}</tr>`)
+    .map((row) => `<tr>${row.headingIsHeader ? `<th scope="row">${row.heading}</th>` : `<td>${row.heading}</td>`}${row.values.map((_value, index) => renderCell(row, index)).join("")}</tr>`)
     .join("");
   const mobileHeader = rows.map((row) => `<th>${row.heading}</th>`).join("");
   const mobileBody = headers
     .slice(1)
     .map((header, index) => {
-      const values = rows.map((row) => `<td>${row.values[index] ?? "-"}</td>`).join("");
+      const values = rows.map((row) => renderCell(row, index)).join("");
       return `<tr><th scope="row">${header}</th>${values}</tr>`;
     })
     .join("");
@@ -1391,48 +1395,37 @@ function renderPitcherDecisionInningTable(title, rows = [], available = true) {
     ["loss", "敗戦"],
     ["noDecision", "勝敗無"],
   ];
-  const conditionHelp = { win: "勝利登板", loss: "敗戦登板", noDecision: "勝敗なし登板" };
   const cellClass = (key, value) => {
-    const count = Number(value) || 0;
-    if (key === "total" && count === 0) return " inning-cell-zero";
-    if (count >= 3) return " inning-cell-high";
-    if (count >= 2) return " inning-cell-mid";
-    if (count >= 1) return " inning-cell-low";
+    if (value == null) return "";
+    if (key === "total" && value === 0) return "inning-cell-zero";
+    if (value >= 3) return "inning-cell-high";
+    if (value >= 2) return "inning-cell-mid";
+    if (value >= 1) return "inning-cell-low";
     return "";
   };
-  const body = conditionRows
+  const tableRows = conditionRows
     .map(([key, label]) => {
       const values = innings.map((inning) => {
         const value = rowByInning.get(inning)?.[key];
         return typeof value === "number" && Number.isFinite(value) ? value : null;
       });
       const total = values.every((value) => value != null) ? values.reduce((sum, value) => sum + value, 0) : null;
-      return `
-        <tr>
-          <th scope="row"${conditionHelp[key] ? ` data-stat-help="${conditionHelp[key]}"` : ""}>${escapeHtml(label)}</th>
-          ${values
-            .map((value) => `<td class="${cellClass(key, value).trim()}">${formatNumber(value)}</td>`)
-            .join("")}
-          <td class="inning-cell-total">${formatNumber(total)}</td>
-        </tr>
-      `;
-    })
-    .join("");
+      return {
+        heading: escapeHtml(label),
+        headingIsHeader: true,
+        values: [...values, total].map((value) => formatNumber(value)),
+        cellClasses: [...values.map((value) => cellClass(key, value)), "inning-cell-total"],
+      };
+    });
   return `
     <article class="dashboard-card season-card-wide">
       <div class="card-head"><h3>${escapeHtml(title)}</h3></div>
-      <div class="table-scroll">
-        <table class="data-table season-table pitcher-decision-inning-table">
-          <thead>
-            <tr>
-              <th>条件</th>
-              ${innings.map((inning) => `<th>${inning}回</th>`).join("")}
-              <th>合計</th>
-            </tr>
-          </thead>
-          <tbody>${body}</tbody>
-        </table>
-      </div>
+      ${renderResponsiveDataTable({
+        tableClass: "pitcher-decision-inning-table",
+        headers: ["条件", ...innings.map((inning) => `${inning}回`), "合計"],
+        rows: tableRows,
+        mobileFirstHeader: "イニング",
+      })}
     </article>
   `;
 }

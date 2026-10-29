@@ -203,7 +203,7 @@ node scripts/test_stat_help.js
 
 スマホ表示の調整（2026-10-29）
 幅760px以下またはタッチ主体の端末では、説明用「？」は球種別サマリのwhiff%/csw%/zone%/z-swing%/o-contact%/chase%/chase+だけに表示する。
-その他の項目のタップ説明は無効。PCのホバー・フォーカス説明は従来どおり。
+PC・スマホとも、説明ボタン・ホバー・フォーカス説明は上記7指標に限定する。その他の項目には説明ボタンを作らない。
 転置表はdata-stat-help-scopeに元の表の分類を伝え、球種別指標の表示範囲を維持する。
 個人成績のiframeは.site-shellの実寸で高さを通知する。viewportのscrollHeightを計測に含めない（短い表示へ切替時に高さが縮まなくなるため）。
 iframe内の縦スクロールバーを抑え、外側のページで縦スクロールする。横幅の大きい年度表は表内の横スクロールを維持。
@@ -212,3 +212,12 @@ iframe内の縦スクロールバーを抑え、外側のページで縦スク�
 埋め込み先HTMLの版指定もplayer.jsのembeddedPlayerHrefとHTML内のJS/CSS版に合わせて更新する。
 node scripts/test_embed_height.js
 node scripts/test_stat_help.js
+
+
+PCの説明範囲・イニング表の統一（2026-10-29）
+stat-help.jsは全端末で球種別サマリの7指標だけを対象とする。同じ指標名でも他の表は対象外。
+イニング別失点・四死球は共通renderResponsiveDataTableを使用する。PCは条件4行×12回＋合計、スマホはイニング13行×条件4列へ転置する。
+cellClassesで各値の色分けを両方向に引き継ぎ、0・null・未収録・2025年先発限定の範囲を保持する。
+スマホでは全4条件を画面内に収める。320/360/390/430pxで横幅・転置・合計を実画面確認。
+node scripts/test_stat_help.js
+node scripts/test_historical_season_ui.js

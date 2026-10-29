@@ -83,17 +83,8 @@ th.stat-help-target > .sort-header {
   font-size: 12px;
 }
 
-/* Phone layouts keep help controls only on pitch-type discipline metrics.
-   display:none also removes the unused controls from layout and keyboard order. */
+/* The same pitch-metric scope is used on desktop and touch layouts. */
 @media (max-width: 760px), (hover: none), (pointer: coarse) {
-  .stat-help-target:not(.stat-help-mobile) > .stat-help-trigger {
-    display: none;
-  }
-
-  th.stat-help-target:not(.stat-help-mobile) > .sort-header {
-    width: 100%;
-  }
-
   .stat-help-trigger {
     width: 28px;
     height: 28px;

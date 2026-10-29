@@ -2402,26 +2402,26 @@ button.type-switch-link {
   border-bottom: 0;
 }
 
-.pitcher-decision-inning-table .inning-cell-zero {
+:is(.pitcher-decision-inning-table, [data-stat-help-scope~="pitcher-decision-inning-table"]) .inning-cell-zero {
   background: rgba(15, 35, 64, 0.03);
   color: var(--muted);
 }
 
-.pitcher-decision-inning-table .inning-cell-low {
+:is(.pitcher-decision-inning-table, [data-stat-help-scope~="pitcher-decision-inning-table"]) .inning-cell-low {
   background: rgba(200, 165, 90, 0.22);
 }
 
-.pitcher-decision-inning-table .inning-cell-mid {
+:is(.pitcher-decision-inning-table, [data-stat-help-scope~="pitcher-decision-inning-table"]) .inning-cell-mid {
   background: rgba(200, 165, 90, 0.38);
   font-weight: 700;
 }
 
-.pitcher-decision-inning-table .inning-cell-high {
+:is(.pitcher-decision-inning-table, [data-stat-help-scope~="pitcher-decision-inning-table"]) .inning-cell-high {
   background: rgba(200, 165, 90, 0.58);
   font-weight: 700;
 }
 
-.pitcher-decision-inning-table .inning-cell-total {
+:is(.pitcher-decision-inning-table, [data-stat-help-scope~="pitcher-decision-inning-table"]) .inning-cell-total {
   background: #f7f3ea;
   color: var(--navy);
   font-weight: 700;
@@ -3758,5 +3758,33 @@ body.compare-embed .season-detail-wrap {
   .monthly-chart-point-label--last {
     text-anchor: end;
     transform: translateX(-8px);
+  }
+}
+
+
+@media (max-width: 760px) {
+  .mobile-transpose-table[data-stat-help-scope~="pitcher-decision-inning-table"] {
+    width: 100%;
+    min-width: 100%;
+    table-layout: fixed;
+  }
+
+  .mobile-transpose-table[data-stat-help-scope~="pitcher-decision-inning-table"] th,
+  .mobile-transpose-table[data-stat-help-scope~="pitcher-decision-inning-table"] td {
+    min-width: 0;
+    padding: 8px 6px;
+    text-align: center;
+  }
+
+  .mobile-transpose-table[data-stat-help-scope~="pitcher-decision-inning-table"] th:first-child {
+    width: 64px;
+    min-width: 64px;
+    max-width: 64px;
+  }
+
+  .mobile-transpose-table[data-stat-help-scope~="pitcher-decision-inning-table"] tbody tr:last-child th {
+    background: #f7f3ea;
+    color: var(--navy);
+    font-weight: 700;
   }
 }

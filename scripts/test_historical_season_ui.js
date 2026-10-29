@@ -19,14 +19,15 @@ const context = vm.createContext({
 });
 for (const file of ["historical-pitcher.js", "historical-batter.js"]) vm.runInContext(fs.readFileSync(path.join(root, "summary", file), "utf8"), context, { filename: file });
 const source = fs.readFileSync(path.join(root, "summary/compare.js"), "utf8").replace(/\ninit\(\);\s*$/, "");
-vm.runInContext(`${source}\nglobalThis.api = { state, TYPE_CONFIG, seasonDashboard, renderSeasonPanel, renderPitcherSeasonPanel, renderBatterSeasonPanel, renderPitcherDecisionInningTable, rowHits };`, context);
+vm.runInContext(`${source}\nglobalThis.api = { state, TYPE_CONFIG, seasonDashboard, renderSeasonPanel, renderPitcherSeasonPanel, renderBatterSeasonPanel, renderSeasonInningSummary, renderPitcherDecisionInningTable, rowHits };`, context);
 const api = context.api;
 const read = (file) => JSON.parse(fs.readFileSync(path.join(root, "summary", file), "utf8"));
 const annualRow = (profile) => ({ year: "2025", player: profile.player, team: profile.team, teams: [profile.team], ...profile.annual });
 const text = (html) => html.replace(/<[^>]*>/g, "").replace(/&amp;/g, "&").replace(/&lt;/g, "<").replace(/&gt;/g, ">").trim();
 
-function table(markup, className) {
-  const match = markup.match(new RegExp(`<table[^>]*class="[^\"]*${className}[^\"]*"[^>]*>([\\s\\S]*?)<\\/table>`));
+function table(markup, className, transposed = false) {
+  const selector = transposed ? `data-stat-help-scope="${className}"` : `class="[^\"]*${className}[^\"]*"`;
+  const match = markup.match(new RegExp(`<table[^>]*${selector}[^>]*>([\\s\\S]*?)<\\/table>`));
   assert.ok(match, `missing shared table: ${className}`);
   const headers = [...match[1].match(/<thead>([\s\S]*?)<\/thead>/)[1].matchAll(/<th\b[^>]*>([\s\S]*?)<\/th>/g)].map((cell) => text(cell[1]));
   const rows = [...match[1].match(/<tbody>([\s\S]*?)<\/tbody>/)[1].matchAll(/<tr\b[^>]*>([\s\S]*?)<\/tr>/g)]
@@ -39,6 +40,18 @@ function cell(data, rowLabel, header) {
   const index = data.headers.indexOf(header);
   assert.ok(index >= 0, `missing table column: ${header}`);
   return row[index];
+}
+function assertTransposedTable(markup, className, mobileFirstHeader) {
+  const desktop = table(markup, className);
+  const mobile = table(markup, className, true);
+  assert.deepEqual(mobile.headers, [mobileFirstHeader, ...desktop.rows.map((row) => row[0])]);
+  assert.deepEqual(mobile.rows.map((row) => row[0]), desktop.headers.slice(1));
+  for (const row of desktop.rows) {
+    for (const header of desktop.headers.slice(1)) {
+      assert.equal(cell(mobile, header, row[0]), cell(desktop, row[0], header), `${className}: ${row[0]} / ${header} survives transposition`);
+    }
+  }
+  return { desktop, mobile };
 }
 function assertTruthfulMarkup(markup, label) {
   assert.doesNotMatch(markup, /NaN|undefined|\bInfinity\b/, `${label}: no invalid numeric output`);
@@ -104,6 +117,7 @@ assert.equal(cell(hand, "対右打者", "被安打"), "87");
 assert.equal(cell(hand, "対右打者", "被打数"), "358");
 for (const header of ["空振", "空振率", "ゴロ", "フライ"]) assert.equal(cell(hand, "対右打者", header), "-");
 assert.match(pitcherMarkup, /先発時のイニング別失点数（降板後の失点を含む）/);
+assertTransposedTable(pitcherMarkup, "pitcher-decision-inning-table", "イニング");
 assert.doesNotMatch(pitcherMarkup, /<h3>イニング別四死球数/);
 assert.equal(api.rowHits({ hits: 0, homeRuns: 0 }), 0);
 assert.equal(api.rowHits({ homeRuns: 2 }), null, "unknown non-HR hits must not be silently counted as zero");
@@ -138,15 +152,45 @@ for (const title of ["イニング別失点数", "イニング別四死球数"])
   const verified = api.renderPitcherDecisionInningTable(title, zeros, true);
   assert.match(verified, /pitcher-decision-inning-table/);
   assert.doesNotMatch(verified, /データなし|未収録/);
-  assert.equal((verified.match(/<td\b[^>]*>0<\/td>/g) || []).length, 52, "twelve innings and total for four verified conditions");
+  const { desktop, mobile } = assertTransposedTable(verified, "pitcher-decision-inning-table", "イニング");
+  assert.equal(desktop.rows.length, 4);
+  assert.equal(mobile.rows.length, 13);
+  assert.equal((verified.match(/<td\b[^>]*>0<\/td>/g) || []).length, 104, "desktop and mobile each retain twelve innings and total for four verified conditions");
   const unavailable = api.renderPitcherDecisionInningTable(title, zeros, false);
   assert.match(unavailable, /未収録/);
   assert.doesNotMatch(unavailable, /pitcher-decision-inning-table/);
   const partial = zeros.map((row) => ({ ...row }));
   partial[3].total = null;
   const unknown = api.renderPitcherDecisionInningTable(title, partial, true);
-  assert.match(unknown, /<td class="[^"]*">-<\/td>/);
-  assert.match(unknown, /<td class="inning-cell-total">-<\/td>/, "an unknown inning also makes the condition total unknown");
+  const unknownTables = assertTransposedTable(unknown, "pitcher-decision-inning-table", "イニング");
+  assert.equal(cell(unknownTables.desktop, "合計", "4回"), "-");
+  assert.equal(cell(unknownTables.mobile, "4回", "合計"), "-");
+  assert.equal(cell(unknownTables.desktop, "合計", "合計"), "-", "an unknown inning also makes the condition total unknown");
+  assert.equal(cell(unknownTables.mobile, "合計", "合計"), "-");
 }
 
-console.log(`Historical season UI: all ${renderedProfiles} profiles, native 2026 routing, shared tables, known/missing counts and verified zero innings passed.`);
+// Exercise populated native records as well as 2025 starter-only coverage.
+// Every inning and decision subtotal must occupy the same logical cell on
+// desktop and mobile, and their final total must match the annual record.
+for (const [key, title, annualTotal] of [
+  ["inningRunRows", "イニング別失点数", (row) => row.runs],
+  ["inningWalkRows", "イニング別四死球数", (row) => row.walks + row.hitByPitch],
+]) {
+  const player = totals.pitcher.players.find((row) => row.year === "2026" && row.seasonDashboard?.[key]?.some((inning) => inning.win > 0 && inning.loss > 0 && inning.noDecision > 0));
+  assert.ok(player, `${key}: saved native record with all three decisions`);
+  const rows = player.seasonDashboard[key];
+  const markup = api.renderPitcherDecisionInningTable(title, rows, true);
+  const { desktop, mobile } = assertTransposedTable(markup, "pitcher-decision-inning-table", "イニング");
+  assert.deepEqual(desktop.headers, ["条件", ...Array.from({ length: 12 }, (_, index) => `${index + 1}回`), "合計"]);
+  assert.deepEqual(mobile.headers, ["イニング", "合計", "勝利", "敗戦", "勝敗無"]);
+  for (const [condition, label] of [["total", "合計"], ["win", "勝利"], ["loss", "敗戦"], ["noDecision", "勝敗無"]]) {
+    const expectedTotal = rows.reduce((sum, row) => sum + row[condition], 0);
+    for (const row of rows) assert.equal(cell(mobile, `${row.inning}回`, label), `${row[condition]}`);
+    assert.equal(cell(mobile, "合計", label), `${expectedTotal}`);
+  }
+  assert.equal(cell(mobile, "合計", "合計"), `${annualTotal(player)}`);
+}
+const nativeInnings = totals.pitcher.players.find((row) => row.year === "2026" && row.seasonDashboard?.inningRows?.length > 1).seasonDashboard;
+assertTransposedTable(api.renderSeasonInningSummary(nativeInnings), "season-inning-table", "項目");
+
+console.log(`Historical season UI: all ${renderedProfiles} profiles, native 2026 routing, shared tables, transposed inning/decision values, known/missing counts and verified zero innings passed.`);

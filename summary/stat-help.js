@@ -118,8 +118,8 @@
 
   const DEFAULT_SELECTOR = "th, dt, .metric-label, .stat-label, .metric-name, .legend-label, .stat-pill > span, .result-stat > span, .compare-season-item > span, .card-head > h3, .comparison-bar-head > h3, .legend-list li > span:last-child, .outcome-item-head > strong, [data-stat-help]";
   const MOBILE_QUERY = "(max-width: 760px), (hover: none), (pointer: coarse)";
-  const MOBILE_METRIC_SCOPE = ".pitch-metric-summary-table, .season-pitch-metric-summary-table, [data-stat-help-scope~=pitch-metric-summary-table], [data-stat-help-scope~=season-pitch-metric-summary-table]";
-  const mobileMetrics = new Set(["whiff%", "csw%", "zone%", "z-swing%", "o-contact%", "chase%", "chase+"]);
+  const PITCH_METRIC_SCOPE = ".pitch-metric-summary-table, .season-pitch-metric-summary-table, [data-stat-help-scope~=pitch-metric-summary-table], [data-stat-help-scope~=season-pitch-metric-summary-table]";
+  const pitchMetrics = new Set(["whiff%", "csw%", "zone%", "z-swing%", "o-contact%", "chase%", "chase+"]);
   const installations = new WeakMap();
 
   function tooltipPosition(anchor, box, viewport) {
@@ -171,12 +171,6 @@
     function mobileInteraction() {
       return lastPointerWasTouch || Boolean(mobileMedia?.matches);
     }
-    function updateMobileScope(host, record) {
-      record.mobile = mobileMetrics.has(normalizeLabel(record.help.label)) && Boolean(host.closest(MOBILE_METRIC_SCOPE));
-      if (record.mobile) host.classList.add("stat-help-mobile");
-      else host.classList.remove("stat-help-mobile");
-    }
-
     function describedBy(node, add) {
       if (!node) return;
       const ids = new Set((node.getAttribute("aria-describedby") || "").split(/\s+/).filter(Boolean));
@@ -229,7 +223,7 @@
     }
     function show(host, pinned = false, focusOwner = null) {
       const record = records.get(host);
-      if (!record || (mobileMedia?.matches && !record.mobile)) return;
+      if (!record) return;
       cancelClose();
       if (active?.host !== host) hide();
       else if (active.focusOwner !== focusOwner) describedBy(active.focusOwner, false);
@@ -271,18 +265,19 @@
       if (ancestor && records.has(ancestor)) return;
       const label = host.getAttribute("data-stat-help") || labelText(host);
       const help = getHelp(label);
+      const eligible = help && pitchMetrics.has(normalizeLabel(help.label)) && Boolean(host.closest(PITCH_METRIC_SCOPE));
       let previous = records.get(host);
       if (previous && !host.contains(previous.trigger)) {
         if (active?.host === host) hide();
         records.delete(host);
+        host.classList.remove("stat-help-target");
         previous = null;
       }
-      if (!help) {
+      if (!eligible) {
         if (previous) {
           if (active?.host === host) hide();
           previous.trigger.remove();
           host.classList.remove("stat-help-target");
-          host.classList.remove("stat-help-mobile");
           records.delete(host);
         }
         return;
@@ -291,7 +286,6 @@
         if (active?.host === host && previous.help !== help) hide();
         previous.help = help;
         previous.trigger.setAttribute("aria-label", `${help.label}の意味`);
-        updateMobileScope(host, previous);
         return;
       }
       const trigger = doc.createElement("button");
@@ -304,9 +298,7 @@
       trigger.textContent = "?";
       host.appendChild(trigger);
       host.classList.add("stat-help-target");
-      const record = { help, trigger, mobile: false };
-      updateMobileScope(host, record);
-      records.set(host, record);
+      records.set(host, { help, trigger });
     }
     function refresh(root = doc) {
       if (active && !active.host.isConnected) hide();
@@ -346,7 +338,6 @@
         const element = event.target.nodeType === 1 ? event.target : event.target.parentElement;
         const isTrigger = Boolean(element.closest(".stat-help-trigger"));
         const mobile = mobileInteraction();
-        if (mobile && !records.get(host).mobile) { hide(); return; }
         if (!isTrigger && (!mobile || element.closest("button, a, input, select, textarea, [role=button]"))) return;
         event.preventDefault();
         // Keep help clicks separate from delegated sorting/filtering actions.
@@ -411,7 +402,6 @@
       doc.querySelectorAll(".stat-help-target").forEach((host) => {
         records.get(host)?.trigger.remove();
         host.classList.remove("stat-help-target");
-        host.classList.remove("stat-help-mobile");
       });
       tooltip.remove();
       installations.delete(doc);
