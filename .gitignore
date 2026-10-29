@@ -52,6 +52,7 @@
 !/scripts/test_nf3_frontend.cjs
 !/scripts/test_previous_year_identity.js
 !/scripts/test_comparison_ui.js
+!/scripts/test_monthly_chart.js
 !/scripts/test_historical_pitcher.js
 !/scripts/test_historical_batter.js
 !/scripts/test_historical_season_ui.js

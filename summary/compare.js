@@ -116,6 +116,8 @@ const state = {
   comparisonYear: "",
   comparisonPreset: "main",
   comparisonView: "table",
+  monthlyView: "line",
+  monthlyPreset: "main",
   activeMode: "compare",
   embedded: false,
   error: "",
@@ -216,6 +218,7 @@ function metricMap(config) {
 
 function metricValue(metric, row) {
   if (!row) return null;
+  if (metric.key === "pitches" && row.hasPitchCount === false) return null;
   if (["ops", "isoDiscipline", "isoPower"].includes(metric.key) && row.atBats != null && Number(row.atBats) === 0) return null;
   const value = row[metric.key];
   if (value === null || value === undefined || value === "") return null;
@@ -1709,7 +1712,10 @@ function renderMetricToggles() {
       if (state.activeMode === "compare") {
         state.comparisonMetricKeys = next;
         state.comparisonPreset = "custom";
-      } else state.activeMetricKeys = next;
+      } else {
+        state.activeMetricKeys = next;
+        state.monthlyPreset = "custom";
+      }
       renderMetricToggles();
       renderPanels();
     });
@@ -1796,57 +1802,88 @@ function chartSvg(metric, splits) {
   const padding = { top: 30, right: 16, bottom: 34, left: 60 };
   const plotWidth = width - padding.left - padding.right;
   const plotHeight = height - padding.top - padding.bottom;
-  const points = splits
-    .map((row, index) => ({
-      index,
-      label: row.monthLabel || row.month || `${index + 1}`,
-      value: numericMetricValue(metric, row),
-    }))
-    .filter((point) => point.value !== null);
+  const points = splits.map((row, index) => ({
+    index,
+    label: row.monthLabel || row.month || `${index + 1}`,
+    value: numericMetricValue(metric, row),
+    formatted: numericMetricValue(metric, row) === null ? "データなし" : formatMetricValue(metric, row),
+  }));
+  const known = points.filter((point) => point.value !== null);
+  const description = `${metric.label}の月別推移。${points.map((point) => `${point.label}: ${point.formatted}`).join("、")}`;
 
-  if (!points.length) {
-    return '<div class="section-empty compare-empty monthly-chart-empty">データなし</div>';
+  if (!known.length) {
+    return `<div class="section-empty compare-empty monthly-chart-empty" aria-label="${escapeHtml(description)}">データなし</div>`;
   }
 
-  let min = Math.min(...points.map((point) => point.value));
-  let max = Math.max(...points.map((point) => point.value));
+  let min = Math.min(...known.map((point) => point.value));
+  let max = Math.max(...known.map((point) => point.value));
   if (min === max) {
-    const margin = metric.kind === "number" ? 1 : 0.1;
-    min -= margin;
+    // Innings are stored as whole outs: fractional padding would invent invalid inning labels.
+    const discrete = metric.kind === "number" || metric.kind === "innings";
+    const margin = discrete ? Math.max(1, Math.ceil(Math.abs(min) * 0.1)) : Math.max(0.1, Math.abs(min) * 0.1);
+    min = min >= 0 ? Math.max(0, min - margin) : min - margin;
     max += margin;
   }
 
   const xStep = points.length > 1 ? plotWidth / (points.length - 1) : 0;
   const yScale = (value) => padding.top + ((max - value) / (max - min || 1)) * plotHeight;
-  const xScale = (index) => padding.left + (xStep * index);
+  const xScale = (index) => padding.left + (points.length === 1 ? plotWidth / 2 : xStep * index);
+  let connected = false;
   const pathData = points
-    .map((point, index) => `${index === 0 ? "M" : "L"} ${xScale(index).toFixed(2)} ${yScale(point.value).toFixed(2)}`)
-    .join(" ");
+    .map((point) => {
+      if (point.value === null) {
+        connected = false;
+        return "";
+      }
+      const command = `${connected ? "L" : "M"} ${xScale(point.index).toFixed(2)} ${yScale(point.value).toFixed(2)}`;
+      connected = true;
+      return command;
+    })
+    .filter(Boolean).join(" ");
 
   const xLabels = points
     .map(
       (point, index) => `
-        <text x="${xScale(index).toFixed(2)}" y="${height - 10}" text-anchor="${index === 0 ? "start" : index === points.length - 1 ? "end" : "middle"}" class="monthly-chart-axis-label${points.length >= 6 && index > 0 && index < points.length - 1 && (index % 2 === 1 || index === points.length - 2) ? " monthly-chart-label-mobile-hidden" : ""}">
+        <text x="${xScale(index).toFixed(2)}" y="${height - 10}" text-anchor="${points.length === 1 ? "middle" : index === 0 ? "start" : index === points.length - 1 ? "end" : "middle"}" class="monthly-chart-axis-label${points.length >= 6 && index > 0 && index < points.length - 1 && (index % 2 === 1 || index === points.length - 2) ? " monthly-chart-label-mobile-hidden" : ""}">
           ${escapeHtml(point.label)}
         </text>
       `
     )
     .join("");
-  const circles = points
+  const first = known[0];
+  const last = known[known.length - 1];
+  const labelBoxes = [];
+  const pointLabels = new Map();
+  // Give the two endpoints priority, then fit intermediate desktop labels into the remaining space.
+  [...new Set([last, first, ...known])].forEach((point) => {
+    const x = xScale(point.index);
+    const y = yScale(point.value) - 12;
+    const mobileHalfWidth = point.formatted.length * 5;
+    const anchor = x - padding.left < mobileHalfWidth ? "start" : width - padding.right - x < mobileHalfWidth ? "end" : "middle";
+    const labelWidth = point.formatted.length * 7;
+    const left = x - (anchor === "middle" ? labelWidth / 2 : anchor === "end" ? labelWidth : 0);
+    if (labelBoxes.some((box) => Math.abs(box.y - y) < 16 && left < box.right + 6 && left + labelWidth > box.left - 6)) return;
+    labelBoxes.push({ left, right: left + labelWidth, y });
+    const endpointClass = point !== first && point !== last ? " monthly-chart-label-mobile-hidden" : anchor === "start" ? " monthly-chart-point-label--first" : anchor === "end" ? " monthly-chart-point-label--last" : "";
+    const endpointsCrowded = point === first && first !== last
+      && xScale(last.index) - x < (first.formatted.length + last.formatted.length) * 6 + 24
+      && Math.abs(yScale(last.value) - yScale(first.value)) < 26;
+    pointLabels.set(point.index, `<text x="${x.toFixed(2)}" y="${y.toFixed(2)}" text-anchor="${anchor}" class="monthly-chart-point-label${endpointClass}${endpointsCrowded ? " monthly-chart-label-mobile-hidden" : ""}">${escapeHtml(point.formatted)}</text>`);
+  });
+  const circles = known
     .map(
-      (point, index) => `
+      (point) => `
         <g>
-          <circle cx="${xScale(index).toFixed(2)}" cy="${yScale(point.value).toFixed(2)}" r="4.5" class="monthly-chart-point" />
-          <text x="${xScale(index).toFixed(2)}" y="${(yScale(point.value) - 10).toFixed(2)}" text-anchor="middle" class="monthly-chart-point-label${index === 0 ? " monthly-chart-point-label--first" : index === points.length - 1 ? " monthly-chart-point-label--last" : " monthly-chart-label-mobile-hidden"}">
-            ${escapeHtml(formatMetricValue(metric, { [metric.key]: point.value, inningsOuts: point.value }))}
-          </text>
+          <circle cx="${xScale(point.index).toFixed(2)}" cy="${yScale(point.value).toFixed(2)}" r="4.5" class="monthly-chart-point"><title>${escapeHtml(`${point.label}: ${point.formatted}`)}</title></circle>
+          ${pointLabels.get(point.index) || ""}
         </g>
       `
     )
     .join("");
 
   return `
-    <svg class="monthly-chart" viewBox="0 0 ${width} ${height}" role="img" aria-label="${escapeHtml(metric.label)}の月別推移">
+    <svg class="monthly-chart" viewBox="0 0 ${width} ${height}" role="img" aria-label="${escapeHtml(description)}">
+      <title>${escapeHtml(description)}</title>
       <line x1="${padding.left}" y1="${padding.top}" x2="${padding.left}" y2="${height - padding.bottom}" class="monthly-chart-axis" />
       <line x1="${padding.left}" y1="${height - padding.bottom}" x2="${width - padding.right}" y2="${height - padding.bottom}" class="monthly-chart-axis" />
       <text x="${padding.left - 8}" y="${padding.top + 4}" text-anchor="end" class="monthly-chart-range-label">${escapeHtml(formatMetricValue(metric, { [metric.key]: max, inningsOuts: max }))}</text>
@@ -1867,37 +1904,13 @@ function renderMonthlyTable(splits) {
     els.monthlyTableWrap.innerHTML = '<div class="section-empty compare-empty">この年度の月別データはありません。</div>';
     return;
   }
-  const visibleMetrics = state.config.metrics.filter((metric) => {
-    if (state.config === TYPE_CONFIG.pitcher && metric.key === "pitches") {
-      return splits.some((split) => split.hasPitchCount);
-    }
-    return true;
-  });
-  const headers = visibleMetrics
-    .map((metric) => `<th>${escapeHtml(metric.label)}</th>`)
-    .join("");
-  const rows = splits
-    .map((split) => {
-      const values = visibleMetrics
-        .map((metric) => `<td>${escapeHtml(formatMetricValue(metric, split))}</td>`)
-        .join("");
-      return `<tr><th>${escapeHtml(split.monthLabel || split.month || "-")}</th>${values}</tr>`;
-    })
-    .join("");
-
-  els.monthlyTableWrap.innerHTML = `
-    <div class="table-scroll monthly-table-shell">
-      <table class="data-table monthly-table">
-        <thead>
-          <tr>
-            <th>月</th>
-            ${headers}
-          </tr>
-        </thead>
-        <tbody>${rows}</tbody>
-      </table>
-    </div>
-  `;
+  const visibleMetrics = state.config.metrics.filter((metric) => state.activeMetricKeys.includes(metric.key));
+  if (!visibleMetrics.length) {
+    els.monthlyTableWrap.innerHTML = '<div class="section-empty compare-empty">表示したい指標を選択してください。</div>';
+    return;
+  }
+  const monthLabel = (split) => escapeHtml(split.monthLabel || split.month || "—");
+  els.monthlyTableWrap.innerHTML = `<div class="monthly-table-shell" tabindex="0" aria-label="月別成績表。横にスクロールできます"><table class="monthly-table"><caption>${escapeHtml(seasonLabel(state.currentRow))}の月別成績</caption><thead><tr><th scope="col">指標</th>${splits.map((split) => `<th scope="col">${monthLabel(split)}</th>`).join("")}</tr></thead><tbody>${visibleMetrics.map((metric) => `<tr><th scope="row">${escapeHtml(metric.label)}</th>${splits.map((split) => `<td>${escapeHtml(comparisonValue(metric, split))}</td>`).join("")}</tr>`).join("")}</tbody></table></div>`;
 }
 
 function renderMonthlyCharts(splits) {
@@ -1914,17 +1927,15 @@ function renderMonthlyCharts(splits) {
     return;
   }
 
-  const metricsByKey = metricMap(state.config);
-  els.monthlyChartGrid.innerHTML = state.activeMetricKeys
-    .map((key) => metricsByKey[key])
-    .filter(Boolean)
+  els.monthlyChartGrid.innerHTML = state.config.metrics
+    .filter((metric) => state.activeMetricKeys.includes(metric.key))
     .map((metric) => {
       const latestRow = splits[splits.length - 1] || null;
       return `
-        <article class="compare-card monthly-chart-card">
+        <article class="monthly-chart-card">
           <div class="monthly-chart-head">
-            <span>${escapeHtml(metric.label)}</span>
-            <strong>${escapeHtml(formatMetricValue(metric, latestRow))}</strong>
+            <h3>${escapeHtml(metric.label)}</h3>
+            <div class="monthly-chart-latest"><span>${escapeHtml(latestRow?.monthLabel || latestRow?.month || "")}</span><strong>${escapeHtml(comparisonValue(metric, latestRow))}</strong></div>
           </div>
           ${chartSvg(metric, splits)}
         </article>
@@ -1954,10 +1965,12 @@ function renderComparePanel() {
 
 function renderMonthlyPanel() {
   const splits = monthlySplits();
-  els.monthlyMetricCount.textContent = `表 ${state.config.metrics.length}項目 / グラフ ${state.activeMetricKeys.length}項目`;
-  els.monthlySeasonGrid.innerHTML = [
-    renderSeasonCard(state.currentRow, state.config, seasonLabel(state.currentRow, "対象年度"), "対象年度データがありません。"),
-  ].join("");
+  els.monthlyMetricCount.textContent = `${state.activeMetricKeys.length}項目`;
+  els.monthlySeasonGrid.innerHTML = state.currentRow ? comparisonSeasonMarkup(state.currentRow, state.currentRow.year) : "";
+  document.querySelectorAll("[data-monthly-preset]").forEach((button) => button.setAttribute("aria-pressed", `${button.dataset.monthlyPreset === state.monthlyPreset}`));
+  document.querySelectorAll("[data-monthly-view]").forEach((button) => button.setAttribute("aria-pressed", `${button.dataset.monthlyView === state.monthlyView}`));
+  els.monthlyTableWrap.classList.toggle("is-hidden", state.monthlyView !== "table");
+  els.monthlyChartGrid.classList.toggle("is-hidden", state.monthlyView !== "line");
   renderMonthlyTable(splits);
   renderMonthlyCharts(splits);
 }
@@ -1967,7 +1980,6 @@ function renderPanels() {
   const showCompare = state.activeMode === "compare";
   const showMonthly = state.activeMode === "monthly";
   els.metricControls.classList.toggle("is-hidden", showSeason);
-  if (showMonthly) els.metricControls.open = true;
   els.seasonPanel.classList.toggle("is-hidden", !showSeason);
   els.comparePanel.classList.toggle("is-hidden", !showCompare);
   els.monthlyPanel.classList.toggle("is-hidden", !showMonthly);
@@ -2030,7 +2042,7 @@ async function init() {
   document.body.classList.toggle("compare-embed", state.embedded);
   state.config = TYPE_CONFIG[params.get("type")] || TYPE_CONFIG.pitcher;
   state.activeMode = MODE_CONFIG[params.get("mode")] ? params.get("mode") : "season";
-  state.activeMetricKeys = [];
+  state.activeMetricKeys = state.config.metrics.filter((metric) => metric.default).map((metric) => metric.key);
 
   try {
     const response = await fetch(state.config.datasetUrl, { cache: "no-store" });
@@ -2073,6 +2085,22 @@ async function init() {
     button.addEventListener("click", () => {
       state.comparisonView = button.dataset.compareView;
       renderComparePanel();
+      postEmbedHeight();
+    });
+  });
+  document.querySelectorAll("[data-monthly-preset]").forEach((button) => {
+    button.addEventListener("click", () => {
+      state.monthlyPreset = button.dataset.monthlyPreset;
+      state.activeMetricKeys = state.config.metrics.filter((metric) => state.monthlyPreset === "all" || metric.default).map((metric) => metric.key);
+      renderMetricToggles();
+      renderMonthlyPanel();
+      postEmbedHeight();
+    });
+  });
+  document.querySelectorAll("[data-monthly-view]").forEach((button) => {
+    button.addEventListener("click", () => {
+      state.monthlyView = button.dataset.monthlyView;
+      renderMonthlyPanel();
       postEmbedHeight();
     });
   });

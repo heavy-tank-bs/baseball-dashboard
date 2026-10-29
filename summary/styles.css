@@ -2061,14 +2061,21 @@ button.type-switch-link {
   margin-top: 8px;
 }
 
+.monthly-season-strip {
+  grid-template-columns: 1fr;
+}
+
+.monthly-season-strip .comparison-season {
+  text-align: left;
+}
+
 .monthly-table-shell {
-  margin-bottom: 18px;
   overflow-x: auto;
   overflow-y: hidden;
-  border: 1px solid rgba(15, 35, 64, 0.08);
-  border-radius: 20px;
+  max-width: 100%;
+  border: 1px solid rgba(15, 35, 64, 0.1);
+  border-radius: 16px;
   background: white;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.65);
 }
 
 .monthly-table {
@@ -2076,46 +2083,56 @@ button.type-switch-link {
   border-spacing: 0;
   width: max-content;
   min-width: 100%;
-  table-layout: fixed;
+  font-size: 15px;
+  font-variant-numeric: tabular-nums;
+}
+
+.monthly-table caption {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
 }
 
 .monthly-table th,
 .monthly-table td {
-  min-width: 108px;
-  padding: 12px 10px;
+  min-width: 74px;
+  padding: 15px 18px;
   border-bottom: 1px solid rgba(15, 35, 64, 0.08);
   white-space: nowrap;
-  font-size: 13px;
-  text-align: center;
-  background: white;
+  text-align: right;
 }
 
-.monthly-table th {
-  position: sticky;
-  top: 0;
-  z-index: 2;
-  color: var(--muted);
+.monthly-table thead th {
+  color: #526171;
   font-size: 12px;
-  background: var(--card-strong);
-}
-
-.monthly-table th:first-child,
-.monthly-table td:first-child {
-  position: sticky;
-  left: 0;
-  min-width: 88px;
-  box-shadow: inset -1px 0 0 rgba(15, 35, 64, 0.08);
+  font-weight: 500;
+  background: #f7f7f3;
 }
 
 .monthly-table th:first-child {
-  z-index: 4;
-  background: var(--card-strong);
+  position: sticky;
+  left: 0;
+  z-index: 1;
+  min-width: 94px;
+  max-width: 148px;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  text-align: left;
+  font-weight: 600;
+  background: white;
+  box-shadow: inset -1px 0 0 rgba(15, 35, 64, 0.08);
 }
 
-.monthly-table td:first-child {
-  z-index: 1;
-  font-weight: 700;
-  background: #fbf8f1;
+.monthly-table thead th:first-child {
+  background: #f7f7f3;
+}
+
+.monthly-table td:last-child {
+  color: var(--navy);
+  font-weight: 750;
+  background: #f7f9fb;
 }
 
 .monthly-table tbody tr:last-child td,
@@ -2130,6 +2147,11 @@ button.type-switch-link {
 }
 
 .monthly-chart-card {
+  min-width: 0;
+  padding: 18px;
+  border: 1px solid rgba(15, 35, 64, 0.1);
+  border-radius: 16px;
+  background: white;
   overflow: hidden;
 }
 
@@ -2141,9 +2163,21 @@ button.type-switch-link {
   margin-bottom: 14px;
 }
 
-.monthly-chart-head span {
+.monthly-chart-head h3 {
+  margin: 0;
+  font-size: 15px;
+}
+
+.monthly-chart-latest {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  white-space: nowrap;
+}
+
+.monthly-chart-latest span {
   color: var(--muted);
-  font-size: 0.92rem;
+  font-size: 12px;
 }
 
 .monthly-chart-head strong {
@@ -2188,7 +2222,14 @@ button.type-switch-link {
 }
 
 .monthly-chart-empty {
-  min-height: 220px;
+  min-height: 170px;
+}
+
+@media (max-width: 620px) {
+  .monthly-table th, .monthly-table td { padding: 12px 10px; font-size: 13px; min-width: 66px; }
+  .monthly-table thead th { font-size: 11px; }
+  .monthly-table th:first-child { min-width: 84px; max-width: 100px; }
+  .monthly-chart-card { padding: 14px; }
 }
 
 .season-detail-wrap {
@@ -3381,8 +3422,7 @@ body.compare-embed .season-detail-wrap {
   }
 
   .monthly-chart-head {
-    flex-direction: column;
-    align-items: flex-start;
+    flex-wrap: wrap;
   }
 
   .page-tabs {

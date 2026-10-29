@@ -187,7 +187,7 @@ function playerHref(row) {
 }
 
 function embeddedPlayerHref(row) {
-  return `${playerHref(row)}&embed=1&v=20261029-innings`;
+  return `${playerHref(row)}&embed=1&v=20261029-monthly`;
 }
 
 function renderTypeOptions() {

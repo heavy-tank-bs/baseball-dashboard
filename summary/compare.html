@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>選手成績ビュー</title>
-  <link rel="stylesheet" href="./styles.css?v=20261029-innings">
+  <link rel="stylesheet" href="./styles.css?v=20261029-monthly">
   <link rel="stylesheet" href="./stat-help.css?v=20261029-innings">
   <script defer src="./stat-help.js?v=20261029-innings"></script>
 </head>
@@ -80,13 +80,24 @@
       </section>
 
       <section id="monthlyPanel" class="panel-block is-hidden">
-        <div class="section-head compare-head">
-          <h2>月別成績</h2>
+        <div class="section-head comparison-heading">
+          <div><h2>月別成績</h2><p class="comparison-help">各月の数値と推移を確認できます。</p></div>
           <span id="monthlyMetricCount" class="result-count">0項目</span>
         </div>
-        <div id="monthlySeasonGrid" class="season-meta-grid"></div>
+        <div class="comparison-toolbar">
+          <div class="comparison-presets" role="group" aria-label="月別指標の表示範囲">
+            <button type="button" data-monthly-preset="main" aria-pressed="true">主要指標</button>
+            <button type="button" data-monthly-preset="all" aria-pressed="false">すべて</button>
+          </div>
+          <div class="comparison-views" role="group" aria-label="月別成績の表示形式">
+            <button type="button" data-monthly-view="table" aria-pressed="false" aria-controls="monthlyTableWrap">一覧表</button>
+            <button type="button" data-monthly-view="line" aria-pressed="true" aria-controls="monthlyChartGrid">折れ線グラフ</button>
+          </div>
+        </div>
+        <div id="monthlySeasonGrid" class="comparison-season-strip monthly-season-strip"></div>
         <div id="monthlyTableWrap" class="monthly-table-wrap"></div>
         <div id="monthlyChartGrid" class="monthly-chart-grid"></div>
+        <p class="comparison-help comparison-footnote">各月単独の成績です。「—」はデータがない項目で、グラフでは欠損の前後を線でつなぎません。</p>
       </section>
     </main>
   </div>
@@ -94,6 +105,6 @@
   <script src="./uniform_numbers.js?v=20260711"></script>
   <script defer src="./historical-pitcher.js?v=20261029-inning-label"></script>
   <script defer src="./historical-batter.js?v=20261029-season"></script>
-  <script defer src="./compare.js?v=20261029-innings"></script>
+  <script defer src="./compare.js?v=20261029-monthly"></script>
 </body>
 </html>

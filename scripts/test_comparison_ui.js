@@ -11,7 +11,7 @@ const exportNames = [
   "init", "state", "TYPE_CONFIG", "comparisonPair", "availableComparisonYears", "comparisonMetricKeys",
   "comparisonMetrics", "comparisonValue", "differenceMarkup", "comparisonBarMarkup", "compareCardsMarkup",
   "renderComparePanel", "renderMetricToggles", "metricValue", "formatMetricDelta", "formatInningsFromOuts",
-  "monthlySplits", "comparisonSeasonMarkup",
+  "monthlySplits", "comparisonSeasonMarkup", "renderMonthlyPanel", "renderMonthlyTable", "renderMonthlyCharts",
 ];
 
 function loadPage(payload, search) {
@@ -54,6 +54,8 @@ function loadPage(payload, search) {
   const buttons = {
     preset: ["main", "all"].map((comparePreset) => makeElement({ comparePreset })),
     view: ["table", "bars"].map((compareView) => makeElement({ compareView })),
+    monthlyPreset: ["main", "all"].map((monthlyPreset) => makeElement({ monthlyPreset })),
+    monthlyView: ["table", "line"].map((monthlyView) => makeElement({ monthlyView })),
   };
   const fetchCalls = [];
   const window = { location: { search }, addEventListener() {}, scrollTo() {} };
@@ -67,6 +69,8 @@ function loadPage(payload, search) {
       querySelectorAll(selector) {
         if (selector === "[data-compare-preset]") return buttons.preset;
         if (selector === "[data-compare-view]") return buttons.view;
+        if (selector === "[data-monthly-preset]") return buttons.monthlyPreset;
+        if (selector === "[data-monthly-view]") return buttons.monthlyView;
         return [];
       },
     },
@@ -91,6 +95,118 @@ function tableRow(markup, label) {
 
 function barPositions(markup) {
   return [...markup.matchAll(/style="left:([\d.]+)%;width:([\d.]+)%"/g)].map((match) => ({ left: Number(match[1]), width: Number(match[2]) }));
+}
+
+async function testMonthlyControls(payload, type, player, year) {
+  const page = loadPage(payload, `?${new URLSearchParams({ type, player, year, team: "オリックス", mode: "monthly" })}`);
+  await page.api.init();
+  const { api, element, buttons } = page;
+  const defaults = Array.from(api.state.config.metrics.filter((metric) => metric.default), (metric) => metric.key);
+  const allKeys = Array.from(api.state.config.metrics, (metric) => metric.key);
+  assert.equal(api.state.currentRow.year, year, "monthly entry retains the requested season");
+  assert.equal(api.state.monthlyView, "line", "monthly results open with line charts");
+  assert.equal(api.state.monthlyPreset, "main");
+  assert.deepEqual(Array.from(api.state.activeMetricKeys), defaults);
+  assert.equal(buttons.monthlyView[1].getAttribute("aria-pressed"), "true");
+  assert.equal(buttons.monthlyPreset[0].getAttribute("aria-pressed"), "true");
+  assert.equal(element("monthlyTableWrap").classList.contains("is-hidden"), true);
+  assert.equal(element("monthlyChartGrid").classList.contains("is-hidden"), false);
+  assert.equal((element("monthlyChartGrid").innerHTML.match(/<article class="[^"]*\bmonthly-chart-card\b[^"]*"/g) || []).length, defaults.length);
+
+  const splitsBefore = JSON.stringify(api.monthlySplits());
+  const comparisonKeysBefore = Array.from(api.comparisonMetricKeys());
+  const comparisonYearBefore = api.state.comparisonYear;
+  buttons.monthlyPreset[1].click();
+  assert.equal(api.state.monthlyPreset, "all");
+  assert.deepEqual(Array.from(api.state.activeMetricKeys), allKeys);
+  assert.deepEqual(Array.from(api.comparisonMetricKeys()), comparisonKeysBefore, "monthly presets do not replace comparison metrics");
+  assert.equal(api.state.comparisonYear, comparisonYearBefore);
+  assert.equal(buttons.monthlyPreset[1].getAttribute("aria-pressed"), "true");
+  buttons.monthlyView[0].click();
+  assert.equal(api.state.monthlyView, "table");
+  assert.equal(element("monthlyTableWrap").classList.contains("is-hidden"), false);
+  assert.equal(element("monthlyChartGrid").classList.contains("is-hidden"), true);
+  assert.deepEqual(Array.from(api.state.activeMetricKeys), allKeys, "view changes retain the selected monthly metrics");
+  const table = element("monthlyTableWrap").innerHTML;
+  assert.ok(/<caption[^>]*>[\s\S]*?<\/caption>/.test(table) && table.includes(year), "the monthly table identifies its season");
+  assert.equal(bodyRows(table).length, allKeys.length, "table metrics use rows rather than expanding into dozens of columns");
+  for (const metric of api.state.config.metrics) {
+    assert.equal(tableRow(table, metric.label).length, api.monthlySplits().length, "each metric has one value per source month");
+  }
+  if (year === "2025") {
+    assert.ok(table.includes("3・4月"), "the source's combined March/April category remains combined");
+    assert.ok(!table.includes(">3月</th>") && !table.includes(">4月</th>"));
+    if (type === "pitcher") {
+      assert.ok(tableRow(table, "球数").every((value) => value === "—"), "unrecorded 2025 pitch counts never become measured zeroes");
+    } else {
+      assert.ok(tableRow(table, "wRC+").every((value) => value === "—"), "unrecorded historical coefficients remain unavailable");
+    }
+  }
+  buttons.monthlyPreset[0].click();
+  assert.deepEqual(Array.from(api.state.activeMetricKeys), defaults);
+  assert.equal(bodyRows(element("monthlyTableWrap").innerHTML).length, defaults.length);
+  const extra = api.state.config.metrics.find((metric) => !metric.default);
+  element("metricToggleGroup").querySelectorAll("[data-metric-key]")
+    .find((button) => button.dataset.metricKey === extra.key).click();
+  assert.equal(api.state.monthlyPreset, "custom");
+  assert.ok(Array.from(api.state.activeMetricKeys).includes(extra.key));
+  assert.deepEqual(Array.from(api.comparisonMetricKeys()), comparisonKeysBefore, "custom monthly metrics leave comparison selection unchanged");
+  assert.ok(buttons.monthlyPreset.every((button) => button.getAttribute("aria-pressed") === "false"));
+
+  const monthlySelection = Array.from(api.state.activeMetricKeys);
+  buttons.preset[1].click();
+  assert.deepEqual(Array.from(api.state.activeMetricKeys), monthlySelection, "comparison presets leave monthly metrics unchanged");
+  assert.equal(api.state.monthlyPreset, "custom");
+  buttons.monthlyView[1].click();
+  assert.equal(api.state.monthlyView, "line");
+  assert.deepEqual(Array.from(api.state.activeMetricKeys), monthlySelection);
+  assert.equal(JSON.stringify(api.monthlySplits()), splitsBefore, "neither controls nor comparison year selection change monthly data");
+  assert.equal(api.state.currentRow.year, year);
+
+  const selectedButtons = element("metricToggleGroup").querySelectorAll("[data-metric-key]")
+    .filter((button) => api.state.activeMetricKeys.includes(button.dataset.metricKey));
+  selectedButtons.forEach((button) => button.click());
+  assert.equal(api.state.activeMetricKeys.length, 0);
+  assert.ok(element("monthlyTableWrap").innerHTML.includes("指標を選択"));
+  assert.ok(element("monthlyChartGrid").innerHTML.includes("指標を選択"));
+  assert.ok(!element("monthlyTableWrap").innerHTML.includes("<table"), "an empty metric selection never falls back to all metrics");
+  buttons.monthlyPreset[0].click();
+  assert.deepEqual(Array.from(api.state.activeMetricKeys), defaults, "the main preset recovers an empty selection");
+  api.state.currentRow = { ...api.state.currentRow, monthlySplits: [] };
+  api.renderMonthlyPanel();
+  assert.ok(element("monthlyTableWrap").innerHTML.includes("月別データはありません"));
+  assert.ok(element("monthlyChartGrid").innerHTML.includes("月別データはありません"));
+  return page;
+}
+
+function testMonthlyMissingValues(page, type) {
+  const { api, element } = page;
+  const splits = type === "pitcher" ? [
+    { monthLabel: "3月", era: 0, inningsOuts: 1, strikeouts: 0, fip: null },
+    { monthLabel: "4月", era: null, inningsOuts: null, strikeouts: null, fip: null },
+    { monthLabel: "5月", era: 2.5, inningsOuts: 3, strikeouts: 2, fip: null },
+  ] : [
+    { monthLabel: "3月", atBats: 10, ops: 0, homeRuns: 0, wrcPlus: null },
+    { monthLabel: "4月", atBats: 0, ops: 0, homeRuns: null, wrcPlus: null },
+    { monthLabel: "5月", atBats: 10, ops: .85, homeRuns: 2, wrcPlus: null },
+  ];
+  api.state.activeMetricKeys = type === "pitcher" ? ["era", "inningsOuts", "strikeouts", "fip"] : ["ops", "homeRuns", "wrcPlus"];
+  api.renderMonthlyTable(splits);
+  const table = element("monthlyTableWrap").innerHTML;
+  if (type === "pitcher") {
+    assert.deepEqual(tableRow(table, "防御率"), ["0.00", "—", "2.50"]);
+    assert.deepEqual(tableRow(table, "投球回"), ["0.1", "—", "1"]);
+    assert.deepEqual(tableRow(table, "奪三振"), ["0", "—", "2"]);
+    assert.deepEqual(tableRow(table, "FIP"), ["—", "—", "—"]);
+  } else {
+    assert.deepEqual(tableRow(table, "OPS"), ["0.000", "—", "0.850"], "a no-at-bat month is undefined while a measured zero remains zero");
+    assert.deepEqual(tableRow(table, "本塁打"), ["0", "—", "2"]);
+    assert.deepEqual(tableRow(table, "wRC+"), ["—", "—", "—"]);
+  }
+  api.renderMonthlyCharts(splits);
+  const charts = element("monthlyChartGrid").innerHTML;
+  assert.ok(charts.includes("データなし"), "entirely unavailable metrics explain the missing series");
+  assert.ok(!/NaN|Infinity|undefined/.test(charts));
 }
 
 async function main() {
@@ -193,8 +309,16 @@ async function main() {
   const season = api.comparisonSeasonMarkup({ team: '<img src=x> &', games: 3, inningsOuts: 40 }, '<script>');
   assert.ok(!season.includes("<img") && !season.includes("<script>"));
 
+  const monthlyPitcher = await testMonthlyControls(pitcherData, "pitcher", "宮城大弥", "2025");
+  const monthlyBatter = await testMonthlyControls(batterData, "batter", "若月健矢", "2025");
+  await testMonthlyControls(pitcherData, "pitcher", "宮城大弥", "2026");
+  await testMonthlyControls(batterData, "batter", "若月健矢", "2026");
+  testMonthlyMissingValues(monthlyPitcher, "pitcher");
+  testMonthlyMissingValues(monthlyBatter, "batter");
+
   console.log("PASS: real 2025 entries open 2025/2026 pairs; table/bar controls, arithmetic, missing values, units, baselines and escaping");
   console.log("PASS: comparison years, presets and custom metrics preserve annual/monthly season and selected charts");
+  console.log("PASS: monthly line/table controls, independent presets and custom metrics, source grouping, units, zero/null and empty states for 2025/2026 pitchers and batters");
 }
 
 main().catch((error) => { console.error(error); process.exitCode = 1; });
