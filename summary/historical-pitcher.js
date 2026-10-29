@@ -259,7 +259,7 @@
       inningWalkRowsScope: "unavailable",
       // This table must never be labelled as the pitcher's full-season runs.
       starterInningRunRows,
-      starterInningRunRowsTitle: "先発時のイニング別失点数（降板後の失点を含む）",
+      starterInningRunRowsTitle: "先発時のイニング別失点数",
       starterInningRunRowsScope: "starts_including_runs_after_exit",
       outcomes,
       finish: {
