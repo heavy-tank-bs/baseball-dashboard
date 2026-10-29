@@ -182,7 +182,7 @@ function renderResponsiveDataTable({ tableClass, headers, rows, mobileFirstHeade
       </table>
     </div>
     <div class="table-scroll mobile-transpose-scroll">
-      <table class="data-table mobile-transpose-table">
+      <table class="data-table mobile-transpose-table" data-stat-help-scope="${escapeHtml(tableClass)}">
         <thead>
           <tr><th>${mobileFirstHeader}</th>${mobileHeader}</tr>
         </thead>
@@ -1800,7 +1800,7 @@ function compareCardsMarkup() {
 function chartSvg(metric, splits) {
   const width = 360;
   const height = 180;
-  const padding = { top: 18, right: 16, bottom: 34, left: 42 };
+  const padding = { top: 30, right: 16, bottom: 34, left: 60 };
   const plotWidth = width - padding.left - padding.right;
   const plotHeight = height - padding.top - padding.bottom;
   const points = splits
@@ -1833,7 +1833,7 @@ function chartSvg(metric, splits) {
   const xLabels = points
     .map(
       (point, index) => `
-        <text x="${xScale(index).toFixed(2)}" y="${height - 10}" text-anchor="middle" class="monthly-chart-axis-label">
+        <text x="${xScale(index).toFixed(2)}" y="${height - 10}" text-anchor="${index === 0 ? "start" : index === points.length - 1 ? "end" : "middle"}" class="monthly-chart-axis-label${points.length >= 6 && index > 0 && index < points.length - 1 && (index % 2 === 1 || index === points.length - 2) ? " monthly-chart-label-mobile-hidden" : ""}">
           ${escapeHtml(point.label)}
         </text>
       `
@@ -1844,7 +1844,7 @@ function chartSvg(metric, splits) {
       (point, index) => `
         <g>
           <circle cx="${xScale(index).toFixed(2)}" cy="${yScale(point.value).toFixed(2)}" r="4.5" class="monthly-chart-point" />
-          <text x="${xScale(index).toFixed(2)}" y="${(yScale(point.value) - 10).toFixed(2)}" text-anchor="middle" class="monthly-chart-point-label">
+          <text x="${xScale(index).toFixed(2)}" y="${(yScale(point.value) - 10).toFixed(2)}" text-anchor="middle" class="monthly-chart-point-label${index === 0 ? " monthly-chart-point-label--first" : index === points.length - 1 ? " monthly-chart-point-label--last" : " monthly-chart-label-mobile-hidden"}">
             ${escapeHtml(formatMetricValue(metric, { [metric.key]: point.value, inningsOuts: point.value }))}
           </text>
         </g>
@@ -1987,11 +1987,8 @@ function renderPanels() {
 function postEmbedHeight() {
   if (!state.embedded || window.parent === window) return;
   window.requestAnimationFrame(() => {
-    const height = Math.max(
-      document.documentElement.scrollHeight,
-      document.body.scrollHeight,
-      document.querySelector(".site-shell")?.scrollHeight || 0
-    );
+    const shell = document.querySelector(".site-shell");
+    const height = Math.max(1, Math.ceil(shell?.getBoundingClientRect().height || document.body.offsetHeight || 0));
     window.parent.postMessage({ type: "playerStatsHeight", height }, window.location.origin);
   });
 }
@@ -2095,7 +2092,7 @@ async function init() {
   });
   if (state.embedded && "ResizeObserver" in window) {
     const resizeObserver = new ResizeObserver(() => postEmbedHeight());
-    resizeObserver.observe(document.body);
+    resizeObserver.observe(document.querySelector(".site-shell") || document.body);
   }
 }
 

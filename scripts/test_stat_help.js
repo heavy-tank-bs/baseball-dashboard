@@ -83,6 +83,10 @@ class Element {
       if (/[ >:]/.test(part)) return false;
       if (part.startsWith(".")) return this.classList.contains(part.slice(1));
       if (part.startsWith("[")) {
+        if (part.includes("~=")) {
+          const [key, value] = part.slice(1, -1).split("~=");
+          return (this.getAttribute(key) || "").split(/\s+/).includes(value);
+        }
         const [key, value] = part.slice(1, -1).split("=");
         return value ? this.getAttribute(key) === value : this.attributes.has(key);
       }
@@ -99,6 +103,12 @@ class Element {
 function fixture() {
   const listeners = new Map();
   const observers = [];
+  const mediaListeners = new Set();
+  const media = {
+    matches: false,
+    addEventListener(name, listener) { if (name === "change") mediaListeners.add(listener); },
+    removeEventListener(name, listener) { if (name === "change") mediaListeners.delete(listener); },
+  };
   const body = new Element("body");
   const doc = {
     body, activeElement: null,
@@ -112,7 +122,7 @@ function fixture() {
     setTimeout, clearTimeout,
     addEventListener() {}, removeEventListener() {},
     requestAnimationFrame(callback) { callback(); },
-    matchMedia() { return { matches: false }; },
+    matchMedia() { return media; },
     MutationObserver: class {
       constructor(callback) { this.callback = callback; observers.push(this); }
       observe() {} disconnect() { this.disconnected = true; }
@@ -125,10 +135,13 @@ function fixture() {
     listeners.get(name)?.forEach((handler) => handler(value));
     return value;
   }
-  return { doc, body, event, observers };
+  return { doc, body, event, observers, setMobile(value) {
+    media.matches = value;
+    mediaListeners.forEach((listener) => listener({ matches: value }));
+  }, mediaListeners };
 }
 
-const { doc, body, event, observers } = fixture();
+const { doc, body, event, observers, setMobile, mediaListeners } = fixture();
 const header = body.appendChild(new Element("th"));
 const sort = header.appendChild(new Element("button"));
 sort.className = "sort-header";
@@ -147,12 +160,23 @@ explicitLabel.setAttribute("data-stat-help", "uBB");
 const nestedHeader = body.appendChild(new Element("th"));
 const nestedLabel = nestedHeader.appendChild(new Element("span", "OPS"));
 nestedLabel.className = "metric-label";
+const pitchTable = body.appendChild(new Element("table"));
+pitchTable.className = "pitch-metric-summary-table";
+const pitchWhiff = pitchTable.appendChild(new Element("th", "whiff%"));
+const pitchBallCount = pitchTable.appendChild(new Element("th", "球数"));
+const mobilePitchTable = body.appendChild(new Element("table"));
+mobilePitchTable.className = "mobile-transpose-table";
+mobilePitchTable.setAttribute("data-stat-help-scope", "season-pitch-metric-summary-table extra-presentation-class");
+const mobileChase = mobilePitchTable.appendChild(new Element("th", "chase%"));
+const remainingMetrics = ["csw%", "zone%", "z-swing%", "o-contact%", "chase+"].map((name) => mobilePitchTable.appendChild(new Element("th", name)));
+const rankingWhiff = body.appendChild(new Element("th", "whiff%"));
 
 const api = install(doc);
 assert.equal(install(doc), api, "install is idempotent");
 const tooltip = body.childNodes.find((node) => node.classList?.contains("stat-help-tooltip"));
 const button = header.childNodes.find((node) => node.classList?.contains("stat-help-trigger"));
 const plainButton = plain.childNodes.find((node) => node.classList?.contains("stat-help-trigger"));
+const pitchButton = pitchWhiff.querySelectorAll("button")[0];
 assert.ok(button && plainButton);
 assert.equal(button.parentElement, header, "help button is a sibling of the sort button");
 assert.equal(sort.childNodes.length, 2, "original sort contents are preserved");
@@ -163,6 +187,11 @@ assert.equal(navigation.querySelectorAll("button").length, 0);
 assert.equal(explicitHeader.querySelectorAll("button").length, 1);
 assert.equal(explicitHeader.querySelectorAll("button")[0].getAttribute("aria-label"), "uBBの意味", "explicit scope overrides generic BB meaning");
 assert.equal(nestedHeader.querySelectorAll("button").length, 1, "nested metric selectors cannot create duplicate help controls");
+assert.equal(pitchWhiff.classList.contains("stat-help-mobile"), true);
+assert.equal(mobileChase.classList.contains("stat-help-mobile"), true, "transposed annual tables preserve the pitch-metric scope");
+assert.ok(remainingMetrics.every((host) => host.classList.contains("stat-help-mobile")), "all seven pitch-discipline metrics remain available");
+assert.equal(pitchBallCount.classList.contains("stat-help-mobile"), false, "ordinary stats inside a pitch table are excluded");
+assert.equal(rankingWhiff.classList.contains("stat-help-mobile"), false, "a matching metric elsewhere is excluded");
 
 event("pointerover", label);
 assert.equal(tooltip.hidden, false, "the entire metric label supports hover");
@@ -186,20 +215,49 @@ event("pointerdown", button, { pointerType: "touch" });
 doc.activeElement = button;
 event("focusin", button);
 assert.equal(tooltip.hidden, true, "touch focus must not consume the first tap");
-const helpClick = event("click", button);
+event("click", button);
+assert.equal(tooltip.hidden, true, "touching a basic stat never opens help");
+event("pointerdown", pitchButton, { pointerType: "touch" });
+doc.activeElement = pitchButton;
+const helpClick = event("click", pitchButton);
 assert.equal(tooltip.hidden, false, "first touch tap opens the help");
 assert.equal(helpClick.stopped, true, "help clicks do not bubble to sort/filter handlers");
-event("click", button);
+event("click", pitchButton);
 assert.equal(tooltip.hidden, true, "second tap closes help");
 
 event("pointerdown", plain, { pointerType: "touch" });
 event("click", plain);
-assert.equal(tooltip.hidden, false, "plain metric labels also support tapping");
+assert.equal(tooltip.hidden, true, "basic labels cannot open hidden help by tapping");
+event("pointerdown", mobileChase, { pointerType: "touch" });
+event("click", mobileChase);
+assert.equal(tooltip.hidden, false, "the transposed metric label supports tapping");
 event("pointerdown", value, { pointerType: "touch" });
 assert.equal(tooltip.hidden, true, "outside taps close help");
-event("click", plainButton);
+event("click", pitchButton);
 event("scroll", body);
 assert.equal(tooltip.hidden, true, "table and document scrolling close help");
+
+event("pointerdown", button, { pointerType: "mouse" });
+event("pointerover", plain);
+assert.equal(tooltip.hidden, false, "desktop hover remains available for ordinary stats");
+setMobile(true);
+assert.equal(tooltip.hidden, true, "changing to a mobile layout dismisses desktop help");
+event("pointerover", plain);
+event("focusin", button);
+event("click", plainButton);
+assert.equal(tooltip.hidden, true, "mobile layouts disable non-metric help for hover, keyboard, and hidden buttons");
+const mobileSortClick = event("click", label);
+assert.equal(mobileSortClick.prevented, false, "mobile help restrictions do not interfere with sorting");
+event("pointerdown", rankingWhiff, { pointerType: "touch" });
+event("click", rankingWhiff);
+assert.equal(tooltip.hidden, true, "the same saber label outside the pitch table is not enabled on mobile");
+event("click", mobileChase);
+assert.equal(tooltip.hidden, false);
+setMobile(false);
+event("pointerdown", button, { pointerType: "mouse" });
+event("pointerover", plain);
+assert.equal(tooltip.hidden, false, "desktop help returns after resizing without a reload");
+api.close();
 
 const dynamic = body.appendChild(new Element("th", "chase%"));
 observers[0].callback([]);
@@ -219,4 +277,5 @@ api.destroy();
 assert.equal(body.querySelectorAll(".stat-help-trigger").length, 0);
 assert.equal(body.querySelectorAll(".stat-help-tooltip").length, 0);
 assert.equal(observers[0].disconnected, true);
+assert.equal(mediaListeners.size, 0);
 console.log("Stat help: formula, viewport, scoped enhancement, sorting, keyboard, touch, dismissal and dynamic-render checks passed.");

@@ -199,3 +199,16 @@ node scripts/test_historical_pitcher.js
 node scripts/test_historical_batter.js
 node scripts/test_historical_season_ui.js
 node scripts/test_stat_help.js
+
+
+スマホ表示の調整（2026-10-29）
+幅760px以下またはタッチ主体の端末では、説明用「？」は球種別サマリのwhiff%/csw%/zone%/z-swing%/o-contact%/chase%/chase+だけに表示する。
+その他の項目のタップ説明は無効。PCのホバー・フォーカス説明は従来どおり。
+転置表はdata-stat-help-scopeに元の表の分類を伝え、球種別指標の表示範囲を維持する。
+個人成績のiframeは.site-shellの実寸で高さを通知する。viewportのscrollHeightを計測に含めない（短い表示へ切替時に高さが縮まなくなるため）。
+iframe内の縦スクロールバーを抑え、外側のページで縦スクロールする。横幅の大きい年度表は表内の横スクロールを維持。
+モバイルの入れ子余白・固定左列・前年比較4列・月別グラフの文字とラベル間隔を調整。
+320/360/390/430px幅、2025/2026年の投手・打者、前年比較・月別推移、年度一覧・ランキングで確認。
+埋め込み先HTMLの版指定もplayer.jsのembeddedPlayerHrefとHTML内のJS/CSS版に合わせて更新する。
+node scripts/test_embed_height.js
+node scripts/test_stat_help.js

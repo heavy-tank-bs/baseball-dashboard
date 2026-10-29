@@ -187,7 +187,7 @@ function playerHref(row) {
 }
 
 function embeddedPlayerHref(row) {
-  return `${playerHref(row)}&embed=1`;
+  return `${playerHref(row)}&embed=1&v=20261029-mobile5`;
 }
 
 function renderTypeOptions() {
@@ -330,6 +330,7 @@ function bindEvents() {
 
 window.addEventListener("message", (event) => {
   if (event.origin !== window.location.origin) return;
+  if (event.source !== els.playerStatsFrame.contentWindow) return;
   if (event.data?.type !== "playerStatsHeight") return;
   const height = Number(event.data.height);
   if (!Number.isFinite(height) || height <= 0) return;

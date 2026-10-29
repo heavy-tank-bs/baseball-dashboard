@@ -358,6 +358,8 @@ button.type-switch-link {
 
 .search-box input,
 .field-select {
+  min-width: 0;
+  max-width: 100%;
   width: 100%;
   padding: 14px 16px;
   border: 1px solid var(--grid);
@@ -433,6 +435,8 @@ button.type-switch-link {
 .result-count {
   color: var(--muted);
   font-size: 14px;
+  flex-shrink: 0;
+  white-space: nowrap;
 }
 
 .result-list {
@@ -824,6 +828,8 @@ button.type-switch-link {
 }
 
 .table-scroll {
+  min-width: 0;
+  max-width: 100%;
   overflow-x: auto;
   padding-bottom: 4px;
 }
@@ -1432,6 +1438,8 @@ button.type-switch-link {
 
 .filter-field {
   display: grid;
+  min-width: 0;
+  grid-template-columns: minmax(0, 1fr);
   gap: 8px;
 }
 
@@ -2654,6 +2662,8 @@ button.type-switch-link {
 
 .player-output-card {
   display: grid;
+  min-width: 0;
+  grid-template-columns: minmax(0, 1fr);
   gap: 16px;
   padding: 20px;
   border: 1px solid var(--line);
@@ -2680,15 +2690,19 @@ button.type-switch-link {
 .player-stats-frame {
   display: block;
   width: 100%;
-  min-height: 640px;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
   border: 0;
 }
 
 body.compare-embed {
   background: transparent;
+  overflow-y: hidden;
 }
 
 body.compare-embed .site-shell {
+  display: flow-root;
   max-width: none;
   padding: 0;
 }
@@ -3636,4 +3650,113 @@ body.compare-embed .season-detail-wrap {
 .season-extra-table > summary {
   margin-bottom: 12px;
   font-size: 14px;
+}
+
+@media (max-width: 760px) {
+  .player-page .site-shell {
+    padding: 12px;
+  }
+
+  .player-page .panel-block {
+    padding-right: 12px;
+    padding-left: 12px;
+  }
+
+  .player-page .panel-block:last-child {
+    padding-bottom: 12px;
+  }
+
+  .player-page .player-output-card {
+    padding: 0;
+    border: 0;
+    background: transparent;
+  }
+
+  .player-page .player-output-head h3 {
+    font-size: 24px;
+    overflow-wrap: anywhere;
+  }
+
+  body.compare-embed .dashboard-card {
+    padding: 12px;
+    border-radius: 18px;
+  }
+
+  body.compare-embed .card-head {
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+
+  body.compare-embed .card-head h3 {
+    font-size: 20px;
+    line-height: 1.4;
+  }
+
+  body.compare-embed .outcome-item {
+    padding: 12px;
+  }
+
+  .mobile-transpose-table th:first-child,
+  .mobile-transpose-table td:first-child {
+    width: 96px;
+    min-width: 96px;
+    max-width: 112px;
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+
+  .mobile-transpose-table[data-stat-help-scope~="pitch-metric-summary-table"] th:first-child,
+  .mobile-transpose-table[data-stat-help-scope~="season-pitch-metric-summary-table"] th:first-child {
+    width: 112px;
+    min-width: 112px;
+    max-width: 112px;
+  }
+
+  .comparison-table {
+    min-width: 0;
+    table-layout: fixed;
+  }
+
+  .comparison-table th,
+  .comparison-table td {
+    padding: 12px 6px;
+    font-size: 12px;
+  }
+
+  .comparison-table th:first-child {
+    width: 28%;
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+
+  .comparison-difference {
+    min-width: 0;
+    max-width: 100%;
+    padding: 5px 4px;
+    font-size: 11px;
+    white-space: normal;
+  }
+
+  .monthly-chart-range-label,
+  .monthly-chart-point-label {
+    font-size: 18px;
+  }
+
+  .monthly-chart-axis-label {
+    font-size: 16px;
+  }
+
+  .monthly-chart-label-mobile-hidden {
+    display: none;
+  }
+
+  .monthly-chart-point-label--first {
+    text-anchor: start;
+    transform: translateX(8px);
+  }
+
+  .monthly-chart-point-label--last {
+    text-anchor: end;
+    transform: translateX(-8px);
+  }
 }

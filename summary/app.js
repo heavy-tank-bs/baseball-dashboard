@@ -136,7 +136,7 @@ function renderResponsiveDataTable({ tableClass, headers, rows, mobileFirstHeade
       </table>
     </div>
     <div class="table-scroll mobile-transpose-scroll">
-      <table class="data-table mobile-transpose-table">
+      <table class="data-table mobile-transpose-table" data-stat-help-scope="${escapeHtml(tableClass)}">
         <thead>
           <tr><th>${mobileFirstHeader}</th>${mobileHeader}</tr>
         </thead>

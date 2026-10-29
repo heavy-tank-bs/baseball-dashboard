@@ -117,6 +117,9 @@
   const getHelp = (label) => dictionary.get(normalizeLabel(label)) || null;
 
   const DEFAULT_SELECTOR = "th, dt, .metric-label, .stat-label, .metric-name, .legend-label, .stat-pill > span, .result-stat > span, .compare-season-item > span, .card-head > h3, .comparison-bar-head > h3, .legend-list li > span:last-child, .outcome-item-head > strong, [data-stat-help]";
+  const MOBILE_QUERY = "(max-width: 760px), (hover: none), (pointer: coarse)";
+  const MOBILE_METRIC_SCOPE = ".pitch-metric-summary-table, .season-pitch-metric-summary-table, [data-stat-help-scope~=pitch-metric-summary-table], [data-stat-help-scope~=season-pitch-metric-summary-table]";
+  const mobileMetrics = new Set(["whiff%", "csw%", "zone%", "z-swing%", "o-contact%", "chase%", "chase+"]);
   const installations = new WeakMap();
 
   function tooltipPosition(anchor, box, viewport) {
@@ -146,6 +149,7 @@
     if (installations.has(doc)) return installations.get(doc);
     const win = doc.defaultView;
     const selector = options.selector || DEFAULT_SELECTOR;
+    const mobileMedia = win.matchMedia?.(MOBILE_QUERY);
     const records = new WeakMap();
     const tooltip = doc.createElement("div");
     tooltip.id = "stat-help-tooltip";
@@ -163,6 +167,15 @@
     let closeTimer = null;
     let pendingScan = false;
     let lastPointerWasTouch = false;
+
+    function mobileInteraction() {
+      return lastPointerWasTouch || Boolean(mobileMedia?.matches);
+    }
+    function updateMobileScope(host, record) {
+      record.mobile = mobileMetrics.has(normalizeLabel(record.help.label)) && Boolean(host.closest(MOBILE_METRIC_SCOPE));
+      if (record.mobile) host.classList.add("stat-help-mobile");
+      else host.classList.remove("stat-help-mobile");
+    }
 
     function describedBy(node, add) {
       if (!node) return;
@@ -216,7 +229,7 @@
     }
     function show(host, pinned = false, focusOwner = null) {
       const record = records.get(host);
-      if (!record) return;
+      if (!record || (mobileMedia?.matches && !record.mobile)) return;
       cancelClose();
       if (active?.host !== host) hide();
       else if (active.focusOwner !== focusOwner) describedBy(active.focusOwner, false);
@@ -269,6 +282,7 @@
           if (active?.host === host) hide();
           previous.trigger.remove();
           host.classList.remove("stat-help-target");
+          host.classList.remove("stat-help-mobile");
           records.delete(host);
         }
         return;
@@ -277,6 +291,7 @@
         if (active?.host === host && previous.help !== help) hide();
         previous.help = help;
         previous.trigger.setAttribute("aria-label", `${help.label}の意味`);
+        updateMobileScope(host, previous);
         return;
       }
       const trigger = doc.createElement("button");
@@ -289,7 +304,9 @@
       trigger.textContent = "?";
       host.appendChild(trigger);
       host.classList.add("stat-help-target");
-      records.set(host, { help, trigger });
+      const record = { help, trigger, mobile: false };
+      updateMobileScope(host, record);
+      records.set(host, record);
     }
     function refresh(root = doc) {
       if (active && !active.host.isConnected) hide();
@@ -328,8 +345,9 @@
         if (!host) { if (active && !tooltip.contains(event.target)) hide(); return; }
         const element = event.target.nodeType === 1 ? event.target : event.target.parentElement;
         const isTrigger = Boolean(element.closest(".stat-help-trigger"));
-        const coarse = lastPointerWasTouch || Boolean(win.matchMedia?.("(hover: none), (pointer: coarse)").matches);
-        if (!isTrigger && (!coarse || element.closest("button, a, input, select, textarea, [role=button]"))) return;
+        const mobile = mobileInteraction();
+        if (mobile && !records.get(host).mobile) { hide(); return; }
+        if (!isTrigger && (!mobile || element.closest("button, a, input, select, textarea, [role=button]"))) return;
         event.preventDefault();
         // Keep help clicks separate from delegated sorting/filtering actions.
         if (isTrigger) event.stopPropagation();
@@ -355,6 +373,7 @@
     win.addEventListener("blur", hide);
     win.visualViewport?.addEventListener("resize", hide);
     win.visualViewport?.addEventListener("scroll", hide);
+    mobileMedia?.addEventListener?.("change", hide);
     const ancestorWindows = [];
     try {
       let outer = win.parent;
@@ -381,6 +400,7 @@
       win.removeEventListener("blur", hide);
       win.visualViewport?.removeEventListener("resize", hide);
       win.visualViewport?.removeEventListener("scroll", hide);
+      mobileMedia?.removeEventListener?.("change", hide);
       ancestorWindows.forEach((outer) => {
         outer.document.removeEventListener("scroll", hide, true);
         outer.document.removeEventListener("pointerdown", hide, true);
@@ -391,6 +411,7 @@
       doc.querySelectorAll(".stat-help-target").forEach((host) => {
         records.get(host)?.trigger.remove();
         host.classList.remove("stat-help-target");
+        host.classList.remove("stat-help-mobile");
       });
       tooltip.remove();
       installations.delete(doc);
